@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95aceafd2d60dbe4c91faa9bd62c5661, type: 3}
+  m_Name: Tank
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.Core.CharacterData
+  characterName: San Bernardo
+  description: Grande y resistente. Tiene 6 vidas.
+  portrait: {fileID: 2451198110937319868, guid: 5911bbf2e2aa9044b8fc2e4fea55fc04,
+    type: 3}
+  animatorController: {fileID: 0}
+  moveSpeed: 5
+  jumpStrength: 12
+  gravityModifier: 3.5
+  hasDoubleJump: 0
+  hasDash: 0
+  dashSpeed: 0
+  startingLives: 6
+  characterColor: {r: 0.8, g: 0.4, b: 0.2, a: 1}
+  idleSprite: {fileID: 2451198110937319868, guid: 5911bbf2e2aa9044b8fc2e4fea55fc04,
+    type: 3}
+  runSprite: {fileID: -7794145418952469967, guid: 376aa6828a048e84d8ec1d76046a497f,
+    type: 3}

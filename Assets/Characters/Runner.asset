@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95aceafd2d60dbe4c91faa9bd62c5661, type: 3}
+  m_Name: Runner
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.Core.CharacterData
+  characterName: Golden Retriever
+  description: Rapido y energico. El corredor nato.
+  portrait: {fileID: 756288216879871236, guid: 6780ff811c339154ebd3bf4ff6ee5743, type: 3}
+  animatorController: {fileID: 0}
+  moveSpeed: 10
+  jumpStrength: 14
+  gravityModifier: 3
+  hasDoubleJump: 0
+  hasDash: 0
+  dashSpeed: 0
+  startingLives: 3
+  characterColor: {r: 0.85, g: 0.6, b: 0.2, a: 1}
+  idleSprite: {fileID: 756288216879871236, guid: 6780ff811c339154ebd3bf4ff6ee5743,
+    type: 3}
+  runSprite: {fileID: -7741901596303088593, guid: 47f1304f6c8d45341bc604fec1728026,
+    type: 3}

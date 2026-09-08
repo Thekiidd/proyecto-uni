@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "unity": {
+      "command": "python",
+      "args": [
+        "D:/Gamess/My project (8)/McpServer/server.py"
+      ]
+    }
+  }
+}

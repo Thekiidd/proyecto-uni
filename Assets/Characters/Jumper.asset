@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95aceafd2d60dbe4c91faa9bd62c5661, type: 3}
+  m_Name: Jumper
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.Core.CharacterData
+  characterName: Akita
+  description: Ligero y saltarin. Puede saltar dos veces.
+  portrait: {fileID: 3155040495169286329, guid: 87026f2ca30826d46ba5a067b8679faf,
+    type: 3}
+  animatorController: {fileID: 0}
+  moveSpeed: 6
+  jumpStrength: 20
+  gravityModifier: 2
+  hasDoubleJump: 1
+  hasDash: 0
+  dashSpeed: 0
+  startingLives: 3
+  characterColor: {r: 0.95, g: 0.75, b: 0.4, a: 1}
+  idleSprite: {fileID: 3155040495169286329, guid: 87026f2ca30826d46ba5a067b8679faf,
+    type: 3}
+  runSprite: {fileID: 2526449357611823361, guid: dd330a4e31d00444a957feb2b272d904,
+    type: 3}
