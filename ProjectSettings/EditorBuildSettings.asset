@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: bf485c5106289ec4f8cde0e8fa4f44e9
   - enabled: 1
+    path: Assets/Scenes/Village_Scene.unity
+    guid: 472de10e704c3774b9916e19170fac92
+  - enabled: 1
     path: Assets/Scenes/Level_01.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -17,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_03.unity
     guid: 09ffcc25654573e43a8ca0dd34f214d3
+  - enabled: 1
+    path: Assets/Scenes/Level_Woods.unity
+    guid: 81722d0e2f5a51348b669706e8003027
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f,
       type: 2}

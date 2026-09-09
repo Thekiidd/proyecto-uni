@@ -208,6 +208,7 @@ public static class MainMenuSceneBuilder
         sObj.FindProperty("portraitImage").objectReferenceValue  = portraitImg;
         sObj.FindProperty("nameText").objectReferenceValue       = charNameGO.GetComponent<TextMeshProUGUI>();
         sObj.FindProperty("descriptionText").objectReferenceValue = descTMP;
+        sObj.FindProperty("statsText").objectReferenceValue       = statsTMP;
         sObj.FindProperty("specialText").objectReferenceValue    = specialGO.GetComponent<TextMeshProUGUI>();
         sObj.FindProperty("btnLeft").objectReferenceValue        = btnLeft;
         sObj.FindProperty("btnRight").objectReferenceValue       = btnRight;

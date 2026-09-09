@@ -28,8 +28,13 @@ namespace Platformer.Gameplay
                 if (player.audioSource && player.ouchAudio)
                     player.audioSource.PlayOneShot(player.ouchAudio);
 
-                player.animator.SetTrigger("hurt");
-                player.animator.SetBool("dead", true);
+                if (player.animator != null && player.animator.enabled)
+                {
+                    if (HasParameter(player.animator, "hurt")) player.animator.SetTrigger("hurt");
+                    if (HasParameter(player.animator, "dead")) player.animator.SetBool("dead", true);
+                }
+
+                player.TriggerDeathAnimation();
 
                 // Descontar una vida
                 if (GameData.Instance != null)
@@ -47,6 +52,16 @@ namespace Platformer.Gameplay
                 // Aún hay vidas: respawnear
                 Simulation.Schedule<PlayerSpawn>(2);
             }
+        }
+
+        private bool HasParameter(Animator animator, string paramName)
+        {
+            if (animator == null) return false;
+            foreach (var p in animator.parameters)
+            {
+                if (p.name == paramName) return true;
+            }
+            return false;
         }
     }
 }

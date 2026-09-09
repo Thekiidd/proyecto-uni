@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,7 +31,7 @@ namespace Platformer.Mechanics
         public bool IsGrounded { get; private set; }
 
         protected Vector2 targetVelocity;
-        protected Vector2 groundNormal;
+        protected Vector2 groundNormal = Vector2.up;
         protected Rigidbody2D body;
         protected ContactFilter2D contactFilter;
         protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
@@ -86,6 +86,7 @@ namespace Platformer.Mechanics
             contactFilter.useTriggers = false;
             contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
             contactFilter.useLayerMask = true;
+            groundNormal = Vector2.up;
         }
 
         protected virtual void Update()
@@ -166,7 +167,8 @@ namespace Platformer.Mechanics
                     }
                     //remove shellDistance from actual move distance.
                     var modifiedDistance = hitBuffer[i].distance - shellRadius;
-                    distance = modifiedDistance < distance ? modifiedDistance : distance;
+                    var minDistance = modifiedDistance < distance ? modifiedDistance : distance;
+                    distance = Mathf.Max(0f, minDistance);
                 }
             }
             body.position = body.position + move.normalized * distance;

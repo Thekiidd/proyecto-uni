@@ -13,6 +13,16 @@ namespace Platformer.Mechanics
     [RequireComponent(typeof(Collider2D))]
     public class TokenInstance : MonoBehaviour
     {
+        public enum DogTokenType
+        {
+            Bone,
+            DogBiscuit,
+            TennisBall
+        }
+
+        [Header("Tipo de Coleccionable")]
+        public DogTokenType tokenType = DogTokenType.Bone;
+
         public AudioClip tokenCollectAudio;
         [Tooltip("If true, animation will start at a random position in the sequence.")]
         public bool randomAnimationStartTime = false;
@@ -33,9 +43,17 @@ namespace Platformer.Mechanics
         void Awake()
         {
             _renderer = GetComponent<SpriteRenderer>();
-            if (randomAnimationStartTime)
-                frame = Random.Range(0, sprites.Length);
-            sprites = idleAnimation;
+            if (idleAnimation == null || idleAnimation.Length == 0)
+            {
+                if (_renderer != null && _renderer.sprite != null)
+                {
+                    idleAnimation = new[] { _renderer.sprite };
+                }
+            }
+
+            if (randomAnimationStartTime && idleAnimation != null && idleAnimation.Length > 0)
+                frame = Random.Range(0, idleAnimation.Length);
+            sprites = idleAnimation ?? new Sprite[0];
         }
 
         void OnTriggerEnter2D(Collider2D other)

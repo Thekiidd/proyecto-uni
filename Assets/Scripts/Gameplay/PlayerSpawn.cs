@@ -1,6 +1,7 @@
 using Platformer.Core;
 using Platformer.Mechanics;
 using Platformer.Model;
+using UnityEngine;
 
 namespace Platformer.Gameplay
 {
@@ -21,10 +22,23 @@ namespace Platformer.Gameplay
             player.health.Increment();
             player.Teleport(model.spawnPoint.transform.position);
             player.jumpState = PlayerController.JumpState.Grounded;
-            player.animator.SetBool("dead", false);
+            if (player.animator != null && player.animator.enabled && HasParameter(player.animator, "dead"))
+                player.animator.SetBool("dead", false);
+            player.ResetFromDeath();
+            player.ApplySelectedCharacter();
             model.virtualCamera.Follow = player.transform;
             model.virtualCamera.LookAt = player.transform;
             Simulation.Schedule<EnablePlayerInput>(2f);
+        }
+
+        private bool HasParameter(Animator animator, string paramName)
+        {
+            if (animator == null) return false;
+            foreach (var p in animator.parameters)
+            {
+                if (p.name == paramName) return true;
+            }
+            return false;
         }
     }
 }

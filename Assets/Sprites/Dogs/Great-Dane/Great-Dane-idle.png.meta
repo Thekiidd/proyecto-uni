@@ -32,6 +32,36 @@ TextureImporter:
   - first:
       213: -7837846519211325502
     second: Great-Dane-idle_9
+  - first:
+      213: -2081448823302097730
+    second: Great-Dane-Idle_0
+  - first:
+      213: 6487398814097513615
+    second: Great-Dane-Idle_1
+  - first:
+      213: -4354611892212560783
+    second: Great-Dane-Idle_2
+  - first:
+      213: -2542928148043696414
+    second: Great-Dane-Idle_3
+  - first:
+      213: 3484353852319248269
+    second: Great-Dane-Idle_4
+  - first:
+      213: 3270949652289086661
+    second: Great-Dane-Idle_5
+  - first:
+      213: 9169194065077956655
+    second: Great-Dane-Idle_6
+  - first:
+      213: 1606506368518747846
+    second: Great-Dane-Idle_7
+  - first:
+      213: 7187861401642416304
+    second: Great-Dane-Idle_8
+  - first:
+      213: 422567364195595065
+    second: Great-Dane-Idle_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -64,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +108,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,221 +157,221 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Great-Dane-idle_0
+      name: Great-Dane-Idle_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 32
-        width: 41
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 308240ac8bf71c820800000000000000
-      internalID: 2936768863662254083
+      spriteID: eb47cecb2553d13e0800000000000000
+      internalID: -2081448823302097730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Great-Dane-idle_1
+      name: Great-Dane-Idle_1
       rect:
         serializedVersion: 2
-        x: 130
-        y: 32
-        width: 41
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb5164655d82b1930800000000000000
-      internalID: 4114927581273658812
+      spriteID: f8c929689ded70a50800000000000000
+      internalID: 6487398814097513615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Great-Dane-idle_2
+      name: Great-Dane-Idle_2
       rect:
         serializedVersion: 2
-        x: 230
-        y: 32
-        width: 41
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d607c95e3916ff990800000000000000
-      internalID: -7350048779005038483
+      spriteID: 17c8af54e8f4193c0800000000000000
+      internalID: -4354611892212560783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Great-Dane-idle_3
+      name: Great-Dane-Idle_3
       rect:
         serializedVersion: 2
-        x: 330
-        y: 32
-        width: 41
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 37430ecc1503d7d70800000000000000
-      internalID: 9042436754717553779
+      spriteID: 2e673868254b5bcd0800000000000000
+      internalID: -2542928148043696414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Great-Dane-idle_4
+      name: Great-Dane-Idle_4
       rect:
         serializedVersion: 2
-        x: 430
-        y: 32
-        width: 41
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 400
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 062bff276ef9414f0800000000000000
-      internalID: -858885816800267680
+      spriteID: d8fa0472e59ea5030800000000000000
+      internalID: 3484353852319248269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Great-Dane-idle_5
+      name: Great-Dane-Idle_5
       rect:
         serializedVersion: 2
-        x: 530
-        y: 32
-        width: 41
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4c88357e7bd28750800000000000000
-      internalID: 6305843764451118159
+      spriteID: 5c4e0e6e06fb46d20800000000000000
+      internalID: 3270949652289086661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Great-Dane-idle_6
+      name: Great-Dane-Idle_6
       rect:
         serializedVersion: 2
-        x: 630
-        y: 32
-        width: 41
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5fbdde6fa8b2a6770800000000000000
-      internalID: 8604737913893018613
+      spriteID: f207795fb658f3f70800000000000000
+      internalID: 9169194065077956655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Great-Dane-idle_7
+      name: Great-Dane-Idle_7
       rect:
         serializedVersion: 2
-        x: 731
-        y: 32
-        width: 40
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 700
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6fa86c9de2fea5cc0800000000000000
-      internalID: -3721399157567091978
+      spriteID: 6c676f0d7057b4610800000000000000
+      internalID: 1606506368518747846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Great-Dane-idle_8
+      name: Great-Dane-Idle_8
       rect:
         serializedVersion: 2
-        x: 830
-        y: 32
-        width: 41
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 800
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0274e435c04a10b0800000000000000
-      internalID: -5757217957899636214
+      spriteID: 0b833a3acd960c360800000000000000
+      internalID: 7187861401642416304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Great-Dane-idle_9
+      name: Great-Dane-Idle_9
       rect:
         serializedVersion: 2
-        x: 930
-        y: 32
-        width: 41
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 900
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c780621e106a3390800000000000000
-      internalID: -7837846519211325502
+      spriteID: 9333d8467c24dd500800000000000000
+      internalID: 422567364195595065
       vertices: []
       indices: 
       edges: []
@@ -360,6 +390,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Great-Dane-Idle_0: -2081448823302097730
+      Great-Dane-Idle_1: 6487398814097513615
+      Great-Dane-Idle_2: -4354611892212560783
+      Great-Dane-Idle_3: -2542928148043696414
+      Great-Dane-Idle_4: 3484353852319248269
+      Great-Dane-Idle_5: 3270949652289086661
+      Great-Dane-Idle_6: 9169194065077956655
+      Great-Dane-Idle_7: 1606506368518747846
+      Great-Dane-Idle_8: 7187861401642416304
+      Great-Dane-Idle_9: 422567364195595065
       Great-Dane-idle_0: 2936768863662254083
       Great-Dane-idle_1: 4114927581273658812
       Great-Dane-idle_2: -7350048779005038483

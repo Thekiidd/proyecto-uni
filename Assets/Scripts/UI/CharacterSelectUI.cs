@@ -18,6 +18,7 @@ namespace Platformer.UI
         [SerializeField] private Image portraitImage;
         [SerializeField] private TextMeshProUGUI nameText;
         [SerializeField] private TextMeshProUGUI descriptionText;
+        [SerializeField] private TextMeshProUGUI statsText;
         [SerializeField] private TextMeshProUGUI specialText;
 
         [Header("Navegación")]
@@ -39,10 +40,28 @@ namespace Platformer.UI
             if (btnLeft  != null) { btnLeft.onClick.RemoveAllListeners();  btnLeft.onClick.AddListener(PreviousCharacter); }
             if (btnRight != null) { btnRight.onClick.RemoveAllListeners(); btnRight.onClick.AddListener(NextCharacter); }
 
+#if UNITY_EDITOR
+            if (characters == null || characters.Length < 6)
+            {
+                var guids = UnityEditor.AssetDatabase.FindAssets("t:CharacterData", new[] { "Assets/Characters" });
+                if (guids.Length > 0)
+                {
+                    var list = new System.Collections.Generic.List<CharacterData>();
+                    foreach (var g in guids)
+                    {
+                        var path = UnityEditor.AssetDatabase.GUIDToAssetPath(g);
+                        var cd = UnityEditor.AssetDatabase.LoadAssetAtPath<CharacterData>(path);
+                        if (cd != null && !list.Contains(cd)) list.Add(cd);
+                    }
+                    if (list.Count > 0) characters = list.ToArray();
+                }
+            }
+#endif
+
             if (characters == null || characters.Length == 0)
             {
                 Debug.LogError("[CharacterSelectUI] ¡FALTA asignar personajes en el Inspector! " +
-                               "Ve a Tools > Create Character Assets.");
+                               "Ve a Tools > Animate Dog Characters.");
                 return;
             }
 
@@ -77,16 +96,36 @@ namespace Platformer.UI
                 return;
             }
 
-            if (portraitImage != null)   portraitImage.color = c.characterColor;
+            if (portraitImage != null)
+            {
+                portraitImage.color = Color.white;
+                if (c.portrait != null)
+                    portraitImage.sprite = c.portrait;
+                else if (c.idleSprite != null)
+                    portraitImage.sprite = c.idleSprite;
+            }
+
+            if (statsText == null)
+            {
+                statsText = transform.Find("Stats")?.GetComponent<TextMeshProUGUI>();
+            }
+
             if (nameText != null)        nameText.text = c.characterName;
-            if (descriptionText != null) descriptionText.text =
-                $"{c.description}\n<size=20>Vel: {c.moveSpeed:F0}  |  Salto: {c.jumpStrength:F0}  |  Vidas: {c.startingLives}</size>";
+            if (statsText != null)
+            {
+                if (descriptionText != null) descriptionText.text = c.description;
+                statsText.text = $"Velocidad: {c.moveSpeed:F0}  |  Salto: {c.jumpStrength:F0}  |  Vidas: {c.startingLives}";
+            }
+            else if (descriptionText != null)
+            {
+                descriptionText.text = $"{c.description}\n<size=20>Vel: {c.moveSpeed:F0}  |  Salto: {c.jumpStrength:F0}  |  Vidas: {c.startingLives}</size>";
+            }
             if (specialText != null)
             {
-                string special = "Ninguna";
+                string special = "Normal";
                 if (c.hasDoubleJump)           special = "Doble Salto";
-                else if (c.hasDash)            special = "Dash";
-                else if (c.startingLives > 3)  special = "Extra Vidas";
+                else if (c.hasDash)            special = "Impulso Dash";
+                else if (c.startingLives > 3)  special = $"{c.startingLives} Vidas";
                 specialText.text = $"Especial: {special}";
             }
         }

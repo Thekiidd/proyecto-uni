@@ -81,9 +81,9 @@ namespace Platformer.UI
                 GameData.Instance.StartNewGame(selected);
 
             if (SceneLoader.Instance != null)
-                SceneLoader.Instance.LoadLevel(1);
+                SceneLoader.Instance.LoadVillage();
             else
-                UnityEngine.SceneManagement.SceneManager.LoadScene(GameData.LevelScenes[0]);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(GameData.VillageScene);
         }
 
         private void QuitGame()

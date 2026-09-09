@@ -2,6 +2,7 @@ using Platformer.Core;
 using Platformer.Model;
 using Platformer.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Platformer.Gameplay
 {
@@ -11,19 +12,20 @@ namespace Platformer.Gameplay
     /// </summary>
     public class ShowGameOver : Simulation.Event<ShowGameOver>
     {
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-
         public override void Execute()
         {
-            if (GameOverUI.Instance != null)
+            if (GameHUD.Instance != null)
+            {
+                GameHUD.Instance.ShowGameOver();
+            }
+            else if (GameOverUI.Instance != null)
             {
                 GameOverUI.Instance.Show();
             }
             else
             {
                 // Fallback: volver al menú directo
-                if (SceneLoader.Instance != null)
-                    SceneLoader.Instance.LoadMainMenu();
+                SceneManager.LoadScene(GameData.MainMenuScene);
             }
         }
     }

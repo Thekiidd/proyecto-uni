@@ -33,6 +33,18 @@ namespace Platformer.Core
         public Color characterColor = Color.white;
         public Sprite idleSprite;   // Sprite que reemplaza al personaje en juego
         public Sprite runSprite;    // Sprite al correr (opcional)
-
+        public Sprite[] idleFrames; // Frames para animación idle base (respiración tranquila)
+        public Sprite[] runFrames;  // Frames para animación al correr
+        public Sprite[] walkFrames; // Frames para animación al caminar
+        public Sprite[] deathFrames; // Frames para animación de caída/muerte (lying-down)
+        public Sprite[] hurtFrames;  // Frames para animación de impacto
+        public Sprite[] scratchFrames; // Rascándose la orejita
+        public Sprite[] stretchFrames; // Estirándose como perrito
+        public Sprite[] lickFrames;    // Lamiéndose la patita (lick 1)
+        public Sprite[] lick2Frames;   // Lamiéndose el pecho / hocico (lick 2)
+        public Sprite[] barkFrames;    // Ladrido amistoso
+        public Sprite[] sitFrames;     // Sentado atento como buen perro
+        public Sprite[] layDownFrames; // Acostarse en el suelo y levantarse
+        public Sprite[] sleepFrames;   // Durmiendo hecho bolita zZz
     }
 }

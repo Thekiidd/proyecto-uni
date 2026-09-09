@@ -58,6 +58,11 @@ namespace Platformer.Core
             StartCoroutine(FadeAndLoad(GameData.MainMenuScene));
         }
 
+        public void LoadVillage()
+        {
+            StartCoroutine(FadeAndLoad(GameData.VillageScene));
+        }
+
         public void LoadLevel(int levelNumber)
         {
             int index = Mathf.Clamp(levelNumber - 1, 0, GameData.LevelScenes.Length - 1);

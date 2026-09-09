@@ -45,17 +45,26 @@ namespace Platformer.UI
         private void Retry()
         {
             Time.timeScale = 1f;
-            // Restaurar vidas del personaje
-            if (GameData.Instance != null && GameData.Instance.selectedCharacter != null)
-                GameData.Instance.lives = GameData.Instance.selectedCharacter.startingLives;
+            // Restaurar vidas y diamantes del nivel
+            if (GameData.Instance != null)
+            {
+                if (GameData.Instance.selectedCharacter != null)
+                    GameData.Instance.lives = GameData.Instance.selectedCharacter.startingLives;
+                GameData.Instance.ResetLevelCoins();
+            }
 
             if (SceneLoader.Instance != null)
                 SceneLoader.Instance.ReloadCurrentLevel();
+            else
+                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         }
 
         private void GoToMenu()
         {
             Time.timeScale = 1f;
+            if (GameData.Instance != null)
+                GameData.Instance.ResetCoins();
+
             if (SceneLoader.Instance != null)
                 SceneLoader.Instance.LoadMainMenu();
             else

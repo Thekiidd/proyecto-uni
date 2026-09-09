@@ -35,6 +35,7 @@ namespace UnityMCP
             // Auto-start when the editor loads, and pump the main-thread queue.
             EditorApplication.update += PumpQueue;
             EditorApplication.quitting += Stop;
+            AssemblyReloadEvents.beforeAssemblyReload += Stop;
             if (!_running) Start();
         }
 
@@ -45,6 +46,7 @@ namespace UnityMCP
             try
             {
                 _listener = new TcpListener(IPAddress.Loopback, Port);
+                _listener.Server.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
                 _listener.Start();
                 _running = true;
                 _acceptThread = new Thread(AcceptLoop) { IsBackground = true, Name = "UnityMCP-Accept" };

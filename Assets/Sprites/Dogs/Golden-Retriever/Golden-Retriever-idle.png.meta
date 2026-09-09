@@ -32,6 +32,36 @@ TextureImporter:
   - first:
       213: 5161602274930872285
     second: Golden-Retriever-idle_9
+  - first:
+      213: -1802796308616359985
+    second: Golden-Retriever-Idle_0
+  - first:
+      213: 942717925999032708
+    second: Golden-Retriever-Idle_1
+  - first:
+      213: 7385950943849337599
+    second: Golden-Retriever-Idle_2
+  - first:
+      213: -1213655310718801427
+    second: Golden-Retriever-Idle_3
+  - first:
+      213: -3906249348258295338
+    second: Golden-Retriever-Idle_4
+  - first:
+      213: 7690389133014275834
+    second: Golden-Retriever-Idle_5
+  - first:
+      213: 2282587059033911363
+    second: Golden-Retriever-Idle_6
+  - first:
+      213: -7030277927619791760
+    second: Golden-Retriever-Idle_7
+  - first:
+      213: -6268075425466311103
+    second: Golden-Retriever-Idle_8
+  - first:
+      213: -2342759009869034280
+    second: Golden-Retriever-Idle_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -64,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +108,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,7 +132,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,221 +157,221 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Golden-Retriever-idle_0
+      name: Golden-Retriever-Idle_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 38
-        width: 35
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40530f25020ee7a00800000000000000
-      internalID: 756288216879871236
+      spriteID: fcf49861f4e2bf6e0800000000000000
+      internalID: -1802796308616359985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golden-Retriever-idle_1
+      name: Golden-Retriever-Idle_1
       rect:
         serializedVersion: 2
-        x: 133
-        y: 38
-        width: 35
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4694d7ef466449220800000000000000
-      internalID: 2491693893423024484
+      spriteID: 489b09e75f4351d00800000000000000
+      internalID: 942717925999032708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golden-Retriever-idle_2
+      name: Golden-Retriever-Idle_2
       rect:
         serializedVersion: 2
-        x: 233
-        y: 38
-        width: 35
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c07c248d404f33d0800000000000000
-      internalID: -3224788106499821369
+      spriteID: ff2d990404b208660800000000000000
+      internalID: 7385950943849337599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golden-Retriever-idle_3
+      name: Golden-Retriever-Idle_3
       rect:
         serializedVersion: 2
-        x: 333
-        y: 38
-        width: 35
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a8f701e458934330800000000000000
-      internalID: 3693963609694009504
+      spriteID: de9e6d4dcea382fe0800000000000000
+      internalID: -1213655310718801427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golden-Retriever-idle_4
+      name: Golden-Retriever-Idle_4
       rect:
         serializedVersion: 2
-        x: 433
-        y: 38
-        width: 35
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 400
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e510c67f9ddeeb7e0800000000000000
-      internalID: -1747698084958437026
+      spriteID: 6d196f8f9e63ac9c0800000000000000
+      internalID: -3906249348258295338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golden-Retriever-idle_5
+      name: Golden-Retriever-Idle_5
       rect:
         serializedVersion: 2
-        x: 533
-        y: 38
-        width: 35
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4cbe4cc9045105c30800000000000000
-      internalID: 4345997007664769988
+      spriteID: af617d9cb20c9ba60800000000000000
+      internalID: 7690389133014275834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golden-Retriever-idle_6
+      name: Golden-Retriever-Idle_6
       rect:
         serializedVersion: 2
-        x: 633
-        y: 38
-        width: 35
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32057b131f4ac62c0800000000000000
-      internalID: -4436990177038610397
+      spriteID: 340be9626d06daf10800000000000000
+      internalID: 2282587059033911363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golden-Retriever-idle_7
+      name: Golden-Retriever-Idle_7
       rect:
         serializedVersion: 2
-        x: 733
-        y: 38
-        width: 35
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 700
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0c8d92b7fb290be70800000000000000
-      internalID: 9128957795782744256
+      spriteID: 074f3fb097f6f6e90800000000000000
+      internalID: -7030277927619791760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golden-Retriever-idle_8
+      name: Golden-Retriever-Idle_8
       rect:
         serializedVersion: 2
-        x: 833
-        y: 38
-        width: 35
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 800
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 008de82f605a93070800000000000000
-      internalID: 8086676055178270720
+      spriteID: 14e99b73c925309a0800000000000000
+      internalID: -6268075425466311103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golden-Retriever-idle_9
+      name: Golden-Retriever-Idle_9
       rect:
         serializedVersion: 2
-        x: 933
-        y: 38
-        width: 35
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 900
+        y: 0
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ddf4a15fbe1b1a740800000000000000
-      internalID: 5161602274930872285
+      spriteID: 8dc096ec719dc7fd0800000000000000
+      internalID: -2342759009869034280
       vertices: []
       indices: 
       edges: []
@@ -360,6 +390,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Golden-Retriever-Idle_0: -1802796308616359985
+      Golden-Retriever-Idle_1: 942717925999032708
+      Golden-Retriever-Idle_2: 7385950943849337599
+      Golden-Retriever-Idle_3: -1213655310718801427
+      Golden-Retriever-Idle_4: -3906249348258295338
+      Golden-Retriever-Idle_5: 7690389133014275834
+      Golden-Retriever-Idle_6: 2282587059033911363
+      Golden-Retriever-Idle_7: -7030277927619791760
+      Golden-Retriever-Idle_8: -6268075425466311103
+      Golden-Retriever-Idle_9: -2342759009869034280
       Golden-Retriever-idle_0: 756288216879871236
       Golden-Retriever-idle_1: 2491693893423024484
       Golden-Retriever-idle_2: -3224788106499821369

@@ -412,9 +412,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0af355d489a78c74eafc02700e1280c4, type: 2}
   - {fileID: 11400000, guid: 7f10d3edf53a5574ba356625166fdcd4, type: 2}
   - {fileID: 11400000, guid: 10214818527a6be4db14640ed2ca4ab4, type: 2}
+  - {fileID: 11400000, guid: d3ba84fd5351a2742896b5f73e8b720d, type: 2}
+  - {fileID: 11400000, guid: 2612aae6d2c3ed54897294bd49e0af37, type: 2}
+  - {fileID: 11400000, guid: 558402a0d564c664e91ad2392d9c435e, type: 2}
   portraitImage: {fileID: 616384423}
   nameText: {fileID: 993896669}
   descriptionText: {fileID: 1742520522}
+  statsText: {fileID: 1665341169}
   specialText: {fileID: 992253825}
   btnLeft: {fileID: 1496359363}
   btnRight: {fileID: 1116477}
@@ -1420,6 +1424,9 @@ MonoBehaviour:
   totalLevels: 3
   score: 0
   lives: 3
+  coins: 0
+  levelStartCoins: 0
+  levelStartScore: 0
 --- !u!4 &837561560
 Transform:
   m_ObjectHideFlags: 0
