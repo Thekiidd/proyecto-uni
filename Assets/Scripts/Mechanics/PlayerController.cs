@@ -87,12 +87,18 @@ namespace Platformer.Mechanics
         {
             if (GameData.Instance != null && GameData.Instance.selectedCharacter != null)
             {
-                var data = GameData.Instance.selectedCharacter;
-                currentCharacterData = data;
-                maxSpeed = data.moveSpeed;
+                ApplyCharacter(GameData.Instance.selectedCharacter);
+            }
+        }
 
-                if (model != null)
-                    model.jumpModifier = data.jumpStrength / 10f;
+        public void ApplyCharacter(Platformer.Core.CharacterData data)
+        {
+            if (data == null) return;
+            currentCharacterData = data;
+            maxSpeed = data.moveSpeed;
+
+            if (model != null)
+                model.jumpModifier = data.jumpStrength / 10f;
 
                 if (spriteRenderer == null)
                     spriteRenderer = GetComponent<SpriteRenderer>();
@@ -140,7 +146,6 @@ namespace Platformer.Mechanics
                 }
 
                 Debug.Log($"[PlayerController] ✅ Personaje cargado: {data.characterName}");
-            }
         }
 
         protected override void Update()
@@ -319,6 +324,8 @@ namespace Platformer.Mechanics
             {
                 animator.SetBool("grounded", IsGrounded);
                 animator.SetFloat("velocityX", Mathf.Abs(velocity.x));
+                animator.SetBool("isMoving", isMoving);
+                animator.SetFloat("moveX", move.x);
             }
             else if (spriteRenderer != null && currentCharacterData != null)
             {

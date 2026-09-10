@@ -18,7 +18,7 @@ namespace Platformer.EditorTools
     public static class VillageSceneBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Village_Scene.unity";
-        private const string BUILD_KEY = "VillageScene_Build_v4";
+        private const string BUILD_KEY = "VillageScene_Build_v5";
 
         static VillageSceneBuilder()
         {
@@ -97,9 +97,10 @@ namespace Platformer.EditorTools
             CreateBoundaryCollider(collidersRoot, new Vector2(-20.5f, 15.5f), new Vector2(1f, 9f));
             CreateBoundaryCollider(collidersRoot, new Vector2(-20.5f, -6f), new Vector2(1f, 27f));
 
-            // 7. Parsear TMX para generar colisiones automáticas de Agua, Barrancos (excluyendo escaleras) y Objetos
+            // 7. Parsear TMX para generar colisiones automáticas de Agua, Barrancos (excluyendo escaleras) y Objetos con Y-Sorting
+            var propsRoot = new GameObject("[Village_Props_Y_Sorted]");
             string tmxPath = $"{VillageAssetImporter.VILLAGE_FOLDER}/Tiled/Tilemaps/Beginning Fields.tmx";
-            ParseTMXColliders(tmxPath, collidersRoot);
+            ParseTMXColliders(tmxPath, collidersRoot, propsRoot);
 
             // 8. Portón de Salida a la Aventura (en el camino oeste, Y = 9.5)
             var gateGO = new GameObject("Village_Gate_Exit");
@@ -206,8 +207,8 @@ namespace Platformer.EditorTools
             playerSR.sortingOrder = 500;
 
             var playerCol = playerGO.AddComponent<CircleCollider2D>();
-            playerCol.radius = 0.45f;
-            playerCol.offset = new Vector2(0, 0.2f);
+            playerCol.radius = 0.32f;
+            playerCol.offset = new Vector2(0, -0.15f);
 
             var playerRB = playerGO.AddComponent<Rigidbody2D>();
             playerRB.gravityScale = 0f;
@@ -260,7 +261,13 @@ namespace Platformer.EditorTools
             return false;
         }
 
-        private static void ParseTMXColliders(string tmxRelativePath, GameObject collidersRoot)
+        private static Sprite LoadVillageSprite(string subPath)
+        {
+            string fullPath = $"{VillageAssetImporter.VILLAGE_FOLDER}/Art/{subPath}";
+            return AssetDatabase.LoadAssetAtPath<Sprite>(fullPath);
+        }
+
+        private static void ParseTMXColliders(string tmxRelativePath, GameObject collidersRoot, GameObject propsRoot)
         {
             string fullPath = Path.Combine(Directory.GetCurrentDirectory(), tmxRelativePath);
             if (!File.Exists(fullPath))
@@ -293,12 +300,14 @@ namespace Platformer.EditorTools
                     CreateMergedLayerColliders(cliffLayer, cliffRoot, gid => gid != 0 && !IsStairsTile(gid));
                 }
 
-                // 3. Colisiones de Objetos (Casas, árboles, rocas, pozo, cercas)
+                // 3. Colisiones de Objetos y Sprites con Profundidad Y-Sorting
                 var objGroup = root.Elements("objectgroup").FirstOrDefault(e => (string)e.Attribute("name") == "Object Layer 1");
                 if (objGroup != null)
                 {
                     var objsRoot = new GameObject("Objects_Colliders");
                     objsRoot.transform.SetParent(collidersRoot.transform, false);
+
+                    bool campfireColliderCreated = false;
 
                     foreach (var obj in objGroup.Elements("object"))
                     {
@@ -310,57 +319,205 @@ namespace Platformer.EditorTools
 
                         // En Tiled para tile objects (x, y) es la esquina inferior izquierda
                         float unityCenterX = (x + w * 0.5f) / 16f - 20f;
+                        float bottomY = 20f - y / 16f;
                         float unityCenterY = 20f - (y - h * 0.5f) / 16f;
+                        int sortOrder = 500 - Mathf.RoundToInt(bottomY * 10f);
 
-                        // Casas (GIDs 477..480): colisión sólida en la base
+                        // --- 1. CASAS (GIDs 477..480) ---
                         if (gid >= 477 && gid <= 480)
                         {
-                            CreateHouseBaseAndDoor(objsRoot, gid, unityCenterX, unityCenterY, w / 16f, h / 16f);
+                            CreateHouseBaseAndDoor(objsRoot, propsRoot, gid, unityCenterX, bottomY, w / 16f, h / 16f);
                         }
-                        // Árboles grandes (GIDs 514..517): colisión solo en el tronco
+                        // --- 2. ÁRBOLES GRANDES (GIDs 514..517) ---
                         else if (gid >= 514 && gid <= 517)
                         {
-                            var treeGO = new GameObject($"Tree_Col_{unityCenterX:F1}_{unityCenterY:F1}");
-                            treeGO.transform.SetParent(objsRoot.transform, false);
-                            float trunkY = 20f - (y - 8f) / 16f;
-                            treeGO.transform.position = new Vector3(unityCenterX, trunkY, 0);
-                            var col = treeGO.AddComponent<CircleCollider2D>();
+                            int treeIdx = gid - 513; // 1..4
+                            var treeSprite = LoadVillageSprite($"Trees and Bushes/Tree_Emerald_{treeIdx}.png");
+                            if (treeSprite != null)
+                            {
+                                var treeVis = new GameObject($"Tree_Vis_{treeIdx}_{unityCenterX:F1}_{bottomY:F1}");
+                                treeVis.transform.SetParent(propsRoot.transform, false);
+                                treeVis.transform.position = new Vector3(unityCenterX, bottomY, 0);
+                                var sr = treeVis.AddComponent<SpriteRenderer>();
+                                sr.sprite = treeSprite;
+                                sr.sortingOrder = sortOrder;
+                            }
+
+                            // Colisión sólida únicamente en el tronco para permitir pasar por detrás de la copa o por delante
+                            var treeColGO = new GameObject($"Tree_Col_{unityCenterX:F1}_{bottomY:F1}");
+                            treeColGO.transform.SetParent(objsRoot.transform, false);
+                            float trunkY = bottomY + 0.45f;
+                            treeColGO.transform.position = new Vector3(unityCenterX, trunkY, 0);
+                            var col = treeColGO.AddComponent<CircleCollider2D>();
                             col.radius = 0.35f;
                         }
-                        // Rocas (GIDs 502..506): colisión circular en la base
+                        // --- 3. ARBUSTOS Y PINOS (GIDs 507..513) ---
+                        else if (gid >= 507 && gid <= 513)
+                        {
+                            int bushIdx = gid - 506; // 1..7
+                            var bushSprite = LoadVillageSprite($"Trees and Bushes/Bush_Emerald_{bushIdx}.png");
+                            if (bushSprite != null)
+                            {
+                                var bushVis = new GameObject($"Bush_Vis_{bushIdx}_{unityCenterX:F1}_{bottomY:F1}");
+                                bushVis.transform.SetParent(propsRoot.transform, false);
+                                bushVis.transform.position = new Vector3(unityCenterX, bottomY, 0);
+                                var sr = bushVis.AddComponent<SpriteRenderer>();
+                                sr.sprite = bushSprite;
+                                sr.sortingOrder = sortOrder;
+                            }
+
+                            var bushColGO = new GameObject($"Bush_Col_{unityCenterX:F1}_{bottomY:F1}");
+                            bushColGO.transform.SetParent(objsRoot.transform, false);
+
+                            if (gid == 507 || gid == 508)
+                            {
+                                bushColGO.transform.position = new Vector3(unityCenterX, bottomY + 0.3f, 0);
+                                var col = bushColGO.AddComponent<BoxCollider2D>();
+                                col.size = new Vector2(w / 16f * 0.75f, 0.45f);
+                            }
+                            else
+                            {
+                                bushColGO.transform.position = new Vector3(unityCenterX, bottomY + 0.3f, 0);
+                                var col = bushColGO.AddComponent<CircleCollider2D>();
+                                col.radius = Mathf.Max(0.28f, Mathf.Min(w, h) / 32f * 0.75f);
+                            }
+                        }
+                        // --- 4. POSTES DE LUZ (GID 490) ---
+                        else if (gid == 490)
+                        {
+                            var postSprite = LoadVillageSprite("Props/LampPost_3.png");
+                            if (postSprite != null)
+                            {
+                                var postVis = new GameObject($"LampPost_Vis_{unityCenterX:F1}_{bottomY:F1}");
+                                postVis.transform.SetParent(propsRoot.transform, false);
+                                postVis.transform.position = new Vector3(unityCenterX, bottomY, 0);
+                                var sr = postVis.AddComponent<SpriteRenderer>();
+                                sr.sprite = postSprite;
+                                sr.sortingOrder = sortOrder;
+                            }
+
+                            var postColGO = new GameObject($"LampPost_Col_{unityCenterX:F1}_{bottomY:F1}");
+                            postColGO.transform.SetParent(objsRoot.transform, false);
+                            postColGO.transform.position = new Vector3(unityCenterX, bottomY + 0.25f, 0);
+                            var col = postColGO.AddComponent<BoxCollider2D>();
+                            col.size = new Vector2(0.45f, 0.45f);
+                        }
+                        // --- 5. ESTANDARTES MORADOS (GID 495) ---
+                        else if (gid == 495)
+                        {
+                            var bannerSprite = LoadVillageSprite("Props/Banner_Stick_1_Purple.png");
+                            if (bannerSprite != null)
+                            {
+                                var bannerVis = new GameObject($"Banner_Vis_{unityCenterX:F1}_{bottomY:F1}");
+                                bannerVis.transform.SetParent(propsRoot.transform, false);
+                                bannerVis.transform.position = new Vector3(unityCenterX, bottomY, 0);
+                                var sr = bannerVis.AddComponent<SpriteRenderer>();
+                                sr.sprite = bannerSprite;
+                                sr.sortingOrder = sortOrder;
+                            }
+
+                            var bannerColGO = new GameObject($"Banner_Col_{unityCenterX:F1}_{bottomY:F1}");
+                            bannerColGO.transform.SetParent(objsRoot.transform, false);
+                            bannerColGO.transform.position = new Vector3(unityCenterX, bottomY + 0.25f, 0);
+                            var col = bannerColGO.AddComponent<BoxCollider2D>();
+                            col.size = new Vector2(0.45f, 0.45f);
+                        }
+                        // --- 6. ROCAS (GIDs 502..506) ---
                         else if (gid >= 502 && gid <= 506)
                         {
-                            var rockGO = new GameObject($"Rock_Col_{unityCenterX:F1}_{unityCenterY:F1}");
-                            rockGO.transform.SetParent(objsRoot.transform, false);
-                            float rockBaseY = 20f - (y - h * 0.35f) / 16f;
-                            rockGO.transform.position = new Vector3(unityCenterX, rockBaseY, 0);
-                            var col = rockGO.AddComponent<CircleCollider2D>();
-                            col.radius = Mathf.Min(w, h) / 32f * 0.65f;
-                        }
-                        // Pozo de agua (GID 501)
-                        else if (gid == 501)
-                        {
-                            var wellGO = new GameObject("Well_Col");
-                            wellGO.transform.SetParent(objsRoot.transform, false);
-                            wellGO.transform.position = new Vector3(unityCenterX, unityCenterY, 0);
-                            var col = wellGO.AddComponent<CircleCollider2D>();
-                            col.radius = 0.85f;
+                            int rockNum = 1;
+                            if (gid == 502) rockNum = 1;
+                            else if (gid == 503) rockNum = 2;
+                            else if (gid == 504) rockNum = 4;
+                            else if (gid == 505) rockNum = 6;
+                            else if (gid == 506) rockNum = 9;
 
-                            // Puerta / Inspección interactiva del pozo
-                            var doorComp = wellGO.AddComponent<DoorInteractable>();
-                            doorComp.houseName = "Pozo Antiguo de la Aldea";
-                            doorComp.doorMessage = "El agua del pozo es pura y cristalina. Un susurro mágico parece desearte suerte en tu misión.";
-                            doorComp.interactRadius = 2.0f;
+                            var rockSprite = LoadVillageSprite($"Rocks/Rock_Brown_{rockNum}.png");
+                            if (rockSprite != null)
+                            {
+                                var rockVis = new GameObject($"Rock_Vis_{unityCenterX:F1}_{unityCenterY:F1}");
+                                rockVis.transform.SetParent(propsRoot.transform, false);
+                                rockVis.transform.position = new Vector3(unityCenterX, unityCenterY, 0);
+                                var sr = rockVis.AddComponent<SpriteRenderer>();
+                                sr.sprite = rockSprite;
+                                sr.sortingOrder = sortOrder;
+                            }
+
+                            var rockColGO = new GameObject($"Rock_Col_{unityCenterX:F1}_{unityCenterY:F1}");
+                            rockColGO.transform.SetParent(objsRoot.transform, false);
+                            float rockBaseY = bottomY + Mathf.Min(w, h) / 32f * 0.5f;
+                            rockColGO.transform.position = new Vector3(unityCenterX, rockBaseY, 0);
+                            var col = rockColGO.AddComponent<CircleCollider2D>();
+                            col.radius = Mathf.Max(0.25f, Mathf.Min(w, h) / 32f * 0.7f);
                         }
-                        // Cercas y cajas (GIDs 484, 485, 487, 498, etc.)
-                        else if (gid == 484 || gid == 485 || gid == 487 || gid == 498)
+                        // --- 7. ACCESORIOS Y PROPS DE ALDEA (Bancas, Cajas, Carteleras, Trigo, Barriles, Mesa) ---
+                        else if (gid >= 484 && gid <= 501)
                         {
-                            var propGO = new GameObject($"Prop_Col_{unityCenterX:F1}_{unityCenterY:F1}");
-                            propGO.transform.SetParent(objsRoot.transform, false);
-                            float propBaseY = 20f - (y - h * 0.3f) / 16f;
-                            propGO.transform.position = new Vector3(unityCenterX, propBaseY, 0);
-                            var col = propGO.AddComponent<BoxCollider2D>();
-                            col.size = new Vector2(w / 16f * 0.85f, h / 16f * 0.5f);
+                            string propFile = null;
+                            bool isBoxCol = true;
+                            Vector2 colSize = new Vector2(w / 16f * 0.85f, h / 16f * 0.6f);
+                            float colOffsetY = h / 32f;
+                            float circleRad = 0.35f;
+
+                            switch (gid)
+                            {
+                                case 484: propFile = "Props/Bench_1.png"; break;
+                                case 485: propFile = "Props/Bench_3.png"; break;
+                                case 486: propFile = "Props/BulletinBoard_1.png"; colSize = new Vector2(w / 16f * 0.85f, 0.5f); colOffsetY = 0.25f; break;
+                                case 487: propFile = "Props/Chopped_Tree_1.png"; isBoxCol = false; circleRad = 0.45f; colOffsetY = 0.4f; break;
+                                case 488: propFile = "Props/Crate_Large_Empty.png"; break;
+                                case 489: propFile = "Props/Crate_Medium_Closed.png"; break;
+                                case 491: propFile = "Props/Plant_2.png"; break; // planta decorativa
+                                case 492: propFile = "Props/Sack_3.png"; isBoxCol = false; circleRad = 0.35f; colOffsetY = 0.25f; break;
+                                case 493: propFile = "Props/Sign_1.png"; colSize = new Vector2(0.5f, 0.4f); colOffsetY = 0.25f; break;
+                                case 496: propFile = "Props/Crate_Water_1.png"; break;
+                                case 498: propFile = "Props/HayStack_2.png"; colSize = new Vector2(w / 16f * 0.85f, 0.7f); colOffsetY = 0.35f; break;
+                                case 499: propFile = "Props/Barrel_Small_Empty.png"; isBoxCol = false; circleRad = 0.4f; colOffsetY = 0.35f; break;
+                                case 501: propFile = "Props/Table_Medium_1.png"; break;
+                            }
+
+                            if (!string.IsNullOrEmpty(propFile))
+                            {
+                                var propSprite = LoadVillageSprite(propFile);
+                                if (propSprite != null)
+                                {
+                                    var propVis = new GameObject($"Prop_Vis_{gid}_{unityCenterX:F1}_{bottomY:F1}");
+                                    propVis.transform.SetParent(propsRoot.transform, false);
+                                    propVis.transform.position = new Vector3(unityCenterX, bottomY, 0);
+                                    var sr = propVis.AddComponent<SpriteRenderer>();
+                                    sr.sprite = propSprite;
+                                    sr.sortingOrder = sortOrder;
+                                }
+                            }
+
+                            // Para plantas decorativas pequeñas (491), dejamos que el perro camine sobre ellas
+                            if (gid != 491)
+                            {
+                                var propColGO = new GameObject($"Prop_Col_{gid}_{unityCenterX:F1}_{bottomY:F1}");
+                                propColGO.transform.SetParent(objsRoot.transform, false);
+                                propColGO.transform.position = new Vector3(unityCenterX, bottomY + colOffsetY, 0);
+
+                                if (isBoxCol)
+                                {
+                                    var col = propColGO.AddComponent<BoxCollider2D>();
+                                    col.size = colSize;
+                                }
+                                else
+                                {
+                                    var col = propColGO.AddComponent<CircleCollider2D>();
+                                    col.radius = circleRad;
+                                }
+                            }
+                        }
+                        // --- 8. FOGATA (GIDs 5770, 5771, 5786, 5787) ---
+                        else if ((gid == 5770 || gid == 5771 || gid == 5786 || gid == 5787) && !campfireColliderCreated)
+                        {
+                            campfireColliderCreated = true;
+                            var fireColGO = new GameObject("Campfire_Col");
+                            fireColGO.transform.SetParent(objsRoot.transform, false);
+                            fireColGO.transform.position = new Vector3(-3.5f, -10.5f, 0);
+                            var col = fireColGO.AddComponent<CircleCollider2D>();
+                            col.radius = 0.85f;
                         }
                     }
                 }
@@ -432,48 +589,69 @@ namespace Platformer.EditorTools
             col.size = new Vector2(width, 1.0f);
         }
 
-        private static void CreateHouseBaseAndDoor(GameObject parent, int gid, float centerX, float centerY, float w, float h)
+        private static void CreateHouseBaseAndDoor(GameObject collidersRoot, GameObject propsRoot, int gid, float centerX, float bottomY, float w, float h)
         {
             string houseName = "Casa";
             string doorMessage = "Puerta de la aldea.";
-            Vector2 colSize = new Vector2(w * 0.85f, h * 0.45f);
-            Vector2 colCenter = new Vector2(centerX, centerY - h * 0.15f);
-            Vector2 doorPos = new Vector2(centerX, centerY - h * 0.48f);
+            string spriteSubPath = "";
 
             switch (gid)
             {
                 case 480: // Casa 1: Noroeste (Casa del Sabio Eldor)
                     houseName = "Casa del Sabio Eldor";
                     doorMessage = "Hogar del Sabio Eldor. La puerta tiene símbolos arcanos y un suave brillo mágico.";
+                    spriteSubPath = "Buildings/House_Hay_4_Purple.png";
                     break;
                 case 479: // Casa 2: Mansión Norte
                     houseName = "Gran Mansión del Norte";
                     doorMessage = "Residencia principal del pueblo. Las ventanas miran hacia las montañas nevadas.";
+                    spriteSubPath = "Buildings/House_Hay_3.png";
                     break;
                 case 478: // Casa 3: Granja de Trigo (Sureste)
                     houseName = "Granja de Trigo";
                     doorMessage = "Granja comunitaria del pueblo. Hay costales de semillas y trigo apilados.";
+                    spriteSubPath = "Buildings/House_Hay_2.png";
                     break;
                 case 477: // Casa 4: Casa de Lili (Noreste)
                     houseName = "Hogar de Lili y Familia";
                     doorMessage = "Pequeña y acogedora casa de campo. En la repisa hay flores silvestres recién cortadas.";
+                    spriteSubPath = "Buildings/House_Hay_1.png";
                     break;
             }
 
-            // Collider sólido en la pared/base
-            var houseColGO = new GameObject($"HouseBase_{houseName.Replace(" ", "_")}");
-            houseColGO.transform.SetParent(parent.transform, false);
-            houseColGO.transform.position = new Vector3(colCenter.x, colCenter.y, 0);
-            var col = houseColGO.AddComponent<BoxCollider2D>();
-            col.size = colSize;
+            int sortOrder = 500 - Mathf.RoundToInt(bottomY * 10f);
 
-            // Trigger interactivo en la puerta
+            // 1. SpriteRenderer para Y-Sorting de la casa (delante o detrás del perro según la posición Y)
+            if (!string.IsNullOrEmpty(spriteSubPath))
+            {
+                var houseSprite = LoadVillageSprite(spriteSubPath);
+                if (houseSprite != null)
+                {
+                    var houseVisGO = new GameObject($"House_Visual_{houseName.Replace(" ", "_")}");
+                    houseVisGO.transform.SetParent(propsRoot.transform, false);
+                    houseVisGO.transform.position = new Vector3(centerX, bottomY, 0);
+                    var sr = houseVisGO.AddComponent<SpriteRenderer>();
+                    sr.sprite = houseSprite;
+                    sr.sortingOrder = sortOrder;
+                }
+            }
+
+            // 2. Colisión sólida que cubre el techo y las paredes (evita que el perro camine sobre el techo o traspase las paredes)
+            var houseColGO = new GameObject($"HouseBase_{houseName.Replace(" ", "_")}");
+            houseColGO.transform.SetParent(collidersRoot.transform, false);
+            float colH = h * 0.78f;
+            float colW = w * 0.90f;
+            houseColGO.transform.position = new Vector3(centerX, bottomY + colH * 0.5f + 0.15f, 0);
+            var col = houseColGO.AddComponent<BoxCollider2D>();
+            col.size = new Vector2(colW, colH);
+
+            // 3. Trigger interactivo en la puerta (en la base inferior de la casa)
             var doorGO = new GameObject($"Door_{houseName.Replace(" ", "_")}");
-            doorGO.transform.SetParent(parent.transform, false);
-            doorGO.transform.position = new Vector3(doorPos.x, doorPos.y, 0);
+            doorGO.transform.SetParent(collidersRoot.transform, false);
+            doorGO.transform.position = new Vector3(centerX, bottomY + 0.3f, 0);
             var doorCol = doorGO.AddComponent<BoxCollider2D>();
             doorCol.isTrigger = true;
-            doorCol.size = new Vector2(1.5f, 1.2f);
+            doorCol.size = new Vector2(1.5f, 1.0f);
             var doorComp = doorGO.AddComponent<DoorInteractable>();
             doorComp.houseName = houseName;
             doorComp.doorMessage = doorMessage;

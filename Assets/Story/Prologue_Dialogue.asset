@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d, type: 3}\n  m_Name: Prologue_Dialogue
+  dialogueTitle: 'Prologo: El Amigo Perdido'
+  nextSceneOnComplete: Village_Scene
+  lines:
+  - speakerName: Rocky (Akita)
+    speakerPortrait: {fileID: 21300000, guid: 65292f423166178aa731902ba8084bac, type: 3}
+    text: "¡Que hermosa tarde para jugar en la villa! ¿A quien le toca ir por la pelota?"
+    typingSpeed: 0.025
+  - speakerName: Barnaby (San Bernardo)
+    speakerPortrait: {fileID: 21300000, guid: 264686ca0935e03bb3fdd587022d5fb4, type: 3}
+    text: "¡Yo la lance hacia la colina! Pero fue con mucha fuerza... rodo cerca del bosque prohibido."
+    typingSpeed: 0.025
+  - speakerName: Max (Golden Retriever)
+    speakerPortrait: {fileID: 21300000, guid: 4feeb417e89388d3d4149215eb6c8bc7, type: 3}
+    text: "¡No se preocupen, yo soy el mas rapido! ¡Ire por ella en un segundo, esperenme aqui!"
+    typingSpeed: 0.025
+  - speakerName: Narrador
+    speakerPortrait: {fileID: 0}
+    text: "Max corrio colina abajo... Los minutos pasaron y el cielo empezo a oscurecerse, pero Max no regresaba."
+    typingSpeed: 0.03
+  - speakerName: Rocky (Akita)
+    speakerPortrait: {fileID: 21300000, guid: 65292f423166178aa731902ba8084bac, type: 3}
+    text: "¡Ya ha pasado demasiado tiempo! El bosque antiguo esta lleno de ruinas y trampas peligrosas..."
+    typingSpeed: 0.025
+  - speakerName: Barnaby (San Bernardo)
+    speakerPortrait: {fileID: 21300000, guid: 264686ca0935e03bb3fdd587022d5fb4, type: 3}
+    text: "¡Un amigo nunca abandona a otro amigo! ¡El poder de nuestra amistad nos guiara! ¡Vamos a rescatar a Max!"
+    typingSpeed: 0.025

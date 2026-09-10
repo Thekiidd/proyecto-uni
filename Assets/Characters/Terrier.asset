@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95aceafd2d60dbe4c91faa9bd62c5661, type: 3}
+  m_Name: Terrier
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.Core.CharacterData
+  characterName: Terrier RPG
+  description: Perrito audaz con animaciones completas en 4 direcciones (frente,
+    espalda y laterales). Disenado especialmente para la aldea sin deformarse!
+  portrait: {fileID: -286705165392600020, guid: b1c55abc92d5667499da6c868dfc6207,
+    type: 3}
+  animatorController: {fileID: 9100000, guid: 871fb58438063a3429256e9550d0d378, type: 2}
+  moveSpeed: 8
+  jumpStrength: 16
+  gravityModifier: 2.8
+  hasDoubleJump: 1
+  hasDash: 0
+  dashSpeed: 0
+  startingLives: 4
+  characterColor: {r: 0.75, g: 0.55, b: 0.35, a: 1}
+  idleSprite: {fileID: -286705165392600020, guid: b1c55abc92d5667499da6c868dfc6207,
+    type: 3}
+  runSprite: {fileID: 5701750985769163004, guid: b1c55abc92d5667499da6c868dfc6207,
+    type: 3}
+  idleFrames:
+  - {fileID: -286705165392600020, guid: b1c55abc92d5667499da6c868dfc6207, type: 3}
+  runFrames:
+  - {fileID: 5701750985769163004, guid: b1c55abc92d5667499da6c868dfc6207, type: 3}
+  - {fileID: 4274094808245875244, guid: b1c55abc92d5667499da6c868dfc6207, type: 3}
+  - {fileID: 8516652809733515939, guid: b1c55abc92d5667499da6c868dfc6207, type: 3}
+  walkFrames:
+  - {fileID: 5701750985769163004, guid: b1c55abc92d5667499da6c868dfc6207, type: 3}
+  - {fileID: 4274094808245875244, guid: b1c55abc92d5667499da6c868dfc6207, type: 3}
+  - {fileID: 8516652809733515939, guid: b1c55abc92d5667499da6c868dfc6207, type: 3}
+  deathFrames:
+  - {fileID: -1521407241777775827, guid: b1c55abc92d5667499da6c868dfc6207, type: 3}
+  hurtFrames: []
+  scratchFrames: []
+  stretchFrames: []
+  lickFrames: []
+  lick2Frames: []
+  barkFrames: []
+  sitFrames: []
+  layDownFrames:
+  - {fileID: -1521407241777775827, guid: b1c55abc92d5667499da6c868dfc6207, type: 3}
+  - {fileID: 1956031345282213291, guid: b1c55abc92d5667499da6c868dfc6207, type: 3}
+  sleepFrames:
+  - {fileID: -1521407241777775827, guid: b1c55abc92d5667499da6c868dfc6207, type: 3}
+  - {fileID: 1956031345282213291, guid: b1c55abc92d5667499da6c868dfc6207, type: 3}

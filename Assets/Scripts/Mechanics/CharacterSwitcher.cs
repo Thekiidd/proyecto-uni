@@ -38,7 +38,7 @@ namespace Platformer.Mechanics
             // Si la lista está vacía, buscamos todos los PlayerControllers en la escena
             if (characters.Count == 0)
             {
-                characters.AddRange(FindObjectsByType<PlayerController>(FindObjectsSortMode.None));
+                characters.AddRange(FindObjectsByType<PlayerController>());
             }
 
             if (characters.Count > 0)

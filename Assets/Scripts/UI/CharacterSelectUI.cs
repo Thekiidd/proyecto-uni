@@ -41,20 +41,17 @@ namespace Platformer.UI
             if (btnRight != null) { btnRight.onClick.RemoveAllListeners(); btnRight.onClick.AddListener(NextCharacter); }
 
 #if UNITY_EDITOR
-            if (characters == null || characters.Length < 6)
+            var guids = UnityEditor.AssetDatabase.FindAssets("t:CharacterData", new[] { "Assets/Characters" });
+            if (guids.Length > 0 && (characters == null || characters.Length != guids.Length))
             {
-                var guids = UnityEditor.AssetDatabase.FindAssets("t:CharacterData", new[] { "Assets/Characters" });
-                if (guids.Length > 0)
+                var list = new System.Collections.Generic.List<CharacterData>();
+                foreach (var g in guids)
                 {
-                    var list = new System.Collections.Generic.List<CharacterData>();
-                    foreach (var g in guids)
-                    {
-                        var path = UnityEditor.AssetDatabase.GUIDToAssetPath(g);
-                        var cd = UnityEditor.AssetDatabase.LoadAssetAtPath<CharacterData>(path);
-                        if (cd != null && !list.Contains(cd)) list.Add(cd);
-                    }
-                    if (list.Count > 0) characters = list.ToArray();
+                    var path = UnityEditor.AssetDatabase.GUIDToAssetPath(g);
+                    var cd = UnityEditor.AssetDatabase.LoadAssetAtPath<CharacterData>(path);
+                    if (cd != null && !list.Contains(cd)) list.Add(cd);
                 }
+                if (list.Count > 0) characters = list.ToArray();
             }
 #endif
 

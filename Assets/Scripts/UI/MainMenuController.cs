@@ -13,10 +13,19 @@ namespace Platformer.UI
         [Header("Paneles")]
         [SerializeField] private GameObject panelMain;           // Panel con botones principales
         [SerializeField] private GameObject panelCharacterSelect; // Panel de selección de personaje
+        [SerializeField] private GameObject panelSettings;       // Panel de ajustes
+        [SerializeField] private GameObject panelHelp;           // Panel de ayuda/controles
 
         [Header("Botones Menú Principal")]
-        [SerializeField] private Button btnPlay;
-        [SerializeField] private Button btnQuit;
+        [SerializeField] private Button btnStory;    // Jugar Modo Historia (Prólogo)
+        [SerializeField] private Button btnPlay;     // Selección de Perro Libre
+        [SerializeField] private Button btnSettings; // Abrir Ajustes
+        [SerializeField] private Button btnHelp;     // Abrir Ayuda
+        [SerializeField] private Button btnQuit;     // Salir
+
+        [Header("Botones Modales")]
+        [SerializeField] private Button btnSettingsBack;
+        [SerializeField] private Button btnHelpBack;
 
         [Header("Botones Selección de Personaje")]
         [SerializeField] private Button btnStart;   // Confirmar personaje y jugar
@@ -27,7 +36,7 @@ namespace Platformer.UI
 
         [Header("Animación de Fondo")]
         [SerializeField] private RectTransform backgroundTransform;
-        [SerializeField] private float bgScrollSpeed = 20f;
+        // [SerializeField] private float bgScrollSpeed = 0f;
 
         private void Start()
         {
@@ -36,35 +45,65 @@ namespace Platformer.UI
 
             ShowMainPanel();
 
-            btnPlay.onClick.AddListener(ShowCharacterSelect);
-            btnQuit.onClick.AddListener(QuitGame);
-            btnStart.onClick.AddListener(StartGame);
-            btnBack.onClick.AddListener(ShowMainPanel);
-        }
+            if (btnStory != null) btnStory.onClick.AddListener(StartStoryMode);
+            if (btnPlay != null) btnPlay.onClick.AddListener(ShowCharacterSelect);
+            if (btnSettings != null) btnSettings.onClick.AddListener(ShowSettings);
+            if (btnHelp != null) btnHelp.onClick.AddListener(ShowHelp);
+            if (btnQuit != null) btnQuit.onClick.AddListener(QuitGame);
 
-        private void Update()
-        {
-            // Desplazamiento suave del fondo
-            if (backgroundTransform != null)
-            {
-                backgroundTransform.anchoredPosition += Vector2.left * bgScrollSpeed * Time.deltaTime;
-                if (backgroundTransform.anchoredPosition.x < -1920f)
-                    backgroundTransform.anchoredPosition = Vector2.zero;
-            }
+            if (btnStart != null) btnStart.onClick.AddListener(StartGame);
+            if (btnBack != null) btnBack.onClick.AddListener(ShowMainPanel);
+            if (btnSettingsBack != null) btnSettingsBack.onClick.AddListener(ShowMainPanel);
+            if (btnHelpBack != null) btnHelpBack.onClick.AddListener(ShowMainPanel);
         }
 
         private void ShowMainPanel()
         {
-            panelMain.SetActive(true);
-            panelCharacterSelect.SetActive(false);
+            if (panelMain != null) panelMain.SetActive(true);
+            if (panelCharacterSelect != null) panelCharacterSelect.SetActive(false);
+            if (panelSettings != null) panelSettings.SetActive(false);
+            if (panelHelp != null) panelHelp.SetActive(false);
             Time.timeScale = 1f;
         }
 
         private void ShowCharacterSelect()
         {
-            panelMain.SetActive(false);
-            panelCharacterSelect.SetActive(true);
-            characterSelectUI.Initialize();
+            if (panelMain != null) panelMain.SetActive(false);
+            if (panelSettings != null) panelSettings.SetActive(false);
+            if (panelHelp != null) panelHelp.SetActive(false);
+            if (panelCharacterSelect != null)
+            {
+                panelCharacterSelect.SetActive(true);
+                if (characterSelectUI != null) characterSelectUI.Initialize();
+            }
+        }
+
+        private void ShowSettings()
+        {
+            if (panelMain != null) panelMain.SetActive(false);
+            if (panelCharacterSelect != null) panelCharacterSelect.SetActive(false);
+            if (panelHelp != null) panelHelp.SetActive(false);
+            if (panelSettings != null) panelSettings.SetActive(true);
+        }
+
+        private void ShowHelp()
+        {
+            if (panelMain != null) panelMain.SetActive(false);
+            if (panelCharacterSelect != null) panelCharacterSelect.SetActive(false);
+            if (panelSettings != null) panelSettings.SetActive(false);
+            if (panelHelp != null) panelHelp.SetActive(true);
+        }
+
+        private void StartStoryMode()
+        {
+            Debug.Log("[MainMenu] Iniciando Modo Historia: Prólogo");
+            // Cargar escena de prólogo si existe, de lo contrario ir a VillageMap
+            if (Application.CanStreamedLevelBeLoaded("Prologue_Story"))
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Prologue_Story");
+            else if (SceneLoader.Instance != null)
+                SceneLoader.Instance.LoadVillage();
+            else
+                UnityEngine.SceneManagement.SceneManager.LoadScene(GameData.VillageScene);
         }
 
         private void StartGame()

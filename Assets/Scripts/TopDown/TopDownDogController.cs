@@ -34,6 +34,8 @@ namespace Platformer.TopDown
         private Sprite[] activeSpecialFrames;
         private int specialFrameIdx;
         private float specialAnimTimer;
+        private Vector2 lastMoveDirection = Vector2.down;
+        private bool isRPGController = false;
 
         private void Awake()
         {
@@ -48,6 +50,13 @@ namespace Platformer.TopDown
             // Configurar Rigidbody2D para movimiento cenital
             rb.gravityScale = 0f;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            var col = GetComponent<CircleCollider2D>();
+            if (col != null)
+            {
+                col.radius = 0.32f;
+                col.offset = new Vector2(0f, -0.15f);
+            }
 
             try
             {
@@ -71,7 +80,8 @@ namespace Platformer.TopDown
             #if UNITY_EDITOR
             else if (characterData == null)
             {
-                characterData = UnityEditor.AssetDatabase.LoadAssetAtPath<CharacterData>("Assets/Characters/Runner.asset");
+                characterData = UnityEditor.AssetDatabase.LoadAssetAtPath<CharacterData>("Assets/Characters/Terrier.asset")
+                             ?? UnityEditor.AssetDatabase.LoadAssetAtPath<CharacterData>("Assets/Characters/Runner.asset");
             }
             #endif
 
@@ -90,6 +100,16 @@ namespace Platformer.TopDown
                     animator.enabled = true;
                     animator.Rebind();
                     animator.Update(0f);
+
+                    isRPGController = false;
+                    foreach (var param in animator.parameters)
+                    {
+                        if (param.name == "moveX")
+                        {
+                            isRPGController = true;
+                            break;
+                        }
+                    }
                 }
             }
         }
@@ -131,17 +151,31 @@ namespace Platformer.TopDown
 
             movementInput = input.normalized;
 
-            // Orientación horizontal del sprite (mirar a la izquierda o derecha)
-            if (movementInput.x > 0.05f && spriteRenderer != null)
+            if (movementInput.sqrMagnitude > 0.01f)
+            {
+                lastMoveDirection = movementInput;
+            }
+
+            // Orientación horizontal del sprite
+            if (!isRPGController)
+            {
+                if (movementInput.x > 0.05f && spriteRenderer != null)
+                    spriteRenderer.flipX = false;
+                else if (movementInput.x < -0.05f && spriteRenderer != null)
+                    spriteRenderer.flipX = true;
+            }
+            else if (spriteRenderer != null)
+            {
+                // El perro RPG tiene animaciones nativas en 4 direcciones; no debe invertirse
                 spriteRenderer.flipX = false;
-            else if (movementInput.x < -0.05f && spriteRenderer != null)
-                spriteRenderer.flipX = true;
+            }
 
             // Orden de capa por profundidad Y (efecto RPG: delante o detrás de casas/árboles)
             // Base en 500 para estar siempre por encima del fondo (-1000) y ordenar entre objetos
+            // Usamos la posición de las patas (y - 0.2f) para que coincida exactamente con el contacto del suelo
             if (spriteRenderer != null)
             {
-                spriteRenderer.sortingOrder = 500 - Mathf.RoundToInt(transform.position.y * 10f);
+                spriteRenderer.sortingOrder = 500 - Mathf.RoundToInt((transform.position.y - 0.2f) * 10f);
             }
 
             UpdateAnimation(movementInput.sqrMagnitude > 0.01f);
@@ -241,6 +275,15 @@ namespace Platformer.TopDown
 
             if (animator != null && animator.runtimeAnimatorController != null && animator.enabled)
             {
+                if (isRPGController)
+                {
+                    animator.SetFloat("moveX", movementInput.x);
+                    animator.SetFloat("moveY", movementInput.y);
+                    animator.SetFloat("lastMoveX", lastMoveDirection.x);
+                    animator.SetFloat("lastMoveY", lastMoveDirection.y);
+                    animator.SetBool("isMoving", isMoving);
+                }
+
                 // En vista cenital usamos la magnitud completa del movimiento (W, A, S, D)
                 animator.SetFloat("velocityX", isMoving ? Mathf.Max(3f, movementInput.magnitude * 3f) : 0f);
                 animator.SetBool("grounded", true);

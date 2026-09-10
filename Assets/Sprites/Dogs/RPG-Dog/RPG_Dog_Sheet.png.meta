@@ -1,0 +1,567 @@
+fileFormatVersion: 2
+guid: b1c55abc92d5667499da6c868dfc6207
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 165560300369452789
+    second: RPG_Dog_Sheet_0
+  - first:
+      213: -6467345353362999729
+    second: RPG_Dog_Sheet_1
+  - first:
+      213: -8496137954462902782
+    second: RPG_Dog_Sheet_2
+  - first:
+      213: 2795371213810736136
+    second: RPG_Dog_Sheet_3
+  - first:
+      213: 2400679106082809234
+    second: RPG_Dog_Sheet_4
+  - first:
+      213: -2302887485342817076
+    second: RPG_Dog_Sheet_5
+  - first:
+      213: 5839933210327003802
+    second: RPG_Dog_Sheet_6
+  - first:
+      213: -5292522511430138418
+    second: RPG_Dog_Sheet_7
+  - first:
+      213: -7540461920655488821
+    second: RPG_Dog_Sheet_8
+  - first:
+      213: -4311710720784057706
+    second: RPG_Dog_Sheet_9
+  - first:
+      213: 3713539339328981388
+    second: RPG_Dog_Sheet_10
+  - first:
+      213: -5993088912823188844
+    second: RPG_Dog_Sheet_11
+  - first:
+      213: -428644708949123052
+    second: RPG_Dog_Sheet_12
+  - first:
+      213: 1098647026840737914
+    second: RPG_Dog_Sheet_13
+  - first:
+      213: -2630630311616616716
+    second: RPG_Dog_Sheet_14
+  - first:
+      213: -1521407241777775827
+    second: RPG_Dog_Sleep_0
+  - first:
+      213: 1956031345282213291
+    second: RPG_Dog_Sleep_1
+  - first:
+      213: 5924848645332571674
+    second: RPG_Dog_Sleep_2
+  - first:
+      213: 8413537678914151892
+    second: RPG_Dog_Up_0
+  - first:
+      213: 829066918212215926
+    second: RPG_Dog_Up_Idle
+  - first:
+      213: 1196310892781517769
+    second: RPG_Dog_Up_1
+  - first:
+      213: 5701750985769163004
+    second: RPG_Dog_Right_0
+  - first:
+      213: 4274094808245875244
+    second: RPG_Dog_Right_Idle
+  - first:
+      213: 8516652809733515939
+    second: RPG_Dog_Right_1
+  - first:
+      213: 6765645678060897540
+    second: RPG_Dog_Left_0
+  - first:
+      213: 5278421188093832869
+    second: RPG_Dog_Left_Idle
+  - first:
+      213: 7567256955863836097
+    second: RPG_Dog_Left_1
+  - first:
+      213: 662446074414351980
+    second: RPG_Dog_Down_0
+  - first:
+      213: -286705165392600020
+    second: RPG_Dog_Down_Idle
+  - first:
+      213: 8802993304302297652
+    second: RPG_Dog_Down_1
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RPG_Dog_Sleep_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2bf023ac20e2eae0800000000000000
+      internalID: -1521407241777775827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Sleep_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba563112528352b10800000000000000
+      internalID: 1956031345282213291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Sleep_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a169005a37a493250800000000000000
+      internalID: 5924848645332571674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Up_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d5ea0031f3e2c470800000000000000
+      internalID: 8413537678914151892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Up_Idle
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 674211338ff618b00800000000000000
+      internalID: 829066918212215926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Up_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb3c2d2b662a9010800000000000000
+      internalID: 1196310892781517769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Right_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf81188ff40b02f40800000000000000
+      internalID: 5701750985769163004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Right_Idle
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2236dd3592a05b30800000000000000
+      internalID: 4274094808245875244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Right_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aaaf777b9a313670800000000000000
+      internalID: 8516652809733515939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4050af4f5e664ed50800000000000000
+      internalID: 6765645678060897540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Left_Idle
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae6a33ba18b04940800000000000000
+      internalID: 5278421188093832869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Left_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c52e5abb1c440960800000000000000
+      internalID: 7567256955863836097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Down_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c66c154e13b713900800000000000000
+      internalID: 662446074414351980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Down_Idle
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c24218dcb2b650cf0800000000000000
+      internalID: -286705165392600020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPG_Dog_Down_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 432a41f15c38a2a70800000000000000
+      internalID: 8802993304302297652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RPG_Dog_Down_0: 662446074414351980
+      RPG_Dog_Down_1: 8802993304302297652
+      RPG_Dog_Down_Idle: -286705165392600020
+      RPG_Dog_Left_0: 6765645678060897540
+      RPG_Dog_Left_1: 7567256955863836097
+      RPG_Dog_Left_Idle: 5278421188093832869
+      RPG_Dog_Right_0: 5701750985769163004
+      RPG_Dog_Right_1: 8516652809733515939
+      RPG_Dog_Right_Idle: 4274094808245875244
+      RPG_Dog_Sheet_0: 165560300369452789
+      RPG_Dog_Sheet_1: -6467345353362999729
+      RPG_Dog_Sheet_10: 3713539339328981388
+      RPG_Dog_Sheet_11: -5993088912823188844
+      RPG_Dog_Sheet_12: -428644708949123052
+      RPG_Dog_Sheet_13: 1098647026840737914
+      RPG_Dog_Sheet_14: -2630630311616616716
+      RPG_Dog_Sheet_2: -8496137954462902782
+      RPG_Dog_Sheet_3: 2795371213810736136
+      RPG_Dog_Sheet_4: 2400679106082809234
+      RPG_Dog_Sheet_5: -2302887485342817076
+      RPG_Dog_Sheet_6: 5839933210327003802
+      RPG_Dog_Sheet_7: -5292522511430138418
+      RPG_Dog_Sheet_8: -7540461920655488821
+      RPG_Dog_Sheet_9: -4311710720784057706
+      RPG_Dog_Sleep_0: -1521407241777775827
+      RPG_Dog_Sleep_1: 1956031345282213291
+      RPG_Dog_Sleep_2: 5924848645332571674
+      RPG_Dog_Up_0: 8413537678914151892
+      RPG_Dog_Up_1: 1196310892781517769
+      RPG_Dog_Up_Idle: 829066918212215926
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

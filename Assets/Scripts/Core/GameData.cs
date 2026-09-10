@@ -1,10 +1,11 @@
 using UnityEngine;
+using Platformer.Security;
 
 namespace Platformer.Core
 {
     /// <summary>
     /// Singleton que persiste entre escenas.
-    /// Guarda el personaje seleccionado, nivel actual y puntuación.
+    /// Guarda el personaje seleccionado, nivel actual y puntuación con protección de memoria y cifrado.
     /// </summary>
     public class GameData : MonoBehaviour
     {
@@ -13,12 +14,12 @@ namespace Platformer.Core
         [Header("Personaje Seleccionado")]
         public CharacterData selectedCharacter;
 
-        [Header("Estado del Juego")]
+        [Header("Estado del Juego (Protegido en Memoria contra Cheat Engine)")]
         public int currentLevel = 1;
         public int totalLevels = 3;
-        public int score = 0;
-        public int lives = 3;
-        public int coins = 0;
+        public ObfuscatedInt score = 0;
+        public ObfuscatedInt lives = 3;
+        public ObfuscatedInt coins = 0;
 
         public event System.Action<int> OnCoinsChanged;
         public event System.Action<int> OnLivesChanged;
@@ -55,6 +56,31 @@ namespace Platformer.Core
             }
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            LoadSecureProgress();
+        }
+
+        public void LoadSecureProgress()
+        {
+            var data = SecureSaveSystem.Load(out var status);
+            if (data != null && status == SaveLoadStatus.Success)
+            {
+                currentLevel = data.currentLevel;
+                coins = data.totalCoins;
+                score = data.highScore;
+                Debug.Log($"[GameData] Partida cargada de forma segura. Nivel: {currentLevel}, Monedas: {coins}, Puntuación: {score}");
+            }
+        }
+
+        public void SaveSecureProgress()
+        {
+            var data = new GameSaveData
+            {
+                selectedDogName = selectedCharacter != null ? selectedCharacter.characterName : "Golden Retriever",
+                currentLevel = currentLevel,
+                totalCoins = coins.Value,
+                highScore = score.Value
+            };
+            SecureSaveSystem.Save(data);
         }
 
         public void StartNewGame(CharacterData character)
@@ -68,26 +94,30 @@ namespace Platformer.Core
             lives = character != null ? character.startingLives : 3;
             OnCoinsChanged?.Invoke(coins);
             OnLivesChanged?.Invoke(lives);
+            SaveSecureProgress();
         }
 
         public void AddScore(int points)
         {
             score += points;
+            SaveSecureProgress();
         }
 
         public void AddCoins(int amount = 1)
         {
             coins += amount;
             OnCoinsChanged?.Invoke(coins);
+            SaveSecureProgress();
         }
 
-        public int levelStartCoins = 0;
-        public int levelStartScore = 0;
+        public ObfuscatedInt levelStartCoins = 0;
+        public ObfuscatedInt levelStartScore = 0;
 
         public void SaveLevelCheckpoint()
         {
             levelStartCoins = coins;
             levelStartScore = score;
+            SaveSecureProgress();
         }
 
         public void ResetLevelCoins()
@@ -104,6 +134,7 @@ namespace Platformer.Core
             levelStartCoins = 0;
             levelStartScore = 0;
             OnCoinsChanged?.Invoke(coins);
+            SaveSecureProgress();
         }
 
         public void LoseLife()
