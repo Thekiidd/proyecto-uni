@@ -18,7 +18,7 @@ namespace Platformer.EditorTools
     public static class VillageSceneBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Village_Scene.unity";
-        private const string BUILD_KEY = "VillageScene_Build_v5";
+        private const string BUILD_KEY = "VillageScene_Build_v6";
 
         static VillageSceneBuilder()
         {
@@ -221,6 +221,43 @@ namespace Platformer.EditorTools
             // Target de la cámara al jugador
             camFollow.target = playerGO.transform;
 
+            // 12. PUERTAS DE CASAS → SceneTransition a House_Interior
+            var doorsRoot = new GameObject("[House_Doors]");
+            // Posiciones aproximadas de las 4 casas del mapa (Bottom-center de cada puerta)
+            // Ajustadas a las coordenadas Tiled → Unity del mapa Beginning Fields
+            Vector3[] doorPositions = new Vector3[]
+            {
+                new Vector3(-7.5f,  3.5f, 0f),   // Casa 1 (noroeste)
+                new Vector3( 5.5f,  3.5f, 0f),   // Casa 2 (noreste)
+                new Vector3(-7.5f, -5.5f, 0f),   // Casa 3 (suroeste)
+                new Vector3( 5.5f, -5.5f, 0f),   // Casa 4 (sureste)
+            };
+            string[] doorNames = new string[] { "Puerta_Casa1", "Puerta_Casa2", "Puerta_Casa3", "Puerta_Casa4" };
+
+            for (int i = 0; i < doorPositions.Length; i++)
+            {
+                var door = new GameObject(doorNames[i]);
+                door.transform.SetParent(doorsRoot.transform, false);
+                door.transform.position = doorPositions[i];
+
+                // Visualización: quad semi-transparente verde
+                var doorSR = door.AddComponent<SpriteRenderer>();
+                doorSR.color        = new Color(0.2f, 0.9f, 0.3f, 0.35f);
+                doorSR.sortingOrder = 600;
+
+                // Collider trigger
+                var doorCol = door.AddComponent<BoxCollider2D>();
+                doorCol.size      = new Vector2(1.2f, 0.5f);
+                doorCol.offset    = new Vector2(0f, 0f);
+                doorCol.isTrigger = true;
+
+                // SceneTransition → House_Interior
+                var trans = door.AddComponent<SceneTransition>();
+                trans.targetScene   = "House_Interior";
+                trans.promptMessage = "[E] Entrar a la casa";
+                trans.fadeDuration  = 0.4f;
+            }
+
             // 11. Guardar Escena
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene, SCENE_PATH);
@@ -237,13 +274,12 @@ namespace Platformer.EditorTools
             {
                 EditorUtility.DisplayDialog("Aldea Actualizada",
                     "¡La aldea (Village_Scene) ha sido reconstruida con éxito!\n\n" +
-                    "• Escaleras de piedra 100% transitables: ya puedes subir y bajar libremente.\n" +
-                    "• NPCs reubicados en lugares naturales del suelo y caminos:\n" +
-                    "   - Sabio Eldor: en el camino de la plaza central.\n" +
-                    "   - Granjero Tomás y San Bernardo: en el camino frente a la granja.\n" +
-                    "   - Lili: en el campo de flores frente a la casa este.\n" +
-                    "   - Guardia Bruno: custodiando el portón oeste.\n" +
-                    "• Puertas de casas y pozo examinables con [E].\n\n" +
+                    "• 4 Puertas de casas activas: acércate y presiona [E] para entrar.\n" +
+                    "• NPCs originales (Sabio Eldor, Lili, Granjero Tomás, Guardia Bruno).\n" +
+                    "• Para añadir NPCs aldeanos de Pixel Crawler usa:\n" +
+                    "  Tools > Village > Spawn Village NPCs\n" +
+                    "• Para construir el interior: \n" +
+                    "  Tools > Village > Build House Interior Scene\n\n" +
                     "¡Presiona Play para probarlo!",
                     "¡Excelente!");
             }
