@@ -151,7 +151,7 @@ namespace Kimaya
         private bool SceneExists(string n)
         {
             for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
-                if (SceneUtility.GetScenePathByIndex(i).Contains(n)) return true;
+                if (SceneUtility.GetScenePathByBuildIndex(i).Contains(n)) return true;
             return false;
         }
 

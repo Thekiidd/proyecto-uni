@@ -90,7 +90,7 @@ namespace Kimaya
         private void AnimateFairies()
         {
             // Pulso sutil en los portales
-            var portals = FindObjectsByType<HubPortal>(FindObjectsSortMode.None);
+            var portals = FindObjectsByType<HubPortal>(FindObjectsInactive.Exclude);
             foreach (var p in portals)
                 p.AnimatePulse(_t);
         }
@@ -244,7 +244,7 @@ namespace Kimaya
             {
                 if (cam != null)
                 {
-                    var sprites = FindObjectsByType<SpriteRenderer>(FindObjectsSortMode.None);
+                    var sprites = FindObjectsByType<SpriteRenderer>(FindObjectsInactive.Exclude);
                     foreach (var sr in sprites)
                         if (sr.GetComponentInParent<HubCharacterController>() != null
                             || sr.name == "Sprite")

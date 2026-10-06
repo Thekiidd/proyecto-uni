@@ -75,7 +75,7 @@ namespace Kimaya
             onActivated?.Invoke();
 
             // Notificar a todas las puertas del mismo color
-            foreach (var door in FindObjectsByType<ColoredDoor>(FindObjectsSortMode.None))
+            foreach (var door in FindObjectsByType<ColoredDoor>(FindObjectsInactive.Exclude))
                 if (door.doorColor == switchColor) door.Open();
         }
 
@@ -86,7 +86,7 @@ namespace Kimaya
             UpdateVisual();
             onDeactivated?.Invoke();
 
-            foreach (var door in FindObjectsByType<ColoredDoor>(FindObjectsSortMode.None))
+            foreach (var door in FindObjectsByType<ColoredDoor>(FindObjectsInactive.Exclude))
                 if (door.doorColor == switchColor) door.Close();
         }
 

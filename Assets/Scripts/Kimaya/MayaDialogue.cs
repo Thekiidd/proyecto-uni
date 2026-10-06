@@ -69,7 +69,7 @@ namespace Kimaya
             ShowLine(lines[0]);
 
             // Detener jugadores mientras habla Maya
-            foreach (var pc in FindObjectsByType<PlayerController2D>(FindObjectsSortMode.None))
+            foreach (var pc in FindObjectsByType<PlayerController2D>(FindObjectsInactive.Exclude))
                 pc.SetActive(false);
         }
 
@@ -122,7 +122,7 @@ namespace Kimaya
             _showing = false;
 
             // Reactivar jugadores
-            foreach (var pc in FindObjectsByType<PlayerController2D>(FindObjectsSortMode.None))
+            foreach (var pc in FindObjectsByType<PlayerController2D>(FindObjectsInactive.Exclude))
                 pc.SetActive(true);
 
             onDialogueFinished?.Invoke();

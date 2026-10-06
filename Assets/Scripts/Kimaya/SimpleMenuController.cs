@@ -34,7 +34,7 @@ namespace Kimaya
         {
             for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings; i++)
             {
-                string path = UnityEngine.SceneManagement.SceneUtility.GetScenePathByIndex(i);
+                string path = UnityEngine.SceneManagement.SceneUtility.GetScenePathByBuildIndex(i);
                 if (path.Contains(name)) return true;
             }
             return false;
