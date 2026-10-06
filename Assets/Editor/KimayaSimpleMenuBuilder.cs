@@ -48,6 +48,11 @@ namespace Platformer.EditorTools
             sc.referenceResolution = new Vector2(1920, 1080);
             cvGo.AddComponent<GraphicRaycaster>();
 
+            // EventSystem para recibir clics del ratón
+            var esGo = new GameObject("EventSystem");
+            esGo.AddComponent<UnityEngine.EventSystems.EventSystem>();
+            esGo.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+
             // Fondo semi-oscuro sobre el canvas
             CreatePanel(cvGo.transform, "Overlay",
                 new Color(0f, 0f, 0f, 0.45f),
@@ -147,6 +152,7 @@ namespace Platformer.EditorTools
         {
             var go = new GameObject(name); go.transform.SetParent(parent, false);
             var img = go.AddComponent<Image>(); img.color = color;
+            img.raycastTarget = false;
             var rt  = go.GetComponent<RectTransform>();
             rt.anchorMin = anchorMin; rt.anchorMax = anchorMax;
             rt.pivot = Vector2.one * 0.5f;
@@ -161,6 +167,7 @@ namespace Platformer.EditorTools
             t.text = text; t.color = color; t.fontSize = fontSize;
             t.fontStyle = style; t.alignment = TextAnchor.MiddleCenter;
             t.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            t.raycastTarget = false;
             var rt = go.GetComponent<RectTransform>();
             rt.anchorMin = rt.anchorMax = rt.pivot = Vector2.one * 0.5f;
             rt.anchoredPosition = pos; rt.sizeDelta = size;
@@ -171,6 +178,7 @@ namespace Platformer.EditorTools
             var go = new GameObject("Btn_Play"); go.transform.SetParent(parent, false);
             var img = go.AddComponent<Image>();
             img.color = new Color(0.18f, 0.6f, 0.18f);
+            img.raycastTarget = true;
             var btn = go.AddComponent<Button>();
             var cols = btn.colors;
             cols.normalColor      = new Color(0.18f, 0.6f, 0.18f);
@@ -187,6 +195,7 @@ namespace Platformer.EditorTools
             lbl.text = "▶   JUGAR"; lbl.color = Color.white;
             lbl.fontSize = 42; lbl.alignment = TextAnchor.MiddleCenter; lbl.fontStyle = FontStyle.Bold;
             lbl.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            lbl.raycastTarget = false;
             var lrt = lblGo.GetComponent<RectTransform>();
             lrt.anchorMin = Vector2.zero; lrt.anchorMax = Vector2.one;
             lrt.offsetMin = lrt.offsetMax = Vector2.zero;

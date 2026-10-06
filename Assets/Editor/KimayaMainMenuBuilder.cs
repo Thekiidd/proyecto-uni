@@ -121,6 +121,15 @@ namespace Platformer.EditorTools
             scaler.referenceResolution = new Vector2(1920, 1080);
             canvasGo.AddComponent<GraphicRaycaster>();
 
+            // EventSystem
+            var esGo = new GameObject("EventSystem");
+            esGo.AddComponent<UnityEngine.EventSystems.EventSystem>();
+            esGo.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+
+            // Menu Controller
+            var mgrGo = new GameObject("MenuController");
+            mgrGo.AddComponent<SimpleMenuController>();
+
             // Título del juego
             CreateText(canvasGo.transform, "Titulo_Kimaya", "KIMAYA",
                 new Vector2(0, 220), new Vector2(700, 120),
@@ -205,6 +214,7 @@ namespace Platformer.EditorTools
             t.fontStyle = style;
             t.alignment = anchor;
             t.font      = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            t.raycastTarget = false;
             var rt = go.GetComponent<RectTransform>();
             rt.anchorMin = rt.anchorMax = rt.pivot = new Vector2(0.5f, 0.5f);
             rt.anchoredPosition = anchoredPos;
@@ -220,6 +230,7 @@ namespace Platformer.EditorTools
 
             var img = go.AddComponent<Image>();
             img.color = bgColor;
+            img.raycastTarget = true;
 
             var btn = go.AddComponent<Button>();
             var colors = btn.colors;
@@ -237,6 +248,7 @@ namespace Platformer.EditorTools
             t.fontSize  = fontSize;
             t.alignment = TextAnchor.MiddleCenter;
             t.font      = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            t.raycastTarget = false;
             var tRT = textGo.GetComponent<RectTransform>();
             tRT.anchorMin = Vector2.zero; tRT.anchorMax = Vector2.one;
             tRT.offsetMin = tRT.offsetMax = Vector2.zero;

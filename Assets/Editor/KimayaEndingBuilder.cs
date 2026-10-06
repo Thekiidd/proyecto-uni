@@ -45,6 +45,11 @@ namespace Platformer.EditorTools
             scaler.referenceResolution = new Vector2(1920, 1080);
             canvasGo.AddComponent<GraphicRaycaster>();
 
+            // EventSystem
+            var esGo = new GameObject("EventSystem");
+            esGo.AddComponent<UnityEngine.EventSystems.EventSystem>();
+            esGo.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+
             // Fondo del bosque mágico
             CreateImage(canvasGo.transform, "BG", new Color(0.04f, 0.1f, 0.06f),
                 Vector2.zero, new Vector2(1920, 1080), Vector2.zero, Vector2.one);

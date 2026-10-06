@@ -313,6 +313,11 @@ namespace Platformer.EditorTools
             sc.referenceResolution = new Vector2(1920, 1080);
             cvGo.AddComponent<GraphicRaycaster>();
 
+            // EventSystem
+            var esGo = new GameObject("EventSystem");
+            esGo.AddComponent<UnityEngine.EventSystems.EventSystem>();
+            esGo.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+
             // Título del Hub
             CreateUIText(cvGo.transform, "HubTitle", "🌿 El Bosque del Eco",
                 new Vector2(0, 480), new Vector2(600, 60),

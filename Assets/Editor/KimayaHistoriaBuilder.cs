@@ -43,6 +43,11 @@ namespace Platformer.EditorTools
             sc.referenceResolution = new Vector2(1920, 1080);
             cvGo.AddComponent<GraphicRaycaster>();
 
+            // EventSystem
+            var esGo = new GameObject("EventSystem");
+            esGo.AddComponent<UnityEngine.EventSystems.EventSystem>();
+            esGo.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+
             // Fondo principal (cambia de color con cada panel)
             CreateImg(cvGo.transform, "Story_MainBG", new Color(0.04f, 0.08f, 0.04f),
                 Vector2.zero, Vector2.zero, Vector2.one, Vector2.zero);

@@ -629,6 +629,11 @@ namespace Platformer.EditorTools
             canvasGo.AddComponent<UnityEngine.UI.CanvasScaler>();
             canvasGo.AddComponent<UnityEngine.UI.GraphicRaycaster>();
 
+            // EventSystem
+            var esGo = new GameObject("EventSystem");
+            esGo.AddComponent<UnityEngine.EventSystems.EventSystem>();
+            esGo.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+
             // HUD container
             var hud = new GameObject("HUD");
             hud.transform.SetParent(canvasGo.transform, false);
