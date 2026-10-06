@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d76bcdd3105f7546936804360827679, type: 3}
+  m_Name: Sabio_Eldor
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.TopDown.NPCDialogueData
+  npcName: Sabio Eldor
+  nameColor: {r: 0.6, g: 0.8, b: 1, a: 1}
+  profession: Archivista del Reino
+  greetings:
+  - "\xA1Ah, por fin llegas! Estaba rezando para que alguien valiente apareciera."
+  - "Los Cristales de Luz han desaparecido y con ellos nuestra protecci\xF3n contra
+    la oscuridad."
+  - 'Hay cinco cristales dispersos por el mundo: el Bosque Eterno, las Ruinas del
+    Norte, la Cueva de Cristal, el Pico Nevado y la Ciudad Perdida.'
+  - "Solo alguien con el coraz\xF3n puro de un perro puede recuperarlos. \xBFAceptas
+    este destino?"
+  generalLines:
+  - "Los Cristales de Luz emiten un brillo especial que solo los perros con sensibilidad
+    m\xE1gica pueden detectar."
+  - "\xBFC\xF3mo va tu b\xFAsqueda? Recuerda que el tiempo corre \u2014 la oscuridad
+    avanza desde el este."
+  - "Si encuentras gemas azules en tu camino, gu\xE1rdalas. Son fragmentos de cristal
+    que amplifican tus poderes."
+  loreLines:
+  - "Hace 500 a\xF1os, el Gran Mago Canis cre\xF3 los Cristales de Luz para proteger
+    a todos los animales del reino."
+  - "Los cristales no son solo piedras \u2014 son la esencia condensada de la amistad
+    entre perros y humanos."
+  - "La leyenda dice que quien re\xFAna los cinco cristales podr\xE1 hacer un deseo
+    para todo el reino."
+  - Los ancestros de esta aldea eran guardianes de los cristales. Esa responsabilidad
+    ahora recae en ti.
+  tipLines:
+  - "Consejo: usa el olfato \u2014 los cristales emiten un olor dulce. Cuando sientas
+    algo especial, \xA1excava!"
+  - "Los enemigos del bosque son d\xE9biles al agua. Si encuentras un estanque cerca,
+    \xFAsalo a tu favor."
+  - "Recuerda: tu cola puede ser un arma. Un giro r\xE1pido puede desorientar a los
+    slimes."
+  - "Guarda energ\xEDa para los jefes de zona. No gastes todas tus estrellas en enemigos
+    peque\xF1os."
+  dangerLines:
+  - "\xA1Ten cuidado! Los exploradores que fueron antes que t\xFA no regresaron."
+  - "La oscuridad se est\xE1 expandiendo m\xE1s r\xE1pido de lo que esper\xE1bamos.
+    \xA1Date prisa!"
+  farewells:
+  - "\xA1Ve con el viento a tu favor, noble guardi\xE1n! El reino depende de ti."
+  - "Regresa cuando tengas noticias. Estar\xE9 aqu\xED, estudiando los mapas antiguos."
+  hasQuest: 1
+  questOffer: "Recupera el primer Cristal de Luz del Bosque Eterno. El camino est\xE1
+    al oeste, tras el port\xF3n."
+  questActiveReminder: "\xBFEncontraste el cristal del Bosque Eterno? Recuerda: brilla
+    azul cuando est\xE1 cerca."
+  questComplete: "\xA1Lo lograste! Este cristal est\xE1 cargado de energ\xEDa pura.
+    El reino te lo agradece. Aqu\xED tienes tu recompensa."
+  questRewardCoins: 10

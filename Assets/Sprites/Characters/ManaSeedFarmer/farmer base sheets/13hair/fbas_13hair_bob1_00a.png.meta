@@ -1,0 +1,5135 @@
+fileFormatVersion: 2
+guid: 7458632d7c6a69b4f9f1af4b08585eb8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9105990747744520665
+    second: fbas_13hair_bob1_00a_0
+  - first:
+      213: 8970897691697225920
+    second: fbas_13hair_bob1_00a_1
+  - first:
+      213: -5108914292454895421
+    second: fbas_13hair_bob1_00a_2
+  - first:
+      213: 3509222707475910086
+    second: fbas_13hair_bob1_00a_3
+  - first:
+      213: -943866591207842438
+    second: fbas_13hair_bob1_00a_4
+  - first:
+      213: 3805455538916861829
+    second: fbas_13hair_bob1_00a_5
+  - first:
+      213: -6993834089901536466
+    second: fbas_13hair_bob1_00a_6
+  - first:
+      213: -8491597598880047607
+    second: fbas_13hair_bob1_00a_7
+  - first:
+      213: 4319759277600707987
+    second: fbas_13hair_bob1_00a_8
+  - first:
+      213: -7157492206406199574
+    second: fbas_13hair_bob1_00a_9
+  - first:
+      213: -7249896292197151238
+    second: fbas_13hair_bob1_00a_10
+  - first:
+      213: -4115954171433852857
+    second: fbas_13hair_bob1_00a_11
+  - first:
+      213: 5093654473224359215
+    second: fbas_13hair_bob1_00a_12
+  - first:
+      213: -2562921292622716274
+    second: fbas_13hair_bob1_00a_13
+  - first:
+      213: -4428386311433931931
+    second: fbas_13hair_bob1_00a_14
+  - first:
+      213: 6535372583315320399
+    second: fbas_13hair_bob1_00a_15
+  - first:
+      213: 8200926982055702038
+    second: fbas_13hair_bob1_00a_16
+  - first:
+      213: 3648898862611541977
+    second: fbas_13hair_bob1_00a_17
+  - first:
+      213: -8516299806840679151
+    second: fbas_13hair_bob1_00a_18
+  - first:
+      213: -7420602035034020518
+    second: fbas_13hair_bob1_00a_19
+  - first:
+      213: 6205304253491281757
+    second: fbas_13hair_bob1_00a_20
+  - first:
+      213: 3617936341348122181
+    second: fbas_13hair_bob1_00a_21
+  - first:
+      213: 765831671153463811
+    second: fbas_13hair_bob1_00a_22
+  - first:
+      213: -6554749426051570590
+    second: fbas_13hair_bob1_00a_23
+  - first:
+      213: -1466414688100409212
+    second: fbas_13hair_bob1_00a_24
+  - first:
+      213: 996403011691849392
+    second: fbas_13hair_bob1_00a_25
+  - first:
+      213: 7667793392965285340
+    second: fbas_13hair_bob1_00a_26
+  - first:
+      213: 1777674337774353885
+    second: fbas_13hair_bob1_00a_27
+  - first:
+      213: 4722809701079942558
+    second: fbas_13hair_bob1_00a_28
+  - first:
+      213: -1904432382746560198
+    second: fbas_13hair_bob1_00a_29
+  - first:
+      213: 1106890486332616627
+    second: fbas_13hair_bob1_00a_30
+  - first:
+      213: -4973521979605418604
+    second: fbas_13hair_bob1_00a_31
+  - first:
+      213: 3933864448021662473
+    second: fbas_13hair_bob1_00a_32
+  - first:
+      213: -2141943910676678929
+    second: fbas_13hair_bob1_00a_33
+  - first:
+      213: 5207689218451985389
+    second: fbas_13hair_bob1_00a_34
+  - first:
+      213: -5360299073880925910
+    second: fbas_13hair_bob1_00a_35
+  - first:
+      213: 1059054469000873603
+    second: fbas_13hair_bob1_00a_36
+  - first:
+      213: 2541410268943636161
+    second: fbas_13hair_bob1_00a_37
+  - first:
+      213: 7387727606881847186
+    second: fbas_13hair_bob1_00a_38
+  - first:
+      213: -4541531223417741618
+    second: fbas_13hair_bob1_00a_39
+  - first:
+      213: -452122627333345608
+    second: fbas_13hair_bob1_00a_40
+  - first:
+      213: -3321376715568178526
+    second: fbas_13hair_bob1_00a_41
+  - first:
+      213: 6493230473724962471
+    second: fbas_13hair_bob1_00a_42
+  - first:
+      213: -4104348387262111117
+    second: fbas_13hair_bob1_00a_43
+  - first:
+      213: 3168329939909870898
+    second: fbas_13hair_bob1_00a_44
+  - first:
+      213: 5034196285793638447
+    second: fbas_13hair_bob1_00a_45
+  - first:
+      213: -5583234222191679514
+    second: fbas_13hair_bob1_00a_46
+  - first:
+      213: 5847976040881468516
+    second: fbas_13hair_bob1_00a_47
+  - first:
+      213: 8810445643410114683
+    second: fbas_13hair_bob1_00a_48
+  - first:
+      213: 3813943706089633352
+    second: fbas_13hair_bob1_00a_49
+  - first:
+      213: 4918871531213034450
+    second: fbas_13hair_bob1_00a_50
+  - first:
+      213: -830258821448729111
+    second: fbas_13hair_bob1_00a_51
+  - first:
+      213: -5540639044719553219
+    second: fbas_13hair_bob1_00a_52
+  - first:
+      213: 5113488625564286894
+    second: fbas_13hair_bob1_00a_53
+  - first:
+      213: -3897260784688405886
+    second: fbas_13hair_bob1_00a_54
+  - first:
+      213: 1087463456852812927
+    second: fbas_13hair_bob1_00a_55
+  - first:
+      213: -4758592185294831052
+    second: fbas_13hair_bob1_00a_56
+  - first:
+      213: 2354357585016117941
+    second: fbas_13hair_bob1_00a_57
+  - first:
+      213: 4510048128420074449
+    second: fbas_13hair_bob1_00a_58
+  - first:
+      213: -1692988886597769555
+    second: fbas_13hair_bob1_00a_59
+  - first:
+      213: 6329428812611215427
+    second: fbas_13hair_bob1_00a_60
+  - first:
+      213: 5412107804589568506
+    second: fbas_13hair_bob1_00a_61
+  - first:
+      213: 8308515426373797190
+    second: fbas_13hair_bob1_00a_62
+  - first:
+      213: 3651101890642905624
+    second: fbas_13hair_bob1_00a_63
+  - first:
+      213: -8473003641545061063
+    second: fbas_13hair_bob1_00a_64
+  - first:
+      213: -7566280319667032869
+    second: fbas_13hair_bob1_00a_65
+  - first:
+      213: 2129645053138137977
+    second: fbas_13hair_bob1_00a_66
+  - first:
+      213: -572823399113395171
+    second: fbas_13hair_bob1_00a_67
+  - first:
+      213: 3960749479222786913
+    second: fbas_13hair_bob1_00a_68
+  - first:
+      213: -6527266988761511247
+    second: fbas_13hair_bob1_00a_69
+  - first:
+      213: -2889650745562527867
+    second: fbas_13hair_bob1_00a_70
+  - first:
+      213: 3917189966134628482
+    second: fbas_13hair_bob1_00a_71
+  - first:
+      213: 8749744403865738222
+    second: fbas_13hair_bob1_00a_72
+  - first:
+      213: 4292025901964790473
+    second: fbas_13hair_bob1_00a_73
+  - first:
+      213: -8565481258160297371
+    second: fbas_13hair_bob1_00a_74
+  - first:
+      213: -2953526318341015396
+    second: fbas_13hair_bob1_00a_75
+  - first:
+      213: -813337192769312638
+    second: fbas_13hair_bob1_00a_76
+  - first:
+      213: 3048015631474431406
+    second: fbas_13hair_bob1_00a_77
+  - first:
+      213: 8133790134089680454
+    second: fbas_13hair_bob1_00a_78
+  - first:
+      213: 5508485413859542490
+    second: fbas_13hair_bob1_00a_79
+  - first:
+      213: 4615110467091914303
+    second: fbas_13hair_bob1_00a_80
+  - first:
+      213: -3411520155866751071
+    second: fbas_13hair_bob1_00a_81
+  - first:
+      213: -5766998327190176445
+    second: fbas_13hair_bob1_00a_82
+  - first:
+      213: 8524971927285605276
+    second: fbas_13hair_bob1_00a_83
+  - first:
+      213: 7667587614625456349
+    second: fbas_13hair_bob1_00a_84
+  - first:
+      213: -4292385314440841813
+    second: fbas_13hair_bob1_00a_85
+  - first:
+      213: -6431862315451930854
+    second: fbas_13hair_bob1_00a_86
+  - first:
+      213: -5738472050385537871
+    second: fbas_13hair_bob1_00a_87
+  - first:
+      213: -4782085466831381464
+    second: fbas_13hair_bob1_00a_88
+  - first:
+      213: 2697490721658074968
+    second: fbas_13hair_bob1_00a_89
+  - first:
+      213: -8203374284621874026
+    second: fbas_13hair_bob1_00a_90
+  - first:
+      213: -6688873844362369668
+    second: fbas_13hair_bob1_00a_91
+  - first:
+      213: 3235812075449183405
+    second: fbas_13hair_bob1_00a_92
+  - first:
+      213: -3064182380270298670
+    second: fbas_13hair_bob1_00a_93
+  - first:
+      213: 2445631719826238948
+    second: fbas_13hair_bob1_00a_94
+  - first:
+      213: 2471282823103112647
+    second: fbas_13hair_bob1_00a_95
+  - first:
+      213: 4731595640981906597
+    second: fbas_13hair_bob1_00a_96
+  - first:
+      213: 8759592907759958920
+    second: fbas_13hair_bob1_00a_97
+  - first:
+      213: 4687572484697051247
+    second: fbas_13hair_bob1_00a_98
+  - first:
+      213: -3682707456577126300
+    second: fbas_13hair_bob1_00a_99
+  - first:
+      213: 2782946442469709597
+    second: fbas_13hair_bob1_00a_100
+  - first:
+      213: 2783388318398598415
+    second: fbas_13hair_bob1_00a_101
+  - first:
+      213: -7094349292443871928
+    second: fbas_13hair_bob1_00a_102
+  - first:
+      213: -6432010939246469141
+    second: fbas_13hair_bob1_00a_103
+  - first:
+      213: -4907190365319543759
+    second: fbas_13hair_bob1_00a_104
+  - first:
+      213: -6793719655180518330
+    second: fbas_13hair_bob1_00a_105
+  - first:
+      213: -3361789665974354105
+    second: fbas_13hair_bob1_00a_106
+  - first:
+      213: 5827027149186007493
+    second: fbas_13hair_bob1_00a_107
+  - first:
+      213: 6271959570585313
+    second: fbas_13hair_bob1_00a_108
+  - first:
+      213: 5083967081908883756
+    second: fbas_13hair_bob1_00a_109
+  - first:
+      213: -4636117653451538314
+    second: fbas_13hair_bob1_00a_110
+  - first:
+      213: -8806593565393521668
+    second: fbas_13hair_bob1_00a_111
+  - first:
+      213: 2090314070417678561
+    second: fbas_13hair_bob1_00a_112
+  - first:
+      213: -8922119407138766292
+    second: fbas_13hair_bob1_00a_113
+  - first:
+      213: -7861781981887754026
+    second: fbas_13hair_bob1_00a_114
+  - first:
+      213: 2613548943162495568
+    second: fbas_13hair_bob1_00a_115
+  - first:
+      213: 2413603090678284253
+    second: fbas_13hair_bob1_00a_116
+  - first:
+      213: 486461294360932209
+    second: fbas_13hair_bob1_00a_117
+  - first:
+      213: 6186215636046579125
+    second: fbas_13hair_bob1_00a_118
+  - first:
+      213: 5428608827570646073
+    second: fbas_13hair_bob1_00a_119
+  - first:
+      213: -562381158584732806
+    second: fbas_13hair_bob1_00a_120
+  - first:
+      213: 6113285481150310089
+    second: fbas_13hair_bob1_00a_121
+  - first:
+      213: 263557143689706805
+    second: fbas_13hair_bob1_00a_122
+  - first:
+      213: 8915052322476182855
+    second: fbas_13hair_bob1_00a_123
+  - first:
+      213: 8035464476671295480
+    second: fbas_13hair_bob1_00a_124
+  - first:
+      213: -2137970973649599191
+    second: fbas_13hair_bob1_00a_125
+  - first:
+      213: -6267680904114383595
+    second: fbas_13hair_bob1_00a_126
+  - first:
+      213: 4200918438833455367
+    second: fbas_13hair_bob1_00a_127
+  - first:
+      213: 2294249316232002608
+    second: fbas_13hair_bob1_00a_128
+  - first:
+      213: -1942489727229726807
+    second: fbas_13hair_bob1_00a_129
+  - first:
+      213: -3249517587526811368
+    second: fbas_13hair_bob1_00a_130
+  - first:
+      213: -4192337453239175104
+    second: fbas_13hair_bob1_00a_131
+  - first:
+      213: -5929504766739505029
+    second: fbas_13hair_bob1_00a_132
+  - first:
+      213: 7626336731865750244
+    second: fbas_13hair_bob1_00a_133
+  - first:
+      213: 4567659897426404600
+    second: fbas_13hair_bob1_00a_134
+  - first:
+      213: 2964233688062117531
+    second: fbas_13hair_bob1_00a_135
+  - first:
+      213: 225523727812179016
+    second: fbas_13hair_bob1_00a_136
+  - first:
+      213: 1518416746394778898
+    second: fbas_13hair_bob1_00a_137
+  - first:
+      213: -6059216480028369473
+    second: fbas_13hair_bob1_00a_138
+  - first:
+      213: 6420780211586932856
+    second: fbas_13hair_bob1_00a_139
+  - first:
+      213: 9059341417588487588
+    second: fbas_13hair_bob1_00a_140
+  - first:
+      213: 7513422415738696525
+    second: fbas_13hair_bob1_00a_141
+  - first:
+      213: -1367201457010842467
+    second: fbas_13hair_bob1_00a_142
+  - first:
+      213: 4884005706511750593
+    second: fbas_13hair_bob1_00a_143
+  - first:
+      213: 6935539887704676725
+    second: fbas_13hair_bob1_00a_144
+  - first:
+      213: 4605384510016916202
+    second: fbas_13hair_bob1_00a_145
+  - first:
+      213: -8068382161438122301
+    second: fbas_13hair_bob1_00a_146
+  - first:
+      213: -4103990126132235728
+    second: fbas_13hair_bob1_00a_147
+  - first:
+      213: -8406503871224832443
+    second: fbas_13hair_bob1_00a_148
+  - first:
+      213: 3133538633782616389
+    second: fbas_13hair_bob1_00a_149
+  - first:
+      213: -3069630700439635024
+    second: fbas_13hair_bob1_00a_150
+  - first:
+      213: -962103681672067708
+    second: fbas_13hair_bob1_00a_151
+  - first:
+      213: 3765610839367595944
+    second: fbas_13hair_bob1_00a_152
+  - first:
+      213: -7843826939827493345
+    second: fbas_13hair_bob1_00a_153
+  - first:
+      213: -8235639744918436660
+    second: fbas_13hair_bob1_00a_154
+  - first:
+      213: 8190973221598164596
+    second: fbas_13hair_bob1_00a_155
+  - first:
+      213: -1364870188816011390
+    second: fbas_13hair_bob1_00a_156
+  - first:
+      213: -4098428823572520954
+    second: fbas_13hair_bob1_00a_157
+  - first:
+      213: 2495898742078001678
+    second: fbas_13hair_bob1_00a_158
+  - first:
+      213: 514550867873043120
+    second: fbas_13hair_bob1_00a_159
+  - first:
+      213: 1075211991718662425
+    second: fbas_13hair_bob1_00a_160
+  - first:
+      213: -4525519030624296186
+    second: fbas_13hair_bob1_00a_161
+  - first:
+      213: -5549266621152005297
+    second: fbas_13hair_bob1_00a_162
+  - first:
+      213: -7621664432884975962
+    second: fbas_13hair_bob1_00a_163
+  - first:
+      213: 6368631315845202335
+    second: fbas_13hair_bob1_00a_164
+  - first:
+      213: -6832367802953022399
+    second: fbas_13hair_bob1_00a_165
+  - first:
+      213: 8863419258543262674
+    second: fbas_13hair_bob1_00a_166
+  - first:
+      213: -54975570582950130
+    second: fbas_13hair_bob1_00a_167
+  - first:
+      213: -927178406056124390
+    second: fbas_13hair_bob1_00a_168
+  - first:
+      213: -5955342492424011995
+    second: fbas_13hair_bob1_00a_169
+  - first:
+      213: -3802144464186061572
+    second: fbas_13hair_bob1_00a_170
+  - first:
+      213: 3975298229534952853
+    second: fbas_13hair_bob1_00a_171
+  - first:
+      213: 490168605250040339
+    second: fbas_13hair_bob1_00a_172
+  - first:
+      213: 3851833910242370403
+    second: fbas_13hair_bob1_00a_173
+  - first:
+      213: -8764773620387277379
+    second: fbas_13hair_bob1_00a_174
+  - first:
+      213: 6680149951775732180
+    second: fbas_13hair_bob1_00a_175
+  - first:
+      213: 6147490903903949777
+    second: fbas_13hair_bob1_00a_176
+  - first:
+      213: 1941226067607814882
+    second: fbas_13hair_bob1_00a_177
+  - first:
+      213: -5713557544857330320
+    second: fbas_13hair_bob1_00a_178
+  - first:
+      213: 2405233741045544038
+    second: fbas_13hair_bob1_00a_179
+  - first:
+      213: 7542543407934056957
+    second: fbas_13hair_bob1_00a_180
+  - first:
+      213: -6809024967193801040
+    second: fbas_13hair_bob1_00a_181
+  - first:
+      213: -9216226370096452700
+    second: fbas_13hair_bob1_00a_182
+  - first:
+      213: -5637914969559327608
+    second: fbas_13hair_bob1_00a_183
+  - first:
+      213: 432116058667461646
+    second: fbas_13hair_bob1_00a_184
+  - first:
+      213: 1094280995980459758
+    second: fbas_13hair_bob1_00a_185
+  - first:
+      213: -4477039560684115407
+    second: fbas_13hair_bob1_00a_186
+  - first:
+      213: 1239526297250956446
+    second: fbas_13hair_bob1_00a_187
+  - first:
+      213: -7512393388058660208
+    second: fbas_13hair_bob1_00a_188
+  - first:
+      213: -8000179267975746021
+    second: fbas_13hair_bob1_00a_189
+  - first:
+      213: 6321341457289741488
+    second: fbas_13hair_bob1_00a_190
+  - first:
+      213: -3393842843591722492
+    second: fbas_13hair_bob1_00a_191
+  - first:
+      213: -6384550099504869054
+    second: fbas_13hair_bob1_00a_192
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 997
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 726b1b819a501a180800000000000000
+      internalID: -9105990747744520665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 993
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c02cf5bbe70f7c70800000000000000
+      internalID: 8970897691697225920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_2
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1003
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c05f4ae48d7919b0800000000000000
+      internalID: -5108914292454895421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_3
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 1001
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cd06d4b57343b030800000000000000
+      internalID: 3509222707475910086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 994
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7d92bb0656b6e2f0800000000000000
+      internalID: -943866591207842438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_5
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 1003
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 587aea586a1bfc430800000000000000
+      internalID: 3805455538916861829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_6
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 997
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2bc66d33f8e0fe90800000000000000
+      internalID: -6993834089901536466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_7
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 993
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ed13769f8c72a80800000000000000
+      internalID: -8491597598880047607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_8
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 997
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39596980d2ed2fb30800000000000000
+      internalID: 4319759277600707987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_9
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 994
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae61882a2ca7bac90800000000000000
+      internalID: -7157492206406199574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_10
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 997
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afdca2ddbb1336b90800000000000000
+      internalID: -7249896292197151238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_11
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 994
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 740e5e30d7131e6c0800000000000000
+      internalID: -4115954171433852857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_12
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 991
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2d0e1d81cb40b640800000000000000
+      internalID: 5093654473224359215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_13
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 989
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8220fdc9acae6cd0800000000000000
+      internalID: -2562921292622716274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_14
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 989
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56337c2cc163b82c0800000000000000
+      internalID: -4428386311433931931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_15
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 988
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4e26571dbe42ba50800000000000000
+      internalID: 6535372583315320399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_16
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 931
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61ea85ac3ab8fc170800000000000000
+      internalID: 8200926982055702038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_17
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 938
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dfa94fce2e73a230800000000000000
+      internalID: 3648898862611541977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_18
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 931
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 115988c627600d980800000000000000
+      internalID: -8516299806840679151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_19
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 930
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a55a142e3c9b40990800000000000000
+      internalID: -7420602035034020518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_20
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 943
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f7198675bad1650800000000000000
+      internalID: 6205304253491281757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_21
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 932
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ef70e0fed753230800000000000000
+      internalID: 3617936341348122181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_22
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 930
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30298dce8d7c0aa00800000000000000
+      internalID: 765831671153463811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_23
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 929
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2642084202ad805a0800000000000000
+      internalID: -6554749426051570590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_24
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 930
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4802c5e4c9f36abe0800000000000000
+      internalID: -1466414688100409212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_25
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 930
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b6a50d824fe3dd00800000000000000
+      internalID: 996403011691849392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_26
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 926
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd578c61779796a60800000000000000
+      internalID: 7667793392965285340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_27
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 931
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddd3e5544619ba810800000000000000
+      internalID: 1777674337774353885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_28
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 931
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9583ae866aca8140800000000000000
+      internalID: 4722809701079942558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_29
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 930
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a39f3a786d81295e0800000000000000
+      internalID: -1904432382746560198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_30
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 927
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bf6d1368077c5f00800000000000000
+      internalID: 1106890486332616627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_31
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 925
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d75034c108afab0800000000000000
+      internalID: -4973521979605418604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_32
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 869
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90b8eda7fd4e79630800000000000000
+      internalID: 3933864448021662473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_33
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 864
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe63e4b9c594642e0800000000000000
+      internalID: -2141943910676678929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_34
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 876
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de3567ea0cd654840800000000000000
+      internalID: 5207689218451985389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_35
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 869
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a29d87374646c95b0800000000000000
+      internalID: -5360299073880925910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_36
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 864
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 386469ead6482be00800000000000000
+      internalID: 1059054469000873603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_37
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 875
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c65ae4bc27e44320800000000000000
+      internalID: 2541410268943636161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_38
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 870
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2970a89dd1b768660800000000000000
+      internalID: 7387727606881847186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_39
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 866
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ece17d31a6d39f0c0800000000000000
+      internalID: -4541531223417741618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_40
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 870
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8be21eaaddcb9b9f0800000000000000
+      internalID: -452122627333345608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_41
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 869
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa1e4f797918e1d0800000000000000
+      internalID: -3321376715568178526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_42
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 870
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a62e1796b69c1a50800000000000000
+      internalID: 6493230473724962471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_43
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 870
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3726bc633ec6a07c0800000000000000
+      internalID: -4104348387262111117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_44
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 868
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23500973b4b28fb20800000000000000
+      internalID: 3168329939909870898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_45
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 869
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f28125089de0dd540800000000000000
+      internalID: 5034196285793638447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_46
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 865
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e7e5706e0e5482b0800000000000000
+      internalID: -5583234222191679514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_47
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 864
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4643cbba93f282150800000000000000
+      internalID: 5847976040881468516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_48
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 805
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b78095802adf44a70800000000000000
+      internalID: 8810445643410114683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_49
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 805
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8463fc2f799dde430800000000000000
+      internalID: 3813943706089633352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_50
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 806
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d31cb9a897534440800000000000000
+      internalID: 4918871531213034450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_51
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 808
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9edf9e330045a74f0800000000000000
+      internalID: -830258821448729111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_52
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 803
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d35d4d6f422bb13b0800000000000000
+      internalID: -5540639044719553219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_53
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 803
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaf72c100d2c6f640800000000000000
+      internalID: 5113488625564286894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_54
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 804
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 282669307f52ae9c0800000000000000
+      internalID: -3897260784688405886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_55
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 806
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f742eeb9042771f00800000000000000
+      internalID: 1087463456852812927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_56
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 810
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4324d8c9e9516fdb0800000000000000
+      internalID: -4758592185294831052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_57
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 812
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bad129efbb5ca020800000000000000
+      internalID: 2354357585016117941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_58
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 798
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d3d466a0e8e69e30800000000000000
+      internalID: 4510048128420074449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_59
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 798
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da6e7a5d39b4188e0800000000000000
+      internalID: -1692988886597769555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_60
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 805
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34060d668f5a6d750800000000000000
+      internalID: 6329428812611215427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_61
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 805
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af13eaaaf5bab1b40800000000000000
+      internalID: 5412107804589568506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_62
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 805
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6450dd782c6cd4370800000000000000
+      internalID: 8308515426373797190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_63
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 805
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81a078e33d15ba230800000000000000
+      internalID: 3651101890642905624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_64
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 742
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93d8d157418d96a80800000000000000
+      internalID: -8473003641545061063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_65
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 742
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdca73b132c2ff690800000000000000
+      internalID: -7566280319667032869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_66
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 741
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97377f974e40e8d10800000000000000
+      internalID: 2129645053138137977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_67
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 742
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1470d8472cec08f0800000000000000
+      internalID: -572823399113395171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_68
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 741
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16b33699aa867f630800000000000000
+      internalID: 3960749479222786913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_69
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 742
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ba8cb4b14d7a65a0800000000000000
+      internalID: -6527266988761511247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_70
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 745
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5878dc9f4f5e5e7d0800000000000000
+      internalID: -2889650745562527867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_71
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 746
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280dd212587ac5630800000000000000
+      internalID: 3917189966134628482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_72
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 743
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb11eb5d265d6970800000000000000
+      internalID: 8749744403865738222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_73
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 748
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca036551d6509b30800000000000000
+      internalID: 4292025901964790473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_74
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 737
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ae6157d2c412980800000000000000
+      internalID: -8565481258160297371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_75
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 737
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9834804677f207d0800000000000000
+      internalID: -2953526318341015396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_76
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 741
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2882f56e12276b4f0800000000000000
+      internalID: -813337192769312638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_77
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 741
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea51fd7511abc4a20800000000000000
+      internalID: 3048015631474431406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_78
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 735
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6460ef3480701e070800000000000000
+      internalID: 8133790134089680454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_79
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 735
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad5c4877c42127c40800000000000000
+      internalID: 5508485413859542490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_80
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 679
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3e5336948a2c0040800000000000000
+      internalID: 4615110467091914303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_81
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 680
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1af1a754e78d7a0d0800000000000000
+      internalID: -3411520155866751071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_82
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 680
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34dbe87839187ffa0800000000000000
+      internalID: -5766998327190176445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_83
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 683
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c932906fcc8ce4670800000000000000
+      internalID: 8524971927285605276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_84
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 675
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd06fe59f4eb86a60800000000000000
+      internalID: 7667587614625456349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_85
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 675
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba576ad6c426e64c0800000000000000
+      internalID: -4292385314440841813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_86
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 676
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1724433d4f6db6a0800000000000000
+      internalID: -6431862315451930854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_87
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 678
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b4334be21adc50b0800000000000000
+      internalID: -5738472050385537871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_88
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 681
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82c15ffba9e92adb0800000000000000
+      internalID: -4782085466831381464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_89
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 684
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8577759f4896f6520800000000000000
+      internalID: 2697490721658074968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_90
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 678
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69cf98d2d82c72e80800000000000000
+      internalID: -8203374284621874026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_91
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 678
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c75216f7da85c23a0800000000000000
+      internalID: -6688873844362369668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_92
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 677
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac611540f9e7ec20800000000000000
+      internalID: 3235812075449183405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_93
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 677
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d95af02c56d975d0800000000000000
+      internalID: -3064182380270298670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_94
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 674
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4edaba77711a0f120800000000000000
+      internalID: 2445631719826238948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_95
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 674
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c5e59a52a2cb4220800000000000000
+      internalID: 2471282823103112647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_96
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 614
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a463899a210aa140800000000000000
+      internalID: 4731595640981906597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_97
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 613
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88b301cd653509970800000000000000
+      internalID: 8759592907759958920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_98
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 614
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f605349c65a9d0140800000000000000
+      internalID: 4687572484697051247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_99
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 614
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 460c90f741564ecc0800000000000000
+      internalID: -3682707456577126300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_100
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 614
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1718547b030f9620800000000000000
+      internalID: 2782946442469709597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_101
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 613
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0dce16bde490a620800000000000000
+      internalID: 2783388318398598415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_102
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 617
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 845d65fe7eecb8d90800000000000000
+      internalID: -7094349292443871928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_103
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 617
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef99c60128ecb6a0800000000000000
+      internalID: -6432010939246469141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_104
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 604
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 134c8e5bc5826ebb0800000000000000
+      internalID: -4907190365319543759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_105
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 613
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64c3061e7fbd7b1a0800000000000000
+      internalID: -6793719655180518330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_106
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 613
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ff40e3c168851d0800000000000000
+      internalID: -3361789665974354105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_107
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 613
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c10acbb152cdd050800000000000000
+      internalID: 5827027149186007493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_108
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 608
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e610426058461000800000000000000
+      internalID: 6271959570585313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_109
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 608
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2155feff11ed8640800000000000000
+      internalID: 5083967081908883756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_110
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 608
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6708a11be8339afb0800000000000000
+      internalID: -4636117653451538314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_111
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 608
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf37a75cfc1b8c580800000000000000
+      internalID: -8806593565393521668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_112
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 549
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e02f347299420d10800000000000000
+      internalID: 2090314070417678561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_113
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 549
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2200edaba34e2480800000000000000
+      internalID: -8922119407138766292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_114
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 549
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d09304e0f655e290800000000000000
+      internalID: -7861781981887754026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_115
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 549
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0525c48aae0354420800000000000000
+      internalID: 2613548943162495568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_116
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 548
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddff9a02937de7120800000000000000
+      internalID: 2413603090678284253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_117
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 549
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17f2c5748f140c600800000000000000
+      internalID: 486461294360932209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_118
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 548
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b50682585ad9d550800000000000000
+      internalID: 6186215636046579125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_119
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 549
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93ce5e777fa465b40800000000000000
+      internalID: 5428608827570646073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_120
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 548
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a733f2ed0550238f0800000000000000
+      internalID: -562381158584732806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_121
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 547
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c6648a61c0c6d450800000000000000
+      internalID: 6113285481150310089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_122
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 547
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53d34a763d758a300800000000000000
+      internalID: 263557143689706805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_123
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 549
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74dc6337ad0a8bb70800000000000000
+      internalID: 8915052322476182855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_124
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 553
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ff33492e54b38f60800000000000000
+      internalID: 8035464476671295480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_125
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 548
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92505871ab66452e0800000000000000
+      internalID: -2137970973649599191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_126
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 547
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51553c0ec69b409a0800000000000000
+      internalID: -6267680904114383595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_127
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 545
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7018e0d0019ac4a30800000000000000
+      internalID: 4200918438833455367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_128
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 492
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03cf030099fc6df10800000000000000
+      internalID: 2294249316232002608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_129
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 486
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af60a482e3ea05e0800000000000000
+      internalID: -1942489727229726807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_130
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 481
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 811841888f467e2d0800000000000000
+      internalID: -3249517587526811368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_131
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 485
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 048fc195c43d1d5c0800000000000000
+      internalID: -4192337453239175104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_132
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 483
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b70a18c94da26bda0800000000000000
+      internalID: -5929504766739505029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_133
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 481
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea1f500ad036d960800000000000000
+      internalID: 7626336731865750244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_134
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 483
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f4e5e8e976936f30800000000000000
+      internalID: 4567659897426404600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_135
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 485
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b96403885d2132920800000000000000
+      internalID: 2964233688062117531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_136
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 429
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 844baa4b2a8312300800000000000000
+      internalID: 225523727812179016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_137
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 422
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21d7dd56cff721510800000000000000
+      internalID: 1518416746394778898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_138
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 416
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd57bae6b659eba0800000000000000
+      internalID: -6059216480028369473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_139
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 419
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8702f7c65913b1950800000000000000
+      internalID: 6420780211586932856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_140
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 420
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a57856550f39bd70800000000000000
+      internalID: 9059341417588487588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_141
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 417
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d43ff8911e9054860800000000000000
+      internalID: 7513422415738696525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_142
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 417
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d94e872c489b60de0800000000000000
+      internalID: -1367201457010842467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_143
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 415
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c51d91405977c340800000000000000
+      internalID: 4884005706511750593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_144
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 363
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579903428ccff3060800000000000000
+      internalID: 6935539887704676725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_145
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 360
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aea05adbfcc99ef30800000000000000
+      internalID: 4605384510016916202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_146
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 353
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ced16b1c29570090800000000000000
+      internalID: -8068382161438122301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_147
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 356
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0327d2269b2bb07c0800000000000000
+      internalID: -4103990126132235728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_148
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 354
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54e92b8c449165b80800000000000000
+      internalID: -8406503871224832443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_149
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 356
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 541639409c09c7b20800000000000000
+      internalID: 3133538633782616389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_150
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 356
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bb79ac342b7665d0800000000000000
+      internalID: -3069630700439635024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_151
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 356
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48547d88ccbe5a2f0800000000000000
+      internalID: -962103681672067708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_152
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 288
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a7bdda7b13224430800000000000000
+      internalID: 3765610839367595944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_153
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 289
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1661f3e4f0252390800000000000000
+      internalID: -7843826939827493345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_154
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 294
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc44c0a494125bd80800000000000000
+      internalID: -8235639744918436660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_155
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 292
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47678165fbe2ca170800000000000000
+      internalID: 8190973221598164596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_156
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 284
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28fe91f6bc10f0de0800000000000000
+      internalID: -1364870188816011390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_157
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 294
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 600ecb903b47f17c0800000000000000
+      internalID: -4098428823572520954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_158
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 278
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0257ec9ea633a220800000000000000
+      internalID: 2495898742078001678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_159
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 207
+        width: 178
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b21172c94d042700800000000000000
+      internalID: 514550867873043120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_160
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 270
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91191a81c9bebee00800000000000000
+      internalID: 1075211991718662425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_161
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 229
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6036e5b3b602231c0800000000000000
+      internalID: -4525519030624296186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_162
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 229
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f437d4ac86b0df2b0800000000000000
+      internalID: -5549266621152005297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_163
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 229
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a679a064986a3690800000000000000
+      internalID: -7621664432884975962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_164
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 226
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f91c166707ce16850800000000000000
+      internalID: 6368631315845202335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_165
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 223
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1444b22cead8e21a0800000000000000
+      internalID: -6832367802953022399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_166
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 223
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dbc3d0fad0310b70800000000000000
+      internalID: 8863419258543262674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_167
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 228
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f24148200bc3ff0800000000000000
+      internalID: -54975570582950130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_168
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 211
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a10ac9fe6200223f0800000000000000
+      internalID: -927178406056124390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_169
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 163
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ff64f4e8f5a5da0800000000000000
+      internalID: -5955342492424011995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_170
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 163
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfcc87321c11c3bc0800000000000000
+      internalID: -3802144464186061572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_171
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 163
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59d8baf7da81b2730800000000000000
+      internalID: 3975298229534952853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_172
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 158
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3123afbdfbd6dc600800000000000000
+      internalID: 490168605250040339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_173
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 162
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 363ecc19886747530800000000000000
+      internalID: 3851833910242370403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_174
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 157
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db51a1c74d44d5680800000000000000
+      internalID: -8764773620387277379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_175
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 157
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d17fe9fcf8a4bc50800000000000000
+      internalID: 6680149951775732180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_176
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 165
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d3d3230866405550800000000000000
+      internalID: 6147490903903949777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_177
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 101
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e20e7cc2de90fa10800000000000000
+      internalID: 1941226067607814882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_178
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 101
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07d96074fad55b0b0800000000000000
+      internalID: -5713557544857330320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_179
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 101
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 664bdc0185b116120800000000000000
+      internalID: 2405233741045544038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_180
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 100
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df9afd4744f7ca860800000000000000
+      internalID: 7542543407934056957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_181
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 101
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bec5ab3edb7181a0800000000000000
+      internalID: -6809024967193801040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_182
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 96
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ab20d032f2691080800000000000000
+      internalID: -9216226370096452700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_183
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 96
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88c1f85c43a12c1b0800000000000000
+      internalID: -5637914969559327608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_184
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 102
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0cad92144f2ff500800000000000000
+      internalID: 432116058667461646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_185
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 37
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eee30e1a4caaf2f00800000000000000
+      internalID: 1094280995980459758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_186
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 37
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13a6d0c6d3c5ed1c0800000000000000
+      internalID: -4477039560684115407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_187
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 36
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e94066d999ea33110800000000000000
+      internalID: 1239526297250956446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_188
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 34
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09235c3140e9eb790800000000000000
+      internalID: -7512393388058660208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_189
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 45
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e6cd0b757a9f090800000000000000
+      internalID: -8000179267975746021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_190
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 35
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b484b1409ae9b750800000000000000
+      internalID: 6321341457289741488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_191
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 36
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40ab6344ae5a6e0d0800000000000000
+      internalID: -3393842843591722492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_13hair_bob1_00a_192
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 35
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 241d354e2858567a0800000000000000
+      internalID: -6384550099504869054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fbas_13hair_bob1_00a_0: -9105990747744520665
+      fbas_13hair_bob1_00a_1: 8970897691697225920
+      fbas_13hair_bob1_00a_10: -7249896292197151238
+      fbas_13hair_bob1_00a_100: 2782946442469709597
+      fbas_13hair_bob1_00a_101: 2783388318398598415
+      fbas_13hair_bob1_00a_102: -7094349292443871928
+      fbas_13hair_bob1_00a_103: -6432010939246469141
+      fbas_13hair_bob1_00a_104: -4907190365319543759
+      fbas_13hair_bob1_00a_105: -6793719655180518330
+      fbas_13hair_bob1_00a_106: -3361789665974354105
+      fbas_13hair_bob1_00a_107: 5827027149186007493
+      fbas_13hair_bob1_00a_108: 6271959570585313
+      fbas_13hair_bob1_00a_109: 5083967081908883756
+      fbas_13hair_bob1_00a_11: -4115954171433852857
+      fbas_13hair_bob1_00a_110: -4636117653451538314
+      fbas_13hair_bob1_00a_111: -8806593565393521668
+      fbas_13hair_bob1_00a_112: 2090314070417678561
+      fbas_13hair_bob1_00a_113: -8922119407138766292
+      fbas_13hair_bob1_00a_114: -7861781981887754026
+      fbas_13hair_bob1_00a_115: 2613548943162495568
+      fbas_13hair_bob1_00a_116: 2413603090678284253
+      fbas_13hair_bob1_00a_117: 486461294360932209
+      fbas_13hair_bob1_00a_118: 6186215636046579125
+      fbas_13hair_bob1_00a_119: 5428608827570646073
+      fbas_13hair_bob1_00a_12: 5093654473224359215
+      fbas_13hair_bob1_00a_120: -562381158584732806
+      fbas_13hair_bob1_00a_121: 6113285481150310089
+      fbas_13hair_bob1_00a_122: 263557143689706805
+      fbas_13hair_bob1_00a_123: 8915052322476182855
+      fbas_13hair_bob1_00a_124: 8035464476671295480
+      fbas_13hair_bob1_00a_125: -2137970973649599191
+      fbas_13hair_bob1_00a_126: -6267680904114383595
+      fbas_13hair_bob1_00a_127: 4200918438833455367
+      fbas_13hair_bob1_00a_128: 2294249316232002608
+      fbas_13hair_bob1_00a_129: -1942489727229726807
+      fbas_13hair_bob1_00a_13: -2562921292622716274
+      fbas_13hair_bob1_00a_130: -3249517587526811368
+      fbas_13hair_bob1_00a_131: -4192337453239175104
+      fbas_13hair_bob1_00a_132: -5929504766739505029
+      fbas_13hair_bob1_00a_133: 7626336731865750244
+      fbas_13hair_bob1_00a_134: 4567659897426404600
+      fbas_13hair_bob1_00a_135: 2964233688062117531
+      fbas_13hair_bob1_00a_136: 225523727812179016
+      fbas_13hair_bob1_00a_137: 1518416746394778898
+      fbas_13hair_bob1_00a_138: -6059216480028369473
+      fbas_13hair_bob1_00a_139: 6420780211586932856
+      fbas_13hair_bob1_00a_14: -4428386311433931931
+      fbas_13hair_bob1_00a_140: 9059341417588487588
+      fbas_13hair_bob1_00a_141: 7513422415738696525
+      fbas_13hair_bob1_00a_142: -1367201457010842467
+      fbas_13hair_bob1_00a_143: 4884005706511750593
+      fbas_13hair_bob1_00a_144: 6935539887704676725
+      fbas_13hair_bob1_00a_145: 4605384510016916202
+      fbas_13hair_bob1_00a_146: -8068382161438122301
+      fbas_13hair_bob1_00a_147: -4103990126132235728
+      fbas_13hair_bob1_00a_148: -8406503871224832443
+      fbas_13hair_bob1_00a_149: 3133538633782616389
+      fbas_13hair_bob1_00a_15: 6535372583315320399
+      fbas_13hair_bob1_00a_150: -3069630700439635024
+      fbas_13hair_bob1_00a_151: -962103681672067708
+      fbas_13hair_bob1_00a_152: 3765610839367595944
+      fbas_13hair_bob1_00a_153: -7843826939827493345
+      fbas_13hair_bob1_00a_154: -8235639744918436660
+      fbas_13hair_bob1_00a_155: 8190973221598164596
+      fbas_13hair_bob1_00a_156: -1364870188816011390
+      fbas_13hair_bob1_00a_157: -4098428823572520954
+      fbas_13hair_bob1_00a_158: 2495898742078001678
+      fbas_13hair_bob1_00a_159: 514550867873043120
+      fbas_13hair_bob1_00a_16: 8200926982055702038
+      fbas_13hair_bob1_00a_160: 1075211991718662425
+      fbas_13hair_bob1_00a_161: -4525519030624296186
+      fbas_13hair_bob1_00a_162: -5549266621152005297
+      fbas_13hair_bob1_00a_163: -7621664432884975962
+      fbas_13hair_bob1_00a_164: 6368631315845202335
+      fbas_13hair_bob1_00a_165: -6832367802953022399
+      fbas_13hair_bob1_00a_166: 8863419258543262674
+      fbas_13hair_bob1_00a_167: -54975570582950130
+      fbas_13hair_bob1_00a_168: -927178406056124390
+      fbas_13hair_bob1_00a_169: -5955342492424011995
+      fbas_13hair_bob1_00a_17: 3648898862611541977
+      fbas_13hair_bob1_00a_170: -3802144464186061572
+      fbas_13hair_bob1_00a_171: 3975298229534952853
+      fbas_13hair_bob1_00a_172: 490168605250040339
+      fbas_13hair_bob1_00a_173: 3851833910242370403
+      fbas_13hair_bob1_00a_174: -8764773620387277379
+      fbas_13hair_bob1_00a_175: 6680149951775732180
+      fbas_13hair_bob1_00a_176: 6147490903903949777
+      fbas_13hair_bob1_00a_177: 1941226067607814882
+      fbas_13hair_bob1_00a_178: -5713557544857330320
+      fbas_13hair_bob1_00a_179: 2405233741045544038
+      fbas_13hair_bob1_00a_18: -8516299806840679151
+      fbas_13hair_bob1_00a_180: 7542543407934056957
+      fbas_13hair_bob1_00a_181: -6809024967193801040
+      fbas_13hair_bob1_00a_182: -9216226370096452700
+      fbas_13hair_bob1_00a_183: -5637914969559327608
+      fbas_13hair_bob1_00a_184: 432116058667461646
+      fbas_13hair_bob1_00a_185: 1094280995980459758
+      fbas_13hair_bob1_00a_186: -4477039560684115407
+      fbas_13hair_bob1_00a_187: 1239526297250956446
+      fbas_13hair_bob1_00a_188: -7512393388058660208
+      fbas_13hair_bob1_00a_189: -8000179267975746021
+      fbas_13hair_bob1_00a_19: -7420602035034020518
+      fbas_13hair_bob1_00a_190: 6321341457289741488
+      fbas_13hair_bob1_00a_191: -3393842843591722492
+      fbas_13hair_bob1_00a_192: -6384550099504869054
+      fbas_13hair_bob1_00a_2: -5108914292454895421
+      fbas_13hair_bob1_00a_20: 6205304253491281757
+      fbas_13hair_bob1_00a_21: 3617936341348122181
+      fbas_13hair_bob1_00a_22: 765831671153463811
+      fbas_13hair_bob1_00a_23: -6554749426051570590
+      fbas_13hair_bob1_00a_24: -1466414688100409212
+      fbas_13hair_bob1_00a_25: 996403011691849392
+      fbas_13hair_bob1_00a_26: 7667793392965285340
+      fbas_13hair_bob1_00a_27: 1777674337774353885
+      fbas_13hair_bob1_00a_28: 4722809701079942558
+      fbas_13hair_bob1_00a_29: -1904432382746560198
+      fbas_13hair_bob1_00a_3: 3509222707475910086
+      fbas_13hair_bob1_00a_30: 1106890486332616627
+      fbas_13hair_bob1_00a_31: -4973521979605418604
+      fbas_13hair_bob1_00a_32: 3933864448021662473
+      fbas_13hair_bob1_00a_33: -2141943910676678929
+      fbas_13hair_bob1_00a_34: 5207689218451985389
+      fbas_13hair_bob1_00a_35: -5360299073880925910
+      fbas_13hair_bob1_00a_36: 1059054469000873603
+      fbas_13hair_bob1_00a_37: 2541410268943636161
+      fbas_13hair_bob1_00a_38: 7387727606881847186
+      fbas_13hair_bob1_00a_39: -4541531223417741618
+      fbas_13hair_bob1_00a_4: -943866591207842438
+      fbas_13hair_bob1_00a_40: -452122627333345608
+      fbas_13hair_bob1_00a_41: -3321376715568178526
+      fbas_13hair_bob1_00a_42: 6493230473724962471
+      fbas_13hair_bob1_00a_43: -4104348387262111117
+      fbas_13hair_bob1_00a_44: 3168329939909870898
+      fbas_13hair_bob1_00a_45: 5034196285793638447
+      fbas_13hair_bob1_00a_46: -5583234222191679514
+      fbas_13hair_bob1_00a_47: 5847976040881468516
+      fbas_13hair_bob1_00a_48: 8810445643410114683
+      fbas_13hair_bob1_00a_49: 3813943706089633352
+      fbas_13hair_bob1_00a_5: 3805455538916861829
+      fbas_13hair_bob1_00a_50: 4918871531213034450
+      fbas_13hair_bob1_00a_51: -830258821448729111
+      fbas_13hair_bob1_00a_52: -5540639044719553219
+      fbas_13hair_bob1_00a_53: 5113488625564286894
+      fbas_13hair_bob1_00a_54: -3897260784688405886
+      fbas_13hair_bob1_00a_55: 1087463456852812927
+      fbas_13hair_bob1_00a_56: -4758592185294831052
+      fbas_13hair_bob1_00a_57: 2354357585016117941
+      fbas_13hair_bob1_00a_58: 4510048128420074449
+      fbas_13hair_bob1_00a_59: -1692988886597769555
+      fbas_13hair_bob1_00a_6: -6993834089901536466
+      fbas_13hair_bob1_00a_60: 6329428812611215427
+      fbas_13hair_bob1_00a_61: 5412107804589568506
+      fbas_13hair_bob1_00a_62: 8308515426373797190
+      fbas_13hair_bob1_00a_63: 3651101890642905624
+      fbas_13hair_bob1_00a_64: -8473003641545061063
+      fbas_13hair_bob1_00a_65: -7566280319667032869
+      fbas_13hair_bob1_00a_66: 2129645053138137977
+      fbas_13hair_bob1_00a_67: -572823399113395171
+      fbas_13hair_bob1_00a_68: 3960749479222786913
+      fbas_13hair_bob1_00a_69: -6527266988761511247
+      fbas_13hair_bob1_00a_7: -8491597598880047607
+      fbas_13hair_bob1_00a_70: -2889650745562527867
+      fbas_13hair_bob1_00a_71: 3917189966134628482
+      fbas_13hair_bob1_00a_72: 8749744403865738222
+      fbas_13hair_bob1_00a_73: 4292025901964790473
+      fbas_13hair_bob1_00a_74: -8565481258160297371
+      fbas_13hair_bob1_00a_75: -2953526318341015396
+      fbas_13hair_bob1_00a_76: -813337192769312638
+      fbas_13hair_bob1_00a_77: 3048015631474431406
+      fbas_13hair_bob1_00a_78: 8133790134089680454
+      fbas_13hair_bob1_00a_79: 5508485413859542490
+      fbas_13hair_bob1_00a_8: 4319759277600707987
+      fbas_13hair_bob1_00a_80: 4615110467091914303
+      fbas_13hair_bob1_00a_81: -3411520155866751071
+      fbas_13hair_bob1_00a_82: -5766998327190176445
+      fbas_13hair_bob1_00a_83: 8524971927285605276
+      fbas_13hair_bob1_00a_84: 7667587614625456349
+      fbas_13hair_bob1_00a_85: -4292385314440841813
+      fbas_13hair_bob1_00a_86: -6431862315451930854
+      fbas_13hair_bob1_00a_87: -5738472050385537871
+      fbas_13hair_bob1_00a_88: -4782085466831381464
+      fbas_13hair_bob1_00a_89: 2697490721658074968
+      fbas_13hair_bob1_00a_9: -7157492206406199574
+      fbas_13hair_bob1_00a_90: -8203374284621874026
+      fbas_13hair_bob1_00a_91: -6688873844362369668
+      fbas_13hair_bob1_00a_92: 3235812075449183405
+      fbas_13hair_bob1_00a_93: -3064182380270298670
+      fbas_13hair_bob1_00a_94: 2445631719826238948
+      fbas_13hair_bob1_00a_95: 2471282823103112647
+      fbas_13hair_bob1_00a_96: 4731595640981906597
+      fbas_13hair_bob1_00a_97: 8759592907759958920
+      fbas_13hair_bob1_00a_98: 4687572484697051247
+      fbas_13hair_bob1_00a_99: -3682707456577126300
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

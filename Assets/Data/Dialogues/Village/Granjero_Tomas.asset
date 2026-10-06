@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d76bcdd3105f7546936804360827679, type: 3}
+  m_Name: Granjero_Tomas
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.TopDown.NPCDialogueData
+  npcName: "Granjero Tom\xE1s"
+  nameColor: {r: 0.8, g: 1, b: 0.6, a: 1}
+  profession: Agricultor
+  greetings:
+  - "\xA1Hola, forastero! \xBFVienes a comprar verduras? Las de esta temporada son
+    excepcionales."
+  - "\xA1Ey, perrito! \xBFTambi\xE9n vienes a cavar en mi jard\xEDn? Tengo suficiente
+    con el topo del norte..."
+  generalLines:
+  - "Este a\xF1o la cosecha de zanahorias es la mejor en d\xE9cadas. \xA1Las plagas
+    no se atrevieron!"
+  - "Mi buey Pancho cumple 12 a\xF1os esta semana. Le hice un pastel de heno. Le
+    encant\xF3."
+  - Si quieres trabajar duro para comer bien, la tierra no miente. Todo lo que siembras,
+    lo cosechas.
+  - "Cuarenta a\xF1os arando esta tierra. Conozco cada piedra, cada surco, cada gusano."
+  loreLines:
+  - "Mis abuelos plantaban con la luz de los cristales de gu\xEDa. Las cosechas eran
+    el doble de grandes."
+  - Hay una parte del campo donde nada crece bien. Desde que los cristales desaparecieron,
+    se puso peor.
+  - "La tierra tiene memoria. Sabe cu\xE1ndo la cuidas bien y cu\xE1ndo la descuidas.
+    Los cristales eran su vitamina."
+  tipLines:
+  - "Las zanahorias dan buena visi\xF3n nocturna. \xA1Come una antes de entrar a
+    cuevas oscuras!"
+  - Si ves un campo de girasoles, los que apuntan al sol siempre te orientan.
+  - "La lluvia de primavera trae lombrices a la superficie. Las aves las siguen.
+    \xA1Las aves conocen todos los caminos!"
+  dangerLines:
+  - "Algo se est\xE1 comiendo mis cultivos de noche. No son conejos \u2014 los rastros
+    son demasiado grandes."
+  - "Mis animales est\xE1n nerviosos. Cuando el ganado no come, es que algo va mal
+    en la naturaleza."
+  farewells:
+  - "\xA1Buen viaje! Y si encuentras buena tierra negra por ah\xED, \xA1av\xEDsame!"
+  - "Regresa cuando quieras. Aqu\xED siempre hay trabajo y siempre hay comida."
+  hasQuest: 0
+  questOffer: 
+  questActiveReminder: 
+  questComplete: 
+  questRewardCoins: 0

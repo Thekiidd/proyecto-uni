@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d76bcdd3105f7546936804360827679, type: 3}
+  m_Name: Aldeana_Lena
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.TopDown.NPCDialogueData
+  npcName: Lena
+  nameColor: {r: 0.6, g: 1, b: 0.7, a: 1}
+  profession: Herbolaria y Curandera
+  greetings:
+  - "Shh... estaba escuchando a las plantas. Dicen cosas interesantes si sabes c\xF3mo
+    escuchar."
+  - "\xA1Ah, un perro! Los perros tienen un sentido especial para la energ\xEDa natural.
+    Me alegra conocerte."
+  generalLines:
+  - "Esta hoja de menta silvestre es buena para el dolor de est\xF3mago. Esta otra,
+    para calmar los nervios."
+  - Hay 47 plantas medicinales en el bosque cercano. Las conozco a todas por nombre.
+  - "\xBFSientes ese aroma? Es lavanda. La planto alrededor de mi casa para mantener
+    alejados los mosquitos... y los malos sue\xF1os."
+  - "Hoy el viento viene del norte. Eso significa lluvia ma\xF1ana por la tarde.
+    Las plantas me lo dicen."
+  loreLines:
+  - "Los cristales de luz ten\xEDan propiedades curativas. Una astilla de cristal
+    en el agua la purificaba al instante."
+  - Hay una leyenda de una flor llamada 'Flor de Cristal' que solo nace donde un
+    cristal ha estado. Nunca la he visto.
+  - "Los animales del bosque se acercan a m\xED porque respeto sus plantas. El respeto
+    va y viene."
+  - "Mi maestra era una anciana ermita\xF1a del bosque. Me ense\xF1\xF3 que cada
+    planta tiene un esp\xEDritu que puede ayudarte."
+  tipLines:
+  - "Si te lastimas, busca hojas de pl\xE1tano grandes. Las puedes usar como vendaje
+    natural."
+  - "El musgo del lado norte de los \xE1rboles siempre apunta al norte. \xDAsalo
+    como br\xFAjula en el bosque."
+  - "Antes de atacar a un enemigo, hu\xE9lelo. El olor dice mucho sobre sus debilidades."
+  - "Si encuentras una fuente de agua cristalina, descansa junto a ella. Restaura
+    la energ\xEDa m\xE1s r\xE1pido."
+  dangerLines:
+  - "Mis plantas est\xE1n inquietas. Eso solo pasa cuando hay magia oscura cerca.
+    Ten mucho cuidado."
+  - "Traje algunas hierbas protectoras del bosque. Ojal\xE1 pueda proteger a toda
+    la aldea con ellas."
+  farewells:
+  - "\xA1Que la tierra te gu\xEDe y el viento te ayude! Regresa si necesitas curarte."
+  - "Ve con cuidado, amigo de cuatro patas. La naturaleza estar\xE1 de tu lado."
+  hasQuest: 0
+  questOffer: 
+  questActiveReminder: 
+  questComplete: 
+  questRewardCoins: 0

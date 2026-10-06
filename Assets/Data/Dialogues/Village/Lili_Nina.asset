@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d76bcdd3105f7546936804360827679, type: 3}
+  m_Name: Lili_Nina
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.TopDown.NPCDialogueData
+  npcName: Lili
+  nameColor: {r: 1, g: 0.9, b: 0.5, a: 1}
+  profession: "Ni\xF1a de la Aldea"
+  greetings:
+  - "\xA1\xA1\xA1PERRITOOOOO!!! \xA1\xA1\xA1Eres tan bonito y esponjoso!!!"
+  - '*te abraza con toda su fuerza*'
+  - "\xA1Mi nombre es Lili! \xA1Tengo 8 a\xF1os y s\xE9 contar hasta 1000! \xBFCu\xE1ntos
+    a\xF1os tienes t\xFA?"
+  generalLines:
+  - "\xA1Ayer vi una mariposa azul con alas de cristal! El abuelo dice que soy la
+    \xFAnica que las ve. Creo que es verdad."
+  - "\xBFSabes cu\xE1l es mi animal favorito? \xA1Los perros! \xA1Pero tambi\xE9n
+    los gatos! \xA1Y los conejos! \xA1Y los dragones!"
+  - "Estoy practicando para ser maga. Ya s\xE9 hacer aparecer flores de la nada.
+    \xBFQuieres ver? *saca una flor del bolsillo*"
+  - "Mi abuela me dijo que cuando yo era beb\xE9, dorm\xEDa con un cristal de luz
+    en la cuna. Me hac\xEDa so\xF1ar cosas bonitas."
+  loreLines:
+  - "El abuelo Eldor me cont\xF3 que los cristales cantan cuando nadie los escucha.
+    Yo creo que s\xED, porque a veces escucho m\xFAsica de ning\xFAn lado."
+  - "Hay un \xE1rbol en el bosque que tiene el tronco brillante. \xA1Mi pap\xE1 dice
+    que no debo ir, pero yo ya fui! \xA1Shh!"
+  - "Dicen que hace mucho tiempo hab\xEDa hadas de luz que viv\xEDan dentro de los
+    cristales. \xBFCrees que sea verdad?"
+  tipLines:
+  - "\xA1Si est\xE1s triste, cuenta estrellas! Yo cuento hasta 47 antes de quedarme
+    dormida."
+  - "Las margaritas traen buena suerte. \xA1Lleva siempre una en la oreja!"
+  - "Si te pierdes en el bosque, sigue el r\xEDo. Siempre lleva a alg\xFAn lugar."
+  dangerLines:
+  - "Anoche so\xF1\xE9 con sombras grandes. Mi mam\xE1 dice que son solo sue\xF1os
+    pero... se sent\xEDan muy reales."
+  - "\xA1Por favor regresa! Si te pasa algo me pondr\xE9 muy triste."
+  farewells:
+  - "\xA1Vuelve pronto! \xA1Te espero aqu\xED con flores!"
+  - "\xA1Cu\xEDdate muchoooo! \xA1Y si encuentras piedras brillantes, tr\xE1eme una
+    de recuerdo!"
+  hasQuest: 0
+  questOffer: 
+  questActiveReminder: 
+  questComplete: 
+  questRewardCoins: 0

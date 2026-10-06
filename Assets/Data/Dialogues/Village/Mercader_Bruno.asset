@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d76bcdd3105f7546936804360827679, type: 3}
+  m_Name: Mercader_Bruno
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.TopDown.NPCDialogueData
+  npcName: Mercader Bruno
+  nameColor: {r: 1, g: 0.8, b: 0.3, a: 1}
+  profession: Comerciante Ambulante
+  greetings:
+  - "\xA1Bienvenido, bienvenido! \xA1Bruno's Emporium, el mejor comercio del reino!"
+  - "\xBFBuscas equipo? \xBFProvisiones? \xBFMapas? \xA1Todo lo tengo, todo lo consigo,
+    todo tiene precio!"
+  generalLines:
+  - "Acabo de llegar del Puerto del Sur. Los mercados de all\xE1 est\xE1n convulsos
+    \u2014 todos hablan de los cristales perdidos."
+  - "Tengo mapas de las ruinas del norte, del bosque eterno y de la cueva de cristal.
+    \xBFTe interesa alguno?"
+  - "El precio del cristal molido se dispar\xF3 en el mercado negro. Gente sin escr\xFApulos,
+    te lo digo."
+  - "Soy el comerciante m\xE1s honesto del reino. \xA1Solo subo los precios cuando
+    la demanda lo justifica!"
+  loreLines:
+  - "Yo viaj\xE9 por todo el reino. Los cristales de luz no solo existen aqu\xED
+    \u2014 hay fragmentos en todos lados, si sabes d\xF3nde buscar."
+  - "El Gremio de Mercaderes tiene un archivo secreto con la ubicaci\xF3n de todos
+    los cristales conocidos. No es f\xE1cil acceder a \xE9l."
+  - "Dicen que el ladr\xF3n de los cristales los est\xE1 vendiendo al mejor postor
+    en las ciudades del norte. \xA1Qu\xE9 infame!"
+  tipLines:
+  - "Consejo de viajero: lleva siempre monedas de distintos materiales. En algunas
+    regiones, el oro no vale nada pero el cobre s\xED."
+  - "Un buen mapa vale m\xE1s que diez espadas. \xA1La informaci\xF3n es poder!"
+  - En el mercado de Eastgate puedes encontrar provisiones a mitad de precio si vas
+    al amanecer.
+  dangerLines:
+  - "El camino del norte est\xE1 bloqueado por criaturas extra\xF1as. Tuve que desviarme
+    tres d\xEDas. \xA1Tres d\xEDas!"
+  - "Escuch\xE9 en una posada que hay un ej\xE9rcito de sombras movi\xE9ndose hacia
+    el reino. No s\xE9 si creerlo... pero por si acaso, tengo escudos en oferta."
+  farewells:
+  - "\xA1Vuelve cuando necesites algo! \xA1Bruno siempre tiene lo que buscas... a
+    precio justo!"
+  - "\xA1Que el viento llene tus velas y tu bolsa de monedas, amigo!"
+  hasQuest: 0
+  questOffer: 
+  questActiveReminder: 
+  questComplete: 
+  questRewardCoins: 0

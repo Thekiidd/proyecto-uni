@@ -26,6 +26,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prologue_Story.unity
     guid: a2879d8e18d0fbd498700b42d98adaf1
+  - enabled: 1
+    path: Assets/Scenes/PixelCrawler_Village.unity
+    guid: fd656cd3549a67a4c8bf4788d63d916d
+  - enabled: 1
+    path: Assets/Scenes/House_Interior.unity
+    guid: 2446533f3f5b7af4fb9acd3bbcb5c10a
+  - enabled: 1
+    path: Assets/Scenes/House_Interior_Tavern.unity
+    guid: 283a159be6c1f534a8a504176c862e83
+  - enabled: 1
+    path: Assets/Scenes/House_Interior_Merchant.unity
+    guid: bfc3b4f7f3974b24a8266706ebc88511
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f,
       type: 2}

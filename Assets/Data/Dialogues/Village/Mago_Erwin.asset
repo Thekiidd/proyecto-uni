@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d76bcdd3105f7546936804360827679, type: 3}
+  m_Name: Mago_Erwin
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.TopDown.NPCDialogueData
+  npcName: Mago Erwin
+  nameColor: {r: 0.85, g: 0.6, b: 1, a: 1}
+  profession: Estudioso de Cristales
+  greetings:
+  - "Hmm... interesante. Tus ondas \xE1uricas son compatibles con la frecuencia cristalina.
+    Fascinante."
+  - "\xA1Ah, un nuevo sujeto de estudio! Quiero decir... \xA1un bienvenido visitante!
+    Me llamo Erwin."
+  - "Llevo 40 a\xF1os estudiando los cristales de luz. Y ahora que han desaparecido...
+    tengo m\xE1s preguntas que nunca."
+  generalLines:
+  - "Los cristales vibran a 432 Hz \u2014 la frecuencia del universo. \xBFSab\xEDas
+    eso? No. Claro que no. Nadie lo sabe excepto yo."
+  - "Estoy intentando crear un cristal sint\xE9tico con polvo de estrella y l\xE1grimas
+    de \xE1ngel. Va... lento."
+  - "He escrito 23 tomos sobre cristalograf\xEDa m\xE1gica. El tomo 24 est\xE1 a
+    medias. \xA1Esto me da material para el cap\xEDtulo 7!"
+  - El cristal rojo amplifica emociones. El azul, el pensamiento. El verde, la vitalidad.
+    El amarillo... explosivo. No lo toques.
+  loreLines:
+  - "Los cinco cristales no son objetos aleatorios. Fueron tallados de un \xFAnico
+    cristal primigenio hace 1000 a\xF1os."
+  - "Cada cristal tiene una conciencia dormida. Si los tratas con respeto, te guiar\xE1n.
+    Si los tratas mal... mejor no saberlo."
+  - "La ubicaci\xF3n de los cristales no es accidental. Fueron colocados en los cinco
+    puntos de poder del mapa sagrado del reino."
+  - "Existe un ritual perdido llamado 'La Resonancia'. Si los cinco cristales se
+    unen y vibran en armon\xEDa... el reino renace."
+  - "El ladr\xF3n de los cristales sab\xEDa exactamente d\xF3nde estaban. Solo alguien
+    con acceso a los archivos secretos pudo saberlo."
+  tipLines:
+  - "Acerca un cristal a una fuente de agua. Si el agua brilla, hay m\xE1s cristales
+    cerca."
+  - "Los cristales reaccionan al canto. Si cantas la nota DO grave cerca de donde
+    crees que est\xE1, vibrar\xE1."
+  - "No mezcles cristales rojo y azul sin guantes de cuero drag\xF3n. Yo aprend\xED
+    eso por las malas. (Se\xF1ala sus cejas chamuscadas)"
+  - "Hay un libro en las ruinas del norte \u2014 'Gu\xEDa de Campo para Cristales'.
+    Cons\xEDguelo si puedes."
+  dangerLines:
+  - "Mis instrumentos detectan perturbaciones en el campo cristalino. La oscuridad
+    est\xE1 m\xE1s cerca de lo que pensamos."
+  - "\xA1No! \xA1Mis c\xE1lculos eran correctos! Si la oscuridad llega a la aldea
+    sin los cristales... las consecuencias ser\xE1n catastr\xF3ficas."
+  farewells:
+  - "\xA1Ve y recupera esos cristales! \xA1La ciencia te respalda! Y yo tambi\xE9n...
+    desde aqu\xED, a salvo."
+  - "Toma nota de todo lo que veas. \xA1Necesito datos para el tomo 24!"
+  hasQuest: 1
+  questOffer: "\xBFPuedes traerme una muestra de tierra de las Ruinas del Norte?
+    Creo que hay energ\xEDa cristalina residual all\xED."
+  questActiveReminder: "\xBFEncontraste tierra de las Ruinas? Recoge la que tenga
+    brillo azulado."
+  questComplete: "\xA1Extraordinario! Esta tierra tiene rastros de cristal puro.
+    \xA1Esto confirma mi Teor\xEDa de la Resonancia Fragmentada! Toma esta recompensa."
+  questRewardCoins: 8

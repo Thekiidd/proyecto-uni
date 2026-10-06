@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d76bcdd3105f7546936804360827679, type: 3}
+  m_Name: Aldeana_Rosa
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.TopDown.NPCDialogueData
+  npcName: Rosa
+  nameColor: {r: 1, g: 0.6, b: 0.6, a: 1}
+  profession: Panadera y Cocinera
+  greetings:
+  - "\xA1Cielos! \xA1Un viajero! \xA1Qu\xE9 alegr\xEDa! \xBFQuieres probar mi pastel
+    de manzana reci\xE9n horneado?"
+  - "Me llamo Rosa. Llevo 30 a\xF1os horneando para este pueblo. \xA1La harina es
+    mi magia!"
+  generalLines:
+  - "Hoy hice pan de nuez, rosquillas de miel y un estofado de zanahorias. \xA1Todo
+    para el pueblo!"
+  - "\xBFSab\xEDas que la canela tiene propiedades m\xE1gicas? Un poco en el pastel
+    y hasta los esp\xEDritus sonr\xEDen."
+  - "El mercader de especias lleg\xF3 ayer. Le compr\xE9 azafr\xE1n del sur. \xA1Caro
+    pero vale cada moneda!"
+  - "Mi receta de galletas con cristal molido... \xA1ah, no! Eso era antes. Ya no
+    tenemos cristales. Qu\xE9 tristeza."
+  loreLines:
+  - "Cuando yo era ni\xF1a, en los d\xEDas de festival mol\xEDamos un poco de cristal
+    de luz en la harina. \xA1El pan brillaba de noche!"
+  - "Hay una planta en el bosque norte \u2014 el 'tomillo de luna' \u2014 que solo
+    crece bajo la luz de los cristales."
+  - "Mi bisabuela era la cocinera del rey. Aprend\xED sus recetas secretas. Pero
+    hay una que no puedo hacer sin cristales..."
+  tipLines:
+  - "Si encuentras manzanas silvestres en el bosque, son perfectas para energ\xEDa.
+    \xA1Come una antes de una batalla!"
+  - Las setas rojas con puntos blancos son venenosas. Las marrones con lunares amarillos,
+    deliciosas.
+  - "El olor a pan fresco puede calmar a muchos animales del bosque. \xA1Recuerda
+    eso!"
+  dangerLines:
+  - "Ayer vinieron dos exploradores pidiendo comida. Estaban asustados. Dec\xEDan
+    que algo los persigui\xF3 desde las ruinas."
+  - "Por favor, no te quedes en el bosque de noche. Las criaturas de la oscuridad
+    son m\xE1s fuertes sin la luz de los cristales."
+  farewells:
+  - "\xA1Lleva estas galletas para el camino! (Te imaginas d\xE1ndote una galleta
+    invisible) \xA1Buena suerte!"
+  - "\xA1Vuelve cuando quieras! Siempre habr\xE1 algo caliente esper\xE1ndote en
+    mi cocina."
+  hasQuest: 0
+  questOffer: 
+  questActiveReminder: 
+  questComplete: 
+  questRewardCoins: 0

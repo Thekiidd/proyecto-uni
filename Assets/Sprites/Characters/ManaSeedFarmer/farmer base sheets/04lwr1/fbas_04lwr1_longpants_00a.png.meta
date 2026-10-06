@@ -1,0 +1,5083 @@
+fileFormatVersion: 2
+guid: 7e0da7e2321962b4794f188686c09f74
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2195733374097778965
+    second: fbas_04lwr1_longpants_00a_0
+  - first:
+      213: -907456801473299974
+    second: fbas_04lwr1_longpants_00a_1
+  - first:
+      213: 8185349296771462728
+    second: fbas_04lwr1_longpants_00a_2
+  - first:
+      213: -6571386827128351898
+    second: fbas_04lwr1_longpants_00a_3
+  - first:
+      213: 7106380782959185315
+    second: fbas_04lwr1_longpants_00a_4
+  - first:
+      213: 1149927040544819297
+    second: fbas_04lwr1_longpants_00a_5
+  - first:
+      213: 638451325929786891
+    second: fbas_04lwr1_longpants_00a_6
+  - first:
+      213: 3400708754495180016
+    second: fbas_04lwr1_longpants_00a_7
+  - first:
+      213: -4462210938243724056
+    second: fbas_04lwr1_longpants_00a_8
+  - first:
+      213: -5329795252954146402
+    second: fbas_04lwr1_longpants_00a_9
+  - first:
+      213: -6041831838659751473
+    second: fbas_04lwr1_longpants_00a_10
+  - first:
+      213: 996104089272201877
+    second: fbas_04lwr1_longpants_00a_11
+  - first:
+      213: -4436275004104980152
+    second: fbas_04lwr1_longpants_00a_12
+  - first:
+      213: -1091069003590838988
+    second: fbas_04lwr1_longpants_00a_13
+  - first:
+      213: 4010810242979983300
+    second: fbas_04lwr1_longpants_00a_14
+  - first:
+      213: 2416887820872316409
+    second: fbas_04lwr1_longpants_00a_15
+  - first:
+      213: -9023885396934713219
+    second: fbas_04lwr1_longpants_00a_16
+  - first:
+      213: 4028312416538188497
+    second: fbas_04lwr1_longpants_00a_17
+  - first:
+      213: 5517251128590561946
+    second: fbas_04lwr1_longpants_00a_18
+  - first:
+      213: 762885409108033681
+    second: fbas_04lwr1_longpants_00a_19
+  - first:
+      213: 370555522668372700
+    second: fbas_04lwr1_longpants_00a_20
+  - first:
+      213: -8955607614429171712
+    second: fbas_04lwr1_longpants_00a_21
+  - first:
+      213: 854074617322155447
+    second: fbas_04lwr1_longpants_00a_22
+  - first:
+      213: 9069975031998240373
+    second: fbas_04lwr1_longpants_00a_23
+  - first:
+      213: 8999528748770139885
+    second: fbas_04lwr1_longpants_00a_24
+  - first:
+      213: 6907060101063259327
+    second: fbas_04lwr1_longpants_00a_25
+  - first:
+      213: -3637592077008368023
+    second: fbas_04lwr1_longpants_00a_26
+  - first:
+      213: -6269008538412139774
+    second: fbas_04lwr1_longpants_00a_27
+  - first:
+      213: 4904393202672732816
+    second: fbas_04lwr1_longpants_00a_28
+  - first:
+      213: -5174446703425271756
+    second: fbas_04lwr1_longpants_00a_29
+  - first:
+      213: 8135815116083780107
+    second: fbas_04lwr1_longpants_00a_30
+  - first:
+      213: -1882646131661968170
+    second: fbas_04lwr1_longpants_00a_31
+  - first:
+      213: 3340404356102098039
+    second: fbas_04lwr1_longpants_00a_32
+  - first:
+      213: 2514033458733212273
+    second: fbas_04lwr1_longpants_00a_33
+  - first:
+      213: -4079738895542826697
+    second: fbas_04lwr1_longpants_00a_34
+  - first:
+      213: 8785348641892353911
+    second: fbas_04lwr1_longpants_00a_35
+  - first:
+      213: 1578834601366843145
+    second: fbas_04lwr1_longpants_00a_36
+  - first:
+      213: -7059634547259237092
+    second: fbas_04lwr1_longpants_00a_37
+  - first:
+      213: -7782771549162716641
+    second: fbas_04lwr1_longpants_00a_38
+  - first:
+      213: -2428139103867797685
+    second: fbas_04lwr1_longpants_00a_39
+  - first:
+      213: 1535534859830933397
+    second: fbas_04lwr1_longpants_00a_40
+  - first:
+      213: -8115530946836638441
+    second: fbas_04lwr1_longpants_00a_41
+  - first:
+      213: -225986651217493380
+    second: fbas_04lwr1_longpants_00a_42
+  - first:
+      213: 5188668040693070800
+    second: fbas_04lwr1_longpants_00a_43
+  - first:
+      213: 4217932890036226108
+    second: fbas_04lwr1_longpants_00a_44
+  - first:
+      213: -1954730051898476416
+    second: fbas_04lwr1_longpants_00a_45
+  - first:
+      213: 76276084380975747
+    second: fbas_04lwr1_longpants_00a_46
+  - first:
+      213: -985266172702982011
+    second: fbas_04lwr1_longpants_00a_47
+  - first:
+      213: 705774835496886200
+    second: fbas_04lwr1_longpants_00a_48
+  - first:
+      213: -635924305534648942
+    second: fbas_04lwr1_longpants_00a_49
+  - first:
+      213: -3249720174784672977
+    second: fbas_04lwr1_longpants_00a_50
+  - first:
+      213: 3828471063458380075
+    second: fbas_04lwr1_longpants_00a_51
+  - first:
+      213: 9162395856274907273
+    second: fbas_04lwr1_longpants_00a_52
+  - first:
+      213: -4945754419976653672
+    second: fbas_04lwr1_longpants_00a_53
+  - first:
+      213: 1959145121800730253
+    second: fbas_04lwr1_longpants_00a_54
+  - first:
+      213: -2211276712304804546
+    second: fbas_04lwr1_longpants_00a_55
+  - first:
+      213: 8326570247510617746
+    second: fbas_04lwr1_longpants_00a_56
+  - first:
+      213: 2728044750338910152
+    second: fbas_04lwr1_longpants_00a_57
+  - first:
+      213: 7593750865858397325
+    second: fbas_04lwr1_longpants_00a_58
+  - first:
+      213: -2108017327164078953
+    second: fbas_04lwr1_longpants_00a_59
+  - first:
+      213: 7300622467150222334
+    second: fbas_04lwr1_longpants_00a_60
+  - first:
+      213: -8743989680665122170
+    second: fbas_04lwr1_longpants_00a_61
+  - first:
+      213: 8575421063875545446
+    second: fbas_04lwr1_longpants_00a_62
+  - first:
+      213: 2866727629072528053
+    second: fbas_04lwr1_longpants_00a_63
+  - first:
+      213: -2536263856507320083
+    second: fbas_04lwr1_longpants_00a_64
+  - first:
+      213: -7600504093370231643
+    second: fbas_04lwr1_longpants_00a_65
+  - first:
+      213: 3556061623873133767
+    second: fbas_04lwr1_longpants_00a_66
+  - first:
+      213: 7897772054718771057
+    second: fbas_04lwr1_longpants_00a_67
+  - first:
+      213: 274901494962781939
+    second: fbas_04lwr1_longpants_00a_68
+  - first:
+      213: -1299236024334877587
+    second: fbas_04lwr1_longpants_00a_69
+  - first:
+      213: -2985030716069633467
+    second: fbas_04lwr1_longpants_00a_70
+  - first:
+      213: 2116768601707727410
+    second: fbas_04lwr1_longpants_00a_71
+  - first:
+      213: -5783678737705971210
+    second: fbas_04lwr1_longpants_00a_72
+  - first:
+      213: -723304208958302959
+    second: fbas_04lwr1_longpants_00a_73
+  - first:
+      213: 8997911949109496202
+    second: fbas_04lwr1_longpants_00a_74
+  - first:
+      213: 732494150802838431
+    second: fbas_04lwr1_longpants_00a_75
+  - first:
+      213: 7044902991605225165
+    second: fbas_04lwr1_longpants_00a_76
+  - first:
+      213: 1274124968493672418
+    second: fbas_04lwr1_longpants_00a_77
+  - first:
+      213: -5040372735708825357
+    second: fbas_04lwr1_longpants_00a_78
+  - first:
+      213: -1444600454516286903
+    second: fbas_04lwr1_longpants_00a_79
+  - first:
+      213: -4050432768014052644
+    second: fbas_04lwr1_longpants_00a_80
+  - first:
+      213: 1995961362936251245
+    second: fbas_04lwr1_longpants_00a_81
+  - first:
+      213: 4071982698421129809
+    second: fbas_04lwr1_longpants_00a_82
+  - first:
+      213: -5184416379320276767
+    second: fbas_04lwr1_longpants_00a_83
+  - first:
+      213: -4589194376051532572
+    second: fbas_04lwr1_longpants_00a_84
+  - first:
+      213: 2922977246555305960
+    second: fbas_04lwr1_longpants_00a_85
+  - first:
+      213: 5342234103124104764
+    second: fbas_04lwr1_longpants_00a_86
+  - first:
+      213: 895844845509602235
+    second: fbas_04lwr1_longpants_00a_87
+  - first:
+      213: -6885492635177310952
+    second: fbas_04lwr1_longpants_00a_88
+  - first:
+      213: 142778904680104472
+    second: fbas_04lwr1_longpants_00a_89
+  - first:
+      213: -2601317611661525796
+    second: fbas_04lwr1_longpants_00a_90
+  - first:
+      213: -6859521640404514609
+    second: fbas_04lwr1_longpants_00a_91
+  - first:
+      213: 1814121793058520014
+    second: fbas_04lwr1_longpants_00a_92
+  - first:
+      213: 477790493656320487
+    second: fbas_04lwr1_longpants_00a_93
+  - first:
+      213: -6935862696831873872
+    second: fbas_04lwr1_longpants_00a_94
+  - first:
+      213: 5038189426027718672
+    second: fbas_04lwr1_longpants_00a_95
+  - first:
+      213: -4620797428707593019
+    second: fbas_04lwr1_longpants_00a_96
+  - first:
+      213: -4671878804509241965
+    second: fbas_04lwr1_longpants_00a_97
+  - first:
+      213: -4895722525924316413
+    second: fbas_04lwr1_longpants_00a_98
+  - first:
+      213: -6518202364718246859
+    second: fbas_04lwr1_longpants_00a_99
+  - first:
+      213: -4989857679608264885
+    second: fbas_04lwr1_longpants_00a_100
+  - first:
+      213: 2391579361094507945
+    second: fbas_04lwr1_longpants_00a_101
+  - first:
+      213: -4259648677049261326
+    second: fbas_04lwr1_longpants_00a_102
+  - first:
+      213: 5823077139769637548
+    second: fbas_04lwr1_longpants_00a_103
+  - first:
+      213: 575985704113396619
+    second: fbas_04lwr1_longpants_00a_104
+  - first:
+      213: -8321746935986100476
+    second: fbas_04lwr1_longpants_00a_105
+  - first:
+      213: -8978716004617003172
+    second: fbas_04lwr1_longpants_00a_106
+  - first:
+      213: -8146864043757098866
+    second: fbas_04lwr1_longpants_00a_107
+  - first:
+      213: -2395612974584309634
+    second: fbas_04lwr1_longpants_00a_108
+  - first:
+      213: 4955753947975008840
+    second: fbas_04lwr1_longpants_00a_109
+  - first:
+      213: 3024526375275795086
+    second: fbas_04lwr1_longpants_00a_110
+  - first:
+      213: 5367688612827353783
+    second: fbas_04lwr1_longpants_00a_111
+  - first:
+      213: -5677430466577360585
+    second: fbas_04lwr1_longpants_00a_112
+  - first:
+      213: -7997695083466891704
+    second: fbas_04lwr1_longpants_00a_113
+  - first:
+      213: 266231680895688128
+    second: fbas_04lwr1_longpants_00a_114
+  - first:
+      213: -5926377816233675915
+    second: fbas_04lwr1_longpants_00a_115
+  - first:
+      213: 313820824814374682
+    second: fbas_04lwr1_longpants_00a_116
+  - first:
+      213: 7838556804768174266
+    second: fbas_04lwr1_longpants_00a_117
+  - first:
+      213: -5133314480918459375
+    second: fbas_04lwr1_longpants_00a_118
+  - first:
+      213: 4184064741989925724
+    second: fbas_04lwr1_longpants_00a_119
+  - first:
+      213: 1745807424818871873
+    second: fbas_04lwr1_longpants_00a_120
+  - first:
+      213: 1580168394426266335
+    second: fbas_04lwr1_longpants_00a_121
+  - first:
+      213: -5748038549525561691
+    second: fbas_04lwr1_longpants_00a_122
+  - first:
+      213: 3408104251027489745
+    second: fbas_04lwr1_longpants_00a_123
+  - first:
+      213: 7669692845848661766
+    second: fbas_04lwr1_longpants_00a_124
+  - first:
+      213: -7132707952260739483
+    second: fbas_04lwr1_longpants_00a_125
+  - first:
+      213: -436776376875541528
+    second: fbas_04lwr1_longpants_00a_126
+  - first:
+      213: 8747153038432731532
+    second: fbas_04lwr1_longpants_00a_127
+  - first:
+      213: 649834710394101658
+    second: fbas_04lwr1_longpants_00a_128
+  - first:
+      213: -1546967986130607262
+    second: fbas_04lwr1_longpants_00a_129
+  - first:
+      213: 6934301066357367786
+    second: fbas_04lwr1_longpants_00a_130
+  - first:
+      213: -7901979848451563653
+    second: fbas_04lwr1_longpants_00a_131
+  - first:
+      213: 8764590868383444299
+    second: fbas_04lwr1_longpants_00a_132
+  - first:
+      213: -982849227391824152
+    second: fbas_04lwr1_longpants_00a_133
+  - first:
+      213: -5770110929029910078
+    second: fbas_04lwr1_longpants_00a_134
+  - first:
+      213: -6041693227739001351
+    second: fbas_04lwr1_longpants_00a_135
+  - first:
+      213: -3277776360922633964
+    second: fbas_04lwr1_longpants_00a_136
+  - first:
+      213: -8594982391462463552
+    second: fbas_04lwr1_longpants_00a_137
+  - first:
+      213: 3938825521879480343
+    second: fbas_04lwr1_longpants_00a_138
+  - first:
+      213: 1949527320760480819
+    second: fbas_04lwr1_longpants_00a_139
+  - first:
+      213: 2064283380007830931
+    second: fbas_04lwr1_longpants_00a_140
+  - first:
+      213: -146386281266781239
+    second: fbas_04lwr1_longpants_00a_141
+  - first:
+      213: 4911337315324786075
+    second: fbas_04lwr1_longpants_00a_142
+  - first:
+      213: 4017930618659967121
+    second: fbas_04lwr1_longpants_00a_143
+  - first:
+      213: 3549637770940108739
+    second: fbas_04lwr1_longpants_00a_144
+  - first:
+      213: 3450501897005358493
+    second: fbas_04lwr1_longpants_00a_145
+  - first:
+      213: 4952182504632309891
+    second: fbas_04lwr1_longpants_00a_146
+  - first:
+      213: -2127240053007320071
+    second: fbas_04lwr1_longpants_00a_147
+  - first:
+      213: 2579878105287874124
+    second: fbas_04lwr1_longpants_00a_148
+  - first:
+      213: -6046224035553846259
+    second: fbas_04lwr1_longpants_00a_149
+  - first:
+      213: 3518513706994198976
+    second: fbas_04lwr1_longpants_00a_150
+  - first:
+      213: -6215948356658534610
+    second: fbas_04lwr1_longpants_00a_151
+  - first:
+      213: -4668018112735420363
+    second: fbas_04lwr1_longpants_00a_152
+  - first:
+      213: 6129286855621573903
+    second: fbas_04lwr1_longpants_00a_153
+  - first:
+      213: 1315516760123590746
+    second: fbas_04lwr1_longpants_00a_154
+  - first:
+      213: 8401571858379087197
+    second: fbas_04lwr1_longpants_00a_155
+  - first:
+      213: -1374192188416179144
+    second: fbas_04lwr1_longpants_00a_156
+  - first:
+      213: -6273137714600036653
+    second: fbas_04lwr1_longpants_00a_157
+  - first:
+      213: 8750400847157109627
+    second: fbas_04lwr1_longpants_00a_158
+  - first:
+      213: -2548446162685015313
+    second: fbas_04lwr1_longpants_00a_159
+  - first:
+      213: 3448653362538303410
+    second: fbas_04lwr1_longpants_00a_160
+  - first:
+      213: 6307167101437231409
+    second: fbas_04lwr1_longpants_00a_161
+  - first:
+      213: -2801339225862565976
+    second: fbas_04lwr1_longpants_00a_162
+  - first:
+      213: 7416361740520922258
+    second: fbas_04lwr1_longpants_00a_163
+  - first:
+      213: -768669276762569927
+    second: fbas_04lwr1_longpants_00a_164
+  - first:
+      213: -5676468455384639505
+    second: fbas_04lwr1_longpants_00a_165
+  - first:
+      213: -3543696633406665837
+    second: fbas_04lwr1_longpants_00a_166
+  - first:
+      213: -2815162198017603976
+    second: fbas_04lwr1_longpants_00a_167
+  - first:
+      213: 4462551140465725454
+    second: fbas_04lwr1_longpants_00a_168
+  - first:
+      213: 1663426805227881299
+    second: fbas_04lwr1_longpants_00a_169
+  - first:
+      213: -4792624083124302436
+    second: fbas_04lwr1_longpants_00a_170
+  - first:
+      213: 3582743647144048172
+    second: fbas_04lwr1_longpants_00a_171
+  - first:
+      213: 2479509593968789446
+    second: fbas_04lwr1_longpants_00a_172
+  - first:
+      213: -333377585085839680
+    second: fbas_04lwr1_longpants_00a_173
+  - first:
+      213: -5927384891963337272
+    second: fbas_04lwr1_longpants_00a_174
+  - first:
+      213: 1219186260140558671
+    second: fbas_04lwr1_longpants_00a_175
+  - first:
+      213: 671570889598268233
+    second: fbas_04lwr1_longpants_00a_176
+  - first:
+      213: -8970400990971268403
+    second: fbas_04lwr1_longpants_00a_177
+  - first:
+      213: -7974645793378562052
+    second: fbas_04lwr1_longpants_00a_178
+  - first:
+      213: -37519492117343388
+    second: fbas_04lwr1_longpants_00a_179
+  - first:
+      213: 2167382648455405837
+    second: fbas_04lwr1_longpants_00a_180
+  - first:
+      213: -919663600236030270
+    second: fbas_04lwr1_longpants_00a_181
+  - first:
+      213: 7009024201174324989
+    second: fbas_04lwr1_longpants_00a_182
+  - first:
+      213: 3533872835670248740
+    second: fbas_04lwr1_longpants_00a_183
+  - first:
+      213: 4951425234036088445
+    second: fbas_04lwr1_longpants_00a_184
+  - first:
+      213: -876308816697156071
+    second: fbas_04lwr1_longpants_00a_185
+  - first:
+      213: 5987305769490502722
+    second: fbas_04lwr1_longpants_00a_186
+  - first:
+      213: -7168668970995906789
+    second: fbas_04lwr1_longpants_00a_187
+  - first:
+      213: 8686732091809151457
+    second: fbas_04lwr1_longpants_00a_188
+  - first:
+      213: 2204182187852568386
+    second: fbas_04lwr1_longpants_00a_189
+  - first:
+      213: -7118282419090598715
+    second: fbas_04lwr1_longpants_00a_190
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 982
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be69e6731203781e0800000000000000
+      internalID: -2195733374097778965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 982
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af9fb23d8d01863f0800000000000000
+      internalID: -907456801473299974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_2
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 988
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8467e8c41d3389170800000000000000
+      internalID: 8185349296771462728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_3
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 982
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66355575f7ebdc4a0800000000000000
+      internalID: -6571386827128351898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 982
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3adc1febbafee9260800000000000000
+      internalID: 7106380782959185315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_5
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 988
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1684a410d8c55ff00800000000000000
+      internalID: 1149927040544819297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_6
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 982
+        width: 75
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0e0c68291c3cd800800000000000000
+      internalID: 638451325929786891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_7
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 980
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fc0f30389eb13f20800000000000000
+      internalID: 3400708754495180016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_8
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 983
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ecce112bca0312c0800000000000000
+      internalID: -4462210938243724056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_9
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 982
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e99da16b473c806b0800000000000000
+      internalID: -5329795252954146402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_10
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 982
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc15a0824f9172ca0800000000000000
+      internalID: -6041831838659751473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_11
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 982
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5923260446fd2dd00800000000000000
+      internalID: 996104089272201877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_12
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 917
+        width: 10
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 849c06e536f2f62c0800000000000000
+      internalID: -4436275004104980152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_13
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 918
+        width: 12
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 435578f958ebbd0f0800000000000000
+      internalID: -1091069003590838988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_14
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 978
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cfe1527aa249a730800000000000000
+      internalID: 4010810242979983300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_15
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 918
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5ff09faa28a8120800000000000000
+      internalID: 2416887820872316409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_16
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 917
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d702fd5ca08b4c280800000000000000
+      internalID: -9023885396934713219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_17
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 925
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dadd08ccc077e730800000000000000
+      internalID: 4028312416538188497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_18
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 918
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9273487ba6319c40800000000000000
+      internalID: 5517251128590561946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_19
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 917
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1908636dc30569a00800000000000000
+      internalID: 762885409108033681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_20
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 925
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2253ad84a742500800000000000000
+      internalID: 370555522668372700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_21
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 919
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0007a22d25a47b380800000000000000
+      internalID: -8955607614429171712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_22
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 919
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bd2a21e6584adb00800000000000000
+      internalID: 854074617322155447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_23
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 919
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 576daef9c360fdd70800000000000000
+      internalID: 9069975031998240373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_24
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 917
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dee1c5827bfb4ec70800000000000000
+      internalID: 8999528748770139885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_25
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 917
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb43626119ecadf50800000000000000
+      internalID: 6907060101063259327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_26
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 918
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96e042c574da48dc0800000000000000
+      internalID: -3637592077008368023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_27
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 917
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20bbd0ee2f10009a0800000000000000
+      internalID: -6269008538412139774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_28
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 914
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09a062c12a7ef0440800000000000000
+      internalID: 4904393202672732816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_29
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 854
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 438452d732ca038b0800000000000000
+      internalID: -5174446703425271756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_30
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 851
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0a5d602eb838e070800000000000000
+      internalID: 8135815116083780107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_31
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 859
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dc6684615f7fd5e0800000000000000
+      internalID: -1882646131661968170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_32
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 854
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77c02ab40108b5e20800000000000000
+      internalID: 3340404356102098039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_33
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 851
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1726d3d5c14a3e220800000000000000
+      internalID: 2514033458733212273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_34
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 859
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73943d2071bd167c0800000000000000
+      internalID: -4079738895542826697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_35
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 854
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77744f30b04dbe970800000000000000
+      internalID: 8785348641892353911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_36
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 854
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90fe09574b529e510800000000000000
+      internalID: 1578834601366843145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_37
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 855
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1d998668c3270e90800000000000000
+      internalID: -7059634547259237092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_38
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 853
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f12c32cc28a0ef390800000000000000
+      internalID: -7782771549162716641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_39
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 854
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f79b099548d4ed0800000000000000
+      internalID: -2428139103867797685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_40
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 853
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 597b374c1d05f4510800000000000000
+      internalID: 1535534859830933397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_41
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 854
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 715dc1e0a97df5f80800000000000000
+      internalID: -8115530946836638441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_42
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 854
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c72833a86522ddcf0800000000000000
+      internalID: -225986651217493380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_43
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 854
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dbbeee971ad10840800000000000000
+      internalID: 5188668040693070800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_44
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 849
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c38cb0dad9b198a30800000000000000
+      internalID: 4217932890036226108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_45
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 789
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0887fc8df576fd4e0800000000000000
+      internalID: -1954730051898476416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_46
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 790
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 382c262d1bcfe0100800000000000000
+      internalID: 76276084380975747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_47
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 790
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58084d6d2a1a352f0800000000000000
+      internalID: -985266172702982011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_48
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 794
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bf9339397a6bc900800000000000000
+      internalID: 705774835496886200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_49
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 789
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29df190a63ebc27f0800000000000000
+      internalID: -635924305534648942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_50
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 791
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b0a8208bca6e2d0800000000000000
+      internalID: -3249720174784672977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_51
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 790
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b297c4ae526712530800000000000000
+      internalID: 3828471063458380075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_52
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 797
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 980e6c0ac7e572f70800000000000000
+      internalID: 9162395856274907273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_53
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 796
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89439fa0f862d5bb0800000000000000
+      internalID: -4945754419976653672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_54
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 799
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d863f58bb18403b10800000000000000
+      internalID: 1959145121800730253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_55
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 796
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3d7af6cb87ff41e0800000000000000
+      internalID: -2211276712304804546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_56
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 796
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29ee438268bed8370800000000000000
+      internalID: 8326570247510617746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_57
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 790
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c7e1532f36fbd520800000000000000
+      internalID: 2728044750338910152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_58
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 790
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d840e48dd2c626960800000000000000
+      internalID: 7593750865858397325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_59
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 790
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7944402e861deb2e0800000000000000
+      internalID: -2108017327164078953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_60
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 790
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef399b91475015560800000000000000
+      internalID: 7300622467150222334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_61
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 726
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a264c86bb17a680800000000000000
+      internalID: -8743989680665122170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_62
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 726
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66944b7e504020770800000000000000
+      internalID: 8575421063875545446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_63
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 726
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b27aae0799a8c720800000000000000
+      internalID: 2866727629072528053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_64
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 725
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de80830d5716dccd0800000000000000
+      internalID: -2536263856507320083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_65
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 727
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a4d3c8dbc5958690800000000000000
+      internalID: -7600504093370231643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_66
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 726
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cc5b52c43ba95130800000000000000
+      internalID: 3556061623873133767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_67
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 730
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17fe48ee6d58a9d60800000000000000
+      internalID: 7897772054718771057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_68
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 731
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fefa730475a0d300800000000000000
+      internalID: 274901494962781939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_69
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 732
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6cf02238bf28fde0800000000000000
+      internalID: -1299236024334877587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_70
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 735
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5422a0d016a0396d0800000000000000
+      internalID: -2985030716069633467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_71
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 732
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a4d7004d5406d10800000000000000
+      internalID: 2116768601707727410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_72
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 732
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f15e00d4de3cbfa0800000000000000
+      internalID: -5783678737705971210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_73
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 726
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 115de7877ae46f5f0800000000000000
+      internalID: -723304208958302959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_74
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 726
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a890ae6ae310fdc70800000000000000
+      internalID: 8997911949109496202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_75
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 721
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9397aa9c875a2a00800000000000000
+      internalID: 732494150802838431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_76
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 721
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc657b302f584c160800000000000000
+      internalID: 7044902991605225165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_77
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 661
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e7658288e99ea110800000000000000
+      internalID: 1274124968493672418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_78
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 662
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f8f280b3bffc0ab0800000000000000
+      internalID: -5040372735708825357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_79
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 662
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94a503a5a8fb3fbe0800000000000000
+      internalID: -1444600454516286903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_80
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 666
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd29beb8bd8f9c7c0800000000000000
+      internalID: -4050432768014052644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_81
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 661
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d634837d84413bb10800000000000000
+      internalID: 1995961362936251245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_82
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 663
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1529dee90b6928830800000000000000
+      internalID: 4071982698421129809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_83
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 662
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e8e5ee65c04d08b0800000000000000
+      internalID: -5184416379320276767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_84
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 669
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec5a329708ef40c0800000000000000
+      internalID: -4589194376051532572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_85
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 667
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e77a73b150809820800000000000000
+      internalID: 2922977246555305960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_86
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 669
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3690b7cc9d632a40800000000000000
+      internalID: 5342234103124104764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_87
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 667
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbbe67ef32eae6c00800000000000000
+      internalID: 895844845509602235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_88
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 667
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81520b0ede0d170a0800000000000000
+      internalID: -6885492635177310952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_89
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 662
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81280e648a04bf100800000000000000
+      internalID: 142778904680104472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_90
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 662
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdc72f02a6346ebd0800000000000000
+      internalID: -2601317611661525796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_91
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 657
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc8859e49651ec0a0800000000000000
+      internalID: -6859521640404514609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_92
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 657
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb3c8eb82e0d2910800000000000000
+      internalID: 1814121793058520014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_93
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 598
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e9817b2ce371a600800000000000000
+      internalID: 477790493656320487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_94
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 598
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bc047000addebf90800000000000000
+      internalID: -6935862696831873872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_95
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 598
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 018e289e69e3be540800000000000000
+      internalID: 5038189426027718672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_96
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 597
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c478da7831afdfb0800000000000000
+      internalID: -4620797428707593019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_97
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 599
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39dcc8fdaf62a2fb0800000000000000
+      internalID: -4671878804509241965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_98
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 598
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30b27632d46ee0cb0800000000000000
+      internalID: -4895722525924316413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_99
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 602
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5349bd4fb71ba85a0800000000000000
+      internalID: -6518202364718246859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_100
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 603
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b47c137b0e670cab0800000000000000
+      internalID: -4989857679608264885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_101
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 596
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ad913ef1c8903120800000000000000
+      internalID: 2391579361094507945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_102
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 598
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f22488c810b2e4c0800000000000000
+      internalID: -4259648677049261326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_103
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 598
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caabaaf7ec9bfc050800000000000000
+      internalID: 5823077139769637548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_104
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 595
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8bd16932ff4ef700800000000000000
+      internalID: 575985704113396619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_105
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 595
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4076ad19047338c80800000000000000
+      internalID: -8321746935986100476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_106
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 595
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f50b57d51356380800000000000000
+      internalID: -8978716004617003172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_107
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 595
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e88a47ee05680fe80800000000000000
+      internalID: -8146864043757098866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_108
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 590
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e78d59e21b211ced0800000000000000
+      internalID: -2395612974584309634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_109
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 534
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8424a4f75ff56c440800000000000000
+      internalID: 4955753947975008840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_110
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 534
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e821d14b6b649f920800000000000000
+      internalID: 3024526375275795086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_111
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 534
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b2db78aa5cdd7a40800000000000000
+      internalID: 5367688612827353783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_112
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 534
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7391daa2217b531b0800000000000000
+      internalID: -5677430466577360585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_113
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 533
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e5118f1ba720190800000000000000
+      internalID: -7997695083466891704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_114
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 536
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cd1ebf9d48d1b300800000000000000
+      internalID: 266231680895688128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_115
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 537
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 573f2a286c641cda0800000000000000
+      internalID: -5926377816233675915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_116
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 536
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f4e22a06aea5400800000000000000
+      internalID: 313820824814374682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_117
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 534
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab09deb22e528cc60800000000000000
+      internalID: 7838556804768174266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_118
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 534
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11c8c745dadc2c8b0800000000000000
+      internalID: -5133314480918459375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_119
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 534
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c53cb87f6b8c01a30800000000000000
+      internalID: 4184064741989925724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_120
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 534
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14e719a6a9a5a3810800000000000000
+      internalID: 1745807424818871873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_121
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 534
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2b31b58c2ede510800000000000000
+      internalID: 1580168394426266335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_122
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 534
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aef644c46dda30b0800000000000000
+      internalID: -5748038549525561691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_123
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 534
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d30ef762c40c4f20800000000000000
+      internalID: 3408104251027489745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_124
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 534
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60f0a2de109307a60800000000000000
+      internalID: 7669692845848661766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_125
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 472
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56e05ea78e7830d90800000000000000
+      internalID: -7132707952260739483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_126
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 471
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eb1d0a033240f9f0800000000000000
+      internalID: -436776376875541528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_127
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 470
+        width: 81
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8103c31851246970800000000000000
+      internalID: 8747153038432731532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_128
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 470
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9f52c3e93da40900800000000000000
+      internalID: 649834710394101658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_129
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 470
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263a8c310d0188ae0800000000000000
+      internalID: -1546967986130607262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_130
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 473
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae3e7d194169b3060800000000000000
+      internalID: 6934301066357367786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_131
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 471
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7fdfbeb137865290800000000000000
+      internalID: -7901979848451563653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_132
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 471
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4da0af35f412a970800000000000000
+      internalID: 8764590868383444299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_133
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 408
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee0b85c5d73c52f0800000000000000
+      internalID: -982849227391824152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_134
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 406
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c1b2907ea27cefa0800000000000000
+      internalID: -5770110929029910078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_135
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 406
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fdcbb60508972ca0800000000000000
+      internalID: -6041693227739001351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_136
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 405
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419a80224cff282d0800000000000000
+      internalID: -3277776360922633964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_137
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 405
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c7742a9d0d78b880800000000000000
+      internalID: -8594982391462463552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_138
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 405
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7187edf71f489a630800000000000000
+      internalID: 3938825521879480343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_139
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 405
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 334f8d9e4cc1e0b10800000000000000
+      internalID: 1949527320760480819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_140
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 404
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3950c1d0ccec5ac10800000000000000
+      internalID: 2064283380007830931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_141
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 342
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c36a19e37ee7fdf0800000000000000
+      internalID: -146386281266781239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_142
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 342
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b95fd045443982440800000000000000
+      internalID: 4911337315324786075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_143
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 342
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19094691c9e82c730800000000000000
+      internalID: 4017930618659967121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_144
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 342
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cfc132feb8d24130800000000000000
+      internalID: 3549637770940108739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_145
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 342
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9dd0db9135a2ef20800000000000000
+      internalID: 3450501897005358493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_146
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 344
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388538b00cfa9b440800000000000000
+      internalID: 4952182504632309891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_147
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 342
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fbf38041768a72e0800000000000000
+      internalID: -2127240053007320071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_148
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 342
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c46dd7dc7719dc320800000000000000
+      internalID: 2579878105287874124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_149
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 342
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0c5260264f771ca0800000000000000
+      internalID: -6046224035553846259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_150
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 277
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c96bba139544d030800000000000000
+      internalID: 3518513706994198976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_151
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 279
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e27e13337e38cb9a0800000000000000
+      internalID: -6215948356658534610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_152
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 280
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 530e059324ed73fb0800000000000000
+      internalID: -4668018112735420363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_153
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 278
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0d7bcbbbe99f0550800000000000000
+      internalID: 6129286855621573903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_154
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 286
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a584d3ff587a14210800000000000000
+      internalID: 1315516760123590746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_155
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 278
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d9a9d7711689470800000000000000
+      internalID: 8401571858379087197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_156
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 207
+        width: 178
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83446544c73edece0800000000000000
+      internalID: -1374192188416179144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_157
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 277
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d6b82e2c7651f8a0800000000000000
+      internalID: -6273137714600036653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_158
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 274
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b73a319753baf6970800000000000000
+      internalID: 8750400847157109627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_159
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 214
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feac3ff97b912acd0800000000000000
+      internalID: -2548446162685015313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_160
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 214
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bf4d8326f31cdf20800000000000000
+      internalID: 3448653362538303410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_161
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 214
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 131423cdf0f878750800000000000000
+      internalID: 6307167101437231409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_162
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 214
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8af0813f0d4af19d0800000000000000
+      internalID: -2801339225862565976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_163
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 210
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c1c8d95b53ce660800000000000000
+      internalID: 7416361740520922258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_164
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 210
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9338fc88d532555f0800000000000000
+      internalID: -768669276762569927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_165
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 212
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe7961ad3022931b0800000000000000
+      internalID: -5676468455384639505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_166
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 150
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b4c0eefa242dec0800000000000000
+      internalID: -3543696633406665837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_167
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 150
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8768d0275e88ee8d0800000000000000
+      internalID: -2815162198017603976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_168
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 150
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e00597f5e9a2eed30800000000000000
+      internalID: 4462551140465725454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_169
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 149
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 353887bbddda51710800000000000000
+      internalID: 1663426805227881299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_170
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 149
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9dc46fe9cd2d7db0800000000000000
+      internalID: -4792624083124302436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_171
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 152
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c26fe496d5678b130800000000000000
+      internalID: 3582743647144048172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_172
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 147
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c7cea5b6dcf86220800000000000000
+      internalID: 2479509593968789446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_173
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 145
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c681e84ada9f5bf0800000000000000
+      internalID: -333377585085839680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_174
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 151
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c5128b68d2bdbda0800000000000000
+      internalID: -5927384891963337272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_175
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 86
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4907bea17b6be010800000000000000
+      internalID: 1219186260140558671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_176
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 86
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9437ffb7a26e15900800000000000000
+      internalID: 671570889598268233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_177
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 86
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc2785073dbb28380800000000000000
+      internalID: -8970400990971268403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_178
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 86
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cff8b1407ed545190800000000000000
+      internalID: -7974645793378562052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_179
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 84
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46351308834ba7ff0800000000000000
+      internalID: -37519492117343388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_180
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 83
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d01a7851907141e10800000000000000
+      internalID: 2167382648455405837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_181
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 83
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c6131304d2bc33f0800000000000000
+      internalID: -919663600236030270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_182
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 84
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df69c15206e054160800000000000000
+      internalID: 7009024201174324989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_183
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 22
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42d078bee96da0130800000000000000
+      internalID: 3533872835670248740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_184
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 22
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7e50ae340ff6b440800000000000000
+      internalID: 4951425234036088445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_185
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 22
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e193b26c9b6d3f0800000000000000
+      internalID: -876308816697156071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_186
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 22
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 244d02010ee271350800000000000000
+      internalID: 5987305769490502722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_187
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 27
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b178c675d85c38c90800000000000000
+      internalID: -7168668970995906789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_188
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 22
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9354f20d87d8870800000000000000
+      internalID: 8686732091809151457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_189
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 22
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24712378504d69e10800000000000000
+      internalID: 2204182187852568386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_04lwr1_longpants_00a_190
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 22
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c45237aad7c63d90800000000000000
+      internalID: -7118282419090598715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fbas_04lwr1_longpants_00a_0: -2195733374097778965
+      fbas_04lwr1_longpants_00a_1: -907456801473299974
+      fbas_04lwr1_longpants_00a_10: -6041831838659751473
+      fbas_04lwr1_longpants_00a_100: -4989857679608264885
+      fbas_04lwr1_longpants_00a_101: 2391579361094507945
+      fbas_04lwr1_longpants_00a_102: -4259648677049261326
+      fbas_04lwr1_longpants_00a_103: 5823077139769637548
+      fbas_04lwr1_longpants_00a_104: 575985704113396619
+      fbas_04lwr1_longpants_00a_105: -8321746935986100476
+      fbas_04lwr1_longpants_00a_106: -8978716004617003172
+      fbas_04lwr1_longpants_00a_107: -8146864043757098866
+      fbas_04lwr1_longpants_00a_108: -2395612974584309634
+      fbas_04lwr1_longpants_00a_109: 4955753947975008840
+      fbas_04lwr1_longpants_00a_11: 996104089272201877
+      fbas_04lwr1_longpants_00a_110: 3024526375275795086
+      fbas_04lwr1_longpants_00a_111: 5367688612827353783
+      fbas_04lwr1_longpants_00a_112: -5677430466577360585
+      fbas_04lwr1_longpants_00a_113: -7997695083466891704
+      fbas_04lwr1_longpants_00a_114: 266231680895688128
+      fbas_04lwr1_longpants_00a_115: -5926377816233675915
+      fbas_04lwr1_longpants_00a_116: 313820824814374682
+      fbas_04lwr1_longpants_00a_117: 7838556804768174266
+      fbas_04lwr1_longpants_00a_118: -5133314480918459375
+      fbas_04lwr1_longpants_00a_119: 4184064741989925724
+      fbas_04lwr1_longpants_00a_12: -4436275004104980152
+      fbas_04lwr1_longpants_00a_120: 1745807424818871873
+      fbas_04lwr1_longpants_00a_121: 1580168394426266335
+      fbas_04lwr1_longpants_00a_122: -5748038549525561691
+      fbas_04lwr1_longpants_00a_123: 3408104251027489745
+      fbas_04lwr1_longpants_00a_124: 7669692845848661766
+      fbas_04lwr1_longpants_00a_125: -7132707952260739483
+      fbas_04lwr1_longpants_00a_126: -436776376875541528
+      fbas_04lwr1_longpants_00a_127: 8747153038432731532
+      fbas_04lwr1_longpants_00a_128: 649834710394101658
+      fbas_04lwr1_longpants_00a_129: -1546967986130607262
+      fbas_04lwr1_longpants_00a_13: -1091069003590838988
+      fbas_04lwr1_longpants_00a_130: 6934301066357367786
+      fbas_04lwr1_longpants_00a_131: -7901979848451563653
+      fbas_04lwr1_longpants_00a_132: 8764590868383444299
+      fbas_04lwr1_longpants_00a_133: -982849227391824152
+      fbas_04lwr1_longpants_00a_134: -5770110929029910078
+      fbas_04lwr1_longpants_00a_135: -6041693227739001351
+      fbas_04lwr1_longpants_00a_136: -3277776360922633964
+      fbas_04lwr1_longpants_00a_137: -8594982391462463552
+      fbas_04lwr1_longpants_00a_138: 3938825521879480343
+      fbas_04lwr1_longpants_00a_139: 1949527320760480819
+      fbas_04lwr1_longpants_00a_14: 4010810242979983300
+      fbas_04lwr1_longpants_00a_140: 2064283380007830931
+      fbas_04lwr1_longpants_00a_141: -146386281266781239
+      fbas_04lwr1_longpants_00a_142: 4911337315324786075
+      fbas_04lwr1_longpants_00a_143: 4017930618659967121
+      fbas_04lwr1_longpants_00a_144: 3549637770940108739
+      fbas_04lwr1_longpants_00a_145: 3450501897005358493
+      fbas_04lwr1_longpants_00a_146: 4952182504632309891
+      fbas_04lwr1_longpants_00a_147: -2127240053007320071
+      fbas_04lwr1_longpants_00a_148: 2579878105287874124
+      fbas_04lwr1_longpants_00a_149: -6046224035553846259
+      fbas_04lwr1_longpants_00a_15: 2416887820872316409
+      fbas_04lwr1_longpants_00a_150: 3518513706994198976
+      fbas_04lwr1_longpants_00a_151: -6215948356658534610
+      fbas_04lwr1_longpants_00a_152: -4668018112735420363
+      fbas_04lwr1_longpants_00a_153: 6129286855621573903
+      fbas_04lwr1_longpants_00a_154: 1315516760123590746
+      fbas_04lwr1_longpants_00a_155: 8401571858379087197
+      fbas_04lwr1_longpants_00a_156: -1374192188416179144
+      fbas_04lwr1_longpants_00a_157: -6273137714600036653
+      fbas_04lwr1_longpants_00a_158: 8750400847157109627
+      fbas_04lwr1_longpants_00a_159: -2548446162685015313
+      fbas_04lwr1_longpants_00a_16: -9023885396934713219
+      fbas_04lwr1_longpants_00a_160: 3448653362538303410
+      fbas_04lwr1_longpants_00a_161: 6307167101437231409
+      fbas_04lwr1_longpants_00a_162: -2801339225862565976
+      fbas_04lwr1_longpants_00a_163: 7416361740520922258
+      fbas_04lwr1_longpants_00a_164: -768669276762569927
+      fbas_04lwr1_longpants_00a_165: -5676468455384639505
+      fbas_04lwr1_longpants_00a_166: -3543696633406665837
+      fbas_04lwr1_longpants_00a_167: -2815162198017603976
+      fbas_04lwr1_longpants_00a_168: 4462551140465725454
+      fbas_04lwr1_longpants_00a_169: 1663426805227881299
+      fbas_04lwr1_longpants_00a_17: 4028312416538188497
+      fbas_04lwr1_longpants_00a_170: -4792624083124302436
+      fbas_04lwr1_longpants_00a_171: 3582743647144048172
+      fbas_04lwr1_longpants_00a_172: 2479509593968789446
+      fbas_04lwr1_longpants_00a_173: -333377585085839680
+      fbas_04lwr1_longpants_00a_174: -5927384891963337272
+      fbas_04lwr1_longpants_00a_175: 1219186260140558671
+      fbas_04lwr1_longpants_00a_176: 671570889598268233
+      fbas_04lwr1_longpants_00a_177: -8970400990971268403
+      fbas_04lwr1_longpants_00a_178: -7974645793378562052
+      fbas_04lwr1_longpants_00a_179: -37519492117343388
+      fbas_04lwr1_longpants_00a_18: 5517251128590561946
+      fbas_04lwr1_longpants_00a_180: 2167382648455405837
+      fbas_04lwr1_longpants_00a_181: -919663600236030270
+      fbas_04lwr1_longpants_00a_182: 7009024201174324989
+      fbas_04lwr1_longpants_00a_183: 3533872835670248740
+      fbas_04lwr1_longpants_00a_184: 4951425234036088445
+      fbas_04lwr1_longpants_00a_185: -876308816697156071
+      fbas_04lwr1_longpants_00a_186: 5987305769490502722
+      fbas_04lwr1_longpants_00a_187: -7168668970995906789
+      fbas_04lwr1_longpants_00a_188: 8686732091809151457
+      fbas_04lwr1_longpants_00a_189: 2204182187852568386
+      fbas_04lwr1_longpants_00a_19: 762885409108033681
+      fbas_04lwr1_longpants_00a_190: -7118282419090598715
+      fbas_04lwr1_longpants_00a_2: 8185349296771462728
+      fbas_04lwr1_longpants_00a_20: 370555522668372700
+      fbas_04lwr1_longpants_00a_21: -8955607614429171712
+      fbas_04lwr1_longpants_00a_22: 854074617322155447
+      fbas_04lwr1_longpants_00a_23: 9069975031998240373
+      fbas_04lwr1_longpants_00a_24: 8999528748770139885
+      fbas_04lwr1_longpants_00a_25: 6907060101063259327
+      fbas_04lwr1_longpants_00a_26: -3637592077008368023
+      fbas_04lwr1_longpants_00a_27: -6269008538412139774
+      fbas_04lwr1_longpants_00a_28: 4904393202672732816
+      fbas_04lwr1_longpants_00a_29: -5174446703425271756
+      fbas_04lwr1_longpants_00a_3: -6571386827128351898
+      fbas_04lwr1_longpants_00a_30: 8135815116083780107
+      fbas_04lwr1_longpants_00a_31: -1882646131661968170
+      fbas_04lwr1_longpants_00a_32: 3340404356102098039
+      fbas_04lwr1_longpants_00a_33: 2514033458733212273
+      fbas_04lwr1_longpants_00a_34: -4079738895542826697
+      fbas_04lwr1_longpants_00a_35: 8785348641892353911
+      fbas_04lwr1_longpants_00a_36: 1578834601366843145
+      fbas_04lwr1_longpants_00a_37: -7059634547259237092
+      fbas_04lwr1_longpants_00a_38: -7782771549162716641
+      fbas_04lwr1_longpants_00a_39: -2428139103867797685
+      fbas_04lwr1_longpants_00a_4: 7106380782959185315
+      fbas_04lwr1_longpants_00a_40: 1535534859830933397
+      fbas_04lwr1_longpants_00a_41: -8115530946836638441
+      fbas_04lwr1_longpants_00a_42: -225986651217493380
+      fbas_04lwr1_longpants_00a_43: 5188668040693070800
+      fbas_04lwr1_longpants_00a_44: 4217932890036226108
+      fbas_04lwr1_longpants_00a_45: -1954730051898476416
+      fbas_04lwr1_longpants_00a_46: 76276084380975747
+      fbas_04lwr1_longpants_00a_47: -985266172702982011
+      fbas_04lwr1_longpants_00a_48: 705774835496886200
+      fbas_04lwr1_longpants_00a_49: -635924305534648942
+      fbas_04lwr1_longpants_00a_5: 1149927040544819297
+      fbas_04lwr1_longpants_00a_50: -3249720174784672977
+      fbas_04lwr1_longpants_00a_51: 3828471063458380075
+      fbas_04lwr1_longpants_00a_52: 9162395856274907273
+      fbas_04lwr1_longpants_00a_53: -4945754419976653672
+      fbas_04lwr1_longpants_00a_54: 1959145121800730253
+      fbas_04lwr1_longpants_00a_55: -2211276712304804546
+      fbas_04lwr1_longpants_00a_56: 8326570247510617746
+      fbas_04lwr1_longpants_00a_57: 2728044750338910152
+      fbas_04lwr1_longpants_00a_58: 7593750865858397325
+      fbas_04lwr1_longpants_00a_59: -2108017327164078953
+      fbas_04lwr1_longpants_00a_6: 638451325929786891
+      fbas_04lwr1_longpants_00a_60: 7300622467150222334
+      fbas_04lwr1_longpants_00a_61: -8743989680665122170
+      fbas_04lwr1_longpants_00a_62: 8575421063875545446
+      fbas_04lwr1_longpants_00a_63: 2866727629072528053
+      fbas_04lwr1_longpants_00a_64: -2536263856507320083
+      fbas_04lwr1_longpants_00a_65: -7600504093370231643
+      fbas_04lwr1_longpants_00a_66: 3556061623873133767
+      fbas_04lwr1_longpants_00a_67: 7897772054718771057
+      fbas_04lwr1_longpants_00a_68: 274901494962781939
+      fbas_04lwr1_longpants_00a_69: -1299236024334877587
+      fbas_04lwr1_longpants_00a_7: 3400708754495180016
+      fbas_04lwr1_longpants_00a_70: -2985030716069633467
+      fbas_04lwr1_longpants_00a_71: 2116768601707727410
+      fbas_04lwr1_longpants_00a_72: -5783678737705971210
+      fbas_04lwr1_longpants_00a_73: -723304208958302959
+      fbas_04lwr1_longpants_00a_74: 8997911949109496202
+      fbas_04lwr1_longpants_00a_75: 732494150802838431
+      fbas_04lwr1_longpants_00a_76: 7044902991605225165
+      fbas_04lwr1_longpants_00a_77: 1274124968493672418
+      fbas_04lwr1_longpants_00a_78: -5040372735708825357
+      fbas_04lwr1_longpants_00a_79: -1444600454516286903
+      fbas_04lwr1_longpants_00a_8: -4462210938243724056
+      fbas_04lwr1_longpants_00a_80: -4050432768014052644
+      fbas_04lwr1_longpants_00a_81: 1995961362936251245
+      fbas_04lwr1_longpants_00a_82: 4071982698421129809
+      fbas_04lwr1_longpants_00a_83: -5184416379320276767
+      fbas_04lwr1_longpants_00a_84: -4589194376051532572
+      fbas_04lwr1_longpants_00a_85: 2922977246555305960
+      fbas_04lwr1_longpants_00a_86: 5342234103124104764
+      fbas_04lwr1_longpants_00a_87: 895844845509602235
+      fbas_04lwr1_longpants_00a_88: -6885492635177310952
+      fbas_04lwr1_longpants_00a_89: 142778904680104472
+      fbas_04lwr1_longpants_00a_9: -5329795252954146402
+      fbas_04lwr1_longpants_00a_90: -2601317611661525796
+      fbas_04lwr1_longpants_00a_91: -6859521640404514609
+      fbas_04lwr1_longpants_00a_92: 1814121793058520014
+      fbas_04lwr1_longpants_00a_93: 477790493656320487
+      fbas_04lwr1_longpants_00a_94: -6935862696831873872
+      fbas_04lwr1_longpants_00a_95: 5038189426027718672
+      fbas_04lwr1_longpants_00a_96: -4620797428707593019
+      fbas_04lwr1_longpants_00a_97: -4671878804509241965
+      fbas_04lwr1_longpants_00a_98: -4895722525924316413
+      fbas_04lwr1_longpants_00a_99: -6518202364718246859
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

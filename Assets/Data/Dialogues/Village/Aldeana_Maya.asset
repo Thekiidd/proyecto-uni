@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d76bcdd3105f7546936804360827679, type: 3}
+  m_Name: Aldeana_Maya
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.TopDown.NPCDialogueData
+  npcName: Maya
+  nameColor: {r: 1, g: 0.75, b: 0.85, a: 1}
+  profession: Tejedora
+  greetings:
+  - "\xA1Oh, un perrito nuevo! \xA1Qu\xE9 emoci\xF3n! Bienvenido a nuestra peque\xF1a
+    aldea."
+  - "Me llamo Maya. Soy la tejedora del pueblo. Hago bufandas, mantas... \xA1y a
+    veces disfraces para perros!"
+  generalLines:
+  - "\xBFHas probado los pasteles de miel de la se\xF1ora Rosa? \xA1Son los mejores
+    del reino!"
+  - Mi gato Michi y yo llevamos bien la convivencia. Aunque a veces le roba la cama
+    al perro del vecino.
+  - "\xBFVes esa bufanda morada que llevo? La teji con lana de oveja m\xE1gica. Dicen
+    que da buena suerte."
+  - "Extra\xF1o los d\xEDas en que la aldea estaba llena de viajeros. Desde que robaron
+    los cristales, pocos se aventuran."
+  loreLines:
+  - "Mi abuela me contaba que antes los cristales iluminaban la aldea por las noches.
+    \xA1No necesit\xE1bamos antorchas!"
+  - "Esta aldea se llama 'Lumina'. Lo de siempre \u2014 le pusieron ese nombre por
+    la luz de los cristales."
+  - "El tejido tradicional de aqu\xED incorpora patrones basados en los cristales.
+    \xBFVes los rombos azules en esta tela?"
+  tipLines:
+  - "Si encuentras flores silvestres en el bosque, tr\xE1emelas. Las uso para tintes
+    naturales."
+  - "Cuando llueva, busca refugio bajo los \xE1rboles grandes. Las ra\xEDces hacen
+    de paraguas."
+  - "La se\xF1ora Lena sabe mucho sobre hierbas medicinales. Si te lastimas, ve a
+    verla."
+  dangerLines:
+  - "\xA1Ay, por favor ten cuidado! Estos d\xEDas hay criaturas extra\xF1as rondando
+    cerca del r\xEDo."
+  - "Anoche escuch\xE9 aullidos que no eran de ning\xFAn animal que conozco. Algo
+    raro pasa en el bosque."
+  farewells:
+  - "\xA1Cu\xEDdate mucho! Y si encuentras lana de colores especiales, \xA1gu\xE1rdame
+    un poco!"
+  - "\xA1Hasta pronto! Que tus patitas te lleven lejos y te traigan de vuelta sano."
+  hasQuest: 0
+  questOffer: 
+  questActiveReminder: 
+  questComplete: 
+  questRewardCoins: 0

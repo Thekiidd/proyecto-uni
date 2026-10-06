@@ -1,0 +1,5187 @@
+fileFormatVersion: 2
+guid: b9feb99d06d88b1498055b41203bdfed
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8182183569601443928
+    second: fbas_05shrt_shortshirtboobs_00a_0
+  - first:
+      213: -4866436511061108579
+    second: fbas_05shrt_shortshirtboobs_00a_1
+  - first:
+      213: -220505206846747377
+    second: fbas_05shrt_shortshirtboobs_00a_2
+  - first:
+      213: -2303349052236499058
+    second: fbas_05shrt_shortshirtboobs_00a_3
+  - first:
+      213: 7268303548311229820
+    second: fbas_05shrt_shortshirtboobs_00a_4
+  - first:
+      213: -527182195728536595
+    second: fbas_05shrt_shortshirtboobs_00a_5
+  - first:
+      213: -721880887898079820
+    second: fbas_05shrt_shortshirtboobs_00a_6
+  - first:
+      213: 9078866038455935572
+    second: fbas_05shrt_shortshirtboobs_00a_7
+  - first:
+      213: 7817865383343298170
+    second: fbas_05shrt_shortshirtboobs_00a_8
+  - first:
+      213: 5808082574364029390
+    second: fbas_05shrt_shortshirtboobs_00a_9
+  - first:
+      213: -8512235787043946107
+    second: fbas_05shrt_shortshirtboobs_00a_10
+  - first:
+      213: -2457495142967157094
+    second: fbas_05shrt_shortshirtboobs_00a_11
+  - first:
+      213: -726484909222134910
+    second: fbas_05shrt_shortshirtboobs_00a_12
+  - first:
+      213: 1677407192685194478
+    second: fbas_05shrt_shortshirtboobs_00a_13
+  - first:
+      213: 5995424752119769295
+    second: fbas_05shrt_shortshirtboobs_00a_14
+  - first:
+      213: -5164903617142632259
+    second: fbas_05shrt_shortshirtboobs_00a_15
+  - first:
+      213: 7300073981214663169
+    second: fbas_05shrt_shortshirtboobs_00a_16
+  - first:
+      213: -2698644540436180915
+    second: fbas_05shrt_shortshirtboobs_00a_17
+  - first:
+      213: 3155426126454256701
+    second: fbas_05shrt_shortshirtboobs_00a_18
+  - first:
+      213: 945864524476772094
+    second: fbas_05shrt_shortshirtboobs_00a_19
+  - first:
+      213: -750097546287765494
+    second: fbas_05shrt_shortshirtboobs_00a_20
+  - first:
+      213: -6032023797924743402
+    second: fbas_05shrt_shortshirtboobs_00a_21
+  - first:
+      213: 11280111570417042
+    second: fbas_05shrt_shortshirtboobs_00a_22
+  - first:
+      213: -5869958394260006158
+    second: fbas_05shrt_shortshirtboobs_00a_23
+  - first:
+      213: -3811266209626044773
+    second: fbas_05shrt_shortshirtboobs_00a_24
+  - first:
+      213: -3750002727156863450
+    second: fbas_05shrt_shortshirtboobs_00a_25
+  - first:
+      213: 2953911584329106246
+    second: fbas_05shrt_shortshirtboobs_00a_26
+  - first:
+      213: -6647863929105960780
+    second: fbas_05shrt_shortshirtboobs_00a_27
+  - first:
+      213: -3257489239358657066
+    second: fbas_05shrt_shortshirtboobs_00a_28
+  - first:
+      213: -8982982804793745929
+    second: fbas_05shrt_shortshirtboobs_00a_29
+  - first:
+      213: 7896668179827325394
+    second: fbas_05shrt_shortshirtboobs_00a_30
+  - first:
+      213: 1639757761895061034
+    second: fbas_05shrt_shortshirtboobs_00a_31
+  - first:
+      213: -8453759920372520559
+    second: fbas_05shrt_shortshirtboobs_00a_32
+  - first:
+      213: 4900111651106992609
+    second: fbas_05shrt_shortshirtboobs_00a_33
+  - first:
+      213: -3321153832861817777
+    second: fbas_05shrt_shortshirtboobs_00a_34
+  - first:
+      213: 5505319074760204662
+    second: fbas_05shrt_shortshirtboobs_00a_35
+  - first:
+      213: 8641789225812908779
+    second: fbas_05shrt_shortshirtboobs_00a_36
+  - first:
+      213: 7334663676995128307
+    second: fbas_05shrt_shortshirtboobs_00a_37
+  - first:
+      213: 8816247164681389394
+    second: fbas_05shrt_shortshirtboobs_00a_38
+  - first:
+      213: 9088732600773411412
+    second: fbas_05shrt_shortshirtboobs_00a_39
+  - first:
+      213: -4602934766791324138
+    second: fbas_05shrt_shortshirtboobs_00a_40
+  - first:
+      213: -3932903998112164800
+    second: fbas_05shrt_shortshirtboobs_00a_41
+  - first:
+      213: 7157428420852051364
+    second: fbas_05shrt_shortshirtboobs_00a_42
+  - first:
+      213: -3293953889368252311
+    second: fbas_05shrt_shortshirtboobs_00a_43
+  - first:
+      213: -8132508970575751154
+    second: fbas_05shrt_shortshirtboobs_00a_44
+  - first:
+      213: -6566691516865316776
+    second: fbas_05shrt_shortshirtboobs_00a_45
+  - first:
+      213: 2264577575380654993
+    second: fbas_05shrt_shortshirtboobs_00a_46
+  - first:
+      213: -7732682968437931997
+    second: fbas_05shrt_shortshirtboobs_00a_47
+  - first:
+      213: 6852568660518073661
+    second: fbas_05shrt_shortshirtboobs_00a_48
+  - first:
+      213: 4407346883448115113
+    second: fbas_05shrt_shortshirtboobs_00a_49
+  - first:
+      213: -606691604344908626
+    second: fbas_05shrt_shortshirtboobs_00a_50
+  - first:
+      213: 6999066675315093776
+    second: fbas_05shrt_shortshirtboobs_00a_51
+  - first:
+      213: -2892437322624531200
+    second: fbas_05shrt_shortshirtboobs_00a_52
+  - first:
+      213: 275747687022884561
+    second: fbas_05shrt_shortshirtboobs_00a_53
+  - first:
+      213: 4790998683230159686
+    second: fbas_05shrt_shortshirtboobs_00a_54
+  - first:
+      213: -5416596499330243825
+    second: fbas_05shrt_shortshirtboobs_00a_55
+  - first:
+      213: -6942502848037200164
+    second: fbas_05shrt_shortshirtboobs_00a_56
+  - first:
+      213: 7790556077098121142
+    second: fbas_05shrt_shortshirtboobs_00a_57
+  - first:
+      213: -6936295415338672141
+    second: fbas_05shrt_shortshirtboobs_00a_58
+  - first:
+      213: -8905467354147916617
+    second: fbas_05shrt_shortshirtboobs_00a_59
+  - first:
+      213: -4390425180828498193
+    second: fbas_05shrt_shortshirtboobs_00a_60
+  - first:
+      213: 9158873447902388257
+    second: fbas_05shrt_shortshirtboobs_00a_61
+  - first:
+      213: -7492726200153442906
+    second: fbas_05shrt_shortshirtboobs_00a_62
+  - first:
+      213: -6774112611626702971
+    second: fbas_05shrt_shortshirtboobs_00a_63
+  - first:
+      213: 6731136776528342569
+    second: fbas_05shrt_shortshirtboobs_00a_64
+  - first:
+      213: -1125632889364563586
+    second: fbas_05shrt_shortshirtboobs_00a_65
+  - first:
+      213: -8847916375335396776
+    second: fbas_05shrt_shortshirtboobs_00a_66
+  - first:
+      213: -2366608249164196186
+    second: fbas_05shrt_shortshirtboobs_00a_67
+  - first:
+      213: 548404853077018764
+    second: fbas_05shrt_shortshirtboobs_00a_68
+  - first:
+      213: -6603438311113380513
+    second: fbas_05shrt_shortshirtboobs_00a_69
+  - first:
+      213: -6239282867544237077
+    second: fbas_05shrt_shortshirtboobs_00a_70
+  - first:
+      213: -3704556811304782336
+    second: fbas_05shrt_shortshirtboobs_00a_71
+  - first:
+      213: 8427180157927436944
+    second: fbas_05shrt_shortshirtboobs_00a_72
+  - first:
+      213: -1803741845217403661
+    second: fbas_05shrt_shortshirtboobs_00a_73
+  - first:
+      213: -3073166778166701717
+    second: fbas_05shrt_shortshirtboobs_00a_74
+  - first:
+      213: 1032681293275810311
+    second: fbas_05shrt_shortshirtboobs_00a_75
+  - first:
+      213: -8981201533528167238
+    second: fbas_05shrt_shortshirtboobs_00a_76
+  - first:
+      213: -2350174495031006412
+    second: fbas_05shrt_shortshirtboobs_00a_77
+  - first:
+      213: -3684266650205794173
+    second: fbas_05shrt_shortshirtboobs_00a_78
+  - first:
+      213: 9027720775648539757
+    second: fbas_05shrt_shortshirtboobs_00a_79
+  - first:
+      213: -1790115529982212338
+    second: fbas_05shrt_shortshirtboobs_00a_80
+  - first:
+      213: 5117140190251631742
+    second: fbas_05shrt_shortshirtboobs_00a_81
+  - first:
+      213: 1017410560706793018
+    second: fbas_05shrt_shortshirtboobs_00a_82
+  - first:
+      213: -4224765623451957132
+    second: fbas_05shrt_shortshirtboobs_00a_83
+  - first:
+      213: -1785135633861392277
+    second: fbas_05shrt_shortshirtboobs_00a_84
+  - first:
+      213: -6588995031268008
+    second: fbas_05shrt_shortshirtboobs_00a_85
+  - first:
+      213: 7276661676355285424
+    second: fbas_05shrt_shortshirtboobs_00a_86
+  - first:
+      213: -3253198778251441937
+    second: fbas_05shrt_shortshirtboobs_00a_87
+  - first:
+      213: 6218208387861830876
+    second: fbas_05shrt_shortshirtboobs_00a_88
+  - first:
+      213: -6369313474782592330
+    second: fbas_05shrt_shortshirtboobs_00a_89
+  - first:
+      213: 1887321197504565156
+    second: fbas_05shrt_shortshirtboobs_00a_90
+  - first:
+      213: -6598893179421392318
+    second: fbas_05shrt_shortshirtboobs_00a_91
+  - first:
+      213: 3639396045213664653
+    second: fbas_05shrt_shortshirtboobs_00a_92
+  - first:
+      213: -2328453423576482257
+    second: fbas_05shrt_shortshirtboobs_00a_93
+  - first:
+      213: -5919867105490944823
+    second: fbas_05shrt_shortshirtboobs_00a_94
+  - first:
+      213: -4891791838270315444
+    second: fbas_05shrt_shortshirtboobs_00a_95
+  - first:
+      213: -2705712141107141562
+    second: fbas_05shrt_shortshirtboobs_00a_96
+  - first:
+      213: -6465740216720054651
+    second: fbas_05shrt_shortshirtboobs_00a_97
+  - first:
+      213: -8680578573264410349
+    second: fbas_05shrt_shortshirtboobs_00a_98
+  - first:
+      213: -5457086320621250839
+    second: fbas_05shrt_shortshirtboobs_00a_99
+  - first:
+      213: -8673956662547581712
+    second: fbas_05shrt_shortshirtboobs_00a_100
+  - first:
+      213: 5395912398545111195
+    second: fbas_05shrt_shortshirtboobs_00a_101
+  - first:
+      213: 90494916973232522
+    second: fbas_05shrt_shortshirtboobs_00a_102
+  - first:
+      213: 8626275702314244277
+    second: fbas_05shrt_shortshirtboobs_00a_103
+  - first:
+      213: 7295831643212343731
+    second: fbas_05shrt_shortshirtboobs_00a_104
+  - first:
+      213: 2709019066691536787
+    second: fbas_05shrt_shortshirtboobs_00a_105
+  - first:
+      213: -1382512338549069946
+    second: fbas_05shrt_shortshirtboobs_00a_106
+  - first:
+      213: 3444021237371333038
+    second: fbas_05shrt_shortshirtboobs_00a_107
+  - first:
+      213: -8142975994042274737
+    second: fbas_05shrt_shortshirtboobs_00a_108
+  - first:
+      213: -1973124913878315220
+    second: fbas_05shrt_shortshirtboobs_00a_109
+  - first:
+      213: 3767964628691404086
+    second: fbas_05shrt_shortshirtboobs_00a_110
+  - first:
+      213: 6303811155417151557
+    second: fbas_05shrt_shortshirtboobs_00a_111
+  - first:
+      213: 5231699209217857964
+    second: fbas_05shrt_shortshirtboobs_00a_112
+  - first:
+      213: -5398561255250024192
+    second: fbas_05shrt_shortshirtboobs_00a_113
+  - first:
+      213: -8783745607321795544
+    second: fbas_05shrt_shortshirtboobs_00a_114
+  - first:
+      213: -7025397634653889240
+    second: fbas_05shrt_shortshirtboobs_00a_115
+  - first:
+      213: 7009123296283227191
+    second: fbas_05shrt_shortshirtboobs_00a_116
+  - first:
+      213: 96642563632702292
+    second: fbas_05shrt_shortshirtboobs_00a_117
+  - first:
+      213: -7969675409792602968
+    second: fbas_05shrt_shortshirtboobs_00a_118
+  - first:
+      213: 2205940723501986722
+    second: fbas_05shrt_shortshirtboobs_00a_119
+  - first:
+      213: 5239615823288651671
+    second: fbas_05shrt_shortshirtboobs_00a_120
+  - first:
+      213: 3129816654377047006
+    second: fbas_05shrt_shortshirtboobs_00a_121
+  - first:
+      213: -8272094972819177712
+    second: fbas_05shrt_shortshirtboobs_00a_122
+  - first:
+      213: 9000251957620312546
+    second: fbas_05shrt_shortshirtboobs_00a_123
+  - first:
+      213: 448547311358424534
+    second: fbas_05shrt_shortshirtboobs_00a_124
+  - first:
+      213: 5104587678625795518
+    second: fbas_05shrt_shortshirtboobs_00a_125
+  - first:
+      213: -8585360411455661268
+    second: fbas_05shrt_shortshirtboobs_00a_126
+  - first:
+      213: -7491859753076748163
+    second: fbas_05shrt_shortshirtboobs_00a_127
+  - first:
+      213: -4900852869291552161
+    second: fbas_05shrt_shortshirtboobs_00a_128
+  - first:
+      213: 746668724313840951
+    second: fbas_05shrt_shortshirtboobs_00a_129
+  - first:
+      213: -3376482789617416721
+    second: fbas_05shrt_shortshirtboobs_00a_130
+  - first:
+      213: 277856217918967357
+    second: fbas_05shrt_shortshirtboobs_00a_131
+  - first:
+      213: 3080897634515758564
+    second: fbas_05shrt_shortshirtboobs_00a_132
+  - first:
+      213: 9185593695730377590
+    second: fbas_05shrt_shortshirtboobs_00a_133
+  - first:
+      213: 1053748698201276491
+    second: fbas_05shrt_shortshirtboobs_00a_134
+  - first:
+      213: 5534298261305405263
+    second: fbas_05shrt_shortshirtboobs_00a_135
+  - first:
+      213: -8034067898528767284
+    second: fbas_05shrt_shortshirtboobs_00a_136
+  - first:
+      213: 5828742581941560981
+    second: fbas_05shrt_shortshirtboobs_00a_137
+  - first:
+      213: 2352565870027952805
+    second: fbas_05shrt_shortshirtboobs_00a_138
+  - first:
+      213: 7135018077243530066
+    second: fbas_05shrt_shortshirtboobs_00a_139
+  - first:
+      213: 888384999951112042
+    second: fbas_05shrt_shortshirtboobs_00a_140
+  - first:
+      213: -6294927431006798738
+    second: fbas_05shrt_shortshirtboobs_00a_141
+  - first:
+      213: -1130575345093707855
+    second: fbas_05shrt_shortshirtboobs_00a_142
+  - first:
+      213: 797288820093630416
+    second: fbas_05shrt_shortshirtboobs_00a_143
+  - first:
+      213: 3707293965736533781
+    second: fbas_05shrt_shortshirtboobs_00a_144
+  - first:
+      213: -5103313668780797041
+    second: fbas_05shrt_shortshirtboobs_00a_145
+  - first:
+      213: -4240870177350941254
+    second: fbas_05shrt_shortshirtboobs_00a_146
+  - first:
+      213: -1895730484445795992
+    second: fbas_05shrt_shortshirtboobs_00a_147
+  - first:
+      213: -1162612858365605198
+    second: fbas_05shrt_shortshirtboobs_00a_148
+  - first:
+      213: -3030677921303314910
+    second: fbas_05shrt_shortshirtboobs_00a_149
+  - first:
+      213: 2035074239675257968
+    second: fbas_05shrt_shortshirtboobs_00a_150
+  - first:
+      213: 8286750152122456062
+    second: fbas_05shrt_shortshirtboobs_00a_151
+  - first:
+      213: -2379612740979746241
+    second: fbas_05shrt_shortshirtboobs_00a_152
+  - first:
+      213: -8604372838197457803
+    second: fbas_05shrt_shortshirtboobs_00a_153
+  - first:
+      213: -9073030170790187458
+    second: fbas_05shrt_shortshirtboobs_00a_154
+  - first:
+      213: -3412020055721950930
+    second: fbas_05shrt_shortshirtboobs_00a_155
+  - first:
+      213: -3447754107111203775
+    second: fbas_05shrt_shortshirtboobs_00a_156
+  - first:
+      213: 6686692109953282968
+    second: fbas_05shrt_shortshirtboobs_00a_157
+  - first:
+      213: -6218848618078509098
+    second: fbas_05shrt_shortshirtboobs_00a_158
+  - first:
+      213: 5981574126927039361
+    second: fbas_05shrt_shortshirtboobs_00a_159
+  - first:
+      213: 5314820808306325734
+    second: fbas_05shrt_shortshirtboobs_00a_160
+  - first:
+      213: 6483842179876721852
+    second: fbas_05shrt_shortshirtboobs_00a_161
+  - first:
+      213: -3067645636233119995
+    second: fbas_05shrt_shortshirtboobs_00a_162
+  - first:
+      213: 5483014920034772713
+    second: fbas_05shrt_shortshirtboobs_00a_163
+  - first:
+      213: -9083588759443548443
+    second: fbas_05shrt_shortshirtboobs_00a_164
+  - first:
+      213: -6643928706844533212
+    second: fbas_05shrt_shortshirtboobs_00a_165
+  - first:
+      213: 1914387048490768283
+    second: fbas_05shrt_shortshirtboobs_00a_166
+  - first:
+      213: -4398741805791520917
+    second: fbas_05shrt_shortshirtboobs_00a_167
+  - first:
+      213: -4334755370834987319
+    second: fbas_05shrt_shortshirtboobs_00a_168
+  - first:
+      213: -7445257741793761321
+    second: fbas_05shrt_shortshirtboobs_00a_169
+  - first:
+      213: -8414873648598981290
+    second: fbas_05shrt_shortshirtboobs_00a_170
+  - first:
+      213: 1503343484197724495
+    second: fbas_05shrt_shortshirtboobs_00a_171
+  - first:
+      213: -7704447217313014392
+    second: fbas_05shrt_shortshirtboobs_00a_172
+  - first:
+      213: -6927719647729497915
+    second: fbas_05shrt_shortshirtboobs_00a_173
+  - first:
+      213: 2106315565950652792
+    second: fbas_05shrt_shortshirtboobs_00a_174
+  - first:
+      213: 3992769533843333186
+    second: fbas_05shrt_shortshirtboobs_00a_175
+  - first:
+      213: -7718788701998960458
+    second: fbas_05shrt_shortshirtboobs_00a_176
+  - first:
+      213: -8067212270727781316
+    second: fbas_05shrt_shortshirtboobs_00a_177
+  - first:
+      213: 5387188990728401018
+    second: fbas_05shrt_shortshirtboobs_00a_178
+  - first:
+      213: -800232916400287811
+    second: fbas_05shrt_shortshirtboobs_00a_179
+  - first:
+      213: 6035262802234354879
+    second: fbas_05shrt_shortshirtboobs_00a_180
+  - first:
+      213: 9155511693637977707
+    second: fbas_05shrt_shortshirtboobs_00a_181
+  - first:
+      213: -5959148165659945765
+    second: fbas_05shrt_shortshirtboobs_00a_182
+  - first:
+      213: -7440819455578140733
+    second: fbas_05shrt_shortshirtboobs_00a_183
+  - first:
+      213: 4280406258296128527
+    second: fbas_05shrt_shortshirtboobs_00a_184
+  - first:
+      213: 215616473086087363
+    second: fbas_05shrt_shortshirtboobs_00a_185
+  - first:
+      213: -4909854016677636598
+    second: fbas_05shrt_shortshirtboobs_00a_186
+  - first:
+      213: -72266862504731210
+    second: fbas_05shrt_shortshirtboobs_00a_187
+  - first:
+      213: 4364247932586408711
+    second: fbas_05shrt_shortshirtboobs_00a_188
+  - first:
+      213: 1994986463920216581
+    second: fbas_05shrt_shortshirtboobs_00a_189
+  - first:
+      213: -6056148597351023908
+    second: fbas_05shrt_shortshirtboobs_00a_190
+  - first:
+      213: 1462636978481702776
+    second: fbas_05shrt_shortshirtboobs_00a_191
+  - first:
+      213: -6515583468607587529
+    second: fbas_05shrt_shortshirtboobs_00a_192
+  - first:
+      213: -6573067659152134165
+    second: fbas_05shrt_shortshirtboobs_00a_193
+  - first:
+      213: 1325679492044030329
+    second: fbas_05shrt_shortshirtboobs_00a_194
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 989
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 858b1210b94fc8170800000000000000
+      internalID: 8182183569601443928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 985
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d981634d6c1f67cb0800000000000000
+      internalID: -4866436511061108579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_2
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 995
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0d86c2ceab90fcf0800000000000000
+      internalID: -220505206846747377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 989
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e87f5bb9d3cd800e0800000000000000
+      internalID: -2303349052236499058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 986
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c755dcc61933ed460800000000000000
+      internalID: 7268303548311229820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_5
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 994
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deba0bb06921fa8f0800000000000000
+      internalID: -527182195728536595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_6
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 987
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bdf0ba382d5bf5f0800000000000000
+      internalID: -721880887898079820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_7
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 987
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45226816f8c9efd70800000000000000
+      internalID: 9078866038455935572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_8
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 990
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7610043523ae7c60800000000000000
+      internalID: 7817865383343298170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_9
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 988
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec1ba1f24547a9050800000000000000
+      internalID: 5808082574364029390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_10
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 989
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 581c0e4c6a67ed980800000000000000
+      internalID: -8512235787043946107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_11
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 989
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9ed136103935edd0800000000000000
+      internalID: -2457495142967157094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_12
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 983
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28bf12bf2d10be5f0800000000000000
+      internalID: -726484909222134910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_13
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 984
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eecafa754f8574710800000000000000
+      internalID: 1677407192685194478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_14
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 982
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc8eea30c07043350800000000000000
+      internalID: 5995424752119769295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_15
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 983
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db0551966839258b0800000000000000
+      internalID: -5164903617142632259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_16
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 937
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1022f54cb921f4560800000000000000
+      internalID: 7300073981214663169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_17
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 925
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d401148a61d7c8ad0800000000000000
+      internalID: -2698644540436180915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_18
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 937
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d34fa4608535acb20800000000000000
+      internalID: 3155426126454256701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_19
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 926
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efee41b06c2602d00800000000000000
+      internalID: 945864524476772094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_20
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 925
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0820ae714e1795f0800000000000000
+      internalID: -750097546287765494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_21
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 927
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6173ef79052f94ca0800000000000000
+      internalID: -6032023797924743402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_22
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 926
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2957e23a333182000800000000000000
+      internalID: 11280111570417042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_23
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 926
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fa5fc7d0f7b98ea0800000000000000
+      internalID: -5869958394260006158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_24
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 925
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b964ac64399ab1bc0800000000000000
+      internalID: -3811266209626044773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_25
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 924
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62ea115536055fbc0800000000000000
+      internalID: -3750002727156863450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_26
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 926
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64309d97fe66ef820800000000000000
+      internalID: 2953911584329106246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_27
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 926
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0b1867afa0eb3a0800000000000000
+      internalID: -6647863929105960780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_28
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 922
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ddae54bbc21bc2d0800000000000000
+      internalID: -3257489239358657066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_29
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 926
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd93d0abb8065380800000000000000
+      internalID: -8982982804793745929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_30
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 926
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9fcb70fd9969d60800000000000000
+      internalID: 7896668179827325394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_31
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 919
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a26d1732ff691c610800000000000000
+      internalID: 1639757761895061034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_32
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 861
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 199e2c174263eaa80800000000000000
+      internalID: -8453759920372520559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_33
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 857
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e13cf3b591b00440800000000000000
+      internalID: 4900111651106992609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_34
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 867
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4428db6f24e8e1d0800000000000000
+      internalID: -3321153832861817777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_35
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 861
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671a342b782d66c40800000000000000
+      internalID: 5505319074760204662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_36
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 857
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bea5064c38dcde770800000000000000
+      internalID: 8641789225812908779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_37
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 867
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb4146e0c5f9c560800000000000000
+      internalID: 7334663676995128307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_38
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 861
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25501e6f51a995a70800000000000000
+      internalID: 8816247164681389394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_39
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 861
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4528c9f652aa12e70800000000000000
+      internalID: 9088732600773411412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_40
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 861
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61e8b1d87371f10c0800000000000000
+      internalID: -4602934766791324138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_41
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 861
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0449fc0b6a48b69c0800000000000000
+      internalID: -3932903998112164800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_42
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 861
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4adeb222a3b445360800000000000000
+      internalID: 7157428420852051364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_43
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 861
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96060b5c3668942d0800000000000000
+      internalID: -3293953889368252311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_44
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 861
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e08972cdd26832f80800000000000000
+      internalID: -8132508970575751154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_45
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 861
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 858fba37bdc6ed4a0800000000000000
+      internalID: -6566691516865316776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_46
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 861
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b11ea7e456d6f10800000000000000
+      internalID: 2264577575380654993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_47
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 857
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3204b894fcdffa490800000000000000
+      internalID: -7732682968437931997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_48
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 797
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d357729e3e6391f50800000000000000
+      internalID: 6852568660518073661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_49
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 797
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af89dda3aa0a2d30800000000000000
+      internalID: 4407346883448115113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_50
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 797
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea45fc243399497f0800000000000000
+      internalID: -606691604344908626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_51
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 800
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0113e6dfe0ea12160800000000000000
+      internalID: 6999066675315093776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_52
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 796
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00502e1749ffbd7d0800000000000000
+      internalID: -2892437322624531200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_53
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 798
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d672a47f07a3d300800000000000000
+      internalID: 275747687022884561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_54
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 798
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6434c492beb0d7240800000000000000
+      internalID: 4790998683230159686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_55
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 802
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f03ebc5ae2264d4b0800000000000000
+      internalID: -5416596499330243825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_56
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 802
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdeda92517647af90800000000000000
+      internalID: -6942502848037200164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_57
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 804
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b7b13ad97d9d1c60800000000000000
+      internalID: 7790556077098121142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_58
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 801
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff519fd1145dbf90800000000000000
+      internalID: -6936295415338672141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_59
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 801
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4fc25ef9c696480800000000000000
+      internalID: -8905467354147916617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_60
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 797
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe689cb3f831213c0800000000000000
+      internalID: -4390425180828498193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_61
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 797
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 120aaf400eada1f70800000000000000
+      internalID: 9158873447902388257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_62
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 798
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a57798183d740890800000000000000
+      internalID: -7492726200153442906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_63
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 798
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5872f7378748df1a0800000000000000
+      internalID: -6774112611626702971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_64
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 733
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92e2a833c3dc96d50800000000000000
+      internalID: 6731136776528342569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_65
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 733
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e79bde9d9d2f060f0800000000000000
+      internalID: -1125632889364563586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_66
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 733
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85a95c55fe2e53580800000000000000
+      internalID: -8847916375335396776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_67
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 733
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a61f02165e182fd0800000000000000
+      internalID: -2366608249164196186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_68
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 732
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8881ccee435c9700800000000000000
+      internalID: 548404853077018764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_69
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 732
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5da1e1b7dfdb54a0800000000000000
+      internalID: -6603438311113380513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_70
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 737
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beb58d20a4d9969a0800000000000000
+      internalID: -6239282867544237077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_71
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 737
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 006bceb2535c69cc0800000000000000
+      internalID: -3704556811304782336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_72
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 737
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0923c7b54bb53f470800000000000000
+      internalID: 8427180157927436944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_73
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 739
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fc1f413952d7f6e0800000000000000
+      internalID: -1803741845217403661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_74
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 736
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6197dbf81be955d0800000000000000
+      internalID: -3073166778166701717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_75
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 736
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70a45e33a22d45e00800000000000000
+      internalID: 1032681293275810311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_76
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 733
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abc2cd92acc5c5380800000000000000
+      internalID: -8981201533528167238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_77
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 733
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43b6e7f9fb0826fd0800000000000000
+      internalID: -2350174495031006412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_78
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 728
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3805aa0700bdedcc0800000000000000
+      internalID: -3684266650205794173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_79
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 728
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d64f1fbe638e84d70800000000000000
+      internalID: 9027720775648539757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_80
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 669
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e070080f86b3827e0800000000000000
+      internalID: -1790115529982212338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_81
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 669
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e74c2d924ebb30740800000000000000
+      internalID: 5117140190251631742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_82
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 669
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3ec8a5b3819e1e00800000000000000
+      internalID: 1017410560706793018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_83
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 672
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4784dda9c0e9e55c0800000000000000
+      internalID: -4224765623451957132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_84
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 668
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b68cccb599ce937e0800000000000000
+      internalID: -1785135633861392277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_85
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 670
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8550cbb085798eff0800000000000000
+      internalID: -6588995031268008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_86
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 670
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b1fad1cd35ebf460800000000000000
+      internalID: 7276661676355285424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_87
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 674
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe8869682f05ad2d0800000000000000
+      internalID: -3253198778251441937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_88
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 673
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdcdbd155938b4650800000000000000
+      internalID: 6218208387861830876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_89
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 676
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b289780427ab97a0800000000000000
+      internalID: -6369313474782592330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_90
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 672
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af035231ac113a10800000000000000
+      internalID: 1887321197504565156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_91
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 672
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24207d1ad950c64a0800000000000000
+      internalID: -6598893179421392318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_92
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 669
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d850ce7bb6bb18230800000000000000
+      internalID: 3639396045213664653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_93
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 669
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e7eaba2fbafafd0800000000000000
+      internalID: -2328453423576482257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_94
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 666
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc31bb7b3868dda0800000000000000
+      internalID: -5919867105490944823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_95
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 666
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c442ebcad3ddc1cb0800000000000000
+      internalID: -4891791838270315444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_96
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 605
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 644e8d4a421637ad0800000000000000
+      internalID: -2705712141107141562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_97
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 606
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 586a174a7831546a0800000000000000
+      internalID: -6465740216720054651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_98
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 605
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31925bf77c3688780800000000000000
+      internalID: -8680578573264410349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_99
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 606
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e61abe77e88444b0800000000000000
+      internalID: -5457086320621250839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_100
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 606
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f4f7bb3f5aef9780800000000000000
+      internalID: -8673956662547581712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_101
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 605
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b98486adcb122ea40800000000000000
+      internalID: 5395912398545111195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_102
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 609
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a810b24c5a0814100800000000000000
+      internalID: 90494916973232522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_103
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 609
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8160b1c00b6b770800000000000000
+      internalID: 8626275702314244277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_104
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 598
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b9e9ba7930004560800000000000000
+      internalID: 7295831643212343731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_105
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 605
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 397c8e7fc7e589520800000000000000
+      internalID: 2709019066691536787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_106
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 605
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 687203b5a5450dce0800000000000000
+      internalID: -1382512338549069946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_107
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 605
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea96b64711f9bcf20800000000000000
+      internalID: 3444021237371333038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_108
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 601
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4ca39c0a765efe80800000000000000
+      internalID: -8142975994042274737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_109
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 601
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2f4fca485d0e94e0800000000000000
+      internalID: -1973124913878315220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_110
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 601
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6354363cddf7a4430800000000000000
+      internalID: 3767964628691404086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_111
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 601
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 548b8c9c8d2ab7750800000000000000
+      internalID: 6303811155417151557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_112
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 541
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca95f1946baba9840800000000000000
+      internalID: 5231699209217857964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_113
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 541
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 009a2a224257415b0800000000000000
+      internalID: -5398561255250024192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_114
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 541
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 824cf2e88edd91680800000000000000
+      internalID: -8783745607321795544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_115
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 541
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82dd59cc216c08e90800000000000000
+      internalID: -7025397634653889240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_116
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 540
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73470e58088654160800000000000000
+      internalID: 7009123296283227191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_117
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 544
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 453a28b46e7575100800000000000000
+      internalID: 96642563632702292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_118
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 543
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ac6520a076066190800000000000000
+      internalID: -7969675409792602968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_119
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 544
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a377e386631d9e10800000000000000
+      internalID: 2205940723501986722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_120
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 540
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79fc2a2a4dad6b840800000000000000
+      internalID: 5239615823288651671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_121
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 540
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed3de382aa75f6b20800000000000000
+      internalID: 3129816654377047006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_122
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 540
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f71dc137d933d80800000000000000
+      internalID: -8272094972819177712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_123
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 540
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e909f6587157ec70800000000000000
+      internalID: 9000251957620312546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_124
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 541
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d5b976376f893600800000000000000
+      internalID: 448547311358424534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_125
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 540
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebd835dc27327d640800000000000000
+      internalID: 5104587678625795518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_126
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 541
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2bdb76613caad880800000000000000
+      internalID: -8585360411455661268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_127
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 541
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7090d68f31970890800000000000000
+      internalID: -7491859753076748163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_128
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 480
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f525c6df74cacfbb0800000000000000
+      internalID: -4900852869291552161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_129
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 478
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73dde9daf33bc5a00800000000000000
+      internalID: 746668724313840951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_130
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 473
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe542aecac25421d0800000000000000
+      internalID: -3376482789617416721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_131
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 478
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3e81bf02c42bd300800000000000000
+      internalID: 277856217918967357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_132
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 476
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed27a6431c81ca20800000000000000
+      internalID: 3080897634515758564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_133
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 474
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 673a3158cc8c97f70800000000000000
+      internalID: 9185593695730377590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_134
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 477
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4041d6abdaaf9e00800000000000000
+      internalID: 1053748698201276491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_135
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 477
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4fab2a52f6cdcc40800000000000000
+      internalID: 5534298261305405263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_136
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 417
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc2e2d600d1418090800000000000000
+      internalID: -8034067898528767284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_137
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 414
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 596e1db0f7ad3e050800000000000000
+      internalID: 5828742581941560981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_138
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 410
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a259b1c13ef5a020800000000000000
+      internalID: 2352565870027952805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_139
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 412
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b5718632da40360800000000000000
+      internalID: 7135018077243530066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_140
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 414
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a671fd9537d245c00800000000000000
+      internalID: 888384999951112042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_141
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 414
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6c3afb7adce3a8a0800000000000000
+      internalID: -6294927431006798738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_142
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 413
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b7ffd3b6b36f40f0800000000000000
+      internalID: -1130575345093707855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_143
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 412
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d7321925f9801b00800000000000000
+      internalID: 797288820093630416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_144
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 352
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51fdca14834f27330800000000000000
+      internalID: 3707293965736533781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_145
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 350
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f83dceab1436d29b0800000000000000
+      internalID: -5103313668780797041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_146
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 347
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab50374fa076525c0800000000000000
+      internalID: -4240870177350941254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_147
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 349
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 869aabc1b2301b5e0800000000000000
+      internalID: -1895730484445795992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_148
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 347
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ba01ddd3c19ddfe0800000000000000
+      internalID: -1162612858365605198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_149
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 349
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22eb810ec7ed0f5d0800000000000000
+      internalID: -3030677921303314910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_150
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 348
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 074546b1d390e3c10800000000000000
+      internalID: 2035074239675257968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_151
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 348
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef75ca7bb53700370800000000000000
+      internalID: 8286750152122456062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_152
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 282
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a98eed1dae9fed0800000000000000
+      internalID: -2379612740979746241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_153
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 285
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c8838dd70279880800000000000000
+      internalID: -8604372838197457803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_154
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 286
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3e26a1712f161280800000000000000
+      internalID: -9073030170790187458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_155
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 282
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e214f2446d116a0d0800000000000000
+      internalID: -3412020055721950930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_156
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 278
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14c1eb418ed1720d0800000000000000
+      internalID: -3447754107111203775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_157
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 286
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8933c20eb07ebcc50800000000000000
+      internalID: 6686692109953282968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_158
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 281
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d76087712632b9a0800000000000000
+      internalID: -6218848618078509098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_159
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 207
+        width: 178
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b47290af1d20350800000000000000
+      internalID: 5981574126927039361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_160
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 274
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e8f3f3bd5902c940800000000000000
+      internalID: 5314820808306325734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_161
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 221
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb41f371c1c3bf950800000000000000
+      internalID: 6483842179876721852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_162
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 221
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5073c830c888d65d0800000000000000
+      internalID: -3067645636233119995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_163
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 224
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e6e6def405971c40800000000000000
+      internalID: 5483014920034772713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_164
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 221
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e6d2a3762c90f180800000000000000
+      internalID: -9083588759443548443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_165
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 224
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42ed28bca060cc3a0800000000000000
+      internalID: -6643928706844533212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_166
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 219
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9796e3b0e4419a10800000000000000
+      internalID: 1914387048490768283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_167
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 216
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b67d22712a784f2c0800000000000000
+      internalID: -4398741805791520917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_168
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 216
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c6f92de4fad7d3c0800000000000000
+      internalID: -4334755370834987319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_169
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 215
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d7e72fc7812da890800000000000000
+      internalID: -7445257741793761321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_170
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 220
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6556671200d583b80800000000000000
+      internalID: -8414873648598981290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_171
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 157
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f41e00f0fe2fcd410800000000000000
+      internalID: 1503343484197724495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_172
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 157
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d9f45631e441590800000000000000
+      internalID: -7704447217313014392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_173
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 157
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c8c69d5fabcbdf90800000000000000
+      internalID: -6927719647729497915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_174
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 153
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8715d55f8d22b3d10800000000000000
+      internalID: 2106315565950652792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_175
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 154
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 240ebb68cba296730800000000000000
+      internalID: 3992769533843333186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_176
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 150
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b0bd09429a51e490800000000000000
+      internalID: -7718788701998960458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_177
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 148
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3429938e218b0090800000000000000
+      internalID: -8067212270727781316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_178
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 158
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a70f24238d323ca40800000000000000
+      internalID: 5387188990728401018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_179
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 93
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbfc260076005e4f0800000000000000
+      internalID: -800232916400287811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_180
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 93
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbcae4dda8f81c350800000000000000
+      internalID: 6035262802234354879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_181
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 93
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b660a3c9069ee0f70800000000000000
+      internalID: 9155511693637977707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_182
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 93
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd41be5f05adc4da0800000000000000
+      internalID: -5959148165659945765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_183
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 93
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cf0378d026ecb890800000000000000
+      internalID: -7440819455578140733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_184
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 89
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f04891830de076b30800000000000000
+      internalID: 4280406258296128527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_185
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 88
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0d4063a060ef200800000000000000
+      internalID: 215616473086087363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_186
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 95
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0697ec09c1bcdbb0800000000000000
+      internalID: -4909854016677636598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_187
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 29
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd9f53eba14ffef0800000000000000
+      internalID: -72266862504731210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_188
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 29
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70bbb853f5ce09c30800000000000000
+      internalID: 4364247932586408711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_189
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 29
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50a5da97e9d9fab10800000000000000
+      internalID: 1994986463920216581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_190
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 28
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cda79e300fc34fba0800000000000000
+      internalID: -6056148597351023908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_191
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 33
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 877a0c125945c4410800000000000000
+      internalID: 1462636978481702776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_192
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 28
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73bbc393b5ff395a0800000000000000
+      internalID: -6515583468607587529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_193
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 29
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: befe0a32ac5c7c4a0800000000000000
+      internalID: -6573067659152134165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_05shrt_shortshirtboobs_00a_194
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 28
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9710e496972c56210800000000000000
+      internalID: 1325679492044030329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fbas_05shrt_shortshirtboobs_00a_0: 8182183569601443928
+      fbas_05shrt_shortshirtboobs_00a_1: -4866436511061108579
+      fbas_05shrt_shortshirtboobs_00a_10: -8512235787043946107
+      fbas_05shrt_shortshirtboobs_00a_100: -8673956662547581712
+      fbas_05shrt_shortshirtboobs_00a_101: 5395912398545111195
+      fbas_05shrt_shortshirtboobs_00a_102: 90494916973232522
+      fbas_05shrt_shortshirtboobs_00a_103: 8626275702314244277
+      fbas_05shrt_shortshirtboobs_00a_104: 7295831643212343731
+      fbas_05shrt_shortshirtboobs_00a_105: 2709019066691536787
+      fbas_05shrt_shortshirtboobs_00a_106: -1382512338549069946
+      fbas_05shrt_shortshirtboobs_00a_107: 3444021237371333038
+      fbas_05shrt_shortshirtboobs_00a_108: -8142975994042274737
+      fbas_05shrt_shortshirtboobs_00a_109: -1973124913878315220
+      fbas_05shrt_shortshirtboobs_00a_11: -2457495142967157094
+      fbas_05shrt_shortshirtboobs_00a_110: 3767964628691404086
+      fbas_05shrt_shortshirtboobs_00a_111: 6303811155417151557
+      fbas_05shrt_shortshirtboobs_00a_112: 5231699209217857964
+      fbas_05shrt_shortshirtboobs_00a_113: -5398561255250024192
+      fbas_05shrt_shortshirtboobs_00a_114: -8783745607321795544
+      fbas_05shrt_shortshirtboobs_00a_115: -7025397634653889240
+      fbas_05shrt_shortshirtboobs_00a_116: 7009123296283227191
+      fbas_05shrt_shortshirtboobs_00a_117: 96642563632702292
+      fbas_05shrt_shortshirtboobs_00a_118: -7969675409792602968
+      fbas_05shrt_shortshirtboobs_00a_119: 2205940723501986722
+      fbas_05shrt_shortshirtboobs_00a_12: -726484909222134910
+      fbas_05shrt_shortshirtboobs_00a_120: 5239615823288651671
+      fbas_05shrt_shortshirtboobs_00a_121: 3129816654377047006
+      fbas_05shrt_shortshirtboobs_00a_122: -8272094972819177712
+      fbas_05shrt_shortshirtboobs_00a_123: 9000251957620312546
+      fbas_05shrt_shortshirtboobs_00a_124: 448547311358424534
+      fbas_05shrt_shortshirtboobs_00a_125: 5104587678625795518
+      fbas_05shrt_shortshirtboobs_00a_126: -8585360411455661268
+      fbas_05shrt_shortshirtboobs_00a_127: -7491859753076748163
+      fbas_05shrt_shortshirtboobs_00a_128: -4900852869291552161
+      fbas_05shrt_shortshirtboobs_00a_129: 746668724313840951
+      fbas_05shrt_shortshirtboobs_00a_13: 1677407192685194478
+      fbas_05shrt_shortshirtboobs_00a_130: -3376482789617416721
+      fbas_05shrt_shortshirtboobs_00a_131: 277856217918967357
+      fbas_05shrt_shortshirtboobs_00a_132: 3080897634515758564
+      fbas_05shrt_shortshirtboobs_00a_133: 9185593695730377590
+      fbas_05shrt_shortshirtboobs_00a_134: 1053748698201276491
+      fbas_05shrt_shortshirtboobs_00a_135: 5534298261305405263
+      fbas_05shrt_shortshirtboobs_00a_136: -8034067898528767284
+      fbas_05shrt_shortshirtboobs_00a_137: 5828742581941560981
+      fbas_05shrt_shortshirtboobs_00a_138: 2352565870027952805
+      fbas_05shrt_shortshirtboobs_00a_139: 7135018077243530066
+      fbas_05shrt_shortshirtboobs_00a_14: 5995424752119769295
+      fbas_05shrt_shortshirtboobs_00a_140: 888384999951112042
+      fbas_05shrt_shortshirtboobs_00a_141: -6294927431006798738
+      fbas_05shrt_shortshirtboobs_00a_142: -1130575345093707855
+      fbas_05shrt_shortshirtboobs_00a_143: 797288820093630416
+      fbas_05shrt_shortshirtboobs_00a_144: 3707293965736533781
+      fbas_05shrt_shortshirtboobs_00a_145: -5103313668780797041
+      fbas_05shrt_shortshirtboobs_00a_146: -4240870177350941254
+      fbas_05shrt_shortshirtboobs_00a_147: -1895730484445795992
+      fbas_05shrt_shortshirtboobs_00a_148: -1162612858365605198
+      fbas_05shrt_shortshirtboobs_00a_149: -3030677921303314910
+      fbas_05shrt_shortshirtboobs_00a_15: -5164903617142632259
+      fbas_05shrt_shortshirtboobs_00a_150: 2035074239675257968
+      fbas_05shrt_shortshirtboobs_00a_151: 8286750152122456062
+      fbas_05shrt_shortshirtboobs_00a_152: -2379612740979746241
+      fbas_05shrt_shortshirtboobs_00a_153: -8604372838197457803
+      fbas_05shrt_shortshirtboobs_00a_154: -9073030170790187458
+      fbas_05shrt_shortshirtboobs_00a_155: -3412020055721950930
+      fbas_05shrt_shortshirtboobs_00a_156: -3447754107111203775
+      fbas_05shrt_shortshirtboobs_00a_157: 6686692109953282968
+      fbas_05shrt_shortshirtboobs_00a_158: -6218848618078509098
+      fbas_05shrt_shortshirtboobs_00a_159: 5981574126927039361
+      fbas_05shrt_shortshirtboobs_00a_16: 7300073981214663169
+      fbas_05shrt_shortshirtboobs_00a_160: 5314820808306325734
+      fbas_05shrt_shortshirtboobs_00a_161: 6483842179876721852
+      fbas_05shrt_shortshirtboobs_00a_162: -3067645636233119995
+      fbas_05shrt_shortshirtboobs_00a_163: 5483014920034772713
+      fbas_05shrt_shortshirtboobs_00a_164: -9083588759443548443
+      fbas_05shrt_shortshirtboobs_00a_165: -6643928706844533212
+      fbas_05shrt_shortshirtboobs_00a_166: 1914387048490768283
+      fbas_05shrt_shortshirtboobs_00a_167: -4398741805791520917
+      fbas_05shrt_shortshirtboobs_00a_168: -4334755370834987319
+      fbas_05shrt_shortshirtboobs_00a_169: -7445257741793761321
+      fbas_05shrt_shortshirtboobs_00a_17: -2698644540436180915
+      fbas_05shrt_shortshirtboobs_00a_170: -8414873648598981290
+      fbas_05shrt_shortshirtboobs_00a_171: 1503343484197724495
+      fbas_05shrt_shortshirtboobs_00a_172: -7704447217313014392
+      fbas_05shrt_shortshirtboobs_00a_173: -6927719647729497915
+      fbas_05shrt_shortshirtboobs_00a_174: 2106315565950652792
+      fbas_05shrt_shortshirtboobs_00a_175: 3992769533843333186
+      fbas_05shrt_shortshirtboobs_00a_176: -7718788701998960458
+      fbas_05shrt_shortshirtboobs_00a_177: -8067212270727781316
+      fbas_05shrt_shortshirtboobs_00a_178: 5387188990728401018
+      fbas_05shrt_shortshirtboobs_00a_179: -800232916400287811
+      fbas_05shrt_shortshirtboobs_00a_18: 3155426126454256701
+      fbas_05shrt_shortshirtboobs_00a_180: 6035262802234354879
+      fbas_05shrt_shortshirtboobs_00a_181: 9155511693637977707
+      fbas_05shrt_shortshirtboobs_00a_182: -5959148165659945765
+      fbas_05shrt_shortshirtboobs_00a_183: -7440819455578140733
+      fbas_05shrt_shortshirtboobs_00a_184: 4280406258296128527
+      fbas_05shrt_shortshirtboobs_00a_185: 215616473086087363
+      fbas_05shrt_shortshirtboobs_00a_186: -4909854016677636598
+      fbas_05shrt_shortshirtboobs_00a_187: -72266862504731210
+      fbas_05shrt_shortshirtboobs_00a_188: 4364247932586408711
+      fbas_05shrt_shortshirtboobs_00a_189: 1994986463920216581
+      fbas_05shrt_shortshirtboobs_00a_19: 945864524476772094
+      fbas_05shrt_shortshirtboobs_00a_190: -6056148597351023908
+      fbas_05shrt_shortshirtboobs_00a_191: 1462636978481702776
+      fbas_05shrt_shortshirtboobs_00a_192: -6515583468607587529
+      fbas_05shrt_shortshirtboobs_00a_193: -6573067659152134165
+      fbas_05shrt_shortshirtboobs_00a_194: 1325679492044030329
+      fbas_05shrt_shortshirtboobs_00a_2: -220505206846747377
+      fbas_05shrt_shortshirtboobs_00a_20: -750097546287765494
+      fbas_05shrt_shortshirtboobs_00a_21: -6032023797924743402
+      fbas_05shrt_shortshirtboobs_00a_22: 11280111570417042
+      fbas_05shrt_shortshirtboobs_00a_23: -5869958394260006158
+      fbas_05shrt_shortshirtboobs_00a_24: -3811266209626044773
+      fbas_05shrt_shortshirtboobs_00a_25: -3750002727156863450
+      fbas_05shrt_shortshirtboobs_00a_26: 2953911584329106246
+      fbas_05shrt_shortshirtboobs_00a_27: -6647863929105960780
+      fbas_05shrt_shortshirtboobs_00a_28: -3257489239358657066
+      fbas_05shrt_shortshirtboobs_00a_29: -8982982804793745929
+      fbas_05shrt_shortshirtboobs_00a_3: -2303349052236499058
+      fbas_05shrt_shortshirtboobs_00a_30: 7896668179827325394
+      fbas_05shrt_shortshirtboobs_00a_31: 1639757761895061034
+      fbas_05shrt_shortshirtboobs_00a_32: -8453759920372520559
+      fbas_05shrt_shortshirtboobs_00a_33: 4900111651106992609
+      fbas_05shrt_shortshirtboobs_00a_34: -3321153832861817777
+      fbas_05shrt_shortshirtboobs_00a_35: 5505319074760204662
+      fbas_05shrt_shortshirtboobs_00a_36: 8641789225812908779
+      fbas_05shrt_shortshirtboobs_00a_37: 7334663676995128307
+      fbas_05shrt_shortshirtboobs_00a_38: 8816247164681389394
+      fbas_05shrt_shortshirtboobs_00a_39: 9088732600773411412
+      fbas_05shrt_shortshirtboobs_00a_4: 7268303548311229820
+      fbas_05shrt_shortshirtboobs_00a_40: -4602934766791324138
+      fbas_05shrt_shortshirtboobs_00a_41: -3932903998112164800
+      fbas_05shrt_shortshirtboobs_00a_42: 7157428420852051364
+      fbas_05shrt_shortshirtboobs_00a_43: -3293953889368252311
+      fbas_05shrt_shortshirtboobs_00a_44: -8132508970575751154
+      fbas_05shrt_shortshirtboobs_00a_45: -6566691516865316776
+      fbas_05shrt_shortshirtboobs_00a_46: 2264577575380654993
+      fbas_05shrt_shortshirtboobs_00a_47: -7732682968437931997
+      fbas_05shrt_shortshirtboobs_00a_48: 6852568660518073661
+      fbas_05shrt_shortshirtboobs_00a_49: 4407346883448115113
+      fbas_05shrt_shortshirtboobs_00a_5: -527182195728536595
+      fbas_05shrt_shortshirtboobs_00a_50: -606691604344908626
+      fbas_05shrt_shortshirtboobs_00a_51: 6999066675315093776
+      fbas_05shrt_shortshirtboobs_00a_52: -2892437322624531200
+      fbas_05shrt_shortshirtboobs_00a_53: 275747687022884561
+      fbas_05shrt_shortshirtboobs_00a_54: 4790998683230159686
+      fbas_05shrt_shortshirtboobs_00a_55: -5416596499330243825
+      fbas_05shrt_shortshirtboobs_00a_56: -6942502848037200164
+      fbas_05shrt_shortshirtboobs_00a_57: 7790556077098121142
+      fbas_05shrt_shortshirtboobs_00a_58: -6936295415338672141
+      fbas_05shrt_shortshirtboobs_00a_59: -8905467354147916617
+      fbas_05shrt_shortshirtboobs_00a_6: -721880887898079820
+      fbas_05shrt_shortshirtboobs_00a_60: -4390425180828498193
+      fbas_05shrt_shortshirtboobs_00a_61: 9158873447902388257
+      fbas_05shrt_shortshirtboobs_00a_62: -7492726200153442906
+      fbas_05shrt_shortshirtboobs_00a_63: -6774112611626702971
+      fbas_05shrt_shortshirtboobs_00a_64: 6731136776528342569
+      fbas_05shrt_shortshirtboobs_00a_65: -1125632889364563586
+      fbas_05shrt_shortshirtboobs_00a_66: -8847916375335396776
+      fbas_05shrt_shortshirtboobs_00a_67: -2366608249164196186
+      fbas_05shrt_shortshirtboobs_00a_68: 548404853077018764
+      fbas_05shrt_shortshirtboobs_00a_69: -6603438311113380513
+      fbas_05shrt_shortshirtboobs_00a_7: 9078866038455935572
+      fbas_05shrt_shortshirtboobs_00a_70: -6239282867544237077
+      fbas_05shrt_shortshirtboobs_00a_71: -3704556811304782336
+      fbas_05shrt_shortshirtboobs_00a_72: 8427180157927436944
+      fbas_05shrt_shortshirtboobs_00a_73: -1803741845217403661
+      fbas_05shrt_shortshirtboobs_00a_74: -3073166778166701717
+      fbas_05shrt_shortshirtboobs_00a_75: 1032681293275810311
+      fbas_05shrt_shortshirtboobs_00a_76: -8981201533528167238
+      fbas_05shrt_shortshirtboobs_00a_77: -2350174495031006412
+      fbas_05shrt_shortshirtboobs_00a_78: -3684266650205794173
+      fbas_05shrt_shortshirtboobs_00a_79: 9027720775648539757
+      fbas_05shrt_shortshirtboobs_00a_8: 7817865383343298170
+      fbas_05shrt_shortshirtboobs_00a_80: -1790115529982212338
+      fbas_05shrt_shortshirtboobs_00a_81: 5117140190251631742
+      fbas_05shrt_shortshirtboobs_00a_82: 1017410560706793018
+      fbas_05shrt_shortshirtboobs_00a_83: -4224765623451957132
+      fbas_05shrt_shortshirtboobs_00a_84: -1785135633861392277
+      fbas_05shrt_shortshirtboobs_00a_85: -6588995031268008
+      fbas_05shrt_shortshirtboobs_00a_86: 7276661676355285424
+      fbas_05shrt_shortshirtboobs_00a_87: -3253198778251441937
+      fbas_05shrt_shortshirtboobs_00a_88: 6218208387861830876
+      fbas_05shrt_shortshirtboobs_00a_89: -6369313474782592330
+      fbas_05shrt_shortshirtboobs_00a_9: 5808082574364029390
+      fbas_05shrt_shortshirtboobs_00a_90: 1887321197504565156
+      fbas_05shrt_shortshirtboobs_00a_91: -6598893179421392318
+      fbas_05shrt_shortshirtboobs_00a_92: 3639396045213664653
+      fbas_05shrt_shortshirtboobs_00a_93: -2328453423576482257
+      fbas_05shrt_shortshirtboobs_00a_94: -5919867105490944823
+      fbas_05shrt_shortshirtboobs_00a_95: -4891791838270315444
+      fbas_05shrt_shortshirtboobs_00a_96: -2705712141107141562
+      fbas_05shrt_shortshirtboobs_00a_97: -6465740216720054651
+      fbas_05shrt_shortshirtboobs_00a_98: -8680578573264410349
+      fbas_05shrt_shortshirtboobs_00a_99: -5457086320621250839
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

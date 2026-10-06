@@ -200,7 +200,7 @@ namespace Platformer.EditorTools
             npc.patrolDistance = data.patrolDistance;
             npc.moveSpeed = 0.8f;
             npc.waitTime = 1.5f;
-            npc.dialogueLines = data.lines;
+            npc.inlineDialogueLines = data.lines;
 
             // Intentar crear Animator con clips
             TryAttachAnimator(go, sr, data);

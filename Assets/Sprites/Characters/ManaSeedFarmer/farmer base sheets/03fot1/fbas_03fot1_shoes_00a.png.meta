@@ -1,0 +1,5941 @@
+fileFormatVersion: 2
+guid: 506233177e4273a4382a36c6dbc7a7ab
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1101253008156799306
+    second: fbas_03fot1_shoes_00a_0
+  - first:
+      213: 9161626146411883292
+    second: fbas_03fot1_shoes_00a_1
+  - first:
+      213: -2840313459213977506
+    second: fbas_03fot1_shoes_00a_2
+  - first:
+      213: -5099320266642885411
+    second: fbas_03fot1_shoes_00a_3
+  - first:
+      213: 6834143503049618368
+    second: fbas_03fot1_shoes_00a_4
+  - first:
+      213: 9116549233682180744
+    second: fbas_03fot1_shoes_00a_5
+  - first:
+      213: 3415239092810039683
+    second: fbas_03fot1_shoes_00a_6
+  - first:
+      213: -3841018047497220127
+    second: fbas_03fot1_shoes_00a_7
+  - first:
+      213: 4646815882734239887
+    second: fbas_03fot1_shoes_00a_8
+  - first:
+      213: -8882936420783906928
+    second: fbas_03fot1_shoes_00a_9
+  - first:
+      213: -2073827093109435099
+    second: fbas_03fot1_shoes_00a_10
+  - first:
+      213: 4244331615764892659
+    second: fbas_03fot1_shoes_00a_11
+  - first:
+      213: 7334134358090281714
+    second: fbas_03fot1_shoes_00a_12
+  - first:
+      213: -355636342461249937
+    second: fbas_03fot1_shoes_00a_13
+  - first:
+      213: -8356762088605871573
+    second: fbas_03fot1_shoes_00a_14
+  - first:
+      213: -1524324506027849337
+    second: fbas_03fot1_shoes_00a_15
+  - first:
+      213: 2998102859513074442
+    second: fbas_03fot1_shoes_00a_16
+  - first:
+      213: 8474447376488854746
+    second: fbas_03fot1_shoes_00a_17
+  - first:
+      213: 2673657056025289815
+    second: fbas_03fot1_shoes_00a_18
+  - first:
+      213: 5942058806654574219
+    second: fbas_03fot1_shoes_00a_19
+  - first:
+      213: 4718375014523720792
+    second: fbas_03fot1_shoes_00a_20
+  - first:
+      213: -408286425329883433
+    second: fbas_03fot1_shoes_00a_21
+  - first:
+      213: 7893907338144092874
+    second: fbas_03fot1_shoes_00a_22
+  - first:
+      213: -1000113388933017766
+    second: fbas_03fot1_shoes_00a_23
+  - first:
+      213: -8399565061641583586
+    second: fbas_03fot1_shoes_00a_24
+  - first:
+      213: -408992490714613412
+    second: fbas_03fot1_shoes_00a_25
+  - first:
+      213: 6781143307552721996
+    second: fbas_03fot1_shoes_00a_26
+  - first:
+      213: 1305292962895311246
+    second: fbas_03fot1_shoes_00a_27
+  - first:
+      213: 7814965369149512599
+    second: fbas_03fot1_shoes_00a_28
+  - first:
+      213: 1209267860837846272
+    second: fbas_03fot1_shoes_00a_29
+  - first:
+      213: -6115650037367663363
+    second: fbas_03fot1_shoes_00a_30
+  - first:
+      213: -6350627759341540833
+    second: fbas_03fot1_shoes_00a_31
+  - first:
+      213: -4701398700167770786
+    second: fbas_03fot1_shoes_00a_32
+  - first:
+      213: 5270882679988689793
+    second: fbas_03fot1_shoes_00a_33
+  - first:
+      213: -5292929407024338083
+    second: fbas_03fot1_shoes_00a_34
+  - first:
+      213: -1619842896094810777
+    second: fbas_03fot1_shoes_00a_35
+  - first:
+      213: -8095028289032605088
+    second: fbas_03fot1_shoes_00a_36
+  - first:
+      213: -4237815598506443858
+    second: fbas_03fot1_shoes_00a_37
+  - first:
+      213: -3158968794157560991
+    second: fbas_03fot1_shoes_00a_38
+  - first:
+      213: -5203053716177694938
+    second: fbas_03fot1_shoes_00a_39
+  - first:
+      213: -449897913982018608
+    second: fbas_03fot1_shoes_00a_40
+  - first:
+      213: 5470553032742182987
+    second: fbas_03fot1_shoes_00a_41
+  - first:
+      213: -8267817300941928627
+    second: fbas_03fot1_shoes_00a_42
+  - first:
+      213: -6235938116258370433
+    second: fbas_03fot1_shoes_00a_43
+  - first:
+      213: 7267987341159605727
+    second: fbas_03fot1_shoes_00a_44
+  - first:
+      213: 8766471881591110455
+    second: fbas_03fot1_shoes_00a_45
+  - first:
+      213: -4201461851032518924
+    second: fbas_03fot1_shoes_00a_46
+  - first:
+      213: 1534433911368401731
+    second: fbas_03fot1_shoes_00a_47
+  - first:
+      213: -5456376567139642995
+    second: fbas_03fot1_shoes_00a_48
+  - first:
+      213: 6057563840277931992
+    second: fbas_03fot1_shoes_00a_49
+  - first:
+      213: 3607487468079165848
+    second: fbas_03fot1_shoes_00a_50
+  - first:
+      213: 1849219495096202152
+    second: fbas_03fot1_shoes_00a_51
+  - first:
+      213: 7405564703281817077
+    second: fbas_03fot1_shoes_00a_52
+  - first:
+      213: -7980034102078384266
+    second: fbas_03fot1_shoes_00a_53
+  - first:
+      213: -6998741802817503583
+    second: fbas_03fot1_shoes_00a_54
+  - first:
+      213: -6073634206155577396
+    second: fbas_03fot1_shoes_00a_55
+  - first:
+      213: -2291599397818726018
+    second: fbas_03fot1_shoes_00a_56
+  - first:
+      213: -65149066980212860
+    second: fbas_03fot1_shoes_00a_57
+  - first:
+      213: 7269516083403721676
+    second: fbas_03fot1_shoes_00a_58
+  - first:
+      213: -1595705857788691283
+    second: fbas_03fot1_shoes_00a_59
+  - first:
+      213: 9134991421429401677
+    second: fbas_03fot1_shoes_00a_60
+  - first:
+      213: 5347526516943653317
+    second: fbas_03fot1_shoes_00a_61
+  - first:
+      213: -9210133248091928464
+    second: fbas_03fot1_shoes_00a_62
+  - first:
+      213: -3975145010633679149
+    second: fbas_03fot1_shoes_00a_63
+  - first:
+      213: -5142792633014086219
+    second: fbas_03fot1_shoes_00a_64
+  - first:
+      213: -6303642710715129109
+    second: fbas_03fot1_shoes_00a_65
+  - first:
+      213: -5419687280596288028
+    second: fbas_03fot1_shoes_00a_66
+  - first:
+      213: 1461966214770659382
+    second: fbas_03fot1_shoes_00a_67
+  - first:
+      213: -8466010369945719365
+    second: fbas_03fot1_shoes_00a_68
+  - first:
+      213: -4167477736820894464
+    second: fbas_03fot1_shoes_00a_69
+  - first:
+      213: 6617543514792674953
+    second: fbas_03fot1_shoes_00a_70
+  - first:
+      213: -6797359522529235483
+    second: fbas_03fot1_shoes_00a_71
+  - first:
+      213: 3903340447500297919
+    second: fbas_03fot1_shoes_00a_72
+  - first:
+      213: -4590544548926563584
+    second: fbas_03fot1_shoes_00a_73
+  - first:
+      213: -873738265371730105
+    second: fbas_03fot1_shoes_00a_74
+  - first:
+      213: -643967030092157229
+    second: fbas_03fot1_shoes_00a_75
+  - first:
+      213: -6700674572228644220
+    second: fbas_03fot1_shoes_00a_76
+  - first:
+      213: 5823902814373214931
+    second: fbas_03fot1_shoes_00a_77
+  - first:
+      213: 4089759991755380772
+    second: fbas_03fot1_shoes_00a_78
+  - first:
+      213: -7000341398009569340
+    second: fbas_03fot1_shoes_00a_79
+  - first:
+      213: -4766976804725097583
+    second: fbas_03fot1_shoes_00a_80
+  - first:
+      213: 6234821989585343813
+    second: fbas_03fot1_shoes_00a_81
+  - first:
+      213: -8126803009683248358
+    second: fbas_03fot1_shoes_00a_82
+  - first:
+      213: -5169747363587003179
+    second: fbas_03fot1_shoes_00a_83
+  - first:
+      213: 4833129678559889757
+    second: fbas_03fot1_shoes_00a_84
+  - first:
+      213: 3561817094558597715
+    second: fbas_03fot1_shoes_00a_85
+  - first:
+      213: 6202052796912976028
+    second: fbas_03fot1_shoes_00a_86
+  - first:
+      213: 3000907091030207649
+    second: fbas_03fot1_shoes_00a_87
+  - first:
+      213: 3109169522009585167
+    second: fbas_03fot1_shoes_00a_88
+  - first:
+      213: -48401401479055164
+    second: fbas_03fot1_shoes_00a_89
+  - first:
+      213: -369533429448834683
+    second: fbas_03fot1_shoes_00a_90
+  - first:
+      213: -542985484975241040
+    second: fbas_03fot1_shoes_00a_91
+  - first:
+      213: 5894778424987963042
+    second: fbas_03fot1_shoes_00a_92
+  - first:
+      213: -2700635213350711925
+    second: fbas_03fot1_shoes_00a_93
+  - first:
+      213: 1976037037533120774
+    second: fbas_03fot1_shoes_00a_94
+  - first:
+      213: -8330558210957178441
+    second: fbas_03fot1_shoes_00a_95
+  - first:
+      213: -8298279727604932200
+    second: fbas_03fot1_shoes_00a_96
+  - first:
+      213: -4829827277815854589
+    second: fbas_03fot1_shoes_00a_97
+  - first:
+      213: -4095869265422996321
+    second: fbas_03fot1_shoes_00a_98
+  - first:
+      213: -8823994701564540720
+    second: fbas_03fot1_shoes_00a_99
+  - first:
+      213: 7843714968905298021
+    second: fbas_03fot1_shoes_00a_100
+  - first:
+      213: -7640268622607365624
+    second: fbas_03fot1_shoes_00a_101
+  - first:
+      213: 4702519439408141414
+    second: fbas_03fot1_shoes_00a_102
+  - first:
+      213: 34054918006494035
+    second: fbas_03fot1_shoes_00a_103
+  - first:
+      213: 3897525740553556666
+    second: fbas_03fot1_shoes_00a_104
+  - first:
+      213: -2082409881101083358
+    second: fbas_03fot1_shoes_00a_105
+  - first:
+      213: -5653626403255373530
+    second: fbas_03fot1_shoes_00a_106
+  - first:
+      213: 7977960670096024016
+    second: fbas_03fot1_shoes_00a_107
+  - first:
+      213: 2285879736878587160
+    second: fbas_03fot1_shoes_00a_108
+  - first:
+      213: 3844211907383744905
+    second: fbas_03fot1_shoes_00a_109
+  - first:
+      213: 1705965711165222386
+    second: fbas_03fot1_shoes_00a_110
+  - first:
+      213: -653885717425202592
+    second: fbas_03fot1_shoes_00a_111
+  - first:
+      213: -9144531777608759131
+    second: fbas_03fot1_shoes_00a_112
+  - first:
+      213: 4621426491637714565
+    second: fbas_03fot1_shoes_00a_113
+  - first:
+      213: 9213025123646029857
+    second: fbas_03fot1_shoes_00a_114
+  - first:
+      213: 7409295649366908122
+    second: fbas_03fot1_shoes_00a_115
+  - first:
+      213: 2588247168889886890
+    second: fbas_03fot1_shoes_00a_116
+  - first:
+      213: -6212467036415284626
+    second: fbas_03fot1_shoes_00a_117
+  - first:
+      213: 2520007420618723596
+    second: fbas_03fot1_shoes_00a_118
+  - first:
+      213: 4320976682976536157
+    second: fbas_03fot1_shoes_00a_119
+  - first:
+      213: 1716648472401336061
+    second: fbas_03fot1_shoes_00a_120
+  - first:
+      213: 6329592990539708475
+    second: fbas_03fot1_shoes_00a_121
+  - first:
+      213: -3069437903426063
+    second: fbas_03fot1_shoes_00a_122
+  - first:
+      213: 3623139594099311825
+    second: fbas_03fot1_shoes_00a_123
+  - first:
+      213: -8272685685850093587
+    second: fbas_03fot1_shoes_00a_124
+  - first:
+      213: -5923144225972486955
+    second: fbas_03fot1_shoes_00a_125
+  - first:
+      213: -3860258186357910619
+    second: fbas_03fot1_shoes_00a_126
+  - first:
+      213: 3191507599837608006
+    second: fbas_03fot1_shoes_00a_127
+  - first:
+      213: 3579377608897326649
+    second: fbas_03fot1_shoes_00a_128
+  - first:
+      213: 8406630700999496959
+    second: fbas_03fot1_shoes_00a_129
+  - first:
+      213: 1901901742049141392
+    second: fbas_03fot1_shoes_00a_130
+  - first:
+      213: -7502593554741900024
+    second: fbas_03fot1_shoes_00a_131
+  - first:
+      213: -3636714353891728906
+    second: fbas_03fot1_shoes_00a_132
+  - first:
+      213: 5023589204695939794
+    second: fbas_03fot1_shoes_00a_133
+  - first:
+      213: -5923702830170327542
+    second: fbas_03fot1_shoes_00a_134
+  - first:
+      213: -7599772429060615320
+    second: fbas_03fot1_shoes_00a_135
+  - first:
+      213: 3054398763234500304
+    second: fbas_03fot1_shoes_00a_136
+  - first:
+      213: 6273161523997335501
+    second: fbas_03fot1_shoes_00a_137
+  - first:
+      213: -4643116484900793147
+    second: fbas_03fot1_shoes_00a_138
+  - first:
+      213: 7779107924581736413
+    second: fbas_03fot1_shoes_00a_139
+  - first:
+      213: -1126383441873554232
+    second: fbas_03fot1_shoes_00a_140
+  - first:
+      213: -5031401061202720657
+    second: fbas_03fot1_shoes_00a_141
+  - first:
+      213: 5654410074425319887
+    second: fbas_03fot1_shoes_00a_142
+  - first:
+      213: 8606481325740786589
+    second: fbas_03fot1_shoes_00a_143
+  - first:
+      213: 7580642481382037681
+    second: fbas_03fot1_shoes_00a_144
+  - first:
+      213: 6783606734532337245
+    second: fbas_03fot1_shoes_00a_145
+  - first:
+      213: 1476186628578566350
+    second: fbas_03fot1_shoes_00a_146
+  - first:
+      213: -539859743286911008
+    second: fbas_03fot1_shoes_00a_147
+  - first:
+      213: -6949697067467588780
+    second: fbas_03fot1_shoes_00a_148
+  - first:
+      213: 4934437937159270530
+    second: fbas_03fot1_shoes_00a_149
+  - first:
+      213: -1253109395074824587
+    second: fbas_03fot1_shoes_00a_150
+  - first:
+      213: 1582666359336725009
+    second: fbas_03fot1_shoes_00a_151
+  - first:
+      213: -3121443648811418886
+    second: fbas_03fot1_shoes_00a_152
+  - first:
+      213: 1984669157545426434
+    second: fbas_03fot1_shoes_00a_153
+  - first:
+      213: 7361851497257330396
+    second: fbas_03fot1_shoes_00a_154
+  - first:
+      213: -1252542533354535902
+    second: fbas_03fot1_shoes_00a_155
+  - first:
+      213: 7904254841418123203
+    second: fbas_03fot1_shoes_00a_156
+  - first:
+      213: -989015607653579896
+    second: fbas_03fot1_shoes_00a_157
+  - first:
+      213: 7395001334005844234
+    second: fbas_03fot1_shoes_00a_158
+  - first:
+      213: -2859254172297159924
+    second: fbas_03fot1_shoes_00a_159
+  - first:
+      213: 7480854330057756822
+    second: fbas_03fot1_shoes_00a_160
+  - first:
+      213: -7920240615149632608
+    second: fbas_03fot1_shoes_00a_161
+  - first:
+      213: -287961940180725216
+    second: fbas_03fot1_shoes_00a_162
+  - first:
+      213: -5462796712785565005
+    second: fbas_03fot1_shoes_00a_163
+  - first:
+      213: 9014560114445162412
+    second: fbas_03fot1_shoes_00a_164
+  - first:
+      213: -6835076730282764052
+    second: fbas_03fot1_shoes_00a_165
+  - first:
+      213: 5141118201246528574
+    second: fbas_03fot1_shoes_00a_166
+  - first:
+      213: 1032222648665207160
+    second: fbas_03fot1_shoes_00a_167
+  - first:
+      213: -8612290352070700030
+    second: fbas_03fot1_shoes_00a_168
+  - first:
+      213: 1917656618009451136
+    second: fbas_03fot1_shoes_00a_169
+  - first:
+      213: 2475101450584430525
+    second: fbas_03fot1_shoes_00a_170
+  - first:
+      213: 2956495983149280304
+    second: fbas_03fot1_shoes_00a_171
+  - first:
+      213: 55397784694135325
+    second: fbas_03fot1_shoes_00a_172
+  - first:
+      213: 7349478794779018796
+    second: fbas_03fot1_shoes_00a_173
+  - first:
+      213: -5793317847783315631
+    second: fbas_03fot1_shoes_00a_174
+  - first:
+      213: 1731256461610445398
+    second: fbas_03fot1_shoes_00a_175
+  - first:
+      213: -8233074874659849087
+    second: fbas_03fot1_shoes_00a_176
+  - first:
+      213: -2696137637226549392
+    second: fbas_03fot1_shoes_00a_177
+  - first:
+      213: 2330855773409214351
+    second: fbas_03fot1_shoes_00a_178
+  - first:
+      213: 7323405436721194492
+    second: fbas_03fot1_shoes_00a_179
+  - first:
+      213: 930074312074902104
+    second: fbas_03fot1_shoes_00a_180
+  - first:
+      213: 6137393837579074530
+    second: fbas_03fot1_shoes_00a_181
+  - first:
+      213: 5540245859740874531
+    second: fbas_03fot1_shoes_00a_182
+  - first:
+      213: -5331187784626328950
+    second: fbas_03fot1_shoes_00a_183
+  - first:
+      213: 3958615247811235
+    second: fbas_03fot1_shoes_00a_184
+  - first:
+      213: -7492432334464843790
+    second: fbas_03fot1_shoes_00a_185
+  - first:
+      213: -2610517086777855153
+    second: fbas_03fot1_shoes_00a_186
+  - first:
+      213: -2391691553091607373
+    second: fbas_03fot1_shoes_00a_187
+  - first:
+      213: 6455210829782703308
+    second: fbas_03fot1_shoes_00a_188
+  - first:
+      213: -4540609010110337424
+    second: fbas_03fot1_shoes_00a_189
+  - first:
+      213: 7596041139625051918
+    second: fbas_03fot1_shoes_00a_190
+  - first:
+      213: 5657469070443405528
+    second: fbas_03fot1_shoes_00a_191
+  - first:
+      213: -8596485835333406689
+    second: fbas_03fot1_shoes_00a_192
+  - first:
+      213: 1664553031168062349
+    second: fbas_03fot1_shoes_00a_193
+  - first:
+      213: -1879094492345438845
+    second: fbas_03fot1_shoes_00a_194
+  - first:
+      213: 5133462883900469010
+    second: fbas_03fot1_shoes_00a_195
+  - first:
+      213: -7413471866766828546
+    second: fbas_03fot1_shoes_00a_196
+  - first:
+      213: -5383399721505818598
+    second: fbas_03fot1_shoes_00a_197
+  - first:
+      213: -6527451185507241223
+    second: fbas_03fot1_shoes_00a_198
+  - first:
+      213: -1519318597872963841
+    second: fbas_03fot1_shoes_00a_199
+  - first:
+      213: 1577229218499586182
+    second: fbas_03fot1_shoes_00a_200
+  - first:
+      213: -443443861147054123
+    second: fbas_03fot1_shoes_00a_201
+  - first:
+      213: 4073525526415475073
+    second: fbas_03fot1_shoes_00a_202
+  - first:
+      213: -9193733240198828796
+    second: fbas_03fot1_shoes_00a_203
+  - first:
+      213: -3038903809839297298
+    second: fbas_03fot1_shoes_00a_204
+  - first:
+      213: 1068980746805279118
+    second: fbas_03fot1_shoes_00a_205
+  - first:
+      213: 3155670144962261900
+    second: fbas_03fot1_shoes_00a_206
+  - first:
+      213: 4658421089061217843
+    second: fbas_03fot1_shoes_00a_207
+  - first:
+      213: -8936249608564269165
+    second: fbas_03fot1_shoes_00a_208
+  - first:
+      213: 2709821489972238644
+    second: fbas_03fot1_shoes_00a_209
+  - first:
+      213: -3594800541144710506
+    second: fbas_03fot1_shoes_00a_210
+  - first:
+      213: 1922120014571420112
+    second: fbas_03fot1_shoes_00a_211
+  - first:
+      213: 5471262993205112674
+    second: fbas_03fot1_shoes_00a_212
+  - first:
+      213: 7638093674533871958
+    second: fbas_03fot1_shoes_00a_213
+  - first:
+      213: 1875408931299544424
+    second: fbas_03fot1_shoes_00a_214
+  - first:
+      213: 4226666039009088782
+    second: fbas_03fot1_shoes_00a_215
+  - first:
+      213: -9140560910831719023
+    second: fbas_03fot1_shoes_00a_216
+  - first:
+      213: -4765686150597248637
+    second: fbas_03fot1_shoes_00a_217
+  - first:
+      213: 3523980085783517323
+    second: fbas_03fot1_shoes_00a_218
+  - first:
+      213: 7993236230703048360
+    second: fbas_03fot1_shoes_00a_219
+  - first:
+      213: -6807979730885558994
+    second: fbas_03fot1_shoes_00a_220
+  - first:
+      213: 6998938476525124463
+    second: fbas_03fot1_shoes_00a_221
+  - first:
+      213: 6072426072844867466
+    second: fbas_03fot1_shoes_00a_222
+  - first:
+      213: -4919207374430991994
+    second: fbas_03fot1_shoes_00a_223
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_0
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 984
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a413407b6cf684f00800000000000000
+      internalID: 1101253008156799306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 990
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1bafc59072a42f70800000000000000
+      internalID: 9161626146411883292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_2
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 984
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e583acc15fd2598d0800000000000000
+      internalID: -2840313459213977506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_3
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 990
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd4fcce1c339b39b0800000000000000
+      internalID: -5099320266642885411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_4
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 979
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c3f053ae41c7de50800000000000000
+      internalID: 6834143503049618368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_5
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 979
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88a6cfaf93d748e70800000000000000
+      internalID: 9116549233682180744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_6
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 979
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38148f53cdd556f20800000000000000
+      internalID: 3415239092810039683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_7
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 979
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ef4017bf66f1bac0800000000000000
+      internalID: -3841018047497220127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_8
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 979
+        width: 73
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f80840bec6ecc7040800000000000000
+      internalID: 4646815882734239887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_9
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 977
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f9bcc936879b480800000000000000
+      internalID: -8882936420783906928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_10
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 977
+        width: 73
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52591a51f394833e0800000000000000
+      internalID: -2073827093109435099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_11
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 980
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb40aafd15e6ea30800000000000000
+      internalID: 4244331615764892659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_12
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 979
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f275fc375418c560800000000000000
+      internalID: 7334134358090281714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_13
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 979
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f66c06a71a6801bf0800000000000000
+      internalID: -355636342461249937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_14
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 979
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22123c0821d60c80800000000000000
+      internalID: -8356762088605871573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_15
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 976
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78989cf10f288dae0800000000000000
+      internalID: -1524324506027849337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_16
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 915
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a031c558aa66b9920800000000000000
+      internalID: 2998102859513074442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_17
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 925
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad4fb574df84b9570800000000000000
+      internalID: 8474447376488854746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_18
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 920
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 754aa934decba1520800000000000000
+      internalID: 2673657056025289815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_19
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 915
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e9025900f667250800000000000000
+      internalID: 5942058806654574219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_20
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 920
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 854d3c1a3190b7140800000000000000
+      internalID: 4718375014523720792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_21
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 919
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d6299bc8a9755af0800000000000000
+      internalID: -408286425329883433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_22
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 915
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac29deb76eacc8d60800000000000000
+      internalID: 7893907338144092874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_23
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 915
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5f098deb22ee12f0800000000000000
+      internalID: -1000113388933017766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_24
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 915
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1442194410ce6b80800000000000000
+      internalID: -8399565061641583586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_25
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 915
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5937232f77f25af0800000000000000
+      internalID: -408992490714613412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_26
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 914
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4c82b109e57b1e50800000000000000
+      internalID: 6781143307552721996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_27
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 915
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e813135b8055d1210800000000000000
+      internalID: 1305292962895311246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_28
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 915
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79bd2280995547c60800000000000000
+      internalID: 7814965369149512599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_29
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 914
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00d498366be28c010800000000000000
+      internalID: 1209267860837846272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_30
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 914
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df4981071b8d02ba0800000000000000
+      internalID: -6115650037367663363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_31
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 918
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1a66bf23b90ed7a0800000000000000
+      internalID: -6350627759341540833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_32
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 915
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d44019ac641ceb0800000000000000
+      internalID: -4701398700167770786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_33
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 914
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b1c710fdfe52940800000000000000
+      internalID: 5270882679988689793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_34
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 918
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5b68195fbcbb86b0800000000000000
+      internalID: -5292929407024338083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_35
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 851
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76d2452e7792589e0800000000000000
+      internalID: -1619842896094810777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_36
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 851
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 062397119aea8af80800000000000000
+      internalID: -8095028289032605088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_37
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 856
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eabf9638a214035c0800000000000000
+      internalID: -4237815598506443858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_38
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 858
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16bc1bf5e961924d0800000000000000
+      internalID: -3158968794157560991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_39
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 851
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62fc3fb463a0bc7b0800000000000000
+      internalID: -5203053716177694938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_40
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 851
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db99eb1b34a1c9f0800000000000000
+      internalID: -449897913982018608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_41
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 856
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40a881cffe4beb40800000000000000
+      internalID: 5470553032742182987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_42
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 858
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d47078538ffc24d80800000000000000
+      internalID: -8267817300941928627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_43
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 851
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7ce91b925f7579a0800000000000000
+      internalID: -6235938116258370433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_44
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 851
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd5aad5baf31dd460800000000000000
+      internalID: 7267987341159605727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_45
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 851
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b30b3cab3c8a970800000000000000
+      internalID: 8766471881591110455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_46
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 852
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fef9dfe4b861b5c0800000000000000
+      internalID: -4201461851032518924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_47
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 851
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3434d6a33876b4510800000000000000
+      internalID: 1534433911368401731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_48
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 851
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8150eadb6e0744b0800000000000000
+      internalID: -5456376567139642995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_49
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 852
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d76408e73ac01450800000000000000
+      internalID: 6057563840277931992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_50
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 851
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 891388a2dbe501230800000000000000
+      internalID: 3607487468079165848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_51
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 851
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a3bfec455fb9a910800000000000000
+      internalID: 1849219495096202152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_52
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 851
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f5a84c7cd9d5c660800000000000000
+      internalID: 7405564703281817077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_53
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 851
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6775d12a349314190800000000000000
+      internalID: -7980034102078384266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_54
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 850
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aeb26849697fde90800000000000000
+      internalID: -6998741802817503583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_55
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 792
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc76f667edd16bba0800000000000000
+      internalID: -6073634206155577396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_56
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 791
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7904853d7a9230e0800000000000000
+      internalID: -2291599397818726018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_57
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 794
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f323dc44b881ff0800000000000000
+      internalID: -65149066980212860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_58
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 794
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb8440cc5282e460800000000000000
+      internalID: 7269516083403721676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_59
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 797
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dacbe7c0af9ead9e0800000000000000
+      internalID: -1595705857788691283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_60
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 797
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d484a8c6c4206ce70800000000000000
+      internalID: 9134991421429401677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_61
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 794
+        width: 19
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c98865e80b363a40800000000000000
+      internalID: 5347526516943653317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_62
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 794
+        width: 22
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0784775bb980f2080800000000000000
+      internalID: -9210133248091928464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_63
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 786
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de538e8ca275d8c0800000000000000
+      internalID: -3975145010633679149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_64
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 786
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b513b3195121a8b0800000000000000
+      internalID: -5142792633014086219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_65
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 787
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be228dc4a56f488a0800000000000000
+      internalID: -6303642710715129109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_66
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 786
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4edfa5e022769c4b0800000000000000
+      internalID: -5419687280596288028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_67
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 787
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6301709c682f94410800000000000000
+      internalID: 1461966214770659382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_68
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 787
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbdac926c60b28a80800000000000000
+      internalID: -8466010369945719365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_69
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 787
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 005117f14152a26c0800000000000000
+      internalID: -4167477736820894464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_70
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 787
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98648e4f3cc36db50800000000000000
+      internalID: 6617543514792674953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_71
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 787
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eda609378deaa1a0800000000000000
+      internalID: -6797359522529235483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_72
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 787
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb66baac4737b2630800000000000000
+      internalID: 3903340447500297919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_73
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 724
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00b50a3fd0c1b40c0800000000000000
+      internalID: -4590544548926563584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_74
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 723
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74f1ad94dabdfd3f0800000000000000
+      internalID: -873738265371730105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_75
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 731
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de2b44e56b2017f0800000000000000
+      internalID: -643967030092157229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_76
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 730
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 482b1de6afb6203a0800000000000000
+      internalID: -6700674572228644220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_77
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 731
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dafc19d0c8a2d050800000000000000
+      internalID: 5823902814373214931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_78
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 729
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4281f254b0fb1c830800000000000000
+      internalID: 4089759991755380772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_79
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 730
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cf9d21869ac9de90800000000000000
+      internalID: -7000341398009569340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_80
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 730
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b75d54adb48ddb0800000000000000
+      internalID: -4766976804725097583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_81
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 733
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5455707e099868650800000000000000
+      internalID: 6234821989585343813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_82
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 733
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1b214868bbc73f80800000000000000
+      internalID: -8126803009683248358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_83
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 730
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dc62eec92e5148b0800000000000000
+      internalID: -5169747363587003179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_84
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 730
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d59c5fbe5d9b21340800000000000000
+      internalID: 4833129678559889757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_85
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 730
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3524414b6cd1e6130800000000000000
+      internalID: 3561817094558597715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_86
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 730
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c90473ea82e121650800000000000000
+      internalID: 6202052796912976028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_87
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 723
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac6ecc891d55a920800000000000000
+      internalID: 3000907091030207649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_88
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 723
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f063ad9053df52b20800000000000000
+      internalID: 3109169522009585167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_89
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 723
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c8b53a8e2b045ff0800000000000000
+      internalID: -48401401479055164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_90
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 723
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5810215cd472fdaf0800000000000000
+      internalID: -369533429448834683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_91
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 724
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b88bd9049de678f0800000000000000
+      internalID: -542985484975241040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_92
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 723
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ae4b03eeb57ec150800000000000000
+      internalID: 5894778424987963042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_93
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 723
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8dc150059a658ad0800000000000000
+      internalID: -2700635213350711925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_94
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 723
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6094d25573b4c6b10800000000000000
+      internalID: 1976037037533120774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_95
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 720
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b90f2fb179e36c80800000000000000
+      internalID: -8330558210957178441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_96
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 720
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 891684dcd8696dc80800000000000000
+      internalID: -8298279727604932200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_97
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 658
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30a4b4b2ea109fcb0800000000000000
+      internalID: -4829827277815854589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_98
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 658
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ca50c9a9c8827c0800000000000000
+      internalID: -4095869265422996321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_99
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 659
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d80159029fda8580800000000000000
+      internalID: -8823994701564540720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_100
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 664
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 560b309d4397adc60800000000000000
+      internalID: 7843714968905298021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_101
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 658
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80acce8ea2058f590800000000000000
+      internalID: -7640268622607365624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_102
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 659
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6649a4fd384b24140800000000000000
+      internalID: 4702519439408141414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_103
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 659
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 353d1aa74ccf87000800000000000000
+      internalID: 34054918006494035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_104
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 663
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab2d2a4d20bc61630800000000000000
+      internalID: 3897525740553556666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_105
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 664
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22dd4380f3bc913e0800000000000000
+      internalID: -2082409881101083358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_106
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 666
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 621b13d8db84a81b0800000000000000
+      internalID: -5653626403255373530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_107
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 664
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d16c1dd5f867be60800000000000000
+      internalID: 7977960670096024016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_108
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 664
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d59e3728319bf10800000000000000
+      internalID: 2285879736878587160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_109
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 659
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9895fecbc52695530800000000000000
+      internalID: 3844211907383744905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_110
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 659
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fdeff496cecca710800000000000000
+      internalID: 1705965711165222386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_111
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 595
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06a5b29876eece6f0800000000000000
+      internalID: -653885717425202592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_112
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 595
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a8cb5e4cc8181180800000000000000
+      internalID: -9144531777608759131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_113
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 595
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58e45a5a8ea922040800000000000000
+      internalID: 4621426491637714565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_114
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 596
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 120cba9898d3bdf70800000000000000
+      internalID: 9213025123646029857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_115
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 595
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adc9c50132b13d660800000000000000
+      internalID: 7409295649366908122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_116
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 595
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa89794461d4be320800000000000000
+      internalID: 2588247168889886890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_117
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 596
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6aa4ab3522e8c9a0800000000000000
+      internalID: -6212467036415284626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_118
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 595
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c01d351c56dd8f220800000000000000
+      internalID: 2520007420618723596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_119
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 603
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d56ef8f466137fb30800000000000000
+      internalID: 4320976682976536157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_120
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 602
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6d2b1c0b2c2d710800000000000000
+      internalID: 1716648472401336061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_121
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 603
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b38fbed0a4b37d750800000000000000
+      internalID: 6329592990539708475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_122
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 601
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fd2b1ccc5815fff0800000000000000
+      internalID: -3069437903426063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_123
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 595
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d441fdb34af74230800000000000000
+      internalID: 3623139594099311825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_124
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 595
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de742740334813d80800000000000000
+      internalID: -8272685685850093587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_125
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 595
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dcf08965b3cccda0800000000000000
+      internalID: -5923144225972486955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_126
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 595
+        width: 18
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a3d7dcc1ab9d6ac0800000000000000
+      internalID: -3860258186357910619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_127
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 595
+        width: 18
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 648b742b0438a4c20800000000000000
+      internalID: 3191507599837608006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_128
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 595
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93eef4f88f08ca130800000000000000
+      internalID: 3579377608897326649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_129
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 595
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff4d7f2151a5aa470800000000000000
+      internalID: 8406630700999496959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_130
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 586
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0922984ce89e46a10800000000000000
+      internalID: 1901901742049141392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_131
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 531
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80d497399ee61e790800000000000000
+      internalID: -7502593554741900024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_132
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 531
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f128b2309bc78dc0800000000000000
+      internalID: -3636714353891728906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_133
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 531
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da736bf3cf57b540800000000000000
+      internalID: 5023589204695939794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_134
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 531
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a06b8bc39a7cacda0800000000000000
+      internalID: -5923702830170327542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_135
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 531
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 863d808bd3f288690800000000000000
+      internalID: -7599772429060615320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_136
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 532
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0de1cf40e77636a20800000000000000
+      internalID: 3054398763234500304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_137
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 538
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcf52806b2fbe0750800000000000000
+      internalID: 6273161523997335501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_138
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 531
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c45ab24826509fb0800000000000000
+      internalID: -4643116484900793147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_139
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 531
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddfde122171f4fb60800000000000000
+      internalID: 7779107924581736413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_140
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 533
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c4be3a3a384e50f0800000000000000
+      internalID: -1126383441873554232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_141
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 531
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f680d70746fdc2ab0800000000000000
+      internalID: -5031401061202720657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_142
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 531
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc1e28c1100887e40800000000000000
+      internalID: 5654410074425319887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_143
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 531
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9300daaa2d507770800000000000000
+      internalID: 8606481325740786589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_144
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 531
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b813004c2ad33960800000000000000
+      internalID: 7580642481382037681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_145
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 531
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5e5fbb4266342e50800000000000000
+      internalID: 6783606734532337245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_146
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 531
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec06b92eae77c7410800000000000000
+      internalID: 1476186628578566350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_147
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 529
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ef99dc7c680288f0800000000000000
+      internalID: -539859743286911008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_148
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 528
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45b35059657bd8f90800000000000000
+      internalID: -6949697067467588780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_149
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 468
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280f69af825aa7440800000000000000
+      internalID: 4934437937159270530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_150
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 468
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5764cd9f4af0c9ee0800000000000000
+      internalID: -1253109395074824587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_151
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 467
+        width: 80
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11ae9322ba2c6f510800000000000000
+      internalID: 1582666359336725009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_152
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 467
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa323e1a876ea4d0800000000000000
+      internalID: -3121443648811418886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_153
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 467
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e3b246516fa8b10800000000000000
+      internalID: 1984669157545426434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_154
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 467
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd663379eec8a2660800000000000000
+      internalID: 7361851497257330396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_155
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 467
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224c551c3331e9ee0800000000000000
+      internalID: -1252542533354535902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_156
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 403
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c783e456ed81bd60800000000000000
+      internalID: 7904254841418123203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_157
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 403
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 883cd7c7b8f4642f0800000000000000
+      internalID: -989015607653579896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_158
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 403
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0945fa688250a660800000000000000
+      internalID: 7395001334005844234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_159
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 402
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b9ca1ba73e158d0800000000000000
+      internalID: -2859254172297159924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_160
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 402
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 690198fb06551d760800000000000000
+      internalID: 7480854330057756822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_161
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 406
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3826eaf17a51290800000000000000
+      internalID: -7920240615149632608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_162
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 402
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02212be1424f00cf0800000000000000
+      internalID: -287961940180725216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_163
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 406
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3baae36355f3034b0800000000000000
+      internalID: -5462796712785565005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_164
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 402
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca798e3b9a62a1d70800000000000000
+      internalID: 9014560114445162412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_165
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 407
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce815f67dede421a0800000000000000
+      internalID: -6835076730282764052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_166
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 401
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e343895e3cbe85740800000000000000
+      internalID: 5141118201246528574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_167
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 407
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8717dcea701335e00800000000000000
+      internalID: 1032222648665207160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_168
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 339
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2045d4efd8ffa7880800000000000000
+      internalID: -8612290352070700030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_169
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 343
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08a51ada882ec9a10800000000000000
+      internalID: 1917656618009451136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_170
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 339
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db79329d7a3595220800000000000000
+      internalID: 2475101450584430525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_171
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 343
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03c6b77be65970920800000000000000
+      internalID: 2956495983149280304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_172
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 339
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1a990eddffc4c000800000000000000
+      internalID: 55397784694135325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_173
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 339
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c26c11f46089ef560800000000000000
+      internalID: 7349478794779018796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_174
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 339
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 157e1fb9c100a9fa0800000000000000
+      internalID: -5793317847783315631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_175
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 339
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ae3694498a60810800000000000000
+      internalID: 1731256461610445398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_176
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 339
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18cb4bea50e3ebd80800000000000000
+      internalID: -8233074874659849087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_177
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 339
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07fec8b8a15659ad0800000000000000
+      internalID: -2696137637226549392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_178
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 284
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8f79bcf9fcd85020800000000000000
+      internalID: 2330855773409214351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_179
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 284
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf56ee19176f1a560800000000000000
+      internalID: 7323405436721194492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_180
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 291
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85ab0f9b8a948ec00800000000000000
+      internalID: 930074312074902104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_181
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 288
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eb729f8d276c2550800000000000000
+      internalID: 6137393837579074530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_182
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 286
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 327fe268148e2ec40800000000000000
+      internalID: 5540245859740874531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_183
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 207
+        width: 178
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a227aa4f0d306b0800000000000000
+      internalID: -5331187784626328950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_184
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 274
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a2f5afe6501e0000800000000000000
+      internalID: 3958615247811235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_185
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 276
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff72980d78850890800000000000000
+      internalID: -7492432334464843790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_186
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 277
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43b48a6a8495cbd0800000000000000
+      internalID: -2610517086777855153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_187
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 276
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b42ca544310fced0800000000000000
+      internalID: -2391691553091607373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_188
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 281
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cccd37b6c04859950800000000000000
+      internalID: 6455210829782703308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_189
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 275
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07e6f6899248cf0c0800000000000000
+      internalID: -4540609010110337424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_190
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 275
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e07ca92cb2f8a6960800000000000000
+      internalID: 7596041139625051918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_191
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 279
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d0e98f152e538e40800000000000000
+      internalID: 5657469070443405528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_192
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 279
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f10764ccda523b880800000000000000
+      internalID: -8596485835333406689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_193
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 274
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d837294a92ea91710800000000000000
+      internalID: 1664553031168062349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_194
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 272
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d6b5cd38d1ce5e0800000000000000
+      internalID: -1879094492345438845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_195
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 211
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21f2a8e6b49bd3740800000000000000
+      internalID: 5133462883900469010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_196
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 211
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efbd20d8d9e0e1990800000000000000
+      internalID: -7413471866766828546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_197
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 211
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1875bbc9725a45b0800000000000000
+      internalID: -5383399721505818598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_198
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 211
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f2732f0bb5d965a0800000000000000
+      internalID: -6527451185507241223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_199
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 211
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffe2321f8cb4aeae0800000000000000
+      internalID: -1519318597872963841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_200
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 149
+        width: 21
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 688e8022e9173e510800000000000000
+      internalID: 1577229218499586182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_201
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 212
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5df8082682298d9f0800000000000000
+      internalID: -443443861147054123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_202
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 209
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1810b7142e1188830800000000000000
+      internalID: 4073525526415475073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_203
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 147
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d6f3a145c496080800000000000000
+      internalID: -9193733240198828796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_204
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 147
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eec82f3f515a3d5d0800000000000000
+      internalID: -3038903809839297298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_205
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 147
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e897f055358c5de00800000000000000
+      internalID: 1068980746805279118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_206
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 145
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c83f7c207413bcb20800000000000000
+      internalID: 3155670144962261900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_207
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 146
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 336aea39c4906a040800000000000000
+      internalID: 4658421089061217843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_208
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 83
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39f9d49c3501cf380800000000000000
+      internalID: -8936249608564269165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_209
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 83
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 439d382b9483b9520800000000000000
+      internalID: 2709821489972238644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_210
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 83
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69200b234f3bc1ec0800000000000000
+      internalID: -3594800541144710506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_211
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 83
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d9b23c28fdbcaa10800000000000000
+      internalID: 1922120014571420112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_212
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 23
+        width: 16
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26f2bbe44b4ddeb40800000000000000
+      internalID: 5471262993205112674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_213
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 86
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 651efb78ab5fff960800000000000000
+      internalID: 7638093674533871958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_214
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 80
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d44b69c7ac60a10800000000000000
+      internalID: 1875408931299544424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_215
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 83
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e05185f5e5228aa30800000000000000
+      internalID: 4226666039009088782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_216
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 19
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19ded06c744362180800000000000000
+      internalID: -9140560910831719023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_217
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 19
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 389f6aa12b1ecddb0800000000000000
+      internalID: -4765686150597248637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_218
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 19
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b885da89731b7e030800000000000000
+      internalID: 3523980085783517323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_219
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 19
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a666d8700eadee60800000000000000
+      internalID: 7993236230703048360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_220
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 22
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2db18641823581a0800000000000000
+      internalID: -6807979730885558994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_221
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 19
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6bf7126679312160800000000000000
+      internalID: 6998938476525124463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_222
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 19
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a871db41757954450800000000000000
+      internalID: 6072426072844867466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_03fot1_shoes_00a_223
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 19
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6890f8eb4f67bbbb0800000000000000
+      internalID: -4919207374430991994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fbas_03fot1_shoes_00a_0: 1101253008156799306
+      fbas_03fot1_shoes_00a_1: 9161626146411883292
+      fbas_03fot1_shoes_00a_10: -2073827093109435099
+      fbas_03fot1_shoes_00a_100: 7843714968905298021
+      fbas_03fot1_shoes_00a_101: -7640268622607365624
+      fbas_03fot1_shoes_00a_102: 4702519439408141414
+      fbas_03fot1_shoes_00a_103: 34054918006494035
+      fbas_03fot1_shoes_00a_104: 3897525740553556666
+      fbas_03fot1_shoes_00a_105: -2082409881101083358
+      fbas_03fot1_shoes_00a_106: -5653626403255373530
+      fbas_03fot1_shoes_00a_107: 7977960670096024016
+      fbas_03fot1_shoes_00a_108: 2285879736878587160
+      fbas_03fot1_shoes_00a_109: 3844211907383744905
+      fbas_03fot1_shoes_00a_11: 4244331615764892659
+      fbas_03fot1_shoes_00a_110: 1705965711165222386
+      fbas_03fot1_shoes_00a_111: -653885717425202592
+      fbas_03fot1_shoes_00a_112: -9144531777608759131
+      fbas_03fot1_shoes_00a_113: 4621426491637714565
+      fbas_03fot1_shoes_00a_114: 9213025123646029857
+      fbas_03fot1_shoes_00a_115: 7409295649366908122
+      fbas_03fot1_shoes_00a_116: 2588247168889886890
+      fbas_03fot1_shoes_00a_117: -6212467036415284626
+      fbas_03fot1_shoes_00a_118: 2520007420618723596
+      fbas_03fot1_shoes_00a_119: 4320976682976536157
+      fbas_03fot1_shoes_00a_12: 7334134358090281714
+      fbas_03fot1_shoes_00a_120: 1716648472401336061
+      fbas_03fot1_shoes_00a_121: 6329592990539708475
+      fbas_03fot1_shoes_00a_122: -3069437903426063
+      fbas_03fot1_shoes_00a_123: 3623139594099311825
+      fbas_03fot1_shoes_00a_124: -8272685685850093587
+      fbas_03fot1_shoes_00a_125: -5923144225972486955
+      fbas_03fot1_shoes_00a_126: -3860258186357910619
+      fbas_03fot1_shoes_00a_127: 3191507599837608006
+      fbas_03fot1_shoes_00a_128: 3579377608897326649
+      fbas_03fot1_shoes_00a_129: 8406630700999496959
+      fbas_03fot1_shoes_00a_13: -355636342461249937
+      fbas_03fot1_shoes_00a_130: 1901901742049141392
+      fbas_03fot1_shoes_00a_131: -7502593554741900024
+      fbas_03fot1_shoes_00a_132: -3636714353891728906
+      fbas_03fot1_shoes_00a_133: 5023589204695939794
+      fbas_03fot1_shoes_00a_134: -5923702830170327542
+      fbas_03fot1_shoes_00a_135: -7599772429060615320
+      fbas_03fot1_shoes_00a_136: 3054398763234500304
+      fbas_03fot1_shoes_00a_137: 6273161523997335501
+      fbas_03fot1_shoes_00a_138: -4643116484900793147
+      fbas_03fot1_shoes_00a_139: 7779107924581736413
+      fbas_03fot1_shoes_00a_14: -8356762088605871573
+      fbas_03fot1_shoes_00a_140: -1126383441873554232
+      fbas_03fot1_shoes_00a_141: -5031401061202720657
+      fbas_03fot1_shoes_00a_142: 5654410074425319887
+      fbas_03fot1_shoes_00a_143: 8606481325740786589
+      fbas_03fot1_shoes_00a_144: 7580642481382037681
+      fbas_03fot1_shoes_00a_145: 6783606734532337245
+      fbas_03fot1_shoes_00a_146: 1476186628578566350
+      fbas_03fot1_shoes_00a_147: -539859743286911008
+      fbas_03fot1_shoes_00a_148: -6949697067467588780
+      fbas_03fot1_shoes_00a_149: 4934437937159270530
+      fbas_03fot1_shoes_00a_15: -1524324506027849337
+      fbas_03fot1_shoes_00a_150: -1253109395074824587
+      fbas_03fot1_shoes_00a_151: 1582666359336725009
+      fbas_03fot1_shoes_00a_152: -3121443648811418886
+      fbas_03fot1_shoes_00a_153: 1984669157545426434
+      fbas_03fot1_shoes_00a_154: 7361851497257330396
+      fbas_03fot1_shoes_00a_155: -1252542533354535902
+      fbas_03fot1_shoes_00a_156: 7904254841418123203
+      fbas_03fot1_shoes_00a_157: -989015607653579896
+      fbas_03fot1_shoes_00a_158: 7395001334005844234
+      fbas_03fot1_shoes_00a_159: -2859254172297159924
+      fbas_03fot1_shoes_00a_16: 2998102859513074442
+      fbas_03fot1_shoes_00a_160: 7480854330057756822
+      fbas_03fot1_shoes_00a_161: -7920240615149632608
+      fbas_03fot1_shoes_00a_162: -287961940180725216
+      fbas_03fot1_shoes_00a_163: -5462796712785565005
+      fbas_03fot1_shoes_00a_164: 9014560114445162412
+      fbas_03fot1_shoes_00a_165: -6835076730282764052
+      fbas_03fot1_shoes_00a_166: 5141118201246528574
+      fbas_03fot1_shoes_00a_167: 1032222648665207160
+      fbas_03fot1_shoes_00a_168: -8612290352070700030
+      fbas_03fot1_shoes_00a_169: 1917656618009451136
+      fbas_03fot1_shoes_00a_17: 8474447376488854746
+      fbas_03fot1_shoes_00a_170: 2475101450584430525
+      fbas_03fot1_shoes_00a_171: 2956495983149280304
+      fbas_03fot1_shoes_00a_172: 55397784694135325
+      fbas_03fot1_shoes_00a_173: 7349478794779018796
+      fbas_03fot1_shoes_00a_174: -5793317847783315631
+      fbas_03fot1_shoes_00a_175: 1731256461610445398
+      fbas_03fot1_shoes_00a_176: -8233074874659849087
+      fbas_03fot1_shoes_00a_177: -2696137637226549392
+      fbas_03fot1_shoes_00a_178: 2330855773409214351
+      fbas_03fot1_shoes_00a_179: 7323405436721194492
+      fbas_03fot1_shoes_00a_18: 2673657056025289815
+      fbas_03fot1_shoes_00a_180: 930074312074902104
+      fbas_03fot1_shoes_00a_181: 6137393837579074530
+      fbas_03fot1_shoes_00a_182: 5540245859740874531
+      fbas_03fot1_shoes_00a_183: -5331187784626328950
+      fbas_03fot1_shoes_00a_184: 3958615247811235
+      fbas_03fot1_shoes_00a_185: -7492432334464843790
+      fbas_03fot1_shoes_00a_186: -2610517086777855153
+      fbas_03fot1_shoes_00a_187: -2391691553091607373
+      fbas_03fot1_shoes_00a_188: 6455210829782703308
+      fbas_03fot1_shoes_00a_189: -4540609010110337424
+      fbas_03fot1_shoes_00a_19: 5942058806654574219
+      fbas_03fot1_shoes_00a_190: 7596041139625051918
+      fbas_03fot1_shoes_00a_191: 5657469070443405528
+      fbas_03fot1_shoes_00a_192: -8596485835333406689
+      fbas_03fot1_shoes_00a_193: 1664553031168062349
+      fbas_03fot1_shoes_00a_194: -1879094492345438845
+      fbas_03fot1_shoes_00a_195: 5133462883900469010
+      fbas_03fot1_shoes_00a_196: -7413471866766828546
+      fbas_03fot1_shoes_00a_197: -5383399721505818598
+      fbas_03fot1_shoes_00a_198: -6527451185507241223
+      fbas_03fot1_shoes_00a_199: -1519318597872963841
+      fbas_03fot1_shoes_00a_2: -2840313459213977506
+      fbas_03fot1_shoes_00a_20: 4718375014523720792
+      fbas_03fot1_shoes_00a_200: 1577229218499586182
+      fbas_03fot1_shoes_00a_201: -443443861147054123
+      fbas_03fot1_shoes_00a_202: 4073525526415475073
+      fbas_03fot1_shoes_00a_203: -9193733240198828796
+      fbas_03fot1_shoes_00a_204: -3038903809839297298
+      fbas_03fot1_shoes_00a_205: 1068980746805279118
+      fbas_03fot1_shoes_00a_206: 3155670144962261900
+      fbas_03fot1_shoes_00a_207: 4658421089061217843
+      fbas_03fot1_shoes_00a_208: -8936249608564269165
+      fbas_03fot1_shoes_00a_209: 2709821489972238644
+      fbas_03fot1_shoes_00a_21: -408286425329883433
+      fbas_03fot1_shoes_00a_210: -3594800541144710506
+      fbas_03fot1_shoes_00a_211: 1922120014571420112
+      fbas_03fot1_shoes_00a_212: 5471262993205112674
+      fbas_03fot1_shoes_00a_213: 7638093674533871958
+      fbas_03fot1_shoes_00a_214: 1875408931299544424
+      fbas_03fot1_shoes_00a_215: 4226666039009088782
+      fbas_03fot1_shoes_00a_216: -9140560910831719023
+      fbas_03fot1_shoes_00a_217: -4765686150597248637
+      fbas_03fot1_shoes_00a_218: 3523980085783517323
+      fbas_03fot1_shoes_00a_219: 7993236230703048360
+      fbas_03fot1_shoes_00a_22: 7893907338144092874
+      fbas_03fot1_shoes_00a_220: -6807979730885558994
+      fbas_03fot1_shoes_00a_221: 6998938476525124463
+      fbas_03fot1_shoes_00a_222: 6072426072844867466
+      fbas_03fot1_shoes_00a_223: -4919207374430991994
+      fbas_03fot1_shoes_00a_23: -1000113388933017766
+      fbas_03fot1_shoes_00a_24: -8399565061641583586
+      fbas_03fot1_shoes_00a_25: -408992490714613412
+      fbas_03fot1_shoes_00a_26: 6781143307552721996
+      fbas_03fot1_shoes_00a_27: 1305292962895311246
+      fbas_03fot1_shoes_00a_28: 7814965369149512599
+      fbas_03fot1_shoes_00a_29: 1209267860837846272
+      fbas_03fot1_shoes_00a_3: -5099320266642885411
+      fbas_03fot1_shoes_00a_30: -6115650037367663363
+      fbas_03fot1_shoes_00a_31: -6350627759341540833
+      fbas_03fot1_shoes_00a_32: -4701398700167770786
+      fbas_03fot1_shoes_00a_33: 5270882679988689793
+      fbas_03fot1_shoes_00a_34: -5292929407024338083
+      fbas_03fot1_shoes_00a_35: -1619842896094810777
+      fbas_03fot1_shoes_00a_36: -8095028289032605088
+      fbas_03fot1_shoes_00a_37: -4237815598506443858
+      fbas_03fot1_shoes_00a_38: -3158968794157560991
+      fbas_03fot1_shoes_00a_39: -5203053716177694938
+      fbas_03fot1_shoes_00a_4: 6834143503049618368
+      fbas_03fot1_shoes_00a_40: -449897913982018608
+      fbas_03fot1_shoes_00a_41: 5470553032742182987
+      fbas_03fot1_shoes_00a_42: -8267817300941928627
+      fbas_03fot1_shoes_00a_43: -6235938116258370433
+      fbas_03fot1_shoes_00a_44: 7267987341159605727
+      fbas_03fot1_shoes_00a_45: 8766471881591110455
+      fbas_03fot1_shoes_00a_46: -4201461851032518924
+      fbas_03fot1_shoes_00a_47: 1534433911368401731
+      fbas_03fot1_shoes_00a_48: -5456376567139642995
+      fbas_03fot1_shoes_00a_49: 6057563840277931992
+      fbas_03fot1_shoes_00a_5: 9116549233682180744
+      fbas_03fot1_shoes_00a_50: 3607487468079165848
+      fbas_03fot1_shoes_00a_51: 1849219495096202152
+      fbas_03fot1_shoes_00a_52: 7405564703281817077
+      fbas_03fot1_shoes_00a_53: -7980034102078384266
+      fbas_03fot1_shoes_00a_54: -6998741802817503583
+      fbas_03fot1_shoes_00a_55: -6073634206155577396
+      fbas_03fot1_shoes_00a_56: -2291599397818726018
+      fbas_03fot1_shoes_00a_57: -65149066980212860
+      fbas_03fot1_shoes_00a_58: 7269516083403721676
+      fbas_03fot1_shoes_00a_59: -1595705857788691283
+      fbas_03fot1_shoes_00a_6: 3415239092810039683
+      fbas_03fot1_shoes_00a_60: 9134991421429401677
+      fbas_03fot1_shoes_00a_61: 5347526516943653317
+      fbas_03fot1_shoes_00a_62: -9210133248091928464
+      fbas_03fot1_shoes_00a_63: -3975145010633679149
+      fbas_03fot1_shoes_00a_64: -5142792633014086219
+      fbas_03fot1_shoes_00a_65: -6303642710715129109
+      fbas_03fot1_shoes_00a_66: -5419687280596288028
+      fbas_03fot1_shoes_00a_67: 1461966214770659382
+      fbas_03fot1_shoes_00a_68: -8466010369945719365
+      fbas_03fot1_shoes_00a_69: -4167477736820894464
+      fbas_03fot1_shoes_00a_7: -3841018047497220127
+      fbas_03fot1_shoes_00a_70: 6617543514792674953
+      fbas_03fot1_shoes_00a_71: -6797359522529235483
+      fbas_03fot1_shoes_00a_72: 3903340447500297919
+      fbas_03fot1_shoes_00a_73: -4590544548926563584
+      fbas_03fot1_shoes_00a_74: -873738265371730105
+      fbas_03fot1_shoes_00a_75: -643967030092157229
+      fbas_03fot1_shoes_00a_76: -6700674572228644220
+      fbas_03fot1_shoes_00a_77: 5823902814373214931
+      fbas_03fot1_shoes_00a_78: 4089759991755380772
+      fbas_03fot1_shoes_00a_79: -7000341398009569340
+      fbas_03fot1_shoes_00a_8: 4646815882734239887
+      fbas_03fot1_shoes_00a_80: -4766976804725097583
+      fbas_03fot1_shoes_00a_81: 6234821989585343813
+      fbas_03fot1_shoes_00a_82: -8126803009683248358
+      fbas_03fot1_shoes_00a_83: -5169747363587003179
+      fbas_03fot1_shoes_00a_84: 4833129678559889757
+      fbas_03fot1_shoes_00a_85: 3561817094558597715
+      fbas_03fot1_shoes_00a_86: 6202052796912976028
+      fbas_03fot1_shoes_00a_87: 3000907091030207649
+      fbas_03fot1_shoes_00a_88: 3109169522009585167
+      fbas_03fot1_shoes_00a_89: -48401401479055164
+      fbas_03fot1_shoes_00a_9: -8882936420783906928
+      fbas_03fot1_shoes_00a_90: -369533429448834683
+      fbas_03fot1_shoes_00a_91: -542985484975241040
+      fbas_03fot1_shoes_00a_92: 5894778424987963042
+      fbas_03fot1_shoes_00a_93: -2700635213350711925
+      fbas_03fot1_shoes_00a_94: 1976037037533120774
+      fbas_03fot1_shoes_00a_95: -8330558210957178441
+      fbas_03fot1_shoes_00a_96: -8298279727604932200
+      fbas_03fot1_shoes_00a_97: -4829827277815854589
+      fbas_03fot1_shoes_00a_98: -4095869265422996321
+      fbas_03fot1_shoes_00a_99: -8823994701564540720
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

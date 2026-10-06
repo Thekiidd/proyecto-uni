@@ -1,57 +1,69 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Platformer.TopDown
 {
     /// <summary>
-    /// NPC de aldea: patrulla entre dos puntos y muestra diálogo al interactuar.
-    /// Usa Y-Sorting automático en el SpriteRenderer.
+    /// NPC de aldea con sistema de diálogo multi-fase, patrulla y Y-Sorting.
+    /// Soporta NPCDialogueData (ScriptableObject) O strings inline simples.
     /// </summary>
     public class VillageNPC : MonoBehaviour
     {
-        [Header("Patrulla")]
-        [Tooltip("Distancia en unidades que camina desde su posición inicial.")]
-        public float patrolDistance = 2f;
-        [Tooltip("Velocidad de movimiento del NPC.")]
-        public float moveSpeed = 0.8f;
-        [Tooltip("Tiempo que espera en cada extremo antes de girar.")]
-        public float waitTime = 1.5f;
+        // ── Datos de diálogo ──────────────────────────────────────────────────
+        [Header("Diálogo (ScriptableObject — recomendado)")]
+        public NPCDialogueData dialogueData;
 
-        [Header("Diálogo")]
-        [Tooltip("Frases que dice este NPC al interactuar (se elige una al azar).")]
-        [TextArea(2, 4)]
-        public string[] dialogueLines = new string[]
+        [Header("Diálogo inline (si no hay ScriptableObject)")]
+        public string npcDisplayName = "Aldeano";
+        [TextArea(2, 4)] public string[] inlineDialogueLines = new string[]
         {
-            "¡Bienvenido a nuestra aldea, amigo perro!",
-            "¿Has visto mi gato? Creo que huyó al bosque...",
-            "El mercado abre mañana temprano.",
-            "Dicen que hay cristales mágicos en las ruinas del norte."
+            "¡Bienvenido a la aldea!",
+            "¿Cómo puedo ayudarte hoy?"
         };
 
-        [Header("UI de diálogo")]
-        [Tooltip("Radio dentro del cual el jugador puede interactuar (E).")]
-        public float interactRadius = 1.5f;
+        // ── Patrulla ──────────────────────────────────────────────────────────
+        [Header("Patrulla")]
+        public float patrolDistance = 2f;
+        public float moveSpeed = 0.8f;
+        public float waitTime = 1.5f;
 
-        // ── Referencias internas ──────────────────────────────────────────────
+        [Header("Interacción")]
+        public float interactRadius = 1.6f;
+
+        // ── Estado interno ────────────────────────────────────────────────────
         private SpriteRenderer _sr;
         private Vector3 _pointA;
         private Vector3 _pointB;
         private bool _movingToB = true;
         private bool _waiting = false;
 
-        // Diálogo simple en pantalla
+        private enum DialoguePhase { Greeting, General, Lore, Tip, Danger, Farewell }
+        private DialoguePhase _currentPhase = DialoguePhase.Greeting;
+        private bool _hasGreeted = false;
+        private int _lineIndex = 0;
+        private string[] _currentLines;
+
         private bool _showingDialogue = false;
-        private string _currentLine = "";
+        private string _displayName => dialogueData != null ? dialogueData.npcName : npcDisplayName;
+        private Color _nameColor => dialogueData != null ? dialogueData.nameColor : new Color(1f, 0.85f, 0.4f);
+        private string _currentText = "";
+        private string _fullText = "";
+        private float _typeTimer = 0f;
+        private int _charIndex = 0;
+        private const float TYPE_SPEED = 0.035f;
+        private bool _typing = false;
+
+        // Estilo GUI
         private GUIStyle _boxStyle;
+        private GUIStyle _nameStyle;
         private GUIStyle _textStyle;
+        private GUIStyle _hintStyle;
 
         // ── Unity ─────────────────────────────────────────────────────────────
         private void Awake()
         {
             _sr = GetComponent<SpriteRenderer>();
-            if (_sr == null)
-                _sr = GetComponentInChildren<SpriteRenderer>();
+            if (_sr == null) _sr = GetComponentInChildren<SpriteRenderer>();
 
             _pointA = transform.position;
             _pointB = transform.position + Vector3.right * patrolDistance;
@@ -59,17 +71,26 @@ namespace Platformer.TopDown
 
         private void Update()
         {
-            // Y-Sorting
+            // Y-Sorting dinámico
             if (_sr != null)
                 _sr.sortingOrder = 500 - Mathf.RoundToInt(transform.position.y * 10f);
 
-            // No mover si está mostrando diálogo
-            if (_showingDialogue) return;
+            // Efecto máquina de escribir
+            if (_typing)
+            {
+                _typeTimer += Time.deltaTime;
+                if (_typeTimer >= TYPE_SPEED)
+                {
+                    _typeTimer = 0f;
+                    _charIndex = Mathf.Min(_charIndex + 1, _fullText.Length);
+                    _currentText = _fullText.Substring(0, _charIndex);
+                    if (_charIndex >= _fullText.Length) _typing = false;
+                }
+            }
 
-            if (!_waiting)
+            if (!_showingDialogue && !_waiting)
                 Patrol();
 
-            // Detectar interacción con el jugador
             CheckInteraction();
         }
 
@@ -79,11 +100,8 @@ namespace Platformer.TopDown
             Vector3 target = _movingToB ? _pointB : _pointA;
             transform.position = Vector3.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
 
-            // Flip según dirección
-            if (_sr != null)
-                _sr.flipX = (_movingToB == false);
+            if (_sr != null) _sr.flipX = !_movingToB;
 
-            // ¿Llegó al destino?
             if (Vector3.Distance(transform.position, target) < 0.05f)
                 StartCoroutine(WaitAndTurn());
         }
@@ -99,77 +117,197 @@ namespace Platformer.TopDown
         // ── Interacción ───────────────────────────────────────────────────────
         private void CheckInteraction()
         {
-            // Buscar el jugador (tag "Player")
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            var player = GameObject.FindGameObjectWithTag("Player");
             if (player == null) return;
 
             float dist = Vector2.Distance(transform.position, player.transform.position);
 
+            if (dist > interactRadius && _showingDialogue)
+            {
+                _showingDialogue = false;
+                return;
+            }
+
             if (dist <= interactRadius && Input.GetKeyDown(KeyCode.E))
             {
                 if (_showingDialogue)
-                    _showingDialogue = false;
+                {
+                    // Si está escribiendo → mostrar texto completo
+                    if (_typing)
+                    {
+                        _currentText = _fullText;
+                        _typing = false;
+                    }
+                    else
+                    {
+                        // Avanzar al siguiente diálogo
+                        AdvanceDialogue();
+                    }
+                }
                 else
-                    ShowDialogue();
+                {
+                    OpenDialogue();
+                }
+            }
+        }
+
+        private void OpenDialogue()
+        {
+            _showingDialogue = true;
+
+            if (!_hasGreeted && dialogueData != null && dialogueData.greetings.Length > 0)
+            {
+                _currentLines = dialogueData.greetings;
+                _currentPhase = DialoguePhase.Greeting;
+                _hasGreeted = true;
+            }
+            else
+            {
+                _currentLines = PickNextPhaseLines();
             }
 
-            // Cerrar diálogo si el jugador se aleja
-            if (dist > interactRadius && _showingDialogue)
-                _showingDialogue = false;
+            _lineIndex = 0;
+            ShowLine(_currentLines[0]);
         }
 
-        private void ShowDialogue()
+        private string[] PickNextPhaseLines()
         {
-            if (dialogueLines.Length == 0) return;
-            _currentLine = dialogueLines[Random.Range(0, dialogueLines.Length)];
-            _showingDialogue = true;
+            if (dialogueData == null) return inlineDialogueLines;
+
+            // Rotar entre tipos de diálogo
+            switch (_currentPhase)
+            {
+                case DialoguePhase.Greeting:
+                case DialoguePhase.Farewell:
+                    _currentPhase = DialoguePhase.General;
+                    return dialogueData.generalLines.Length > 0 ? dialogueData.generalLines : inlineDialogueLines;
+                case DialoguePhase.General:
+                    _currentPhase = DialoguePhase.Lore;
+                    return dialogueData.loreLines.Length > 0 ? dialogueData.loreLines : dialogueData.generalLines;
+                case DialoguePhase.Lore:
+                    _currentPhase = DialoguePhase.Tip;
+                    return dialogueData.tipLines.Length > 0 ? dialogueData.tipLines : dialogueData.generalLines;
+                case DialoguePhase.Tip:
+                    _currentPhase = DialoguePhase.Farewell;
+                    return dialogueData.farewells.Length > 0 ? dialogueData.farewells : dialogueData.generalLines;
+                default:
+                    _currentPhase = DialoguePhase.General;
+                    return dialogueData.generalLines.Length > 0 ? dialogueData.generalLines : inlineDialogueLines;
+            }
         }
 
-        // ── OnGUI sencillo (burbuja de diálogo) ───────────────────────────────
+        private void ShowLine(string text)
+        {
+            _fullText = text;
+            _currentText = "";
+            _charIndex = 0;
+            _typeTimer = 0f;
+            _typing = true;
+        }
+
+        private void AdvanceDialogue()
+        {
+            _lineIndex++;
+            if (_lineIndex < _currentLines.Length)
+            {
+                ShowLine(_currentLines[_lineIndex]);
+            }
+            else
+            {
+                _showingDialogue = false;
+                _lineIndex = 0;
+            }
+        }
+
+        // ── OnGUI ──────────────────────────────────────────────────────────────
         private void OnGUI()
         {
             if (!_showingDialogue) return;
 
-            // Inicializar estilos la primera vez
-            if (_boxStyle == null)
-            {
-                _boxStyle = new GUIStyle(GUI.skin.box);
-                _boxStyle.normal.background = MakeTex(2, 2, new Color(0.05f, 0.05f, 0.1f, 0.88f));
-                _boxStyle.border = new RectOffset(4, 4, 4, 4);
+            InitStyles();
 
-                _textStyle = new GUIStyle(GUI.skin.label);
-                _textStyle.fontSize = 14;
-                _textStyle.normal.textColor = Color.white;
-                _textStyle.wordWrap = true;
-                _textStyle.alignment = TextAnchor.MiddleLeft;
-                _textStyle.padding = new RectOffset(8, 8, 6, 6);
-            }
+            // Pantalla: caja abajo centrada
+            float boxW = Mathf.Min(420f, Screen.width - 40f);
+            float boxH = 110f;
+            float bx = (Screen.width - boxW) / 2f;
+            float by = Screen.height - boxH - 20f;
+            Rect box = new Rect(bx, by, boxW, boxH);
 
-            // Posición: sobre la cabeza del NPC
-            Vector3 worldPos = transform.position + Vector3.up * 0.8f;
-            Vector3 screen = Camera.main.WorldToScreenPoint(worldPos);
+            // Fondo sombra
+            GUI.color = new Color(0, 0, 0, 0.5f);
+            GUI.Box(new Rect(box.x + 3, box.y + 3, box.width, box.height), GUIContent.none, _boxStyle);
+            GUI.color = Color.white;
 
-            float boxW = 260f;
-            float boxH = 70f;
-            float x = Mathf.Clamp(screen.x - boxW / 2f, 4f, Screen.width - boxW - 4f);
-            float y = Mathf.Clamp(Screen.height - screen.y - boxH, 4f, Screen.height - boxH - 4f);
+            // Fondo principal
+            GUI.Box(box, GUIContent.none, _boxStyle);
 
-            Rect boxRect = new Rect(x, y, boxW, boxH);
-
-            // Sombra
-            GUI.Box(new Rect(boxRect.x + 2, boxRect.y + 2, boxRect.width, boxRect.height),
-                    GUIContent.none, _boxStyle);
-            // Caja principal
-            GUI.Box(boxRect, GUIContent.none, _boxStyle);
             // Nombre del NPC
-            GUI.Label(new Rect(boxRect.x + 8, boxRect.y + 4, boxRect.width - 16, 18),
-                      $"<b>{gameObject.name}</b>", new GUIStyle(_textStyle) { fontSize = 12, normal = { textColor = new Color(1f, 0.85f, 0.4f) } });
-            // Línea de diálogo
-            GUI.Label(new Rect(boxRect.x + 4, boxRect.y + 20, boxRect.width - 8, boxH - 24),
-                      _currentLine, _textStyle);
+            GUI.color = _nameColor;
+            GUI.Label(new Rect(box.x + 12, box.y + 8, box.width - 24, 22), _displayName, _nameStyle);
+            GUI.color = Color.white;
+
+            // Separador
+            GUI.color = new Color(_nameColor.r, _nameColor.g, _nameColor.b, 0.5f);
+            GUI.Box(new Rect(box.x + 10, box.y + 30, box.width - 20, 1), GUIContent.none);
+            GUI.color = Color.white;
+
+            // Texto con efecto máquina de escribir
+            GUI.Label(new Rect(box.x + 12, box.y + 35, box.width - 24, 58), _currentText, _textStyle);
+
             // Hint
-            GUI.Label(new Rect(boxRect.x + boxRect.width - 70, boxRect.y + boxH - 16, 68, 14),
-                      "[E] cerrar", new GUIStyle(_textStyle) { fontSize = 10, normal = { textColor = Color.gray } });
+            string hint = _typing ? "[E] Saltar texto" : (_lineIndex < _currentLines.Length - 1 ? "[E] Continuar ▶" : "[E] Cerrar ✖");
+            GUI.color = new Color(1, 1, 1, 0.55f);
+            GUI.Label(new Rect(box.x + box.width - 130, box.y + boxH - 18, 125, 16), hint, _hintStyle);
+            GUI.color = Color.white;
+
+            // Indicador de rango (E)
+            var player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                float dist = Vector2.Distance(transform.position, player.transform.position);
+                if (!_showingDialogue && dist <= interactRadius)
+                {
+                    // Muestra el prompt E sobre la cabeza del NPC
+                }
+            }
+        }
+
+        // Muestra el "[E]" flotante si el jugador está cerca y no hay diálogo
+        private void LateUpdate()
+        {
+            // (se maneja en OnGUI para simplicidad)
+        }
+
+        private void InitStyles()
+        {
+            if (_boxStyle != null) return;
+
+            _boxStyle = new GUIStyle(GUI.skin.box);
+            _boxStyle.normal.background = MakeTex(2, 2, new Color(0.06f, 0.05f, 0.12f, 0.92f));
+            _boxStyle.border = new RectOffset(6, 6, 6, 6);
+
+            _nameStyle = new GUIStyle(GUI.skin.label)
+            {
+                fontSize = 15,
+                fontStyle = FontStyle.Bold,
+                wordWrap = false,
+                normal = { textColor = Color.white }
+            };
+
+            _textStyle = new GUIStyle(GUI.skin.label)
+            {
+                fontSize = 13,
+                wordWrap = true,
+                normal = { textColor = new Color(0.95f, 0.95f, 0.92f) },
+                padding = new RectOffset(0, 0, 0, 0)
+            };
+
+            _hintStyle = new GUIStyle(GUI.skin.label)
+            {
+                fontSize = 11,
+                alignment = TextAnchor.MiddleRight,
+                normal = { textColor = Color.gray }
+            };
         }
 
         private static Texture2D MakeTex(int w, int h, Color col)
@@ -182,7 +320,7 @@ namespace Platformer.TopDown
             return t;
         }
 
-        // ── Gizmos en Editor ──────────────────────────────────────────────────
+        // ── Gizmos ─────────────────────────────────────────────────────────────
         private void OnDrawGizmosSelected()
         {
             Vector3 pA = Application.isPlaying ? _pointA : transform.position;
@@ -190,10 +328,10 @@ namespace Platformer.TopDown
 
             Gizmos.color = Color.yellow;
             Gizmos.DrawLine(pA, pB);
-            Gizmos.DrawWireSphere(pA, 0.15f);
-            Gizmos.DrawWireSphere(pB, 0.15f);
+            Gizmos.DrawWireSphere(pA, 0.12f);
+            Gizmos.DrawWireSphere(pB, 0.12f);
 
-            Gizmos.color = new Color(0, 1, 0, 0.3f);
+            Gizmos.color = new Color(0, 1, 0, 0.25f);
             Gizmos.DrawWireSphere(transform.position, interactRadius);
         }
     }

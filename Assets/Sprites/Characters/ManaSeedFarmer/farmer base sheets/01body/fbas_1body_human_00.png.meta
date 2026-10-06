@@ -1,0 +1,5135 @@
+fileFormatVersion: 2
+guid: 7f3b627c5b07b52458307026f0cc3bd9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2086361602010801827
+    second: fbas_1body_human_00_0
+  - first:
+      213: -3961290594747368714
+    second: fbas_1body_human_00_1
+  - first:
+      213: -6385711076424137639
+    second: fbas_1body_human_00_2
+  - first:
+      213: 1054088254637059925
+    second: fbas_1body_human_00_3
+  - first:
+      213: -5871138207510791496
+    second: fbas_1body_human_00_4
+  - first:
+      213: 5305066410149564345
+    second: fbas_1body_human_00_5
+  - first:
+      213: 3301109326443749758
+    second: fbas_1body_human_00_6
+  - first:
+      213: 3605313053369007843
+    second: fbas_1body_human_00_7
+  - first:
+      213: -8652538441399758700
+    second: fbas_1body_human_00_8
+  - first:
+      213: -2137678185479774770
+    second: fbas_1body_human_00_9
+  - first:
+      213: -402818263824407867
+    second: fbas_1body_human_00_10
+  - first:
+      213: -3427130084731430142
+    second: fbas_1body_human_00_11
+  - first:
+      213: -5744713866356273515
+    second: fbas_1body_human_00_12
+  - first:
+      213: -1280159646868028721
+    second: fbas_1body_human_00_13
+  - first:
+      213: 3439097589105006628
+    second: fbas_1body_human_00_14
+  - first:
+      213: 1755862366961717077
+    second: fbas_1body_human_00_15
+  - first:
+      213: -7108967151388103363
+    second: fbas_1body_human_00_16
+  - first:
+      213: 6198572626830506851
+    second: fbas_1body_human_00_17
+  - first:
+      213: 2358471288355572363
+    second: fbas_1body_human_00_18
+  - first:
+      213: 4065564328765012382
+    second: fbas_1body_human_00_19
+  - first:
+      213: 6053546642651040740
+    second: fbas_1body_human_00_20
+  - first:
+      213: -5098697035892281224
+    second: fbas_1body_human_00_21
+  - first:
+      213: -422190069571644050
+    second: fbas_1body_human_00_22
+  - first:
+      213: 554668986566920813
+    second: fbas_1body_human_00_23
+  - first:
+      213: -5787230721697258015
+    second: fbas_1body_human_00_24
+  - first:
+      213: -2532753882543578468
+    second: fbas_1body_human_00_25
+  - first:
+      213: -8029182107664370715
+    second: fbas_1body_human_00_26
+  - first:
+      213: 7193796058065242551
+    second: fbas_1body_human_00_27
+  - first:
+      213: -3568914803469798509
+    second: fbas_1body_human_00_28
+  - first:
+      213: -8546838861940179956
+    second: fbas_1body_human_00_29
+  - first:
+      213: 1633696720017371002
+    second: fbas_1body_human_00_30
+  - first:
+      213: 5039830156148775735
+    second: fbas_1body_human_00_31
+  - first:
+      213: 7307017403502905259
+    second: fbas_1body_human_00_32
+  - first:
+      213: -4373949823851501299
+    second: fbas_1body_human_00_33
+  - first:
+      213: 8331138552102573537
+    second: fbas_1body_human_00_34
+  - first:
+      213: -1719926167719190550
+    second: fbas_1body_human_00_35
+  - first:
+      213: -4180392486967226253
+    second: fbas_1body_human_00_36
+  - first:
+      213: -737092108184948914
+    second: fbas_1body_human_00_37
+  - first:
+      213: -8389958467283617925
+    second: fbas_1body_human_00_38
+  - first:
+      213: -8558356770403297102
+    second: fbas_1body_human_00_39
+  - first:
+      213: 7967790825175586080
+    second: fbas_1body_human_00_40
+  - first:
+      213: 3027167734859215216
+    second: fbas_1body_human_00_41
+  - first:
+      213: 6173281220404174290
+    second: fbas_1body_human_00_42
+  - first:
+      213: 5547300264482806548
+    second: fbas_1body_human_00_43
+  - first:
+      213: 7698563618636216396
+    second: fbas_1body_human_00_44
+  - first:
+      213: -913541426706758619
+    second: fbas_1body_human_00_45
+  - first:
+      213: 8529086735332196741
+    second: fbas_1body_human_00_46
+  - first:
+      213: -6497207274063987440
+    second: fbas_1body_human_00_47
+  - first:
+      213: 3623338195436118655
+    second: fbas_1body_human_00_48
+  - first:
+      213: -2193136638290795659
+    second: fbas_1body_human_00_49
+  - first:
+      213: 3001856335131070219
+    second: fbas_1body_human_00_50
+  - first:
+      213: 92449076048284379
+    second: fbas_1body_human_00_51
+  - first:
+      213: -6207908186170057909
+    second: fbas_1body_human_00_52
+  - first:
+      213: 4334958525646758772
+    second: fbas_1body_human_00_53
+  - first:
+      213: -89491207085420500
+    second: fbas_1body_human_00_54
+  - first:
+      213: -1377208164326995792
+    second: fbas_1body_human_00_55
+  - first:
+      213: -851692548619272576
+    second: fbas_1body_human_00_56
+  - first:
+      213: -2674974670519589290
+    second: fbas_1body_human_00_57
+  - first:
+      213: -4785128222904821052
+    second: fbas_1body_human_00_58
+  - first:
+      213: -4117548822870501094
+    second: fbas_1body_human_00_59
+  - first:
+      213: -2822222696985130658
+    second: fbas_1body_human_00_60
+  - first:
+      213: 2429281125727927314
+    second: fbas_1body_human_00_61
+  - first:
+      213: 7135580326465024572
+    second: fbas_1body_human_00_62
+  - first:
+      213: -2565812660923450909
+    second: fbas_1body_human_00_63
+  - first:
+      213: -8267847003322550734
+    second: fbas_1body_human_00_64
+  - first:
+      213: -3732127535024377271
+    second: fbas_1body_human_00_65
+  - first:
+      213: -5004652248113856696
+    second: fbas_1body_human_00_66
+  - first:
+      213: -6534718869483509887
+    second: fbas_1body_human_00_67
+  - first:
+      213: -9221277581177692044
+    second: fbas_1body_human_00_68
+  - first:
+      213: 5934484785897701280
+    second: fbas_1body_human_00_69
+  - first:
+      213: 9210922120703896715
+    second: fbas_1body_human_00_70
+  - first:
+      213: -266536621140230956
+    second: fbas_1body_human_00_71
+  - first:
+      213: -8572478749617700884
+    second: fbas_1body_human_00_72
+  - first:
+      213: 7759184603961401509
+    second: fbas_1body_human_00_73
+  - first:
+      213: -2730115709656045397
+    second: fbas_1body_human_00_74
+  - first:
+      213: -3267712452798024994
+    second: fbas_1body_human_00_75
+  - first:
+      213: -2756312868845516601
+    second: fbas_1body_human_00_76
+  - first:
+      213: -4608807255030781273
+    second: fbas_1body_human_00_77
+  - first:
+      213: 3842587183143194779
+    second: fbas_1body_human_00_78
+  - first:
+      213: -6042857686775957835
+    second: fbas_1body_human_00_79
+  - first:
+      213: -6025522470283653909
+    second: fbas_1body_human_00_80
+  - first:
+      213: 8049650961057999968
+    second: fbas_1body_human_00_81
+  - first:
+      213: -1909959074322301750
+    second: fbas_1body_human_00_82
+  - first:
+      213: -4500672146814185
+    second: fbas_1body_human_00_83
+  - first:
+      213: -7521924028000063395
+    second: fbas_1body_human_00_84
+  - first:
+      213: 1319866864597596385
+    second: fbas_1body_human_00_85
+  - first:
+      213: -1769640488123790111
+    second: fbas_1body_human_00_86
+  - first:
+      213: -8030390127811146055
+    second: fbas_1body_human_00_87
+  - first:
+      213: -7170169808110596730
+    second: fbas_1body_human_00_88
+  - first:
+      213: 5440404386467446689
+    second: fbas_1body_human_00_89
+  - first:
+      213: 1958934305213692597
+    second: fbas_1body_human_00_90
+  - first:
+      213: 4639867432992970293
+    second: fbas_1body_human_00_91
+  - first:
+      213: -3634516458082588231
+    second: fbas_1body_human_00_92
+  - first:
+      213: -2385371506424550961
+    second: fbas_1body_human_00_93
+  - first:
+      213: 4014959052944857431
+    second: fbas_1body_human_00_94
+  - first:
+      213: -6409614912262763768
+    second: fbas_1body_human_00_95
+  - first:
+      213: -4112011119104882946
+    second: fbas_1body_human_00_96
+  - first:
+      213: -741617995656465429
+    second: fbas_1body_human_00_97
+  - first:
+      213: -2397793553878346420
+    second: fbas_1body_human_00_98
+  - first:
+      213: -6784387310166237377
+    second: fbas_1body_human_00_99
+  - first:
+      213: -7827541426121499583
+    second: fbas_1body_human_00_100
+  - first:
+      213: 2066169744132718092
+    second: fbas_1body_human_00_101
+  - first:
+      213: 6661941938005860368
+    second: fbas_1body_human_00_102
+  - first:
+      213: 6171602115063836289
+    second: fbas_1body_human_00_103
+  - first:
+      213: 7368057261606616454
+    second: fbas_1body_human_00_104
+  - first:
+      213: -4232057872152284865
+    second: fbas_1body_human_00_105
+  - first:
+      213: -8295228859272391324
+    second: fbas_1body_human_00_106
+  - first:
+      213: -971555896245483321
+    second: fbas_1body_human_00_107
+  - first:
+      213: 6653238971979136900
+    second: fbas_1body_human_00_108
+  - first:
+      213: 1131635834414801861
+    second: fbas_1body_human_00_109
+  - first:
+      213: 8865190680091544638
+    second: fbas_1body_human_00_110
+  - first:
+      213: 3726940719365528101
+    second: fbas_1body_human_00_111
+  - first:
+      213: -2057503160899170701
+    second: fbas_1body_human_00_112
+  - first:
+      213: -5795369277161282199
+    second: fbas_1body_human_00_113
+  - first:
+      213: -8845488158090348661
+    second: fbas_1body_human_00_114
+  - first:
+      213: -8803177848004402767
+    second: fbas_1body_human_00_115
+  - first:
+      213: -3729127752139041761
+    second: fbas_1body_human_00_116
+  - first:
+      213: 6707951051479602496
+    second: fbas_1body_human_00_117
+  - first:
+      213: -658640274424224372
+    second: fbas_1body_human_00_118
+  - first:
+      213: -4629057508988440657
+    second: fbas_1body_human_00_119
+  - first:
+      213: -7173514663416979268
+    second: fbas_1body_human_00_120
+  - first:
+      213: 3523531951530887357
+    second: fbas_1body_human_00_121
+  - first:
+      213: -9166382438486045786
+    second: fbas_1body_human_00_122
+  - first:
+      213: -5469534327513125366
+    second: fbas_1body_human_00_123
+  - first:
+      213: 2508240719102543317
+    second: fbas_1body_human_00_124
+  - first:
+      213: 4627767559120923417
+    second: fbas_1body_human_00_125
+  - first:
+      213: 8058739644541148462
+    second: fbas_1body_human_00_126
+  - first:
+      213: 8483392012946922274
+    second: fbas_1body_human_00_127
+  - first:
+      213: -7421443413286539264
+    second: fbas_1body_human_00_128
+  - first:
+      213: -1499422153684338622
+    second: fbas_1body_human_00_129
+  - first:
+      213: 6972541702934880049
+    second: fbas_1body_human_00_130
+  - first:
+      213: -6855007769928271304
+    second: fbas_1body_human_00_131
+  - first:
+      213: 1024246683171307464
+    second: fbas_1body_human_00_132
+  - first:
+      213: 5358132735704741837
+    second: fbas_1body_human_00_133
+  - first:
+      213: -1281104895060812071
+    second: fbas_1body_human_00_134
+  - first:
+      213: -9155807636653010384
+    second: fbas_1body_human_00_135
+  - first:
+      213: 8874209142904736556
+    second: fbas_1body_human_00_136
+  - first:
+      213: -6379344609090187365
+    second: fbas_1body_human_00_137
+  - first:
+      213: -704382423794837348
+    second: fbas_1body_human_00_138
+  - first:
+      213: 8475471791809547455
+    second: fbas_1body_human_00_139
+  - first:
+      213: 7341258829606153817
+    second: fbas_1body_human_00_140
+  - first:
+      213: 140108808666748539
+    second: fbas_1body_human_00_141
+  - first:
+      213: 5734994184155886815
+    second: fbas_1body_human_00_142
+  - first:
+      213: -2091185809660877516
+    second: fbas_1body_human_00_143
+  - first:
+      213: 6810108592901036350
+    second: fbas_1body_human_00_144
+  - first:
+      213: -6294780829535261047
+    second: fbas_1body_human_00_145
+  - first:
+      213: -1857756527211102472
+    second: fbas_1body_human_00_146
+  - first:
+      213: 4128123982657406198
+    second: fbas_1body_human_00_147
+  - first:
+      213: -5730947672628495639
+    second: fbas_1body_human_00_148
+  - first:
+      213: -702152839363115710
+    second: fbas_1body_human_00_149
+  - first:
+      213: 3865034904095994666
+    second: fbas_1body_human_00_150
+  - first:
+      213: -4388096440440767283
+    second: fbas_1body_human_00_151
+  - first:
+      213: -8741255237469130162
+    second: fbas_1body_human_00_152
+  - first:
+      213: -393467138572188491
+    second: fbas_1body_human_00_153
+  - first:
+      213: -5652139297012432550
+    second: fbas_1body_human_00_154
+  - first:
+      213: -5459823536354558054
+    second: fbas_1body_human_00_155
+  - first:
+      213: 120980161145659927
+    second: fbas_1body_human_00_156
+  - first:
+      213: 1228829531931987579
+    second: fbas_1body_human_00_157
+  - first:
+      213: 2042999669004633090
+    second: fbas_1body_human_00_158
+  - first:
+      213: -3203324650900120152
+    second: fbas_1body_human_00_159
+  - first:
+      213: -7209111129167388245
+    second: fbas_1body_human_00_160
+  - first:
+      213: -7573450639265504944
+    second: fbas_1body_human_00_161
+  - first:
+      213: -5631477947072805343
+    second: fbas_1body_human_00_162
+  - first:
+      213: 2663816643424142330
+    second: fbas_1body_human_00_163
+  - first:
+      213: 1196322029483904593
+    second: fbas_1body_human_00_164
+  - first:
+      213: -7155069620897513729
+    second: fbas_1body_human_00_165
+  - first:
+      213: 6089890011670083960
+    second: fbas_1body_human_00_166
+  - first:
+      213: -1318374845733909529
+    second: fbas_1body_human_00_167
+  - first:
+      213: 2114890459507474035
+    second: fbas_1body_human_00_168
+  - first:
+      213: 330670488437202992
+    second: fbas_1body_human_00_169
+  - first:
+      213: 1755494253124859408
+    second: fbas_1body_human_00_170
+  - first:
+      213: 3861613474070464250
+    second: fbas_1body_human_00_171
+  - first:
+      213: -5323840220167870519
+    second: fbas_1body_human_00_172
+  - first:
+      213: 322825657358631228
+    second: fbas_1body_human_00_173
+  - first:
+      213: 670283519794305525
+    second: fbas_1body_human_00_174
+  - first:
+      213: -7087691807993719241
+    second: fbas_1body_human_00_175
+  - first:
+      213: -2856074184637163827
+    second: fbas_1body_human_00_176
+  - first:
+      213: -2404382337413284635
+    second: fbas_1body_human_00_177
+  - first:
+      213: 6537216569790331773
+    second: fbas_1body_human_00_178
+  - first:
+      213: -3994013287709885854
+    second: fbas_1body_human_00_179
+  - first:
+      213: 5002524674929159925
+    second: fbas_1body_human_00_180
+  - first:
+      213: -5142714107375598530
+    second: fbas_1body_human_00_181
+  - first:
+      213: 2564869041009500987
+    second: fbas_1body_human_00_182
+  - first:
+      213: 4307708961429797979
+    second: fbas_1body_human_00_183
+  - first:
+      213: -7607832161167778532
+    second: fbas_1body_human_00_184
+  - first:
+      213: -1800808995668032486
+    second: fbas_1body_human_00_185
+  - first:
+      213: -4970183371318867687
+    second: fbas_1body_human_00_186
+  - first:
+      213: 4792442017397758099
+    second: fbas_1body_human_00_187
+  - first:
+      213: 3440090661408988899
+    second: fbas_1body_human_00_188
+  - first:
+      213: 5994612247653028778
+    second: fbas_1body_human_00_189
+  - first:
+      213: -6109627477063467013
+    second: fbas_1body_human_00_190
+  - first:
+      213: -2702450792092523096
+    second: fbas_1body_human_00_191
+  - first:
+      213: -8148642726925570033
+    second: fbas_1body_human_00_192
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fbas_1body_human_00_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 979
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a66ed0b2de34fc10800000000000000
+      internalID: 2086361602010801827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 979
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fabcff113ba609c0800000000000000
+      internalID: -3961290594747368714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_2
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 984
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9544673eb956167a0800000000000000
+      internalID: -6385711076424137639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_3
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 979
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55fad8bceafd0ae00800000000000000
+      internalID: 1054088254637059925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 979
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ba781a28e6858ea0800000000000000
+      internalID: -5871138207510791496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_5
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 984
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf42d6eac16f9940800000000000000
+      internalID: 5305066410149564345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_6
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 979
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e71a86f3175efcd20800000000000000
+      internalID: 3301109326443749758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_7
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 977
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee732ace15a80230800000000000000
+      internalID: 3605313053369007843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_8
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 977
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49094f271220ce780800000000000000
+      internalID: -8652538441399758700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_9
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 978
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecd506624017552e0800000000000000
+      internalID: -2137678185479774770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_10
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 977
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c2e4bb5ce6e86af0800000000000000
+      internalID: -402818263824407867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_11
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 980
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b578c78536070d0800000000000000
+      internalID: -3427130084731430142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_12
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 979
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ec293ec2da640b0800000000000000
+      internalID: -5744713866356273515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_13
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 979
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc244a07595fb3ee0800000000000000
+      internalID: -1280159646868028721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_14
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 979
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 428918249012abf20800000000000000
+      internalID: 3439097589105006628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_15
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 976
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55fca3115831e5810800000000000000
+      internalID: 1755862366961717077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_16
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 915
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d679d6a00e75d90800000000000000
+      internalID: -7108967151388103363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_17
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 915
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b31b076f0c50650800000000000000
+      internalID: 6198572626830506851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_18
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 920
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8a446b1429fab020800000000000000
+      internalID: 2358471288355572363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_19
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 915
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e99b98b7739cb6830800000000000000
+      internalID: 4065564328765012382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_20
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 915
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eb49723994820450800000000000000
+      internalID: 6053546642651040740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_21
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 920
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870bd465f0acd39b0800000000000000
+      internalID: -5098697035892281224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_22
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 915
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e651c7b5e54142af0800000000000000
+      internalID: -422190069571644050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_23
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 915
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6a4f38218492b700800000000000000
+      internalID: 554668986566920813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_24
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 914
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e5e1081250afafa0800000000000000
+      internalID: -5787230721697258015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_25
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 915
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c92af7f43c9d9dcd0800000000000000
+      internalID: -2532753882543578468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_26
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 915
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e33ebbd96d929090800000000000000
+      internalID: -8029182107664370715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_27
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 914
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b98593866f75d360800000000000000
+      internalID: 7193796058065242551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_28
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 914
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 393bc8925eaa87ec0800000000000000
+      internalID: -3568914803469798509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_29
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 915
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0c3d819657836980800000000000000
+      internalID: -8546838861940179956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_30
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 914
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f2b5bd28e0ca610800000000000000
+      internalID: 1633696720017371002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_31
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 914
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b9c8923d211f540800000000000000
+      internalID: 5039830156148775735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_32
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 851
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba7436f3d9db76560800000000000000
+      internalID: 7307017403502905259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_33
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 851
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09e2f33fcb9c43c0800000000000000
+      internalID: -4373949823851501299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_34
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 856
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e5d2a47f562e9370800000000000000
+      internalID: 8331138552102573537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_35
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 851
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aefd23553489128e0800000000000000
+      internalID: -1719926167719190550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_36
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 851
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3705b988e234cf5c0800000000000000
+      internalID: -4180392486967226253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_37
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 856
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f64e402a255c5f0800000000000000
+      internalID: -737092108184948914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_38
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 851
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b777745d931e09b80800000000000000
+      internalID: -8389958467283617925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_39
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 851
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b85d078cdb9a3980800000000000000
+      internalID: -8558356770403297102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_40
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 851
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02515335a87439e60800000000000000
+      internalID: 7967790825175586080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_41
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 851
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 071bec72409a20a20800000000000000
+      internalID: 3027167734859215216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_42
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 851
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ddd7c00096eba550800000000000000
+      internalID: 6173281220404174290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_43
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 851
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41b9dee1338fbfc40800000000000000
+      internalID: 5547300264482806548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_44
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 851
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48be8982dac6da60800000000000000
+      internalID: 7698563618636216396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_45
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 851
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5244a8d99e27253f0800000000000000
+      internalID: -913541426706758619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_46
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 851
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 581c8fd52376d5670800000000000000
+      internalID: 8529086735332196741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_47
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 849
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01df45d686845d5a0800000000000000
+      internalID: -6497207274063987440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_48
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 786
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f72231834eea84230800000000000000
+      internalID: 3623338195436118655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_49
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 786
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57368c2e8d96091e0800000000000000
+      internalID: -2193136638290795659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_50
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 787
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f4e3aae6cb8a920800000000000000
+      internalID: 3001856335131070219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_51
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 792
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdacba1e1f1784100800000000000000
+      internalID: 92449076048284379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_52
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 786
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4b1815456419d9a0800000000000000
+      internalID: -6207908186170057909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_53
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 787
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473e93dbfcdd82c30800000000000000
+      internalID: 4334958525646758772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_54
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 787
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c201727a83012cef0800000000000000
+      internalID: -89491207085420500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_55
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 791
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b88587a87c23ece0800000000000000
+      internalID: -1377208164326995792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_56
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 794
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08e73b5b32e2e24f0800000000000000
+      internalID: -851692548619272576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_57
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 797
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6562384b5b490ead0800000000000000
+      internalID: -2674974670519589290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_58
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 794
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cadf05eb3fc79db0800000000000000
+      internalID: -4785128222904821052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_59
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 793
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a19d97b49278bd6c0800000000000000
+      internalID: -4117548822870501094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_60
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 787
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e59082de86375d8d0800000000000000
+      internalID: -2822222696985130658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_61
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 787
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21cf29e105a86b120800000000000000
+      internalID: 2429281125727927314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_62
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 787
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c32b631408ca60360800000000000000
+      internalID: 7135580326465024572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_63
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 787
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e93579aaf6646cd0800000000000000
+      internalID: -2565812660923450909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_64
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 723
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2367ea594f4b24d80800000000000000
+      internalID: -8267847003322550734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_65
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 723
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942fa62d7c1d43cc0800000000000000
+      internalID: -3732127535024377271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_66
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 723
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84f30decb47eb8ab0800000000000000
+      internalID: -5004652248113856696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_67
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 723
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 187a4658fc30055a0800000000000000
+      internalID: -6534718869483509887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_68
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 723
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47061a675e0770080800000000000000
+      internalID: -9221277581177692044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_69
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 723
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af746478768b5250800000000000000
+      internalID: 5934484785897701280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_70
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 730
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8ce7520ed4c3df70800000000000000
+      internalID: 9210922120703896715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_71
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 729
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dcbd41fa521d4cf0800000000000000
+      internalID: -266536621140230956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_72
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 730
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cefb3740fff680980800000000000000
+      internalID: -8572478749617700884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_73
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 733
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a0acc199492eab60800000000000000
+      internalID: 7759184603961401509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_74
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 729
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba8ec321a3eac1ad0800000000000000
+      internalID: -2730115709656045397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_75
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 728
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed27ad656d0c6a2d0800000000000000
+      internalID: -3267712452798024994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_76
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 723
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c800a2ac0c9fb9d0800000000000000
+      internalID: -2756312868845516601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_77
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 723
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aaa5a5583a3a00c0800000000000000
+      internalID: -4608807255030781273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_78
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 720
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9018b52fac935530800000000000000
+      internalID: 3842587183143194779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_79
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 720
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6fa7743f4732ca0800000000000000
+      internalID: -6042857686775957835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_80
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 658
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beccb94ec3b016ca0800000000000000
+      internalID: -6025522470283653909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_81
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 658
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06c6eb376ea16bf60800000000000000
+      internalID: 8049650961057999968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_82
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 659
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acc3c7f57567e75e0800000000000000
+      internalID: -1909959074322301750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_83
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 664
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71b407b99a200fff0800000000000000
+      internalID: -4500672146814185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_84
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 658
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d50b49b03f1cc9790800000000000000
+      internalID: -7521924028000063395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_85
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 659
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e8f52f9beb115210800000000000000
+      internalID: 1319866864597596385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_86
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 659
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec8b3d1a59f077e0800000000000000
+      internalID: -1769640488123790111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_87
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 663
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be4300c9b25e8090800000000000000
+      internalID: -8030390127811146055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_88
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 664
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68d46587c807e7c90800000000000000
+      internalID: -7170169808110596730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_89
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 666
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1af7ed907f2308b40800000000000000
+      internalID: 5440404386467446689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_90
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 664
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bab6982f588f2b10800000000000000
+      internalID: 1958934305213692597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_91
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 664
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5361374e8de146040800000000000000
+      internalID: 4639867432992970293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_92
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 659
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b92da1b98a9f8dc0800000000000000
+      internalID: -3634516458082588231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_93
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 659
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc9e93ec04575eed0800000000000000
+      internalID: -2385371506424550961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_94
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 655
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759548a8cfff7b730800000000000000
+      internalID: 4014959052944857431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_95
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 655
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80b088762397c07a0800000000000000
+      internalID: -6409614912262763768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_96
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 595
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef60c4d6ca33fe6c0800000000000000
+      internalID: -4112011119104882946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_97
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 595
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be3fbd9bc5e35b5f0800000000000000
+      internalID: -741617995656465429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_98
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 595
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c451c50877359bed0800000000000000
+      internalID: -2397793553878346420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_99
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 595
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f9fd6cfa309d1a0800000000000000
+      internalID: -6784387310166237377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_100
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 595
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14c9f578b8cfe5390800000000000000
+      internalID: -7827541426121499583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_101
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 595
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0eb0bc6f628cac10800000000000000
+      internalID: 2066169744132718092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_102
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 602
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 010ed1965e8f37c50800000000000000
+      internalID: 6661941938005860368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_103
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 601
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18eed63dc6fe5a550800000000000000
+      internalID: 6171602115063836289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_104
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 586
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68dbcc2ba09904660800000000000000
+      internalID: 7368057261606616454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_105
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 595
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f31b775a9c5b445c0800000000000000
+      internalID: -4232057872152284865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_106
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 595
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46510807d4d61ec80800000000000000
+      internalID: -8295228859272391324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_107
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 595
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c80ad45f075482f0800000000000000
+      internalID: -971555896245483321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_108
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 595
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48ff99a389d055c50800000000000000
+      internalID: 6653238971979136900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_109
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 595
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c3a565bbc064bf00800000000000000
+      internalID: 1131635834414801861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_110
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 595
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3cc5f824fb770b70800000000000000
+      internalID: 8865190680091544638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_111
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 595
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a98bc86d0c8b330800000000000000
+      internalID: 3726940719365528101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_112
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 531
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e8c5ab6c74273e0800000000000000
+      internalID: -2057503160899170701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_113
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 531
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 965e69cf856b29fa0800000000000000
+      internalID: -5795369277161282199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_114
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 531
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b87b918b2638e3580800000000000000
+      internalID: -8845488158090348661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_115
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 531
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b12c137364d4d580800000000000000
+      internalID: -8803177848004402767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_116
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 528
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1493b3311a7f3cc0800000000000000
+      internalID: -3729127752139041761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_117
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 531
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 045562ae0fd671d50800000000000000
+      internalID: 6707951051479602496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_118
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 532
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85ad28f82a0cd6f0800000000000000
+      internalID: -658640274424224372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_119
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 531
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fafa3eba8b842cfb0800000000000000
+      internalID: -4629057508988440657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_120
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 531
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb0a9f7ab6e827c90800000000000000
+      internalID: -7173514663416979268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_121
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 533
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db8ccb534a916e030800000000000000
+      internalID: 3523531951530887357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_122
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 531
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ab09aedcb77ac080800000000000000
+      internalID: -9166382438486045786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_123
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 531
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e66c9028f4814b0800000000000000
+      internalID: -5469534327513125366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_124
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 531
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d5074115af0fc220800000000000000
+      internalID: 2508240719102543317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_125
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 531
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91baa787312293040800000000000000
+      internalID: 4627767559120923417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_126
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 531
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2d9b3a720566df60800000000000000
+      internalID: 8058739644541148462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_127
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 531
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b561eb6101bb570800000000000000
+      internalID: 8483392012946922274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_128
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 468
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 000b46e398cb10990800000000000000
+      internalID: -7421443413286539264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_129
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 468
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2483b49de7bf03be0800000000000000
+      internalID: -1499422153684338622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_130
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 465
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13fd7099cb173c060800000000000000
+      internalID: 6972541702934880049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_131
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 467
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83af1eca0ce1ed0a0800000000000000
+      internalID: -6855007769928271304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_132
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 467
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cf3cc08eead63e00800000000000000
+      internalID: 1024246683171307464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_133
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 467
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7b213a559eb5a40800000000000000
+      internalID: 5358132735704741837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_134
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 467
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ded2e1b2e9983ee0800000000000000
+      internalID: -1281104895060812071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_135
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 467
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0321d79c67900f080800000000000000
+      internalID: -9155807636653010384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_136
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 403
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2b4c59a236872b70800000000000000
+      internalID: 8874209142904736556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_137
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 403
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9f406390e30877a0800000000000000
+      internalID: -6379344609090187365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_138
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 403
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c981ea3eae78936f0800000000000000
+      internalID: -704382423794837348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_139
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 402
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbcc6ae80bcee9570800000000000000
+      internalID: 8475471791809547455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_140
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 402
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95eefd6820461e560800000000000000
+      internalID: 7341258829606153817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_141
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 402
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b761c7a1834c1f100800000000000000
+      internalID: 140108808666748539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_142
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 402
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd4fa8f33dac69f40800000000000000
+      internalID: 5734994184155886815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_143
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 401
+        width: 14
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43563dfe59d9af2e0800000000000000
+      internalID: -2091185809660877516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_144
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 339
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3993b90fad528e50800000000000000
+      internalID: 6810108592901036350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_145
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 339
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98eac9ccf2274a8a0800000000000000
+      internalID: -6294780829535261047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_146
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 339
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fe3b64084ce736e0800000000000000
+      internalID: -1857756527211102472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_147
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 339
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f4c017f3ea0a4930800000000000000
+      internalID: 4128123982657406198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_148
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 339
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea70a2a4759770b0800000000000000
+      internalID: -5730947672628495639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_149
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 339
+        width: 27
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 245cab776b37146f0800000000000000
+      internalID: -702152839363115710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_150
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 339
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a23b02774cc53a530800000000000000
+      internalID: 3865034904095994666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_151
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 339
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcc3f5b59895a13c0800000000000000
+      internalID: -4388096440440767283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_152
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 274
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4231a7bca2d0b680800000000000000
+      internalID: -8741255237469130162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_153
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 274
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b48d9ed8bf1a8af0800000000000000
+      internalID: -393467138572188491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_154
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 276
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a514c8471419f81b0800000000000000
+      internalID: -5652139297012432550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_155
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 280
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9ff44bcb6fca34b0800000000000000
+      internalID: -5459823536354558054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_156
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 272
+        width: 33
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 712e4f9c0decda100800000000000000
+      internalID: 120980161145659927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_157
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 275
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7ec05cd2fdad0110800000000000000
+      internalID: 1228829531931987579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_158
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 279
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204034bef513a5c10800000000000000
+      internalID: 2042999669004633090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_159
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 271
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad98d2b3318b83d0800000000000000
+      internalID: -3203324650900120152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_160
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 207
+        width: 178
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba1a9af9f9714fb90800000000000000
+      internalID: -7209111129167388245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_161
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 211
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 051ef9af4c2b5e690800000000000000
+      internalID: -7573450639265504944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_162
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 211
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 126874cd4a8f8d1b0800000000000000
+      internalID: -5631477947072805343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_163
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 211
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af3c11aaf17c7f420800000000000000
+      internalID: 2663816643424142330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_164
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 211
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15ecc542c803a9010800000000000000
+      internalID: 1196322029483904593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_165
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 212
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffef637c61614bc90800000000000000
+      internalID: -7155069620897513729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_166
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 209
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8797bc233b2a38450800000000000000
+      internalID: 6089890011670083960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_167
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 210
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eb4837101134bde0800000000000000
+      internalID: -1318374845733909529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_168
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 209
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e3ec1faa9995d10800000000000000
+      internalID: 2114890459507474035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_169
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 147
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0302109ae07c69400800000000000000
+      internalID: 330670488437202992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_170
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 147
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0163fb2e8b4cc5810800000000000000
+      internalID: 1755494253124859408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_171
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 147
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af605d5bef4379530800000000000000
+      internalID: 3861613474070464250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_172
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 149
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c7e4f3d68bed16b0800000000000000
+      internalID: -5323840220167870519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_173
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 149
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c314e379938ea7400800000000000000
+      internalID: 322825657358631228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_174
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 146
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f953285f435d4900800000000000000
+      internalID: 670283519794305525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_175
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 145
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73696135ad573ad90800000000000000
+      internalID: -7087691807993719241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_176
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 146
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc6d98449af2d58d0800000000000000
+      internalID: -2856074184637163827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_177
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 83
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ecf14ac00be1aed0800000000000000
+      internalID: -2404382337413284635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_178
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 83
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7b7626a5dbd8ba50800000000000000
+      internalID: 6537216569790331773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_179
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 83
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26abcd5731a6298c0800000000000000
+      internalID: -3994013287709885854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_180
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 83
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fe6745ffa98c6540800000000000000
+      internalID: 5002524674929159925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_181
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 82
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e34cc7044c861a8b0800000000000000
+      internalID: -5142714107375598530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_182
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 83
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33a4c4bdce389320800000000000000
+      internalID: 2564869041009500987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_183
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 83
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5c3ac92a7e08cb30800000000000000
+      internalID: 4307708961429797979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_184
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 80
+        width: 20
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1d5dca15fc8b6690800000000000000
+      internalID: -7607832161167778532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_185
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 19
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1401e072cd3207e0800000000000000
+      internalID: -1800808995668032486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_186
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 19
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9194cf39e8c560bb0800000000000000
+      internalID: -4970183371318867687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_187
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 19
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39856a59f9c228240800000000000000
+      internalID: 4792442017397758099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_188
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 19
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eedb6cea38adbf20800000000000000
+      internalID: 3440090661408988899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_189
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 23
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa390931414213350800000000000000
+      internalID: 5994612247653028778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_190
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 19
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff7aa70e2e363ba0800000000000000
+      internalID: -6109627477063467013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_191
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 19
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a52a52a257fe7ad0800000000000000
+      internalID: -2702450792092523096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fbas_1body_human_00_192
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 19
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f00f70cfc943aee80800000000000000
+      internalID: -8148642726925570033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fbas_1body_human_00_0: 2086361602010801827
+      fbas_1body_human_00_1: -3961290594747368714
+      fbas_1body_human_00_10: -402818263824407867
+      fbas_1body_human_00_100: -7827541426121499583
+      fbas_1body_human_00_101: 2066169744132718092
+      fbas_1body_human_00_102: 6661941938005860368
+      fbas_1body_human_00_103: 6171602115063836289
+      fbas_1body_human_00_104: 7368057261606616454
+      fbas_1body_human_00_105: -4232057872152284865
+      fbas_1body_human_00_106: -8295228859272391324
+      fbas_1body_human_00_107: -971555896245483321
+      fbas_1body_human_00_108: 6653238971979136900
+      fbas_1body_human_00_109: 1131635834414801861
+      fbas_1body_human_00_11: -3427130084731430142
+      fbas_1body_human_00_110: 8865190680091544638
+      fbas_1body_human_00_111: 3726940719365528101
+      fbas_1body_human_00_112: -2057503160899170701
+      fbas_1body_human_00_113: -5795369277161282199
+      fbas_1body_human_00_114: -8845488158090348661
+      fbas_1body_human_00_115: -8803177848004402767
+      fbas_1body_human_00_116: -3729127752139041761
+      fbas_1body_human_00_117: 6707951051479602496
+      fbas_1body_human_00_118: -658640274424224372
+      fbas_1body_human_00_119: -4629057508988440657
+      fbas_1body_human_00_12: -5744713866356273515
+      fbas_1body_human_00_120: -7173514663416979268
+      fbas_1body_human_00_121: 3523531951530887357
+      fbas_1body_human_00_122: -9166382438486045786
+      fbas_1body_human_00_123: -5469534327513125366
+      fbas_1body_human_00_124: 2508240719102543317
+      fbas_1body_human_00_125: 4627767559120923417
+      fbas_1body_human_00_126: 8058739644541148462
+      fbas_1body_human_00_127: 8483392012946922274
+      fbas_1body_human_00_128: -7421443413286539264
+      fbas_1body_human_00_129: -1499422153684338622
+      fbas_1body_human_00_13: -1280159646868028721
+      fbas_1body_human_00_130: 6972541702934880049
+      fbas_1body_human_00_131: -6855007769928271304
+      fbas_1body_human_00_132: 1024246683171307464
+      fbas_1body_human_00_133: 5358132735704741837
+      fbas_1body_human_00_134: -1281104895060812071
+      fbas_1body_human_00_135: -9155807636653010384
+      fbas_1body_human_00_136: 8874209142904736556
+      fbas_1body_human_00_137: -6379344609090187365
+      fbas_1body_human_00_138: -704382423794837348
+      fbas_1body_human_00_139: 8475471791809547455
+      fbas_1body_human_00_14: 3439097589105006628
+      fbas_1body_human_00_140: 7341258829606153817
+      fbas_1body_human_00_141: 140108808666748539
+      fbas_1body_human_00_142: 5734994184155886815
+      fbas_1body_human_00_143: -2091185809660877516
+      fbas_1body_human_00_144: 6810108592901036350
+      fbas_1body_human_00_145: -6294780829535261047
+      fbas_1body_human_00_146: -1857756527211102472
+      fbas_1body_human_00_147: 4128123982657406198
+      fbas_1body_human_00_148: -5730947672628495639
+      fbas_1body_human_00_149: -702152839363115710
+      fbas_1body_human_00_15: 1755862366961717077
+      fbas_1body_human_00_150: 3865034904095994666
+      fbas_1body_human_00_151: -4388096440440767283
+      fbas_1body_human_00_152: -8741255237469130162
+      fbas_1body_human_00_153: -393467138572188491
+      fbas_1body_human_00_154: -5652139297012432550
+      fbas_1body_human_00_155: -5459823536354558054
+      fbas_1body_human_00_156: 120980161145659927
+      fbas_1body_human_00_157: 1228829531931987579
+      fbas_1body_human_00_158: 2042999669004633090
+      fbas_1body_human_00_159: -3203324650900120152
+      fbas_1body_human_00_16: -7108967151388103363
+      fbas_1body_human_00_160: -7209111129167388245
+      fbas_1body_human_00_161: -7573450639265504944
+      fbas_1body_human_00_162: -5631477947072805343
+      fbas_1body_human_00_163: 2663816643424142330
+      fbas_1body_human_00_164: 1196322029483904593
+      fbas_1body_human_00_165: -7155069620897513729
+      fbas_1body_human_00_166: 6089890011670083960
+      fbas_1body_human_00_167: -1318374845733909529
+      fbas_1body_human_00_168: 2114890459507474035
+      fbas_1body_human_00_169: 330670488437202992
+      fbas_1body_human_00_17: 6198572626830506851
+      fbas_1body_human_00_170: 1755494253124859408
+      fbas_1body_human_00_171: 3861613474070464250
+      fbas_1body_human_00_172: -5323840220167870519
+      fbas_1body_human_00_173: 322825657358631228
+      fbas_1body_human_00_174: 670283519794305525
+      fbas_1body_human_00_175: -7087691807993719241
+      fbas_1body_human_00_176: -2856074184637163827
+      fbas_1body_human_00_177: -2404382337413284635
+      fbas_1body_human_00_178: 6537216569790331773
+      fbas_1body_human_00_179: -3994013287709885854
+      fbas_1body_human_00_18: 2358471288355572363
+      fbas_1body_human_00_180: 5002524674929159925
+      fbas_1body_human_00_181: -5142714107375598530
+      fbas_1body_human_00_182: 2564869041009500987
+      fbas_1body_human_00_183: 4307708961429797979
+      fbas_1body_human_00_184: -7607832161167778532
+      fbas_1body_human_00_185: -1800808995668032486
+      fbas_1body_human_00_186: -4970183371318867687
+      fbas_1body_human_00_187: 4792442017397758099
+      fbas_1body_human_00_188: 3440090661408988899
+      fbas_1body_human_00_189: 5994612247653028778
+      fbas_1body_human_00_19: 4065564328765012382
+      fbas_1body_human_00_190: -6109627477063467013
+      fbas_1body_human_00_191: -2702450792092523096
+      fbas_1body_human_00_192: -8148642726925570033
+      fbas_1body_human_00_2: -6385711076424137639
+      fbas_1body_human_00_20: 6053546642651040740
+      fbas_1body_human_00_21: -5098697035892281224
+      fbas_1body_human_00_22: -422190069571644050
+      fbas_1body_human_00_23: 554668986566920813
+      fbas_1body_human_00_24: -5787230721697258015
+      fbas_1body_human_00_25: -2532753882543578468
+      fbas_1body_human_00_26: -8029182107664370715
+      fbas_1body_human_00_27: 7193796058065242551
+      fbas_1body_human_00_28: -3568914803469798509
+      fbas_1body_human_00_29: -8546838861940179956
+      fbas_1body_human_00_3: 1054088254637059925
+      fbas_1body_human_00_30: 1633696720017371002
+      fbas_1body_human_00_31: 5039830156148775735
+      fbas_1body_human_00_32: 7307017403502905259
+      fbas_1body_human_00_33: -4373949823851501299
+      fbas_1body_human_00_34: 8331138552102573537
+      fbas_1body_human_00_35: -1719926167719190550
+      fbas_1body_human_00_36: -4180392486967226253
+      fbas_1body_human_00_37: -737092108184948914
+      fbas_1body_human_00_38: -8389958467283617925
+      fbas_1body_human_00_39: -8558356770403297102
+      fbas_1body_human_00_4: -5871138207510791496
+      fbas_1body_human_00_40: 7967790825175586080
+      fbas_1body_human_00_41: 3027167734859215216
+      fbas_1body_human_00_42: 6173281220404174290
+      fbas_1body_human_00_43: 5547300264482806548
+      fbas_1body_human_00_44: 7698563618636216396
+      fbas_1body_human_00_45: -913541426706758619
+      fbas_1body_human_00_46: 8529086735332196741
+      fbas_1body_human_00_47: -6497207274063987440
+      fbas_1body_human_00_48: 3623338195436118655
+      fbas_1body_human_00_49: -2193136638290795659
+      fbas_1body_human_00_5: 5305066410149564345
+      fbas_1body_human_00_50: 3001856335131070219
+      fbas_1body_human_00_51: 92449076048284379
+      fbas_1body_human_00_52: -6207908186170057909
+      fbas_1body_human_00_53: 4334958525646758772
+      fbas_1body_human_00_54: -89491207085420500
+      fbas_1body_human_00_55: -1377208164326995792
+      fbas_1body_human_00_56: -851692548619272576
+      fbas_1body_human_00_57: -2674974670519589290
+      fbas_1body_human_00_58: -4785128222904821052
+      fbas_1body_human_00_59: -4117548822870501094
+      fbas_1body_human_00_6: 3301109326443749758
+      fbas_1body_human_00_60: -2822222696985130658
+      fbas_1body_human_00_61: 2429281125727927314
+      fbas_1body_human_00_62: 7135580326465024572
+      fbas_1body_human_00_63: -2565812660923450909
+      fbas_1body_human_00_64: -8267847003322550734
+      fbas_1body_human_00_65: -3732127535024377271
+      fbas_1body_human_00_66: -5004652248113856696
+      fbas_1body_human_00_67: -6534718869483509887
+      fbas_1body_human_00_68: -9221277581177692044
+      fbas_1body_human_00_69: 5934484785897701280
+      fbas_1body_human_00_7: 3605313053369007843
+      fbas_1body_human_00_70: 9210922120703896715
+      fbas_1body_human_00_71: -266536621140230956
+      fbas_1body_human_00_72: -8572478749617700884
+      fbas_1body_human_00_73: 7759184603961401509
+      fbas_1body_human_00_74: -2730115709656045397
+      fbas_1body_human_00_75: -3267712452798024994
+      fbas_1body_human_00_76: -2756312868845516601
+      fbas_1body_human_00_77: -4608807255030781273
+      fbas_1body_human_00_78: 3842587183143194779
+      fbas_1body_human_00_79: -6042857686775957835
+      fbas_1body_human_00_8: -8652538441399758700
+      fbas_1body_human_00_80: -6025522470283653909
+      fbas_1body_human_00_81: 8049650961057999968
+      fbas_1body_human_00_82: -1909959074322301750
+      fbas_1body_human_00_83: -4500672146814185
+      fbas_1body_human_00_84: -7521924028000063395
+      fbas_1body_human_00_85: 1319866864597596385
+      fbas_1body_human_00_86: -1769640488123790111
+      fbas_1body_human_00_87: -8030390127811146055
+      fbas_1body_human_00_88: -7170169808110596730
+      fbas_1body_human_00_89: 5440404386467446689
+      fbas_1body_human_00_9: -2137678185479774770
+      fbas_1body_human_00_90: 1958934305213692597
+      fbas_1body_human_00_91: 4639867432992970293
+      fbas_1body_human_00_92: -3634516458082588231
+      fbas_1body_human_00_93: -2385371506424550961
+      fbas_1body_human_00_94: 4014959052944857431
+      fbas_1body_human_00_95: -6409614912262763768
+      fbas_1body_human_00_96: -4112011119104882946
+      fbas_1body_human_00_97: -741617995656465429
+      fbas_1body_human_00_98: -2397793553878346420
+      fbas_1body_human_00_99: -6784387310166237377
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

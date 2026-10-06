@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d76bcdd3105f7546936804360827679, type: 3}
+  m_Name: Guardia_Aldric
+  m_EditorClassIdentifier: Assembly-CSharp::Platformer.TopDown.NPCDialogueData
+  npcName: Guardia Aldric
+  nameColor: {r: 0.7, g: 0.8, b: 1, a: 1}
+  profession: "Capit\xE1n de la Guardia"
+  greetings:
+  - "\xA1Alto! Esta es la entrada principal de la Aldea Lumina. Identif\xEDcate."
+  - "...Un perro. Bien. Los perros son bienvenidos \u2014 son los mejores aliados
+    en batalla."
+  - "Me llamo Aldric. Capit\xE1n de la Guardia. Llevo 15 a\xF1os protegiendo esta
+    aldea. Ahora sin cristales, es el doble de dif\xEDcil."
+  generalLines:
+  - "\xDAltima guardia fue tranquila. Aunque escuch\xE9 movimientos en el bosque
+    al amanecer."
+  - La muralla norte necesita reparaciones. Pero sin cristales para fortalecer la
+    piedra, tarda el doble.
+  - "Tengo seis guardias bajo mi mando. Buenos chicos. Pero ojal\xE1 tuvi\xE9ramos
+    m\xE1s."
+  - "\xBFHas visto actividad sospechosa por el este? Hay reportes de sombras movi\xE9ndose
+    contra el viento."
+  loreLines:
+  - "Hace diez a\xF1os, las murallas de esta aldea brillaban de noche gracias a los
+    cristales incrustados en la piedra."
+  - "Los cristales no solo daban luz \u2014 repel\xEDan a las criaturas de oscuridad.
+    Sin ellos, somos vulnerables."
+  - "Mi abuelo fue el \xFAltimo Gran Guardi\xE1n de los Cristales. Cuando muri\xF3,
+    yo era demasiado joven para entender lo que perdimos."
+  - "El Tratado de Lumina de hace 200 a\xF1os estipula que los cristales deben mantenerse
+    en la aldea. Alguien lo viol\xF3."
+  tipLines:
+  - "En batalla: mant\xE9n siempre la espalda cubierta. Un buen perro guerrero nunca
+    da la espalda al enemigo."
+  - "Si encuentras ruinas antiguas, busca los grabados en las paredes. Contienen
+    informaci\xF3n t\xE1ctica de batallas pasadas."
+  - "La velocidad supera a la fuerza. Un golpe r\xE1pido y preciso vale m\xE1s que
+    diez lentos."
+  - "El port\xF3n oeste lleva al bosque principal. El camino norte, a las Ruinas.
+    Elige sabiamente seg\xFAn tu nivel."
+  dangerLines:
+  - "\xA1Alerta m\xE1xima! Reportaron criaturas desconocidas a 2 kil\xF3metros al
+    norte. \xA1Mantente en guardia!"
+  - "Dos de mis hombres no volvieron del patrullaje nocturno. Algo serio est\xE1
+    pasando."
+  farewells:
+  - "Que la espada sea r\xE1pida y el escudo sea firme. \xA1Suerte, camarada!"
+  - "\xA1Regresa victorioso! La aldea te necesita."
+  hasQuest: 0
+  questOffer: 
+  questActiveReminder: 
+  questComplete: 
+  questRewardCoins: 0

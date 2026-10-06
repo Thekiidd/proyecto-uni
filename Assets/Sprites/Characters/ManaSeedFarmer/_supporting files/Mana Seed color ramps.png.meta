@@ -1,0 +1,1911 @@
+fileFormatVersion: 2
+guid: 5a5ee74063257bc46843e59021679100
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5141470389609244887
+    second: Mana Seed color ramps_0
+  - first:
+      213: 3125236429579982994
+    second: Mana Seed color ramps_1
+  - first:
+      213: 388350697255798457
+    second: Mana Seed color ramps_2
+  - first:
+      213: 112311742285978715
+    second: Mana Seed color ramps_3
+  - first:
+      213: 8261951597299330275
+    second: Mana Seed color ramps_4
+  - first:
+      213: 5751239697225202839
+    second: Mana Seed color ramps_5
+  - first:
+      213: -7806599174747205467
+    second: Mana Seed color ramps_6
+  - first:
+      213: 4968861190906920357
+    second: Mana Seed color ramps_7
+  - first:
+      213: 7582130510026499555
+    second: Mana Seed color ramps_8
+  - first:
+      213: 476298002038019248
+    second: Mana Seed color ramps_9
+  - first:
+      213: 5237053607590126176
+    second: Mana Seed color ramps_10
+  - first:
+      213: -4275284505112295019
+    second: Mana Seed color ramps_11
+  - first:
+      213: 4125038311574376547
+    second: Mana Seed color ramps_12
+  - first:
+      213: -3133821889768073107
+    second: Mana Seed color ramps_13
+  - first:
+      213: 6703008120830232549
+    second: Mana Seed color ramps_14
+  - first:
+      213: 2751568817882743135
+    second: Mana Seed color ramps_15
+  - first:
+      213: -7136748578289100271
+    second: Mana Seed color ramps_16
+  - first:
+      213: -2464754058552813259
+    second: Mana Seed color ramps_17
+  - first:
+      213: 4988291154069700769
+    second: Mana Seed color ramps_18
+  - first:
+      213: 9201765029943185752
+    second: Mana Seed color ramps_19
+  - first:
+      213: 6867180662343501628
+    second: Mana Seed color ramps_20
+  - first:
+      213: 4490308885328734485
+    second: Mana Seed color ramps_21
+  - first:
+      213: 7088762729090826632
+    second: Mana Seed color ramps_22
+  - first:
+      213: -2464199776299434269
+    second: Mana Seed color ramps_23
+  - first:
+      213: 3095510322358799711
+    second: Mana Seed color ramps_24
+  - first:
+      213: -6212429734954010283
+    second: Mana Seed color ramps_25
+  - first:
+      213: 5777946202220072482
+    second: Mana Seed color ramps_26
+  - first:
+      213: 5322139876132007010
+    second: Mana Seed color ramps_27
+  - first:
+      213: -9203755105431257536
+    second: Mana Seed color ramps_28
+  - first:
+      213: -9158868203487307187
+    second: Mana Seed color ramps_29
+  - first:
+      213: 6206289281567326977
+    second: Mana Seed color ramps_30
+  - first:
+      213: 2784817636970978696
+    second: Mana Seed color ramps_31
+  - first:
+      213: -699411493390112805
+    second: Mana Seed color ramps_32
+  - first:
+      213: -3343965690789080416
+    second: Mana Seed color ramps_33
+  - first:
+      213: -1059470561201498308
+    second: Mana Seed color ramps_34
+  - first:
+      213: -6901751279860938147
+    second: Mana Seed color ramps_35
+  - first:
+      213: -3894977965840705279
+    second: Mana Seed color ramps_36
+  - first:
+      213: -8715779837185844
+    second: Mana Seed color ramps_37
+  - first:
+      213: 6113358266406450500
+    second: Mana Seed color ramps_38
+  - first:
+      213: 4660471104866995767
+    second: Mana Seed color ramps_39
+  - first:
+      213: -5446775183163767379
+    second: Mana Seed color ramps_40
+  - first:
+      213: 6919571627495422491
+    second: Mana Seed color ramps_41
+  - first:
+      213: -7078509279231225645
+    second: Mana Seed color ramps_42
+  - first:
+      213: 3056984353793724172
+    second: Mana Seed color ramps_43
+  - first:
+      213: 1648873919870418672
+    second: Mana Seed color ramps_44
+  - first:
+      213: -5320694661406919197
+    second: Mana Seed color ramps_45
+  - first:
+      213: 2680275992148030272
+    second: Mana Seed color ramps_46
+  - first:
+      213: 581712389148978674
+    second: Mana Seed color ramps_47
+  - first:
+      213: 6291505555461341478
+    second: Mana Seed color ramps_48
+  - first:
+      213: 8058204251918688260
+    second: Mana Seed color ramps_49
+  - first:
+      213: 5187284624043346099
+    second: Mana Seed color ramps_50
+  - first:
+      213: 678578905397716243
+    second: Mana Seed color ramps_51
+  - first:
+      213: -1698515798461875942
+    second: Mana Seed color ramps_52
+  - first:
+      213: -2078308206100079895
+    second: Mana Seed color ramps_53
+  - first:
+      213: -1164464487455212121
+    second: Mana Seed color ramps_54
+  - first:
+      213: 1632313288498922709
+    second: Mana Seed color ramps_55
+  - first:
+      213: -7153016380242763389
+    second: Mana Seed color ramps_56
+  - first:
+      213: 7928536084772314274
+    second: Mana Seed color ramps_57
+  - first:
+      213: -7794761085128994879
+    second: Mana Seed color ramps_58
+  - first:
+      213: 293357349070016733
+    second: Mana Seed color ramps_59
+  - first:
+      213: -7440457147201595128
+    second: Mana Seed color ramps_60
+  - first:
+      213: 35078346921978745
+    second: Mana Seed color ramps_61
+  - first:
+      213: -7710902816622314575
+    second: Mana Seed color ramps_62
+  - first:
+      213: -9079494817448554871
+    second: Mana Seed color ramps_63
+  - first:
+      213: -5069582354297530019
+    second: Mana Seed color ramps_64
+  - first:
+      213: -2418092464845318734
+    second: Mana Seed color ramps_65
+  - first:
+      213: 4824418912317641075
+    second: Mana Seed color ramps_66
+  - first:
+      213: 5488880758155167884
+    second: Mana Seed color ramps_67
+  - first:
+      213: 7820405328630695897
+    second: Mana Seed color ramps_68
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mana Seed color ramps_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 215
+        width: 34
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d829d3241c2a5740800000000000000
+      internalID: 5141470389609244887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 135
+        width: 147
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 298993879f11f5b20800000000000000
+      internalID: 3125236429579982994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 167
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b6053ec6e2b36500800000000000000
+      internalID: 388350697255798457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_3
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 199
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5c9f0f3fe20f8100800000000000000
+      internalID: 112311742285978715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 183
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ec6f7c343958a270800000000000000
+      internalID: 8261951597299330275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79cbb33880280df40800000000000000
+      internalID: 5751239697225202839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_6
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 209
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a0d555696369a390800000000000000
+      internalID: -7806599174747205467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_7
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 195
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ad3b3e4de0f4f440800000000000000
+      internalID: 4968861190906920357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_8
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 169
+        width: 37
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e5e7cae683293960800000000000000
+      internalID: 7582130510026499555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_9
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 209
+        width: 33
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b454b262862c9600800000000000000
+      internalID: 476298002038019248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_10
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 169
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 062661e4280cda840800000000000000
+      internalID: 5237053607590126176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_11
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 187
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 599cc0fd4632ba4c0800000000000000
+      internalID: -4275284505112295019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_12
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 185
+        width: 76
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 360944e2d741f3930800000000000000
+      internalID: 4125038311574376547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_13
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 161
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68d70f489d6284d0800000000000000
+      internalID: -3133821889768073107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_14
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 187
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e705a03f5ed50d50800000000000000
+      internalID: 6703008120830232549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_15
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 159
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5141fce2498f2620800000000000000
+      internalID: 2751568817882743135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_16
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 187
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11addcbeafc25fc90800000000000000
+      internalID: -7136748578289100271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_17
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 161
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539d1491e3f6bcdd0800000000000000
+      internalID: -2464754058552813259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_18
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 159
+        width: 64
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a04c822068f93540800000000000000
+      internalID: 4988291154069700769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_19
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 151
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 851106caa8c33bf70800000000000000
+      internalID: 9201765029943185752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_20
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 151
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c378a63bd602d4f50800000000000000
+      internalID: 6867180662343501628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 143
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 519acc9f328c05e30800000000000000
+      internalID: 4490308885328734485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_22
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 149
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 881cc7ce428506260800000000000000
+      internalID: 7088762729090826632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_23
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 149
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee331efb576dcdd0800000000000000
+      internalID: -2464199776299434269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_24
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 149
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5d40cacc3675fa20800000000000000
+      internalID: 3095510322358799711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_25
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 149
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 559fdf7221409c9a0800000000000000
+      internalID: -6212429734954010283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_26
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 149
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e05a245736f2050800000000000000
+      internalID: 5777946202220072482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_27
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 135
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c2ac9f40a0cd940800000000000000
+      internalID: 5322139876132007010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_28
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 135
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04ef415ce71b54080800000000000000
+      internalID: -9203755105431257536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 127
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4ad48a05e925e080800000000000000
+      internalID: -9158868203487307187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_30
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 107
+        width: 12
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1038221283b212650800000000000000
+      internalID: 6206289281567326977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_31
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 99
+        width: 14
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88dd5efd2e8a5a620800000000000000
+      internalID: 2784817636970978696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_32
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 97
+        width: 10
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd728a0d3f03b46f0800000000000000
+      internalID: -699411493390112805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_33
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 99
+        width: 10
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a25c6bdbe8d791d0800000000000000
+      internalID: -3343965690789080416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_34
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 117
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c37d99d43210c41f0800000000000000
+      internalID: -1059470561201498308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_35
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 107
+        width: 12
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a8acb27cd0830a0800000000000000
+      internalID: -6901751279860938147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_36
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 131
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10957123d2242f9c0800000000000000
+      internalID: -3894977965840705279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_37
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 119
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc03dde5b0901eff0800000000000000
+      internalID: -8715779837185844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_38
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 59
+        width: 42
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 445badd04f207d450800000000000000
+      internalID: 6113358266406450500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_39
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 103
+        width: 35
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73ec19317c15da040800000000000000
+      internalID: 4660471104866995767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_40
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 119
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da54c1444da2964b0800000000000000
+      internalID: -5446775183163767379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_41
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 117
+        width: 47
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a7cb6dbb1470060800000000000000
+      internalID: 6919571627495422491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_42
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 71
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d0dd18605514cd90800000000000000
+      internalID: -7078509279231225645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_43
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 13
+        width: 99
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f4dcbb2179c6a20800000000000000
+      internalID: 3056984353793724172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_44
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 87
+        width: 52
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe3841181af1e610800000000000000
+      internalID: 1648873919870418672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_45
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e5f58c45681926b0800000000000000
+      internalID: -5320694661406919197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_46
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 043bdfb60d0423520800000000000000
+      internalID: 2680275992148030272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_47
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fd2bacf558a21800800000000000000
+      internalID: 581712389148978674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_48
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 13
+        width: 46
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6218ba708faef4750800000000000000
+      internalID: 6291505555461341478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_49
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 39
+        width: 26
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 400e72ba21e74df60800000000000000
+      internalID: 8058204251918688260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_50
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 31
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b803f4d1efecf740800000000000000
+      internalID: 5187284624043346099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_51
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 23
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 315ed405bebca6900800000000000000
+      internalID: 678578905397716243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_52
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 23
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a197a4361e8ad68e0800000000000000
+      internalID: -1698515798461875942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_53
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 15
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea10a9a2bd5823e0800000000000000
+      internalID: -2078308206100079895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_54
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 23
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7adbcafd7bdf6dfe0800000000000000
+      internalID: -1164464487455212121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_55
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 31
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d4c02b994427a610800000000000000
+      internalID: 1632313288498922709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_56
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 13
+        width: 75
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 381641f10816bbc90800000000000000
+      internalID: -7153016380242763389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_57
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 31
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac58b9df81d70e60800000000000000
+      internalID: 7928536084772314274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_58
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 15
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cf09db671273d390800000000000000
+      internalID: -7794761085128994879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_59
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 23
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd0919764f6321400800000000000000
+      internalID: 293357349070016733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_60
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 23
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 809588655af2eb890800000000000000
+      internalID: -7440457147201595128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_61
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 73
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ba797129f9c7000800000000000000
+      internalID: 35078346921978745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_62
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 65
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bbfaad0ebe5df490800000000000000
+      internalID: -7710902816622314575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_63
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 63
+        width: 56
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e8af991972ff180800000000000000
+      internalID: -9079494817448554871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_64
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 13
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d59d18465b935a9b0800000000000000
+      internalID: -5069582354297530019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_65
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 23
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b598def6b5317ed0800000000000000
+      internalID: -2418092464845318734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_66
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 15
+        width: 111
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3719e5c9077c3f240800000000000000
+      internalID: 4824418912317641075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_67
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 31
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c88c05cd7fb6c2c40800000000000000
+      internalID: 5488880758155167884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana Seed color ramps_68
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 13
+        width: 39
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d7ca9c4639a78c60800000000000000
+      internalID: 7820405328630695897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mana Seed color ramps_0: 5141470389609244887
+      Mana Seed color ramps_1: 3125236429579982994
+      Mana Seed color ramps_10: 5237053607590126176
+      Mana Seed color ramps_11: -4275284505112295019
+      Mana Seed color ramps_12: 4125038311574376547
+      Mana Seed color ramps_13: -3133821889768073107
+      Mana Seed color ramps_14: 6703008120830232549
+      Mana Seed color ramps_15: 2751568817882743135
+      Mana Seed color ramps_16: -7136748578289100271
+      Mana Seed color ramps_17: -2464754058552813259
+      Mana Seed color ramps_18: 4988291154069700769
+      Mana Seed color ramps_19: 9201765029943185752
+      Mana Seed color ramps_2: 388350697255798457
+      Mana Seed color ramps_20: 6867180662343501628
+      Mana Seed color ramps_21: 4490308885328734485
+      Mana Seed color ramps_22: 7088762729090826632
+      Mana Seed color ramps_23: -2464199776299434269
+      Mana Seed color ramps_24: 3095510322358799711
+      Mana Seed color ramps_25: -6212429734954010283
+      Mana Seed color ramps_26: 5777946202220072482
+      Mana Seed color ramps_27: 5322139876132007010
+      Mana Seed color ramps_28: -9203755105431257536
+      Mana Seed color ramps_29: -9158868203487307187
+      Mana Seed color ramps_3: 112311742285978715
+      Mana Seed color ramps_30: 6206289281567326977
+      Mana Seed color ramps_31: 2784817636970978696
+      Mana Seed color ramps_32: -699411493390112805
+      Mana Seed color ramps_33: -3343965690789080416
+      Mana Seed color ramps_34: -1059470561201498308
+      Mana Seed color ramps_35: -6901751279860938147
+      Mana Seed color ramps_36: -3894977965840705279
+      Mana Seed color ramps_37: -8715779837185844
+      Mana Seed color ramps_38: 6113358266406450500
+      Mana Seed color ramps_39: 4660471104866995767
+      Mana Seed color ramps_4: 8261951597299330275
+      Mana Seed color ramps_40: -5446775183163767379
+      Mana Seed color ramps_41: 6919571627495422491
+      Mana Seed color ramps_42: -7078509279231225645
+      Mana Seed color ramps_43: 3056984353793724172
+      Mana Seed color ramps_44: 1648873919870418672
+      Mana Seed color ramps_45: -5320694661406919197
+      Mana Seed color ramps_46: 2680275992148030272
+      Mana Seed color ramps_47: 581712389148978674
+      Mana Seed color ramps_48: 6291505555461341478
+      Mana Seed color ramps_49: 8058204251918688260
+      Mana Seed color ramps_5: 5751239697225202839
+      Mana Seed color ramps_50: 5187284624043346099
+      Mana Seed color ramps_51: 678578905397716243
+      Mana Seed color ramps_52: -1698515798461875942
+      Mana Seed color ramps_53: -2078308206100079895
+      Mana Seed color ramps_54: -1164464487455212121
+      Mana Seed color ramps_55: 1632313288498922709
+      Mana Seed color ramps_56: -7153016380242763389
+      Mana Seed color ramps_57: 7928536084772314274
+      Mana Seed color ramps_58: -7794761085128994879
+      Mana Seed color ramps_59: 293357349070016733
+      Mana Seed color ramps_6: -7806599174747205467
+      Mana Seed color ramps_60: -7440457147201595128
+      Mana Seed color ramps_61: 35078346921978745
+      Mana Seed color ramps_62: -7710902816622314575
+      Mana Seed color ramps_63: -9079494817448554871
+      Mana Seed color ramps_64: -5069582354297530019
+      Mana Seed color ramps_65: -2418092464845318734
+      Mana Seed color ramps_66: 4824418912317641075
+      Mana Seed color ramps_67: 5488880758155167884
+      Mana Seed color ramps_68: 7820405328630695897
+      Mana Seed color ramps_7: 4968861190906920357
+      Mana Seed color ramps_8: 7582130510026499555
+      Mana Seed color ramps_9: 476298002038019248
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
