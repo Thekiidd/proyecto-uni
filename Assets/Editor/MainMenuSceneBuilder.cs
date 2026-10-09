@@ -10,10 +10,11 @@ using TMPro;
 public static class MainMenuSceneBuilder
 {
     private const string SCENE_PATH = "Assets/Scenes/MainMenu.unity";
-    private const string FONT_PIXEL_PATH = "Assets/Mod Assets/Mod Resources/Fonts/PressStart2P-Regular SDF.asset";
-    private const string FONT_BODY_PATH  = "Assets/Mod Assets/Mod Resources/Fonts/Merriweather-Regular SDF.asset";
+    private const string FONT_TITLE = "Assets/Mod Assets/Mod Resources/Fonts/BioRhymeExpanded-Regular SDF.asset";
+    private const string FONT_BODY  = "Assets/Mod Assets/Mod Resources/Fonts/Merriweather-Regular SDF.asset";
+    private const string FONT_PIXEL = "Assets/Mod Assets/Mod Resources/Fonts/PressStart2P-Regular SDF.asset";
 
-    [MenuItem("Tools/Kimaya/Build Main Menu (Estilo Pixel Art)")]
+    [MenuItem("Tools/Kimaya/Build Main Menu (Diseño Premium)")]
     [MenuItem("Tools/Build MainMenu Scene")]
     public static void BuildScene()
     {
@@ -53,7 +54,7 @@ public static class MainMenuSceneBuilder
         esGO.AddComponent<UnityEngine.EventSystems.EventSystem>();
         esGO.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
 
-        // 4. Carga de Assets Visuales
+        // 4. Assets Visuales
         var bgSprite       = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/MainMenu_Background.png");
         var btnNormSprite  = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Normal.png");
         var btnHovSprite   = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Hover.png");
@@ -62,9 +63,9 @@ public static class MainMenuSceneBuilder
         var bannerSprite   = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Title_Banner.png");
         var pawSprite      = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Icon_Paw.png");
 
-        // Tipografía Pixel Art Retro (Press Start 2P)
-        var pixelFont = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(FONT_PIXEL_PATH);
-        var bodyFont  = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(FONT_BODY_PATH) ?? pixelFont;
+        // Tipografías
+        var titleFont = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(FONT_TITLE);
+        var bodyFont  = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(FONT_BODY) ?? titleFont;
 
         // Helpers de construcción UI
         RectTransform RT(GameObject go) => go.GetComponent<RectTransform>();
@@ -101,7 +102,7 @@ public static class MainMenuSceneBuilder
             r.sizeDelta        = size;
         }
 
-        TextMeshProUGUI MakeTMP(GameObject go, string text, int size, Color col, TextAlignmentOptions align = TextAlignmentOptions.Center, FontStyles style = FontStyles.Normal, TMP_FontAsset font = null)
+        TextMeshProUGUI MakeTMP(GameObject go, string text, int size, Color col, TextAlignmentOptions align = TextAlignmentOptions.Center, FontStyles style = FontStyles.Bold, TMP_FontAsset font = null)
         {
             var t = go.AddComponent<TextMeshProUGUI>();
             t.text = text;
@@ -109,12 +110,12 @@ public static class MainMenuSceneBuilder
             t.color = col;
             t.alignment = align;
             t.fontStyle = style;
-            t.font = font != null ? font : pixelFont;
+            t.font = font != null ? font : titleFont;
             t.raycastTarget = false;
             return t;
         }
 
-        Button MakeWoodButton(GameObject go, string label, int fontSize = 20)
+        Button MakeWoodButton(GameObject go, string label, int fontSize = 30)
         {
             var img = MakeImage(go, btnNormSprite, Image.Type.Sliced);
             img.raycastTarget = true;
@@ -123,12 +124,21 @@ public static class MainMenuSceneBuilder
             var ss = btn.spriteState;
             ss.highlightedSprite = btnHovSprite;
             ss.pressedSprite     = btnPressSprite;
+            btn.colors = new ColorBlock
+            {
+                normalColor = Color.white,
+                highlightedColor = new Color(1.15f, 1.15f, 1.15f),
+                pressedColor = new Color(0.85f, 0.85f, 0.85f),
+                selectedColor = Color.white,
+                colorMultiplier = 1f,
+                fadeDuration = 0.1f
+            };
             btn.spriteState = ss;
 
             var txtGO = MakeChild("Text", go);
             Stretch(txtGO);
-            var tmp = MakeTMP(txtGO, label, fontSize, new Color(1f, 0.96f, 0.88f), TextAlignmentOptions.Center, FontStyles.Normal, pixelFont);
-            tmp.characterSpacing = 2f;
+            var tmp = MakeTMP(txtGO, label, fontSize, new Color(1f, 0.95f, 0.84f), TextAlignmentOptions.Center, FontStyles.Bold, titleFont);
+            tmp.characterSpacing = 3f;
             return btn;
         }
 
@@ -142,61 +152,61 @@ public static class MainMenuSceneBuilder
         var overlayGO = MakeChild("VignetteOverlay", bgGO);
         Stretch(overlayGO);
         var ovImg = overlayGO.AddComponent<Image>();
-        ovImg.color = new Color(0.04f, 0.08f, 0.05f, 0.18f);
+        ovImg.color = new Color(0.04f, 0.08f, 0.05f, 0.15f);
         ovImg.raycastTarget = false;
 
-        // 6. Banner de Título Superior
+        // 6. Banner de Título Superior GRANDE Y ELEGANTE
         var bannerGO = MakeChild("TitleBanner", canvasGO);
-        SetAnchored(bannerGO, new Vector2(0.5f, 0.85f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(860, 140));
+        SetAnchored(bannerGO, new Vector2(0.5f, 0.85f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(900, 150));
         MakeImage(bannerGO, bannerSprite, Image.Type.Sliced);
 
-        // Huellitas en las pestañas laterales del banner
+        // Huellitas decorativas grandes en las pestañas del banner
         if (pawSprite != null)
         {
             var pawL = MakeChild("PawLeft", bannerGO);
-            SetAnchored(pawL, new Vector2(0.07f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(44, 44));
+            SetAnchored(pawL, new Vector2(0.07f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(52, 52));
             MakeImage(pawL, pawSprite);
 
             var pawR = MakeChild("PawRight", bannerGO);
-            SetAnchored(pawR, new Vector2(0.93f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(44, 44));
+            SetAnchored(pawR, new Vector2(0.93f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(52, 52));
             MakeImage(pawR, pawSprite);
         }
 
-        // Título Principal "KIMAYA" con tipografía Pixel Art
+        // Título Principal "KIMAYA" — Grande, llamativo y tallado en oro
         var titleTxtGO = MakeChild("TitleText", bannerGO);
-        SetAnchored(titleTxtGO, new Vector2(0.5f, 0.65f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(760, 52));
-        var titleTMP = MakeTMP(titleTxtGO, "KIMAYA", 40, new Color(1f, 0.92f, 0.45f), TextAlignmentOptions.Center, FontStyles.Bold, pixelFont);
-        titleTMP.characterSpacing = 4f;
+        SetAnchored(titleTxtGO, new Vector2(0.5f, 0.65f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(800, 65));
+        var titleTMP = MakeTMP(titleTxtGO, "KIMAYA", 56, new Color(1f, 0.88f, 0.35f), TextAlignmentOptions.Center, FontStyles.Bold, titleFont);
+        titleTMP.characterSpacing = 6f;
 
         // Subtítulo "El Bosque del Eco"
         var subTxtGO = MakeChild("SubtitleText", bannerGO);
-        SetAnchored(subTxtGO, new Vector2(0.5f, 0.28f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(760, 32));
-        var subTMP = MakeTMP(subTxtGO, "El Bosque del Eco", 16, new Color(0.98f, 0.98f, 0.92f), TextAlignmentOptions.Center, FontStyles.Normal, pixelFont);
-        subTMP.characterSpacing = 2f;
+        SetAnchored(subTxtGO, new Vector2(0.5f, 0.25f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(800, 36));
+        var subTMP = MakeTMP(subTxtGO, "El Bosque del Eco", 22, new Color(0.98f, 0.98f, 0.92f), TextAlignmentOptions.Center, FontStyles.Italic, bodyFont);
+        subTMP.characterSpacing = 3f;
 
         // 7. PanelMain (Botonera Centrada y Elevada)
         var panelMain = MakeChild("PanelMain", canvasGO);
-        SetAnchored(panelMain, new Vector2(0.5f, 0.46f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(420, 320));
+        SetAnchored(panelMain, new Vector2(0.5f, 0.47f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(440, 330));
 
-        // 4 Botones Simplificados (JUGAR, AJUSTES, CÓMO JUGAR, SALIR)
-        float startY = 105f;
-        float spacing = 70f;
+        // 4 Botones Claros y Grandes (JUGAR, AJUSTES, CÓMO JUGAR, SALIR)
+        float startY = 110f;
+        float spacing = 72f;
 
         var btnPlayGO = MakeChild("BtnPlay", panelMain);
-        SetAnchored(btnPlayGO, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, startY), new Vector2(380, 62));
-        var btnPlay = MakeWoodButton(btnPlayGO, "▶ JUGAR", 20);
+        SetAnchored(btnPlayGO, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, startY), new Vector2(400, 65));
+        var btnPlay = MakeWoodButton(btnPlayGO, "▶ JUGAR", 30);
 
         var btnSettingsGO = MakeChild("BtnSettings", panelMain);
-        SetAnchored(btnSettingsGO, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, startY - spacing), new Vector2(380, 62));
-        var btnSettings = MakeWoodButton(btnSettingsGO, "AJUSTES", 18);
+        SetAnchored(btnSettingsGO, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, startY - spacing), new Vector2(400, 65));
+        var btnSettings = MakeWoodButton(btnSettingsGO, "AJUSTES", 28);
 
         var btnHelpGO = MakeChild("BtnHelp", panelMain);
-        SetAnchored(btnHelpGO, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, startY - spacing * 2), new Vector2(380, 62));
-        var btnHelp = MakeWoodButton(btnHelpGO, "COMO JUGAR", 18);
+        SetAnchored(btnHelpGO, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, startY - spacing * 2), new Vector2(400, 65));
+        var btnHelp = MakeWoodButton(btnHelpGO, "CÓMO JUGAR", 26);
 
         var btnQuitGO = MakeChild("BtnQuit", panelMain);
-        SetAnchored(btnQuitGO, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, startY - spacing * 3), new Vector2(380, 62));
-        var btnQuit = MakeWoodButton(btnQuitGO, "✕ SALIR", 18);
+        SetAnchored(btnQuitGO, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, startY - spacing * 3), new Vector2(400, 65));
+        var btnQuit = MakeWoodButton(btnQuitGO, "✕ SALIR", 26);
 
         // 8. PanelSettings (Modal de Ajustes)
         var panelSettings = MakeChild("PanelSettings", canvasGO);
@@ -206,20 +216,20 @@ public static class MainMenuSceneBuilder
 
         var setHeaderGO = MakeChild("Header", panelSettings);
         SetAnchored(setHeaderGO, new Vector2(0.5f, 0.88f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(520, 50));
-        MakeTMP(setHeaderGO, "AJUSTES", 26, new Color(0.25f, 0.15f, 0.08f), TextAlignmentOptions.Center, FontStyles.Bold, pixelFont);
+        MakeTMP(setHeaderGO, "AJUSTES", 34, new Color(0.25f, 0.15f, 0.08f), TextAlignmentOptions.Center, FontStyles.Bold, titleFont);
 
         var setContentGO = MakeChild("Content", panelSettings);
         SetAnchored(setContentGO, new Vector2(0.5f, 0.54f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(540, 230));
         MakeTMP(setContentGO,
-            "MUSICA:  [||||||||..] 80%\n\n" +
-            "EFECTOS: [||||||||||] 100%\n\n" +
-            "PANTALLA: COMPLETA\n\n" +
-            "RESOLUCION: 1920 x 1080",
-            14, new Color(0.3f, 0.2f, 0.1f), TextAlignmentOptions.Center, FontStyles.Normal, pixelFont);
+            "Música:  [||||||||..] 80%\n\n" +
+            "Efectos de Sonido:  [||||||||||] 100%\n\n" +
+            "Modo de Pantalla:  Pantalla Completa\n\n" +
+            "Resolución:  1920 x 1080 (16:9)",
+            20, new Color(0.3f, 0.2f, 0.1f), TextAlignmentOptions.Center, FontStyles.Normal, bodyFont);
 
         var btnSetBackGO = MakeChild("BtnSettingsBack", panelSettings);
         SetAnchored(btnSetBackGO, new Vector2(0.5f, 0.14f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(250, 56));
-        var btnSetBack = MakeWoodButton(btnSetBackGO, "< VOLVER", 16);
+        var btnSetBack = MakeWoodButton(btnSetBackGO, "< VOLVER", 24);
 
         // 9. PanelHelp (Modal Cómo Jugar)
         var panelHelp = MakeChild("PanelHelp", canvasGO);
@@ -229,23 +239,22 @@ public static class MainMenuSceneBuilder
 
         var helpHeaderGO = MakeChild("Header", panelHelp);
         SetAnchored(helpHeaderGO, new Vector2(0.5f, 0.90f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(620, 50));
-        MakeTMP(helpHeaderGO, "COMO JUGAR", 24, new Color(0.25f, 0.15f, 0.08f), TextAlignmentOptions.Center, FontStyles.Bold, pixelFont);
+        MakeTMP(helpHeaderGO, "CÓMO JUGAR: KIMAYA", 30, new Color(0.25f, 0.15f, 0.08f), TextAlignmentOptions.Center, FontStyles.Bold, titleFont);
 
         var helpContentGO = MakeChild("Content", panelHelp);
         SetAnchored(helpContentGO, new Vector2(0.5f, 0.53f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(680, 310));
         MakeTMP(helpContentGO,
             "¡KIMAYA: EL BOSQUE DEL ECO!\n\n" +
-            "- MOVIMIENTO: Teclas A / D o FLECHAS\n" +
-            "- SALTAR: ESPACIO o tecla W / ARRIBA\n" +
-            "- BALANCINES: Inclinan segun tu peso\n" +
-            "- CAJAS: Empujalas sobre las placas\n" +
-            "- PUERTAS: Activa runas verdes\n" +
-            "- SPEEDRUN: ¡Llega a la meta rapido!",
-            13, new Color(0.26f, 0.17f, 0.1f), TextAlignmentOptions.TopLeft, FontStyles.Normal, pixelFont);
+            "• MOVIMIENTO: Teclas A / D o Flechas Izquierda / Derecha\n" +
+            "• SALTAR: Barra Espaciadora o Tecla W / Arriba\n" +
+            "• BALANCINES: Se inclinan con tu peso y el de los objetos\n" +
+            "• CAJAS: Empújalas sobre las placas rúnicas para activar puertas\n" +
+            "• SPEEDRUN: ¡Llega a la meta en el menor tiempo y sube tu récord a la web!",
+            18, new Color(0.26f, 0.17f, 0.1f), TextAlignmentOptions.TopLeft, FontStyles.Normal, bodyFont);
 
         var btnHelpBackGO = MakeChild("BtnHelpBack", panelHelp);
         SetAnchored(btnHelpBackGO, new Vector2(0.5f, 0.12f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(250, 56));
-        var btnHelpBack = MakeWoodButton(btnHelpBackGO, "ENTENDIDO", 16);
+        var btnHelpBack = MakeWoodButton(btnHelpBackGO, "ENTENDIDO", 24);
 
         // 10. MainMenuController
         var mmcGO = new GameObject("MainMenuController");
@@ -272,14 +281,13 @@ public static class MainMenuSceneBuilder
 
         if (!Application.isBatchMode)
         {
-            EditorUtility.DisplayDialog("✅ Main Menu Pixel Art",
+            EditorUtility.DisplayDialog("✅ Main Menu Premium Creado",
                 "¡MainMenu.unity creado con éxito!\n\n" +
-                "🎮 Título: Kimaya: El Bosque del Eco\n" +
-                "👾 Tipografía: Press Start 2P (Pixel Art)\n" +
-                "📦 Botones: JUGAR, AJUSTES, CÓMO JUGAR, SALIR", "OK");
+                "👑 Tipografía grande, títulos dorados y botones de madera estilizados.\n" +
+                "🐕 Los perritos en el prado quedan completamente visibles.", "OK");
         }
 
-        Debug.Log("[MainMenuBuilder] ✅ Escena MainMenu reconstruida con estilo Pixel Art en: " + scenePath);
+        Debug.Log("[MainMenuBuilder] ✅ Escena MainMenu reconstruida con diseño premium en: " + scenePath);
     }
 
     static void AddSceneToBuildSettings(string path, int index = -1)

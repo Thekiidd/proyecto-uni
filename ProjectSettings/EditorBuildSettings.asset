@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: bf485c5106289ec4f8cde0e8fa4f44e9
   - enabled: 1
+    path: Assets/Scenes/Level_01_Bosque.unity
+    guid: 822d9819d6df0274296975bcec0c4cc2
+  - enabled: 1
+    path: Assets/Scenes/Prologue_Story.unity
+    guid: a2879d8e18d0fbd498700b42d98adaf1
+  - enabled: 1
     path: Assets/Scenes/Historia.unity
     guid: 940e2b26d218acc4baea7f5cbc411502
   - enabled: 1
@@ -33,9 +39,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_Woods.unity
     guid: 81722d0e2f5a51348b669706e8003027
   - enabled: 1
-    path: Assets/Scenes/Prologue_Story.unity
-    guid: a2879d8e18d0fbd498700b42d98adaf1
-  - enabled: 1
     path: Assets/Scenes/PixelCrawler_Village.unity
     guid: fd656cd3549a67a4c8bf4788d63d916d
   - enabled: 1
@@ -47,9 +50,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/House_Interior_Merchant.unity
     guid: bfc3b4f7f3974b24a8266706ebc88511
-  - enabled: 1
-    path: Assets/Scenes/Level_01_Bosque.unity
-    guid: 822d9819d6df0274296975bcec0c4cc2
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f,
       type: 2}
