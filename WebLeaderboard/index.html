@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kimaya: El Bosque del Eco — Salón de la Fama & Leaderboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #070d0a;
+      --bg-panel: rgba(14, 25, 20, 0.78);
+      --bg-card: rgba(20, 36, 29, 0.65);
+      --border-magic: rgba(76, 175, 80, 0.28);
+      --border-gold: rgba(255, 215, 0, 0.35);
+      --primary-green: #38e07b;
+      --accent-gold: #ffcf33;
+      --accent-purple: #bb86fc;
+      --text-main: #f0fdf4;
+      --text-muted: #94a3b8;
+      --glow-green: 0 0 25px rgba(56, 224, 123, 0.35);
+      --glow-gold: 0 0 25px rgba(255, 207, 51, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 10%, #102419 0%, var(--bg-dark) 85%);
+      color: var(--text-main);
+      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Partículas mágicas de fondo */
+    .magic-particles {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(56, 224, 123, 0.08) 0%, transparent 40%),
+                  radial-gradient(circle at 80% 20%, rgba(187, 134, 252, 0.08) 0%, transparent 40%);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      margin-bottom: 45px;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .game-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 224, 123, 0.12);
+      border: 1px solid var(--border-magic);
+      color: var(--primary-green);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 999px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      box-shadow: var(--glow-green);
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #ffffff 20%, var(--primary-green) 70%, var(--accent-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin: 0 auto 20px;
+    }
+
+    /* ESTADO DE CONEXIÓN FIREBASE */
+    .status-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-magic);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ef4444;
+      box-shadow: 0 0 10px #ef4444;
+      transition: all 0.3s;
+    }
+
+    .status-dot.connected {
+      background: var(--primary-green);
+      box-shadow: 0 0 10px var(--primary-green);
+    }
+
+    .btn-config {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1rem;
+      margin-left: 8px;
+      transition: color 0.2s;
+    }
+    .btn-config:hover { color: var(--accent-gold); }
+
+    /* CONTENEDOR PRINCIPAL DUAL (TABLA + PERFIL) */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 28px;
+    }
+
+    @media (max-width: 950px) {
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* PANEL PRINCIPAL DE LA TABLA */
+    .panel {
+      background: var(--bg-panel);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-magic);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .panel-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-box {
+      position: relative;
+      min-width: 260px;
+    }
+
+    .search-box input {
+      width: 100%;
+      background: rgba(10, 18, 14, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 10px 16px 10px 38px;
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary-green);
+      box-shadow: var(--glow-green);
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      stroke: var(--text-muted);
+    }
+
+    /* TABLA DE SPEEDRUN */
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 8px;
+    }
+
+    th {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding: 10px 16px;
+      text-align: left;
+    }
+
+    th.center, td.center { text-align: center; }
+    th.right, td.right { text-align: right; }
+
+    tbody tr {
+      background: rgba(22, 38, 30, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 12px;
+      transition: transform 0.2s, background 0.2s, border 0.2s;
+      cursor: pointer;
+    }
+
+    tbody tr:hover {
+      background: rgba(35, 62, 48, 0.75);
+      border-color: var(--border-magic);
+      transform: translateY(-2px);
+    }
+
+    tbody tr.selected {
+      background: rgba(45, 80, 60, 0.9);
+      border: 1px solid var(--primary-green);
+      box-shadow: var(--glow-green);
+    }
+
+    td {
+      padding: 16px;
+      font-size: 0.98rem;
+    }
+
+    td:first-child {
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+    }
+    td:last-child {
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    /* MEDALLAS DE RANGO */
+    .rank-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .rank-1 { background: linear-gradient(135deg, #ffd700, #ffae00); color: #000; box-shadow: var(--glow-gold); font-size: 1.1rem; }
+    .rank-2 { background: linear-gradient(135deg, #e0e0e0, #9e9e9e); color: #000; }
+    .rank-3 { background: linear-gradient(135deg, #cd7f32, #8d4925); color: #fff; }
+    .rank-other { background: rgba(255, 255, 255, 0.08); color: var(--text-muted); }
+
+    .player-cell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .player-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(56, 224, 123, 0.15);
+      border: 1px solid var(--border-magic);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .player-name {
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .time-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      background: rgba(255, 207, 51, 0.1);
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 207, 51, 0.25);
+      display: inline-block;
+    }
+
+    .attempts-badge {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    /* PANEL LATERAL DE PERFIL */
+    .profile-card {
+      background: var(--bg-panel);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-magic);
+      border-radius: 20px;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    }
+
+    .profile-hero-avatar {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 224, 123, 0.25) 0%, rgba(10, 20, 15, 0.8) 70%);
+      border: 2px solid var(--primary-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      box-shadow: var(--glow-green);
+    }
+
+    .profile-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .profile-title {
+      font-size: 0.85rem;
+      color: var(--primary-green);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .profile-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .stat-box {
+      background: rgba(10, 20, 15, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .stat-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .badges-section {
+      text-align: left;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 18px;
+    }
+
+    .badges-section h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .achievement-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+    }
+
+    .achievement-item.unlocked {
+      background: rgba(56, 224, 123, 0.08);
+      border: 1px solid rgba(56, 224, 123, 0.2);
+      color: var(--text-main);
+    }
+
+    .achievement-item.locked {
+      opacity: 0.45;
+    }
+
+    /* MODAL DE CONFIGURACIÓN FIREBASE */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-backdrop.open { display: flex; }
+
+    .modal-box {
+      background: #0f1c16;
+      border: 1px solid var(--border-magic);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      border-radius: 18px;
+      width: 90%;
+      max-width: 520px;
+      padding: 30px;
+      position: relative;
+    }
+
+    .modal-box h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      color: var(--primary-green);
+    }
+
+    .form-group {
+      margin-top: 16px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      font-family: 'Outfit', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary-green);
+      color: #05140b;
+    }
+    .btn-primary:hover { background: #4df08f; box-shadow: var(--glow-green); }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.18); }
+
+    .sim-btn {
+      background: rgba(187, 134, 252, 0.15);
+      border: 1px solid var(--accent-purple);
+      color: var(--accent-purple);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: all 0.2s;
+    }
+    .sim-btn:hover {
+      background: var(--accent-purple);
+      color: #000;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="magic-particles"></div>
+
+  <div class="container">
+    <header>
+      <div class="game-badge">🐾 Kimaya: El Bosque del Eco</div>
+      <h1>Salón de la Fama</h1>
+      <p class="subtitle">Registros oficiales de velocidad y exploración del Nivel 1 (Templo Sagrado). Sincronizados en vivo desde Unity.</p>
+
+      <div class="status-bar">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">Conectando a Firebase...</span>
+        <button class="btn-config" id="openConfigBtn" title="Configurar Firebase">⚙️</button>
+        <button class="sim-btn" id="simTestBtn" title="Probar enviando un tiempo de prueba">⚡ Simular Récord</button>
+      </div>
+    </header>
+
+    <div class="dashboard-grid">
+      <!-- PANEL IZQUIERDO: TABLA -->
+      <section class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">🏆 Tabla General de Tiempos</h2>
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="searchInput" placeholder="Buscar jugador por Gamertag...">
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th class="center" style="width: 70px;">Rank</th>
+                <th>Aventurero</th>
+                <th class="center">Mejor Tiempo</th>
+                <th class="center">Intentos</th>
+                <th class="right">Última Partida</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboardBody">
+              <!-- Filas inyectadas dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PANEL DERECHO: PERFIL DEL JUGADOR -->
+      <aside class="profile-card" id="profileCard">
+        <div class="profile-hero-avatar" id="profAvatar">🐕</div>
+        <h3 class="profile-name" id="profName">Selecciona un Jugador</h3>
+        <p class="profile-title" id="profTitle">Explorador del Bosque</p>
+
+        <div class="profile-stats">
+          <div class="stat-box">
+            <div class="stat-val" id="profTime">--:--.--</div>
+            <div class="stat-label">Récord Personal</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val" id="profRank">#--</div>
+            <div class="stat-label">Posición Global</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val" id="profAttempts">0</div>
+            <div class="stat-label">Partidas Jugadas</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val" id="profGems">4/4</div>
+            <div class="stat-label">Gemas Halladas</div>
+          </div>
+        </div>
+
+        <div class="badges-section">
+          <h4>Medallas Desbloqueadas</h4>
+          <div class="badge-list" id="profBadges">
+            <div class="achievement-item unlocked">
+              <span>🌟</span> <span>Iniciación al Templo</span>
+            </div>
+            <div class="achievement-item unlocked">
+              <span>⚖️</span> <span>Maestro del Balancín</span>
+            </div>
+            <div class="achievement-item" id="badgeSpeed">
+              <span>⚡</span> <span>Speedrun Sub-30s</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- MODAL DE CONFIGURACIÓN DE FIREBASE -->
+  <div class="modal-backdrop" id="configModal">
+    <div class="modal-box">
+      <h3>Configurar Firebase Database</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;">
+        Ingresa la URL de tu Realtime Database de Firebase para sincronizar las partidas directamente con Unity.
+      </p>
+
+      <div class="form-group">
+        <label for="dbUrlInput">Firebase Database URL:</label>
+        <input type="text" id="dbUrlInput" placeholder="https://tu-proyecto-default-rtdb.firebaseio.com">
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="closeConfigBtn">Cancelar</button>
+        <button class="btn btn-primary" id="saveConfigBtn">Guardar Conexión</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── CONFIGURACIÓN Y ESTADO ────────────────────────────────────────────────
+    const DEFAULT_DB_URL = "https://kimaya-default-rtdb.firebaseio.com";
+    let databaseUrl = localStorage.getItem("kimaya_firebase_url") || DEFAULT_DB_URL;
+
+    // Datos Demo en caso de que la DB aún no contenga registros
+    let currentData = [
+      { playerName: "Falin_Speedrun", bestTime: 18.42, bestTimeFormatted: "00:18.42", attempts: 12, lastPlayed: "2026-10-09 10:15" },
+      { playerName: "Mia_Eco",        bestTime: 24.15, bestTimeFormatted: "00:24.15", attempts: 8,  lastPlayed: "2026-10-09 09:40" },
+      { playerName: "Thekiidd",       bestTime: 29.80, bestTimeFormatted: "00:29.80", attempts: 15, lastPlayed: "2026-10-09 10:02" },
+      { playerName: "GranDanes_Pro",  bestTime: 34.60, bestTimeFormatted: "00:34.60", attempts: 4,  lastPlayed: "2026-10-08 21:10" },
+      { playerName: "Aventurero_Bosque", bestTime: 42.10, bestTimeFormatted: "00:42.10", attempts: 2, lastPlayed: "2026-10-08 19:30" }
+    ];
+
+    let selectedPlayer = null;
+
+    // ── REFERENCIAS AL DOM ───────────────────────────────────────────────────
+    const statusDot = document.getElementById("statusDot");
+    const statusText = document.getElementById("statusText");
+    const leaderboardBody = document.getElementById("leaderboardBody");
+    const searchInput = document.getElementById("searchInput");
+    const configModal = document.getElementById("configModal");
+    const openConfigBtn = document.getElementById("openConfigBtn");
+    const closeConfigBtn = document.getElementById("closeConfigBtn");
+    const saveConfigBtn = document.getElementById("saveConfigBtn");
+    const dbUrlInput = document.getElementById("dbUrlInput");
+    const simTestBtn = document.getElementById("simTestBtn");
+
+    // Perfil
+    const profName = document.getElementById("profName");
+    const profTime = document.getElementById("profTime");
+    const profRank = document.getElementById("profRank");
+    const profAttempts = document.getElementById("profAttempts");
+    const badgeSpeed = document.getElementById("badgeSpeed");
+
+    // ── RENDERIZADO DE LA TABLA ──────────────────────────────────────────────
+    function renderLeaderboard(filter = "") {
+      leaderboardBody.innerHTML = "";
+
+      // Ordenar por menor tiempo
+      const sorted = [...currentData].sort((a, b) => a.bestTime - b.bestTime);
+      const filtered = sorted.filter(p => p.playerName.toLowerCase().includes(filter.toLowerCase()));
+
+      if (filtered.length === 0) {
+        leaderboardBody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 30px; color: var(--text-muted);">No se encontraron aventureros con ese nombre.</td></tr>`;
+        return;
+      }
+
+      filtered.forEach((player, idx) => {
+        const globalRank = sorted.indexOf(player) + 1;
+        const tr = document.createElement("tr");
+        if (selectedPlayer && selectedPlayer.playerName === player.playerName) {
+          tr.classList.add("selected");
+        }
+
+        let rankBadgeClass = "rank-other";
+        let rankBadgeContent = `#${globalRank}`;
+        if (globalRank === 1) { rankBadgeClass = "rank-1"; rankBadgeContent = "🥇"; }
+        else if (globalRank === 2) { rankBadgeClass = "rank-2"; rankBadgeContent = "🥈"; }
+        else if (globalRank === 3) { rankBadgeClass = "rank-3"; rankBadgeContent = "🥉"; }
+
+        tr.innerHTML = `
+          <td class="center"><span class="rank-badge ${rankBadgeClass}">${rankBadgeContent}</span></td>
+          <td>
+            <div class="player-cell">
+              <div class="player-avatar">🐕</div>
+              <div>
+                <div class="player-name">${player.playerName}</div>
+              </div>
+            </div>
+          </td>
+          <td class="center"><span class="time-badge">⏱️ ${player.bestTimeFormatted || formatTime(player.bestTime)}</span></td>
+          <td class="center"><span class="attempts-badge">${player.attempts || 1} runs</span></td>
+          <td class="right" style="color: var(--text-muted); font-size: 0.85rem;">${player.lastPlayed || 'Reciente'}</td>
+        `;
+
+        tr.addEventListener("click", () => selectPlayer(player, globalRank));
+        leaderboardBody.appendChild(tr);
+      });
+
+      // Seleccionar automáticamente al primer lugar si no hay selección
+      if (!selectedPlayer && filtered.length > 0) {
+        selectPlayer(filtered[0], sorted.indexOf(filtered[0]) + 1);
+      }
+    }
+
+    // ── INSPECTOR DE PERFIL ──────────────────────────────────────────────────
+    function selectPlayer(player, rank) {
+      selectedPlayer = player;
+      profName.innerText = player.playerName;
+      profTime.innerText = player.bestTimeFormatted || formatTime(player.bestTime);
+      profRank.innerText = `#${rank}`;
+      profAttempts.innerText = player.attempts || 1;
+
+      // Actualizar medalla speedrun si es sub 30
+      if (player.bestTime < 30) {
+        badgeSpeed.className = "achievement-item unlocked";
+      } else {
+        badgeSpeed.className = "achievement-item locked";
+      }
+
+      // Re-resaltar fila
+      document.querySelectorAll("#leaderboardBody tr").forEach(r => r.classList.remove("selected"));
+      renderLeaderboard(searchInput.value);
+    }
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      const h = Math.floor((sec * 100) % 100);
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}.${String(h).padStart(2, '0')}`;
+    }
+
+    // ── FIREBASE REST FETCHER ────────────────────────────────────────────────
+    async function fetchFromFirebase() {
+      const cleanUrl = databaseUrl.replace(/\/$/, "");
+      const endpoint = `${cleanUrl}/leaderboard.json`;
+
+      try {
+        statusDot.className = "status-dot";
+        statusText.innerText = "Sincronizando con Firebase...";
+
+        const res = await fetch(endpoint);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const data = await res.json();
+        if (data && typeof data === 'object') {
+          const list = Object.values(data);
+          if (list.length > 0) {
+            currentData = list;
+          }
+        }
+
+        statusDot.className = "status-dot connected";
+        statusText.innerText = "🟢 Conectado en tiempo real con Unity";
+        renderLeaderboard(searchInput.value);
+      } catch (err) {
+        console.warn("[Firebase] No se pudo conectar directamente o tabla vacía:", err);
+        statusDot.className = "status-dot";
+        statusText.innerText = "🟡 Modo Local / Esperando datos de Unity";
+        renderLeaderboard(searchInput.value);
+      }
+    }
+
+    // ── SIMULADOR DE ENVÍO DE RÉCORD (PARA PRUEBAS) ──────────────────────────
+    async function simulateScoreUpload() {
+      const mockName = prompt("Ingresa el Gamertag para la prueba:", "Aventurero_Demo");
+      if (!mockName) return;
+
+      const randomTime = (15 + Math.random() * 25).toFixed(2);
+      const timeNum = parseFloat(randomTime);
+      const formatted = formatTime(timeNum);
+
+      const record = {
+        playerName: mockName,
+        bestTime: timeNum,
+        bestTimeFormatted: formatted,
+        attempts: 1,
+        lastPlayed: new Date().toISOString().replace('T', ' ').substring(0, 16)
+      };
+
+      // Si tenemos URL de Firebase válida, intentar PUT
+      if (databaseUrl && !databaseUrl.includes("ejemplo")) {
+        const cleanUrl = databaseUrl.replace(/\/$/, "");
+        const key = encodeURIComponent(mockName.replace(/[\.#$\[\]]/g, "_"));
+        try {
+          await fetch(`${cleanUrl}/leaderboard/${key}.json`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(record)
+          });
+        } catch(e) {
+          console.warn("Fallo al subir a Firebase REST, guardando localmente:", e);
+        }
+      }
+
+      // Actualizar memoria local inmediatamente
+      const existing = currentData.find(p => p.playerName.toLowerCase() === mockName.toLowerCase());
+      if (existing) {
+        existing.attempts = (existing.attempts || 1) + 1;
+        if (timeNum < existing.bestTime) {
+          existing.bestTime = timeNum;
+          existing.bestTimeFormatted = formatted;
+        }
+        existing.lastPlayed = record.lastPlayed;
+      } else {
+        currentData.push(record);
+      }
+
+      renderLeaderboard();
+      alert(`✅ Récord simulado con éxito:\n${mockName} — ${formatted}`);
+    }
+
+    // ── EVENT LISTENERS ──────────────────────────────────────────────────────
+    searchInput.addEventListener("input", (e) => renderLeaderboard(e.target.value));
+
+    openConfigBtn.addEventListener("click", () => {
+      dbUrlInput.value = databaseUrl;
+      configModal.classList.add("open");
+    });
+
+    closeConfigBtn.addEventListener("click", () => configModal.classList.remove("open"));
+
+    saveConfigBtn.addEventListener("click", () => {
+      if (dbUrlInput.value.trim()) {
+        databaseUrl = dbUrlInput.value.trim();
+        localStorage.setItem("kimaya_firebase_url", databaseUrl);
+        configModal.classList.remove("open");
+        fetchFromFirebase();
+      }
+    });
+
+    simTestBtn.addEventListener("click", simulateScoreUpload);
+
+    // Inicialización
+    renderLeaderboard();
+    fetchFromFirebase();
+    // Auto refresco cada 15 segundos
+    setInterval(fetchFromFirebase, 15000);
+  </script>
+</body>
+</html>

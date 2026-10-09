@@ -77,11 +77,14 @@ namespace Kimaya
             if (!isActive) return;
 
             _moveInput = 0f;
-            if (Input.GetKey(leftKey))  _moveInput = -1f;
-            if (Input.GetKey(rightKey)) _moveInput =  1f;
+            if (Input.GetKey(leftKey) || Input.GetKey(KeyCode.LeftArrow))   _moveInput = -1f;
+            if (Input.GetKey(rightKey) || Input.GetKey(KeyCode.RightArrow)) _moveInput =  1f;
 
-            // Jump buffer
-            if (Input.GetKeyDown(jumpKey))
+            // Jump buffer (W, Arriba o Espacio)
+            bool jumpPressed = Input.GetKeyDown(jumpKey) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space);
+            bool jumpHeld = Input.GetKey(jumpKey) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space);
+
+            if (jumpPressed)
                 _jumpBufferTimer = jumpBufferTime;
             else
                 _jumpBufferTimer -= Time.deltaTime;
@@ -100,8 +103,8 @@ namespace Kimaya
                 _coyoteTimer = 0f;
             }
 
-            // Soltar salto más rápido (control de altura)
-            if (!Input.GetKey(jumpKey) && _rb.linearVelocity.y > 0f)
+            // Soltar salto más rápido (control de altura variable)
+            if (!jumpHeld && _rb.linearVelocity.y > 0f)
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _rb.linearVelocity.y * 0.92f);
 
             // Flip sprite
@@ -147,6 +150,22 @@ namespace Kimaya
             isActive = active;
             if (!active)
                 _rb.linearVelocity = new Vector2(0f, _rb.linearVelocity.y);
+        }
+
+        private void OnCollisionStay2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Pushable") && Mathf.Abs(_moveInput) > 0.1f)
+            {
+                var pushable = collision.gameObject.GetComponent<PushableObject>();
+                if (pushable != null)
+                {
+                    float diffX = collision.transform.position.x - transform.position.x;
+                    if (Mathf.Sign(diffX) == Mathf.Sign(_moveInput))
+                    {
+                        pushable.Push(new Vector2(Mathf.Sign(_moveInput), 0f));
+                    }
+                }
+            }
         }
 
         private void OnDrawGizmosSelected()
