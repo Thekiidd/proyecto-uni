@@ -45,8 +45,8 @@ namespace Platformer.UI
 
             ShowMainPanel();
 
+            if (btnPlay != null) btnPlay.onClick.AddListener(StartPlayGame);
             if (btnStory != null) btnStory.onClick.AddListener(StartStoryMode);
-            if (btnPlay != null) btnPlay.onClick.AddListener(ShowCharacterSelect);
             if (btnSettings != null) btnSettings.onClick.AddListener(ShowSettings);
             if (btnHelp != null) btnHelp.onClick.AddListener(ShowHelp);
             if (btnQuit != null) btnQuit.onClick.AddListener(QuitGame);
@@ -92,6 +92,19 @@ namespace Platformer.UI
             if (panelCharacterSelect != null) panelCharacterSelect.SetActive(false);
             if (panelSettings != null) panelSettings.SetActive(false);
             if (panelHelp != null) panelHelp.SetActive(true);
+        }
+
+        private void StartPlayGame()
+        {
+            Debug.Log("[MainMenu] Iniciando Partida: Level_01_Bosque");
+            if (Application.CanStreamedLevelBeLoaded("Level_01_Bosque"))
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Level_01_Bosque");
+            else if (Application.CanStreamedLevelBeLoaded("Prologue_Story"))
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Prologue_Story");
+            else if (SceneLoader.Instance != null)
+                SceneLoader.Instance.LoadVillage();
+            else
+                UnityEngine.SceneManagement.SceneManager.LoadScene(GameData.VillageScene);
         }
 
         private void StartStoryMode()
