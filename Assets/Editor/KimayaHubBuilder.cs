@@ -35,7 +35,12 @@ namespace Platformer.EditorTools
 
         private const string PIXELLAB_PATH = "Assets/Sprites/PixelLab";
         private const string VILLAGE_FOLDER = "Assets/Sprites/Village";
-        private const string PORTAL_PATH = "Assets/Sprites/Village/Art/Buildings/Portal_Temple_Gate.png";
+        private const string PORTAL_GREEN_PATH = "Assets/Sprites/Village/Art/Buildings/Portal_Temple_Gate.png";
+        private const string PORTAL_BLUE_PATH = "Assets/Sprites/Village/Art/Buildings/Portal_Blue_Gate.png";
+        private const string PORTAL_PURPLE_PATH = "Assets/Sprites/Village/Art/Buildings/Portal_Purple_Gate.png";
+        private const string STONE_CIRCLE_PATH = "Assets/Sprites/Village/Art/Props/Ancient_Stone_Circle.png";
+        private const string PINE_TREE_PATH = "Assets/Sprites/Village/Art/Props/Forest_Pine_Tree.png";
+        private const string BOULDER_PATH = "Assets/Sprites/Village/Art/Rocks/Mountain_Boulder_Big.png";
 
         static KimayaHubBuilder()
         {
@@ -103,9 +108,16 @@ namespace Platformer.EditorTools
             setupGO.AddComponent<SceneLoader>();
             setupGO.AddComponent<DialogueManager>();
 
-            // 6. LOS DOS PROTAGONISTAS: Falin y Mia
+            // 6. CÍRCULO DE PIEDRA CENTRAL ANCESTRAL
+            var stoneCircleGO = new GameObject("Ancient_Stone_Circle_Platform");
+            stoneCircleGO.transform.position = Vector3.zero;
+            var circleSR = stoneCircleGO.AddComponent<SpriteRenderer>();
+            circleSR.sprite = LoadSprite(STONE_CIRCLE_PATH);
+            circleSR.sortingOrder = 350; // Justo sobre la hierba
+
+            // 7. LOS DOS PROTAGONISTAS: Falin y Mia (inician sobre el círculo de piedra)
             var duoRoot = new GameObject("Kimaya_Duo_Team");
-            duoRoot.transform.position = new Vector3(-5.0f, -2.5f, 0);
+            duoRoot.transform.position = Vector3.zero;
 
             var duoController = duoRoot.AddComponent<KimayaHubDuoController>();
             duoController.walkSpeed = 4.8f;
@@ -115,7 +127,7 @@ namespace Platformer.EditorTools
             // --- FALIN (San Bernardo) ---
             var falinGO = new GameObject("Falin_SanBernardo");
             falinGO.tag = "Player";
-            falinGO.transform.position = new Vector3(-5.2f, -2.5f, 0);
+            falinGO.transform.position = new Vector3(-0.9f, 0f, 0);
 
             var falinSR = falinGO.AddComponent<SpriteRenderer>();
             falinSR.sprite = LoadSprite($"{PIXELLAB_PATH}/Falin/Idle/rotations/south.png");
@@ -130,7 +142,6 @@ namespace Platformer.EditorTools
             falinRB.constraints = RigidbodyConstraints2D.FreezeRotation;
             falinRB.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
-            // Marcador de selección bajo Falin
             CreateSelectionMarker(falinGO, new Color(1f, 0.85f, 0.2f, 0.55f));
 
             duoController.falinObject = falinGO;
@@ -139,7 +150,7 @@ namespace Platformer.EditorTools
             // --- MIA (Schnauzer) ---
             var miaGO = new GameObject("Mia_Schnauzer");
             miaGO.tag = "Player";
-            miaGO.transform.position = new Vector3(-3.8f, -2.5f, 0);
+            miaGO.transform.position = new Vector3(0.9f, 0f, 0);
 
             var miaSR = miaGO.AddComponent<SpriteRenderer>();
             miaSR.sprite = LoadSprite($"{PIXELLAB_PATH}/Mia/Idle/rotations/south.png");
@@ -154,55 +165,86 @@ namespace Platformer.EditorTools
             miaRB.constraints = RigidbodyConstraints2D.FreezeRotation;
             miaRB.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
-            // Marcador de selección bajo Mia
             CreateSelectionMarker(miaGO, new Color(0.3f, 0.85f, 1f, 0.55f));
 
             duoController.miaObject = miaGO;
             duoController.miaSprites = BuildDogSpriteSet("Mia", $"{PIXELLAB_PATH}/Mia");
 
-            // 7. CÁMARA HUB
+            // 8. CÁMARA HUB
             var camGO = new GameObject("Main Camera");
             camGO.tag = "MainCamera";
-            camGO.transform.position = new Vector3(-5f, -2.5f, -10f);
+            camGO.transform.position = new Vector3(0f, 1.5f, -10f);
             var cam = camGO.AddComponent<Camera>();
             cam.orthographic = true;
-            cam.orthographicSize = 6.2f;
+            cam.orthographicSize = 6.5f;
             cam.clearFlags = CameraClearFlags.SolidColor;
-            cam.backgroundColor = new Color(0.12f, 0.22f, 0.14f);
+            cam.backgroundColor = new Color(0.10f, 0.20f, 0.12f);
             camGO.AddComponent<AudioListener>();
 
             var camFollow = camGO.AddComponent<KimayaHubCameraFollow>();
-            camFollow.minBounds = new Vector2(-12f, -14f);
-            camFollow.maxBounds = new Vector2(12f, 14f);
+            camFollow.minBounds = new Vector2(-12f, -10f);
+            camFollow.maxBounds = new Vector2(12f, 12f);
             camFollow.smoothSpeed = 5.5f;
 
-            // 8. PORTAL MÍSTICO HACIA EL TEMPLO DEL BOSQUE (Level_01_Bosque)
-            var portalGO = new GameObject("Portal_Templo_Bosque");
-            portalGO.transform.position = new Vector3(-18.0f, 9.5f, 0);
+            // 9. LOS 3 PORTALES RÚNICOS A LOS NIVELES
+            var portalsRoot = new GameObject("[Portales_Mision]");
 
-            var portalSR = portalGO.AddComponent<SpriteRenderer>();
-            portalSR.sprite = LoadSprite(PORTAL_PATH) ?? LoadSprite($"{VILLAGE_FOLDER}/Art/Buildings/CityWall_Gate_1.png");
-            portalSR.sortingOrder = 450;
+            // Portal 1: Verde (Nivel 1 - Bosque del Eco / Rescatar a Kiara)
+            CreateHubPortal(portalsRoot, "Portal_01_Bosque", new Vector3(-6.5f, 3.2f, 0f),
+                PORTAL_GREEN_PATH, "Level_01_Bosque", "Templo del Bosque (Nivel 1)",
+                "Misión 1: Rescatar a Kiara (Cooperativo)", new Color(0.2f, 0.95f, 0.4f, 0.9f));
 
-            var portalComp = portalGO.AddComponent<KimayaHubPortal>();
-            portalComp.targetSceneName = "Level_01_Bosque";
-            portalComp.destinationTitle = "Templo del Bosque (Nivel 1)";
-            portalComp.questLore = "Misión Principal: Rescatar a Kiara (Cooperativo)";
-            portalComp.interactionRadius = 2.6f;
+            // Portal 2: Azul (Nivel 2 - Cuevas del Zarzal)
+            CreateHubPortal(portalsRoot, "Portal_02_Cuevas", new Vector3(0.0f, 6.5f, 0f),
+                PORTAL_BLUE_PATH, "Level_02", "Cuevas del Zarzal (Nivel 2)",
+                "Misión 2: Los Cristales de la Caverna", new Color(0.2f, 0.65f, 1f, 0.9f));
 
-            var portalCol = portalGO.AddComponent<BoxCollider2D>();
-            portalCol.isTrigger = true;
-            portalCol.size = new Vector2(2.8f, 3.2f);
-            portalCol.offset = new Vector2(0, -0.4f);
+            // Portal 3: Púrpura (Nivel 3 - Altar de Fuego / Templo Final)
+            CreateHubPortal(portalsRoot, "Portal_03_Altar", new Vector3(6.5f, 3.2f, 0f),
+                PORTAL_PURPLE_PATH, "Level_03", "Altar de Fuego (Nivel 3)",
+                "Misión 3: El Desafío Final", new Color(0.85f, 0.35f, 1f, 0.9f));
 
-            // 9. MAYA (NPC GUÍA ESPIRITUAL) EN LA PLAZA
+            // 10. BOSQUE Y MONTAÑAS: Boulders y Pinos perimetrales
+            var natureRoot = new GameObject("[Bosque_Y_Montanas]");
+            Sprite pineSprite = LoadSprite(PINE_TREE_PATH);
+            Sprite boulderSprite = LoadSprite(BOULDER_PATH);
+
+            // Boulders de montaña en el fondo
+            Vector3[] boulderPositions = new Vector3[]
+            {
+                new Vector3(-10.5f, 6.5f, 0), new Vector3(-3.5f, 9.2f, 0),
+                new Vector3(3.5f, 9.2f, 0),   new Vector3(10.5f, 6.5f, 0),
+                new Vector3(-12.0f, 0.5f, 0), new Vector3(12.0f, 0.5f, 0),
+                new Vector3(-10.0f, -5.5f, 0), new Vector3(10.0f, -5.5f, 0)
+            };
+            foreach (var bPos in boulderPositions)
+            {
+                CreateNatureProp(natureRoot, "Montaña_Roca", boulderSprite, bPos, new Vector2(3.5f, 1.8f));
+            }
+
+            // Pinos altos del bosque
+            Vector3[] pinePositions = new Vector3[]
+            {
+                new Vector3(-8.5f, 7.5f, 0),  new Vector3(-6.0f, 9.0f, 0),
+                new Vector3(6.0f, 9.0f, 0),   new Vector3(8.5f, 7.5f, 0),
+                new Vector3(-11.5f, 3.5f, 0), new Vector3(11.5f, 3.5f, 0),
+                new Vector3(-11.0f, -3.0f, 0), new Vector3(11.0f, -3.0f, 0),
+                new Vector3(-6.5f, -6.5f, 0), new Vector3(6.5f, -6.5f, 0),
+                new Vector3(0.0f, -7.0f, 0)
+            };
+            foreach (var pPos in pinePositions)
+            {
+                CreateNatureProp(natureRoot, "Pino_Bosque", pineSprite, pPos, new Vector2(1.8f, 1.2f));
+            }
+
+            // 11. MAYA (NPC GUÍA ESPIRITUAL) JUNTO AL CÍRCULO
             var mayaGO = new GameObject("Maya_Guia_Espiritual");
-            mayaGO.transform.position = new Vector3(-6.2f, -0.8f, 0);
+            mayaGO.transform.position = new Vector3(-2.4f, 1.2f, 0);
 
             var mayaSR = mayaGO.AddComponent<SpriteRenderer>();
             mayaSR.sprite = LoadFirstCharacterSprite();
             mayaSR.color = new Color(0.5f, 0.95f, 1f, 0.95f);
-            mayaSR.sortingOrder = 500 - Mathf.RoundToInt(-0.8f * 10f);
+            mayaSR.sortingOrder = 500 - Mathf.RoundToInt(1.2f * 10f);
 
             var mayaCol = mayaGO.AddComponent<CircleCollider2D>();
             mayaCol.radius = 0.5f;
@@ -211,15 +253,15 @@ namespace Platformer.EditorTools
             mayaComp.npcName = "Maya (Espíritu Guardián)";
             mayaComp.interactionRadius = 2.2f;
 
-            // 10. TABLÓN DE RÉCORDS (FIREBASE LEADERBOARD)
+            // 12. TABLÓN DE RÉCORDS (FIREBASE LEADERBOARD)
             var boardGO = new GameObject("Tablon_De_Records");
-            boardGO.transform.position = new Vector3(-2.2f, -0.8f, 0);
+            boardGO.transform.position = new Vector3(2.4f, 1.2f, 0);
 
             var boardSR = boardGO.AddComponent<SpriteRenderer>();
             string signPath = $"{VILLAGE_FOLDER}/Art/Props/Sign_01.png";
             boardSR.sprite = LoadSprite(signPath) ?? LoadSprite($"{VILLAGE_FOLDER}/Art/Props/Board_01.png");
             boardSR.color = new Color(1f, 0.95f, 0.85f);
-            boardSR.sortingOrder = 500 - Mathf.RoundToInt(-0.8f * 10f);
+            boardSR.sortingOrder = 500 - Mathf.RoundToInt(1.2f * 10f);
 
             var boardCol = boardGO.AddComponent<BoxCollider2D>();
             boardCol.size = new Vector2(1.2f, 1.2f);
@@ -320,6 +362,46 @@ namespace Platformer.EditorTools
             tex.Apply();
             var sp = Sprite.Create(tex, new Rect(0, 0, 32, 16), new Vector2(0.5f, 0.5f), 16f);
             sr.sprite = sp;
+        }
+
+        private static void CreateHubPortal(GameObject parent, string name, Vector3 pos, string spritePath,
+            string targetScene, string title, string lore, Color glowColor)
+        {
+            var portalGO = new GameObject(name);
+            portalGO.transform.SetParent(parent.transform, false);
+            portalGO.transform.position = pos;
+
+            var portalSR = portalGO.AddComponent<SpriteRenderer>();
+            portalSR.sprite = LoadSprite(spritePath) ?? LoadSprite(PORTAL_GREEN_PATH);
+            portalSR.sortingOrder = 500 - Mathf.RoundToInt((pos.y - 1.0f) * 10f);
+
+            var portalCol = portalGO.AddComponent<BoxCollider2D>();
+            portalCol.isTrigger = true;
+            portalCol.size = new Vector2(2.6f, 3.2f);
+            portalCol.offset = new Vector2(0f, -0.4f);
+
+            var portalComp = portalGO.AddComponent<KimayaHubPortal>();
+            portalComp.targetSceneName = targetScene;
+            portalComp.destinationTitle = title;
+            portalComp.questLore = lore;
+            portalComp.runeGlowColor = glowColor;
+            portalComp.interactionRadius = 2.6f;
+        }
+
+        private static void CreateNatureProp(GameObject parent, string name, Sprite sprite, Vector3 pos, Vector2 colSize)
+        {
+            if (sprite == null) return;
+            var go = new GameObject(name);
+            go.transform.SetParent(parent.transform, false);
+            go.transform.position = pos;
+
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sprite = sprite;
+            sr.sortingOrder = 500 - Mathf.RoundToInt(pos.y * 10f);
+
+            var col = go.AddComponent<BoxCollider2D>();
+            col.size = colSize;
+            col.offset = new Vector2(0f, -colSize.y * 0.3f);
         }
 
         private static DogSpriteSet BuildDogSpriteSet(string name, string folder)
