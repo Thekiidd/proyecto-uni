@@ -96,8 +96,12 @@ namespace Platformer.UI
 
         private void StartPlayGame()
         {
-            Debug.Log("[MainMenu] Iniciando Partida: Level_01_Bosque");
-            if (Application.CanStreamedLevelBeLoaded("Level_01_Bosque"))
+            Debug.Log("[MainMenu] Iniciando Partida: Hub de Kimaya");
+            if (Application.CanStreamedLevelBeLoaded("Hub"))
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
+            else if (Application.CanStreamedLevelBeLoaded("Village_Scene"))
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Village_Scene");
+            else if (Application.CanStreamedLevelBeLoaded("Level_01_Bosque"))
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Level_01_Bosque");
             else if (Application.CanStreamedLevelBeLoaded("Prologue_Story"))
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Prologue_Story");
