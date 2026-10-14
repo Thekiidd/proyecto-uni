@@ -53,6 +53,10 @@ namespace UnityMCP
                     Platformer.EditorTools.KimayaJumpKingBuilder.BuildJumpKingScene();
                     result = new Dictionary<string, object> { { "ok", true }, { "scene", Platformer.EditorTools.KimayaJumpKingBuilder.SCENE_PATH } };
                     break;
+                case "unity_build_hub":
+                    Platformer.EditorTools.KimayaHubBuilder.BuildKimayaHub(false);
+                    result = new Dictionary<string, object> { { "ok", true }, { "scene", Platformer.EditorTools.KimayaHubBuilder.HUB_SCENE_PATH } };
+                    break;
                 default: result = Err("Unknown command: " + command); break;
             }
             return Json.Serialize(result);

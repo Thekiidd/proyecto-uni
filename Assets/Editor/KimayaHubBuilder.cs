@@ -13,13 +13,14 @@ namespace Platformer.EditorTools
 {
     /// <summary>
     /// Generador del Hub 2D del Bosque Ancestral con los 3 Portales Místicos.
-    /// Versión 7:
-    ///   - Personajes ajustados en escala (Falin 0.66x, Mía 0.56x) para proporción perfecta con el mapa.
-    ///   - Indicador de selección: Diamante flotante animado (The Sims / Zelda style) en lugar del óvalo amarillo.
-    ///   - Paso libre 100% en el camino adoquinado inferior derecho (abajo del portal morado).
-    ///   - Muro superior en la base real de árboles y acantilados (imposible caminar sobre rocas altas).
-    ///   - Capa de profundidad Y-Sorting para ocultarse y pasar por detrás del roble y arcos de portales.
-    ///   - Portales 2 y 3 sólidamente bloqueados con avisos claros.
+    /// Versión 9 (Sistema multicapa profesional 2.5D):
+    ///   - Capa Suelo (sortingOrder -500): Césped, senderos, tierra y círculo rúnico.
+    ///   - Capa Personajes (sortingOrder 500): Falin y Mía con diamantes flotantes.
+    ///   - Capa Primer Plano (sortingOrder 600): Copas de árboles, follaje y arcos de piedra.
+    ///     Permite pasar POR DEBAJO y OCULTARSE DETRÁS de las ramas y arcos de forma 100% natural.
+    ///   - Colisiones perimetrales ajustadas a la línea real del suelo (imposible pisar rocas o flotar en copas).
+    ///   - Portales 2 y 3 sólidamente bloqueados con avisos.
+    ///   - Portal 1 (Verde) transitable hacia Ascenso Vertical (Jump King).
     /// Menú: Tools > Kimaya > 🏡 [3] Construir Hub 2D de Kimaya (Falin y Mia)
     /// </summary>
     [InitializeOnLoad]
@@ -28,13 +29,13 @@ namespace Platformer.EditorTools
         public const string HUB_SCENE_PATH = "Assets/Scenes/Hub.unity";
         public const string MAIN_MENU_SCENE_PATH = "Assets/Scenes/MainMenu.unity";
         public const string JUMP_KING_SCENE_PATH = "Assets/Scenes/Ascenso_Vertical.unity";
-        private const string BUILD_KEY = "KimayaHub_Clearing_v8";
+        private const string BUILD_KEY = "KimayaHub_Clearing_v10";
 
         private const string HUB_MAP_IMAGE_PATH = "Assets/Sprites/Hub/Forest_Hub_Clearing_3Portals.png";
+        private const string HUB_OVERHEAD_IMAGE_PATH = "Assets/Sprites/Hub/Forest_Hub_Overhead.png";
         private const string PIXELLAB_PATH = "Assets/Sprites/PixelLab";
         private const string FALIN_DIAMOND_PATH = "Assets/Sprites/UI/Selection_Diamond_Falin.png";
         private const string MIA_DIAMOND_PATH = "Assets/Sprites/UI/Selection_Diamond_Mia.png";
-        private const string OAK_TREE_SPRITE_PATH = "Assets/Sprites/Village/Art/Trees and Bushes/Tree_Emerald_1.png";
 
         static KimayaHubBuilder()
         {
@@ -45,7 +46,7 @@ namespace Platformer.EditorTools
         {
             if (!EditorPrefs.GetBool(BUILD_KEY, false))
             {
-                Debug.Log("[KimayaHubBuilder] 🚀 Ejecutando AutoBuildCheck v7 (Diamante flotante, escala de perros & camino libre)...");
+                Debug.Log("[KimayaHubBuilder] 🚀 Ejecutando AutoBuildCheck v9 (Sistema multicapa 2.5D & Colisiones exactas)...");
                 BuildKimayaHub(false);
                 EditorPrefs.SetBool(BUILD_KEY, true);
             }
@@ -59,17 +60,18 @@ namespace Platformer.EditorTools
 
         public static void BuildKimayaHub(bool showDialog)
         {
-            Debug.Log("[KimayaHubBuilder] 🔨 Construyendo Hub del Claro del Bosque v7...");
+            Debug.Log("[KimayaHubBuilder] 🔨 Construyendo Hub del Bosque Multicapa 2.5D (v9)...");
 
             // 1. Asegurar importación de sprites
             EnsureSpriteImport(HUB_MAP_IMAGE_PATH, 32);
+            EnsureSpriteImport(HUB_OVERHEAD_IMAGE_PATH, 32);
             EnsureSpriteImport(FALIN_DIAMOND_PATH, 32);
             EnsureSpriteImport(MIA_DIAMOND_PATH, 32);
 
             // 2. Crear nueva escena limpia
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
 
-            // 3. Fondo: Claro del Bosque Ancestral escalado a 1.22x
+            // 3. CAPA 1: SUELO (Grass, caminos, círculo rúnico - SortingOrder = -500)
             var mapGO = new GameObject("Forest_Hub_Background");
             mapGO.transform.position = Vector3.zero;
             mapGO.transform.localScale = new Vector3(1.22f, 1.22f, 1.0f);
@@ -77,56 +79,62 @@ namespace Platformer.EditorTools
             mapSR.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(HUB_MAP_IMAGE_PATH);
             mapSR.sortingOrder = -500;
 
-            // 4. Sistema de Colisiones Perimetrales y Bloqueadores Sólidos
+            // 4. CAPA 3: PRIMER PLANO / COPA DE ÁRBOLES (SortingOrder = 600)
+            // Permite que los personajes pasen POR DETRÁS de las ramas de árboles, rocas y arcos
+            var overheadGO = new GameObject("Forest_Hub_Overhead");
+            overheadGO.transform.position = Vector3.zero;
+            overheadGO.transform.localScale = new Vector3(1.22f, 1.22f, 1.0f);
+            var overheadSR = overheadGO.AddComponent<SpriteRenderer>();
+            overheadSR.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(HUB_OVERHEAD_IMAGE_PATH);
+            overheadSR.sortingOrder = 600; // ¡Por encima del jugador (500)!
+
+            // 5. Sistema de Colisiones Perimetrales y Bloqueadores Sólidos
             var collidersRoot = new GameObject("[Hub_Colliders]");
             var collidersRB = collidersRoot.AddComponent<Rigidbody2D>();
             collidersRB.bodyType = RigidbodyType2D.Static;
 
-            // --- ACANTILADOS IZQUIERDOS (Muros de roca perimetrales) ---
+            // --- ACANTILADOS LATERALES (Muros de roca perimetrales) ---
             CreateBoxCol(collidersRoot, "Cliff_Left_Upper", new Vector2(-7.2f, 2.6f), new Vector2(3.6f, 4.5f));
-            CreateBoxCol(collidersRoot, "Cliff_Left_Mid", new Vector2(-7.6f, -0.6f), new Vector2(3.0f, 3.5f));
-            CreateBoxCol(collidersRoot, "Cliff_Left_Lower", new Vector2(-7.0f, -3.4f), new Vector2(3.6f, 3.5f));
-            CreateBoxCol(collidersRoot, "Cliff_Left_Corner", new Vector2(-5.8f, -5.2f), new Vector2(3.8f, 2.2f));
+            CreateBoxCol(collidersRoot, "Cliff_Left_Mid", new Vector2(-8.2f, -1.0f), new Vector2(2.2f, 6.0f));
+            CreateBoxCol(collidersRoot, "Cliff_Right_Upper", new Vector2(7.2f, 2.6f), new Vector2(3.6f, 4.5f));
+            CreateBoxCol(collidersRoot, "Cliff_Right_Mid", new Vector2(8.2f, -1.0f), new Vector2(2.2f, 6.0f));
 
-            // --- ACANTILADOS DERECHOS (Empujados hacia afuera para NO obstruir el camino inferior derecho) ---
-            CreateBoxCol(collidersRoot, "Cliff_Right_Upper", new Vector2(7.4f, 2.6f), new Vector2(3.6f, 4.5f));
-            CreateBoxCol(collidersRoot, "Cliff_Right_Mid", new Vector2(7.8f, -0.6f), new Vector2(2.8f, 3.5f));
-            CreateBoxCol(collidersRoot, "Cliff_Right_Lower", new Vector2(8.0f, -3.4f), new Vector2(2.5f, 3.5f)); // ¡Despejado!
-            CreateBoxCol(collidersRoot, "Cliff_Right_Corner", new Vector2(7.6f, -5.2f), new Vector2(2.5f, 2.2f)); // ¡Despejado!
+            // --- ROCAS Y PINOS INFERIORES IZQUIERDOS (Detienen en las rocas con musgo y el tocón) ---
+            CreateCircleCol(collidersRoot, "Stump_BottomLeft", new Vector2(-5.15f, -2.67f), 0.45f);
+            CreateBoxCol(collidersRoot, "Rock_Pine_BottomLeft", new Vector2(-4.8f, -3.8f), new Vector2(3.2f, 1.8f));
+            CreateBoxCol(collidersRoot, "Pines_BottomLeft_Fence", new Vector2(-2.8f, -5.2f), new Vector2(3.8f, 1.4f));
 
-            // --- MURO SUPERIOR EN LA BASE DE ÁRBOLES Y ROCAS (Impide caminar sobre las rocas y copas) ---
-            CreateBoxCol(collidersRoot, "Cliff_Behind_P1", new Vector2(-4.94f, 1.45f), new Vector2(2.6f, 1.8f));
-            CreateBoxCol(collidersRoot, "Cliff_UpperLeft_1", new Vector2(-3.3f, 2.10f), new Vector2(2.2f, 1.6f));
-            CreateBoxCol(collidersRoot, "Cliff_UpperLeft_2", new Vector2(-1.8f, 2.75f), new Vector2(1.8f, 1.6f));
-            CreateBoxCol(collidersRoot, "Cliff_UpperRight_1", new Vector2(1.8f, 2.75f), new Vector2(1.8f, 1.6f));
-            CreateBoxCol(collidersRoot, "Cliff_UpperRight_2", new Vector2(3.3f, 2.10f), new Vector2(2.2f, 1.6f));
-            CreateBoxCol(collidersRoot, "Cliff_Behind_P3", new Vector2(4.94f, 1.45f), new Vector2(2.6f, 1.8f));
-            CreateBoxCol(collidersRoot, "Cliff_Right_P3", new Vector2(5.95f, 1.05f), new Vector2(1.2f, 2.0f));
+            // --- ROBLE Y ARBUSTOS INFERIORES DERECHOS ---
+            // El tronco del roble está en su base real (6.18, -1.98); el sendero adoquinado está 100% despejado y libre
+            CreateCircleCol(collidersRoot, "Oak_Trunk_Solid", new Vector2(6.18f, -1.98f), 0.55f);
+            CreateBoxCol(collidersRoot, "Pines_BottomRight_Fence", new Vector2(5.5f, -5.2f), new Vector2(4.0f, 1.4f));
+            CreateBoxCol(collidersRoot, "Cliff_Right_Lower_Outer", new Vector2(8.0f, -3.8f), new Vector2(2.4f, 2.4f));
 
-            // Roca central entre portal 2 y 3
-            CreateCircleCol(collidersRoot, "Boulder_TopRight", new Vector2(2.05f, 1.40f), 0.55f);
+            // --- MURO SUPERIOR (Impide subir a las montañas y árboles de fondo) ---
+            CreateBoxCol(collidersRoot, "Cliff_Behind_P1", new Vector2(-4.73f, 2.20f), new Vector2(2.2f, 1.0f));
+            CreateBoxCol(collidersRoot, "Wall_Between_P1_P2", new Vector2(-1.90f, 1.95f), new Vector2(2.6f, 1.2f));
+            CreateBoxCol(collidersRoot, "Cliff_Behind_P2", new Vector2(0.0f, 4.19f), new Vector2(3.0f, 1.4f));
+            CreateBoxCol(collidersRoot, "Wall_Between_P2_P3", new Vector2(1.90f, 2.25f), new Vector2(1.8f, 1.2f));
+            CreateBoxCol(collidersRoot, "Cliff_Behind_P3", new Vector2(4.73f, 2.48f), new Vector2(2.2f, 1.0f));
 
-            // --- LÍMITE INFERIOR DEL MAPA ---
-            CreateBoxCol(collidersRoot, "Bottom_Wall", new Vector2(0.0f, -5.8f), new Vector2(22.0f, 1.2f));
+            // --- OBSTÁCULOS EN EL CLARO (Roca, tronco y arbolito) ---
+            CreateCircleCol(collidersRoot, "Boulder_TopRight", new Vector2(2.67f, 0.84f), 0.50f);
+            CreateBoxCol(collidersRoot, "Log_TopRight", new Vector2(3.51f, 0.53f), new Vector2(0.9f, 0.45f));
+            CreateCircleCol(collidersRoot, "LittleTree_P1_P2", new Vector2(-2.98f, 1.52f), 0.45f);
 
-            // --- TRONCOS DE ÁRBOLES (Solo colisión pequeña a nivel de pie, ramas transitables por detrás) ---
-            CreateCircleCol(collidersRoot, "Pine_BottomLeft_Base", new Vector2(-3.8f, -3.6f), 0.45f);
-            CreateCircleCol(collidersRoot, "Oak_BottomRight_Trunk", new Vector2(3.8f, -2.8f), 0.45f); // Base del tronco
+            // --- LÍMITE INFERIOR DEL MAPA (Detiene en el borde de la hierba) ---
+            CreateBoxCol(collidersRoot, "Bottom_Boundary", new Vector2(0.0f, -5.8f), new Vector2(20.0f, 1.0f));
 
             // --- COLUMNAS DE PIEDRA DE LOS ARCOS ---
             // Portal Verde (P1): Columnas laterales sólidas, arco central abierto
-            CreateBoxCol(collidersRoot, "P1_Column_Left", new Vector2(-5.85f, 0.98f), new Vector2(0.50f, 1.6f));
-            CreateBoxCol(collidersRoot, "P1_Column_Right", new Vector2(-4.05f, 0.98f), new Vector2(0.50f, 1.6f));
+            CreateBoxCol(collidersRoot, "P1_Column_Left", new Vector2(-5.79f, 0.76f), new Vector2(0.70f, 1.8f));
+            CreateBoxCol(collidersRoot, "P1_Column_Right", new Vector2(-3.66f, 0.76f), new Vector2(0.70f, 1.8f));
 
-            // Portal Azul (P2): Columnas laterales Y BLOQUEADOR FRONTAL SÓLIDO (Desactivado)
-            CreateBoxCol(collidersRoot, "P2_Column_Left", new Vector2(-1.10f, 3.45f), new Vector2(0.50f, 1.6f));
-            CreateBoxCol(collidersRoot, "P2_Column_Right", new Vector2(1.10f, 3.45f), new Vector2(0.50f, 1.6f));
-            CreateBoxCol(collidersRoot, "P2_SOLID_GATE_BLOCKER", new Vector2(0.0f, 3.40f), new Vector2(2.1f, 1.4f)); // ¡SÓLIDO!
+            // Portal Azul (P2): BLOQUEADOR FRONTAL SÓLIDO (Desactivado)
+            CreateBoxCol(collidersRoot, "P2_SOLID_GATE_BLOCKER", new Vector2(0.0f, 2.80f), new Vector2(2.6f, 1.4f));
 
-            // Portal Violeta (P3): Columnas laterales Y BLOQUEADOR FRONTAL SÓLIDO (Desactivado)
-            CreateBoxCol(collidersRoot, "P3_Column_Left", new Vector2(4.05f, 0.98f), new Vector2(0.50f, 1.6f));
-            CreateBoxCol(collidersRoot, "P3_Column_Right", new Vector2(5.85f, 0.98f), new Vector2(0.50f, 1.6f));
-            CreateBoxCol(collidersRoot, "P3_SOLID_GATE_BLOCKER", new Vector2(4.94f, 0.95f), new Vector2(2.0f, 1.5f)); // ¡SÓLIDO!
+            // Portal Violeta (P3): BLOQUEADOR FRONTAL SÓLIDO (Desactivado)
+            CreateBoxCol(collidersRoot, "P3_SOLID_GATE_BLOCKER", new Vector2(4.73f, 0.95f), new Vector2(2.2f, 1.8f));
 
             // 6. LOS 3 PORTALES MÍSTICOS (Triggers & Lógica)
             var portalsRoot = new GameObject("[Portales_Mision]");
@@ -158,7 +166,7 @@ namespace Platformer.EditorTools
                 lore: "Santuario Sellado. Misión bloqueada.",
                 glowColor: new Color(0.85f, 0.35f, 1f, 0.5f));
 
-            // 7. LOS DOS PROTAGONISTAS: Falin y Mía (Escala proporcionada & Diamantes flotantes)
+            // 7. LOS DOS PROTAGONISTAS: Falin y Mía
             var duoRoot = new GameObject("Kimaya_Duo_Team");
             duoRoot.transform.position = Vector3.zero;
 
@@ -167,7 +175,7 @@ namespace Platformer.EditorTools
             duoController.runSpeed = 7.6f;
             duoController.companionFollowDistance = 1.35f;
 
-            // --- FALIN (San Bernardo - Escala 0.66x proporcionada al mapa) ---
+            // --- FALIN (San Bernardo - Escala 0.66x) ---
             var falinGO = new GameObject("Falin_SanBernardo");
             falinGO.tag = "Player";
             falinGO.transform.position = new Vector3(-0.75f, -1.10f, 0f);
@@ -177,7 +185,6 @@ namespace Platformer.EditorTools
             falinSR.sprite = LoadSprite($"{PIXELLAB_PATH}/Falin/Idle/rotations/south.png");
             falinSR.sortingOrder = 500;
 
-            // Colisión compacta solo a la altura de las patitas
             var falinCol = falinGO.AddComponent<CircleCollider2D>();
             falinCol.radius = 0.28f;
             falinCol.offset = new Vector2(0f, -0.18f);
@@ -187,13 +194,13 @@ namespace Platformer.EditorTools
             falinRB.constraints = RigidbodyConstraints2D.FreezeRotation;
             falinRB.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
-            // Diamante Dorado Flotante Animado sobre la cabeza de Falin
+            // Diamante Dorado Flotante Animado
             CreateDiamondMarker(falinGO, FALIN_DIAMOND_PATH, 1.15f);
 
             duoController.falinObject = falinGO;
             duoController.falinSprites = BuildDogSpriteSet("Falin", $"{PIXELLAB_PATH}/Falin");
 
-            // --- MIA (Schnauzer - Escala 0.56x más ágil y pequeña) ---
+            // --- MIA (Schnauzer - Escala 0.56x) ---
             var miaGO = new GameObject("Mia_Schnauzer");
             miaGO.tag = "Player";
             miaGO.transform.position = new Vector3(0.75f, -1.10f, 0f);
@@ -203,7 +210,6 @@ namespace Platformer.EditorTools
             miaSR.sprite = LoadSprite($"{PIXELLAB_PATH}/Mia/Idle/rotations/south.png");
             miaSR.sortingOrder = 500;
 
-            // Colisión compacta solo a la altura de las patitas
             var miaCol = miaGO.AddComponent<CircleCollider2D>();
             miaCol.radius = 0.24f;
             miaCol.offset = new Vector2(0f, -0.16f);
@@ -213,10 +219,10 @@ namespace Platformer.EditorTools
             miaRB.constraints = RigidbodyConstraints2D.FreezeRotation;
             miaRB.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
-            // Diamante Cian / Menta Flotante Animado sobre la cabeza de Mía
+            // Diamante Cian Flotante Animado
             CreateDiamondMarker(miaGO, MIA_DIAMOND_PATH, 1.15f);
 
-            // Ignorar colisiones mutuas entre ambos perros para que nunca se bloqueen al seguirse
+            // Ignorar colisiones mutuas entre ambos perros
             Physics2D.IgnoreCollision(falinCol, miaCol, true);
 
             duoController.miaObject = miaGO;
@@ -247,17 +253,16 @@ namespace Platformer.EditorTools
             EditorSceneManager.SaveScene(scene, HUB_SCENE_PATH);
             UpdateBuildSettings();
 
-            Debug.Log($"[KimayaHubBuilder] ✅ Hub de Kimaya v7 creado exitosamente en: {HUB_SCENE_PATH}");
+            Debug.Log($"[KimayaHubBuilder] ✅ Hub de Kimaya v9 creado exitosamente en: {HUB_SCENE_PATH}");
 
             if (showDialog)
             {
-                EditorUtility.DisplayDialog("Hub de Kimaya Regenerado",
-                    "¡El Hub del Claro del Bosque v7 ha sido creado!\n\n" +
-                    "• Personajes escalados con proporciones perfectas al mapa.\n" +
-                    "• Diamante flotante brillante sobre el perro seleccionado (estilo RPG).\n" +
-                    "• Camino adoquinado inferior derecho 100% despejado y transitable.\n" +
-                    "• Muros superiores ajustados (imposible caminar sobre rocas o copas altas).\n" +
-                    "• Y-Sorting activado para pasar por detrás del gran roble y ocultarse.", "Aceptar");
+                EditorUtility.DisplayDialog("Hub Multicapa 2.5D Creado",
+                    "¡El Hub de Kimaya v9 ha sido generado!\n\n" +
+                    "• Capa de Suelo (detrás) + Capa Primer Plano (delante).\n" +
+                    "• Ahora pasas POR DEBAJO y detrás de las copas de los árboles y arcos de piedra.\n" +
+                    "• Colisiones selladas en rocas musgosas, piedras y arbustos.\n" +
+                    "• Diamante flotante animado sobre el perro activo.", "Aceptar");
             }
         }
 
@@ -309,7 +314,7 @@ namespace Platformer.EditorTools
 
             var sr = diamondGO.AddComponent<SpriteRenderer>();
             sr.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(diamondSpritePath);
-            sr.sortingOrder = 950; // Siempre visible por encima del personaje
+            sr.sortingOrder = 950; // Siempre visible por encima de todo
 
             var bobber = diamondGO.AddComponent<KimayaDiamondBobber>();
             bobber.baseY = yOffset;
