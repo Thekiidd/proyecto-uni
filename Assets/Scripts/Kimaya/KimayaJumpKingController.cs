@@ -23,6 +23,7 @@ namespace Kimaya
         [Header("Personaje")]
         public CharacterType character = CharacterType.Falin;
         public SpriteRenderer spriteRenderer;
+        [HideInInspector] public Animator animator;
 
         [Header("Movimiento en Suelo")]
         public float walkSpeed = 5.0f;

@@ -126,18 +126,10 @@ namespace Kimaya
             if (playerController.character == KimayaJumpKingController.CharacterType.Falin)
             {
                 playerController.SetCharacter(KimayaJumpKingController.CharacterType.Mia);
-                if (playerController.spriteRenderer != null && miaSprite != null)
-                    playerController.spriteRenderer.sprite = miaSprite;
-                if (playerController.animator != null && miaAnimator != null)
-                    playerController.animator.runtimeAnimatorController = miaAnimator;
             }
             else
             {
                 playerController.SetCharacter(KimayaJumpKingController.CharacterType.Falin);
-                if (playerController.spriteRenderer != null && falinSprite != null)
-                    playerController.spriteRenderer.sprite = falinSprite;
-                if (playerController.animator != null && falinAnimator != null)
-                    playerController.animator.runtimeAnimatorController = falinAnimator;
             }
 
             UpdateCharacterUI();
