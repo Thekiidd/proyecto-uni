@@ -7,13 +7,41 @@ using UnityEngine.InputSystem;
 
 namespace Kimaya
 {
+    public enum SurfaceType
+    {
+        Normal,
+        Ice,
+        Sand,
+        Snow
+    }
+
     /// <summary>
-    /// Controlador Jump King refinado:
-    /// - Salto táctico cargado de alta precisión.
-    /// - Sin aturdimiento (aterrizaje fluido instantáneo).
-    /// - Trayectoria balística fija en el aire (sin dirección aérea).
-    /// - Rebotes predecibles en paredes.
-    /// - Movimiento ágil y reactivo en el suelo.
+    /// Componente de superficie para plataformas estilo Jump King.
+    /// Define cómo reacciona el jugador al pisar o deslizarse sobre el bloque.
+    /// </summary>
+    public class KimayaSurface : MonoBehaviour
+    {
+        [Header("Tipo de Superficie Jump King")]
+        public SurfaceType surfaceType = SurfaceType.Normal;
+
+        [Header("Ajustes Físicos Personalizados (Opcional)")]
+        [Tooltip("Fricción en hielo (Jump King original = 0.1)")]
+        public float iceFriction = 0.1f;
+
+        [Tooltip("Multiplicador de velocidad al caminar en arena (Jump King original = 0.25)")]
+        public float sandMoveMultiplier = 0.25f;
+
+        [Tooltip("Multiplicador de fuerza de salto en arena (Jump King original = 0.5)")]
+        public float sandJumpMultiplier = 0.5f;
+    }
+
+    /// <summary>
+    /// Controlador Jump King con físicas y constantes exactas extraídas por ingeniería inversa:
+    /// - Tiempo de carga máximo: 0.60s (Jump King original JUMP_TIME).
+    /// - Proporción salto vertical/horizontal: 2.5 a 1.
+    /// - Factor de rebote lateral: 0.50 (Jump King original BOUNCE = 50%).
+    /// - Superficies Jump King: Hielo (resbalón con inercia), Arena (caminar x0.25, salto x0.5).
+    /// - Aturdimiento por caída alta opcional: 0.50s (Jump King original SPLAT_TIME).
     /// </summary>
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class KimayaJumpKingController : MonoBehaviour
@@ -28,19 +56,29 @@ namespace Kimaya
         [Header("Movimiento en Suelo")]
         public float walkSpeed = 5.0f;
 
-        [Header("Física de Salto Táctico Jump King")]
+        [Header("Física de Salto Táctico Jump King (Calibración Exacta)")]
+        [Tooltip("Tiempo de carga máximo exacto de Jump King (0.6s / 36 frames)")]
+        public float maxChargeTime = 0.60f;
         public float minJumpForce = 7.0f;
-        public float maxJumpForce = 18.0f;
-        public float maxChargeTime = 0.65f;
-        public float horizontalJumpSpeed = 6.8f;
-        public float wallBounceMultiplier = 0.6f;
+        public float maxJumpForce = 17.5f;
+        public float horizontalJumpSpeed = 7.0f;
+        [Tooltip("Factor de rebote en pared (Jump King original = 0.5)")]
+        public float wallBounceMultiplier = 0.50f;
+
+        [Header("Efectos de Caída y Superficies")]
+        [Tooltip("Activar aturdimiento al caer desde gran altura (Jump King SPLAT = 0.5s)")]
+        public bool enableHighFallStun = false; // Desactivado a petición del usuario: solo saltar y escalar
+        public float highFallThreshold = 7.5f; // Unidades de caída para activar stun
+        public float splatStunDuration = 0.50f;
 
         // Estados
         public bool IsGrounded { get; private set; }
         public bool IsCharging { get; private set; }
         public bool IsJumping { get; private set; }
+        public bool IsStunned { get; private set; }
         public float ChargePercent { get; private set; } // 0.0 a 1.0
         public float FacingDirection { get; private set; } = 1f; // 1 = derecha, -1 = izquierda
+        public SurfaceType CurrentSurface { get; private set; } = SurfaceType.Normal;
 
         // Estadísticas
         public int TotalJumps { get; private set; }
@@ -52,6 +90,10 @@ namespace Kimaya
         private float _jumpDirection = 0f;
         private int _groundContactCount = 0;
         private float _lastGroundedY = 0f;
+        private float _highestAirY = 0f;
+        private float _stunTimer = 0f;
+        private float _iceSlideVelocityX = 0f;
+        private KimayaSurface _activeSurfaceComp;
 
         private void Awake()
         {
@@ -76,16 +118,17 @@ namespace Kimaya
             if (_rb == null) _rb = GetComponent<Rigidbody2D>();
             if (_col == null) _col = GetComponent<BoxCollider2D>();
 
+            // Jump King exact physics ratio: Vertical / Horizontal ~ 2.5
             if (character == CharacterType.Falin)
             {
-                // Falin: Perro grande San Bernardo (perfil ancho y firme)
+                // Falin: San Bernardo (firme, masa sólida)
                 _rb.mass = 1.3f;
                 _rb.gravityScale = 2.4f;
                 walkSpeed = 4.8f;
-                minJumpForce = 7.2f;
-                maxJumpForce = 18.5f;
-                horizontalJumpSpeed = 6.6f;
-                wallBounceMultiplier = 0.5f;
+                minJumpForce = 7.0f;
+                maxJumpForce = 17.5f;
+                horizontalJumpSpeed = 7.0f; // 17.5 / 7.0 = 2.50 (Jump King exacto)
+                wallBounceMultiplier = 0.50f;
 
                 if (_col != null)
                 {
@@ -95,14 +138,14 @@ namespace Kimaya
             }
             else
             {
-                // Mía: Schnauzer ágil y liviana (salto más elástico)
+                // Mía: Schnauzer ágil y vivaz
                 _rb.mass = 1.0f;
                 _rb.gravityScale = 2.2f;
                 walkSpeed = 5.4f;
-                minJumpForce = 6.8f;
-                maxJumpForce = 17.8f;
-                horizontalJumpSpeed = 7.2f;
-                wallBounceMultiplier = 0.75f;
+                minJumpForce = 7.4f;
+                maxJumpForce = 18.5f;
+                horizontalJumpSpeed = 7.4f; // 18.5 / 7.4 = 2.50 (Jump King exacto)
+                wallBounceMultiplier = 0.55f;
 
                 if (_col != null)
                 {
@@ -114,10 +157,35 @@ namespace Kimaya
 
         private void Update()
         {
+            // Gestión del aturdimiento tras caída fuerte (Jump King Splat)
+            if (IsStunned)
+            {
+                _stunTimer -= Time.deltaTime;
+                if (_stunTimer <= 0f)
+                {
+                    IsStunned = false;
+                }
+                else
+                {
+                    // Inmóvil durante el aturdimiento
+                    _rb.linearVelocity = new Vector2(0f, _rb.linearVelocity.y);
+                    return;
+                }
+            }
+
+            // Seguimiento del punto más alto del salto
+            if (!IsGrounded)
+            {
+                if (transform.position.y > _highestAirY)
+                {
+                    _highestAirY = transform.position.y;
+                }
+            }
+
             bool spaceHeld = ReadSpaceKey();
             float hInput = ReadHorizontalInput();
 
-            // Actualizar dirección de mira al caminar
+            // Actualizar dirección de mira
             if (Mathf.Abs(hInput) > 0.1f)
             {
                 FacingDirection = Mathf.Sign(hInput);
@@ -136,7 +204,7 @@ namespace Kimaya
                     _chargeTimer += Time.deltaTime;
                     ChargePercent = Mathf.Clamp01(_chargeTimer / maxChargeTime);
 
-                    // Dirección del salto según si mantiene tecla de dirección o neutral
+                    // Dirección del salto elegida durante la carga
                     if (Mathf.Abs(hInput) > 0.1f)
                     {
                         _jumpDirection = Mathf.Sign(hInput);
@@ -148,6 +216,7 @@ namespace Kimaya
 
                     // En el suelo mientras carga se detiene
                     _rb.linearVelocity = new Vector2(0, _rb.linearVelocity.y);
+                    _iceSlideVelocityX = 0f;
                 }
                 else if (IsCharging)
                 {
@@ -156,10 +225,38 @@ namespace Kimaya
                 }
                 else
                 {
-                    // Caminar ágilmente en el suelo
-                    _rb.linearVelocity = new Vector2(hInput * walkSpeed, _rb.linearVelocity.y);
+                    // Manejo del movimiento según la superficie actual (Jump King Blocks)
+                    ApplyGroundMovement(hInput);
                     ChargePercent = 0f;
                 }
+            }
+        }
+
+        private void ApplyGroundMovement(float hInput)
+        {
+            float targetSpeed = walkSpeed;
+
+            // Modificador por Arena (SandBlock)
+            if (CurrentSurface == SurfaceType.Sand)
+            {
+                float sandMult = _activeSurfaceComp != null ? _activeSurfaceComp.sandMoveMultiplier : 0.25f;
+                targetSpeed *= sandMult;
+            }
+
+            // Modificador por Hielo (IceBlock - inercia y resbalón)
+            if (CurrentSurface == SurfaceType.Ice)
+            {
+                float targetVelX = hInput * targetSpeed;
+                float frictionRate = _activeSurfaceComp != null ? _activeSurfaceComp.iceFriction : 0.1f;
+                // Si presiona teclas acelera hacia esa dirección, si suelta patina lentamente
+                float lerpSpeed = (Mathf.Abs(hInput) > 0.05f) ? 5.0f : (1.0f - frictionRate * 5.0f);
+                _iceSlideVelocityX = Mathf.Lerp(_iceSlideVelocityX, targetVelX, Time.deltaTime * lerpSpeed);
+                _rb.linearVelocity = new Vector2(_iceSlideVelocityX, _rb.linearVelocity.y);
+            }
+            else
+            {
+                _iceSlideVelocityX = hInput * targetSpeed;
+                _rb.linearVelocity = new Vector2(_iceSlideVelocityX, _rb.linearVelocity.y);
             }
         }
 
@@ -172,9 +269,17 @@ namespace Kimaya
             TotalJumps++;
 
             _lastGroundedY = transform.position.y;
+            _highestAirY = transform.position.y;
 
             // Fuerza vertical según carga
             float jumpForce = Mathf.Lerp(minJumpForce, maxJumpForce, ChargePercent);
+
+            // Modificador por Arena (salta la mitad: SAND_JUMP_MULTIPLIER = 0.5)
+            if (CurrentSurface == SurfaceType.Sand)
+            {
+                float sandJumpMult = _activeSurfaceComp != null ? _activeSurfaceComp.sandJumpMultiplier : 0.5f;
+                jumpForce *= sandJumpMult;
+            }
 
             // Fuerza horizontal según carga y dirección
             float hForce = 0f;
@@ -186,6 +291,7 @@ namespace Kimaya
             }
 
             _rb.linearVelocity = new Vector2(hForce, jumpForce);
+            _iceSlideVelocityX = hForce;
 
             _chargeTimer = 0f;
             ChargePercent = 0f;
@@ -204,8 +310,10 @@ namespace Kimaya
                     if (Mathf.Abs(contact.normal.x) > 0.65f)
                     {
                         float currentY = _rb.linearVelocity.y;
+                        // Jump King Bounce: invierte la velocidad horizontal multiplicada por el factor de rebote
                         float bounceX = contact.normal.x * horizontalJumpSpeed * wallBounceMultiplier;
                         _rb.linearVelocity = new Vector2(bounceX, currentY);
+                        _iceSlideVelocityX = bounceX;
 
                         FacingDirection = Mathf.Sign(bounceX);
                         if (spriteRenderer != null)
@@ -229,6 +337,8 @@ namespace Kimaya
             if (_groundContactCount == 0)
             {
                 IsGrounded = false;
+                CurrentSurface = SurfaceType.Normal;
+                _activeSurfaceComp = null;
             }
         }
 
@@ -241,6 +351,19 @@ namespace Kimaya
                 if (contact.normal.y > 0.5f)
                 {
                     foundGround = true;
+
+                    // Detectar si la plataforma tiene componente KimayaSurface
+                    var surfaceComp = collision.gameObject.GetComponent<KimayaSurface>();
+                    if (surfaceComp != null)
+                    {
+                        CurrentSurface = surfaceComp.surfaceType;
+                        _activeSurfaceComp = surfaceComp;
+                    }
+                    else
+                    {
+                        CurrentSurface = SurfaceType.Normal;
+                        _activeSurfaceComp = null;
+                    }
                     break;
                 }
             }
@@ -252,13 +375,22 @@ namespace Kimaya
                 {
                     IsJumping = false;
 
-                    // Si caímos por debajo de donde saltamos
+                    // Si caímos de gran altura: registrar caída y evaluar Aturdimiento (Splat)
+                    float fallDistance = _highestAirY - transform.position.y;
                     if (transform.position.y < _lastGroundedY - 3.0f)
                     {
                         TotalFalls++;
                     }
 
+                    if (enableHighFallStun && fallDistance >= highFallThreshold)
+                    {
+                        IsStunned = true;
+                        _stunTimer = splatStunDuration;
+                        _rb.linearVelocity = Vector2.zero;
+                    }
+
                     _lastGroundedY = transform.position.y;
+                    _highestAirY = transform.position.y;
                 }
                 IsGrounded = true;
             }
