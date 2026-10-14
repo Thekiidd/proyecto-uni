@@ -4,6 +4,20 @@ Videojuego 2D/2.5D desarrollado en **Unity 2022.3 LTS** con arte generado median
 
 ---
 
+## 🦘 Nuevo Modo: Ascenso Vertical (Estilo Jump King)
+
+![Ascenso Vertical Jump King](Screenshots/Captura_JumpKing_Ascenso.png)
+
+Aventura de salto táctico de alta precisión para rescatar a tu compañera en la cima de la montaña sagrada:
+- **Salto Cargado:** Mantén `Espacio` para concentrar fuerza; suelta para dispararte en el ángulo elegido.
+- **Sin Control Aéreo:** La inercia y parábola del salto son definitivas una vez despegas del suelo.
+- **Rebotes en Paredes:** Usa las paredes laterales de piedra para alcanzar plataformas complejas o calcula bien para no rebotar hacia el abismo.
+- **Sin Checkpoints:** Cada caída te hace descender a pisos anteriores. ¡Si caes al vacío regresas al principio!
+- **Cámara Pantalla por Pantalla:** La cámara se desplaza verticalmente al cruzar el umbral de cada piso.
+- **Dúo Jugable:** Presiona `Tab` para alternar entre **Falin** (más pesado y estable) y **Mía** (más ágil y elástica).
+- **Escena:** [`Assets/Scenes/Ascenso_Vertical.unity`](Assets/Scenes/Ascenso_Vertical.unity)
+
+
 ## 🗺️ Mapas y HUB del Juego (PixelLab AI)
 
 > 📁 Para ver todos los mapas y recursos en alta resolución, visita la carpeta [`/Mapas`](Mapas/README.md).

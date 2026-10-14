@@ -49,6 +49,10 @@ namespace UnityMCP
                 case "unity_enter_play_mode": result = SetPlayMode(true); break;
                 case "unity_exit_play_mode": result = SetPlayMode(false); break;
                 case "unity_compile_scripts": result = CompileScripts(); break;
+                case "unity_build_jump_king":
+                    Platformer.EditorTools.KimayaJumpKingBuilder.BuildJumpKingScene();
+                    result = new Dictionary<string, object> { { "ok", true }, { "scene", Platformer.EditorTools.KimayaJumpKingBuilder.SCENE_PATH } };
+                    break;
                 default: result = Err("Unknown command: " + command); break;
             }
             return Json.Serialize(result);

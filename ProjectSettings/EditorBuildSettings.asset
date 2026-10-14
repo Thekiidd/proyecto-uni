@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: bf485c5106289ec4f8cde0e8fa4f44e9
   - enabled: 1
+    path: Assets/Scenes/Ascenso_Vertical.unity
+    guid: 403842a40952dc4458daf216c4240a61
+  - enabled: 1
     path: Assets/Scenes/Hub.unity
     guid: 173fc45417028834496b798dca596f94
   - enabled: 1

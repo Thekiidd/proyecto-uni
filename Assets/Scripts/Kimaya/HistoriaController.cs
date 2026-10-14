@@ -144,7 +144,7 @@ namespace Kimaya
 
         private void GoToHub()
         {
-            string next = SceneExists("Hub") ? "Hub" : "Level_01_Bosque";
+            string next = SceneExists("Ascenso_Vertical") ? "Ascenso_Vertical" : (SceneExists("Hub") ? "Hub" : "Level_01_Bosque");
             SceneManager.LoadScene(next);
         }
 

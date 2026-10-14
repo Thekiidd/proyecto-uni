@@ -23,8 +23,9 @@ namespace Kimaya
 
         private void OnPlay()
         {
-            // Intenta cargar Historia; si no existe va directo al Hub o Level
+            // Intenta cargar Historia; si no existe va directo al Ascenso Vertical o Hub
             string next = SceneExists("Historia") ? "Historia"
+                        : SceneExists("Ascenso_Vertical") ? "Ascenso_Vertical"
                         : SceneExists("Hub")      ? "Hub"
                         : "Level_01_Bosque";
             SceneManager.LoadScene(next);

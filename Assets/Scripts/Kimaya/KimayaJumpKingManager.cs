@@ -1,0 +1,173 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace Kimaya
+{
+    /// <summary>
+    /// Administrador de la partida en el modo Jump King de Kimaya.
+    /// - Alterna entre Falin y Mía al presionar TAB.
+    /// - Gestiona la UI de carga de salto, pantalla actual, saltos y caídas.
+    /// - Dispara la victoria al llegar a la cima.
+    /// </summary>
+    public class KimayaJumpKingManager : MonoBehaviour
+    {
+        public static KimayaJumpKingManager Instance { get; private set; }
+
+        [Header("Referencias de Personaje")]
+        public KimayaJumpKingController playerController;
+        public Sprite falinSprite;
+        public Sprite miaSprite;
+        public RuntimeAnimatorController falinAnimator;
+        public RuntimeAnimatorController miaAnimator;
+
+        [Header("Cámara")]
+        public JumpKingScreenCamera screenCamera;
+
+        [Header("UI del HUD")]
+        public Slider chargeSlider;
+        public Image chargeFillImage;
+        public Text screenText;
+        public Text characterNameText;
+        public Text statsText;
+        public GameObject stunnedBadge;
+        public GameObject victoryPanel;
+
+        [Header("Meta / Rescate")]
+        public int finalScreenIndex = 8;
+        public string rescuedCharacterName = "Kiara";
+
+        private float _sessionTimer = 0f;
+        private bool _hasWon = false;
+
+        private void Awake()
+        {
+            if (Instance == null) Instance = this;
+            else Destroy(gameObject);
+        }
+
+        private void Start()
+        {
+            if (playerController == null)
+            {
+                playerController = FindFirstObjectByType<KimayaJumpKingController>();
+            }
+
+            if (screenCamera == null)
+            {
+                screenCamera = FindFirstObjectByType<JumpKingScreenCamera>();
+            }
+
+            if (victoryPanel != null) victoryPanel.SetActive(false);
+            if (stunnedBadge != null) stunnedBadge.SetActive(false);
+
+            UpdateCharacterUI();
+        }
+
+        private void Update()
+        {
+            if (_hasWon) return;
+
+            _sessionTimer += Time.deltaTime;
+
+            // Cambiar de personaje con TAB o Q
+            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Q))
+            {
+                SwitchCharacter();
+            }
+
+            UpdateHUD();
+            CheckVictory();
+        }
+
+        public void SwitchCharacter()
+        {
+            if (playerController == null || !playerController.IsGrounded || playerController.IsCharging)
+                return;
+
+            if (playerController.character == KimayaJumpKingController.CharacterType.Falin)
+            {
+                playerController.SetCharacter(KimayaJumpKingController.CharacterType.Mia);
+                if (playerController.spriteRenderer != null && miaSprite != null)
+                    playerController.spriteRenderer.sprite = miaSprite;
+                if (playerController.animator != null && miaAnimator != null)
+                    playerController.animator.runtimeAnimatorController = miaAnimator;
+            }
+            else
+            {
+                playerController.SetCharacter(KimayaJumpKingController.CharacterType.Falin);
+                if (playerController.spriteRenderer != null && falinSprite != null)
+                    playerController.spriteRenderer.sprite = falinSprite;
+                if (playerController.animator != null && falinAnimator != null)
+                    playerController.animator.runtimeAnimatorController = falinAnimator;
+            }
+
+            UpdateCharacterUI();
+        }
+
+        private void UpdateCharacterUI()
+        {
+            if (characterNameText != null && playerController != null)
+            {
+                bool isFalin = playerController.character == KimayaJumpKingController.CharacterType.Falin;
+                characterNameText.text = isFalin ? "🐾 Falin (Fuerza)" : "🌸 Mía (Agilidad)";
+                characterNameText.color = isFalin ? new Color(1f, 0.75f, 0.2f) : new Color(0.9f, 0.5f, 1f);
+            }
+        }
+
+        private void UpdateHUD()
+        {
+            if (playerController == null) return;
+
+            // Barra de carga
+            if (chargeSlider != null)
+            {
+                chargeSlider.gameObject.SetActive(playerController.IsCharging);
+                chargeSlider.value = playerController.ChargePercent;
+
+                if (chargeFillImage != null)
+                {
+                    // Transición de verde a rojo según la carga
+                    chargeFillImage.color = Color.Lerp(new Color(0.2f, 0.9f, 0.3f), new Color(1f, 0.2f, 0.2f), playerController.ChargePercent);
+                }
+            }
+
+            // Aturdido
+            if (stunnedBadge != null)
+            {
+                stunnedBadge.SetActive(playerController.IsStunned);
+            }
+
+            // Piso / Pantalla actual
+            if (screenText != null && screenCamera != null)
+            {
+                screenText.text = $"Piso {screenCamera.CurrentScreenIndex + 1} / {finalScreenIndex + 1}";
+            }
+
+            // Estadísticas (Saltos y Caídas)
+            if (statsText != null)
+            {
+                int minutes = Mathf.FloorToInt(_sessionTimer / 60f);
+                int seconds = Mathf.FloorToInt(_sessionTimer % 60f);
+                statsText.text = $"⏱️ {minutes:00}:{seconds:00}  |  🦘 Saltos: {playerController.TotalJumps}  |  💥 Caídas: {playerController.TotalFalls}";
+            }
+        }
+
+        private void CheckVictory()
+        {
+            if (screenCamera != null && screenCamera.CurrentScreenIndex >= finalScreenIndex && !_hasWon)
+            {
+                TriggerVictory();
+            }
+        }
+
+        public void TriggerVictory()
+        {
+            _hasWon = true;
+            if (victoryPanel != null)
+            {
+                victoryPanel.SetActive(true);
+            }
+        }
+    }
+}
