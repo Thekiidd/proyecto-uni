@@ -28,7 +28,7 @@ namespace Platformer.EditorTools
         public const string HUB_SCENE_PATH = "Assets/Scenes/Hub.unity";
         public const string MAIN_MENU_SCENE_PATH = "Assets/Scenes/MainMenu.unity";
         public const string JUMP_KING_SCENE_PATH = "Assets/Scenes/Ascenso_Vertical.unity";
-        private const string BUILD_KEY = "KimayaHub_Clearing_v7";
+        private const string BUILD_KEY = "KimayaHub_Clearing_v8";
 
         private const string HUB_MAP_IMAGE_PATH = "Assets/Sprites/Hub/Forest_Hub_Clearing_3Portals.png";
         private const string PIXELLAB_PATH = "Assets/Sprites/PixelLab";
@@ -127,21 +127,6 @@ namespace Platformer.EditorTools
             CreateBoxCol(collidersRoot, "P3_Column_Left", new Vector2(4.05f, 0.98f), new Vector2(0.50f, 1.6f));
             CreateBoxCol(collidersRoot, "P3_Column_Right", new Vector2(5.85f, 0.98f), new Vector2(0.50f, 1.6f));
             CreateBoxCol(collidersRoot, "P3_SOLID_GATE_BLOCKER", new Vector2(4.94f, 0.95f), new Vector2(2.0f, 1.5f)); // ¡SÓLIDO!
-
-            // 5. CAPA DE ÁRBOLES EN PRIMER PLANO (Y-Sorting para caminar por detrás y ocultarse)
-            var foregroundRoot = new GameObject("[Foreground_Props]");
-            var oakSprite = AssetDatabase.LoadAssetAtPath<Sprite>(OAK_TREE_SPRITE_PATH);
-            if (oakSprite != null)
-            {
-                var oakGO = new GameObject("Oak_Tree_Foreground");
-                oakGO.transform.SetParent(foregroundRoot.transform, false);
-                oakGO.transform.position = new Vector3(3.8f, -2.4f, 0f);
-                oakGO.transform.localScale = new Vector3(1.35f, 1.35f, 1.0f);
-                var oakSR = oakGO.AddComponent<SpriteRenderer>();
-                oakSR.sprite = oakSprite;
-                // Sorting order calculado a la base del tronco:
-                oakSR.sortingOrder = 500 - Mathf.RoundToInt(-2.8f * 10f); // 528 -> Cuando el perro está en Y > -2.8, ¡pasa por detrás!
-            }
 
             // 6. LOS 3 PORTALES MÍSTICOS (Triggers & Lógica)
             var portalsRoot = new GameObject("[Portales_Mision]");
