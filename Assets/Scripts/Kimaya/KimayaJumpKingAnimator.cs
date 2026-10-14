@@ -4,34 +4,27 @@ using UnityEngine;
 namespace Kimaya
 {
     /// <summary>
-    /// Animador cuadro por cuadro para Falin y Mía en el modo Jump King usando los sprites de PixelLab.
-    /// Soporta:
-    /// - Idle (respiración / quieto)
-    /// - Caminar (caminar a izquierda / derecha con flipX)
-    /// - Cargar salto (agacharse / concentrar fuerza de salto)
-    /// - En el aire (saltando hacia arriba o cayendo)
-    /// - Aturdido (tras caída fuerte)
-    /// - Cambio instantáneo entre Falin y Mía.
+    /// Animador cuadro por cuadro fluido para Falin y Mía en Jump King con sprites de PixelLab en perfil (East/West).
     /// </summary>
     [RequireComponent(typeof(SpriteRenderer), typeof(KimayaJumpKingController))]
     public class KimayaJumpKingAnimator : MonoBehaviour
     {
-        [Header("Frames de Falin (PixelLab)")]
+        [Header("Frames de Falin en Perfil (PixelLab)")]
         public Sprite[] falinIdleFrames;
         public Sprite[] falinWalkFrames;
         public Sprite[] falinChargeFrames;
         public Sprite[] falinJumpFrames;
 
-        [Header("Frames de Mía (PixelLab)")]
+        [Header("Frames de Mía en Perfil (PixelLab)")]
         public Sprite[] miaIdleFrames;
         public Sprite[] miaWalkFrames;
         public Sprite[] miaChargeFrames;
         public Sprite[] miaJumpFrames;
 
         [Header("Velocidad de Animación (FPS)")]
-        public float idleFPS = 6f;
-        public float walkFPS = 10f;
-        public float chargeFPS = 8f;
+        public float idleFPS = 8f;
+        public float walkFPS = 11f;
+        public float chargeFPS = 12f;
 
         private SpriteRenderer _sr;
         private KimayaJumpKingController _ctrl;
@@ -54,7 +47,7 @@ namespace Kimaya
         {
             if (_ctrl == null || _sr == null) return;
 
-            // Detectar si cambió de personaje
+            // Detectar cambio de personaje (Falin / Mía)
             if (_ctrl.character != _lastChar)
             {
                 _lastChar = _ctrl.character;
@@ -62,7 +55,7 @@ namespace Kimaya
                 _animTimer = 0f;
             }
 
-            // Determinar estado actual
+            // Determinar estado de animación
             string newState = DetermineState();
             if (newState != _currentState)
             {
@@ -71,11 +64,11 @@ namespace Kimaya
                 _animTimer = 0f;
             }
 
-            // Obtener lista de frames según personaje y estado
+            // Obtener frames del estado actual
             Sprite[] activeFrames = GetActiveFrames();
             if (activeFrames == null || activeFrames.Length == 0) return;
 
-            // Calcular FPS según estado
+            // Velocidad según estado
             float fps = (_currentState == "Walk") ? walkFPS :
                         (_currentState == "Charging") ? chargeFPS : idleFPS;
 
@@ -86,22 +79,18 @@ namespace Kimaya
                 _currentFrameIndex = (_currentFrameIndex + 1) % activeFrames.Length;
             }
 
-            // Aplicar sprite
+            // Aplicar sprite actual
             if (_currentFrameIndex < activeFrames.Length && activeFrames[_currentFrameIndex] != null)
             {
                 _sr.sprite = activeFrames[_currentFrameIndex];
             }
 
-            // Flip según dirección horizontal
-            if (Mathf.Abs(_rb.linearVelocity.x) > 0.15f)
-            {
-                _sr.flipX = (_rb.linearVelocity.x < 0f);
-            }
+            // Orientación según FacingDirection del controlador
+            _sr.flipX = (_ctrl.FacingDirection < 0);
         }
 
         private string DetermineState()
         {
-            if (_ctrl.IsStunned) return "Stunned";
             if (_ctrl.IsCharging) return "Charging";
             if (!_ctrl.IsGrounded) return "Jumping";
             if (Mathf.Abs(_rb.linearVelocity.x) > 0.15f) return "Walk";
@@ -119,7 +108,6 @@ namespace Kimaya
                 case "Charging":
                     return isFalin ? falinChargeFrames : miaChargeFrames;
                 case "Jumping":
-                case "Stunned":
                     return isFalin ? falinJumpFrames : miaJumpFrames;
                 case "Idle":
                 default:

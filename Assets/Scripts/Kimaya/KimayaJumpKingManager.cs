@@ -169,10 +169,9 @@ namespace Kimaya
                 }
             }
 
-            // Aturdido
             if (stunnedBadge != null)
             {
-                stunnedBadge.SetActive(playerController.IsStunned);
+                stunnedBadge.SetActive(false);
             }
 
             // Piso / Pantalla actual

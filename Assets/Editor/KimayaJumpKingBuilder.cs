@@ -19,7 +19,7 @@ namespace Platformer.EditorTools
     public static class KimayaJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_Vertical.unity";
-        private const string BUILD_KEY = "KimayaJumpKing_Build_v2";
+        private const string BUILD_KEY = "KimayaJumpKing_Build_v3";
 
         static KimayaJumpKingBuilder()
         {
@@ -30,14 +30,14 @@ namespace Platformer.EditorTools
         {
             if (!EditorPrefs.GetBool(BUILD_KEY, false))
             {
-                Debug.Log("[KimayaJumpKingBuilder] 🚀 Ejecutando AutoBuildCheck para Jump King...");
+                Debug.Log("[KimayaJumpKingBuilder] 🚀 Ejecutando AutoBuildCheck v3 para Jump King...");
                 BuildJumpKingScene();
                 EditorPrefs.SetBool(BUILD_KEY, true);
             }
         }
 
-        private const string FALIN_SPRITE_PATH = "Assets/Sprites/PixelLab/Falin/Idle/rotations/south.png";
-        private const string MIA_SPRITE_PATH = "Assets/Sprites/PixelLab/Mia/Idle/rotations/south.png";
+        private const string FALIN_SPRITE_PATH = "Assets/Sprites/PixelLab/Falin/Idle/animations/idle/east/frame_000.png";
+        private const string MIA_SPRITE_PATH = "Assets/Sprites/PixelLab/Mia/Idle/animations/idle/east/frame_000.png";
         private const string PLATFORM_SPRITE_PATH = "Assets/Sprites/Tiles/Stone_Platform.png";
         private const string PLANK_SPRITE_PATH = "Assets/Sprites/Tiles/Wood_Plank.png";
         private const string ALTAR_SPRITE_PATH = "Assets/Sprites/Village/Art/Props/Ancient_Stone_Circle.png";
@@ -67,9 +67,9 @@ namespace Platformer.EditorTools
             if (groundLayer < 0) groundLayer = LayerMask.NameToLayer("Default");
             LayerMask groundMask = 1 << groundLayer;
 
-            // 2. Jugador (Falin / Mía)
+            // 2. Jugador (Falin / Mía en vista de perfil lateral)
             GameObject playerGo = new GameObject("Player_JumpKing");
-            playerGo.transform.position = new Vector3(0f, 2.2f, 0f);
+            playerGo.transform.position = new Vector3(0f, 2.0f, 0f);
 
             var sr = playerGo.AddComponent<SpriteRenderer>();
             sr.sprite = falinSprite != null ? falinSprite : miaSprite;
@@ -81,21 +81,23 @@ namespace Platformer.EditorTools
             rb.freezeRotation = true;
 
             var col = playerGo.AddComponent<BoxCollider2D>();
-            col.size = new Vector2(0.8f, 0.9f);
-            col.offset = new Vector2(0f, 0.45f);
+            col.size = new Vector2(1.0f, 0.75f);
+            col.offset = new Vector2(0f, 0.38f);
+            var pMat = new PhysicsMaterial2D("PlayerMat") { friction = 0.2f, bounciness = 0f };
+            col.sharedMaterial = pMat;
 
             var jumpCtrl = playerGo.AddComponent<KimayaJumpKingController>();
             jumpCtrl.spriteRenderer = sr;
             jumpCtrl.character = KimayaJumpKingController.CharacterType.Falin;
 
-            // Animador con sprites animados cuadro por cuadro de PixelLab
+            // Animador con sprites animados cuadro por cuadro en perfil lateral
             var anim = playerGo.AddComponent<KimayaJumpKingAnimator>();
-            anim.falinIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/idle/south");
+            anim.falinIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/idle/east");
             anim.falinWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/walking/east");
             anim.falinChargeFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/barking/east");
             anim.falinJumpFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/running/east");
 
-            anim.miaIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/idle/south");
+            anim.miaIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/idle/east");
             anim.miaWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/walking/east");
             anim.miaChargeFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/sneaking/east");
             anim.miaJumpFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/running/east");
@@ -131,10 +133,10 @@ namespace Platformer.EditorTools
 
             // --- Pantalla 0: Base del Bosque (Y: 0 a 10) ---
             CreatePlatform(platformsRoot.transform, 0f, 1.0f, 16f, 1.0f, platSprite, groundLayer, "Piso_0_Suelo");
-            CreatePlatform(platformsRoot.transform, -3.5f, 3.8f, 3.5f, 0.6f, platSprite, groundLayer, "P0_Plat_1");
-            CreatePlatform(platformsRoot.transform, 3.5f, 6.0f, 3.5f, 0.6f, platSprite, groundLayer, "P0_Plat_2");
-            CreatePlatform(platformsRoot.transform, -2.0f, 8.2f, 3.0f, 0.6f, platSprite, groundLayer, "P0_Plat_3");
-            CreatePlatform(platformsRoot.transform, 2.5f, 9.9f, 2.6f, 0.6f, platSprite, groundLayer, "P0_Plat_4_Salida");
+            CreatePlatform(platformsRoot.transform, -3.2f, 3.2f, 4.0f, 0.6f, platSprite, groundLayer, "P0_Plat_1");
+            CreatePlatform(platformsRoot.transform, 2.8f, 5.3f, 3.6f, 0.6f, platSprite, groundLayer, "P0_Plat_2");
+            CreatePlatform(platformsRoot.transform, -2.6f, 7.5f, 3.2f, 0.6f, platSprite, groundLayer, "P0_Plat_3");
+            CreatePlatform(platformsRoot.transform, 2.2f, 9.8f, 3.0f, 0.6f, platSprite, groundLayer, "P0_Plat_4_Salida");
 
             // --- Pantalla 1: Peñascos del Zarzal (Y: 10 a 20) ---
             CreatePlatform(platformsRoot.transform, -4.5f, 12.2f, 2.8f, 0.5f, platSprite, groundLayer, "P1_Plat_1");
@@ -286,6 +288,8 @@ namespace Platformer.EditorTools
 
             var col = plat.AddComponent<BoxCollider2D>();
             col.size = new Vector2(w, h);
+            var pMat = new PhysicsMaterial2D("PlatMat") { friction = 0.4f, bounciness = 0f };
+            col.sharedMaterial = pMat;
 
             return plat;
         }
@@ -299,6 +303,8 @@ namespace Platformer.EditorTools
 
             var col = wall.AddComponent<BoxCollider2D>();
             col.size = new Vector2(w, h);
+            var wMat = new PhysicsMaterial2D("WallMat") { friction = 0f, bounciness = 0.6f };
+            col.sharedMaterial = wMat;
         }
 
         private static GameObject CreateUIPanel(Transform parent, string name, Vector2 anchorMin, Vector2 anchorMax, Vector2 anchoredPos, Vector2 sizeDelta)
