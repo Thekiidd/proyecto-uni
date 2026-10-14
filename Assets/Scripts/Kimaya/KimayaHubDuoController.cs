@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 namespace Kimaya
 {
@@ -98,9 +101,11 @@ namespace Kimaya
     }
 
     /// <summary>
-    /// Controlador principal para Falin y Mia en la Aldea Hub (2D Top-Down / Isométrico).
-    /// Permite alternar control con TAB, mientras el otro perro lo sigue fielmente como compañero.
-    /// Soporta 4 direcciones de animación nítidas generadas en PixelLab, ladridos/poderes y Y-Sorting.
+    /// Controlador principal para Falin y Mía en el Hub 2D de Kimaya.
+    /// Soporta New Input System y Legacy Input universalmente.
+    /// Sistema de Compañero Recíproco:
+    /// - Si controlas a Falin, Mía te sigue fielmente.
+    /// - Si alternas a Mía [TAB o Q], Falin te sigue a ti.
     /// </summary>
     public class KimayaHubDuoController : MonoBehaviour
     {
@@ -112,55 +117,77 @@ namespace Kimaya
         public DogSpriteSet falinSprites;
         public DogSpriteSet miaSprites;
 
-        [Header("Velocidad")]
+        [Header("Velocidad de Movimiento")]
         public float walkSpeed = 4.8f;
         public float runSpeed = 7.5f;
-        public float companionFollowDistance = 1.4f;
+        public float companionFollowDistance = 1.35f;
 
         [Header("Estado")]
         public bool isFalinActive = true;
         public bool controlsEnabled = true;
 
-        private Rigidbody2D falinRb;
-        private Rigidbody2D miaRb;
-        private SpriteRenderer falinSr;
-        private SpriteRenderer miaSr;
+        private Rigidbody2D _falinRb;
+        private Rigidbody2D _miaRb;
+        private SpriteRenderer _falinSr;
+        private SpriteRenderer _miaSr;
 
         // Estados individuales
-        private DogDirection falinDir = DogDirection.South;
-        private DogDirection miaDir = DogDirection.South;
-        private DogAnimState falinState = DogAnimState.Idle;
-        private DogAnimState miaState = DogAnimState.Idle;
+        private DogDirection _falinDir = DogDirection.South;
+        private DogDirection _miaDir = DogDirection.South;
+        private DogAnimState _falinState = DogAnimState.Idle;
+        private DogAnimState _miaState = DogAnimState.Idle;
 
-        private float falinTimer;
-        private int falinFrame;
-        private float miaTimer;
-        private int miaFrame;
+        private float _falinTimer;
+        private int _falinFrame;
+        private float _miaTimer;
+        private int _miaFrame;
 
-        private bool falinPerformingPower = false;
-        private bool miaPerformingPower = false;
+        private bool _falinPerformingPower = false;
+        private bool _miaPerformingPower = false;
 
         public event Action<bool> OnDogSwitched; // true = Falin, false = Mia
 
         private void Awake()
         {
             Instance = this;
-            if (falinObject != null)
-            {
-                falinRb = falinObject.GetComponent<Rigidbody2D>();
-                falinSr = falinObject.GetComponent<SpriteRenderer>();
-            }
-            if (miaObject != null)
-            {
-                miaRb = miaObject.GetComponent<Rigidbody2D>();
-                miaSr = miaObject.GetComponent<SpriteRenderer>();
-            }
+            EnsureReferences();
         }
 
         private void Start()
         {
+            EnsureReferences();
+            IgnoreDogToDogCollisions();
             UpdateActiveDogMarker();
             OnDogSwitched?.Invoke(isFalinActive);
+        }
+
+        private void EnsureReferences()
+        {
+            if (falinObject == null) falinObject = GameObject.Find("Falin_SanBernardo");
+            if (miaObject == null) miaObject = GameObject.Find("Mia_Schnauzer");
+
+            if (falinObject != null)
+            {
+                if (_falinRb == null) _falinRb = falinObject.GetComponent<Rigidbody2D>();
+                if (_falinSr == null) _falinSr = falinObject.GetComponent<SpriteRenderer>();
+            }
+
+            if (miaObject != null)
+            {
+                if (_miaRb == null) _miaRb = miaObject.GetComponent<Rigidbody2D>();
+                if (_miaSr == null) _miaSr = miaObject.GetComponent<SpriteRenderer>();
+            }
+        }
+
+        private void IgnoreDogToDogCollisions()
+        {
+            if (falinObject == null || miaObject == null) return;
+            var c1 = falinObject.GetComponent<Collider2D>();
+            var c2 = miaObject.GetComponent<Collider2D>();
+            if (c1 != null && c2 != null)
+            {
+                Physics2D.IgnoreCollision(c1, c2, true);
+            }
         }
 
         private void Update()
@@ -176,8 +203,8 @@ namespace Kimaya
         {
             if (!controlsEnabled)
             {
-                if (falinRb != null) falinRb.linearVelocity = Vector2.zero;
-                if (miaRb != null) miaRb.linearVelocity = Vector2.zero;
+                if (_falinRb != null) _falinRb.linearVelocity = Vector2.zero;
+                if (_miaRb != null) _miaRb.linearVelocity = Vector2.zero;
                 return;
             }
 
@@ -187,104 +214,93 @@ namespace Kimaya
 
         private void HandleDogSwitch()
         {
-            if (Input.GetKeyDown(KeyCode.Tab))
+            if (ReadSwitchInput())
             {
-                isFalinActive = !isFalinActive;
-                UpdateActiveDogMarker();
-                OnDogSwitched?.Invoke(isFalinActive);
+                SwitchActiveDog();
             }
         }
 
-        private void HandlePowerInput()
+        public void SwitchActiveDog()
         {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.F))
+            isFalinActive = !isFalinActive;
+            UpdateActiveDogMarker();
+            OnDogSwitched?.Invoke(isFalinActive);
+            Debug.Log($"[KimayaHubDuoController] Perro activo cambiado a: {(isFalinActive ? "Falin (San Bernardo)" : "Mía (Schnauzer)")}");
+        }
+
+        private bool ReadSwitchInput()
+        {
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null)
             {
-                if (isFalinActive && !falinPerformingPower)
+                if (Keyboard.current.tabKey.wasPressedThisFrame || Keyboard.current.qKey.wasPressedThisFrame)
+                    return true;
+            }
+#endif
+            try
+            {
+                if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Q))
+                    return true;
+            }
+            catch { }
+            return false;
+        }
+
+        private Vector2 ReadMovementInput()
+        {
+            Vector2 input = Vector2.zero;
+
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null)
+            {
+                if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) input.x -= 1f;
+                if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) input.x += 1f;
+                if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) input.y += 1f;
+                if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) input.y -= 1f;
+            }
+#endif
+            if (input.sqrMagnitude < 0.01f)
+            {
+                try
                 {
-                    StartCoroutine(PerformPowerRoutine(true));
+                    input.x = Input.GetAxisRaw("Horizontal");
+                    input.y = Input.GetAxisRaw("Vertical");
                 }
-                else if (!isFalinActive && !miaPerformingPower)
-                {
-                    StartCoroutine(PerformPowerRoutine(false));
-                }
+                catch { }
             }
+
+            if (input.sqrMagnitude > 1f) input.Normalize();
+            return input;
         }
 
-        private IEnumerator PerformPowerRoutine(bool forFalin)
+        private bool ReadRunInput()
         {
-            if (forFalin)
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null)
             {
-                falinPerformingPower = true;
-                falinState = DogAnimState.Power;
-                falinFrame = 0;
-                falinTimer = 0f;
-                // Pequeño sonido / efecto de ladrido
-                SpawnBarkEffect(falinObject.transform.position);
-                yield return new WaitForSeconds(0.6f);
-                falinPerformingPower = false;
+                if (Keyboard.current.leftShiftKey.isPressed || Keyboard.current.rightShiftKey.isPressed)
+                    return true;
             }
-            else
+#endif
+            try
             {
-                miaPerformingPower = true;
-                miaState = DogAnimState.Power;
-                miaFrame = 0;
-                miaTimer = 0f;
-                SpawnBarkEffect(miaObject.transform.position);
-                yield return new WaitForSeconds(0.6f);
-                miaPerformingPower = false;
+                if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+                    return true;
             }
-        }
-
-        private void SpawnBarkEffect(Vector3 pos)
-        {
-            // Crear onda sónica de ladrido decorativa
-            var waveGO = new GameObject("BarkWave");
-            waveGO.transform.position = pos + Vector3.up * 0.4f;
-            var sr = waveGO.AddComponent<SpriteRenderer>();
-            sr.color = new Color(1f, 0.95f, 0.4f, 0.8f);
-            sr.sortingOrder = 900;
-            StartCoroutine(BarkWaveExpand(waveGO));
-        }
-
-        private IEnumerator BarkWaveExpand(GameObject go)
-        {
-            float elapsed = 0f;
-            float duration = 0.35f;
-            Vector3 initScale = Vector3.one * 0.3f;
-            var sr = go.GetComponent<SpriteRenderer>();
-
-            while (elapsed < duration)
-            {
-                elapsed += Time.deltaTime;
-                float t = elapsed / duration;
-                if (go != null)
-                {
-                    go.transform.localScale = Vector3.Lerp(initScale, Vector3.one * 1.5f, t);
-                    if (sr != null)
-                    {
-                        var c = sr.color;
-                        c.a = Mathf.Lerp(0.8f, 0f, t);
-                        sr.color = c;
-                    }
-                }
-                yield return null;
-            }
-            if (go != null) Destroy(go);
+            catch { }
+            return false;
         }
 
         private void MoveActiveDog()
         {
-            float h = Input.GetAxisRaw("Horizontal");
-            float v = Input.GetAxisRaw("Vertical");
-            Vector2 input = new Vector2(h, v).normalized;
-
-            bool isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+            Vector2 input = ReadMovementInput();
+            bool isRunning = ReadRunInput();
             float currentSpeed = isRunning ? runSpeed : walkSpeed;
 
-            Rigidbody2D activeRb = isFalinActive ? falinRb : miaRb;
-            ref DogAnimState activeState = ref (isFalinActive ? ref falinState : ref miaState);
-            ref DogDirection activeDir = ref (isFalinActive ? ref falinDir : ref miaDir);
-            bool isPerforming = isFalinActive ? falinPerformingPower : miaPerformingPower;
+            Rigidbody2D activeRb = isFalinActive ? _falinRb : _miaRb;
+            ref DogAnimState activeState = ref (isFalinActive ? ref _falinState : ref _miaState);
+            ref DogDirection activeDir = ref (isFalinActive ? ref _falinDir : ref _miaDir);
+            bool isPerforming = isFalinActive ? _falinPerformingPower : _miaPerformingPower;
 
             if (activeRb == null) return;
 
@@ -318,12 +334,13 @@ namespace Kimaya
 
         private void MoveCompanionDog()
         {
+            // El perro activo es el Líder, el inactivo es el Seguidor
             GameObject leader = isFalinActive ? falinObject : miaObject;
             GameObject follower = isFalinActive ? miaObject : falinObject;
-            Rigidbody2D followerRb = isFalinActive ? miaRb : falinRb;
-            ref DogAnimState followerState = ref (isFalinActive ? ref miaState : ref falinState);
-            ref DogDirection followerDir = ref (isFalinActive ? ref miaDir : ref falinDir);
-            bool isPerforming = isFalinActive ? miaPerformingPower : falinPerformingPower;
+            Rigidbody2D followerRb = isFalinActive ? _miaRb : _falinRb;
+            ref DogAnimState followerState = ref (isFalinActive ? ref _miaState : ref _falinState);
+            ref DogDirection followerDir = ref (isFalinActive ? ref _miaDir : ref _falinDir);
+            bool isPerforming = isFalinActive ? _miaPerformingPower : _falinPerformingPower;
 
             if (leader == null || follower == null || followerRb == null) return;
 
@@ -333,18 +350,23 @@ namespace Kimaya
                 return;
             }
 
-            Vector2 toLeader = leader.transform.position - follower.transform.position;
+            Vector2 toLeader = (Vector2)leader.transform.position - (Vector2)follower.transform.position;
             float dist = toLeader.magnitude;
 
             if (dist > companionFollowDistance)
             {
                 Vector2 dir = toLeader.normalized;
-                bool leaderRunning = (isFalinActive ? falinState : miaState) == DogAnimState.Running;
-                float followSpeed = (dist > companionFollowDistance * 2.2f || leaderRunning) ? runSpeed : walkSpeed;
+                bool leaderRunning = (isFalinActive ? _falinState : _miaState) == DogAnimState.Running;
+                
+                // Si el líder corre o el compañero está lejos, corre más rápido para alcanzarlo
+                float followSpeed = (dist > companionFollowDistance * 2.2f || leaderRunning) 
+                    ? runSpeed * 1.05f 
+                    : walkSpeed;
 
                 followerRb.linearVelocity = dir * followSpeed;
                 followerState = (followSpeed >= runSpeed) ? DogAnimState.Running : DogAnimState.Walking;
 
+                // Dirección hacia la que mira el compañero al caminar/correr
                 if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
                 {
                     followerDir = dir.x > 0 ? DogDirection.East : DogDirection.West;
@@ -356,26 +378,78 @@ namespace Kimaya
             }
             else
             {
-                // Se detiene suavemente junto a su compañero
+                // Dentro del rango cómodo: se detiene suavemente junto al líder
                 followerRb.linearVelocity = Vector2.zero;
                 followerState = DogAnimState.Idle;
+            }
+        }
+
+        private void HandlePowerInput()
+        {
+            bool powerPressed = false;
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null && (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.fKey.wasPressedThisFrame))
+                powerPressed = true;
+#endif
+            if (!powerPressed)
+            {
+                try
+                {
+                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.F))
+                        powerPressed = true;
+                }
+                catch { }
+            }
+
+            if (powerPressed)
+            {
+                if (isFalinActive && !_falinPerformingPower)
+                {
+                    StartCoroutine(PerformPowerRoutine(true));
+                }
+                else if (!isFalinActive && !_miaPerformingPower)
+                {
+                    StartCoroutine(PerformPowerRoutine(false));
+                }
+            }
+        }
+
+        private IEnumerator PerformPowerRoutine(bool forFalin)
+        {
+            if (forFalin)
+            {
+                _falinPerformingPower = true;
+                _falinState = DogAnimState.Power;
+                _falinFrame = 0;
+                _falinTimer = 0f;
+                yield return new WaitForSeconds(0.6f);
+                _falinPerformingPower = false;
+            }
+            else
+            {
+                _miaPerformingPower = true;
+                _miaState = DogAnimState.Power;
+                _miaFrame = 0;
+                _miaTimer = 0f;
+                yield return new WaitForSeconds(0.6f);
+                _miaPerformingPower = false;
             }
         }
 
         private void AnimateDog(bool forFalin)
         {
             DogSpriteSet set = forFalin ? falinSprites : miaSprites;
-            SpriteRenderer sr = forFalin ? falinSr : miaSr;
-            DogAnimState state = forFalin ? falinState : miaState;
-            DogDirection dir = forFalin ? falinDir : miaDir;
+            SpriteRenderer sr = forFalin ? _falinSr : _miaSr;
+            DogAnimState state = forFalin ? _falinState : _miaState;
+            DogDirection dir = forFalin ? _falinDir : _miaDir;
 
             if (set == null || sr == null) return;
 
             Sprite[] frames = set.GetFrames(state, dir);
             if (frames == null || frames.Length == 0) return;
 
-            ref float timer = ref (forFalin ? ref falinTimer : ref miaTimer);
-            ref int frameIdx = ref (forFalin ? ref falinFrame : ref miaFrame);
+            ref float timer = ref (forFalin ? ref _falinTimer : ref _miaTimer);
+            ref int frameIdx = ref (forFalin ? ref _falinFrame : ref _miaFrame);
 
             float fps = state switch
             {
@@ -398,28 +472,26 @@ namespace Kimaya
 
         private void UpdateSortingOrders()
         {
-            // Y-Sorting estándar top-down: entre menor Y (más abajo), mayor sorting order
-            if (falinObject != null && falinSr != null)
+            if (falinObject != null && _falinSr != null)
             {
-                falinSr.sortingOrder = 500 - Mathf.RoundToInt((falinObject.transform.position.y - 0.2f) * 10f);
+                _falinSr.sortingOrder = 500 - Mathf.RoundToInt((falinObject.transform.position.y - 0.2f) * 10f);
             }
-            if (miaObject != null && miaSr != null)
+            if (miaObject != null && _miaSr != null)
             {
-                miaSr.sortingOrder = 500 - Mathf.RoundToInt((miaObject.transform.position.y - 0.2f) * 10f);
+                _miaSr.sortingOrder = 500 - Mathf.RoundToInt((miaObject.transform.position.y - 0.2f) * 10f);
             }
         }
 
         private void UpdateActiveDogMarker()
         {
-            // Puede añadir una sutil flecha o resplandor bajo las patitas del perro activo
             if (falinObject != null)
             {
-                var marker = falinObject.transform.Find("ActiveMarker");
+                var marker = falinObject.transform.Find("ActiveMarker") ?? falinObject.transform.Find("Selection_Marker");
                 if (marker != null) marker.gameObject.SetActive(isFalinActive);
             }
             if (miaObject != null)
             {
-                var marker = miaObject.transform.Find("ActiveMarker");
+                var marker = miaObject.transform.Find("ActiveMarker") ?? miaObject.transform.Find("Selection_Marker");
                 if (marker != null) marker.gameObject.SetActive(!isFalinActive);
             }
         }

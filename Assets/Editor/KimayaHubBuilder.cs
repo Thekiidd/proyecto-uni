@@ -18,8 +18,9 @@ namespace Platformer.EditorTools
     ///   - Portal 2 (Central / Azul): DESACTIVADO -> Requiere completar Nivel 1
     ///   - Portal 3 (Derecho / Violeta): DESACTIVADO -> Santuario Sellado
     ///   - Colisiones perimetrales completas (acantilados, árboles, rocas y arcos)
-    ///   - Dúo de perros (Falin y Mía) con animaciones 4D de PixelLab y cambio con [TAB]
+    ///   - Dúo de perros (Falin y Mía) con animaciones 4D de PixelLab y cambio con [TAB o Q]
     ///   - HUD con misiones, indicadores y menú.
+    ///   - Cámara adaptativa que llena la pantalla al 100% sin bordes vacíos.
     /// Menú: Tools > Kimaya > 🏡 [3] Construir Hub 2D de Kimaya (Falin y Mia)
     /// </summary>
     [InitializeOnLoad]
@@ -28,7 +29,7 @@ namespace Platformer.EditorTools
         public const string HUB_SCENE_PATH = "Assets/Scenes/Hub.unity";
         public const string MAIN_MENU_SCENE_PATH = "Assets/Scenes/MainMenu.unity";
         public const string JUMP_KING_SCENE_PATH = "Assets/Scenes/Ascenso_Vertical.unity";
-        private const string BUILD_KEY = "KimayaHub_Clearing_v4";
+        private const string BUILD_KEY = "KimayaHub_Clearing_v5";
 
         private const string HUB_MAP_IMAGE_PATH = "Assets/Sprites/Hub/Forest_Hub_Clearing_3Portals.png";
         private const string PIXELLAB_PATH = "Assets/Sprites/PixelLab";
@@ -42,7 +43,7 @@ namespace Platformer.EditorTools
         {
             if (!EditorPrefs.GetBool(BUILD_KEY, false))
             {
-                Debug.Log("[KimayaHubBuilder] 🚀 Ejecutando AutoBuildCheck v4 para Hub de 3 Portales...");
+                Debug.Log("[KimayaHubBuilder] 🚀 Ejecutando AutoBuildCheck v5 para Hub de 3 Portales...");
                 BuildKimayaHub(false);
                 EditorPrefs.SetBool(BUILD_KEY, true);
             }
@@ -56,7 +57,7 @@ namespace Platformer.EditorTools
 
         public static void BuildKimayaHub(bool showDialog)
         {
-            Debug.Log("[KimayaHubBuilder] 🔨 Construyendo Hub del Claro del Bosque con 3 Portales...");
+            Debug.Log("[KimayaHubBuilder] 🔨 Construyendo Hub del Claro del Bosque con 3 Portales (v5)...");
 
             // 1. Asegurar importación del sprite del Hub
             EnsureSpriteImport(HUB_MAP_IMAGE_PATH, 32);
@@ -64,9 +65,10 @@ namespace Platformer.EditorTools
             // 2. Crear nueva escena limpia
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
 
-            // 3. Fondo: Claro del Bosque Ancestral (480x320 px a PPU 32 = 15m x 10m)
+            // 3. Fondo: Claro del Bosque Ancestral escalado a 1.22x para cubrir 100% de la pantalla
             var mapGO = new GameObject("Forest_Hub_Background");
             mapGO.transform.position = Vector3.zero;
+            mapGO.transform.localScale = new Vector3(1.22f, 1.22f, 1.0f);
             var mapSR = mapGO.AddComponent<SpriteRenderer>();
             mapSR.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(HUB_MAP_IMAGE_PATH);
             mapSR.sortingOrder = -500;
@@ -77,51 +79,51 @@ namespace Platformer.EditorTools
             collidersRB.bodyType = RigidbodyType2D.Static;
 
             // --- Acantilados Izquierdos (Rocas de la montaña) ---
-            CreateBoxCol(collidersRoot, "Cliff_Left_Top", new Vector2(-5.8f, 2.7f), new Vector2(3.5f, 5.0f));
-            CreateBoxCol(collidersRoot, "Cliff_Left_Mid", new Vector2(-6.3f, -0.6f), new Vector2(2.6f, 3.2f));
-            CreateBoxCol(collidersRoot, "Cliff_Left_Bottom", new Vector2(-5.2f, -3.8f), new Vector2(4.2f, 3.5f));
+            CreateBoxCol(collidersRoot, "Cliff_Left_Top", new Vector2(-7.1f, 3.3f), new Vector2(4.5f, 6.0f));
+            CreateBoxCol(collidersRoot, "Cliff_Left_Mid", new Vector2(-7.7f, -0.7f), new Vector2(3.4f, 4.0f));
+            CreateBoxCol(collidersRoot, "Cliff_Left_Bottom", new Vector2(-6.3f, -4.6f), new Vector2(5.2f, 4.2f));
 
             // --- Acantilados Derechos (Rocas de la montaña) ---
-            CreateBoxCol(collidersRoot, "Cliff_Right_Top", new Vector2(5.8f, 2.7f), new Vector2(3.5f, 5.0f));
-            CreateBoxCol(collidersRoot, "Cliff_Right_Mid", new Vector2(6.3f, -0.6f), new Vector2(2.6f, 3.2f));
-            CreateBoxCol(collidersRoot, "Cliff_Right_Bottom", new Vector2(5.2f, -3.8f), new Vector2(4.2f, 3.5f));
+            CreateBoxCol(collidersRoot, "Cliff_Right_Top", new Vector2(7.1f, 3.3f), new Vector2(4.5f, 6.0f));
+            CreateBoxCol(collidersRoot, "Cliff_Right_Mid", new Vector2(7.7f, -0.7f), new Vector2(3.4f, 4.0f));
+            CreateBoxCol(collidersRoot, "Cliff_Right_Bottom", new Vector2(6.3f, -4.6f), new Vector2(5.2f, 4.2f));
 
             // --- Muro Superior y Bosque Alto (Entre y sobre los portales) ---
-            CreateBoxCol(collidersRoot, "Cliff_Top_LeftGap", new Vector2(-2.1f, 3.6f), new Vector2(2.6f, 2.8f));
-            CreateBoxCol(collidersRoot, "Cliff_Top_RightGap", new Vector2(2.1f, 3.6f), new Vector2(2.6f, 2.8f));
-            CreateBoxCol(collidersRoot, "Cliff_Top_Ceiling", new Vector2(0.0f, 4.4f), new Vector2(4.0f, 1.5f));
+            CreateBoxCol(collidersRoot, "Cliff_Top_LeftGap", new Vector2(-2.6f, 4.4f), new Vector2(3.3f, 3.4f));
+            CreateBoxCol(collidersRoot, "Cliff_Top_RightGap", new Vector2(2.6f, 4.4f), new Vector2(3.3f, 3.4f));
+            CreateBoxCol(collidersRoot, "Cliff_Top_Ceiling", new Vector2(0.0f, 5.3f), new Vector2(4.8f, 1.8f));
 
             // --- Límite Inferior (Salida del sendero) ---
-            CreateBoxCol(collidersRoot, "Path_Bottom_Fence", new Vector2(0.0f, -5.0f), new Vector2(16.0f, 1.2f));
+            CreateBoxCol(collidersRoot, "Path_Bottom_Fence", new Vector2(0.0f, -5.9f), new Vector2(20.0f, 1.5f));
 
             // --- Obstáculos en el Claro ---
-            CreateBoxCol(collidersRoot, "Pines_BottomLeft", new Vector2(-2.8f, -2.9f), new Vector2(1.8f, 1.8f));
-            CreateBoxCol(collidersRoot, "OakTree_BottomRight", new Vector2(3.3f, -2.5f), new Vector2(2.2f, 2.2f));
-            CreateBoxCol(collidersRoot, "RockBush_TopRight", new Vector2(1.9f, 1.3f), new Vector2(1.2f, 0.8f));
-            CreateBoxCol(collidersRoot, "Log_CenterLeft", new Vector2(-2.2f, -1.2f), new Vector2(1.1f, 0.6f));
+            CreateBoxCol(collidersRoot, "Pines_BottomLeft", new Vector2(-3.4f, -3.5f), new Vector2(2.2f, 2.2f));
+            CreateBoxCol(collidersRoot, "OakTree_BottomRight", new Vector2(4.0f, -3.0f), new Vector2(2.7f, 2.7f));
+            CreateBoxCol(collidersRoot, "RockBush_TopRight", new Vector2(2.3f, 1.6f), new Vector2(1.5f, 1.0f));
+            CreateBoxCol(collidersRoot, "Log_CenterLeft", new Vector2(-2.7f, -1.5f), new Vector2(1.4f, 0.8f));
 
             // --- Columnas y Cornisas de Piedra de los 3 Portales ---
-            // Portal Verde (Izquierda: X=-4.05, Y=0.75)
-            CreateBoxCol(collidersRoot, "P1_Post_L", new Vector2(-4.75f, 0.8f), new Vector2(0.45f, 1.4f));
-            CreateBoxCol(collidersRoot, "P1_Post_R", new Vector2(-3.35f, 0.8f), new Vector2(0.45f, 1.4f));
-            CreateBoxCol(collidersRoot, "P1_Arch", new Vector2(-4.05f, 1.8f), new Vector2(1.8f, 0.5f));
+            // Portal Verde (Izquierda: X=-4.94, Y=0.91)
+            CreateBoxCol(collidersRoot, "P1_Post_L", new Vector2(-5.80f, 0.98f), new Vector2(0.55f, 1.7f));
+            CreateBoxCol(collidersRoot, "P1_Post_R", new Vector2(-4.08f, 0.98f), new Vector2(0.55f, 1.7f));
+            CreateBoxCol(collidersRoot, "P1_Arch", new Vector2(-4.94f, 2.20f), new Vector2(2.2f, 0.6f));
 
-            // Portal Azul (Centro: X=0.0, Y=2.85)
-            CreateBoxCol(collidersRoot, "P2_Post_L", new Vector2(-0.85f, 2.9f), new Vector2(0.45f, 1.4f));
-            CreateBoxCol(collidersRoot, "P2_Post_R", new Vector2(0.85f, 2.9f), new Vector2(0.45f, 1.4f));
-            CreateBoxCol(collidersRoot, "P2_Arch", new Vector2(0.0f, 3.85f), new Vector2(1.8f, 0.5f));
+            // Portal Azul (Centro: X=0.0, Y=3.48)
+            CreateBoxCol(collidersRoot, "P2_Post_L", new Vector2(-1.04f, 3.54f), new Vector2(0.55f, 1.7f));
+            CreateBoxCol(collidersRoot, "P2_Post_R", new Vector2(1.04f, 3.54f), new Vector2(0.55f, 1.7f));
+            CreateBoxCol(collidersRoot, "P2_Arch", new Vector2(0.0f, 4.70f), new Vector2(2.2f, 0.6f));
 
-            // Portal Violeta (Derecha: X=4.05, Y=0.75)
-            CreateBoxCol(collidersRoot, "P3_Post_L", new Vector2(3.35f, 0.8f), new Vector2(0.45f, 1.4f));
-            CreateBoxCol(collidersRoot, "P3_Post_R", new Vector2(4.75f, 0.8f), new Vector2(0.45f, 1.4f));
-            CreateBoxCol(collidersRoot, "P3_Arch", new Vector2(4.05f, 1.8f), new Vector2(1.8f, 0.5f));
+            // Portal Violeta (Derecha: X=4.94, Y=0.91)
+            CreateBoxCol(collidersRoot, "P3_Post_L", new Vector2(4.08f, 0.98f), new Vector2(0.55f, 1.7f));
+            CreateBoxCol(collidersRoot, "P3_Post_R", new Vector2(5.80f, 0.98f), new Vector2(0.55f, 1.7f));
+            CreateBoxCol(collidersRoot, "P3_Arch", new Vector2(4.94f, 2.20f), new Vector2(2.2f, 0.6f));
 
             // 5. LOS 3 PORTALES MÍSTICOS (Triggers & Lógica)
             var portalsRoot = new GameObject("[Portales_Mision]");
 
             // Portal 1: Verde (Nivel 1 - Ascenso Vertical Jump King) -> ¡ACTIVO!
             CreatePortalTrigger(portalsRoot, "Portal_01_Verde_Ascenso",
-                new Vector3(-4.05f, 0.75f, 0f),
+                new Vector3(-4.94f, 0.91f, 0f),
                 isLocked: false,
                 targetScene: "Ascenso_Vertical",
                 title: "Nivel 1: Ascenso Vertical Ancestral",
@@ -130,7 +132,7 @@ namespace Platformer.EditorTools
 
             // Portal 2: Azul (Nivel 2) -> ¡DESACTIVADO!
             CreatePortalTrigger(portalsRoot, "Portal_02_Azul_Cuevas",
-                new Vector3(0.0f, 2.85f, 0f),
+                new Vector3(0.0f, 3.48f, 0f),
                 isLocked: true,
                 targetScene: "Level_02",
                 title: "Nivel 2: Cuevas del Zarzal",
@@ -139,7 +141,7 @@ namespace Platformer.EditorTools
 
             // Portal 3: Púrpura (Nivel 3) -> ¡DESACTIVADO!
             CreatePortalTrigger(portalsRoot, "Portal_03_Purpura_Altar",
-                new Vector3(4.05f, 0.75f, 0f),
+                new Vector3(4.94f, 0.91f, 0f),
                 isLocked: true,
                 targetScene: "Level_03",
                 title: "Nivel 3: Altar de Fuego",
@@ -158,7 +160,7 @@ namespace Platformer.EditorTools
             // --- FALIN (San Bernardo) ---
             var falinGO = new GameObject("Falin_SanBernardo");
             falinGO.tag = "Player";
-            falinGO.transform.position = new Vector3(-0.6f, -0.9f, 0f);
+            falinGO.transform.position = new Vector3(-0.75f, -1.10f, 0f);
 
             var falinSR = falinGO.AddComponent<SpriteRenderer>();
             falinSR.sprite = LoadSprite($"{PIXELLAB_PATH}/Falin/Idle/rotations/south.png");
@@ -181,7 +183,7 @@ namespace Platformer.EditorTools
             // --- MIA (Schnauzer) ---
             var miaGO = new GameObject("Mia_Schnauzer");
             miaGO.tag = "Player";
-            miaGO.transform.position = new Vector3(0.6f, -0.9f, 0f);
+            miaGO.transform.position = new Vector3(0.75f, -1.10f, 0f);
 
             var miaSR = miaGO.AddComponent<SpriteRenderer>();
             miaSR.sprite = LoadSprite($"{PIXELLAB_PATH}/Mia/Idle/rotations/south.png");
@@ -198,24 +200,26 @@ namespace Platformer.EditorTools
 
             CreateSelectionMarker(miaGO, new Color(0.3f, 0.85f, 1f, 0.55f));
 
+            // Ignorar colisiones mutuas entre ambos perros para que nunca se bloqueen al seguirse
+            Physics2D.IgnoreCollision(falinCol, miaCol, true);
+
             duoController.miaObject = miaGO;
             duoController.miaSprites = BuildDogSpriteSet("Mia", $"{PIXELLAB_PATH}/Mia");
 
-            // 7. CÁMARA
+            // 7. CÁMARA (Encuadre perfecto y dinámico)
             var camGO = new GameObject("Main Camera");
             camGO.tag = "MainCamera";
             camGO.transform.position = new Vector3(0f, 0f, -10f);
             var cam = camGO.AddComponent<Camera>();
             cam.orthographic = true;
-            cam.orthographicSize = 5.0f; // Encuadre completo perfecto para 15x10 m
+            cam.orthographicSize = 4.6f; // Altura 9.2m, Ancho 16:9 = 16.35m (cubierto al 100% por el mapa de 18.3m)
             cam.clearFlags = CameraClearFlags.SolidColor;
-            cam.backgroundColor = new Color(0.08f, 0.14f, 0.10f);
+            cam.backgroundColor = new Color(0.09f, 0.10f, 0.13f); // Fondo roca oscura profunda
             camGO.AddComponent<AudioListener>();
 
             var camFollow = camGO.AddComponent<KimayaHubCameraFollow>();
-            camFollow.minBounds = new Vector2(-1.5f, -1.0f);
-            camFollow.maxBounds = new Vector2(1.5f, 1.0f);
-            camFollow.smoothSpeed = 5.0f;
+            camFollow.mapRenderer = mapSR;
+            camFollow.smoothSpeed = 5.5f;
 
             // 8. SETUP GENERAL Y HUD
             var setupGO = new GameObject("[GameSetup]");
@@ -227,16 +231,16 @@ namespace Platformer.EditorTools
             EditorSceneManager.SaveScene(scene, HUB_SCENE_PATH);
             UpdateBuildSettings();
 
-            Debug.Log($"[KimayaHubBuilder] ✅ Hub de Kimaya creado exitosamente en: {HUB_SCENE_PATH}");
+            Debug.Log($"[KimayaHubBuilder] ✅ Hub de Kimaya v5 creado exitosamente en: {HUB_SCENE_PATH}");
 
             if (showDialog)
             {
                 EditorUtility.DisplayDialog("Hub de Kimaya Creado",
-                    "¡El Hub del Claro del Bosque ha sido generado exitosamente!\n\n" +
-                    "• Fondo 2D PixelLab con los 3 portales y círculo rúnico.\n" +
-                    "• Portal 1 (Verde): ACTIVO hacia Ascenso Vertical.\n" +
-                    "• Portal 2 y 3: DESACTIVADOS con aviso.\n" +
-                    "• Colisiones precisas para caminar libremente en todo el claro.", "Aceptar");
+                    "¡El Hub del Claro del Bosque ha sido regenerado!\n\n" +
+                    "• Imagen 100% ajustada sin bordes verdes vacíos.\n" +
+                    "• Sistema de compañero recíproco activo (Falin te sigue si usas a Mía, Mía te sigue si usas a Falin).\n" +
+                    "• Controles con WASD / Flechas / Shift / TAB.\n" +
+                    "• Portal Verde (Izquierdo) ACTIVO hacia Ascenso Vertical.", "Aceptar");
             }
         }
 
@@ -258,7 +262,7 @@ namespace Platformer.EditorTools
 
             var col = go.AddComponent<BoxCollider2D>();
             col.isTrigger = true;
-            col.size = new Vector2(1.3f, 1.6f);
+            col.size = new Vector2(1.5f, 1.8f);
 
             var portal = go.AddComponent<KimayaHubPortal>();
             portal.isLocked = isLocked;
@@ -268,12 +272,12 @@ namespace Platformer.EditorTools
             portal.lockedTitle = title;
             portal.lockedReason = lore;
             portal.runeGlowColor = glowColor;
-            portal.interactionRadius = 2.0f;
+            portal.interactionRadius = 2.2f;
         }
 
         private static void CreateSelectionMarker(GameObject dogGO, Color markerColor)
         {
-            var markerGO = new GameObject("Selection_Marker");
+            var markerGO = new GameObject("ActiveMarker");
             markerGO.transform.SetParent(dogGO.transform, false);
             markerGO.transform.localPosition = new Vector3(0f, -0.32f, 0f);
 
