@@ -69,13 +69,13 @@ namespace Platformer.EditorTools
 
             // 2. Jugador (Falin / Mía)
             GameObject playerGo = new GameObject("Player_JumpKing");
-            playerGo.transform.position = new Vector3(0f, 0.8f, 0f);
+            playerGo.transform.position = new Vector3(0f, 2.2f, 0f);
 
             var sr = playerGo.AddComponent<SpriteRenderer>();
             sr.sprite = falinSprite != null ? falinSprite : miaSprite;
-            sr.sortingOrder = 10;
+            sr.sortingOrder = 20;
 
-            var rb = playerGo.GetComponent<Rigidbody2D>(); // Ya requerido o añadido por el script
+            var rb = playerGo.GetComponent<Rigidbody2D>();
             if (rb == null) rb = playerGo.AddComponent<Rigidbody2D>();
             rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
             rb.freezeRotation = true;
@@ -84,14 +84,8 @@ namespace Platformer.EditorTools
             col.size = new Vector2(0.8f, 0.9f);
             col.offset = new Vector2(0f, 0.45f);
 
-            var groundCheckGo = new GameObject("GroundCheck");
-            groundCheckGo.transform.SetParent(playerGo.transform);
-            groundCheckGo.transform.localPosition = new Vector3(0f, 0.05f, 0f);
-
             var jumpCtrl = playerGo.AddComponent<KimayaJumpKingController>();
             jumpCtrl.spriteRenderer = sr;
-            jumpCtrl.groundCheck = groundCheckGo.transform;
-            jumpCtrl.groundLayer = groundMask;
             jumpCtrl.character = KimayaJumpKingController.CharacterType.Falin;
 
             // 3. Cámara Jump King
@@ -100,7 +94,7 @@ namespace Platformer.EditorTools
             var cam = camGo.AddComponent<Camera>();
             cam.orthographic = true;
             cam.orthographicSize = 5f; // Altura visible = 10 unidades
-            cam.backgroundColor = new Color(0.08f, 0.12f, 0.18f); // Fondo azul noche atmosférico
+            cam.backgroundColor = new Color(0.08f, 0.12f, 0.18f);
             cam.clearFlags = CameraClearFlags.SolidColor;
             camGo.transform.position = new Vector3(0f, 5f, -10f);
 
@@ -109,30 +103,26 @@ namespace Platformer.EditorTools
             screenCam.screenHeight = 10f;
             screenCam.screenWidth = 16f;
             screenCam.baseWorldY = 0f;
-            screenCam.transitionSpeed = 12f;
+            screenCam.transitionSpeed = 14f;
 
             camGo.AddComponent<AudioListener>();
 
             // 4. Estructura de Paredes Verticales (Límites)
             GameObject wallsRoot = new GameObject("BoundaryWalls");
-            // Pared izquierda
             CreateWall(wallsRoot.transform, -8.2f, 40f, 0.8f, 85f, groundLayer);
-            // Pared derecha
             CreateWall(wallsRoot.transform, 8.2f, 40f, 0.8f, 85f, groundLayer);
-            // Suelo del fondo
-            CreateWall(wallsRoot.transform, 0f, -0.5f, 18f, 1f, groundLayer);
-            // Techo de la cima
+            CreateWall(wallsRoot.transform, 0f, 0.2f, 18f, 1f, groundLayer);
             CreateWall(wallsRoot.transform, 0f, 82f, 18f, 1f, groundLayer);
 
             // 5. Generar Plataformas por Pantallas (8 Pantallas)
             GameObject platformsRoot = new GameObject("Platforms");
 
             // --- Pantalla 0: Base del Bosque (Y: 0 a 10) ---
-            CreatePlatform(platformsRoot.transform, 0f, 0.1f, 16f, 0.6f, platSprite, groundLayer, "Piso_0_Suelo");
-            CreatePlatform(platformsRoot.transform, -3.5f, 2.5f, 3.5f, 0.5f, platSprite, groundLayer, "P0_Plat_1");
-            CreatePlatform(platformsRoot.transform, 3.5f, 5.0f, 3.5f, 0.5f, platSprite, groundLayer, "P0_Plat_2");
-            CreatePlatform(platformsRoot.transform, -2.0f, 7.5f, 3.0f, 0.5f, platSprite, groundLayer, "P0_Plat_3");
-            CreatePlatform(platformsRoot.transform, 2.5f, 9.8f, 2.6f, 0.5f, platSprite, groundLayer, "P0_Plat_4_Salida");
+            CreatePlatform(platformsRoot.transform, 0f, 1.0f, 16f, 1.0f, platSprite, groundLayer, "Piso_0_Suelo");
+            CreatePlatform(platformsRoot.transform, -3.5f, 3.8f, 3.5f, 0.6f, platSprite, groundLayer, "P0_Plat_1");
+            CreatePlatform(platformsRoot.transform, 3.5f, 6.0f, 3.5f, 0.6f, platSprite, groundLayer, "P0_Plat_2");
+            CreatePlatform(platformsRoot.transform, -2.0f, 8.2f, 3.0f, 0.6f, platSprite, groundLayer, "P0_Plat_3");
+            CreatePlatform(platformsRoot.transform, 2.5f, 9.9f, 2.6f, 0.6f, platSprite, groundLayer, "P0_Plat_4_Salida");
 
             // --- Pantalla 1: Peñascos del Zarzal (Y: 10 a 20) ---
             CreatePlatform(platformsRoot.transform, -4.5f, 12.2f, 2.8f, 0.5f, platSprite, groundLayer, "P1_Plat_1");
@@ -198,47 +188,45 @@ namespace Platformer.EditorTools
             manager.miaSprite = miaSprite;
             manager.finalScreenIndex = 7;
 
-            // Panel Superior HUD
-            GameObject topHud = CreateUIPanel(canvasGo.transform, "TopHUD", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0, -40), new Vector2(900, 70));
+            // Panel Superior HUD (Banner superior elegante de 1400 px de ancho)
+            GameObject topHud = CreateUIPanel(canvasGo.transform, "TopHUD", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0, -45), new Vector2(1400, 65));
             var topBg = topHud.AddComponent<Image>();
-            topBg.color = new Color(0.05f, 0.08f, 0.15f, 0.85f);
+            topBg.color = new Color(0.04f, 0.07f, 0.14f, 0.90f);
 
-            // Texto Piso
-            manager.screenText = CreateUIText(topHud.transform, "Txt_Piso", "Piso 1 / 8: Base del Bosque", 26, TextAnchor.MiddleLeft, new Vector2(30, 0), new Vector2(350, 50));
-            manager.screenText.color = new Color(1f, 0.9f, 0.4f);
+            // Texto Piso (Izquierda)
+            manager.screenText = CreateUIText(topHud.transform, "Txt_Piso", "Piso 1 / 8: Base del Bosque", 24, TextAnchor.MiddleLeft, new Vector2(-480, 0), new Vector2(360, 50));
+            manager.screenText.color = new Color(1f, 0.9f, 0.35f);
 
-            // Texto Personaje
-            manager.characterNameText = CreateUIText(topHud.transform, "Txt_Char", "🐾 Falin (Fuerza)", 24, TextAnchor.MiddleCenter, new Vector2(0, 0), new Vector2(300, 50));
+            // Texto Personaje (Centro)
+            manager.characterNameText = CreateUIText(topHud.transform, "Txt_Char", "🐾 Falin (Fuerza) | [TAB] Mía", 23, TextAnchor.MiddleCenter, new Vector2(0, 0), new Vector2(380, 50));
             manager.characterNameText.color = new Color(1f, 0.75f, 0.2f);
 
-            // Texto Stats
-            manager.statsText = CreateUIText(topHud.transform, "Txt_Stats", "⏱️ 00:00 | 🦘 Saltos: 0 | 💥 Caídas: 0", 22, TextAnchor.MiddleRight, new Vector2(-30, 0), new Vector2(400, 50));
+            // Texto Stats (Derecha)
+            manager.statsText = CreateUIText(topHud.transform, "Txt_Stats", "⏱️ 00:00  |  🦘 Saltos: 0  |  💥 Caídas: 0", 22, TextAnchor.MiddleRight, new Vector2(460, 0), new Vector2(420, 50));
             manager.statsText.color = Color.white;
 
             // Barra de Carga de Salto (Inferior)
-            GameObject chargeBarGo = CreateUIPanel(canvasGo.transform, "ChargeBar_Panel", new Vector2(0.5f, 0.12f), new Vector2(0.5f, 0.12f), Vector2.zero, new Vector2(400, 30));
+            GameObject chargeBarGo = CreateUIPanel(canvasGo.transform, "ChargeBar_Panel", new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0, 58), new Vector2(440, 24));
             var slider = chargeBarGo.AddComponent<Slider>();
             slider.minValue = 0f;
             slider.maxValue = 1f;
             slider.value = 0f;
             manager.chargeSlider = slider;
 
-            // Fondo de la barra
             var barBg = chargeBarGo.AddComponent<Image>();
-            barBg.color = new Color(0.1f, 0.1f, 0.15f, 0.9f);
+            barBg.color = new Color(0.08f, 0.08f, 0.12f, 0.9f);
 
-            // Relleno de la barra
             GameObject fillGo = CreateUIPanel(chargeBarGo.transform, "Fill", new Vector2(0f, 0f), new Vector2(1f, 1f), Vector2.zero, Vector2.zero);
             var fillImg = fillGo.AddComponent<Image>();
             fillImg.color = new Color(0.2f, 0.9f, 0.3f);
             slider.fillRect = fillGo.GetComponent<RectTransform>();
             manager.chargeFillImage = fillImg;
 
-            // Texto de Ayuda / Controles (Inferior)
-            Text controlsText = CreateUIText(canvasGo.transform, "Txt_Controls", "Mantén [ESPACIO] para cargar salto • [A/D] o Flechas dirección • [TAB] Cambiar entre Falin y Mía", 20, TextAnchor.MiddleCenter, new Vector2(0, 45), new Vector2(1000, 35));
+            // Texto de Ayuda / Controles (En la franja inferior fija)
+            Text controlsText = CreateUIText(canvasGo.transform, "Txt_Controls", "Mantén [ESPACIO] para cargar salto • [A / D] o Flechas dirección • [TAB] Alternar Falin / Mía", 18, TextAnchor.MiddleCenter, new Vector2(0, 22), new Vector2(1100, 28));
             controlsText.rectTransform.anchorMin = new Vector2(0.5f, 0f);
             controlsText.rectTransform.anchorMax = new Vector2(0.5f, 0f);
-            controlsText.color = new Color(0.8f, 0.85f, 0.9f, 0.9f);
+            controlsText.color = new Color(0.75f, 0.85f, 0.95f, 0.85f);
 
             // Badge de Aturdimiento
             GameObject stunnedGo = CreateUIPanel(canvasGo.transform, "StunnedBadge", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, -50), new Vector2(300, 60));

@@ -1,13 +1,17 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 namespace Kimaya
 {
     /// <summary>
     /// Administrador de la partida en el modo Jump King de Kimaya.
-    /// - Alterna entre Falin y Mía al presionar TAB.
+    /// - Alterna entre Falin y Mía al presionar TAB o Q (con soporte universal para Input System).
     /// - Gestiona la UI de carga de salto, pantalla actual, saltos y caídas.
+    /// - Desactiva HUDs residuales de otras escenas.
     /// - Dispara la victoria al llegar a la cima.
     /// </summary>
     public class KimayaJumpKingManager : MonoBehaviour
@@ -34,7 +38,7 @@ namespace Kimaya
         public GameObject victoryPanel;
 
         [Header("Meta / Rescate")]
-        public int finalScreenIndex = 8;
+        public int finalScreenIndex = 7;
         public string rescuedCharacterName = "Kiara";
 
         private float _sessionTimer = 0f;
@@ -48,6 +52,9 @@ namespace Kimaya
 
         private void Start()
         {
+            // Ocultar cualquier HUD heredado de niveles anteriores
+            HideLegacyHUDs();
+
             if (playerController == null)
             {
                 playerController = FindFirstObjectByType<KimayaJumpKingController>();
@@ -64,20 +71,51 @@ namespace Kimaya
             UpdateCharacterUI();
         }
 
+        private void HideLegacyHUDs()
+        {
+            string[] legacyNames = new string[] { "HUD", "GameHUD", "Canvas_HUD", "MetaGameController", "TokenHUD" };
+            foreach (var n in legacyNames)
+            {
+                var go = GameObject.Find(n);
+                if (go != null && go != gameObject && !go.transform.IsChildOf(transform))
+                {
+                    go.SetActive(false);
+                }
+            }
+        }
+
         private void Update()
         {
             if (_hasWon) return;
 
             _sessionTimer += Time.deltaTime;
 
-            // Cambiar de personaje con TAB o Q
-            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Q))
+            // Cambiar de personaje con TAB o Q (Input System universal)
+            if (ReadTabOrQ())
             {
                 SwitchCharacter();
             }
 
             UpdateHUD();
             CheckVictory();
+        }
+
+        private bool ReadTabOrQ()
+        {
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null)
+            {
+                if (Keyboard.current.tabKey.wasPressedThisFrame || Keyboard.current.qKey.wasPressedThisFrame)
+                    return true;
+            }
+#endif
+            try
+            {
+                if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Q))
+                    return true;
+            }
+            catch { }
+            return false;
         }
 
         public void SwitchCharacter()
@@ -127,7 +165,6 @@ namespace Kimaya
 
                 if (chargeFillImage != null)
                 {
-                    // Transición de verde a rojo según la carga
                     chargeFillImage.color = Color.Lerp(new Color(0.2f, 0.9f, 0.3f), new Color(1f, 0.2f, 0.2f), playerController.ChargePercent);
                 }
             }
