@@ -500,12 +500,16 @@ namespace Kimaya
         {
             if (falinObject != null)
             {
-                var marker = falinObject.transform.Find("ActiveMarker") ?? falinObject.transform.Find("Selection_Marker");
+                var marker = falinObject.transform.Find("DiamondMarker") 
+                          ?? falinObject.transform.Find("ActiveMarker") 
+                          ?? falinObject.transform.Find("Selection_Marker");
                 if (marker != null) marker.gameObject.SetActive(isFalinActive);
             }
             if (miaObject != null)
             {
-                var marker = miaObject.transform.Find("ActiveMarker") ?? miaObject.transform.Find("Selection_Marker");
+                var marker = miaObject.transform.Find("DiamondMarker") 
+                          ?? miaObject.transform.Find("ActiveMarker") 
+                          ?? miaObject.transform.Find("Selection_Marker");
                 if (marker != null) marker.gameObject.SetActive(!isFalinActive);
             }
         }
