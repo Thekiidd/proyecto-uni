@@ -5,58 +5,100 @@ using UnityEngine.SceneManagement;
 namespace Kimaya
 {
     /// <summary>
-    /// Portal Místico en la Aldea Hub hacia Level_01_Bosque (Misión del Templo).
-    /// Muestra un resplandor pulsante y detecta la interacción con [E].
+    /// Portal Místico en la Aldea Hub de Kimaya.
+    /// Soporta portales activos y bloqueados (desactivados) con indicadores visuales y sonoros.
     /// </summary>
     public class KimayaHubPortal : MonoBehaviour
     {
-        [Header("Destino")]
-        public string targetSceneName = "Level_01_Bosque";
-        public string destinationTitle = "Templo del Bosque (Nivel 1)";
-        public string questLore = "Rescatar a Kiara - Puzle Cooperativo";
+        [Header("Estado del Portal")]
+        public bool isLocked = false;
+        public string lockedTitle = "🔒 Portal Desactivado";
+        public string lockedReason = "Canalización inactiva. Completa el Nivel 1 (Ascenso Vertical) primero.";
 
-        [Header("Configuración")]
-        public float interactionRadius = 2.4f;
-        public Color runeGlowColor = new Color(0.2f, 0.9f, 0.6f, 0.85f);
+        [Header("Destino (si está activo)")]
+        public string targetSceneName = "Ascenso_Vertical";
+        public string destinationTitle = "Ascenso Vertical Ancestral (Nivel 1)";
+        public string questLore = "El Gran Salto hacia la Cima - Modo Jump King";
 
-        private SpriteRenderer spriteRenderer;
-        private bool isPlayerNearby = false;
-        private Camera mainCam;
-        private static GUIStyle bannerStyle;
-        private static Texture2D bgTex;
+        [Header("Configuración de Interacción")]
+        public float interactionRadius = 2.0f;
+        public Color runeGlowColor = new Color(0.2f, 0.95f, 0.45f, 0.9f);
+        public Color lockedGlowColor = new Color(0.85f, 0.25f, 0.25f, 0.6f);
+
+        private SpriteRenderer _spriteRenderer;
+        private bool _isPlayerNearby = false;
+        private Camera _mainCam;
+
+        private static GUIStyle _activeBannerStyle;
+        private static GUIStyle _lockedBannerStyle;
+        private static Texture2D _activeBgTex;
+        private static Texture2D _lockedBgTex;
 
         private void Start()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            mainCam = Camera.main;
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _mainCam = Camera.main;
         }
 
         private void Update()
         {
-            if (KimayaHubDuoController.Instance == null) return;
-
-            Transform activeDog = KimayaHubDuoController.Instance.GetActiveTransform();
-            if (activeDog == null) return;
-
-            float dist = Vector2.Distance(transform.position, activeDog.position);
-            isPlayerNearby = (dist <= interactionRadius);
-
-            // Efecto de pulso en el portal
-            if (spriteRenderer != null)
+            Transform activeDog = null;
+            if (KimayaHubDuoController.Instance != null)
             {
-                float pulse = 0.85f + 0.15f * Mathf.Sin(Time.time * 3.5f);
-                spriteRenderer.color = isPlayerNearby 
-                    ? new Color(runeGlowColor.r * pulse, runeGlowColor.g * pulse, runeGlowColor.b * pulse, 1f)
-                    : Color.white;
+                activeDog = KimayaHubDuoController.Instance.GetActiveTransform();
             }
 
-            if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
+            if (activeDog == null)
+            {
+                // Fallback por si acaso
+                GameObject p = GameObject.FindWithTag("Player");
+                if (p != null) activeDog = p.transform;
+            }
+
+            if (activeDog != null)
+            {
+                float dist = Vector2.Distance(transform.position, activeDog.position);
+                _isPlayerNearby = (dist <= interactionRadius);
+            }
+            else
+            {
+                _isPlayerNearby = false;
+            }
+
+            // Efecto de pulso en el portal si tiene sprite propio
+            if (_spriteRenderer != null)
+            {
+                if (isLocked)
+                {
+                    _spriteRenderer.color = lockedGlowColor;
+                }
+                else
+                {
+                    float pulse = 0.82f + 0.18f * Mathf.Sin(Time.time * 3.5f);
+                    _spriteRenderer.color = _isPlayerNearby
+                        ? new Color(runeGlowColor.r * pulse, runeGlowColor.g * pulse, runeGlowColor.b * pulse, 1f)
+                        : runeGlowColor;
+                }
+            }
+
+            if (_isPlayerNearby && Input.GetKeyDown(KeyCode.E))
+            {
+                if (!isLocked)
+                {
+                    EnterPortal();
+                }
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player") && !isLocked)
             {
                 EnterPortal();
             }
         }
 
-        private void EnterPortal()
+        public void EnterPortal()
         {
             Debug.Log($"[KimayaHubPortal] Entrando al portal hacia: {targetSceneName}");
             if (Application.CanStreamedLevelBeLoaded(targetSceneName))
@@ -65,47 +107,79 @@ namespace Kimaya
             }
             else
             {
-                Debug.LogWarning($"La escena {targetSceneName} no está en Build Settings. Intentando cargar por nombre directo...");
+                Debug.LogWarning($"La escena {targetSceneName} no está cargable en Build Settings. Intentando cargar por nombre directo...");
                 SceneManager.LoadScene(targetSceneName);
             }
         }
 
         private void OnGUI()
         {
-            if (!isPlayerNearby) return;
-            if (mainCam == null) mainCam = Camera.main;
-            if (mainCam == null) return;
+            if (!_isPlayerNearby) return;
+            if (_mainCam == null) _mainCam = Camera.main;
+            if (_mainCam == null) return;
 
-            Vector3 screenPos = mainCam.WorldToScreenPoint(transform.position + Vector3.up * 1.6f);
+            Vector3 screenPos = _mainCam.WorldToScreenPoint(transform.position + Vector3.up * 1.5f);
             if (screenPos.z < 0) return;
 
-            if (bannerStyle == null)
-            {
-                bgTex = new Texture2D(1, 1);
-                bgTex.SetPixel(0, 0, new Color(0.08f, 0.28f, 0.18f, 0.95f));
-                bgTex.Apply();
+            InitStyles();
 
-                bannerStyle = new GUIStyle();
-                bannerStyle.normal.background = bgTex;
-                bannerStyle.normal.textColor = Color.white;
-                bannerStyle.fontSize = 15;
-                bannerStyle.fontStyle = FontStyle.Bold;
-                bannerStyle.alignment = TextAnchor.MiddleCenter;
-                bannerStyle.padding = new RectOffset(10, 10, 6, 6);
-            }
-
-            string text = $"🌀 [E] Entrar al {destinationTitle}\n<size=12><color=#A8FFB2>{questLore}</color></size>";
-            float w = 340f;
-            float h = 48f;
+            float w = 400f;
+            float h = 60f;
             float x = screenPos.x - (w * 0.5f);
             float y = Screen.height - screenPos.y - h;
 
-            GUI.Box(new Rect(x, y, w, h), text, bannerStyle);
+            // Evitar salirse de los límites de pantalla
+            x = Mathf.Clamp(x, 20f, Screen.width - w - 20f);
+            y = Mathf.Clamp(y, 20f, Screen.height - h - 20f);
+
+            if (isLocked)
+            {
+                string text = $"<b>{lockedTitle}</b>\n<size=12><color=#FFB499>{lockedReason}</color></size>";
+                GUI.Box(new Rect(x, y, w, h), text, _lockedBannerStyle);
+            }
+            else
+            {
+                string text = $"<b>🌀 [E] Entrar al {destinationTitle}</b>\n<size=12><color=#A8FFB2>{questLore}</color></size>";
+                GUI.Box(new Rect(x, y, w, h), text, _activeBannerStyle);
+            }
+        }
+
+        private static void InitStyles()
+        {
+            if (_activeBannerStyle == null)
+            {
+                _activeBgTex = new Texture2D(1, 1);
+                _activeBgTex.SetPixel(0, 0, new Color(0.04f, 0.22f, 0.14f, 0.95f));
+                _activeBgTex.Apply();
+
+                _activeBannerStyle = new GUIStyle();
+                _activeBannerStyle.normal.background = _activeBgTex;
+                _activeBannerStyle.normal.textColor = Color.white;
+                _activeBannerStyle.fontSize = 14;
+                _activeBannerStyle.fontStyle = FontStyle.Normal;
+                _activeBannerStyle.alignment = TextAnchor.MiddleCenter;
+                _activeBannerStyle.padding = new RectOffset(12, 12, 6, 6);
+            }
+
+            if (_lockedBannerStyle == null)
+            {
+                _lockedBgTex = new Texture2D(1, 1);
+                _lockedBgTex.SetPixel(0, 0, new Color(0.28f, 0.08f, 0.08f, 0.95f));
+                _lockedBgTex.Apply();
+
+                _lockedBannerStyle = new GUIStyle();
+                _lockedBannerStyle.normal.background = _lockedBgTex;
+                _lockedBannerStyle.normal.textColor = Color.white;
+                _lockedBannerStyle.fontSize = 14;
+                _lockedBannerStyle.fontStyle = FontStyle.Normal;
+                _lockedBannerStyle.alignment = TextAnchor.MiddleCenter;
+                _lockedBannerStyle.padding = new RectOffset(12, 12, 6, 6);
+            }
         }
 
         private void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.cyan;
+            Gizmos.color = isLocked ? Color.red : Color.green;
             Gizmos.DrawWireSphere(transform.position, interactionRadius);
         }
     }

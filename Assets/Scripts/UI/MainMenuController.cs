@@ -113,9 +113,10 @@ namespace Platformer.UI
 
         private void StartStoryMode()
         {
-            Debug.Log("[MainMenu] Iniciando Modo Historia: Prólogo");
-            // Cargar escena de prólogo si existe, de lo contrario ir a VillageMap
-            if (Application.CanStreamedLevelBeLoaded("Prologue_Story"))
+            Debug.Log("[MainMenu] Iniciando Modo Historia: Hub de Kimaya");
+            if (Application.CanStreamedLevelBeLoaded("Hub"))
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
+            else if (Application.CanStreamedLevelBeLoaded("Prologue_Story"))
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Prologue_Story");
             else if (SceneLoader.Instance != null)
                 SceneLoader.Instance.LoadVillage();
@@ -132,11 +133,13 @@ namespace Platformer.UI
                 return;
             }
 
-            // Inicializar GameData con el personaje y cargar el primer nivel
+            // Inicializar GameData con el personaje y cargar el Hub
             if (GameData.Instance != null)
                 GameData.Instance.StartNewGame(selected);
 
-            if (SceneLoader.Instance != null)
+            if (Application.CanStreamedLevelBeLoaded("Hub"))
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
+            else if (SceneLoader.Instance != null)
                 SceneLoader.Instance.LoadVillage();
             else
                 UnityEngine.SceneManagement.SceneManager.LoadScene(GameData.VillageScene);

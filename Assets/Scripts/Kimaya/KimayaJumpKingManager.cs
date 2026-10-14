@@ -96,8 +96,49 @@ namespace Kimaya
                 SwitchCharacter();
             }
 
+            if (ReadEscapeKey())
+            {
+                ReturnToHub();
+            }
+
             UpdateHUD();
             CheckVictory();
+        }
+
+        private bool ReadEscapeKey()
+        {
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+                return true;
+#endif
+            try
+            {
+                if (Input.GetKeyDown(KeyCode.Escape))
+                    return true;
+            }
+            catch { }
+            return false;
+        }
+
+        public void ReturnToHub()
+        {
+            if (Application.CanStreamedLevelBeLoaded("Hub"))
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
+            else
+                UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        }
+
+        private void OnGUI()
+        {
+            float btnW = 120f;
+            float btnH = 32f;
+            float btnX = Screen.width - btnW - 16f;
+            float btnY = 16f;
+
+            if (GUI.Button(new Rect(btnX, btnY, btnW, btnH), "🏡 Volver al Hub"))
+            {
+                ReturnToHub();
+            }
         }
 
         private bool ReadTabOrQ()

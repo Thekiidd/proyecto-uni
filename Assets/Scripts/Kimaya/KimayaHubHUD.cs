@@ -52,7 +52,7 @@ namespace Kimaya
             float questY = 16f;
 
             GUI.Box(new Rect(questX, questY, questW, questH), GUIContent.none, cardStyle);
-            string questText = "🗺️ <b>Misión:</b> Rescata a Kiara en el Templo del Bosque (Oeste)";
+            string questText = "🗺️ <b>Misión:</b> Entra al Portal Verde (Nivel 1: Ascenso Vertical)";
             GUI.Label(new Rect(questX, questY + 10, questW, 22), questText, badgeStyle);
 
             // 3. Botón Superior Derecho: Menú Principal
