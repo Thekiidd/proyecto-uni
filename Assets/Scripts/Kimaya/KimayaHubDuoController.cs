@@ -10,10 +10,10 @@ namespace Kimaya
 {
     public enum DogDirection
     {
-        South, // Down (0)
-        North, // Up (1)
-        East,  // Right (2)
-        West   // Left (3)
+        South, // Abajo
+        North, // Arriba
+        East,  // Derecha
+        West   // Izquierda
     }
 
     public enum DogAnimState
@@ -101,11 +101,11 @@ namespace Kimaya
     }
 
     /// <summary>
-    /// Controlador principal para Falin y Mía en el Hub 2D de Kimaya.
-    /// Soporta New Input System y Legacy Input universalmente.
-    /// Sistema de Compañero Recíproco:
-    /// - Si controlas a Falin, Mía te sigue fielmente.
-    /// - Si alternas a Mía [TAB o Q], Falin te sigue a ti.
+    /// Controlador de dúo de perros en el Hub con:
+    /// - Soporte universal para New Input System y Legacy.
+    /// - Histéresis de dirección para evitar parpadeos y stutter en diagonales.
+    /// - Cambio limpio de estado de animación para evitar que se traben los sprites.
+    /// - Sistema de compañero recíproco fiel sin empujes ni colisiones mutuas.
     /// </summary>
     public class KimayaHubDuoController : MonoBehaviour
     {
@@ -119,7 +119,7 @@ namespace Kimaya
 
         [Header("Velocidad de Movimiento")]
         public float walkSpeed = 4.8f;
-        public float runSpeed = 7.5f;
+        public float runSpeed = 7.6f;
         public float companionFollowDistance = 1.35f;
 
         [Header("Estado")]
@@ -145,7 +145,7 @@ namespace Kimaya
         private bool _falinPerformingPower = false;
         private bool _miaPerformingPower = false;
 
-        public event Action<bool> OnDogSwitched; // true = Falin, false = Mia
+        public event Action<bool> OnDogSwitched;
 
         private void Awake()
         {
@@ -225,7 +225,7 @@ namespace Kimaya
             isFalinActive = !isFalinActive;
             UpdateActiveDogMarker();
             OnDogSwitched?.Invoke(isFalinActive);
-            Debug.Log($"[KimayaHubDuoController] Perro activo cambiado a: {(isFalinActive ? "Falin (San Bernardo)" : "Mía (Schnauzer)")}");
+            Debug.Log($"[KimayaHubDuoController] Líder cambiado a: {(isFalinActive ? "Falin" : "Mía")}");
         }
 
         private bool ReadSwitchInput()
@@ -291,6 +291,39 @@ namespace Kimaya
             return false;
         }
 
+        private void SetDogState(bool forFalin, DogAnimState newState)
+        {
+            ref DogAnimState state = ref (forFalin ? ref _falinState : ref _miaState);
+            ref int frame = ref (forFalin ? ref _falinFrame : ref _miaFrame);
+            ref float timer = ref (forFalin ? ref _falinTimer : ref _miaTimer);
+
+            if (state != newState)
+            {
+                state = newState;
+                frame = 0;
+                timer = 0f;
+            }
+        }
+
+        private DogDirection CalculateDirectionWithHysteresis(Vector2 input, DogDirection currentDir)
+        {
+            float absX = Mathf.Abs(input.x);
+            float absY = Mathf.Abs(input.y);
+
+            // Umbral de histéresis: solo cambiar eje si supera claramente al otro
+            if (absX > absY + 0.18f)
+            {
+                return input.x > 0 ? DogDirection.East : DogDirection.West;
+            }
+            if (absY > absX + 0.18f)
+            {
+                return input.y > 0 ? DogDirection.North : DogDirection.South;
+            }
+
+            // Diagonal equilibrada: mantener la dirección previa para evitar vibraciones
+            return currentDir;
+        }
+
         private void MoveActiveDog()
         {
             Vector2 input = ReadMovementInput();
@@ -298,7 +331,6 @@ namespace Kimaya
             float currentSpeed = isRunning ? runSpeed : walkSpeed;
 
             Rigidbody2D activeRb = isFalinActive ? _falinRb : _miaRb;
-            ref DogAnimState activeState = ref (isFalinActive ? ref _falinState : ref _miaState);
             ref DogDirection activeDir = ref (isFalinActive ? ref _falinDir : ref _miaDir);
             bool isPerforming = isFalinActive ? _falinPerformingPower : _miaPerformingPower;
 
@@ -313,32 +345,21 @@ namespace Kimaya
             if (input.sqrMagnitude > 0.01f)
             {
                 activeRb.linearVelocity = input * currentSpeed;
-                activeState = isRunning ? DogAnimState.Running : DogAnimState.Walking;
-
-                // Actualizar dirección cardinal predominante
-                if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
-                {
-                    activeDir = input.x > 0 ? DogDirection.East : DogDirection.West;
-                }
-                else
-                {
-                    activeDir = input.y > 0 ? DogDirection.North : DogDirection.South;
-                }
+                SetDogState(isFalinActive, isRunning ? DogAnimState.Running : DogAnimState.Walking);
+                activeDir = CalculateDirectionWithHysteresis(input, activeDir);
             }
             else
             {
                 activeRb.linearVelocity = Vector2.zero;
-                activeState = DogAnimState.Idle;
+                SetDogState(isFalinActive, DogAnimState.Idle);
             }
         }
 
         private void MoveCompanionDog()
         {
-            // El perro activo es el Líder, el inactivo es el Seguidor
             GameObject leader = isFalinActive ? falinObject : miaObject;
             GameObject follower = isFalinActive ? miaObject : falinObject;
             Rigidbody2D followerRb = isFalinActive ? _miaRb : _falinRb;
-            ref DogAnimState followerState = ref (isFalinActive ? ref _miaState : ref _falinState);
             ref DogDirection followerDir = ref (isFalinActive ? ref _miaDir : ref _falinDir);
             bool isPerforming = isFalinActive ? _miaPerformingPower : _falinPerformingPower;
 
@@ -358,29 +379,18 @@ namespace Kimaya
                 Vector2 dir = toLeader.normalized;
                 bool leaderRunning = (isFalinActive ? _falinState : _miaState) == DogAnimState.Running;
                 
-                // Si el líder corre o el compañero está lejos, corre más rápido para alcanzarlo
                 float followSpeed = (dist > companionFollowDistance * 2.2f || leaderRunning) 
                     ? runSpeed * 1.05f 
                     : walkSpeed;
 
                 followerRb.linearVelocity = dir * followSpeed;
-                followerState = (followSpeed >= runSpeed) ? DogAnimState.Running : DogAnimState.Walking;
-
-                // Dirección hacia la que mira el compañero al caminar/correr
-                if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
-                {
-                    followerDir = dir.x > 0 ? DogDirection.East : DogDirection.West;
-                }
-                else
-                {
-                    followerDir = dir.y > 0 ? DogDirection.North : DogDirection.South;
-                }
+                SetDogState(!isFalinActive, followSpeed >= runSpeed ? DogAnimState.Running : DogAnimState.Walking);
+                followerDir = CalculateDirectionWithHysteresis(dir, followerDir);
             }
             else
             {
-                // Dentro del rango cómodo: se detiene suavemente junto al líder
                 followerRb.linearVelocity = Vector2.zero;
-                followerState = DogAnimState.Idle;
+                SetDogState(!isFalinActive, DogAnimState.Idle);
             }
         }
 
@@ -419,19 +429,15 @@ namespace Kimaya
             if (forFalin)
             {
                 _falinPerformingPower = true;
-                _falinState = DogAnimState.Power;
-                _falinFrame = 0;
-                _falinTimer = 0f;
-                yield return new WaitForSeconds(0.6f);
+                SetDogState(true, DogAnimState.Power);
+                yield return new WaitForSeconds(0.55f);
                 _falinPerformingPower = false;
             }
             else
             {
                 _miaPerformingPower = true;
-                _miaState = DogAnimState.Power;
-                _miaFrame = 0;
-                _miaTimer = 0f;
-                yield return new WaitForSeconds(0.6f);
+                SetDogState(false, DogAnimState.Power);
+                yield return new WaitForSeconds(0.55f);
                 _miaPerformingPower = false;
             }
         }
@@ -445,6 +451,9 @@ namespace Kimaya
 
             if (set == null || sr == null) return;
 
+            // Asegurar siempre flipX = false (PixelLab tiene sprites nativos en cada dirección)
+            sr.flipX = false;
+
             Sprite[] frames = set.GetFrames(state, dir);
             if (frames == null || frames.Length == 0) return;
 
@@ -453,10 +462,10 @@ namespace Kimaya
 
             float fps = state switch
             {
-                DogAnimState.Running => 14f,
-                DogAnimState.Walking => 10f,
+                DogAnimState.Running => 13f,
+                DogAnimState.Walking => 9.5f,
                 DogAnimState.Power   => 12f,
-                _ => 8f // Idle
+                _ => 7.5f // Idle
             };
 
             timer += Time.deltaTime;
@@ -466,19 +475,24 @@ namespace Kimaya
                 frameIdx = (frameIdx + 1) % frames.Length;
             }
 
-            if (frameIdx >= frames.Length) frameIdx = 0;
-            sr.sprite = frames[frameIdx];
+            if (frameIdx >= frames.Length || frameIdx < 0) frameIdx = 0;
+
+            if (frames[frameIdx] != null)
+            {
+                sr.sprite = frames[frameIdx];
+            }
         }
 
         private void UpdateSortingOrders()
         {
+            // Y-Sorting preciso para que el perro se oculte tras los arcos/troncos y se muestre frente a ellos
             if (falinObject != null && _falinSr != null)
             {
-                _falinSr.sortingOrder = 500 - Mathf.RoundToInt((falinObject.transform.position.y - 0.2f) * 10f);
+                _falinSr.sortingOrder = 500 - Mathf.RoundToInt((falinObject.transform.position.y - 0.25f) * 10f);
             }
             if (miaObject != null && _miaSr != null)
             {
-                _miaSr.sortingOrder = 500 - Mathf.RoundToInt((miaObject.transform.position.y - 0.2f) * 10f);
+                _miaSr.sortingOrder = 500 - Mathf.RoundToInt((miaObject.transform.position.y - 0.20f) * 10f);
             }
         }
 
