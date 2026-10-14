@@ -19,7 +19,7 @@ namespace Platformer.EditorTools
     public static class KimayaJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_Vertical.unity";
-        private const string BUILD_KEY = "KimayaJumpKing_Build_v1";
+        private const string BUILD_KEY = "KimayaJumpKing_Build_v2";
 
         static KimayaJumpKingBuilder()
         {
@@ -87,6 +87,18 @@ namespace Platformer.EditorTools
             var jumpCtrl = playerGo.AddComponent<KimayaJumpKingController>();
             jumpCtrl.spriteRenderer = sr;
             jumpCtrl.character = KimayaJumpKingController.CharacterType.Falin;
+
+            // Animador con sprites animados cuadro por cuadro de PixelLab
+            var anim = playerGo.AddComponent<KimayaJumpKingAnimator>();
+            anim.falinIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/idle/south");
+            anim.falinWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/walking/east");
+            anim.falinChargeFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/barking/east");
+            anim.falinJumpFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/running/east");
+
+            anim.miaIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/idle/south");
+            anim.miaWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/walking/east");
+            anim.miaChargeFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/sneaking/east");
+            anim.miaJumpFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/running/east");
 
             // 3. Cámara Jump King
             GameObject camGo = new GameObject("Main Camera");
@@ -329,6 +341,18 @@ namespace Platformer.EditorTools
             scenes.Add(new EditorBuildSettingsScene(scenePath, true));
             EditorBuildSettings.scenes = scenes.ToArray();
             Debug.Log($"[KimayaJumpKingBuilder] 📝 Escena {scenePath} agregada a EditorBuildSettings.");
+        }
+
+        private static Sprite[] LoadFrames(string folderPath, int count = 8)
+        {
+            var list = new System.Collections.Generic.List<Sprite>();
+            for (int i = 0; i < count; i++)
+            {
+                string p = $"{folderPath}/frame_{i:D3}.png";
+                Sprite s = AssetDatabase.LoadAssetAtPath<Sprite>(p);
+                if (s != null) list.Add(s);
+            }
+            return list.ToArray();
         }
     }
 }
