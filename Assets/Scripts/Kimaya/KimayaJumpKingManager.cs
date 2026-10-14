@@ -38,7 +38,7 @@ namespace Kimaya
         public GameObject victoryPanel;
 
         [Header("Meta / Rescate")]
-        public int finalScreenIndex = 7;
+        public int finalScreenIndex = 2;
         public string rescuedCharacterName = "Kiara";
 
         private float _sessionTimer = 0f;
@@ -204,13 +204,20 @@ namespace Kimaya
 
             if (stunnedBadge != null)
             {
-                stunnedBadge.SetActive(false);
+                stunnedBadge.SetActive(playerController.IsStunned);
             }
 
-            // Piso / Pantalla actual
+            // Piso / Pantalla actual con nombre de zona
             if (screenText != null && screenCamera != null)
             {
-                screenText.text = $"Piso {screenCamera.CurrentScreenIndex + 1} / {finalScreenIndex + 1}";
+                int curIdx = Mathf.Clamp(screenCamera.CurrentScreenIndex, 0, finalScreenIndex);
+                string[] floorNames = new string[] {
+                    "El Campamento del Bosque Antiguo",
+                    "El Gran Árbol Milenario",
+                    "La Cumbre de la Torre Ancestral"
+                };
+                string fName = (curIdx < floorNames.Length) ? floorNames[curIdx] : "Ascenso Sagrado";
+                screenText.text = $"Piso {curIdx + 1} / {finalScreenIndex + 1}: {fName}";
             }
 
             // Estadísticas (Saltos y Caídas)
@@ -224,7 +231,8 @@ namespace Kimaya
 
         private void CheckVictory()
         {
-            if (screenCamera != null && screenCamera.CurrentScreenIndex >= finalScreenIndex && !_hasWon)
+            // Victoria cuando el jugador llega al altar en lo alto de la torre (Y >= 27.5f)
+            if (playerController != null && playerController.transform.position.y >= 27.5f && !_hasWon)
             {
                 TriggerVictory();
             }

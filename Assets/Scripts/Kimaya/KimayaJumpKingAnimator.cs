@@ -4,27 +4,43 @@ using UnityEngine;
 namespace Kimaya
 {
     /// <summary>
-    /// Animador cuadro por cuadro fluido para Falin y Mía en Jump King con sprites de PixelLab en perfil (East/West).
+    /// Animador cinemático cuadro por cuadro estilo Jump King para Falin y Mía.
+    /// Soporta:
+    /// - Reposo (Idle)
+    /// - Caminata (Walk)
+    /// - Carga estática agachada con compresión gradual (Charge Squash - sin mover patas)
+    /// - Salto con estiramiento vertical aerodinámico (Jump Stretch)
+    /// - Caída libre con descenso cómico (Falling)
+    /// - Golpe / Aturdimiento contra el suelo (Splat Knockdown)
     /// </summary>
     [RequireComponent(typeof(SpriteRenderer), typeof(KimayaJumpKingController))]
     public class KimayaJumpKingAnimator : MonoBehaviour
     {
-        [Header("Frames de Falin en Perfil (PixelLab)")]
+        [Header("Frames de Caminata y Reposo (Falin)")]
         public Sprite[] falinIdleFrames;
         public Sprite[] falinWalkFrames;
-        public Sprite[] falinChargeFrames;
-        public Sprite[] falinJumpFrames;
 
-        [Header("Frames de Mía en Perfil (PixelLab)")]
+        [Header("Frames Tácticos Jump King (Falin)")]
+        [Tooltip("Carga progresiva: [0]=ligera, [1]=media, [2]=máxima compresión")]
+        public Sprite[] falinChargeProgress;
+        public Sprite falinJumpStretch;
+        public Sprite falinFall;
+        public Sprite falinSplat;
+
+        [Header("Frames de Caminata y Reposo (Mía)")]
         public Sprite[] miaIdleFrames;
         public Sprite[] miaWalkFrames;
-        public Sprite[] miaChargeFrames;
-        public Sprite[] miaJumpFrames;
+
+        [Header("Frames Tácticos Jump King (Mía)")]
+        [Tooltip("Carga progresiva: [0]=ligera, [1]=media, [2]=máxima compresión")]
+        public Sprite[] miaChargeProgress;
+        public Sprite miaJumpStretch;
+        public Sprite miaFall;
+        public Sprite miaSplat;
 
         [Header("Velocidad de Animación (FPS)")]
         public float idleFPS = 8f;
         public float walkFPS = 11f;
-        public float chargeFPS = 12f;
 
         private SpriteRenderer _sr;
         private KimayaJumpKingController _ctrl;
@@ -55,8 +71,58 @@ namespace Kimaya
                 _animTimer = 0f;
             }
 
-            // Determinar estado de animación
-            string newState = DetermineState();
+            bool isFalin = (_ctrl.character == KimayaJumpKingController.CharacterType.Falin);
+
+            // 1. ESTADO DE ATURDIMIENTO / SPLAT TRAS CAÍDA
+            if (_ctrl.IsStunned)
+            {
+                _currentState = "Splat";
+                var splatSprite = isFalin ? falinSplat : miaSplat;
+                if (splatSprite != null) _sr.sprite = splatSprite;
+                _sr.flipX = (_ctrl.FacingDirection < 0);
+                return;
+            }
+
+            // 2. ESTADO DE CARGA DE SALTO (Agachado acumulando tensión, patas firmes en el suelo)
+            if (_ctrl.IsCharging)
+            {
+                _currentState = "Charging";
+                var chargeArr = isFalin ? falinChargeProgress : miaChargeProgress;
+                if (chargeArr != null && chargeArr.Length > 0)
+                {
+                    int chargeIdx = Mathf.Clamp(Mathf.FloorToInt(_ctrl.ChargePercent * chargeArr.Length), 0, chargeArr.Length - 1);
+                    if (chargeArr[chargeIdx] != null)
+                    {
+                        _sr.sprite = chargeArr[chargeIdx];
+                    }
+                }
+                _sr.flipX = (_ctrl.FacingDirection < 0);
+                return;
+            }
+
+            // 3. EN EL AIRE: SALTO CON ESTIRAMIENTO O CAÍDA
+            if (!_ctrl.IsGrounded)
+            {
+                // Ascendiendo o en cúspide -> Estiramiento
+                if (_rb.linearVelocity.y >= -0.5f)
+                {
+                    _currentState = "JumpStretch";
+                    var stretchSprite = isFalin ? falinJumpStretch : miaJumpStretch;
+                    if (stretchSprite != null) _sr.sprite = stretchSprite;
+                }
+                else // Descendiendo -> Caída
+                {
+                    _currentState = "Falling";
+                    var fallSprite = isFalin ? falinFall : miaFall;
+                    if (fallSprite != null) _sr.sprite = fallSprite;
+                }
+
+                _sr.flipX = (_ctrl.FacingDirection < 0);
+                return;
+            }
+
+            // 4. EN SUELO: CAMINAR O IDLE
+            string newState = (Mathf.Abs(_rb.linearVelocity.x) > 0.15f) ? "Walk" : "Idle";
             if (newState != _currentState)
             {
                 _currentState = newState;
@@ -64,55 +130,27 @@ namespace Kimaya
                 _animTimer = 0f;
             }
 
-            // Obtener frames del estado actual
-            Sprite[] activeFrames = GetActiveFrames();
-            if (activeFrames == null || activeFrames.Length == 0) return;
+            Sprite[] activeFrames = (_currentState == "Walk")
+                ? (isFalin ? falinWalkFrames : miaWalkFrames)
+                : (isFalin ? falinIdleFrames : miaIdleFrames);
 
-            // Velocidad según estado
-            float fps = (_currentState == "Walk") ? walkFPS :
-                        (_currentState == "Charging") ? chargeFPS : idleFPS;
-
-            _animTimer += Time.deltaTime;
-            if (_animTimer >= (1f / fps))
+            if (activeFrames != null && activeFrames.Length > 0)
             {
-                _animTimer -= (1f / fps);
-                _currentFrameIndex = (_currentFrameIndex + 1) % activeFrames.Length;
+                float fps = (_currentState == "Walk") ? walkFPS : idleFPS;
+                _animTimer += Time.deltaTime;
+                if (_animTimer >= (1f / fps))
+                {
+                    _animTimer -= (1f / fps);
+                    _currentFrameIndex = (_currentFrameIndex + 1) % activeFrames.Length;
+                }
+
+                if (_currentFrameIndex < activeFrames.Length && activeFrames[_currentFrameIndex] != null)
+                {
+                    _sr.sprite = activeFrames[_currentFrameIndex];
+                }
             }
 
-            // Aplicar sprite actual
-            if (_currentFrameIndex < activeFrames.Length && activeFrames[_currentFrameIndex] != null)
-            {
-                _sr.sprite = activeFrames[_currentFrameIndex];
-            }
-
-            // Orientación según FacingDirection del controlador
             _sr.flipX = (_ctrl.FacingDirection < 0);
-        }
-
-        private string DetermineState()
-        {
-            if (_ctrl.IsCharging) return "Charging";
-            if (!_ctrl.IsGrounded) return "Jumping";
-            if (Mathf.Abs(_rb.linearVelocity.x) > 0.15f) return "Walk";
-            return "Idle";
-        }
-
-        private Sprite[] GetActiveFrames()
-        {
-            bool isFalin = (_ctrl.character == KimayaJumpKingController.CharacterType.Falin);
-
-            switch (_currentState)
-            {
-                case "Walk":
-                    return isFalin ? falinWalkFrames : miaWalkFrames;
-                case "Charging":
-                    return isFalin ? falinChargeFrames : miaChargeFrames;
-                case "Jumping":
-                    return isFalin ? falinJumpFrames : miaJumpFrames;
-                case "Idle":
-                default:
-                    return isFalin ? falinIdleFrames : miaIdleFrames;
-            }
         }
     }
 }
