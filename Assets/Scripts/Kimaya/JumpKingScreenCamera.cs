@@ -44,6 +44,9 @@ namespace Kimaya
             }
         }
 
+        [Tooltip("Si es true, la cámara cambia de pantalla al instante como en Jump King original")]
+        public bool instantScreenTransition = true;
+
         private void LateUpdate()
         {
             if (target == null) return;
@@ -53,7 +56,9 @@ namespace Kimaya
             int newScreenIndex = Mathf.FloorToInt((playerY - baseWorldY) / screenHeight);
             if (newScreenIndex < 0) newScreenIndex = 0;
 
-            if (newScreenIndex != CurrentScreenIndex)
+            bool screenChanged = (newScreenIndex != CurrentScreenIndex);
+
+            if (screenChanged)
             {
                 CurrentScreenIndex = newScreenIndex;
                 if (CurrentScreenIndex > MaxScreenReached)
@@ -66,8 +71,15 @@ namespace Kimaya
             float desiredY = baseWorldY + (CurrentScreenIndex * screenHeight) + (screenHeight * 0.5f);
             _targetCameraPos = new Vector3(transform.position.x, desiredY, transform.position.z);
 
-            // Transición suave
-            transform.position = Vector3.Lerp(transform.position, _targetCameraPos, Time.deltaTime * transitionSpeed);
+            // Transición instantánea (Jump King) o suave
+            if (instantScreenTransition && screenChanged)
+            {
+                transform.position = _targetCameraPos;
+            }
+            else
+            {
+                transform.position = Vector3.Lerp(transform.position, _targetCameraPos, Time.deltaTime * transitionSpeed);
+            }
         }
 
         public void RecalculateScreenIndex(bool instant)

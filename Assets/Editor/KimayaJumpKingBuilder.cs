@@ -74,6 +74,7 @@ namespace Platformer.EditorTools
         };
 
         // Coordenadas matemáticas exactas calculadas directamente desde las imágenes generadas (384x216 px, PPU 21.6f)
+        // Huecos transitables 100% despejados sin plataformas de choque en el cambio de pantalla
         public static readonly KimayaPlatformDef[][] JumpKing5Floors = new KimayaPlatformDef[][]
         {
             // Piso 1: El Bosque Profundo y la Entrada a las Ruinas (Y: 0 a 10)
@@ -83,42 +84,35 @@ namespace Platformer.EditorTools
                 new KimayaPlatformDef("P0_Right_LowStoneStep", 5.463f, 2.361f, 4.630f, 0.926f, SurfaceType.Normal),
                 new KimayaPlatformDef("P0_Center_LBlockLedge", -0.324f, 4.213f, 4.167f, 0.926f, SurfaceType.Normal),
                 new KimayaPlatformDef("P0_Left_HighWallBracket", -5.417f, 6.065f, 4.167f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P0_Top_ExitLedge", -0.556f, 7.917f, 3.241f, 0.926f, SurfaceType.Normal),
             },
             // Piso 2: La Fortaleza y Muros de Piedra Ancestrales (Y: 10 a 20)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P1_Entry_CatchLedge", -0.556f, 10.972f, 4.167f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P1_Right_WallBattlement", 6.157f, 12.824f, 4.167f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P1_Center_LBlockPlatform", 0.139f, 14.676f, 4.167f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P1_Left_FortressBracket", -5.648f, 16.528f, 4.167f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P1_Top_ExitShelf", 4.769f, 18.380f, 3.704f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P1_Left_CatchLedge", -5.417f, 12.593f, 4.630f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P1_Right_CatchLedge", 5.463f, 12.593f, 4.630f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P1_Center_Platform", -0.093f, 14.444f, 4.630f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P1_Left_HighBracket", -5.532f, 16.065f, 4.398f, 0.926f, SurfaceType.Normal),
             },
             // Piso 3: Los Acueductos y el Campanario Olvidado (Y: 20 a 30)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P2_Entry_AqueductPier", 4.884f, 20.972f, 4.398f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P2_Center_CanalArch", -0.556f, 22.824f, 4.630f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P2_Left_SpillwayLedge", -5.880f, 24.676f, 4.167f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P2_Center_HighGirder", 0.370f, 26.528f, 4.630f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P2_Top_ExitSlab", -5.417f, 28.380f, 3.704f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P2_Center_AqueductArch", -0.093f, 22.593f, 6.944f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P2_Left_BridgePier", -5.417f, 24.444f, 4.630f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P2_Center_HighGirder", 0.023f, 26.065f, 4.861f, 0.926f, SurfaceType.Normal),
             },
-            // Piso 4: La Aguja de Hielo y Cristales Celestiales (Y: 30 a 40) - ¡Superficie resbaladiza de Hielo!
+            // Piso 4: La Aguja de Hielo y Cristales Celestiales (Y: 30 a 40)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P3_Entry_SnowyLanding", -5.301f, 30.972f, 4.398f, 0.926f, SurfaceType.Ice),
-                new KimayaPlatformDef("P3_Mid_FrostShelf", 1.065f, 32.824f, 4.167f, 0.926f, SurfaceType.Ice),
-                new KimayaPlatformDef("P3_Right_IcePillar", 5.926f, 34.676f, 4.167f, 0.926f, SurfaceType.Ice),
-                new KimayaPlatformDef("P3_Center_GlacierLedge", -0.324f, 36.528f, 4.167f, 0.926f, SurfaceType.Ice),
-                new KimayaPlatformDef("P3_Top_ExitPerch", -0.324f, 38.380f, 3.704f, 0.926f, SurfaceType.Ice),
+                new KimayaPlatformDef("P3_Mid_FrostShelf", -0.093f, 32.593f, 4.630f, 0.926f, SurfaceType.Ice),
+                new KimayaPlatformDef("P3_Right_IcePillar", 5.463f, 34.444f, 4.630f, 0.926f, SurfaceType.Ice),
+                new KimayaPlatformDef("P3_Left_GlacierLedge", -4.954f, 36.065f, 4.630f, 0.926f, SurfaceType.Ice),
             },
             // Piso 5: La Cumbre del Templo al Atardecer (Altar de Kiara) (Y: 40 a 50)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P4_Entry_SanctumSteps", -0.208f, 40.972f, 4.398f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P4_Left_TowerBattlement", -5.648f, 42.824f, 4.167f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P4_Right_TowerBattlement", 5.694f, 42.824f, 4.167f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P4_GRAND_SUMMIT_ALTAR", 0.023f, 45.370f, 10.417f, 1.389f, SurfaceType.Normal),
+                new KimayaPlatformDef("P4_Left_TowerBattlement", -5.417f, 42.824f, 4.630f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P4_Right_TowerBattlement", 5.463f, 42.824f, 4.630f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P4_GRAND_SUMMIT_ALTAR", 0.023f, 45.370f, 10.880f, 1.389f, SurfaceType.Normal),
             },
         };
 
@@ -420,6 +414,19 @@ namespace Platformer.EditorTools
             float friction = (surfaceType == SurfaceType.Ice) ? 0.05f : 0.5f;
             var pMat = new PhysicsMaterial2D($"PlatMat_{surfaceType}") { friction = friction, bounciness = 0f };
             col.sharedMaterial = pMat;
+
+            // Si no es el suelo base, usar PlatformEffector2D unidireccional para que el jugador nunca se estrelle la cabeza al subir
+            if (!name.Contains("Ground"))
+            {
+                col.usedByEffector = true;
+                var effector = platGo.AddComponent<PlatformEffector2D>();
+                effector.useOneWay = true;
+                effector.surfaceArc = 170f;
+                effector.rotationalOffset = 0f;
+                effector.useOneWayGrouping = true;
+                effector.useSideFriction = false;
+                effector.useSideBounce = false;
+            }
 
             // Componente de superficie Jump King
             var surface = platGo.AddComponent<KimayaSurface>();
