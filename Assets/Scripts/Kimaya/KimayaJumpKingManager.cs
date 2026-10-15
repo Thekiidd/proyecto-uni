@@ -38,7 +38,7 @@ namespace Kimaya
         public GameObject victoryPanel;
 
         [Header("Meta / Rescate")]
-        public int finalScreenIndex = 9; // 10 Pisos (0 a 9)
+        public int finalScreenIndex = 4; // 5 Pisos (0 a 4)
         public string rescuedCharacterName = "Kiara";
 
         private float _sessionTimer = 0f;
@@ -212,16 +212,11 @@ namespace Kimaya
             {
                 int curIdx = Mathf.Clamp(screenCamera.CurrentScreenIndex, 0, finalScreenIndex);
                 string[] floorNames = new string[] {
-                    "El Gran Atrio y las Puertas del Templo",
-                    "El Salón de las Columnas Olvidadas",
-                    "La Cámara de los Glifos Rúnicos",
-                    "El Pozo Vertical del Silencio",
-                    "El Gran Acueducto de Piedra",
-                    "La Cripta de los Cristales Cyan",
-                    "El Balcón de los Vientos",
-                    "El Campanario Ruinoso",
-                    "La Escalera Celestial",
-                    "El Sagrario de la Cumbre (Altar de la Luz)"
+                    "El Bosque Profundo y la Entrada a las Ruinas",
+                    "La Fortaleza y Muros de Piedra Ancestrales",
+                    "Los Acueductos y el Campanario Olvidado",
+                    "La Aguja de Hielo y Cristales Celestiales",
+                    "La Cumbre del Templo al Atardecer (Altar de Kiara)"
                 };
                 string fName = (curIdx < floorNames.Length) ? floorNames[curIdx] : "Ascenso Sagrado";
                 screenText.text = $"Piso {curIdx + 1} / {finalScreenIndex + 1}: {fName}";
@@ -238,8 +233,8 @@ namespace Kimaya
 
         private void CheckVictory()
         {
-            // Victoria cuando el jugador llega al gran altar sagrado en la cumbre del templo (Piso 10, Y >= 95.0f)
-            if (playerController != null && playerController.transform.position.y >= 95.0f && !_hasWon)
+            // Victoria cuando el jugador llega al gran altar sagrado en la cumbre del templo (Piso 5, Y >= 45.0f)
+            if (playerController != null && playerController.transform.position.y >= 45.0f && !_hasWon)
             {
                 TriggerVictory();
             }

@@ -16,38 +16,34 @@ namespace Platformer.EditorTools
         public float centerY;
         public float width;
         public float height;
+        public SurfaceType surfaceType;
 
-        public KimayaPlatformDef(string name, float centerX, float centerY, float width, float height)
+        public KimayaPlatformDef(string name, float centerX, float centerY, float width, float height, SurfaceType surfaceType = SurfaceType.Normal)
         {
             this.name = name;
             this.centerX = centerX;
             this.centerY = centerY;
             this.width = width;
             this.height = height;
+            this.surfaceType = surfaceType;
         }
     }
 
     /// <summary>
-    /// Generador automático de la escena de Ascenso Vertical estilo Jump King (10 Salas del Templo Ancestral).
-    /// El nivel utiliza fondos ilustrados completos en pixel art 100% congruentes donde las plataformas
-    /// de piedra tallada, musgo y mármol YA ESTÁN ILUSTRADAS y tienen colisionadores físicos exactos al píxel:
-    /// - Sala 1 (Y: 0-10): El Gran Atrio y las Puertas del Templo
-    /// - Sala 2 (Y: 10-20): El Salón de las Columnas Olvidadas
-    /// - Sala 3 (Y: 20-30): La Cámara de los Glifos Rúnicos
-    /// - Sala 4 (Y: 30-40): El Pozo Vertical del Silencio
-    /// - Sala 5 (Y: 40-50): El Gran Acueducto de Piedra
-    /// - Sala 6 (Y: 50-60): La Cripta de los Cristales Cyan
-    /// - Sala 7 (Y: 60-70): El Balcón de los Vientos
-    /// - Sala 8 (Y: 70-80): El Campanario Ruinoso
-    /// - Sala 9 (Y: 80-90): La Escalera Celestial
-    /// - Sala 10 (Y: 90-100): El Sagrario de la Cumbre (Altar de la Luz)
+    /// Generador automático de la escena de Ascenso Vertical estilo Jump King (5 Pisos Icónicos de Kimaya).
+    /// Basado en la progresión oficial del mapa mundial de Jump King y generado con PixelLab:
+    /// - Piso 1 (Y: 0-10): El Bosque Profundo y la Entrada a las Ruinas
+    /// - Piso 2 (Y: 10-20): La Fortaleza y Muros de Piedra Ancestrales
+    /// - Piso 3 (Y: 20-30): Los Acueductos y el Campanario Olvidado
+    /// - Piso 4 (Y: 30-40): La Aguja de Hielo y Cristales Celestiales (Física resbaladiza de Hielo)
+    /// - Piso 5 (Y: 40-50): La Cumbre del Templo al Atardecer (Altar de Kiara / Rescate)
     /// Menú: Tools > Kimaya > 🦘 [4] Construir Modo Jump King (Ascenso Vertical)
     /// </summary>
     [InitializeOnLoad]
     public static class KimayaJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_Vertical.unity";
-        private const string BUILD_KEY = "KimayaJumpKing_Build_v13";
+        private const string BUILD_KEY = "KimayaJumpKing_Build_v15_5Floors";
 
         static KimayaJumpKingBuilder()
         {
@@ -58,7 +54,7 @@ namespace Platformer.EditorTools
         {
             if (!EditorPrefs.GetBool(BUILD_KEY, false))
             {
-                Debug.Log("[KimayaJumpKingBuilder] 🚀 Ejecutando AutoBuildCheck v13 para Jump King (10 Salas del Templo)...");
+                Debug.Log("[KimayaJumpKingBuilder] 🚀 Ejecutando AutoBuildCheck v15 para Jump King (5 Pisos Icónicos PixelLab)...");
                 BuildJumpKingScene();
                 EditorPrefs.SetBool(BUILD_KEY, true);
             }
@@ -68,111 +64,61 @@ namespace Platformer.EditorTools
         private const string MIA_SPRITE_PATH = "Assets/Sprites/PixelLab/Mia/Idle/rotations/east.png";
         private const string ALTAR_SPRITE_PATH = "Assets/Sprites/Village/Art/Props/Ancient_Stone_Circle.png";
 
-        private static readonly string[] TEMPLE_SCREEN_PATHS = new string[]
+        private static readonly string[] JUMP_KING_SCREEN_PATHS = new string[]
         {
-            "Assets/Sprites/Backgrounds/Temple_Screen0.png",
-            "Assets/Sprites/Backgrounds/Temple_Screen1.png",
-            "Assets/Sprites/Backgrounds/Temple_Screen2.png",
-            "Assets/Sprites/Backgrounds/Temple_Screen3.png",
-            "Assets/Sprites/Backgrounds/Temple_Screen4.png",
-            "Assets/Sprites/Backgrounds/Temple_Screen5.png",
-            "Assets/Sprites/Backgrounds/Temple_Screen6.png",
-            "Assets/Sprites/Backgrounds/Temple_Screen7.png",
-            "Assets/Sprites/Backgrounds/Temple_Screen8.png",
-            "Assets/Sprites/Backgrounds/Temple_Screen9.png"
+            "Assets/Sprites/Backgrounds/JumpKing_Screen0_ForestBase.png",
+            "Assets/Sprites/Backgrounds/JumpKing_Screen1_Fortress.png",
+            "Assets/Sprites/Backgrounds/JumpKing_Screen2_Aqueduct.png",
+            "Assets/Sprites/Backgrounds/JumpKing_Screen3_SnowPeak.png",
+            "Assets/Sprites/Backgrounds/JumpKing_Screen4_SunsetSummit.png"
         };
 
-        // Coordenadas matemáticas exactas calculadas directamente desde las imágenes generadas (768x432 px, PPU 43.2)
-        public static readonly KimayaPlatformDef[][] TempleRooms = new KimayaPlatformDef[][]
+        // Coordenadas matemáticas exactas calculadas directamente desde las imágenes generadas (384x216 px, PPU 21.6f)
+        public static readonly KimayaPlatformDef[][] JumpKing5Floors = new KimayaPlatformDef[][]
         {
-            // Sala 1: El Gran Atrio y las Puertas del Templo (Piso 1, Y: 0 a 10)
+            // Piso 1: El Bosque Profundo y la Entrada a las Ruinas (Y: 0 a 10)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P0_BaseFloor", 0.000f, 0.417f, 17.778f, 0.833f),
-                new KimayaPlatformDef("P0_RightStairStep", 5.231f, 2.222f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P0_MidArchLedge", 0.255f, 3.958f, 3.472f, 0.741f),
-                new KimayaPlatformDef("P0_LeftPillarLedge", -4.838f, 5.810f, 3.472f, 0.741f),
-                new KimayaPlatformDef("P0_TopExitBridge", -0.903f, 7.662f, 3.009f, 0.741f),
+                new KimayaPlatformDef("P0_Ground_ForestFloor", 0.000f, 0.486f, 17.778f, 0.972f, SurfaceType.Normal),
+                new KimayaPlatformDef("P0_Right_LowStoneStep", 5.463f, 2.361f, 4.630f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P0_Center_LBlockLedge", -0.324f, 4.213f, 4.167f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P0_Left_HighWallBracket", -5.417f, 6.065f, 4.167f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P0_Top_ExitLedge", -0.556f, 7.917f, 3.241f, 0.926f, SurfaceType.Normal),
             },
-            // Sala 2: El Salón de las Columnas Olvidadas (Piso 2, Y: 10 a 20)
+            // Piso 2: La Fortaleza y Muros de Piedra Ancestrales (Y: 10 a 20)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P1_EntryCatch", -0.787f, 10.718f, 3.704f, 0.741f),
-                new KimayaPlatformDef("P1_RightWallBracket", 5.579f, 12.569f, 3.009f, 0.741f),
-                new KimayaPlatformDef("P1_MidPillarCapital", 0.602f, 14.421f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P1_LeftHighBalcony", -5.185f, 16.273f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P1_TopExitLedge", 3.380f, 17.894f, 3.241f, 0.741f),
+                new KimayaPlatformDef("P1_Entry_CatchLedge", -0.556f, 10.972f, 4.167f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P1_Right_WallBattlement", 6.157f, 12.824f, 4.167f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P1_Center_LBlockPlatform", 0.139f, 14.676f, 4.167f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P1_Left_FortressBracket", -5.648f, 16.528f, 4.167f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P1_Top_ExitShelf", 4.769f, 18.380f, 3.704f, 0.926f, SurfaceType.Normal),
             },
-            // Sala 3: La Cámara de los Glifos Rúnicos (Piso 3, Y: 20 a 30)
+            // Piso 3: Los Acueductos y el Campanario Olvidado (Y: 20 a 30)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P2_EntryPier", 3.380f, 20.718f, 3.704f, 0.741f),
-                new KimayaPlatformDef("P2_CenterGlyphPlinth", -1.250f, 22.569f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P2_LeftShrineLedge", -5.532f, 24.421f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P2_CenterHighArch", -0.324f, 26.273f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P2_TopExitBracket", -4.028f, 27.894f, 3.241f, 0.741f),
+                new KimayaPlatformDef("P2_Entry_AqueductPier", 4.884f, 20.972f, 4.398f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P2_Center_CanalArch", -0.556f, 22.824f, 4.630f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P2_Left_SpillwayLedge", -5.880f, 24.676f, 4.167f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P2_Center_HighGirder", 0.370f, 26.528f, 4.630f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P2_Top_ExitSlab", -5.417f, 28.380f, 3.704f, 0.926f, SurfaceType.Normal),
             },
-            // Sala 4: El Pozo Vertical del Silencio (Piso 4, Y: 30 a 40)
+            // Piso 4: La Aguja de Hielo y Cristales Celestiales (Y: 30 a 40) - ¡Superficie resbaladiza de Hielo!
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P3_ShaftLanding", -4.028f, 30.718f, 3.704f, 0.741f),
-                new KimayaPlatformDef("P3_RightWallPerch", 5.231f, 32.569f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P3_LeftWallPerch", -5.648f, 34.421f, 3.009f, 0.741f),
-                new KimayaPlatformDef("P3_MidStoneGirder", 0.023f, 36.273f, 3.009f, 0.741f),
-                new KimayaPlatformDef("P3_TopExitShelf", 2.917f, 37.894f, 3.241f, 0.741f),
+                new KimayaPlatformDef("P3_Entry_SnowyLanding", -5.301f, 30.972f, 4.398f, 0.926f, SurfaceType.Ice),
+                new KimayaPlatformDef("P3_Mid_FrostShelf", 1.065f, 32.824f, 4.167f, 0.926f, SurfaceType.Ice),
+                new KimayaPlatformDef("P3_Right_IcePillar", 5.926f, 34.676f, 4.167f, 0.926f, SurfaceType.Ice),
+                new KimayaPlatformDef("P3_Center_GlacierLedge", -0.324f, 36.528f, 4.167f, 0.926f, SurfaceType.Ice),
+                new KimayaPlatformDef("P3_Top_ExitPerch", -0.324f, 38.380f, 3.704f, 0.926f, SurfaceType.Ice),
             },
-            // Sala 5: El Gran Acueducto de Piedra (Piso 5, Y: 40 a 50)
+            // Piso 5: La Cumbre del Templo al Atardecer (Altar de Kiara) (Y: 40 a 50)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P4_AqueductPier", 2.917f, 40.718f, 3.704f, 0.741f),
-                new KimayaPlatformDef("P4_CanalArch", -1.944f, 42.569f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P4_SpillwayLedge", -5.532f, 44.421f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P4_HighAqueductSpan", -0.208f, 46.273f, 3.472f, 0.741f),
-                new KimayaPlatformDef("P4_TopExitSlab", -3.565f, 47.894f, 3.241f, 0.741f),
-            },
-            // Sala 6: La Cripta de los Cristales Cyan (Piso 6, Y: 50 a 60)
-            new KimayaPlatformDef[]
-            {
-                new KimayaPlatformDef("P5_CrystalShelf", -3.565f, 50.718f, 3.704f, 0.741f),
-                new KimayaPlatformDef("P5_MidGeodePlinth", 1.296f, 52.569f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P5_RightCrystalLedge", 5.231f, 54.421f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P5_CenterVaultBeam", -0.556f, 56.273f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P5_TopExitCorbel", 3.380f, 57.894f, 3.241f, 0.741f),
-            },
-            // Sala 7: El Balcón de los Vientos (Piso 7, Y: 60 a 70)
-            new KimayaPlatformDef[]
-            {
-                new KimayaPlatformDef("P6_BalconyStep", 3.380f, 60.718f, 3.704f, 0.741f),
-                new KimayaPlatformDef("P6_ColonnadePlinth", -2.060f, 62.569f, 3.472f, 0.741f),
-                new KimayaPlatformDef("P6_OuterCliffPier", -5.764f, 64.421f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P6_FlyingButtress", 0.370f, 66.273f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P6_TopExitBalustrade", -3.796f, 67.894f, 3.241f, 0.741f),
-            },
-            // Sala 8: El Campanario Ruinoso (Piso 8, Y: 70 a 80)
-            new KimayaPlatformDef[]
-            {
-                new KimayaPlatformDef("P7_BelfryFloor", -3.796f, 70.718f, 3.704f, 0.741f),
-                new KimayaPlatformDef("P7_BellTimberBeam", 2.338f, 72.569f, 3.472f, 0.741f),
-                new KimayaPlatformDef("P7_RightSpireBracket", 5.463f, 74.421f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P7_CenterChainLedge", -1.019f, 76.273f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P7_TopBelfryArch", 3.032f, 77.894f, 3.472f, 0.741f),
-            },
-            // Sala 9: La Escalera Celestial (Piso 9, Y: 80 a 90)
-            new KimayaPlatformDef[]
-            {
-                new KimayaPlatformDef("P8_EntryMonolith", 3.032f, 80.718f, 3.935f, 0.741f),
-                new KimayaPlatformDef("P8_CelestialStep1", -2.292f, 82.569f, 3.472f, 0.741f),
-                new KimayaPlatformDef("P8_CelestialStep2", -5.764f, 84.421f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P8_CelestialStep3", 0.602f, 86.273f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P8_SummitApproachLedge", -0.324f, 87.894f, 4.630f, 0.741f),
-            },
-            // Sala 10: El Sagrario de la Cumbre - Altar de la Luz (Piso 10, Y: 90 a 100)
-            new KimayaPlatformDef[]
-            {
-                new KimayaPlatformDef("P9_SanctumLanding", -0.324f, 90.718f, 5.093f, 0.741f),
-                new KimayaPlatformDef("P9_LeftHonorStep", -5.532f, 92.801f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P9_RightHonorStep", 5.347f, 92.801f, 3.241f, 0.741f),
-                new KimayaPlatformDef("P9_GRAND_ALTAR_PODIUM", -0.093f, 95.197f, 10.185f, 1.042f),
+                new KimayaPlatformDef("P4_Entry_SanctumSteps", -0.208f, 40.972f, 4.398f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P4_Left_TowerBattlement", -5.648f, 42.824f, 4.167f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P4_Right_TowerBattlement", 5.694f, 42.824f, 4.167f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P4_GRAND_SUMMIT_ALTAR", 0.023f, 45.370f, 10.417f, 1.389f, SurfaceType.Normal),
             },
         };
 
@@ -184,29 +130,29 @@ namespace Platformer.EditorTools
 
         public static void BuildJumpKingScene()
         {
-            Debug.Log("[KimayaJumpKingBuilder] 🚀 Iniciando construcción de escena Jump King v12 (10 Salas del Templo)...");
+            Debug.Log("[KimayaJumpKingBuilder] 🚀 Iniciando construcción de escena Jump King v15 (5 Pisos Icónicos)...");
 
-            // 1. Asegurar importación de los 10 fondos de templo con PPU 43.2f (768x432 px -> 17.777f x 10f unidades)
-            foreach (var path in TEMPLE_SCREEN_PATHS)
+            // 1. Asegurar importación de los 5 fondos generados con PixelLab (384x216 px, PPU = 21.6f -> 17.777f x 10f)
+            foreach (var path in JUMP_KING_SCREEN_PATHS)
             {
-                EnsureTextureIsSprite(path, 43.2f);
+                EnsureTextureIsSprite(path, 21.6f);
             }
 
             // Crear escena nueva
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
 
             // Cargar sprites
-            Sprite falinSprite = AssetDatabase.LoadAssetAtPath<Sprite>(FALIN_SPRITE_PATH);
-            Sprite miaSprite = AssetDatabase.LoadAssetAtPath<Sprite>(MIA_SPRITE_PATH);
-            Sprite altarSprite = AssetDatabase.LoadAssetAtPath<Sprite>(ALTAR_SPRITE_PATH);
+            Sprite falinSprite = LoadAnySprite(FALIN_SPRITE_PATH);
+            Sprite miaSprite = LoadAnySprite(MIA_SPRITE_PATH);
+            Sprite altarSprite = LoadAnySprite(ALTAR_SPRITE_PATH);
 
             // Layer Ground
             int groundLayer = LayerMask.NameToLayer("Ground");
             if (groundLayer < 0) groundLayer = LayerMask.NameToLayer("Default");
 
-            // 2. Jugador (Falin / Mía en vista de perfil lateral)
+            // 2. Jugador (Falin / Mía en vista lateral)
             GameObject playerGo = new GameObject("Player_JumpKing");
-            playerGo.transform.position = new Vector3(-5.0f, 1.8f, 0f); // Spawnea en el suelo del Atrio
+            playerGo.transform.position = new Vector3(-5.0f, 1.8f, 0f); // Spawnea en el suelo del Bosque
 
             var sr = playerGo.AddComponent<SpriteRenderer>();
             sr.sprite = falinSprite != null ? falinSprite : miaSprite;
@@ -228,7 +174,7 @@ namespace Platformer.EditorTools
             jumpCtrl.character = KimayaJumpKingController.CharacterType.Falin;
             jumpCtrl.enableHighFallStun = false; // Solo saltar y escalar, sin aturdimiento
 
-            // Animador Jump King con poses reales de estiramiento, carga agachada, caída y splat
+            // Animador Jump King con poses reales de carga, estiramiento, caída y splat
             var anim = playerGo.AddComponent<KimayaJumpKingAnimator>();
             anim.falinIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/idle/east");
             anim.falinWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/walking/east");
@@ -273,44 +219,44 @@ namespace Platformer.EditorTools
 
             camGo.AddComponent<AudioListener>();
 
-            // 4. Paredes Verticales de Contención (10 Salas = 100 unidades verticales de Y: 0 a 100)
+            // 4. Paredes Verticales de Contención (5 Pisos = 50 unidades verticales de Y: 0 a 50)
             GameObject wallsRoot = new GameObject("BoundaryWalls");
-            CreateWall(wallsRoot.transform, -8.888f, 50f, 0.8f, 102f, groundLayer); // Pared izquierda
-            CreateWall(wallsRoot.transform, 8.888f, 50f, 0.8f, 102f, groundLayer);  // Pared derecha
-            CreateWall(wallsRoot.transform, 0f, 0.2f, 18.5f, 1f, groundLayer);       // Suelo base debajo de Sala 1
-            CreateWall(wallsRoot.transform, 0f, 100.5f, 18.5f, 1f, groundLayer);     // Techo cerrado sobre Sala 10
+            CreateWall(wallsRoot.transform, -8.888f, 25f, 0.8f, 52f, groundLayer); // Pared izquierda
+            CreateWall(wallsRoot.transform, 8.888f, 25f, 0.8f, 52f, groundLayer);  // Pared derecha
+            CreateWall(wallsRoot.transform, 0f, 0.2f, 18.5f, 1f, groundLayer);      // Suelo base debajo de Piso 1
+            CreateWall(wallsRoot.transform, 0f, 50.5f, 18.5f, 1f, groundLayer);     // Techo cerrado sobre Piso 5
 
-            // 5. Fondos Pixel Art Ilustrados por Sala (10 Fondos de Templo Congruentes)
+            // 5. Fondos Pixel Art Ilustrados por Piso (5 Fondos de Biomas Distintos)
             GameObject bgRoot = new GameObject("Backgrounds");
-            for (int i = 0; i < TEMPLE_SCREEN_PATHS.Length; i++)
+            for (int i = 0; i < JUMP_KING_SCREEN_PATHS.Length; i++)
             {
-                Sprite bgSprite = LoadAnySprite(TEMPLE_SCREEN_PATHS[i]);
-                CreateScreenBackground(bgRoot.transform, i, bgSprite, $"BG_Sala{i + 1}");
+                Sprite bgSprite = LoadAnySprite(JUMP_KING_SCREEN_PATHS[i]);
+                CreateScreenBackground(bgRoot.transform, i, bgSprite, $"BG_Piso_{i + 1}");
             }
 
             // 6. Colisionadores Físicos en las Plataformas Ilustradas (Calculados al píxel)
             GameObject platformsRoot = new GameObject("Platforms");
-            for (int r = 0; r < TempleRooms.Length; r++)
+            for (int r = 0; r < JumpKing5Floors.Length; r++)
             {
-                GameObject roomFolder = new GameObject($"Sala_{r + 1}_Colliders");
+                GameObject roomFolder = new GameObject($"Piso_{r + 1}_Colliders");
                 roomFolder.transform.SetParent(platformsRoot.transform);
-                foreach (var p in TempleRooms[r])
+                foreach (var p in JumpKing5Floors[r])
                 {
-                    CreateInvisiblePlatform(roomFolder.transform, p.centerX, p.centerY, p.width, p.height, groundLayer, p.name);
+                    CreatePlatformCollider(roomFolder.transform, p.centerX, p.centerY, p.width, p.height, groundLayer, p.name, p.surfaceType);
                 }
             }
 
-            // 7. Altar Sagrado de Victoria en la Cumbre (Sala 10, Y = 96.0f)
+            // 7. Altar Sagrado de Victoria en la Cumbre al Atardecer (Piso 5, Y = 46.2f)
             GameObject altarGo = new GameObject("Altar_Rescate");
-            altarGo.transform.position = new Vector3(0.0f, 96.3f, 0f);
+            altarGo.transform.position = new Vector3(0.0f, 46.2f, 0f);
             var altarSr = altarGo.AddComponent<SpriteRenderer>();
             altarSr.sprite = altarSprite;
             altarSr.sortingOrder = 5;
             altarGo.transform.localScale = new Vector3(0.85f, 0.85f, 1f);
 
-            // Compañera esperando rescate en la cima
+            // Compañera Kiara esperando rescate en el altar
             GameObject rescuedGo = new GameObject("Rescued_Companion");
-            rescuedGo.transform.position = new Vector3(1.2f, 96.1f, 0f);
+            rescuedGo.transform.position = new Vector3(1.2f, 46.1f, 0f);
             rescuedGo.transform.localScale = new Vector3(-0.9f, 0.9f, 1f); // Mirando hacia el héroe
             var rescuedSr = rescuedGo.AddComponent<SpriteRenderer>();
             rescuedSr.sprite = miaSprite != null ? miaSprite : falinSprite;
@@ -331,7 +277,7 @@ namespace Platformer.EditorTools
             manager.screenCamera = screenCam;
             manager.falinSprite = falinSprite;
             manager.miaSprite = miaSprite;
-            manager.finalScreenIndex = 9; // 10 Pisos (0 a 9)
+            manager.finalScreenIndex = 4; // 5 Pisos (0 a 4)
 
             // Panel Superior HUD
             GameObject topHud = CreateUIPanel(canvasGo.transform, "TopHUD", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0, -45), new Vector2(1400, 65));
@@ -339,7 +285,7 @@ namespace Platformer.EditorTools
             topBg.color = new Color(0.04f, 0.07f, 0.14f, 0.90f);
 
             // Texto Piso
-            manager.screenText = CreateUIText(topHud.transform, "Txt_Piso", "Piso 1 / 10: El Gran Atrio y las Puertas del Templo", 24, TextAnchor.MiddleLeft, new Vector2(-460, 0), new Vector2(450, 50));
+            manager.screenText = CreateUIText(topHud.transform, "Txt_Piso", "Piso 1 / 5: El Bosque Profundo y la Entrada a las Ruinas", 24, TextAnchor.MiddleLeft, new Vector2(-460, 0), new Vector2(450, 50));
             manager.screenText.color = new Color(1f, 0.9f, 0.35f);
 
             // Texto Personaje
@@ -378,10 +324,10 @@ namespace Platformer.EditorTools
             var vicBg = victoryGo.AddComponent<Image>();
             vicBg.color = new Color(0.06f, 0.15f, 0.25f, 0.95f);
 
-            Text vicTitle = CreateUIText(victoryGo.transform, "Txt_VicTitle", "🏆 ¡RESCATE EN LA CUMBRE DEL TEMPLO!", 38, TextAnchor.MiddleCenter, new Vector2(0, 120), new Vector2(700, 70));
+            Text vicTitle = CreateUIText(victoryGo.transform, "Txt_VicTitle", "🏆 ¡RESCATE EN LA CUMBRE AL ATARDECER!", 36, TextAnchor.MiddleCenter, new Vector2(0, 120), new Vector2(700, 70));
             vicTitle.color = new Color(1f, 0.85f, 0.2f);
 
-            Text vicDesc = CreateUIText(victoryGo.transform, "Txt_VicDesc", "¡Has conquistado las 10 Salas del Templo Ancestral!\nLlegaste al Sagrario de la Cumbre y rescataste a tu compañera.\n\nFalin y Mía han demostrado maestría absoluta en el salto.", 24, TextAnchor.MiddleCenter, new Vector2(0, 0), new Vector2(650, 130));
+            Text vicDesc = CreateUIText(victoryGo.transform, "Txt_VicDesc", "¡Has conquistado los 5 Pisos del Ascenso Sagrado!\nLlegaste al Altar de la Cumbre y rescataste a Kiara.\n\nFalin y Mía han demostrado valor, destreza y compañerismo.", 24, TextAnchor.MiddleCenter, new Vector2(0, 0), new Vector2(650, 130));
             vicDesc.color = Color.white;
 
             manager.victoryPanel = victoryGo;
@@ -389,12 +335,12 @@ namespace Platformer.EditorTools
 
             // Guardar Escena
             EditorSceneManager.SaveScene(scene, SCENE_PATH);
-            Debug.Log($"[KimayaJumpKingBuilder] ✅ Escena Jump King v12 (10 Salas del Templo) creada exitosamente en {SCENE_PATH}");
+            Debug.Log($"[KimayaJumpKingBuilder] ✅ Escena Jump King v15 (5 Pisos Icónicos) creada exitosamente en {SCENE_PATH}");
 
             RegisterSceneInBuildSettings(SCENE_PATH);
         }
 
-        private static void EnsureTextureIsSprite(string path, float ppu = 43.2f)
+        private static void EnsureTextureIsSprite(string path, float ppu = 21.6f)
         {
             if (!File.Exists(path)) return;
             AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
@@ -461,7 +407,7 @@ namespace Platformer.EditorTools
             sr.sortingOrder = -10;
         }
 
-        private static void CreateInvisiblePlatform(Transform parent, float x, float y, float w, float h, int layer, string name)
+        private static void CreatePlatformCollider(Transform parent, float x, float y, float w, float h, int layer, string name, SurfaceType surfaceType)
         {
             GameObject platGo = new GameObject(name);
             platGo.transform.SetParent(parent);
@@ -470,12 +416,14 @@ namespace Platformer.EditorTools
 
             var col = platGo.AddComponent<BoxCollider2D>();
             col.size = new Vector2(w, h);
-            var pMat = new PhysicsMaterial2D("PlatMat") { friction = 0.5f, bounciness = 0f };
+
+            float friction = (surfaceType == SurfaceType.Ice) ? 0.05f : 0.5f;
+            var pMat = new PhysicsMaterial2D($"PlatMat_{surfaceType}") { friction = friction, bounciness = 0f };
             col.sharedMaterial = pMat;
 
             // Componente de superficie Jump King
             var surface = platGo.AddComponent<KimayaSurface>();
-            surface.surfaceType = SurfaceType.Normal;
+            surface.surfaceType = surfaceType;
         }
 
         private static void CreateWall(Transform parent, float x, float y, float w, float h, int layer)
