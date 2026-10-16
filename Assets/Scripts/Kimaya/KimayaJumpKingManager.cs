@@ -111,6 +111,12 @@ namespace Kimaya
                 SwitchCharacter();
             }
 
+            // Alternar skin con C o H
+            if (ReadSkinToggleKey())
+            {
+                ToggleSkin();
+            }
+
             if (ReadEscapeKey())
             {
                 ReturnToHub();
@@ -179,6 +185,52 @@ namespace Kimaya
             {
                 ReturnToHub();
             }
+
+            // Botón interactivo para alternar skin con o sin casco
+            if (playerController != null && playerController.character != KimayaJumpKingController.CharacterType.JumpKing)
+            {
+                var anim = playerController.GetComponent<KimayaJumpKingAnimator>();
+                bool hasSkin = anim != null && anim.useKnightSkin;
+                string btnText = hasSkin ? "🛡️ Skin: Con Casco [C]" : "🐾 Skin: Sin Casco [C]";
+                float skinBtnW = 165f;
+                float skinBtnH = 32f;
+                float skinBtnX = topBtnX - skinBtnW - 12f;
+
+                GUI.backgroundColor = hasSkin ? new Color(0.95f, 0.75f, 0.2f, 1f) : new Color(0.6f, 0.6f, 0.6f, 1f);
+                if (GUI.Button(new Rect(skinBtnX, topBtnY, skinBtnW, skinBtnH), btnText))
+                {
+                    ToggleSkin();
+                }
+            }
+        }
+
+        private bool ReadSkinToggleKey()
+        {
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null)
+            {
+                if (Keyboard.current.cKey.wasPressedThisFrame || Keyboard.current.hKey.wasPressedThisFrame)
+                    return true;
+            }
+#endif
+            try
+            {
+                if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.H))
+                    return true;
+            }
+            catch { }
+            return false;
+        }
+
+        public void ToggleSkin()
+        {
+            if (playerController == null) return;
+            var anim = playerController.GetComponent<KimayaJumpKingAnimator>();
+            if (anim != null)
+            {
+                anim.ToggleKnightSkin();
+                UpdateCharacterUI();
+            }
         }
 
         private bool ReadTabOrQ()
@@ -227,15 +279,20 @@ namespace Kimaya
         {
             if (characterNameText != null && playerController != null)
             {
+                var anim = playerController.GetComponent<KimayaJumpKingAnimator>();
+                bool hasSkin = (anim != null && anim.useKnightSkin);
+
                 if (playerController.character == KimayaJumpKingController.CharacterType.JumpKing)
                 {
-                    characterNameText.text = "👑 Jump King (Oficial)";
+                    characterNameText.text = "👑 Jump King (Oficial) | [TAB] Personaje";
                     characterNameText.color = new Color(1f, 0.85f, 0.2f);
                 }
                 else
                 {
                     bool isFalin = playerController.character == KimayaJumpKingController.CharacterType.Falin;
-                    characterNameText.text = isFalin ? "🐾 Falin (Fuerza)" : "🌸 Mía (Agilidad)";
+                    string skinLabel = hasSkin ? " [🛡️ Con Casco]" : " [🐾 Sin Casco]";
+                    string charName = isFalin ? "🐾 Falin" : "🌸 Mía";
+                    characterNameText.text = $"{charName}{skinLabel} | [TAB] Personaje | [C] Casco";
                     characterNameText.color = isFalin ? new Color(1f, 0.75f, 0.2f) : new Color(0.9f, 0.5f, 1f);
                 }
             }

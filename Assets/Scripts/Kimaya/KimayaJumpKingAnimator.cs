@@ -4,14 +4,11 @@ using UnityEngine;
 namespace Kimaya
 {
     /// <summary>
-    /// Animador cinemático cuadro por cuadro estilo Jump King para Falin y Mía.
-    /// Soporta:
-    /// - Reposo (Idle)
-    /// - Caminata (Walk)
-    /// - Carga estática agachada con compresión gradual (Charge Squash - sin mover patas)
-    /// - Salto con estiramiento vertical aerodinámico (Jump Stretch)
-    /// - Caída libre con descenso cómico (Falling)
-    /// - Golpe / Aturdimiento contra el suelo (Splat Knockdown)
+    /// Animador cinemático cuadro por cuadro estilo Jump King para Jump King, Falin y Mía.
+    /// Soporta completamente:
+    /// - Modo Con Skin: Falin y Mía equipan casco de acero y capa real roja en TODOS sus estados (Idle, Walk, Charge, Jump Leap, Fall, Splat).
+    /// - Modo Sin Skin: Falin y Mía lucen su aspecto canino natural clásico en todos sus estados.
+    /// - Alternar con tecla C / H o botón en pantalla para jugar con o sin skin al instante.
     /// </summary>
     [RequireComponent(typeof(SpriteRenderer), typeof(KimayaJumpKingController))]
     public class KimayaJumpKingAnimator : MonoBehaviour
@@ -25,33 +22,60 @@ namespace Kimaya
         public Sprite knightBounce;
         public Sprite knightSplat;
 
-        [Header("Frames de Caminata y Reposo (Falin)")]
+        [Header("Modo de Skin")]
+        [Tooltip("Si es true, Falin y Mía usan la armadura y capa Jump King en todos los estados. Si es false, usan su aspecto canino clásico.")]
+        public bool useKnightSkin = true;
+
+        [Header("Falin - Con Skin Caballero (Casco & Capa)")]
         public Sprite falinKnightIdle;
-        public Sprite[] falinIdleFrames;
-        public Sprite[] falinWalkFrames;
+        public Sprite[] falinKnightWalkFrames;
+        public Sprite[] falinKnightChargeProgress;
+        public Sprite falinKnightJumpStretch;
+        public Sprite falinKnightFall;
+        public Sprite falinKnightSplat;
 
-        [Header("Frames Tácticos Jump King (Falin)")]
-        [Tooltip("Carga progresiva: [0]=ligera, [1]=media, [2]=máxima compresión")]
-        public Sprite[] falinChargeProgress;
-        public Sprite falinJumpStretch;
-        public Sprite falinFall;
-        public Sprite falinSplat;
+        [Header("Falin - Sin Skin (Perro Clásico)")]
+        public Sprite[] falinClassicIdleFrames;
+        public Sprite[] falinClassicWalkFrames;
+        public Sprite[] falinClassicChargeProgress;
+        public Sprite falinClassicJumpStretch;
+        public Sprite falinClassicFall;
+        public Sprite falinClassicSplat;
 
-        [Header("Frames de Caminata y Reposo (Mía)")]
+        [Header("Mía - Con Skin Caballero (Casco & Capa)")]
         public Sprite miaKnightIdle;
-        public Sprite[] miaIdleFrames;
-        public Sprite[] miaWalkFrames;
+        public Sprite[] miaKnightWalkFrames;
+        public Sprite[] miaKnightChargeProgress;
+        public Sprite miaKnightJumpStretch;
+        public Sprite miaKnightFall;
+        public Sprite miaKnightSplat;
 
-        [Header("Frames Tácticos Jump King (Mía)")]
-        [Tooltip("Carga progresiva: [0]=ligera, [1]=media, [2]=máxima compresión")]
-        public Sprite[] miaChargeProgress;
-        public Sprite miaJumpStretch;
-        public Sprite miaFall;
-        public Sprite miaSplat;
+        [Header("Mía - Sin Skin (Perra Clásica)")]
+        public Sprite[] miaClassicIdleFrames;
+        public Sprite[] miaClassicWalkFrames;
+        public Sprite[] miaClassicChargeProgress;
+        public Sprite miaClassicJumpStretch;
+        public Sprite miaClassicFall;
+        public Sprite miaClassicSplat;
 
         [Header("Velocidad de Animación (FPS)")]
         public float idleFPS = 8f;
         public float walkFPS = 11f;
+
+        // Campos de compatibilidad histórica
+        [HideInInspector] public Sprite[] falinIdleFrames;
+        [HideInInspector] public Sprite[] falinWalkFrames;
+        [HideInInspector] public Sprite[] falinChargeProgress;
+        [HideInInspector] public Sprite falinJumpStretch;
+        [HideInInspector] public Sprite falinFall;
+        [HideInInspector] public Sprite falinSplat;
+
+        [HideInInspector] public Sprite[] miaIdleFrames;
+        [HideInInspector] public Sprite[] miaWalkFrames;
+        [HideInInspector] public Sprite[] miaChargeProgress;
+        [HideInInspector] public Sprite miaJumpStretch;
+        [HideInInspector] public Sprite miaFall;
+        [HideInInspector] public Sprite miaSplat;
 
         private SpriteRenderer _sr;
         private KimayaJumpKingController _ctrl;
@@ -61,17 +85,37 @@ namespace Kimaya
         private int _currentFrameIndex = 0;
         private string _currentState = "Idle";
         private KimayaJumpKingController.CharacterType _lastChar;
+        private bool _lastSkinState = true;
 
         private void Awake()
         {
             _sr = GetComponent<SpriteRenderer>();
             _ctrl = GetComponent<KimayaJumpKingController>();
             _rb = GetComponent<Rigidbody2D>();
-            _lastChar = _ctrl.character;
+            _lastChar = _ctrl != null ? _ctrl.character : KimayaJumpKingController.CharacterType.JumpKing;
+            _lastSkinState = useKnightSkin;
         }
 
         private void Start()
         {
+            ApplyInitialSprite();
+        }
+
+        public void ToggleKnightSkin()
+        {
+            useKnightSkin = !useKnightSkin;
+            _lastSkinState = useKnightSkin;
+            _currentFrameIndex = 0;
+            _animTimer = 0f;
+            ApplyInitialSprite();
+        }
+
+        public void SetKnightSkin(bool enabled)
+        {
+            useKnightSkin = enabled;
+            _lastSkinState = useKnightSkin;
+            _currentFrameIndex = 0;
+            _animTimer = 0f;
             ApplyInitialSprite();
         }
 
@@ -87,24 +131,139 @@ namespace Kimaya
             }
             else if (isFalin)
             {
-                if (falinKnightIdle != null) _sr.sprite = falinKnightIdle;
-                else if (falinIdleFrames != null && falinIdleFrames.Length > 0) _sr.sprite = falinIdleFrames[0];
+                if (useKnightSkin && falinKnightIdle != null)
+                {
+                    _sr.sprite = falinKnightIdle;
+                }
+                else
+                {
+                    var idleArr = GetActiveFalinIdleFrames();
+                    if (idleArr != null && idleArr.Length > 0 && idleArr[0] != null)
+                        _sr.sprite = idleArr[0];
+                    else if (falinKnightIdle != null)
+                        _sr.sprite = falinKnightIdle;
+                }
             }
             else
             {
-                if (miaKnightIdle != null) _sr.sprite = miaKnightIdle;
-                else if (miaIdleFrames != null && miaIdleFrames.Length > 0) _sr.sprite = miaIdleFrames[0];
+                if (useKnightSkin && miaKnightIdle != null)
+                {
+                    _sr.sprite = miaKnightIdle;
+                }
+                else
+                {
+                    var idleArr = GetActiveMiaIdleFrames();
+                    if (idleArr != null && idleArr.Length > 0 && idleArr[0] != null)
+                        _sr.sprite = idleArr[0];
+                    else if (miaKnightIdle != null)
+                        _sr.sprite = miaKnightIdle;
+                }
             }
+        }
+
+        private Sprite[] GetActiveFalinIdleFrames()
+        {
+            if (falinClassicIdleFrames != null && falinClassicIdleFrames.Length > 0) return falinClassicIdleFrames;
+            return falinIdleFrames;
+        }
+
+        private Sprite[] GetActiveMiaIdleFrames()
+        {
+            if (miaClassicIdleFrames != null && miaClassicIdleFrames.Length > 0) return miaClassicIdleFrames;
+            return miaIdleFrames;
+        }
+
+        private Sprite[] GetActiveFalinWalkFrames()
+        {
+            if (useKnightSkin)
+            {
+                if (falinKnightWalkFrames != null && falinKnightWalkFrames.Length > 0) return falinKnightWalkFrames;
+            }
+            if (falinClassicWalkFrames != null && falinClassicWalkFrames.Length > 0) return falinClassicWalkFrames;
+            return falinWalkFrames;
+        }
+
+        private Sprite[] GetActiveMiaWalkFrames()
+        {
+            if (useKnightSkin)
+            {
+                if (miaKnightWalkFrames != null && miaKnightWalkFrames.Length > 0) return miaKnightWalkFrames;
+            }
+            if (miaClassicWalkFrames != null && miaClassicWalkFrames.Length > 0) return miaClassicWalkFrames;
+            return miaWalkFrames;
+        }
+
+        private Sprite[] GetActiveFalinCharge()
+        {
+            if (useKnightSkin)
+            {
+                if (falinKnightChargeProgress != null && falinKnightChargeProgress.Length > 0) return falinKnightChargeProgress;
+            }
+            if (falinClassicChargeProgress != null && falinClassicChargeProgress.Length > 0) return falinClassicChargeProgress;
+            return falinChargeProgress;
+        }
+
+        private Sprite[] GetActiveMiaCharge()
+        {
+            if (useKnightSkin)
+            {
+                if (miaKnightChargeProgress != null && miaKnightChargeProgress.Length > 0) return miaKnightChargeProgress;
+            }
+            if (miaClassicChargeProgress != null && miaClassicChargeProgress.Length > 0) return miaClassicChargeProgress;
+            return miaChargeProgress;
+        }
+
+        private Sprite GetActiveFalinJumpStretch()
+        {
+            if (useKnightSkin && falinKnightJumpStretch != null) return falinKnightJumpStretch;
+            if (falinClassicJumpStretch != null) return falinClassicJumpStretch;
+            return falinJumpStretch;
+        }
+
+        private Sprite GetActiveMiaJumpStretch()
+        {
+            if (useKnightSkin && miaKnightJumpStretch != null) return miaKnightJumpStretch;
+            if (miaClassicJumpStretch != null) return miaClassicJumpStretch;
+            return miaJumpStretch;
+        }
+
+        private Sprite GetActiveFalinFall()
+        {
+            if (useKnightSkin && falinKnightFall != null) return falinKnightFall;
+            if (falinClassicFall != null) return falinClassicFall;
+            return falinFall;
+        }
+
+        private Sprite GetActiveMiaFall()
+        {
+            if (useKnightSkin && miaKnightFall != null) return miaKnightFall;
+            if (miaClassicFall != null) return miaClassicFall;
+            return miaFall;
+        }
+
+        private Sprite GetActiveFalinSplat()
+        {
+            if (useKnightSkin && falinKnightSplat != null) return falinKnightSplat;
+            if (falinClassicSplat != null) return falinClassicSplat;
+            return falinSplat;
+        }
+
+        private Sprite GetActiveMiaSplat()
+        {
+            if (useKnightSkin && miaKnightSplat != null) return miaKnightSplat;
+            if (miaClassicSplat != null) return miaClassicSplat;
+            return miaSplat;
         }
 
         private void Update()
         {
             if (_ctrl == null || _sr == null) return;
 
-            // Detectar cambio de personaje (Falin / Mía)
-            if (_ctrl.character != _lastChar)
+            // Detectar cambio de personaje o de skin
+            if (_ctrl.character != _lastChar || useKnightSkin != _lastSkinState)
             {
                 _lastChar = _ctrl.character;
+                _lastSkinState = useKnightSkin;
                 _currentFrameIndex = 0;
                 _animTimer = 0f;
             }
@@ -116,7 +275,7 @@ namespace Kimaya
             if (_ctrl.IsStunned)
             {
                 _currentState = "Splat";
-                Sprite splatSprite = isKing ? knightSplat : (isFalin ? falinSplat : miaSplat);
+                Sprite splatSprite = isKing ? knightSplat : (isFalin ? GetActiveFalinSplat() : GetActiveMiaSplat());
                 if (splatSprite != null) _sr.sprite = splatSprite;
                 _sr.flipX = (_ctrl.FacingDirection < 0);
                 return;
@@ -132,7 +291,7 @@ namespace Kimaya
                 }
                 else
                 {
-                    var chargeArr = isFalin ? falinChargeProgress : miaChargeProgress;
+                    var chargeArr = isFalin ? GetActiveFalinCharge() : GetActiveMiaCharge();
                     if (chargeArr != null && chargeArr.Length > 0)
                     {
                         int chargeIdx = Mathf.Clamp(Mathf.FloorToInt(_ctrl.ChargePercent * chargeArr.Length), 0, chargeArr.Length - 1);
@@ -173,13 +332,13 @@ namespace Kimaya
                     if (_rb.linearVelocity.y >= -0.5f)
                     {
                         _currentState = "JumpStretch";
-                        var stretchSprite = isFalin ? falinJumpStretch : miaJumpStretch;
+                        var stretchSprite = isFalin ? GetActiveFalinJumpStretch() : GetActiveMiaJumpStretch();
                         if (stretchSprite != null) _sr.sprite = stretchSprite;
                     }
                     else
                     {
                         _currentState = "Falling";
-                        var fallSprite = isFalin ? falinFall : miaFall;
+                        var fallSprite = isFalin ? GetActiveFalinFall() : GetActiveMiaFall();
                         if (fallSprite != null) _sr.sprite = fallSprite;
                     }
                 }
@@ -222,18 +381,21 @@ namespace Kimaya
             {
                 if (_currentState == "Idle")
                 {
-                    Sprite knightSprite = isFalin ? falinKnightIdle : miaKnightIdle;
-                    if (knightSprite != null)
+                    if (useKnightSkin)
                     {
-                        _sr.sprite = knightSprite;
-                        _sr.flipX = (_ctrl.FacingDirection < 0);
-                        return;
+                        Sprite knightSprite = isFalin ? falinKnightIdle : miaKnightIdle;
+                        if (knightSprite != null)
+                        {
+                            _sr.sprite = knightSprite;
+                            _sr.flipX = (_ctrl.FacingDirection < 0);
+                            return;
+                        }
                     }
                 }
 
                 Sprite[] activeFrames = (_currentState == "Walk")
-                    ? (isFalin ? falinWalkFrames : miaWalkFrames)
-                    : (isFalin ? falinIdleFrames : miaIdleFrames);
+                    ? (isFalin ? GetActiveFalinWalkFrames() : GetActiveMiaWalkFrames())
+                    : (isFalin ? GetActiveFalinIdleFrames() : GetActiveMiaIdleFrames());
 
                 if (activeFrames != null && activeFrames.Length > 0)
                 {

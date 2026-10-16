@@ -22,7 +22,7 @@ namespace Platformer.EditorTools
     public static class KimayaClassicJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_JumpKing_Classic.unity";
-        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v13_KnightWalkFramesAndSpritesApplied";
+        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v14_FullDualSkinTacticalApplied";
 
         static KimayaClassicJumpKingBuilder()
         {
@@ -248,31 +248,75 @@ namespace Platformer.EditorTools
             anim.knightBounce = knightBounce;
             anim.knightSplat = knightSplat;
 
+            anim.useKnightSkin = true;
+
+            // Falin - Con Skin Caballero
             anim.falinKnightIdle = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/east.png");
-            anim.falinIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/idle/east");
-            anim.falinWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/JumpKingKnight/walk");
-            anim.falinChargeProgress = new Sprite[]
+            anim.falinKnightWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/JumpKingKnight/walk");
+            anim.falinKnightChargeProgress = new Sprite[]
+            {
+                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/charge_0.png"),
+                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/charge_1.png"),
+                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/charge_2.png")
+            };
+            anim.falinKnightJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/jump_stretch.png");
+            anim.falinKnightFall = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/fall.png");
+            anim.falinKnightSplat = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/splat.png");
+
+            // Falin - Sin Skin (Perro Clásico)
+            anim.falinClassicIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/idle/east");
+            anim.falinClassicWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/walking/east");
+            anim.falinClassicChargeProgress = new Sprite[]
             {
                 LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/charge_0.png"),
                 LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/charge_1.png"),
                 LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/charge_2.png")
             };
-            anim.falinJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/jump_stretch.png");
-            anim.falinFall = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/fall.png");
-            anim.falinSplat = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/splat.png");
+            anim.falinClassicJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/jump_stretch.png");
+            anim.falinClassicFall = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/fall.png");
+            anim.falinClassicSplat = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/splat.png");
 
+            // Campos retrocompatibles
+            anim.falinIdleFrames = anim.falinClassicIdleFrames;
+            anim.falinWalkFrames = anim.falinKnightWalkFrames;
+            anim.falinChargeProgress = anim.falinKnightChargeProgress;
+            anim.falinJumpStretch = anim.falinKnightJumpStretch;
+            anim.falinFall = anim.falinKnightFall;
+            anim.falinSplat = anim.falinKnightSplat;
+
+            // Mía - Con Skin Caballero
             anim.miaKnightIdle = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/east.png");
-            anim.miaIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/idle/east");
-            anim.miaWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/JumpKingKnight/walk");
-            anim.miaChargeProgress = new Sprite[]
+            anim.miaKnightWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/JumpKingKnight/walk");
+            anim.miaKnightChargeProgress = new Sprite[]
+            {
+                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/charge_0.png"),
+                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/charge_1.png"),
+                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/charge_2.png")
+            };
+            anim.miaKnightJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/jump_stretch.png");
+            anim.miaKnightFall = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/fall.png");
+            anim.miaKnightSplat = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/splat.png");
+
+            // Mía - Sin Skin (Perra Clásica)
+            anim.miaClassicIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/idle/east");
+            anim.miaClassicWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/walking/east");
+            anim.miaClassicChargeProgress = new Sprite[]
             {
                 LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/charge_0.png"),
                 LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/charge_1.png"),
                 LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/charge_2.png")
             };
-            anim.miaJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/jump_stretch.png");
-            anim.miaFall = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/fall.png");
-            anim.miaSplat = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/splat.png");
+            anim.miaClassicJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/jump_stretch.png");
+            anim.miaClassicFall = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/fall.png");
+            anim.miaClassicSplat = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/splat.png");
+
+            // Campos retrocompatibles
+            anim.miaIdleFrames = anim.miaClassicIdleFrames;
+            anim.miaWalkFrames = anim.miaKnightWalkFrames;
+            anim.miaChargeProgress = anim.miaKnightChargeProgress;
+            anim.miaJumpStretch = anim.miaKnightJumpStretch;
+            anim.miaFall = anim.miaKnightFall;
+            anim.miaSplat = anim.miaKnightSplat;
 
             // 3. Cámara Jump King (4:3 aspect ratio de Jump King original: 13.333f ancho x 10f alto)
             GameObject camGo = new GameObject("Main Camera");
@@ -450,6 +494,8 @@ namespace Platformer.EditorTools
                 "Assets/Sprites/PixelLab/Falin/JumpKing",
                 "Assets/Sprites/PixelLab/Falin/JumpKingKnight",
                 "Assets/Sprites/PixelLab/Falin/JumpKingKnight/walk",
+                "Assets/Sprites/PixelLab/Falin/JumpKingKnight/jump",
+                "Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical",
                 "Assets/Sprites/PixelLab/Falin/JumpLeapAnimation"
             };
 
@@ -470,6 +516,8 @@ namespace Platformer.EditorTools
                 "Assets/Sprites/PixelLab/Mia/JumpKing",
                 "Assets/Sprites/PixelLab/Mia/JumpKingKnight",
                 "Assets/Sprites/PixelLab/Mia/JumpKingKnight/walk",
+                "Assets/Sprites/PixelLab/Mia/JumpKingKnight/jump",
+                "Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical",
                 "Assets/Sprites/PixelLab/Mia/JumpLeapAnimation"
             };
 
