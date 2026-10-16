@@ -22,7 +22,7 @@ namespace Platformer.EditorTools
     public static class KimayaClassicJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_JumpKing_Classic.unity";
-        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v8_PixelLabPivotsAligned";
+        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v10_PitStepsAndZeroFrictionBoost";
 
         static KimayaClassicJumpKingBuilder()
         {
@@ -88,6 +88,9 @@ namespace Platformer.EditorTools
                 new KimayaPlatformDef("S1_Cliff_Right", 4.778f, 2.444f, 3.333f, 4.889f, SurfaceType.Normal),
                 new KimayaPlatformDef("S1_Step_LeftLow", -5.556f, 0.889f, 1.778f, 1.778f, SurfaceType.Normal),
                 new KimayaPlatformDef("S1_Bottom_Floor", -0.778f, 0.444f, 7.778f, 0.889f, SurfaceType.Normal),
+                // Repisas intermedias para salir del pozo sin dificultad
+                new KimayaPlatformDef("S1_Pit_Step_Left", -2.100f, 2.600f, 1.800f, 0.500f, SurfaceType.Normal),
+                new KimayaPlatformDef("S1_Pit_Step_Right", 2.100f, 2.600f, 1.800f, 0.500f, SurfaceType.Normal),
             },
             // Pantalla 2 Oficial de Jump King (Y: 10.0 a 20.0)
             new KimayaPlatformDef[]
@@ -217,17 +220,17 @@ namespace Platformer.EditorTools
             col.size = new Vector2(0.44f, 0.662f);
             col.offset = new Vector2(0f, 0.361f);
             col.edgeRadius = 0.03f;
-            var pMat = new PhysicsMaterial2D("PlayerMat") { friction = 0.2f, bounciness = 0f };
+            var pMat = new PhysicsMaterial2D("PlayerMat") { friction = 0.0f, bounciness = 0f };
             col.sharedMaterial = pMat;
 
             var jumpCtrl = playerGo.AddComponent<KimayaJumpKingController>();
             jumpCtrl.spriteRenderer = sr;
             jumpCtrl.character = KimayaJumpKingController.CharacterType.JumpKing;
-            jumpCtrl.walkSpeed = 2.50f;
+            jumpCtrl.walkSpeed = 2.60f;
             jumpCtrl.maxChargeTime = 0.60f;
-            jumpCtrl.minJumpForce = 3.5f;
-            jumpCtrl.maxJumpForce = 15.2f;
-            jumpCtrl.horizontalJumpSpeed = 5.833f;
+            jumpCtrl.minJumpForce = 6.5f;
+            jumpCtrl.maxJumpForce = 19.5f;
+            jumpCtrl.horizontalJumpSpeed = 6.50f;
             jumpCtrl.wallBounceMultiplier = 0.50f;
             jumpCtrl.enableHighFallStun = false;
 
@@ -558,7 +561,7 @@ namespace Platformer.EditorTools
             col.size = new Vector2(w, h);
             col.usedByComposite = usedByComposite;
 
-            float friction = (surfaceType == SurfaceType.Ice) ? 0.05f : 0.5f;
+            float friction = (surfaceType == SurfaceType.Ice) ? 0.05f : 0.0f;
             var pMat = new PhysicsMaterial2D($"PlatMat_{surfaceType}") { friction = friction, bounciness = 0f };
             col.sharedMaterial = pMat;
             col.usedByEffector = false; // 100% sólido, cero bugs
@@ -576,7 +579,7 @@ namespace Platformer.EditorTools
 
             var col = wallGo.AddComponent<BoxCollider2D>();
             col.size = new Vector2(w, h);
-            var pMat = new PhysicsMaterial2D("WallMat") { friction = 0.1f, bounciness = 0f };
+            var pMat = new PhysicsMaterial2D("WallMat") { friction = 0.0f, bounciness = 0f };
             col.sharedMaterial = pMat;
         }
 

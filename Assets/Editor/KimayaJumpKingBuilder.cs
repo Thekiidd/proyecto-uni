@@ -43,7 +43,7 @@ namespace Platformer.EditorTools
     public static class KimayaJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_Vertical.unity";
-        private const string BUILD_KEY = "KimayaJumpKing_Build_v18_OfficialRecreation";
+        private const string BUILD_KEY = "KimayaJumpKing_Build_v19_PitStepsAndZeroFrictionBoost";
 
         static KimayaJumpKingBuilder()
         {
@@ -228,7 +228,7 @@ namespace Platformer.EditorTools
                 sr.sortingOrder = 5;
             }
 
-            float friction = (surfaceType == SurfaceType.Ice) ? 0.05f : 0.5f;
+            float friction = (surfaceType == SurfaceType.Ice) ? 0.05f : 0.0f;
             var pMat = new PhysicsMaterial2D($"PlatMat_{surfaceType}") { friction = friction, bounciness = 0f };
             col.sharedMaterial = pMat;
 
@@ -249,7 +249,7 @@ namespace Platformer.EditorTools
 
             var col = wallGo.AddComponent<BoxCollider2D>();
             col.size = new Vector2(w, h);
-            var pMat = new PhysicsMaterial2D("WallMat") { friction = 0.1f, bounciness = 0f };
+            var pMat = new PhysicsMaterial2D("WallMat") { friction = 0.0f, bounciness = 0f };
             col.sharedMaterial = pMat;
         }
 

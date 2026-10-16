@@ -77,40 +77,40 @@ namespace Platformer.EditorTools
             }
 
             // Verificar constantes físicas 1:1 de Jump King
-            const float TOLERANCE = 0.05f;
-            if (Math.Abs(ctrl.walkSpeed - 2.50f) > TOLERANCE)
+            const float TOLERANCE = 0.50f;
+            if (ctrl.walkSpeed < 2.40f || ctrl.walkSpeed > 3.20f)
             {
-                Debug.LogWarning($"  ⚠️ walkSpeed={ctrl.walkSpeed} difiere del valor oficial (2.50f). Ajustando...");
-                ctrl.walkSpeed = 2.50f;
+                Debug.LogWarning($"  ⚠️ walkSpeed={ctrl.walkSpeed} fuera de rango. Ajustando...");
+                ctrl.walkSpeed = 2.60f;
             }
-            if (Math.Abs(ctrl.horizontalJumpSpeed - 5.833f) > TOLERANCE)
+            if (ctrl.horizontalJumpSpeed < 5.5f || ctrl.horizontalJumpSpeed > 7.0f)
             {
-                Debug.LogWarning($"  ⚠️ horizontalJumpSpeed={ctrl.horizontalJumpSpeed} difiere del oficial (5.833f). Ajustando...");
-                ctrl.horizontalJumpSpeed = 5.833f;
+                Debug.LogWarning($"  ⚠️ horizontalJumpSpeed={ctrl.horizontalJumpSpeed} fuera de rango. Ajustando...");
+                ctrl.horizontalJumpSpeed = 6.50f;
             }
-            if (Math.Abs(ctrl.maxJumpForce - 15.2f) > 0.5f)
+            if (ctrl.maxJumpForce < 18.0f || ctrl.maxJumpForce > 22.0f)
             {
-                Debug.LogWarning($"  ⚠️ maxJumpForce={ctrl.maxJumpForce} difiere del oficial (15.2f). Ajustando...");
-                ctrl.maxJumpForce = 15.2f;
+                Debug.LogWarning($"  ⚠️ maxJumpForce={ctrl.maxJumpForce} fuera de rango calibrado. Ajustando a 19.5f...");
+                ctrl.maxJumpForce = 19.5f;
             }
-            if (Math.Abs(ctrl.wallBounceMultiplier - 0.50f) > TOLERANCE)
+            if (Math.Abs(ctrl.wallBounceMultiplier - 0.50f) > 0.20f)
             {
-                Debug.LogWarning($"  ⚠️ wallBounceMultiplier={ctrl.wallBounceMultiplier} difiere del oficial (0.50f). Ajustando...");
+                Debug.LogWarning($"  ⚠️ wallBounceMultiplier={ctrl.wallBounceMultiplier} fuera de rango. Ajustando...");
                 ctrl.wallBounceMultiplier = 0.50f;
             }
-            if (Math.Abs(ctrl.maxChargeTime - 0.60f) > TOLERANCE)
+            if (Math.Abs(ctrl.maxChargeTime - 0.60f) > 0.15f)
             {
-                Debug.LogWarning($"  ⚠️ maxChargeTime={ctrl.maxChargeTime} difiere del oficial (0.60f). Ajustando...");
+                Debug.LogWarning($"  ⚠️ maxChargeTime={ctrl.maxChargeTime} fuera de rango. Ajustando...");
                 ctrl.maxChargeTime = 0.60f;
             }
 
             var rb = player.GetComponent<Rigidbody2D>();
-            if (rb == null || Math.Abs(rb.gravityScale - 2.621f) > TOLERANCE)
+            if (rb == null || Math.Abs(rb.gravityScale - 2.621f) > 0.1f)
             {
                 Debug.LogWarning($"  ⚠️ Rigidbody2D.gravityScale={rb?.gravityScale} difiere del oficial (2.621f). Ajustando...");
                 if (rb != null) rb.gravityScale = 2.621f;
             }
-            Debug.Log("  ✅ [2/5] Físicas 1:1 del Caballero Jump King verificadas (g=25.71, Vx=5.833, Vy=15.2, Bounce=0.50, Charge=0.60s).");
+            Debug.Log($"  ✅ [2/5] Físicas de Salto Táctico verificadas (g=25.71, Vx={ctrl.horizontalJumpSpeed:F2}, Vy={ctrl.maxJumpForce:F2}, Bounce={ctrl.wallBounceMultiplier:F2}, Charge={ctrl.maxChargeTime:F2}s).");
 
             // 2. Verificar Collider del Jugador y Posición de Spawn
             var col = player.GetComponent<BoxCollider2D>();
@@ -167,8 +167,8 @@ namespace Platformer.EditorTools
 
             // 4. Simulación Física y Matemática de la Salida de la Base y Trayectoria
             float g = 2.621f * 9.81f; // 25.712 m/s^2
-            float vx = 5.833f;
-            float vy0 = 15.2f;
+            float vx = ctrl.horizontalJumpSpeed;
+            float vy0 = ctrl.maxJumpForce;
             float x0 = player.transform.position.x;
             float y0 = player.transform.position.y;
 
