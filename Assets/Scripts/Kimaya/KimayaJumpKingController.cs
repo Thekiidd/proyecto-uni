@@ -54,14 +54,14 @@ namespace Kimaya
         [HideInInspector] public Animator animator;
 
         [Header("Movimiento en Suelo")]
-        public float walkSpeed = 3.5f;
+        public float walkSpeed = 2.50f;
 
         [Header("Física de Salto Táctico Jump King (Calibración Exacta)")]
         [Tooltip("Tiempo de carga máximo exacto de Jump King (0.6s / 36 frames)")]
         public float maxChargeTime = 0.60f;
-        public float minJumpForce = 7.0f;
-        public float maxJumpForce = 17.5f;
-        public float horizontalJumpSpeed = 7.0f;
+        public float minJumpForce = 3.5f;
+        public float maxJumpForce = 15.2f;
+        public float horizontalJumpSpeed = 5.833f;
         [Tooltip("Factor de rebote en pared (Jump King original = 0.5)")]
         public float wallBounceMultiplier = 0.50f;
 
@@ -122,13 +122,13 @@ namespace Kimaya
 
             if (character == CharacterType.JumpKing)
             {
-                // Jump King Caballero Oficial (1:1 con Nexile Jump King)
+                // Jump King Caballero Oficial (1:1 con Nexile Jump King: g = 25.714 / 9.81 = 2.621)
                 _rb.mass = 1.0f;
-                _rb.gravityScale = 2.2f;
-                walkSpeed = 3.5f;
-                minJumpForce = 7.0f;
-                maxJumpForce = 17.5f;
-                horizontalJumpSpeed = 7.0f; // Salto parabólico exacto 2.5:1
+                _rb.gravityScale = 2.621f;
+                walkSpeed = 2.50f;
+                minJumpForce = 3.5f;
+                maxJumpForce = 15.2f;
+                horizontalJumpSpeed = 5.833f;
                 wallBounceMultiplier = 0.50f; // BOUNCE = 50%
                 maxChargeTime = 0.60f; // JUMP_TIME = 0.60s
                 splatStunDuration = 0.50f; // SPLAT_TIME = 0.50s
@@ -312,13 +312,11 @@ namespace Kimaya
                 jumpForce *= sandJumpMult;
             }
 
-            // Fuerza horizontal según carga y dirección
+            // Fuerza horizontal según dirección (Jump King original: velocidad horizontal fija SPEED = 5.833f)
             float hForce = 0f;
             if (Mathf.Abs(_jumpDirection) > 0.1f)
             {
-                // Escalamiento horizontal: saltos cortos avanzan poco, saltos cargados vuelan lejos
-                float hMultiplier = Mathf.Lerp(0.45f, 1.0f, ChargePercent);
-                hForce = _jumpDirection * horizontalJumpSpeed * hMultiplier;
+                hForce = _jumpDirection * horizontalJumpSpeed;
             }
 
             _rb.linearVelocity = new Vector2(hForce, jumpForce);

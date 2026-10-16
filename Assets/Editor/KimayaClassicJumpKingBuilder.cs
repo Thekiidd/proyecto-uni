@@ -22,7 +22,7 @@ namespace Platformer.EditorTools
     public static class KimayaClassicJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_JumpKing_Classic.unity";
-        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v4_FixSettings";
+        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v6_SolidBoxColliders";
 
         static KimayaClassicJumpKingBuilder()
         {
@@ -157,9 +157,9 @@ namespace Platformer.EditorTools
             BuildClassicJumpKingScene();
         }
 
-        public static void BuildClassicJumpKingScene()
+        public static void BuildClassicJumpKingScene(string targetScenePath = SCENE_PATH)
         {
-            Debug.Log("[KimayaClassicJumpKingBuilder] 👑 Iniciando construcción de Jump King Clásico (Opción A - 1:1 Oficial)...");
+            Debug.Log($"[KimayaClassicJumpKingBuilder] 👑 Iniciando construcción de Jump King Oficial en {targetScenePath}...");
 
             // 1. Asegurar importación de fondos y sprites del Caballero Jump King a PPU = 36f
             foreach (var path in CLASSIC_SCREEN_PATHS)
@@ -220,11 +220,11 @@ namespace Platformer.EditorTools
             var jumpCtrl = playerGo.AddComponent<KimayaJumpKingController>();
             jumpCtrl.spriteRenderer = sr;
             jumpCtrl.character = KimayaJumpKingController.CharacterType.JumpKing;
-            jumpCtrl.walkSpeed = 3.5f;
+            jumpCtrl.walkSpeed = 2.50f;
             jumpCtrl.maxChargeTime = 0.60f;
-            jumpCtrl.minJumpForce = 7.0f;
-            jumpCtrl.maxJumpForce = 17.5f;
-            jumpCtrl.horizontalJumpSpeed = 7.0f;
+            jumpCtrl.minJumpForce = 3.5f;
+            jumpCtrl.maxJumpForce = 15.2f;
+            jumpCtrl.horizontalJumpSpeed = 5.833f;
             jumpCtrl.wallBounceMultiplier = 0.50f;
             jumpCtrl.enableHighFallStun = false;
 
@@ -299,7 +299,7 @@ namespace Platformer.EditorTools
                 CreateScreenBackground(bgRoot.transform, i, bgSprite, $"BG_JumpKing_Screen_{i + 1}");
             }
 
-            // 6. Colisionadores Sólidos 1:1 de Jump King con CompositeCollider2D para eliminar juntas
+            // 6. Colisionadores Sólidos 1:1 de Jump King (BoxCollider2D directos, sólidos e inmediatos, sin riesgo de fallo)
             GameObject platformsRoot = new GameObject("Platforms");
             for (int r = 0; r < ClassicJumpKing5Screens.Length; r++)
             {
@@ -307,16 +307,9 @@ namespace Platformer.EditorTools
                 roomFolder.transform.SetParent(platformsRoot.transform);
                 roomFolder.layer = groundLayer;
 
-                var rbStatic = roomFolder.AddComponent<Rigidbody2D>();
-                rbStatic.bodyType = RigidbodyType2D.Static;
-
-                var compCol = roomFolder.AddComponent<CompositeCollider2D>();
-                compCol.geometryType = CompositeCollider2D.GeometryType.Polygons;
-                compCol.sharedMaterial = new PhysicsMaterial2D("PlatMat") { friction = 0.5f, bounciness = 0f };
-
                 foreach (var p in ClassicJumpKing5Screens[r])
                 {
-                    CreatePlatformCollider(roomFolder.transform, p.centerX, p.centerY, p.width, p.height, groundLayer, p.name, p.surfaceType, true);
+                    CreatePlatformCollider(roomFolder.transform, p.centerX, p.centerY, p.width, p.height, groundLayer, p.name, p.surfaceType, false);
                 }
             }
 
@@ -425,10 +418,10 @@ namespace Platformer.EditorTools
             victoryGo.SetActive(false);
 
             // Guardar Escena
-            EditorSceneManager.SaveScene(scene, SCENE_PATH);
-            Debug.Log($"[KimayaClassicJumpKingBuilder] ✅ Escena Jump King Clásico (Opción A 1:1) creada exitosamente en {SCENE_PATH}");
+            EditorSceneManager.SaveScene(scene, targetScenePath);
+            Debug.Log($"[KimayaClassicJumpKingBuilder] ✅ Escena Jump King Oficial creada exitosamente en {targetScenePath}");
 
-            RegisterSceneInBuildSettings(SCENE_PATH);
+            RegisterSceneInBuildSettings(targetScenePath);
         }
 
         private static void EnsureTextureIsSprite(string path, float ppu = 36.0f, SpriteAlignment alignment = SpriteAlignment.Center, Vector2? customPivot = null)

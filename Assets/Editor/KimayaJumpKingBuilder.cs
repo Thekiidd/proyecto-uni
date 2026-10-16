@@ -43,7 +43,7 @@ namespace Platformer.EditorTools
     public static class KimayaJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_Vertical.unity";
-        private const string BUILD_KEY = "KimayaJumpKing_Build_v17_VictoryButtons";
+        private const string BUILD_KEY = "KimayaJumpKing_Build_v18_OfficialRecreation";
 
         static KimayaJumpKingBuilder()
         {
@@ -54,7 +54,7 @@ namespace Platformer.EditorTools
         {
             if (!EditorPrefs.GetBool(BUILD_KEY, false))
             {
-                Debug.Log("[KimayaJumpKingBuilder] 🚀 Ejecutando AutoBuildCheck v15 para Jump King (5 Pisos Icónicos PixelLab)...");
+                Debug.Log("[KimayaJumpKingBuilder] 🚀 Ejecutando AutoBuildCheck v18 para recreación de Jump King en Ascenso_Vertical...");
                 BuildJumpKingScene();
                 EditorPrefs.SetBool(BUILD_KEY, true);
             }
@@ -131,244 +131,10 @@ namespace Platformer.EditorTools
 
         public static void BuildJumpKingScene()
         {
-            Debug.Log("[KimayaJumpKingBuilder] 🚀 Iniciando construcción de escena Jump King v15 (5 Pisos Icónicos)...");
-
-            // 1. Asegurar importación de los 5 fondos de Graybox continua y sprites de plataformas
-            foreach (var path in JUMP_KING_SCREEN_PATHS)
-            {
-                EnsureTextureIsSprite(path, 21.6f);
-            }
-            EnsureTextureIsSprite(PLAT_NORMAL_PATH, 32f);
-            EnsureTextureIsSprite(PLAT_CATCH_PATH, 32f);
-            EnsureTextureIsSprite(PLAT_SUMMIT_PATH, 32f);
-
-            // Crear escena nueva
-            Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
-
-            // Cargar sprites
-            Sprite falinSprite = LoadAnySprite(FALIN_SPRITE_PATH);
-            Sprite miaSprite = LoadAnySprite(MIA_SPRITE_PATH);
-            Sprite altarSprite = LoadAnySprite(ALTAR_SPRITE_PATH);
-
-            // Layer Ground
-            int groundLayer = LayerMask.NameToLayer("Ground");
-            if (groundLayer < 0) groundLayer = LayerMask.NameToLayer("Default");
-
-            // 2. Jugador (Falin / Mía en vista lateral)
-            GameObject playerGo = new GameObject("Player_JumpKing");
-            playerGo.transform.position = new Vector3(-5.0f, 1.8f, 0f); // Spawnea en el suelo del Bosque
-
-            var sr = playerGo.AddComponent<SpriteRenderer>();
-            sr.sprite = falinSprite != null ? falinSprite : miaSprite;
-            sr.sortingOrder = 20;
-
-            var rb = playerGo.GetComponent<Rigidbody2D>();
-            if (rb == null) rb = playerGo.AddComponent<Rigidbody2D>();
-            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-            rb.freezeRotation = true;
-
-            var col = playerGo.AddComponent<BoxCollider2D>();
-            col.size = new Vector2(1.0f, 0.75f);
-            col.offset = new Vector2(0f, 0.38f);
-            var pMat = new PhysicsMaterial2D("PlayerMat") { friction = 0.2f, bounciness = 0f };
-            col.sharedMaterial = pMat;
-
-            var jumpCtrl = playerGo.AddComponent<KimayaJumpKingController>();
-            jumpCtrl.spriteRenderer = sr;
-            jumpCtrl.character = KimayaJumpKingController.CharacterType.Falin;
-            jumpCtrl.enableHighFallStun = false; // Solo saltar y escalar, sin aturdimiento
-
-            // Herramienta visual de parábolas de salto en tiempo real (Scene View Gizmos)
-            playerGo.AddComponent<KimayaJumpTrajectory>();
-
-            // Animador Jump King con poses reales de carga, estiramiento, caída y splat
-            var anim = playerGo.AddComponent<KimayaJumpKingAnimator>();
-            anim.falinIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/idle/east");
-            anim.falinWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/walking/east");
-            anim.falinChargeProgress = new Sprite[]
-            {
-                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/charge_0.png"),
-                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/charge_1.png"),
-                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/charge_2.png")
-            };
-            anim.falinJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/jump_stretch.png");
-            anim.falinFall = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/fall.png");
-            anim.falinSplat = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/splat.png");
-
-            anim.miaIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/idle/east");
-            anim.miaWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/walking/east");
-            anim.miaChargeProgress = new Sprite[]
-            {
-                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/charge_0.png"),
-                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/charge_1.png"),
-                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/charge_2.png")
-            };
-            anim.miaJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/jump_stretch.png");
-            anim.miaFall = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/fall.png");
-            anim.miaSplat = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/splat.png");
-
-            // 3. Cámara Jump King (Pantalla por pantalla con altura de 10 unidades, ancho 17.777f)
-            GameObject camGo = new GameObject("Main Camera");
-            camGo.tag = "MainCamera";
-            var cam = camGo.AddComponent<Camera>();
-            cam.orthographic = true;
-            cam.orthographicSize = 5f; // Altura visible = 10 unidades
-            cam.backgroundColor = new Color(0.04f, 0.05f, 0.08f);
-            cam.clearFlags = CameraClearFlags.SolidColor;
-            camGo.transform.position = new Vector3(0f, 5f, -10f);
-
-            var screenCam = camGo.AddComponent<JumpKingScreenCamera>();
-            screenCam.target = playerGo.transform;
-            screenCam.screenHeight = 10f;
-            screenCam.screenWidth = 17.777f;
-            screenCam.baseWorldY = 0f;
-            screenCam.transitionSpeed = 15f;
-
-            camGo.AddComponent<AudioListener>();
-
-            // 4. Paredes Verticales de Contención (5 Pisos = 50 unidades verticales de Y: 0 a 50)
-            GameObject wallsRoot = new GameObject("BoundaryWalls");
-            CreateWall(wallsRoot.transform, -8.888f, 25f, 0.8f, 52f, groundLayer); // Pared izquierda
-            CreateWall(wallsRoot.transform, 8.888f, 25f, 0.8f, 52f, groundLayer);  // Pared derecha
-            CreateWall(wallsRoot.transform, 0f, 0.2f, 18.5f, 1f, groundLayer);      // Suelo base debajo de Piso 1
-            CreateWall(wallsRoot.transform, 0f, 50.5f, 18.5f, 1f, groundLayer);     // Techo cerrado sobre Piso 5
-
-            // 5. Fondos Pixel Art Ilustrados por Piso (5 Fondos de Biomas Distintos)
-            GameObject bgRoot = new GameObject("Backgrounds");
-            for (int i = 0; i < JUMP_KING_SCREEN_PATHS.Length; i++)
-            {
-                Sprite bgSprite = LoadAnySprite(JUMP_KING_SCREEN_PATHS[i]);
-                CreateScreenBackground(bgRoot.transform, i, bgSprite, $"BG_Piso_{i + 1}");
-            }
-
-            // 6. Colisionadores Físicos en las Plataformas Ilustradas (Calculados al píxel)
-            GameObject platformsRoot = new GameObject("Platforms");
-            for (int r = 0; r < JumpKing5Floors.Length; r++)
-            {
-                GameObject roomFolder = new GameObject($"Piso_{r + 1}_Colliders");
-                roomFolder.transform.SetParent(platformsRoot.transform);
-                foreach (var p in JumpKing5Floors[r])
-                {
-                    CreatePlatformCollider(roomFolder.transform, p.centerX, p.centerY, p.width, p.height, groundLayer, p.name, p.surfaceType);
-                }
-            }
-
-            // 7. Altar Sagrado de Victoria en la Cumbre al Atardecer (Piso 5, Y = 46.2f)
-            GameObject altarGo = new GameObject("Altar_Rescate");
-            altarGo.transform.position = new Vector3(0.0f, 46.2f, 0f);
-            var altarSr = altarGo.AddComponent<SpriteRenderer>();
-            altarSr.sprite = altarSprite;
-            altarSr.sortingOrder = 5;
-            altarGo.transform.localScale = new Vector3(0.85f, 0.85f, 1f);
-
-            // Compañera Kiara esperando rescate en el altar
-            GameObject rescuedGo = new GameObject("Rescued_Companion");
-            rescuedGo.transform.position = new Vector3(1.2f, 46.1f, 0f);
-            rescuedGo.transform.localScale = new Vector3(-0.9f, 0.9f, 1f); // Mirando hacia el héroe
-            var rescuedSr = rescuedGo.AddComponent<SpriteRenderer>();
-            rescuedSr.sprite = miaSprite != null ? miaSprite : falinSprite;
-            rescuedSr.sortingOrder = 6;
-
-            // 8. UI / Canvas de Jump King
-            GameObject canvasGo = new GameObject("JumpKing_Canvas");
-            var canvas = canvasGo.AddComponent<Canvas>();
-            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            var scaler = canvasGo.AddComponent<CanvasScaler>();
-            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-            scaler.referenceResolution = new Vector2(1920, 1080);
-            canvasGo.AddComponent<GraphicRaycaster>();
-
-            // Manager de partida
-            var manager = canvasGo.AddComponent<KimayaJumpKingManager>();
-            manager.playerController = jumpCtrl;
-            manager.screenCamera = screenCam;
-            manager.falinSprite = falinSprite;
-            manager.miaSprite = miaSprite;
-            manager.finalScreenIndex = 4; // 5 Pisos (0 a 4)
-
-            // Panel Superior HUD
-            GameObject topHud = CreateUIPanel(canvasGo.transform, "TopHUD", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0, -45), new Vector2(1400, 65));
-            var topBg = topHud.AddComponent<Image>();
-            topBg.color = new Color(0.04f, 0.07f, 0.14f, 0.90f);
-
-            // Texto Piso
-            manager.screenText = CreateUIText(topHud.transform, "Txt_Piso", "Piso 1 / 5: El Bosque Profundo y la Entrada a las Ruinas", 24, TextAnchor.MiddleLeft, new Vector2(-460, 0), new Vector2(450, 50));
-            manager.screenText.color = new Color(1f, 0.9f, 0.35f);
-
-            // Texto Personaje
-            manager.characterNameText = CreateUIText(topHud.transform, "Txt_Char", "🐾 Falin (Fuerza) | [TAB] Mía", 23, TextAnchor.MiddleCenter, new Vector2(0, 0), new Vector2(380, 50));
-            manager.characterNameText.color = new Color(1f, 0.75f, 0.2f);
-
-            // Texto Stats
-            manager.statsText = CreateUIText(topHud.transform, "Txt_Stats", "⏱️ 00:00  |  🦘 Saltos: 0  |  💥 Caídas: 0", 22, TextAnchor.MiddleRight, new Vector2(460, 0), new Vector2(420, 50));
-            manager.statsText.color = Color.white;
-
-            // Barra de Carga de Salto
-            GameObject chargeBarGo = CreateUIPanel(canvasGo.transform, "ChargeBar_Panel", new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0, 58), new Vector2(440, 24));
-            var slider = chargeBarGo.AddComponent<Slider>();
-            slider.minValue = 0f;
-            slider.maxValue = 1f;
-            slider.value = 0f;
-            manager.chargeSlider = slider;
-
-            var barBg = chargeBarGo.AddComponent<Image>();
-            barBg.color = new Color(0.08f, 0.08f, 0.12f, 0.9f);
-
-            GameObject fillGo = CreateUIPanel(chargeBarGo.transform, "Fill", new Vector2(0f, 0f), new Vector2(1f, 1f), Vector2.zero, Vector2.zero);
-            var fillImg = fillGo.AddComponent<Image>();
-            fillImg.color = new Color(0.2f, 0.9f, 0.3f);
-            slider.fillRect = fillGo.GetComponent<RectTransform>();
-            manager.chargeFillImage = fillImg;
-
-            // Texto de Controles
-            Text controlsText = CreateUIText(canvasGo.transform, "Txt_Controls", "Mantén [ESPACIO] para cargar salto • [A / D] Dirección • [TAB] Alternar Falin / Mía", 18, TextAnchor.MiddleCenter, new Vector2(0, 22), new Vector2(1100, 28));
-            controlsText.rectTransform.anchorMin = new Vector2(0.5f, 0f);
-            controlsText.rectTransform.anchorMax = new Vector2(0.5f, 0f);
-            controlsText.color = new Color(0.75f, 0.85f, 0.95f, 0.85f);
-
-            // Panel de Victoria
-            GameObject victoryGo = CreateUIPanel(canvasGo.transform, "VictoryPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(760, 440));
-            var vicBg = victoryGo.AddComponent<Image>();
-            vicBg.color = new Color(0.05f, 0.12f, 0.22f, 0.98f);
-
-            Text vicTitle = CreateUIText(victoryGo.transform, "Txt_VicTitle", "🏆 ¡RESCATE EN LA CUMBRE!", 34, TextAnchor.MiddleCenter, new Vector2(0, 145), new Vector2(720, 60));
-            vicTitle.color = new Color(1f, 0.85f, 0.2f);
-
-            Text vicStats = CreateUIText(victoryGo.transform, "Txt_VicStats", "⏱️ TIEMPO: 00:00   |   🦘 SALTOS: 0   |   💥 CAÍDAS: 0", 22, TextAnchor.MiddleCenter, new Vector2(0, 80), new Vector2(720, 40));
-            vicStats.color = new Color(0.35f, 0.95f, 0.55f);
-            manager.victoryStatsText = vicStats;
-
-            Text vicDesc = CreateUIText(victoryGo.transform, "Txt_VicDesc", "¡Has conquistado los 5 Pisos del Gran Árbol Sagrado!\nLlegaste al Altar de la Cumbre y rescataste a Kiara.\n\nFalin y Mía han demostrado valor, destreza y compañerismo.", 21, TextAnchor.MiddleCenter, new Vector2(0, 10), new Vector2(680, 95));
-            vicDesc.color = Color.white;
-            manager.victoryDescText = vicDesc;
-
-            // Botón Repetir Ascenso (Verde esmeralda)
-            GameObject btnRestartGo = CreateUIPanel(victoryGo.transform, "Btn_Restart", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(-150, -115), new Vector2(250, 56));
-            var rImg = btnRestartGo.AddComponent<Image>();
-            rImg.color = new Color(0.12f, 0.65f, 0.32f);
-            var rBtn = btnRestartGo.AddComponent<Button>();
-            Text rTxt = CreateUIText(btnRestartGo.transform, "Lbl", "🔄 Repetir Ascenso", 20, TextAnchor.MiddleCenter, Vector2.zero, new Vector2(250, 56));
-            rTxt.color = Color.white;
-            manager.restartButton = rBtn;
-
-            // Botón Volver al Hub (Azul rey)
-            GameObject btnHubGo = CreateUIPanel(victoryGo.transform, "Btn_Hub", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(150, -115), new Vector2(250, 56));
-            var hImg = btnHubGo.AddComponent<Image>();
-            hImg.color = new Color(0.20f, 0.45f, 0.80f);
-            var hBtn = btnHubGo.AddComponent<Button>();
-            Text hTxt = CreateUIText(btnHubGo.transform, "Lbl", "🏡 Volver al Hub", 20, TextAnchor.MiddleCenter, Vector2.zero, new Vector2(250, 56));
-            hTxt.color = Color.white;
-            manager.returnToHubButton = hBtn;
-
-            manager.victoryPanel = victoryGo;
-            victoryGo.SetActive(false);
-
-            // Guardar Escena
-            EditorSceneManager.SaveScene(scene, SCENE_PATH);
-            Debug.Log($"[KimayaJumpKingBuilder] ✅ Escena Jump King v15 (5 Pisos Icónicos) creada exitosamente en {SCENE_PATH}");
-
-            RegisterSceneInBuildSettings(SCENE_PATH);
+            Debug.Log("[KimayaJumpKingBuilder] 👑 Recreando Jump King Oficial en " + SCENE_PATH);
+            KimayaClassicJumpKingBuilder.BuildClassicJumpKingScene(SCENE_PATH);
         }
+
 
         private static void EnsureTextureIsSprite(string path, float ppu = 21.6f)
         {
