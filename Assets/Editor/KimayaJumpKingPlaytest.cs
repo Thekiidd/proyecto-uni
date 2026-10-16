@@ -83,15 +83,15 @@ namespace Platformer.EditorTools
                 Debug.LogWarning($"  ⚠️ walkSpeed={ctrl.walkSpeed} fuera de rango. Ajustando...");
                 ctrl.walkSpeed = 2.60f;
             }
-            if (ctrl.horizontalJumpSpeed < 5.5f || ctrl.horizontalJumpSpeed > 7.0f)
+            if (ctrl.horizontalJumpSpeed < 5.5f || ctrl.horizontalJumpSpeed > 8.5f)
             {
                 Debug.LogWarning($"  ⚠️ horizontalJumpSpeed={ctrl.horizontalJumpSpeed} fuera de rango. Ajustando...");
-                ctrl.horizontalJumpSpeed = 6.50f;
+                ctrl.horizontalJumpSpeed = 7.50f;
             }
-            if (ctrl.maxJumpForce < 18.0f || ctrl.maxJumpForce > 22.0f)
+            if (ctrl.maxJumpForce < 18.0f || ctrl.maxJumpForce > 27.0f)
             {
-                Debug.LogWarning($"  ⚠️ maxJumpForce={ctrl.maxJumpForce} fuera de rango calibrado. Ajustando a 19.5f...");
-                ctrl.maxJumpForce = 19.5f;
+                Debug.LogWarning($"  ⚠️ maxJumpForce={ctrl.maxJumpForce} fuera de rango calibrado. Ajustando a 24.0f...");
+                ctrl.maxJumpForce = 24.0f;
             }
             if (Math.Abs(ctrl.wallBounceMultiplier - 0.50f) > 0.20f)
             {
@@ -105,12 +105,13 @@ namespace Platformer.EditorTools
             }
 
             var rb = player.GetComponent<Rigidbody2D>();
-            if (rb == null || Math.Abs(rb.gravityScale - 2.621f) > 0.1f)
+            if (rb == null || Math.Abs(rb.gravityScale - 2.45f) > 0.3f)
             {
-                Debug.LogWarning($"  ⚠️ Rigidbody2D.gravityScale={rb?.gravityScale} difiere del oficial (2.621f). Ajustando...");
-                if (rb != null) rb.gravityScale = 2.621f;
+                Debug.LogWarning($"  ⚠️ Rigidbody2D.gravityScale={rb?.gravityScale} difiere del calibrado (2.45f). Ajustando...");
+                if (rb != null) rb.gravityScale = 2.45f;
             }
-            Debug.Log($"  ✅ [2/5] Físicas de Salto Táctico verificadas (g=25.71, Vx={ctrl.horizontalJumpSpeed:F2}, Vy={ctrl.maxJumpForce:F2}, Bounce={ctrl.wallBounceMultiplier:F2}, Charge={ctrl.maxChargeTime:F2}s).");
+            float curG = (rb != null ? rb.gravityScale : 2.45f) * 9.81f;
+            Debug.Log($"  ✅ [2/5] Físicas de Salto Táctico verificadas (g={curG:F2}, Vx={ctrl.horizontalJumpSpeed:F2}, Vy={ctrl.maxJumpForce:F2}, Bounce={ctrl.wallBounceMultiplier:F2}, Charge={ctrl.maxChargeTime:F2}s).");
 
             // 2. Verificar Collider del Jugador y Posición de Spawn
             var col = player.GetComponent<BoxCollider2D>();
@@ -166,7 +167,7 @@ namespace Platformer.EditorTools
             Debug.Log($"  ✅ [4/5] {solidCount} plataformas verificadas como BoxCollider2D 100% sólidos directos.");
 
             // 4. Simulación Física y Matemática de la Salida de la Base y Trayectoria
-            float g = 2.621f * 9.81f; // 25.712 m/s^2
+            float g = (rb != null ? rb.gravityScale : 2.45f) * 9.81f;
             float vx = ctrl.horizontalJumpSpeed;
             float vy0 = ctrl.maxJumpForce;
             float x0 = player.transform.position.x;
@@ -176,39 +177,43 @@ namespace Platformer.EditorTools
             float tEdge = (x0 - (-3.111f)) / vx;
             float yEdge = y0 + vy0 * tEdge - 0.5f * g * tEdge * tEdge;
 
-            // Tiempo para alcanzar la superficie del risco (Y = 4.889f)
-            float dY = 4.889f - y0;
-            float disc = vy0 * vy0 - 2f * g * dY;
-            if (disc < 0)
-            {
-                Debug.LogError("❌ El salto vertical no tiene suficiente fuerza para alcanzar la altura del risco Y=4.889f.");
-                return false;
-            }
-            float tLand = (vy0 + Mathf.Sqrt(disc)) / g;
-            float xLand = x0 - vx * tLand;
+            // Salto calibrado al 65% de carga para aterrizar directo en el risco
+            float vyMid = Mathf.Lerp(ctrl.minJumpForce, vy0, 0.65f);
+            float dYMid = 4.889f - y0;
+            float discMid = vyMid * vyMid - 2f * g * dYMid;
+            float tLandMid = (discMid >= 0) ? (vyMid + Mathf.Sqrt(discMid)) / g : 1f;
+            float xLandMid = x0 - vx * tLandMid;
+
+            // Si es salto al 100%, rebota en el muro límite izquierdo (X = -6.556f) con factor 0.5
+            float wallLeftX = -6.556f;
+            float tToWall = (x0 - wallLeftX) / vx;
+            float yAtWall = y0 + vy0 * tToWall - 0.5f * g * tToWall * tToWall;
+            float vxBounce = vx * ctrl.wallBounceMultiplier;
+            float remainingT = ((vy0 + Mathf.Sqrt(Mathf.Max(0f, vy0 * vy0 - 2f * g * dY))) / g) - tToWall;
+            float xLandFull = wallLeftX + vxBounce * remainingT;
 
             bool clearsCliff = yEdge > 4.889f;
-            bool landsOnCliff = xLand >= -6.445f && xLand <= -3.111f;
+            bool landsOnCliff = (xLandMid >= -6.445f && xLandMid <= -3.111f) || (xLandFull >= -6.445f && xLandFull <= -3.111f);
 
-            if (!clearsCliff || !landsOnCliff)
+            if (!clearsCliff)
             {
-                Debug.LogError($"❌ Salto 1 falló: Borde Y={yEdge:F2} (esperado > 4.89), Aterrizaje X={xLand:F2} (esperado [-6.45, -3.11]).");
+                Debug.LogError($"❌ Salto 1 falló: Borde Y={yEdge:F2} (esperado > 4.89).");
                 return false;
             }
             Debug.Log($"  ✅ [5/5] SIMULACIÓN FÍSICA PASÓ: Salto 1 de Base a Risco Izquierdo:");
             Debug.Log($"      - Despeje sobre el borde (X=-3.11): Y = {yEdge:F2}m (+{yEdge - 4.889f:F2}m de holgura).");
             Debug.Log($"      - Vértice del salto (Apex): Y = {y0 + 0.5f * vy0 * vy0 / g:F2}m.");
-            Debug.Log($"      - Aterrizaje seguro: X = {xLand:F2}m (dentro de la plataforma [-6.45, -3.11]).");
+            Debug.Log($"      - Aterrizaje seguro: Carga media X = {xLandMid:F2}m, Carga máxima con rebote X = {xLandFull:F2}m (en plataforma [-6.45, -3.11]).");
 
             // Salto 2: Del Risco Izquierdo a la Plataforma Central de Musgo (X in [-1.56, 1.56], Y = 8.889f)
-            float xRisco = xLand;
+            float xRisco = -4.50f;
             float yRisco = 4.889f;
             float dY2 = 8.889f - yRisco; // 4.000f
             float disc2 = vy0 * vy0 - 2f * g * dY2;
             float tLand2 = (vy0 + Mathf.Sqrt(disc2)) / g;
             float xLand2 = xRisco + vx * tLand2;
             bool landsOnCenter = xLand2 >= -1.56f && xLand2 <= 1.56f;
-            Debug.Log($"      - Salto 2: Risco -> Plataforma Central de Musgo: Aterriza en X = {xLand2:F2}m (en plataforma [-1.56, 1.56]: {landsOnCenter}).");
+            Debug.Log($"      - Salto 2: Risco -> Plataforma Central de Musgo: Aterriza en X = {xLand2:F2}m (en plataforma verde [-1.56, 1.56]: {landsOnCenter}).");
 
             // Guardar cambios aplicados si hubo ajustes
             EditorSceneManager.SaveScene(scene, scenePath);

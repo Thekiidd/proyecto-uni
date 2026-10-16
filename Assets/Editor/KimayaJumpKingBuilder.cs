@@ -43,7 +43,7 @@ namespace Platformer.EditorTools
     public static class KimayaJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_Vertical.unity";
-        private const string BUILD_KEY = "KimayaJumpKing_Build_v19_PitStepsAndZeroFrictionBoost";
+        private const string BUILD_KEY = "KimayaJumpKing_Build_v20_PurePitAndSuperJumpPower";
 
         static KimayaJumpKingBuilder()
         {
@@ -54,7 +54,7 @@ namespace Platformer.EditorTools
         {
             if (!EditorPrefs.GetBool(BUILD_KEY, false))
             {
-                Debug.Log("[KimayaJumpKingBuilder] 🚀 Ejecutando AutoBuildCheck v18 para recreación de Jump King en Ascenso_Vertical...");
+                Debug.Log("[KimayaJumpKingBuilder] 🚀 Ejecutando AutoBuildCheck v20 para recreación de Jump King en Ascenso_Vertical...");
                 BuildJumpKingScene();
                 EditorPrefs.SetBool(BUILD_KEY, true);
             }

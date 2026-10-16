@@ -164,10 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &26770630
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -259,10 +255,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &28854510
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -378,10 +370,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &63293887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -473,10 +461,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &79272373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -559,8 +543,6 @@ Transform:
   - {fileID: 1318161575}
   - {fileID: 793224234}
   - {fileID: 191947239}
-  - {fileID: 1953754179}
-  - {fileID: 1205209196}
   m_Father: {fileID: 1578177533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &106030077
@@ -608,10 +590,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &106030080
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -703,10 +681,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &133534029
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -810,10 +784,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &175197639
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -905,10 +875,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &191947241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1000,10 +966,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &198905112
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1155,10 +1117,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &313066045
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1342,10 +1300,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &345632542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1437,10 +1391,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &371300564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1556,10 +1506,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &461731060
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1651,10 +1597,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &465716339
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1835,9 +1777,9 @@ MonoBehaviour:
   animator: {fileID: 0}
   walkSpeed: 2.6
   maxChargeTime: 0.6
-  minJumpForce: 6.5
-  maxJumpForce: 19.5
-  horizontalJumpSpeed: 6.5
+  minJumpForce: 7
+  maxJumpForce: 24
+  horizontalJumpSpeed: 7.5
   wallBounceMultiplier: 0.5
   enableHighFallStun: 0
   highFallThreshold: 7.5
@@ -2121,10 +2063,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &500381835
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2331,10 +2269,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &552306898
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2530,10 +2464,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &589693302
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2625,10 +2555,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &628948755
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2961,7 +2887,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 716226297}
   m_FillRect: {fileID: 829672564}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
@@ -3029,10 +2955,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &776448427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3136,10 +3058,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &793224236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3231,10 +3149,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &821271221
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3443,10 +3357,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &835718848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3596,18 +3506,6 @@ PhysicsMaterial2D:
   bounciness: 0
   m_FrictionCombine: 1
   m_BounceCombine: 4
---- !u!62 &887057323
-PhysicsMaterial2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PlatMat_Normal
-  serializedVersion: 2
-  friction: 0
-  bounciness: 0
-  m_FrictionCombine: 1
-  m_BounceCombine: 4
 --- !u!1 &890032778
 GameObject:
   m_ObjectHideFlags: 0
@@ -3653,10 +3551,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &890032781
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3760,10 +3654,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &898795785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3855,10 +3745,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &899955773
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3950,10 +3836,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &900995030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4304,10 +4186,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &990381732
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4480,10 +4358,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &1111489070
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4646,10 +4520,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &1170483166
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4741,10 +4611,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &1196416028
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4790,101 +4656,6 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 1.556, y: 1.333}
-  m_EdgeRadius: 0
---- !u!1 &1205209195
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1205209196}
-  - component: {fileID: 1205209198}
-  - component: {fileID: 1205209197}
-  m_Layer: 0
-  m_Name: S1_Pit_Step_Right
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1205209196
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205209195}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1, y: 2.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 85517907}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1205209197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205209195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1314766710}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
---- !u!61 &1205209198
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205209195}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 887057323}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.8, y: 0.5}
   m_EdgeRadius: 0
 --- !u!1 &1216292477
 GameObject:
@@ -5160,10 +4931,6 @@ MonoBehaviour:
   m_Script: {fileID: 1314766710}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
 --- !u!61 &1228364222
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6273,7 +6040,7 @@ Transform:
   m_GameObject: {fileID: 1590039503}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 49.4, z: 0}
+  m_LocalPosition: {x: 1.66, y: 49.98, z: 0}
   m_LocalScale: {x: -0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7198,7 +6965,7 @@ Transform:
   m_GameObject: {fileID: 1756435186}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 5.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7866,97 +7633,6 @@ PhysicsMaterial2D:
   bounciness: 0
   m_FrictionCombine: 1
   m_BounceCombine: 4
---- !u!1 &1903778850
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1903778852}
-  - component: {fileID: 1903778851}
-  m_Layer: 0
-  m_Name: Altar_Rescate
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1903778851
-SpriteRenderer:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903778850}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
-  m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: e3de0d0284175c5283e6f885db94af2a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 8, y: 8}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
---- !u!4 &1903778852
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903778850}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 49.5, z: 0}
-  m_LocalScale: {x: 0.85, y: 0.85, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1910259773
 GameObject:
   m_ObjectHideFlags: 0
@@ -8305,101 +7981,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936011424}
   m_CullTransparentMesh: 1
---- !u!1 &1953754178
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1953754179}
-  - component: {fileID: 1953754181}
-  - component: {fileID: 1953754180}
-  m_Layer: 0
-  m_Name: S1_Pit_Step_Left
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1953754179
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1953754178}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.1, y: 2.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 85517907}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1953754180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1953754178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1314766710}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Kimaya.KimayaSurface
-  surfaceType: 0
-  iceFriction: 0.1
-  sandMoveMultiplier: 0.25
-  sandJumpMultiplier: 0.5
---- !u!61 &1953754181
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1953754178}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 2089954127}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.8, y: 0.5}
-  m_EdgeRadius: 0
 --- !u!62 &1971221203
 PhysicsMaterial2D:
   m_ObjectHideFlags: 0
@@ -8729,18 +8310,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.111, y: 0.444}
   m_EdgeRadius: 0
---- !u!62 &2089954127
-PhysicsMaterial2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PlatMat_Normal
-  serializedVersion: 2
-  friction: 0
-  bounciness: 0
-  m_FrictionCombine: 1
-  m_BounceCombine: 4
 --- !u!1 &2104076084
 GameObject:
   m_ObjectHideFlags: 0
@@ -9056,7 +8625,6 @@ SceneRoots:
   - {fileID: 1151347330}
   - {fileID: 262411445}
   - {fileID: 1578177533}
-  - {fileID: 1903778852}
   - {fileID: 1590039505}
   - {fileID: 1902219743}
   - {fileID: 333116907}

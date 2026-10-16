@@ -59,9 +59,9 @@ namespace Kimaya
         [Header("Física de Salto Táctico Jump King (Calibración Exacta)")]
         [Tooltip("Tiempo de carga máximo exacto de Jump King (0.6s / 36 frames)")]
         public float maxChargeTime = 0.60f;
-        public float minJumpForce = 6.5f;
-        public float maxJumpForce = 20.0f;
-        public float horizontalJumpSpeed = 6.50f;
+        public float minJumpForce = 7.0f;
+        public float maxJumpForce = 24.0f;
+        public float horizontalJumpSpeed = 7.50f;
         [Tooltip("Factor de rebote en pared (Jump King original = 0.5)")]
         public float wallBounceMultiplier = 0.50f;
 
@@ -126,11 +126,11 @@ namespace Kimaya
             {
                 // Jump King Caballero Oficial (Fuerza ampliada para superar riscos con holgura)
                 _rb.mass = 1.0f;
-                _rb.gravityScale = 2.621f;
+                _rb.gravityScale = 2.45f;
                 walkSpeed = 2.60f;
-                minJumpForce = 6.5f;
-                maxJumpForce = 20.0f;
-                horizontalJumpSpeed = 6.50f;
+                minJumpForce = 7.0f;
+                maxJumpForce = 24.0f;
+                horizontalJumpSpeed = 7.50f;
                 wallBounceMultiplier = 0.50f; // BOUNCE = 50%
                 maxChargeTime = 0.60f; // JUMP_TIME = 0.60s
                 splatStunDuration = 0.50f; // SPLAT_TIME = 0.50s
@@ -148,11 +148,11 @@ namespace Kimaya
             {
                 // Falin: San Bernardo de PixelLab (salto vertical potente, pelaje amortiguador de impacto)
                 _rb.mass = 1.2f;
-                _rb.gravityScale = 2.621f;
+                _rb.gravityScale = 2.45f;
                 walkSpeed = 2.50f;
-                minJumpForce = 7.0f;
-                maxJumpForce = 21.0f; // Máxima potencia vertical para escalar sin esfuerzo
-                horizontalJumpSpeed = 6.20f; // Gran holgura de aterrizaje
+                minJumpForce = 7.5f;
+                maxJumpForce = 25.5f; // Súper potencia vertical para escalar y volar a la plataforma verde
+                horizontalJumpSpeed = 7.20f; // Gran holgura de aterrizaje
                 wallBounceMultiplier = 0.40f; // Amortiguación de rebote: rebota suavemente
                 maxChargeTime = 0.60f;
                 splatStunDuration = 0.50f;
@@ -170,11 +170,11 @@ namespace Kimaya
             {
                 // Mía: Schnauzer de PixelLab (ágil, carga rápida y rebote elástico)
                 _rb.mass = 0.9f;
-                _rb.gravityScale = 2.621f;
+                _rb.gravityScale = 2.45f;
                 walkSpeed = 3.00f;
-                minJumpForce = 6.5f;
-                maxJumpForce = 20.5f;
-                horizontalJumpSpeed = 6.80f;
+                minJumpForce = 7.0f;
+                maxJumpForce = 24.8f;
+                horizontalJumpSpeed = 7.80f; // Excelente alcance horizontal para cruzar hacia el verde
                 wallBounceMultiplier = 0.60f; // Rebote ágil y elástico en paredes
                 maxChargeTime = 0.50f; // Reflejos rápidos: carga más velozmente
                 splatStunDuration = 0.50f;
