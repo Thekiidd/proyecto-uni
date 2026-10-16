@@ -217,6 +217,9 @@ namespace Kimaya
                 playerController.SetCharacter(KimayaJumpKingController.CharacterType.JumpKing);
             }
 
+            var anim = playerController.GetComponent<KimayaJumpKingAnimator>();
+            if (anim != null) anim.ApplyInitialSprite();
+
             UpdateCharacterUI();
         }
 

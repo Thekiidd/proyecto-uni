@@ -22,7 +22,7 @@ namespace Platformer.EditorTools
     public static class KimayaClassicJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_JumpKing_Classic.unity";
-        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v11_PurePitAndSuperJumpPower";
+        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v13_KnightWalkFramesAndSpritesApplied";
 
         static KimayaClassicJumpKingBuilder()
         {
@@ -49,8 +49,8 @@ namespace Platformer.EditorTools
         private const string KNIGHT_BOUNCE_PATH = "Assets/Sprites/JumpKingKnight/knight_bounce.png";
         private const string KNIGHT_SPLAT_PATH = "Assets/Sprites/JumpKingKnight/knight_splat.png";
 
-        private const string FALIN_SPRITE_PATH = "Assets/Sprites/PixelLab/Falin/Idle/rotations/east.png";
-        private const string MIA_SPRITE_PATH = "Assets/Sprites/PixelLab/Mia/Idle/rotations/east.png";
+        private const string FALIN_SPRITE_PATH = "Assets/Sprites/PixelLab/Falin/JumpKingKnight/east.png";
+        private const string MIA_SPRITE_PATH = "Assets/Sprites/PixelLab/Mia/JumpKingKnight/east.png";
         private const string ALTAR_SPRITE_PATH = "Assets/Sprites/Village/Art/Props/Ancient_Stone_Circle.png";
 
         private static readonly string[] KNIGHT_SPRITE_PATHS = new string[]
@@ -197,12 +197,16 @@ namespace Platformer.EditorTools
             if (groundLayer < 0) groundLayer = LayerMask.NameToLayer("Default");
 
             // 2. Jugador (Caballero Oficial Jump King 1:1)
+            bool isAscensoVertical = targetScenePath.Contains("Ascenso_Vertical");
+            var initialChar = isAscensoVertical ? KimayaJumpKingController.CharacterType.Falin : KimayaJumpKingController.CharacterType.JumpKing;
+            Sprite initialSprite = isAscensoVertical ? falinSprite : knightIdleSprite;
+
             // Spawn exacto oficial en Pantalla 1: (X=231, Y=302 en 480x360 px) -> X = -0.25f, Y = 0.89f (sobre el suelo)
             GameObject playerGo = new GameObject("Player_JumpKing");
             playerGo.transform.position = new Vector3(-0.25f, 0.89f, 0f);
 
             var sr = playerGo.AddComponent<SpriteRenderer>();
-            sr.sprite = knightIdleSprite;
+            sr.sprite = initialSprite;
             sr.sortingOrder = 25;
 
             var rb = playerGo.GetComponent<Rigidbody2D>();
@@ -222,7 +226,7 @@ namespace Platformer.EditorTools
 
             var jumpCtrl = playerGo.AddComponent<KimayaJumpKingController>();
             jumpCtrl.spriteRenderer = sr;
-            jumpCtrl.character = KimayaJumpKingController.CharacterType.JumpKing;
+            jumpCtrl.character = initialChar;
             jumpCtrl.walkSpeed = 2.60f;
             jumpCtrl.maxChargeTime = 0.60f;
             jumpCtrl.minJumpForce = 7.0f;
@@ -244,8 +248,9 @@ namespace Platformer.EditorTools
             anim.knightBounce = knightBounce;
             anim.knightSplat = knightSplat;
 
+            anim.falinKnightIdle = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/east.png");
             anim.falinIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/idle/east");
-            anim.falinWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/walking/east");
+            anim.falinWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/JumpKingKnight/walk");
             anim.falinChargeProgress = new Sprite[]
             {
                 LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/charge_0.png"),
@@ -256,8 +261,9 @@ namespace Platformer.EditorTools
             anim.falinFall = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/fall.png");
             anim.falinSplat = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/splat.png");
 
+            anim.miaKnightIdle = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/east.png");
             anim.miaIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/idle/east");
-            anim.miaWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/walking/east");
+            anim.miaWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/JumpKingKnight/walk");
             anim.miaChargeProgress = new Sprite[]
             {
                 LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/charge_0.png"),
@@ -357,8 +363,10 @@ namespace Platformer.EditorTools
             manager.screenText = CreateUIText(topHud.transform, "Txt_Piso", "Pantalla 1 / 5: Red Crown Woods (Jump King Clásico 1:1)", 24, TextAnchor.MiddleLeft, new Vector2(-460, 0), new Vector2(480, 50));
             manager.screenText.color = new Color(1f, 0.9f, 0.35f);
 
-            manager.characterNameText = CreateUIText(topHud.transform, "Txt_Char", "👑 Jump King (Oficial) | [TAB] Alternar", 23, TextAnchor.MiddleCenter, new Vector2(0, 0), new Vector2(380, 50));
-            manager.characterNameText.color = new Color(1f, 0.85f, 0.2f);
+            string initialCharText = isAscensoVertical ? "🐾 Falin (Fuerza) | [TAB] Alternar" : "👑 Jump King (Oficial) | [TAB] Alternar";
+            Color initialCharColor = isAscensoVertical ? new Color(1f, 0.75f, 0.2f) : new Color(1f, 0.85f, 0.2f);
+            manager.characterNameText = CreateUIText(topHud.transform, "Txt_Char", initialCharText, 23, TextAnchor.MiddleCenter, new Vector2(0, 0), new Vector2(380, 50));
+            manager.characterNameText.color = initialCharColor;
 
             manager.statsText = CreateUIText(topHud.transform, "Txt_Stats", "⏱️ 00:00  |  🦘 Saltos: 0  |  💥 Caídas: 0", 22, TextAnchor.MiddleRight, new Vector2(460, 0), new Vector2(420, 50));
             manager.statsText.color = Color.white;
@@ -439,7 +447,10 @@ namespace Platformer.EditorTools
                 "Assets/Sprites/PixelLab/Falin/Idle/rotations",
                 "Assets/Sprites/PixelLab/Falin/Idle/animations/idle/east",
                 "Assets/Sprites/PixelLab/Falin/Idle/animations/walking/east",
-                "Assets/Sprites/PixelLab/Falin/JumpKing"
+                "Assets/Sprites/PixelLab/Falin/JumpKing",
+                "Assets/Sprites/PixelLab/Falin/JumpKingKnight",
+                "Assets/Sprites/PixelLab/Falin/JumpKingKnight/walk",
+                "Assets/Sprites/PixelLab/Falin/JumpLeapAnimation"
             };
 
             foreach (var dir in falinDirs)
@@ -447,7 +458,7 @@ namespace Platformer.EditorTools
                 if (!Directory.Exists(dir)) continue;
                 foreach (var file in Directory.GetFiles(dir, "*.png"))
                 {
-                    EnsureTextureIsSprite(file.Replace("\\", "/"), 32.0f, SpriteAlignment.Custom, new Vector2(0.5f, falinPivotY));
+                    EnsureTextureIsSprite(file.Replace("\\", "/"), 36.0f, SpriteAlignment.Custom, new Vector2(0.5f, falinPivotY));
                 }
             }
 
@@ -456,7 +467,10 @@ namespace Platformer.EditorTools
                 "Assets/Sprites/PixelLab/Mia/Idle/rotations",
                 "Assets/Sprites/PixelLab/Mia/Idle/animations/idle/east",
                 "Assets/Sprites/PixelLab/Mia/Idle/animations/walking/east",
-                "Assets/Sprites/PixelLab/Mia/JumpKing"
+                "Assets/Sprites/PixelLab/Mia/JumpKing",
+                "Assets/Sprites/PixelLab/Mia/JumpKingKnight",
+                "Assets/Sprites/PixelLab/Mia/JumpKingKnight/walk",
+                "Assets/Sprites/PixelLab/Mia/JumpLeapAnimation"
             };
 
             foreach (var dir in miaDirs)

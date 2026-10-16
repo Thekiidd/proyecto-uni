@@ -26,6 +26,7 @@ namespace Kimaya
         public Sprite knightSplat;
 
         [Header("Frames de Caminata y Reposo (Falin)")]
+        public Sprite falinKnightIdle;
         public Sprite[] falinIdleFrames;
         public Sprite[] falinWalkFrames;
 
@@ -37,6 +38,7 @@ namespace Kimaya
         public Sprite falinSplat;
 
         [Header("Frames de Caminata y Reposo (Mía)")]
+        public Sprite miaKnightIdle;
         public Sprite[] miaIdleFrames;
         public Sprite[] miaWalkFrames;
 
@@ -66,6 +68,33 @@ namespace Kimaya
             _ctrl = GetComponent<KimayaJumpKingController>();
             _rb = GetComponent<Rigidbody2D>();
             _lastChar = _ctrl.character;
+        }
+
+        private void Start()
+        {
+            ApplyInitialSprite();
+        }
+
+        public void ApplyInitialSprite()
+        {
+            if (_ctrl == null || _sr == null) return;
+            bool isKing = (_ctrl.character == KimayaJumpKingController.CharacterType.JumpKing);
+            bool isFalin = (_ctrl.character == KimayaJumpKingController.CharacterType.Falin);
+
+            if (isKing)
+            {
+                if (knightIdle != null) _sr.sprite = knightIdle;
+            }
+            else if (isFalin)
+            {
+                if (falinKnightIdle != null) _sr.sprite = falinKnightIdle;
+                else if (falinIdleFrames != null && falinIdleFrames.Length > 0) _sr.sprite = falinIdleFrames[0];
+            }
+            else
+            {
+                if (miaKnightIdle != null) _sr.sprite = miaKnightIdle;
+                else if (miaIdleFrames != null && miaIdleFrames.Length > 0) _sr.sprite = miaIdleFrames[0];
+            }
         }
 
         private void Update()
@@ -191,6 +220,17 @@ namespace Kimaya
             }
             else
             {
+                if (_currentState == "Idle")
+                {
+                    Sprite knightSprite = isFalin ? falinKnightIdle : miaKnightIdle;
+                    if (knightSprite != null)
+                    {
+                        _sr.sprite = knightSprite;
+                        _sr.flipX = (_ctrl.FacingDirection < 0);
+                        return;
+                    }
+                }
+
                 Sprite[] activeFrames = (_currentState == "Walk")
                     ? (isFalin ? falinWalkFrames : miaWalkFrames)
                     : (isFalin ? falinIdleFrames : miaIdleFrames);

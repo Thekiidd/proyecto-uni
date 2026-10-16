@@ -43,7 +43,7 @@ namespace Platformer.EditorTools
     public static class KimayaJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_Vertical.unity";
-        private const string BUILD_KEY = "KimayaJumpKing_Build_v20_PurePitAndSuperJumpPower";
+        private const string BUILD_KEY = "KimayaJumpKing_Build_v23_KnightWalkFramesAndSpritesApplied";
 
         static KimayaJumpKingBuilder()
         {
@@ -54,14 +54,14 @@ namespace Platformer.EditorTools
         {
             if (!EditorPrefs.GetBool(BUILD_KEY, false))
             {
-                Debug.Log("[KimayaJumpKingBuilder] 🚀 Ejecutando AutoBuildCheck v20 para recreación de Jump King en Ascenso_Vertical...");
+                Debug.Log("[KimayaJumpKingBuilder] 🚀 Ejecutando AutoBuildCheck v23 para recreación de Jump King en Ascenso_Vertical...");
                 BuildJumpKingScene();
                 EditorPrefs.SetBool(BUILD_KEY, true);
             }
         }
 
-        private const string FALIN_SPRITE_PATH = "Assets/Sprites/PixelLab/Falin/Idle/rotations/east.png";
-        private const string MIA_SPRITE_PATH = "Assets/Sprites/PixelLab/Mia/Idle/rotations/east.png";
+        private const string FALIN_SPRITE_PATH = "Assets/Sprites/PixelLab/Falin/JumpKingKnight/east.png";
+        private const string MIA_SPRITE_PATH = "Assets/Sprites/PixelLab/Mia/JumpKingKnight/east.png";
         private const string ALTAR_SPRITE_PATH = "Assets/Sprites/Village/Art/Props/Ancient_Stone_Circle.png";
 
         private const string PLAT_NORMAL_PATH = "Assets/Sprites/Backgrounds/Graybox_Plat_Normal.png";
