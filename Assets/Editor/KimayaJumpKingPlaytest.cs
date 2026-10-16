@@ -189,7 +189,7 @@ namespace Platformer.EditorTools
             float tToWall = (x0 - wallLeftX) / vx;
             float yAtWall = y0 + vy0 * tToWall - 0.5f * g * tToWall * tToWall;
             float vxBounce = vx * ctrl.wallBounceMultiplier;
-            float remainingT = ((vy0 + Mathf.Sqrt(Mathf.Max(0f, vy0 * vy0 - 2f * g * dY))) / g) - tToWall;
+            float remainingT = ((vy0 + Mathf.Sqrt(Mathf.Max(0f, vy0 * vy0 - 2f * g * dYMid))) / g) - tToWall;
             float xLandFull = wallLeftX + vxBounce * remainingT;
 
             bool clearsCliff = yEdge > 4.889f;
