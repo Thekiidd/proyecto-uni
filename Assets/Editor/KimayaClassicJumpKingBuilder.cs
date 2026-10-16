@@ -22,7 +22,7 @@ namespace Platformer.EditorTools
     public static class KimayaClassicJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_JumpKing_Classic.unity";
-        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v3_ExactKnightREA";
+        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v4_FixSettings";
 
         static KimayaClassicJumpKingBuilder()
         {
@@ -459,14 +459,16 @@ namespace Platformer.EditorTools
                     importer.filterMode = FilterMode.Point;
                     changed = true;
                 }
-                if (importer.alignment != (int)alignment)
+                var settings = new TextureImporterSettings();
+                importer.ReadTextureSettings(settings);
+                if (settings.spriteAlignment != (int)alignment || (customPivot.HasValue && settings.spritePivot != customPivot.Value))
                 {
-                    importer.alignment = (int)alignment;
-                    changed = true;
-                }
-                if (customPivot.HasValue && importer.spritePivot != customPivot.Value)
-                {
-                    importer.spritePivot = customPivot.Value;
+                    settings.spriteAlignment = (int)alignment;
+                    if (customPivot.HasValue)
+                    {
+                        settings.spritePivot = customPivot.Value;
+                    }
+                    importer.SetTextureSettings(settings);
                     changed = true;
                 }
                 if (importer.textureCompression != TextureImporterCompression.Uncompressed)
