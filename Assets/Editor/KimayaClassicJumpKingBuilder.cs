@@ -22,7 +22,7 @@ namespace Platformer.EditorTools
     public static class KimayaClassicJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_JumpKing_Classic.unity";
-        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v6_SolidBoxColliders";
+        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v8_PixelLabPivotsAligned";
 
         static KimayaClassicJumpKingBuilder()
         {
@@ -33,7 +33,7 @@ namespace Platformer.EditorTools
         {
             if (!EditorPrefs.GetBool(BUILD_KEY, false))
             {
-                Debug.Log("[KimayaClassicJumpKingBuilder] 👑 Ejecutando AutoBuild para Jump King Clásico (Opción A 1:1 Oficial con Knight)...");
+                Debug.Log("[KimayaClassicJumpKingBuilder] 👑 Ejecutando AutoBuild para Jump King Clásico (Opción A 1:1 Oficial con Knight y PixelLab Dogs)...");
                 BuildClassicJumpKingScene();
                 EditorPrefs.SetBool(BUILD_KEY, true);
             }
@@ -171,6 +171,9 @@ namespace Platformer.EditorTools
             {
                 EnsureTextureIsSprite(path, 36.0f, SpriteAlignment.BottomCenter, new Vector2(0.5f, 0.0f));
             }
+
+            // 1b. Calibrar pivotes de los sprites originales de Falin y Mía de PixelLab a ras de sus patas
+            EnsurePixelLabPivots();
 
             // Crear escena nueva
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
@@ -422,6 +425,48 @@ namespace Platformer.EditorTools
             Debug.Log($"[KimayaClassicJumpKingBuilder] ✅ Escena Jump King Oficial creada exitosamente en {targetScenePath}");
 
             RegisterSceneInBuildSettings(targetScenePath);
+        }
+
+        private static void EnsurePixelLabPivots()
+        {
+            // Pata inferior de Falin en sprite de 92px: Y = 26px desde la base -> 26/92 = 0.2826087f
+            float falinPivotY = 26.0f / 92.0f;
+            // Pata inferior de Mía en sprite de 68px: Y = 19px desde la base -> 19/68 = 0.2794118f
+            float miaPivotY = 19.0f / 68.0f;
+
+            string[] falinDirs = new string[]
+            {
+                "Assets/Sprites/PixelLab/Falin/Idle/rotations",
+                "Assets/Sprites/PixelLab/Falin/Idle/animations/idle/east",
+                "Assets/Sprites/PixelLab/Falin/Idle/animations/walking/east",
+                "Assets/Sprites/PixelLab/Falin/JumpKing"
+            };
+
+            foreach (var dir in falinDirs)
+            {
+                if (!Directory.Exists(dir)) continue;
+                foreach (var file in Directory.GetFiles(dir, "*.png"))
+                {
+                    EnsureTextureIsSprite(file.Replace("\\", "/"), 32.0f, SpriteAlignment.Custom, new Vector2(0.5f, falinPivotY));
+                }
+            }
+
+            string[] miaDirs = new string[]
+            {
+                "Assets/Sprites/PixelLab/Mia/Idle/rotations",
+                "Assets/Sprites/PixelLab/Mia/Idle/animations/idle/east",
+                "Assets/Sprites/PixelLab/Mia/Idle/animations/walking/east",
+                "Assets/Sprites/PixelLab/Mia/JumpKing"
+            };
+
+            foreach (var dir in miaDirs)
+            {
+                if (!Directory.Exists(dir)) continue;
+                foreach (var file in Directory.GetFiles(dir, "*.png"))
+                {
+                    EnsureTextureIsSprite(file.Replace("\\", "/"), 32.0f, SpriteAlignment.Custom, new Vector2(0.5f, miaPivotY));
+                }
+            }
         }
 
         private static void EnsureTextureIsSprite(string path, float ppu = 36.0f, SpriteAlignment alignment = SpriteAlignment.Center, Vector2? customPivot = null)

@@ -136,7 +136,7 @@ namespace Kimaya
                 if (_col != null)
                 {
                     // Hitbox 18x26 px a 36 PPU = 0.50f x 0.722f
-                    // Usamos edgeRadius de 0.03f para biselar bordes y evitar trabas en esquinas
+                    // Base inferior exacta: 0.361 - (0.662 / 2 + 0.03) = 0.00f (pies a ras de suelo)
                     _col.size = new Vector2(0.44f, 0.662f);
                     _col.offset = new Vector2(0f, 0.361f);
                     _col.edgeRadius = 0.03f;
@@ -144,38 +144,46 @@ namespace Kimaya
             }
             else if (character == CharacterType.Falin)
             {
-                // Falin: San Bernardo (firme, masa sólida)
-                _rb.mass = 1.3f;
-                _rb.gravityScale = 2.4f;
-                walkSpeed = 4.8f;
-                minJumpForce = 7.0f;
-                maxJumpForce = 17.5f;
-                horizontalJumpSpeed = 7.0f; // 17.5 / 7.0 = 2.50 (Jump King exacto)
-                wallBounceMultiplier = 0.50f;
+                // Falin: San Bernardo de PixelLab (salto vertical potente, pelaje amortiguador de impacto)
+                _rb.mass = 1.2f;
+                _rb.gravityScale = 2.621f;
+                walkSpeed = 2.40f;
+                minJumpForce = 5.0f;
+                maxJumpForce = 16.0f; // Potencia vertical para superar riscos altos sin estrellarse
+                horizontalJumpSpeed = 5.20f; // Trayectoria controlada para aterrizar en plataformas
+                wallBounceMultiplier = 0.40f; // Amortiguación de rebote: rebota suavemente
+                maxChargeTime = 0.60f;
+                splatStunDuration = 0.50f;
 
                 if (_col != null)
                 {
-                    _col.size = new Vector2(1.0f, 0.75f);
-                    _col.offset = new Vector2(0f, 0.38f);
-                    _col.edgeRadius = 0.02f;
+                    // Con pivote de Falin a 26/92 (pata inferior en Y=0.0 local)
+                    // Base inferior exacta: 0.65 - (1.30 / 2) = 0.00f (patas exactamente en la tierra)
+                    _col.size = new Vector2(1.20f, 1.30f);
+                    _col.offset = new Vector2(0f, 0.65f);
+                    _col.edgeRadius = 0.0f;
                 }
             }
             else
             {
-                // Mía: Schnauzer ágil y vivaz
-                _rb.mass = 1.0f;
-                _rb.gravityScale = 2.2f;
-                walkSpeed = 5.4f;
-                minJumpForce = 7.4f;
-                maxJumpForce = 18.5f;
-                horizontalJumpSpeed = 7.4f; // 18.5 / 7.4 = 2.50 (Jump King exacto)
-                wallBounceMultiplier = 0.55f;
+                // Mía: Schnauzer de PixelLab (ágil, carga rápida y rebote elástico)
+                _rb.mass = 0.9f;
+                _rb.gravityScale = 2.621f;
+                walkSpeed = 3.00f;
+                minJumpForce = 4.5f;
+                maxJumpForce = 15.5f;
+                horizontalJumpSpeed = 5.833f;
+                wallBounceMultiplier = 0.60f; // Rebote ágil y elástico en paredes
+                maxChargeTime = 0.50f; // Reflejos rápidos: carga más velozmente
+                splatStunDuration = 0.50f;
 
                 if (_col != null)
                 {
-                    _col.size = new Vector2(0.85f, 0.65f);
-                    _col.offset = new Vector2(0f, 0.33f);
-                    _col.edgeRadius = 0.02f;
+                    // Con pivote de Mía a 19/68 (pata inferior en Y=0.0 local)
+                    // Base inferior exacta: 0.53 - (1.06 / 2) = 0.00f (patas exactamente en la tierra)
+                    _col.size = new Vector2(0.85f, 1.06f);
+                    _col.offset = new Vector2(0f, 0.53f);
+                    _col.edgeRadius = 0.0f;
                 }
             }
         }
@@ -248,6 +256,12 @@ namespace Kimaya
                     // En el suelo mientras carga se detiene
                     _rb.linearVelocity = new Vector2(0, _rb.linearVelocity.y);
                     _iceSlideVelocityX = 0f;
+
+                    // Salto automático al alcanzar el 100% de carga (Jump King oficial)
+                    if (_chargeTimer >= maxChargeTime)
+                    {
+                        ExecuteJump();
+                    }
                 }
                 else if (IsCharging)
                 {
