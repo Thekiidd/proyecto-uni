@@ -212,11 +212,11 @@ namespace Kimaya
             {
                 int curIdx = Mathf.Clamp(screenCamera.CurrentScreenIndex, 0, finalScreenIndex);
                 string[] floorNames = new string[] {
-                    "El Bosque Profundo y la Entrada a las Ruinas",
-                    "La Fortaleza y Muros de Piedra Ancestrales",
-                    "Los Acueductos y el Campanario Olvidado",
-                    "La Aguja de Hielo y Cristales Celestiales",
-                    "La Cumbre del Templo al Atardecer (Altar de Kiara)"
+                    "El Suelo del Bosque y Campamento Base",
+                    "El Gran Tronco y Catch Ledges",
+                    "Canopia Media y Ramas Deliberadas",
+                    "Raíces Colosales y Hojas Rojas",
+                    "La Copa del Árbol y Altar de Kiara"
                 };
                 string fName = (curIdx < floorNames.Length) ? floorNames[curIdx] : "Ascenso Sagrado";
                 screenText.text = $"Piso {curIdx + 1} / {finalScreenIndex + 1}: {fName}";

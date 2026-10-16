@@ -64,55 +64,62 @@ namespace Platformer.EditorTools
         private const string MIA_SPRITE_PATH = "Assets/Sprites/PixelLab/Mia/Idle/rotations/east.png";
         private const string ALTAR_SPRITE_PATH = "Assets/Sprites/Village/Art/Props/Ancient_Stone_Circle.png";
 
+        private const string PLAT_NORMAL_PATH = "Assets/Sprites/Backgrounds/Graybox_Plat_Normal.png";
+        private const string PLAT_CATCH_PATH = "Assets/Sprites/Backgrounds/Graybox_Plat_Catch.png";
+        private const string PLAT_SUMMIT_PATH = "Assets/Sprites/Backgrounds/Graybox_Plat_Summit.png";
+
         private static readonly string[] JUMP_KING_SCREEN_PATHS = new string[]
         {
-            "Assets/Sprites/Backgrounds/JumpKing_Screen0_ForestBase.png",
-            "Assets/Sprites/Backgrounds/JumpKing_Screen1_Fortress.png",
-            "Assets/Sprites/Backgrounds/JumpKing_Screen2_Aqueduct.png",
-            "Assets/Sprites/Backgrounds/JumpKing_Screen3_SnowPeak.png",
-            "Assets/Sprites/Backgrounds/JumpKing_Screen4_SunsetSummit.png"
+            "Assets/Sprites/Backgrounds/Graybox_Screen0_BG.png",
+            "Assets/Sprites/Backgrounds/Graybox_Screen1_BG.png",
+            "Assets/Sprites/Backgrounds/Graybox_Screen2_BG.png",
+            "Assets/Sprites/Backgrounds/Graybox_Screen3_BG.png",
+            "Assets/Sprites/Backgrounds/Graybox_Screen4_BG.png"
         };
 
-        // Coordenadas matemáticas exactas calculadas directamente desde las imágenes generadas (384x216 px, PPU 21.6f)
-        // Huecos transitables 100% despejados sin plataformas de choque en el cambio de pantalla
+        // DEFINICIÓN CALIBRADA DE LA GRAYBOX (5 PISOS DEL GRAN ÁRBOL - SALTOS MATEMÁTICAMENTE VERIFICADOS)
         public static readonly KimayaPlatformDef[][] JumpKing5Floors = new KimayaPlatformDef[][]
         {
-            // Piso 1: El Bosque Profundo y la Entrada a las Ruinas (Y: 0 a 10)
+            // Piso 1 (Floor 0): El Suelo del Bosque y Campamento Base (Y: 0 a 10)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P0_Ground_ForestFloor", 0.000f, 0.486f, 17.778f, 0.972f, SurfaceType.Normal),
-                new KimayaPlatformDef("P0_Right_LowStoneStep", 5.463f, 2.361f, 4.630f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P0_Center_LBlockLedge", -0.324f, 4.213f, 4.167f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P0_Left_HighWallBracket", -5.417f, 6.065f, 4.167f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P0_Suelo_Fogata", 0.000f, 0.400f, 17.778f, 0.800f, SurfaceType.Normal),
+                new KimayaPlatformDef("P0_Ledge_Right", 4.000f, 2.400f, 4.200f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P0_Ledge_Center", -1.000f, 4.800f, 4.000f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P0_Ledge_LeftHigh", -5.200f, 7.200f, 3.800f, 0.700f, SurfaceType.Normal),
+                // Chute abierto a la derecha (X: 1 a 6) para subir al Piso 1
             },
-            // Piso 2: La Fortaleza y Muros de Piedra Ancestrales (Y: 10 a 20)
+            // Piso 2 (Floor 1): El Gran Tronco y Catch Ledges (Y: 10 a 20)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P1_Left_CatchLedge", -5.417f, 12.593f, 4.630f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P1_Right_CatchLedge", 5.463f, 12.593f, 4.630f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P1_Center_Platform", -0.093f, 14.444f, 4.630f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P1_Left_HighBracket", -5.532f, 16.065f, 4.398f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P1_Catch_Right", 4.500f, 12.000f, 5.000f, 0.800f, SurfaceType.Normal), // Catch ledge que recibe el salto de P0
+                new KimayaPlatformDef("P1_Catch_Left", -4.800f, 12.000f, 4.600f, 0.800f, SurfaceType.Normal),  // Catch ledge secundaria
+                new KimayaPlatformDef("P1_Mid_Center", -0.500f, 14.800f, 3.800f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P1_High_Right", 4.800f, 17.600f, 3.800f, 0.700f, SurfaceType.Normal),
+                // Chute abierto a la izquierda (X: -7 a -2) para subir al Piso 2
             },
-            // Piso 3: Los Acueductos y el Campanario Olvidado (Y: 20 a 30)
+            // Piso 3 (Floor 2): Canopia Media y Ramas Deliberadas (Y: 20 a 30)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P2_Center_AqueductArch", -0.093f, 22.593f, 6.944f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P2_Left_BridgePier", -5.417f, 24.444f, 4.630f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P2_Center_HighGirder", 0.023f, 26.065f, 4.861f, 0.926f, SurfaceType.Normal),
+                new KimayaPlatformDef("P2_Entry_Left", -4.200f, 22.200f, 4.600f, 0.800f, SurfaceType.Normal), // Recibe el salto de P1
+                new KimayaPlatformDef("P2_Step_Center", 1.000f, 24.800f, 3.600f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P2_High_Left", -5.000f, 27.500f, 3.600f, 0.700f, SurfaceType.Normal),
+                // Chute abierto a la derecha (X: 2 a 7) para subir al Piso 3
             },
-            // Piso 4: La Aguja de Hielo y Cristales Celestiales (Y: 30 a 40)
+            // Piso 4 (Floor 3): Raíces Colosales y Hojas Rojas (Y: 30 a 40)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P3_Mid_FrostShelf", -0.093f, 32.593f, 4.630f, 0.926f, SurfaceType.Ice),
-                new KimayaPlatformDef("P3_Right_IcePillar", 5.463f, 34.444f, 4.630f, 0.926f, SurfaceType.Ice),
-                new KimayaPlatformDef("P3_Left_GlacierLedge", -4.954f, 36.065f, 4.630f, 0.926f, SurfaceType.Ice),
+                new KimayaPlatformDef("P3_Entry_Right", 4.500f, 32.200f, 4.600f, 0.800f, SurfaceType.Normal), // Recibe el salto de P2
+                new KimayaPlatformDef("P3_Branch_Center", -1.000f, 35.000f, 3.400f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P3_High_Left", -5.000f, 37.800f, 3.400f, 0.700f, SurfaceType.Normal),
+                // Chute abierto al centro/derecha (X: 1 a 6) para subir a la Cima
             },
-            // Piso 5: La Cumbre del Templo al Atardecer (Altar de Kiara) (Y: 40 a 50)
+            // Piso 5 (Floor 4): La Copa del Árbol y Altar de Kiara (Y: 40 a 50)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P4_Left_TowerBattlement", -5.417f, 42.824f, 4.630f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P4_Right_TowerBattlement", 5.463f, 42.824f, 4.630f, 0.926f, SurfaceType.Normal),
-                new KimayaPlatformDef("P4_GRAND_SUMMIT_ALTAR", 0.023f, 45.370f, 10.880f, 1.389f, SurfaceType.Normal),
+                new KimayaPlatformDef("P4_Entry_Right", 4.200f, 42.400f, 4.500f, 0.800f, SurfaceType.Normal), // Recibe el salto de P3
+                new KimayaPlatformDef("P4_Left_Ledge", -4.800f, 42.400f, 4.200f, 0.800f, SurfaceType.Normal),
+                new KimayaPlatformDef("P4_GRAND_SUMMIT_ALTAR", 0.000f, 45.400f, 9.000f, 1.200f, SurfaceType.Normal), // Altar ceremonial amplio
             },
         };
 
@@ -126,11 +133,14 @@ namespace Platformer.EditorTools
         {
             Debug.Log("[KimayaJumpKingBuilder] 🚀 Iniciando construcción de escena Jump King v15 (5 Pisos Icónicos)...");
 
-            // 1. Asegurar importación de los 5 fondos generados con PixelLab (384x216 px, PPU = 21.6f -> 17.777f x 10f)
+            // 1. Asegurar importación de los 5 fondos de Graybox continua y sprites de plataformas
             foreach (var path in JUMP_KING_SCREEN_PATHS)
             {
                 EnsureTextureIsSprite(path, 21.6f);
             }
+            EnsureTextureIsSprite(PLAT_NORMAL_PATH, 32f);
+            EnsureTextureIsSprite(PLAT_CATCH_PATH, 32f);
+            EnsureTextureIsSprite(PLAT_SUMMIT_PATH, 32f);
 
             // Crear escena nueva
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
@@ -167,6 +177,9 @@ namespace Platformer.EditorTools
             jumpCtrl.spriteRenderer = sr;
             jumpCtrl.character = KimayaJumpKingController.CharacterType.Falin;
             jumpCtrl.enableHighFallStun = false; // Solo saltar y escalar, sin aturdimiento
+
+            // Herramienta visual de parábolas de salto en tiempo real (Scene View Gizmos)
+            playerGo.AddComponent<KimayaJumpTrajectory>();
 
             // Animador Jump King con poses reales de carga, estiramiento, caída y splat
             var anim = playerGo.AddComponent<KimayaJumpKingAnimator>();
@@ -411,12 +424,27 @@ namespace Platformer.EditorTools
             var col = platGo.AddComponent<BoxCollider2D>();
             col.size = new Vector2(w, h);
 
+            // Visualización gráfica nítida de la plataforma Graybox
+            string spritePath = PLAT_NORMAL_PATH;
+            if (name.Contains("Catch")) spritePath = PLAT_CATCH_PATH;
+            else if (name.Contains("ALTAR") || name.Contains("Summit")) spritePath = PLAT_SUMMIT_PATH;
+
+            Sprite blockSprite = LoadAnySprite(spritePath);
+            if (blockSprite != null)
+            {
+                var sr = platGo.AddComponent<SpriteRenderer>();
+                sr.sprite = blockSprite;
+                sr.drawMode = SpriteDrawMode.Tiled;
+                sr.size = new Vector2(w, h);
+                sr.sortingOrder = 5;
+            }
+
             float friction = (surfaceType == SurfaceType.Ice) ? 0.05f : 0.5f;
             var pMat = new PhysicsMaterial2D($"PlatMat_{surfaceType}") { friction = friction, bounciness = 0f };
             col.sharedMaterial = pMat;
 
             // Si no es el suelo base, usar PlatformEffector2D unidireccional para que el jugador nunca se estrelle la cabeza al subir
-            if (!name.Contains("Ground"))
+            if (!name.Contains("Ground") && !name.Contains("Suelo"))
             {
                 col.usedByEffector = true;
                 var effector = platGo.AddComponent<PlatformEffector2D>();
