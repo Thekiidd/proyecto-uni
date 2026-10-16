@@ -43,7 +43,7 @@ namespace Platformer.EditorTools
     public static class KimayaJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_Vertical.unity";
-        private const string BUILD_KEY = "KimayaJumpKing_Build_v15_5Floors";
+        private const string BUILD_KEY = "KimayaJumpKing_Build_v16_SolidPlatforms";
 
         static KimayaJumpKingBuilder()
         {
@@ -84,42 +84,42 @@ namespace Platformer.EditorTools
             new KimayaPlatformDef[]
             {
                 new KimayaPlatformDef("P0_Suelo_Fogata", 0.000f, 0.400f, 17.778f, 0.800f, SurfaceType.Normal),
-                new KimayaPlatformDef("P0_Ledge_Right", 4.000f, 2.400f, 4.200f, 0.700f, SurfaceType.Normal),
-                new KimayaPlatformDef("P0_Ledge_Center", -1.000f, 4.800f, 4.000f, 0.700f, SurfaceType.Normal),
-                new KimayaPlatformDef("P0_Ledge_LeftHigh", -5.200f, 7.200f, 3.800f, 0.700f, SurfaceType.Normal),
-                // Chute abierto a la derecha (X: 1 a 6) para subir al Piso 1
+                new KimayaPlatformDef("P0_Ledge_Right", 4.000f, 2.400f, 4.500f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P0_Ledge_Center", -1.000f, 4.800f, 4.200f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P0_Ledge_LeftHigh", -5.000f, 7.000f, 4.000f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P0_Exit_Center", 0.000f, 8.800f, 4.000f, 0.700f, SurfaceType.Normal), // Repisa de transición clara hacia Piso 2
             },
             // Piso 2 (Floor 1): El Gran Tronco y Catch Ledges (Y: 10 a 20)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P1_Catch_Right", 4.500f, 12.000f, 5.000f, 0.800f, SurfaceType.Normal), // Catch ledge que recibe el salto de P0
-                new KimayaPlatformDef("P1_Catch_Left", -4.800f, 12.000f, 4.600f, 0.800f, SurfaceType.Normal),  // Catch ledge secundaria
-                new KimayaPlatformDef("P1_Mid_Center", -0.500f, 14.800f, 3.800f, 0.700f, SurfaceType.Normal),
-                new KimayaPlatformDef("P1_High_Right", 4.800f, 17.600f, 3.800f, 0.700f, SurfaceType.Normal),
-                // Chute abierto a la izquierda (X: -7 a -2) para subir al Piso 2
+                new KimayaPlatformDef("P1_Catch_Right", 4.500f, 11.800f, 5.000f, 0.800f, SurfaceType.Normal), // Recibe el salto desde P0_Exit_Center
+                new KimayaPlatformDef("P1_Catch_Left", -4.800f, 12.000f, 4.600f, 0.800f, SurfaceType.Normal),  // Catch ledge de seguridad
+                new KimayaPlatformDef("P1_Mid_Center", -0.500f, 14.500f, 4.000f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P1_High_Right", 4.500f, 17.000f, 4.000f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P1_Exit_Center", -0.500f, 18.800f, 4.000f, 0.700f, SurfaceType.Normal), // Repisa de transición hacia Piso 3
             },
             // Piso 3 (Floor 2): Canopia Media y Ramas Deliberadas (Y: 20 a 30)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P2_Entry_Left", -4.200f, 22.200f, 4.600f, 0.800f, SurfaceType.Normal), // Recibe el salto de P1
-                new KimayaPlatformDef("P2_Step_Center", 1.000f, 24.800f, 3.600f, 0.700f, SurfaceType.Normal),
-                new KimayaPlatformDef("P2_High_Left", -5.000f, 27.500f, 3.600f, 0.700f, SurfaceType.Normal),
-                // Chute abierto a la derecha (X: 2 a 7) para subir al Piso 3
+                new KimayaPlatformDef("P2_Catch_Left", -4.500f, 21.800f, 5.000f, 0.800f, SurfaceType.Normal), // Recibe el salto desde P1_Exit_Center
+                new KimayaPlatformDef("P2_Step_Center", 1.000f, 24.500f, 4.000f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P2_High_Left", -4.500f, 27.000f, 4.000f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P2_Exit_Right", 1.500f, 28.800f, 4.000f, 0.700f, SurfaceType.Normal),  // Repisa de transición hacia Piso 4
             },
             // Piso 4 (Floor 3): Raíces Colosales y Hojas Rojas (Y: 30 a 40)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P3_Entry_Right", 4.500f, 32.200f, 4.600f, 0.800f, SurfaceType.Normal), // Recibe el salto de P2
-                new KimayaPlatformDef("P3_Branch_Center", -1.000f, 35.000f, 3.400f, 0.700f, SurfaceType.Normal),
-                new KimayaPlatformDef("P3_High_Left", -5.000f, 37.800f, 3.400f, 0.700f, SurfaceType.Normal),
-                // Chute abierto al centro/derecha (X: 1 a 6) para subir a la Cima
+                new KimayaPlatformDef("P3_Catch_Right", 4.500f, 31.800f, 5.000f, 0.800f, SurfaceType.Normal), // Recibe el salto desde P2_Exit_Right
+                new KimayaPlatformDef("P3_Branch_Center", -1.000f, 34.500f, 3.800f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P3_High_Left", -5.000f, 37.000f, 3.800f, 0.700f, SurfaceType.Normal),
+                new KimayaPlatformDef("P3_Exit_Right", 0.500f, 38.800f, 4.000f, 0.700f, SurfaceType.Normal),  // Repisa de transición hacia la Cima
             },
             // Piso 5 (Floor 4): La Copa del Árbol y Altar de Kiara (Y: 40 a 50)
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("P4_Entry_Right", 4.200f, 42.400f, 4.500f, 0.800f, SurfaceType.Normal), // Recibe el salto de P3
-                new KimayaPlatformDef("P4_Left_Ledge", -4.800f, 42.400f, 4.200f, 0.800f, SurfaceType.Normal),
-                new KimayaPlatformDef("P4_GRAND_SUMMIT_ALTAR", 0.000f, 45.400f, 9.000f, 1.200f, SurfaceType.Normal), // Altar ceremonial amplio
+                new KimayaPlatformDef("P4_Catch_Right", 4.500f, 41.800f, 4.800f, 0.800f, SurfaceType.Normal), // Recibe el salto desde P3_Exit_Right
+                new KimayaPlatformDef("P4_Left_Ledge", -4.500f, 43.500f, 4.500f, 0.800f, SurfaceType.Normal),
+                new KimayaPlatformDef("P4_GRAND_SUMMIT_ALTAR", 0.000f, 46.200f, 9.000f, 1.200f, SurfaceType.Normal), // Altar ceremonial amplio
             },
         };
 
@@ -443,18 +443,8 @@ namespace Platformer.EditorTools
             var pMat = new PhysicsMaterial2D($"PlatMat_{surfaceType}") { friction = friction, bounciness = 0f };
             col.sharedMaterial = pMat;
 
-            // Si no es el suelo base, usar PlatformEffector2D unidireccional para que el jugador nunca se estrelle la cabeza al subir
-            if (!name.Contains("Ground") && !name.Contains("Suelo"))
-            {
-                col.usedByEffector = true;
-                var effector = platGo.AddComponent<PlatformEffector2D>();
-                effector.useOneWay = true;
-                effector.surfaceArc = 170f;
-                effector.rotationalOffset = 0f;
-                effector.useOneWayGrouping = true;
-                effector.useSideFriction = false;
-                effector.useSideBounce = false;
-            }
+            // En Jump King las plataformas son bloques 100% sólidos de BoxCollider2D (sin effectors que causen bugs de colisión)
+            col.usedByEffector = false;
 
             // Componente de superficie Jump King
             var surface = platGo.AddComponent<KimayaSurface>();
