@@ -204,13 +204,17 @@ namespace Kimaya
             if (playerController == null || !playerController.IsGrounded || playerController.IsCharging)
                 return;
 
-            if (playerController.character == KimayaJumpKingController.CharacterType.Falin)
+            if (playerController.character == KimayaJumpKingController.CharacterType.JumpKing)
+            {
+                playerController.SetCharacter(KimayaJumpKingController.CharacterType.Falin);
+            }
+            else if (playerController.character == KimayaJumpKingController.CharacterType.Falin)
             {
                 playerController.SetCharacter(KimayaJumpKingController.CharacterType.Mia);
             }
             else
             {
-                playerController.SetCharacter(KimayaJumpKingController.CharacterType.Falin);
+                playerController.SetCharacter(KimayaJumpKingController.CharacterType.JumpKing);
             }
 
             UpdateCharacterUI();
@@ -220,9 +224,17 @@ namespace Kimaya
         {
             if (characterNameText != null && playerController != null)
             {
-                bool isFalin = playerController.character == KimayaJumpKingController.CharacterType.Falin;
-                characterNameText.text = isFalin ? "🐾 Falin (Fuerza)" : "🌸 Mía (Agilidad)";
-                characterNameText.color = isFalin ? new Color(1f, 0.75f, 0.2f) : new Color(0.9f, 0.5f, 1f);
+                if (playerController.character == KimayaJumpKingController.CharacterType.JumpKing)
+                {
+                    characterNameText.text = "👑 Jump King (Oficial)";
+                    characterNameText.color = new Color(1f, 0.85f, 0.2f);
+                }
+                else
+                {
+                    bool isFalin = playerController.character == KimayaJumpKingController.CharacterType.Falin;
+                    characterNameText.text = isFalin ? "🐾 Falin (Fuerza)" : "🌸 Mía (Agilidad)";
+                    characterNameText.color = isFalin ? new Color(1f, 0.75f, 0.2f) : new Color(0.9f, 0.5f, 1f);
+                }
             }
         }
 

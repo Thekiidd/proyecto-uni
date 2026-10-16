@@ -46,15 +46,15 @@ namespace Kimaya
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class KimayaJumpKingController : MonoBehaviour
     {
-        public enum CharacterType { Falin, Mia }
+        public enum CharacterType { Falin, Mia, JumpKing }
 
         [Header("Personaje")]
-        public CharacterType character = CharacterType.Falin;
+        public CharacterType character = CharacterType.JumpKing;
         public SpriteRenderer spriteRenderer;
         [HideInInspector] public Animator animator;
 
         [Header("Movimiento en Suelo")]
-        public float walkSpeed = 5.0f;
+        public float walkSpeed = 3.5f;
 
         [Header("Física de Salto Táctico Jump King (Calibración Exacta)")]
         [Tooltip("Tiempo de carga máximo exacto de Jump King (0.6s / 36 frames)")]
@@ -75,6 +75,7 @@ namespace Kimaya
         public bool IsGrounded { get; private set; }
         public bool IsCharging { get; private set; }
         public bool IsJumping { get; private set; }
+        public bool IsBouncing { get; private set; }
         public bool IsStunned { get; private set; }
         public float ChargePercent { get; private set; } // 0.0 a 1.0
         public float FacingDirection { get; private set; } = 1f; // 1 = derecha, -1 = izquierda
@@ -92,6 +93,7 @@ namespace Kimaya
         private float _lastGroundedY = 0f;
         private float _highestAirY = 0f;
         private float _stunTimer = 0f;
+        private float _bounceTimer = 0f;
         private float _iceSlideVelocityX = 0f;
         private KimayaSurface _activeSurfaceComp;
 
@@ -118,8 +120,29 @@ namespace Kimaya
             if (_rb == null) _rb = GetComponent<Rigidbody2D>();
             if (_col == null) _col = GetComponent<BoxCollider2D>();
 
-            // Jump King exact physics ratio: Vertical / Horizontal ~ 2.5
-            if (character == CharacterType.Falin)
+            if (character == CharacterType.JumpKing)
+            {
+                // Jump King Caballero Oficial (1:1 con Nexile Jump King)
+                _rb.mass = 1.0f;
+                _rb.gravityScale = 2.2f;
+                walkSpeed = 3.5f;
+                minJumpForce = 7.0f;
+                maxJumpForce = 17.5f;
+                horizontalJumpSpeed = 7.0f; // Salto parabólico exacto 2.5:1
+                wallBounceMultiplier = 0.50f; // BOUNCE = 50%
+                maxChargeTime = 0.60f; // JUMP_TIME = 0.60s
+                splatStunDuration = 0.50f; // SPLAT_TIME = 0.50s
+
+                if (_col != null)
+                {
+                    // Hitbox 18x26 px a 36 PPU = 0.50f x 0.722f
+                    // Usamos edgeRadius de 0.03f para biselar bordes y evitar trabas en esquinas
+                    _col.size = new Vector2(0.44f, 0.662f);
+                    _col.offset = new Vector2(0f, 0.361f);
+                    _col.edgeRadius = 0.03f;
+                }
+            }
+            else if (character == CharacterType.Falin)
             {
                 // Falin: San Bernardo (firme, masa sólida)
                 _rb.mass = 1.3f;
@@ -134,6 +157,7 @@ namespace Kimaya
                 {
                     _col.size = new Vector2(1.0f, 0.75f);
                     _col.offset = new Vector2(0f, 0.38f);
+                    _col.edgeRadius = 0.02f;
                 }
             }
             else
@@ -151,12 +175,19 @@ namespace Kimaya
                 {
                     _col.size = new Vector2(0.85f, 0.65f);
                     _col.offset = new Vector2(0f, 0.33f);
+                    _col.edgeRadius = 0.02f;
                 }
             }
         }
 
         private void Update()
         {
+            if (_bounceTimer > 0f)
+            {
+                _bounceTimer -= Time.deltaTime;
+                if (_bounceTimer <= 0f) IsBouncing = false;
+            }
+
             // Gestión del aturdimiento tras caída fuerte (Jump King Splat)
             if (IsStunned)
             {
@@ -315,6 +346,9 @@ namespace Kimaya
                         _rb.linearVelocity = new Vector2(bounceX, currentY);
                         _iceSlideVelocityX = bounceX;
 
+                        IsBouncing = true;
+                        _bounceTimer = 0.30f;
+
                         FacingDirection = Mathf.Sign(bounceX);
                         if (spriteRenderer != null)
                         {
@@ -370,6 +404,8 @@ namespace Kimaya
 
             if (foundGround)
             {
+                IsBouncing = false;
+                _bounceTimer = 0f;
                 _groundContactCount = 1;
                 if (!IsGrounded)
                 {

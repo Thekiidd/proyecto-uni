@@ -1,0 +1,3679 @@
+fileFormatVersion: 2
+guid: 9de2a0b6e1af98646b9d5ced7773aa2f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4745979213896839727
+    second: JumpKing_Knight_FullSheet_0
+  - first:
+      213: -295310850374562325
+    second: JumpKing_Knight_FullSheet_1
+  - first:
+      213: 4984304899439710556
+    second: JumpKing_Knight_FullSheet_2
+  - first:
+      213: -8272797254372305228
+    second: JumpKing_Knight_FullSheet_3
+  - first:
+      213: -8845242662903265047
+    second: JumpKing_Knight_FullSheet_4
+  - first:
+      213: 7017380271526083811
+    second: JumpKing_Knight_FullSheet_5
+  - first:
+      213: -531850444394351394
+    second: JumpKing_Knight_FullSheet_6
+  - first:
+      213: -5966308056784373334
+    second: JumpKing_Knight_FullSheet_7
+  - first:
+      213: -982400586686054885
+    second: JumpKing_Knight_FullSheet_8
+  - first:
+      213: 4880505262678988100
+    second: JumpKing_Knight_FullSheet_9
+  - first:
+      213: -662665548826264623
+    second: JumpKing_Knight_FullSheet_10
+  - first:
+      213: -5192411287747566320
+    second: JumpKing_Knight_FullSheet_11
+  - first:
+      213: 4939041856799599002
+    second: JumpKing_Knight_FullSheet_12
+  - first:
+      213: -1128987462056483900
+    second: JumpKing_Knight_FullSheet_13
+  - first:
+      213: 9179256748640846138
+    second: JumpKing_Knight_FullSheet_14
+  - first:
+      213: 658202045214486515
+    second: JumpKing_Knight_FullSheet_15
+  - first:
+      213: -6202767656147582117
+    second: JumpKing_Knight_FullSheet_16
+  - first:
+      213: 4206711457980402686
+    second: JumpKing_Knight_FullSheet_17
+  - first:
+      213: -1325654830979414658
+    second: JumpKing_Knight_FullSheet_18
+  - first:
+      213: -6117977343704224754
+    second: JumpKing_Knight_FullSheet_19
+  - first:
+      213: -7542126720110756781
+    second: JumpKing_Knight_FullSheet_20
+  - first:
+      213: 4743807565750524130
+    second: JumpKing_Knight_FullSheet_21
+  - first:
+      213: 3786796018370554804
+    second: JumpKing_Knight_FullSheet_22
+  - first:
+      213: 7328370762350900573
+    second: JumpKing_Knight_FullSheet_23
+  - first:
+      213: 8663654469725796266
+    second: JumpKing_Knight_FullSheet_24
+  - first:
+      213: -5083689294656260000
+    second: JumpKing_Knight_FullSheet_25
+  - first:
+      213: 4694519815293878663
+    second: JumpKing_Knight_FullSheet_26
+  - first:
+      213: 8163016536241722913
+    second: JumpKing_Knight_FullSheet_27
+  - first:
+      213: 5541426161085765540
+    second: JumpKing_Knight_FullSheet_28
+  - first:
+      213: 5182884608686603380
+    second: JumpKing_Knight_FullSheet_29
+  - first:
+      213: 8326974153634948239
+    second: JumpKing_Knight_FullSheet_30
+  - first:
+      213: -7619178503144330770
+    second: JumpKing_Knight_FullSheet_31
+  - first:
+      213: 4661123816300726754
+    second: JumpKing_Knight_FullSheet_32
+  - first:
+      213: 537815168718267113
+    second: JumpKing_Knight_FullSheet_33
+  - first:
+      213: 1792146820681953277
+    second: JumpKing_Knight_FullSheet_34
+  - first:
+      213: -7582939000027945443
+    second: JumpKing_Knight_FullSheet_35
+  - first:
+      213: -1070567497938754348
+    second: JumpKing_Knight_FullSheet_36
+  - first:
+      213: 7970581057631965832
+    second: JumpKing_Knight_FullSheet_37
+  - first:
+      213: -7874520327050157825
+    second: JumpKing_Knight_FullSheet_38
+  - first:
+      213: -2772250196220864071
+    second: JumpKing_Knight_FullSheet_39
+  - first:
+      213: -4997909135274502200
+    second: JumpKing_Knight_FullSheet_40
+  - first:
+      213: 7829538036805918840
+    second: JumpKing_Knight_FullSheet_41
+  - first:
+      213: 4072007399481650921
+    second: JumpKing_Knight_FullSheet_42
+  - first:
+      213: 1825932344830008750
+    second: JumpKing_Knight_FullSheet_43
+  - first:
+      213: -5112586425156465610
+    second: JumpKing_Knight_FullSheet_44
+  - first:
+      213: 7650262806885399899
+    second: JumpKing_Knight_FullSheet_45
+  - first:
+      213: -6368800041282148159
+    second: JumpKing_Knight_FullSheet_46
+  - first:
+      213: -3881251792222733861
+    second: JumpKing_Knight_FullSheet_47
+  - first:
+      213: -1715329339741259221
+    second: JumpKing_Knight_FullSheet_48
+  - first:
+      213: 9013312011329750529
+    second: JumpKing_Knight_FullSheet_49
+  - first:
+      213: 4849426143459829777
+    second: JumpKing_Knight_FullSheet_50
+  - first:
+      213: -8070305024458641091
+    second: JumpKing_Knight_FullSheet_51
+  - first:
+      213: 1510955672303685911
+    second: JumpKing_Knight_FullSheet_52
+  - first:
+      213: -942251832840757786
+    second: JumpKing_Knight_FullSheet_53
+  - first:
+      213: 921691737417021108
+    second: JumpKing_Knight_FullSheet_54
+  - first:
+      213: 2524033601193630870
+    second: JumpKing_Knight_FullSheet_55
+  - first:
+      213: 9044809614382801189
+    second: JumpKing_Knight_FullSheet_56
+  - first:
+      213: 3856665268200269143
+    second: JumpKing_Knight_FullSheet_57
+  - first:
+      213: -5951329409671615138
+    second: JumpKing_Knight_FullSheet_58
+  - first:
+      213: -3156527059481546104
+    second: JumpKing_Knight_FullSheet_59
+  - first:
+      213: 2313527458720678653
+    second: JumpKing_Knight_FullSheet_60
+  - first:
+      213: -3153488273774682215
+    second: JumpKing_Knight_FullSheet_61
+  - first:
+      213: -6170051756299485919
+    second: JumpKing_Knight_FullSheet_62
+  - first:
+      213: 317691598074656482
+    second: JumpKing_Knight_FullSheet_63
+  - first:
+      213: 2896856693420197749
+    second: JumpKing_Knight_FullSheet_64
+  - first:
+      213: -1827423542485394650
+    second: JumpKing_Knight_FullSheet_65
+  - first:
+      213: -3337196268642066612
+    second: JumpKing_Knight_FullSheet_66
+  - first:
+      213: 3576847664984764741
+    second: JumpKing_Knight_FullSheet_67
+  - first:
+      213: -1108648338214073753
+    second: JumpKing_Knight_FullSheet_68
+  - first:
+      213: 2510300176394490110
+    second: JumpKing_Knight_FullSheet_69
+  - first:
+      213: 529969892824216349
+    second: JumpKing_Knight_FullSheet_70
+  - first:
+      213: -8679403090020733005
+    second: JumpKing_Knight_FullSheet_71
+  - first:
+      213: 7943229205489604365
+    second: JumpKing_Knight_FullSheet_72
+  - first:
+      213: -3584974727533542787
+    second: JumpKing_Knight_FullSheet_73
+  - first:
+      213: 3726335838822700025
+    second: JumpKing_Knight_FullSheet_74
+  - first:
+      213: -606657663821943259
+    second: JumpKing_Knight_FullSheet_75
+  - first:
+      213: 217112379108312377
+    second: JumpKing_Knight_FullSheet_76
+  - first:
+      213: -6252890948683401407
+    second: JumpKing_Knight_FullSheet_77
+  - first:
+      213: -7705728808958000315
+    second: JumpKing_Knight_FullSheet_78
+  - first:
+      213: 7413849576643706028
+    second: JumpKing_Knight_FullSheet_79
+  - first:
+      213: -3912155699705082960
+    second: JumpKing_Knight_FullSheet_80
+  - first:
+      213: 3408761397965440525
+    second: JumpKing_Knight_FullSheet_81
+  - first:
+      213: 3541481705487593107
+    second: JumpKing_Knight_FullSheet_82
+  - first:
+      213: -5351961625162962669
+    second: JumpKing_Knight_FullSheet_83
+  - first:
+      213: 7990886946886309650
+    second: JumpKing_Knight_FullSheet_84
+  - first:
+      213: 1463284974638320695
+    second: JumpKing_Knight_FullSheet_85
+  - first:
+      213: 403380627970351257
+    second: JumpKing_Knight_FullSheet_86
+  - first:
+      213: -1341038954936085879
+    second: JumpKing_Knight_FullSheet_87
+  - first:
+      213: 6809016171888209243
+    second: JumpKing_Knight_FullSheet_88
+  - first:
+      213: -2993444000750095600
+    second: JumpKing_Knight_FullSheet_89
+  - first:
+      213: 8270470674420059354
+    second: JumpKing_Knight_FullSheet_90
+  - first:
+      213: -3256222404538200294
+    second: JumpKing_Knight_FullSheet_91
+  - first:
+      213: 8331746772422993110
+    second: JumpKing_Knight_FullSheet_92
+  - first:
+      213: 5869794833677866250
+    second: JumpKing_Knight_FullSheet_93
+  - first:
+      213: -3075252786285232152
+    second: JumpKing_Knight_FullSheet_94
+  - first:
+      213: -4963503123297450070
+    second: JumpKing_Knight_FullSheet_95
+  - first:
+      213: 3820283084872888824
+    second: JumpKing_Knight_FullSheet_96
+  - first:
+      213: 1405432522056342732
+    second: JumpKing_Knight_FullSheet_97
+  - first:
+      213: 857014704672704662
+    second: JumpKing_Knight_FullSheet_98
+  - first:
+      213: 1842001073805225937
+    second: JumpKing_Knight_FullSheet_99
+  - first:
+      213: 7911982501904400188
+    second: JumpKing_Knight_FullSheet_100
+  - first:
+      213: 1281689393993313792
+    second: JumpKing_Knight_FullSheet_101
+  - first:
+      213: 5560678608973566596
+    second: JumpKing_Knight_FullSheet_102
+  - first:
+      213: -261870943056569678
+    second: JumpKing_Knight_FullSheet_103
+  - first:
+      213: -8985583050664061966
+    second: JumpKing_Knight_FullSheet_104
+  - first:
+      213: 4432767277935860790
+    second: JumpKing_Knight_FullSheet_105
+  - first:
+      213: 6301395193158462924
+    second: JumpKing_Knight_FullSheet_106
+  - first:
+      213: 536873948598761845
+    second: JumpKing_Knight_FullSheet_107
+  - first:
+      213: -1457212299507100385
+    second: JumpKing_Knight_FullSheet_108
+  - first:
+      213: -8159992917889270199
+    second: JumpKing_Knight_FullSheet_109
+  - first:
+      213: 8522551858260678046
+    second: JumpKing_Knight_FullSheet_110
+  - first:
+      213: -7356352225940529990
+    second: JumpKing_Knight_FullSheet_111
+  - first:
+      213: 3074332426597264430
+    second: JumpKing_Knight_FullSheet_112
+  - first:
+      213: 2370978514687404863
+    second: JumpKing_Knight_FullSheet_113
+  - first:
+      213: -2246152752005605631
+    second: JumpKing_Knight_FullSheet_114
+  - first:
+      213: -9092726970313360542
+    second: JumpKing_Knight_FullSheet_115
+  - first:
+      213: 6279556667714558926
+    second: JumpKing_Knight_FullSheet_116
+  - first:
+      213: -4538250600415092138
+    second: JumpKing_Knight_FullSheet_117
+  - first:
+      213: 7078781112818650619
+    second: JumpKing_Knight_FullSheet_118
+  - first:
+      213: 8447292144919832413
+    second: JumpKing_Knight_FullSheet_119
+  - first:
+      213: -7151587025761333545
+    second: JumpKing_Knight_FullSheet_120
+  - first:
+      213: 7626364447497301246
+    second: JumpKing_Knight_FullSheet_121
+  - first:
+      213: 288805808036474934
+    second: JumpKing_Knight_FullSheet_122
+  - first:
+      213: 3458820173997420487
+    second: JumpKing_Knight_FullSheet_123
+  - first:
+      213: -7756705763597851715
+    second: JumpKing_Knight_FullSheet_124
+  - first:
+      213: -2605819111208260834
+    second: JumpKing_Knight_FullSheet_125
+  - first:
+      213: 8367339785964280168
+    second: JumpKing_Knight_FullSheet_126
+  - first:
+      213: -8790916268486095380
+    second: JumpKing_Knight_FullSheet_127
+  - first:
+      213: 6445113430413091176
+    second: JumpKing_Knight_FullSheet_128
+  - first:
+      213: -2562563325193031997
+    second: JumpKing_Knight_FullSheet_129
+  - first:
+      213: 7464312964081722823
+    second: JumpKing_Knight_FullSheet_130
+  - first:
+      213: 9127108868200227761
+    second: JumpKing_Knight_FullSheet_131
+  - first:
+      213: -7844177453348183738
+    second: JumpKing_Knight_FullSheet_132
+  - first:
+      213: 8022942246867318939
+    second: JumpKing_Knight_FullSheet_133
+  - first:
+      213: 613873259699353328
+    second: JumpKing_Knight_FullSheet_134
+  - first:
+      213: 6643140713948412372
+    second: JumpKing_Knight_FullSheet_135
+  - first:
+      213: 8894452839635915151
+    second: JumpKing_Knight_FullSheet_136
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 351
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2275b323fa1dd140800000000000000
+      internalID: 4745979213896839727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 351
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bed0b11a858d6ebf0800000000000000
+      internalID: -295310850374562325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_2
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 351
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c51d757e5eecb2540800000000000000
+      internalID: 4984304899439710556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 347
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b6df427abe113d80800000000000000
+      internalID: -8272797254372305228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_4
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 320
+        width: 26
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e8458589a26f3580800000000000000
+      internalID: -8845242662903265047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_5
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 352
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ec75226d2eb26160800000000000000
+      internalID: 7017380271526083811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_6
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 361
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed4bd34b6dc7e98f0800000000000000
+      internalID: -531850444394351394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_7
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 335
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa9f0d6ee6a633da0800000000000000
+      internalID: -5966308056784373334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_8
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 335
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e31731fdfcd52f0800000000000000
+      internalID: -982400586686054885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_9
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 335
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 445d76aada90bb340800000000000000
+      internalID: 4880505262678988100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_10
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 335
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1db325db13dbdc6f0800000000000000
+      internalID: -662665548826264623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_11
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 343
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 015e312c179d0f7b0800000000000000
+      internalID: -5192411287747566320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_12
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 345
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a99635d86600b8440800000000000000
+      internalID: 4939041856799599002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_13
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 345
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c3e04882e70550f0800000000000000
+      internalID: -1128987462056483900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_14
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 345
+        width: 20
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3148dc0165436f70800000000000000
+      internalID: 9179256748640846138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_15
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 335
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ffe177d547622900800000000000000
+      internalID: 658202045214486515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_16
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 335
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b538a0f2ea75be9a0800000000000000
+      internalID: -6202767656147582117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_17
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 335
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efbcc7d68cd316a30800000000000000
+      internalID: 4206711457980402686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_18
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 344
+        width: 18
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7501b074f35a9de0800000000000000
+      internalID: -1325654830979414658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_19
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 347
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0c2f943504981ba0800000000000000
+      internalID: -6117977343704224754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_20
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 345
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35cf0dc35bbf45790800000000000000
+      internalID: -7542126720110756781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_21
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 319
+        width: 62
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e8de57e8d365d140800000000000000
+      internalID: 4743807565750524130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_22
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 319
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bb27d75ae66d8430800000000000000
+      internalID: 3786796018370554804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_23
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 319
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d55b848816a93b560800000000000000
+      internalID: 7328370762350900573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_24
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 319
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa73bb496db7b3870800000000000000
+      internalID: 8663654469725796266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_25
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 329
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 068be83658b1379b0800000000000000
+      internalID: -5083689294656260000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_26
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 303
+        width: 16
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 781cf9d36e8462140800000000000000
+      internalID: 4694519815293878663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_27
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 303
+        width: 19
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 126d35a4a4cd84170800000000000000
+      internalID: 8163016536241722913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_28
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 305
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a7d298dbb917ec40800000000000000
+      internalID: 5541426161085765540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_29
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 287
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47cba9c671e4de740800000000000000
+      internalID: 5182884608686603380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_30
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 287
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f842541efda5f8370800000000000000
+      internalID: 8326974153634948239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_31
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 287
+        width: 37
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee92acff48d334690800000000000000
+      internalID: -7619178503144330770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_32
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 306
+        width: 19
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e9c7bc4a63afa040800000000000000
+      internalID: 4661123816300726754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_33
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 306
+        width: 19
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e2e446eb04b67700800000000000000
+      internalID: 537815168718267113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_34
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 334
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dffe718c90cfed810800000000000000
+      internalID: 1792146820681953277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_35
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 306
+        width: 19
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d16e0e5d72df3c690800000000000000
+      internalID: -7582939000027945443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 287
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d4284168849421f0800000000000000
+      internalID: -1070567497938754348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_37
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 287
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8825c91fd313d9e60800000000000000
+      internalID: 7970581057631965832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_38
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 287
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff02599cb7518b290800000000000000
+      internalID: -7874520327050157825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_39
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 287
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b99fb1722df689d0800000000000000
+      internalID: -2772250196220864071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_40
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 287
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c7984c1f1cd3aab0800000000000000
+      internalID: -4997909135274502200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_41
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 297
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870e93f9c5b18ac60800000000000000
+      internalID: 7829538036805918840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_42
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 297
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eeadd8c72da28830800000000000000
+      internalID: 4072007399481650921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_43
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 287
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ead1d7d1bc3075910800000000000000
+      internalID: 1825932344830008750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_44
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 287
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c8015ebb17c09b0800000000000000
+      internalID: -5112586425156465610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_45
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 287
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d79c27d713b2a60800000000000000
+      internalID: 7650262806885399899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_46
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 287
+        width: 33
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c862e51b1a7d97a0800000000000000
+      internalID: -6368800041282148159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_47
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 303
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd937b80f06032ac0800000000000000
+      internalID: -3881251792222733861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_48
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 287
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2abaefbd0de138e0800000000000000
+      internalID: -1715329339741259221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_49
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 223
+        width: 46
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 106421d0587b51d70800000000000000
+      internalID: 9013312011329750529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_50
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 223
+        width: 35
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1186a65526f9c4340800000000000000
+      internalID: 4849426143459829777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_51
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 255
+        width: 44
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d31b71ca654800090800000000000000
+      internalID: -8070305024458641091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_52
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 265
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711d507bd2ef7f410800000000000000
+      internalID: 1510955672303685911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_53
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 265
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6edd09643f27ce2f0800000000000000
+      internalID: -942251832840757786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_54
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 239
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b6772970c18acc00800000000000000
+      internalID: 921691737417021108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_55
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 239
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69cdb48ff2b270320800000000000000
+      internalID: 2524033601193630870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_56
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 239
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 521235e3c6e958d70800000000000000
+      internalID: 9044809614382801189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_57
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 239
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 755e9a0c0a0a58530800000000000000
+      internalID: 3856665268200269143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_58
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 263
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d2033fe61a86da0800000000000000
+      internalID: -5951329409671615138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_59
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 263
+        width: 17
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 882b1b70d53c134d0800000000000000
+      internalID: -3156527059481546104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_60
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 263
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df2882357fc4b1020800000000000000
+      internalID: 2313527458720678653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_61
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 267
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99fdc467f1f8c34d0800000000000000
+      internalID: -3153488273774682215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_62
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 239
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d7ef33e929f5aa0800000000000000
+      internalID: -6170051756299485919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_63
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 239
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e6bd5343daa86400800000000000000
+      internalID: 317691598074656482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_64
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 239
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 577068080d3b33820800000000000000
+      internalID: 2896856693420197749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_65
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 266
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62bd8ff58ffa3a6e0800000000000000
+      internalID: -1827423542485394650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_66
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 266
+        width: 20
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4f94d5cca5efa1d0800000000000000
+      internalID: -3337196268642066612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_67
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 263
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5413a17100483a130800000000000000
+      internalID: 3576847664984764741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_68
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 233
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a4ce3d53a4d90f0800000000000000
+      internalID: -1108648338214073753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_69
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 191
+        width: 36
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef01895d5b066d220800000000000000
+      internalID: 2510300176394490110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_70
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 191
+        width: 37
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1370734fc4da5700800000000000000
+      internalID: 529969892824216349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_71
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 190
+        width: 40
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bfe2e400e09c8780800000000000000
+      internalID: -8679403090020733005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_72
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 224
+        width: 17
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0757ba90e40c3e60800000000000000
+      internalID: 7943229205489604365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_73
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 224
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d724c94ba7c9f3ec0800000000000000
+      internalID: -3584974727533542787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_74
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 227
+        width: 40
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f395d2d3ba96b330800000000000000
+      internalID: 3726335838822700025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_75
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 231
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52eef97a118b497f0800000000000000
+      internalID: -606657663821943259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_76
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 231
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9354719fe86530300800000000000000
+      internalID: 217112379108312377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_77
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 231
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1477878bfc44939a0800000000000000
+      internalID: -6252890948683401407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_78
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 159
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54380969970cf0590800000000000000
+      internalID: -7705728808958000315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_79
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 159
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cac3702e8e843e660800000000000000
+      internalID: 7413849576643706028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_80
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 159
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bb0f0d5e1b35b9c0800000000000000
+      internalID: -3912155699705082960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_81
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 201
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d064bc95e6a5e4f20800000000000000
+      internalID: 3408761397965440525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_82
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 191
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ee12af8ded52130800000000000000
+      internalID: 3541481705487593107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_83
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 183
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 319a3a002430ab5b0800000000000000
+      internalID: -5351961625162962669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_84
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 183
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 217d675375555ee60800000000000000
+      internalID: 7990886946886309650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_85
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 183
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73ccb7e7ee1ae4410800000000000000
+      internalID: 1463284974638320695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_86
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 175
+        width: 37
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 990627f3b88199500800000000000000
+      internalID: 403380627970351257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_87
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 176
+        width: 38
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 982d215fc2ca36de0800000000000000
+      internalID: -1341038954936085879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_88
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 175
+        width: 35
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d6943f12c7e7e50800000000000000
+      internalID: 6809016171888209243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_89
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 176
+        width: 35
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01334409a862576d0800000000000000
+      internalID: -2993444000750095600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_90
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 199
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adcc712724d96c270800000000000000
+      internalID: 8270470674420059354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_91
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 199
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f05dba9f29fc2d0800000000000000
+      internalID: -3256222404538200294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_92
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 199
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d4a7c8cb8f40a370800000000000000
+      internalID: 8331746772422993110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_93
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 169
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a05dacd3d43b57150800000000000000
+      internalID: 5869794833677866250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_94
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 143
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef30fe52e18255d0800000000000000
+      internalID: -3075252786285232152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_95
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 143
+        width: 35
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa7405605381e1bb0800000000000000
+      internalID: -4963503123297450070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_96
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 143
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f13847993f540530800000000000000
+      internalID: 3820283084872888824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_97
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 143
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc13f8be69118310800000000000000
+      internalID: 1405432522056342732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_98
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 149
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6988d4f455ab4eb00800000000000000
+      internalID: 857014704672704662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_99
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 150
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1df6c00a73a109910800000000000000
+      internalID: 1842001073805225937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_100
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 150
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3f3e1f7a220dcd60800000000000000
+      internalID: 7911982501904400188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_101
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 111
+        width: 35
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00e6b5196b979c110800000000000000
+      internalID: 1281689393993313792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_102
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 95
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4829bfdabbf7b2d40800000000000000
+      internalID: 5560678608973566596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_103
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 95
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2badd16c3c5ad5cf0800000000000000
+      internalID: -261870943056569678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_104
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 95
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f3d565b2dbcc4380800000000000000
+      internalID: -8985583050664061966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_105
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 137
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c975d7a5a548d30800000000000000
+      internalID: 4432767277935860790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_106
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 112
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd609dba8d037750800000000000000
+      internalID: 6301395193158462924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_107
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 111
+        width: 35
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579f363030c537700800000000000000
+      internalID: 536873948598761845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_108
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 112
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f159c8d5221f6cbe0800000000000000
+      internalID: -1457212299507100385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_109
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 95
+        width: 33
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94eb187bca1e1ce80800000000000000
+      internalID: -8159992917889270199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_110
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 95
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e95197bb2cf264670800000000000000
+      internalID: 8522551858260678046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_111
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 95
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abc192a40acf8e990800000000000000
+      internalID: -7356352225940529990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_112
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 95
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2c6bc0bd093aaa20800000000000000
+      internalID: 3074332426597264430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_113
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 103
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3ba60aa56867e020800000000000000
+      internalID: 2370978514687404863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_114
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 103
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107907109ff04d0e0800000000000000
+      internalID: -2246152752005605631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_115
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 103
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26bbbdeeef420d180800000000000000
+      internalID: -9092726970313360542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_116
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 54
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecbdf0ec487752750800000000000000
+      internalID: 6279556667714558926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_117
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 47
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6522e84af15e401c0800000000000000
+      internalID: -4538250600415092138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_118
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 47
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfdcc48cae1ec3260800000000000000
+      internalID: 7078781112818650619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_119
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 47
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57e4eb337fca3570800000000000000
+      internalID: 8447292144919832413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_120
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 63
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de0435ad7570cc90800000000000000
+      internalID: -7151587025761333545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_121
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 63
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efcaebc0f0a46d960800000000000000
+      internalID: 7626364447497301246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_122
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 63
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 630751d2a5b020400800000000000000
+      internalID: 288805808036474934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_123
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 47
+        width: 35
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cf22156f92300030800000000000000
+      internalID: 3458820173997420487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_124
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 48
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db3668d6435aa5490800000000000000
+      internalID: -7756705763597851715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_125
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 47
+        width: 35
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1be187135546dbd0800000000000000
+      internalID: -2605819111208260834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_126
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 48
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 869d4690433ce1470800000000000000
+      internalID: 8367339785964280168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_127
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 56
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ced0fa6ea34600680800000000000000
+      internalID: -8790916268486095380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_128
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 0
+        width: 58
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8612fdc6484a17950800000000000000
+      internalID: 6445113430413091176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_129
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 0
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ceec679b32ff6cd0800000000000000
+      internalID: -2562563325193031997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_130
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 2
+        width: 48
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c52f6cd711969760800000000000000
+      internalID: 7464312964081722823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_131
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 23
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b3646b78210aae70800000000000000
+      internalID: 9127108868200227761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_132
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 23
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 641ad0a9a22e32390800000000000000
+      internalID: -7844177453348183738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_133
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 23
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9830065777375f60800000000000000
+      internalID: 8022942246867318939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_134
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 0
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f6bd7d2a7ae48800800000000000000
+      internalID: 613873259699353328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_135
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 0
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d974df484d213c50800000000000000
+      internalID: 6643140713948412372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpKing_Knight_FullSheet_136
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 0
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8196f99bb17f6b70800000000000000
+      internalID: 8894452839635915151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      JumpKing_Knight_FullSheet_0: 4745979213896839727
+      JumpKing_Knight_FullSheet_1: -295310850374562325
+      JumpKing_Knight_FullSheet_10: -662665548826264623
+      JumpKing_Knight_FullSheet_100: 7911982501904400188
+      JumpKing_Knight_FullSheet_101: 1281689393993313792
+      JumpKing_Knight_FullSheet_102: 5560678608973566596
+      JumpKing_Knight_FullSheet_103: -261870943056569678
+      JumpKing_Knight_FullSheet_104: -8985583050664061966
+      JumpKing_Knight_FullSheet_105: 4432767277935860790
+      JumpKing_Knight_FullSheet_106: 6301395193158462924
+      JumpKing_Knight_FullSheet_107: 536873948598761845
+      JumpKing_Knight_FullSheet_108: -1457212299507100385
+      JumpKing_Knight_FullSheet_109: -8159992917889270199
+      JumpKing_Knight_FullSheet_11: -5192411287747566320
+      JumpKing_Knight_FullSheet_110: 8522551858260678046
+      JumpKing_Knight_FullSheet_111: -7356352225940529990
+      JumpKing_Knight_FullSheet_112: 3074332426597264430
+      JumpKing_Knight_FullSheet_113: 2370978514687404863
+      JumpKing_Knight_FullSheet_114: -2246152752005605631
+      JumpKing_Knight_FullSheet_115: -9092726970313360542
+      JumpKing_Knight_FullSheet_116: 6279556667714558926
+      JumpKing_Knight_FullSheet_117: -4538250600415092138
+      JumpKing_Knight_FullSheet_118: 7078781112818650619
+      JumpKing_Knight_FullSheet_119: 8447292144919832413
+      JumpKing_Knight_FullSheet_12: 4939041856799599002
+      JumpKing_Knight_FullSheet_120: -7151587025761333545
+      JumpKing_Knight_FullSheet_121: 7626364447497301246
+      JumpKing_Knight_FullSheet_122: 288805808036474934
+      JumpKing_Knight_FullSheet_123: 3458820173997420487
+      JumpKing_Knight_FullSheet_124: -7756705763597851715
+      JumpKing_Knight_FullSheet_125: -2605819111208260834
+      JumpKing_Knight_FullSheet_126: 8367339785964280168
+      JumpKing_Knight_FullSheet_127: -8790916268486095380
+      JumpKing_Knight_FullSheet_128: 6445113430413091176
+      JumpKing_Knight_FullSheet_129: -2562563325193031997
+      JumpKing_Knight_FullSheet_13: -1128987462056483900
+      JumpKing_Knight_FullSheet_130: 7464312964081722823
+      JumpKing_Knight_FullSheet_131: 9127108868200227761
+      JumpKing_Knight_FullSheet_132: -7844177453348183738
+      JumpKing_Knight_FullSheet_133: 8022942246867318939
+      JumpKing_Knight_FullSheet_134: 613873259699353328
+      JumpKing_Knight_FullSheet_135: 6643140713948412372
+      JumpKing_Knight_FullSheet_136: 8894452839635915151
+      JumpKing_Knight_FullSheet_14: 9179256748640846138
+      JumpKing_Knight_FullSheet_15: 658202045214486515
+      JumpKing_Knight_FullSheet_16: -6202767656147582117
+      JumpKing_Knight_FullSheet_17: 4206711457980402686
+      JumpKing_Knight_FullSheet_18: -1325654830979414658
+      JumpKing_Knight_FullSheet_19: -6117977343704224754
+      JumpKing_Knight_FullSheet_2: 4984304899439710556
+      JumpKing_Knight_FullSheet_20: -7542126720110756781
+      JumpKing_Knight_FullSheet_21: 4743807565750524130
+      JumpKing_Knight_FullSheet_22: 3786796018370554804
+      JumpKing_Knight_FullSheet_23: 7328370762350900573
+      JumpKing_Knight_FullSheet_24: 8663654469725796266
+      JumpKing_Knight_FullSheet_25: -5083689294656260000
+      JumpKing_Knight_FullSheet_26: 4694519815293878663
+      JumpKing_Knight_FullSheet_27: 8163016536241722913
+      JumpKing_Knight_FullSheet_28: 5541426161085765540
+      JumpKing_Knight_FullSheet_29: 5182884608686603380
+      JumpKing_Knight_FullSheet_3: -8272797254372305228
+      JumpKing_Knight_FullSheet_30: 8326974153634948239
+      JumpKing_Knight_FullSheet_31: -7619178503144330770
+      JumpKing_Knight_FullSheet_32: 4661123816300726754
+      JumpKing_Knight_FullSheet_33: 537815168718267113
+      JumpKing_Knight_FullSheet_34: 1792146820681953277
+      JumpKing_Knight_FullSheet_35: -7582939000027945443
+      JumpKing_Knight_FullSheet_36: -1070567497938754348
+      JumpKing_Knight_FullSheet_37: 7970581057631965832
+      JumpKing_Knight_FullSheet_38: -7874520327050157825
+      JumpKing_Knight_FullSheet_39: -2772250196220864071
+      JumpKing_Knight_FullSheet_4: -8845242662903265047
+      JumpKing_Knight_FullSheet_40: -4997909135274502200
+      JumpKing_Knight_FullSheet_41: 7829538036805918840
+      JumpKing_Knight_FullSheet_42: 4072007399481650921
+      JumpKing_Knight_FullSheet_43: 1825932344830008750
+      JumpKing_Knight_FullSheet_44: -5112586425156465610
+      JumpKing_Knight_FullSheet_45: 7650262806885399899
+      JumpKing_Knight_FullSheet_46: -6368800041282148159
+      JumpKing_Knight_FullSheet_47: -3881251792222733861
+      JumpKing_Knight_FullSheet_48: -1715329339741259221
+      JumpKing_Knight_FullSheet_49: 9013312011329750529
+      JumpKing_Knight_FullSheet_5: 7017380271526083811
+      JumpKing_Knight_FullSheet_50: 4849426143459829777
+      JumpKing_Knight_FullSheet_51: -8070305024458641091
+      JumpKing_Knight_FullSheet_52: 1510955672303685911
+      JumpKing_Knight_FullSheet_53: -942251832840757786
+      JumpKing_Knight_FullSheet_54: 921691737417021108
+      JumpKing_Knight_FullSheet_55: 2524033601193630870
+      JumpKing_Knight_FullSheet_56: 9044809614382801189
+      JumpKing_Knight_FullSheet_57: 3856665268200269143
+      JumpKing_Knight_FullSheet_58: -5951329409671615138
+      JumpKing_Knight_FullSheet_59: -3156527059481546104
+      JumpKing_Knight_FullSheet_6: -531850444394351394
+      JumpKing_Knight_FullSheet_60: 2313527458720678653
+      JumpKing_Knight_FullSheet_61: -3153488273774682215
+      JumpKing_Knight_FullSheet_62: -6170051756299485919
+      JumpKing_Knight_FullSheet_63: 317691598074656482
+      JumpKing_Knight_FullSheet_64: 2896856693420197749
+      JumpKing_Knight_FullSheet_65: -1827423542485394650
+      JumpKing_Knight_FullSheet_66: -3337196268642066612
+      JumpKing_Knight_FullSheet_67: 3576847664984764741
+      JumpKing_Knight_FullSheet_68: -1108648338214073753
+      JumpKing_Knight_FullSheet_69: 2510300176394490110
+      JumpKing_Knight_FullSheet_7: -5966308056784373334
+      JumpKing_Knight_FullSheet_70: 529969892824216349
+      JumpKing_Knight_FullSheet_71: -8679403090020733005
+      JumpKing_Knight_FullSheet_72: 7943229205489604365
+      JumpKing_Knight_FullSheet_73: -3584974727533542787
+      JumpKing_Knight_FullSheet_74: 3726335838822700025
+      JumpKing_Knight_FullSheet_75: -606657663821943259
+      JumpKing_Knight_FullSheet_76: 217112379108312377
+      JumpKing_Knight_FullSheet_77: -6252890948683401407
+      JumpKing_Knight_FullSheet_78: -7705728808958000315
+      JumpKing_Knight_FullSheet_79: 7413849576643706028
+      JumpKing_Knight_FullSheet_8: -982400586686054885
+      JumpKing_Knight_FullSheet_80: -3912155699705082960
+      JumpKing_Knight_FullSheet_81: 3408761397965440525
+      JumpKing_Knight_FullSheet_82: 3541481705487593107
+      JumpKing_Knight_FullSheet_83: -5351961625162962669
+      JumpKing_Knight_FullSheet_84: 7990886946886309650
+      JumpKing_Knight_FullSheet_85: 1463284974638320695
+      JumpKing_Knight_FullSheet_86: 403380627970351257
+      JumpKing_Knight_FullSheet_87: -1341038954936085879
+      JumpKing_Knight_FullSheet_88: 6809016171888209243
+      JumpKing_Knight_FullSheet_89: -2993444000750095600
+      JumpKing_Knight_FullSheet_9: 4880505262678988100
+      JumpKing_Knight_FullSheet_90: 8270470674420059354
+      JumpKing_Knight_FullSheet_91: -3256222404538200294
+      JumpKing_Knight_FullSheet_92: 8331746772422993110
+      JumpKing_Knight_FullSheet_93: 5869794833677866250
+      JumpKing_Knight_FullSheet_94: -3075252786285232152
+      JumpKing_Knight_FullSheet_95: -4963503123297450070
+      JumpKing_Knight_FullSheet_96: 3820283084872888824
+      JumpKing_Knight_FullSheet_97: 1405432522056342732
+      JumpKing_Knight_FullSheet_98: 857014704672704662
+      JumpKing_Knight_FullSheet_99: 1842001073805225937
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

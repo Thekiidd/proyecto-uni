@@ -53,6 +53,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/House_Interior_Merchant.unity
     guid: bfc3b4f7f3974b24a8266706ebc88511
+  - enabled: 1
+    path: Assets/Scenes/Ascenso_JumpKing_Classic.unity
+    guid: 722c76ee9d0cc2f43933ad202c1b40ce
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f,
       type: 2}

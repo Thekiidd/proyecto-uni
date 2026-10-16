@@ -16,6 +16,15 @@ namespace Kimaya
     [RequireComponent(typeof(SpriteRenderer), typeof(KimayaJumpKingController))]
     public class KimayaJumpKingAnimator : MonoBehaviour
     {
+        [Header("Frames Oficiales Jump King (Knight Original)")]
+        public Sprite knightIdle;
+        public Sprite[] knightWalkFrames;
+        public Sprite knightCharge;
+        public Sprite knightJumpUp;
+        public Sprite knightFall;
+        public Sprite knightBounce;
+        public Sprite knightSplat;
+
         [Header("Frames de Caminata y Reposo (Falin)")]
         public Sprite[] falinIdleFrames;
         public Sprite[] falinWalkFrames;
@@ -71,50 +80,79 @@ namespace Kimaya
                 _animTimer = 0f;
             }
 
+            bool isKing = (_ctrl.character == KimayaJumpKingController.CharacterType.JumpKing);
             bool isFalin = (_ctrl.character == KimayaJumpKingController.CharacterType.Falin);
 
             // 1. ESTADO DE ATURDIMIENTO / SPLAT TRAS CAÍDA
             if (_ctrl.IsStunned)
             {
                 _currentState = "Splat";
-                var splatSprite = isFalin ? falinSplat : miaSplat;
+                Sprite splatSprite = isKing ? knightSplat : (isFalin ? falinSplat : miaSplat);
                 if (splatSprite != null) _sr.sprite = splatSprite;
                 _sr.flipX = (_ctrl.FacingDirection < 0);
                 return;
             }
 
-            // 2. ESTADO DE CARGA DE SALTO (Agachado acumulando tensión, patas firmes en el suelo)
+            // 2. ESTADO DE CARGA DE SALTO (Agachado acumulando tensión)
             if (_ctrl.IsCharging)
             {
                 _currentState = "Charging";
-                var chargeArr = isFalin ? falinChargeProgress : miaChargeProgress;
-                if (chargeArr != null && chargeArr.Length > 0)
+                if (isKing)
                 {
-                    int chargeIdx = Mathf.Clamp(Mathf.FloorToInt(_ctrl.ChargePercent * chargeArr.Length), 0, chargeArr.Length - 1);
-                    if (chargeArr[chargeIdx] != null)
+                    if (knightCharge != null) _sr.sprite = knightCharge;
+                }
+                else
+                {
+                    var chargeArr = isFalin ? falinChargeProgress : miaChargeProgress;
+                    if (chargeArr != null && chargeArr.Length > 0)
                     {
-                        _sr.sprite = chargeArr[chargeIdx];
+                        int chargeIdx = Mathf.Clamp(Mathf.FloorToInt(_ctrl.ChargePercent * chargeArr.Length), 0, chargeArr.Length - 1);
+                        if (chargeArr[chargeIdx] != null)
+                        {
+                            _sr.sprite = chargeArr[chargeIdx];
+                        }
                     }
                 }
                 _sr.flipX = (_ctrl.FacingDirection < 0);
                 return;
             }
 
-            // 3. EN EL AIRE: SALTO CON ESTIRAMIENTO O CAÍDA
+            // 3. EN EL AIRE: SALTO CON ESTIRAMIENTO, CAÍDA O REBOTE EN MURO
             if (!_ctrl.IsGrounded)
             {
-                // Ascendiendo o en cúspide -> Estiramiento
-                if (_rb.linearVelocity.y >= -0.5f)
+                if (isKing)
                 {
-                    _currentState = "JumpStretch";
-                    var stretchSprite = isFalin ? falinJumpStretch : miaJumpStretch;
-                    if (stretchSprite != null) _sr.sprite = stretchSprite;
+                    if (_ctrl.IsBouncing && knightBounce != null)
+                    {
+                        _currentState = "Bounce";
+                        _sr.sprite = knightBounce;
+                    }
+                    else if (_rb.linearVelocity.y >= -0.5f)
+                    {
+                        _currentState = "JumpStretch";
+                        if (knightJumpUp != null) _sr.sprite = knightJumpUp;
+                    }
+                    else
+                    {
+                        _currentState = "Falling";
+                        if (knightFall != null) _sr.sprite = knightFall;
+                    }
                 }
-                else // Descendiendo -> Caída
+                else
                 {
-                    _currentState = "Falling";
-                    var fallSprite = isFalin ? falinFall : miaFall;
-                    if (fallSprite != null) _sr.sprite = fallSprite;
+                    // Falin o Mía
+                    if (_rb.linearVelocity.y >= -0.5f)
+                    {
+                        _currentState = "JumpStretch";
+                        var stretchSprite = isFalin ? falinJumpStretch : miaJumpStretch;
+                        if (stretchSprite != null) _sr.sprite = stretchSprite;
+                    }
+                    else
+                    {
+                        _currentState = "Falling";
+                        var fallSprite = isFalin ? falinFall : miaFall;
+                        if (fallSprite != null) _sr.sprite = fallSprite;
+                    }
                 }
 
                 _sr.flipX = (_ctrl.FacingDirection < 0);
@@ -130,23 +168,47 @@ namespace Kimaya
                 _animTimer = 0f;
             }
 
-            Sprite[] activeFrames = (_currentState == "Walk")
-                ? (isFalin ? falinWalkFrames : miaWalkFrames)
-                : (isFalin ? falinIdleFrames : miaIdleFrames);
-
-            if (activeFrames != null && activeFrames.Length > 0)
+            if (isKing)
             {
-                float fps = (_currentState == "Walk") ? walkFPS : idleFPS;
-                _animTimer += Time.deltaTime;
-                if (_animTimer >= (1f / fps))
+                if (_currentState == "Walk" && knightWalkFrames != null && knightWalkFrames.Length > 0)
                 {
-                    _animTimer -= (1f / fps);
-                    _currentFrameIndex = (_currentFrameIndex + 1) % activeFrames.Length;
+                    _animTimer += Time.deltaTime;
+                    float frameDur = 1f / walkFPS;
+                    if (_animTimer >= frameDur)
+                    {
+                        _animTimer -= frameDur;
+                        _currentFrameIndex = (_currentFrameIndex + 1) % knightWalkFrames.Length;
+                    }
+                    if (_currentFrameIndex < knightWalkFrames.Length && knightWalkFrames[_currentFrameIndex] != null)
+                    {
+                        _sr.sprite = knightWalkFrames[_currentFrameIndex];
+                    }
                 }
-
-                if (_currentFrameIndex < activeFrames.Length && activeFrames[_currentFrameIndex] != null)
+                else
                 {
-                    _sr.sprite = activeFrames[_currentFrameIndex];
+                    if (knightIdle != null) _sr.sprite = knightIdle;
+                }
+            }
+            else
+            {
+                Sprite[] activeFrames = (_currentState == "Walk")
+                    ? (isFalin ? falinWalkFrames : miaWalkFrames)
+                    : (isFalin ? falinIdleFrames : miaIdleFrames);
+
+                if (activeFrames != null && activeFrames.Length > 0)
+                {
+                    float fps = (_currentState == "Walk") ? walkFPS : idleFPS;
+                    _animTimer += Time.deltaTime;
+                    if (_animTimer >= (1f / fps))
+                    {
+                        _animTimer -= (1f / fps);
+                        _currentFrameIndex = (_currentFrameIndex + 1) % activeFrames.Length;
+                    }
+
+                    if (_currentFrameIndex < activeFrames.Length && activeFrames[_currentFrameIndex] != null)
+                    {
+                        _sr.sprite = activeFrames[_currentFrameIndex];
+                    }
                 }
             }
 

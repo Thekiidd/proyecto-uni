@@ -22,7 +22,7 @@ namespace Platformer.EditorTools
     public static class KimayaClassicJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_JumpKing_Classic.unity";
-        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v1_ExactREA";
+        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v3_ExactKnightREA";
 
         static KimayaClassicJumpKingBuilder()
         {
@@ -33,15 +33,38 @@ namespace Platformer.EditorTools
         {
             if (!EditorPrefs.GetBool(BUILD_KEY, false))
             {
-                Debug.Log("[KimayaClassicJumpKingBuilder] 👑 Ejecutando AutoBuild para Jump King Clásico (Opción A 1:1)...");
+                Debug.Log("[KimayaClassicJumpKingBuilder] 👑 Ejecutando AutoBuild para Jump King Clásico (Opción A 1:1 Oficial con Knight)...");
                 BuildClassicJumpKingScene();
                 EditorPrefs.SetBool(BUILD_KEY, true);
             }
         }
 
+        private const string KNIGHT_IDLE_PATH = "Assets/Sprites/JumpKingKnight/knight_idle.png";
+        private const string KNIGHT_WALK1_PATH = "Assets/Sprites/JumpKingKnight/knight_walk1.png";
+        private const string KNIGHT_WALK_SMEAR_PATH = "Assets/Sprites/JumpKingKnight/knight_walk_smear.png";
+        private const string KNIGHT_WALK2_PATH = "Assets/Sprites/JumpKingKnight/knight_walk2.png";
+        private const string KNIGHT_CHARGE_PATH = "Assets/Sprites/JumpKingKnight/knight_charge.png";
+        private const string KNIGHT_JUMP_UP_PATH = "Assets/Sprites/JumpKingKnight/knight_jump_up.png";
+        private const string KNIGHT_FALL_PATH = "Assets/Sprites/JumpKingKnight/knight_fall.png";
+        private const string KNIGHT_BOUNCE_PATH = "Assets/Sprites/JumpKingKnight/knight_bounce.png";
+        private const string KNIGHT_SPLAT_PATH = "Assets/Sprites/JumpKingKnight/knight_splat.png";
+
         private const string FALIN_SPRITE_PATH = "Assets/Sprites/PixelLab/Falin/Idle/rotations/east.png";
         private const string MIA_SPRITE_PATH = "Assets/Sprites/PixelLab/Mia/Idle/rotations/east.png";
         private const string ALTAR_SPRITE_PATH = "Assets/Sprites/Village/Art/Props/Ancient_Stone_Circle.png";
+
+        private static readonly string[] KNIGHT_SPRITE_PATHS = new string[]
+        {
+            KNIGHT_IDLE_PATH,
+            KNIGHT_WALK1_PATH,
+            KNIGHT_WALK_SMEAR_PATH,
+            KNIGHT_WALK2_PATH,
+            KNIGHT_CHARGE_PATH,
+            KNIGHT_JUMP_UP_PATH,
+            KNIGHT_FALL_PATH,
+            KNIGHT_BOUNCE_PATH,
+            KNIGHT_SPLAT_PATH
+        };
 
         private static readonly string[] CLASSIC_SCREEN_PATHS = new string[]
         {
@@ -138,16 +161,31 @@ namespace Platformer.EditorTools
         {
             Debug.Log("[KimayaClassicJumpKingBuilder] 👑 Iniciando construcción de Jump King Clásico (Opción A - 1:1 Oficial)...");
 
-            // 1. Asegurar importación a PPU = 36f (exacto 480x360 px -> 13.333f x 10f unidades)
+            // 1. Asegurar importación de fondos y sprites del Caballero Jump King a PPU = 36f
             foreach (var path in CLASSIC_SCREEN_PATHS)
             {
-                EnsureTextureIsSprite(path, 36.0f);
+                EnsureTextureIsSprite(path, 36.0f, SpriteAlignment.Center, new Vector2(0.5f, 0.5f));
+            }
+
+            foreach (var path in KNIGHT_SPRITE_PATHS)
+            {
+                EnsureTextureIsSprite(path, 36.0f, SpriteAlignment.BottomCenter, new Vector2(0.5f, 0.0f));
             }
 
             // Crear escena nueva
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
 
-            // Cargar sprites
+            // Cargar sprites del Caballero Oficial Jump King
+            Sprite knightIdleSprite = LoadAnySprite(KNIGHT_IDLE_PATH);
+            Sprite knightWalk1 = LoadAnySprite(KNIGHT_WALK1_PATH);
+            Sprite knightWalkSmear = LoadAnySprite(KNIGHT_WALK_SMEAR_PATH);
+            Sprite knightWalk2 = LoadAnySprite(KNIGHT_WALK2_PATH);
+            Sprite knightCharge = LoadAnySprite(KNIGHT_CHARGE_PATH);
+            Sprite knightJumpUp = LoadAnySprite(KNIGHT_JUMP_UP_PATH);
+            Sprite knightFall = LoadAnySprite(KNIGHT_FALL_PATH);
+            Sprite knightBounce = LoadAnySprite(KNIGHT_BOUNCE_PATH);
+            Sprite knightSplat = LoadAnySprite(KNIGHT_SPLAT_PATH);
+
             Sprite falinSprite = LoadAnySprite(FALIN_SPRITE_PATH);
             Sprite miaSprite = LoadAnySprite(MIA_SPRITE_PATH);
             Sprite altarSprite = LoadAnySprite(ALTAR_SPRITE_PATH);
@@ -155,35 +193,54 @@ namespace Platformer.EditorTools
             int groundLayer = LayerMask.NameToLayer("Ground");
             if (groundLayer < 0) groundLayer = LayerMask.NameToLayer("Default");
 
-            // 2. Jugador (Falin / Mía) colocado en la repisa izquierda de la Pantalla 1 original
+            // 2. Jugador (Caballero Oficial Jump King 1:1)
+            // Spawn exacto oficial en Pantalla 1: (X=231, Y=302 en 480x360 px) -> X = -0.25f, Y = 0.89f (sobre el suelo)
             GameObject playerGo = new GameObject("Player_JumpKing");
-            playerGo.transform.position = new Vector3(-4.6f, 5.2f, 0f);
+            playerGo.transform.position = new Vector3(-0.25f, 0.89f, 0f);
 
             var sr = playerGo.AddComponent<SpriteRenderer>();
-            sr.sprite = falinSprite != null ? falinSprite : miaSprite;
-            sr.sortingOrder = 20;
+            sr.sprite = knightIdleSprite;
+            sr.sortingOrder = 25;
 
             var rb = playerGo.GetComponent<Rigidbody2D>();
             if (rb == null) rb = playerGo.AddComponent<Rigidbody2D>();
             rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            rb.interpolation = RigidbodyInterpolation2D.Interpolate;
             rb.freezeRotation = true;
 
             var col = playerGo.AddComponent<BoxCollider2D>();
-            col.size = new Vector2(0.9f, 0.70f);
-            col.offset = new Vector2(0f, 0.35f);
+            // Hitbox Jump King: 18x26 px a 36 PPU = 0.50f ancho x 0.722f alto
+            // edgeRadius 0.03f para suavizar esquinas sin atraparse
+            col.size = new Vector2(0.44f, 0.662f);
+            col.offset = new Vector2(0f, 0.361f);
+            col.edgeRadius = 0.03f;
             var pMat = new PhysicsMaterial2D("PlayerMat") { friction = 0.2f, bounciness = 0f };
             col.sharedMaterial = pMat;
 
             var jumpCtrl = playerGo.AddComponent<KimayaJumpKingController>();
             jumpCtrl.spriteRenderer = sr;
-            jumpCtrl.character = KimayaJumpKingController.CharacterType.Falin;
+            jumpCtrl.character = KimayaJumpKingController.CharacterType.JumpKing;
+            jumpCtrl.walkSpeed = 3.5f;
+            jumpCtrl.maxChargeTime = 0.60f;
+            jumpCtrl.minJumpForce = 7.0f;
+            jumpCtrl.maxJumpForce = 17.5f;
+            jumpCtrl.horizontalJumpSpeed = 7.0f;
+            jumpCtrl.wallBounceMultiplier = 0.50f;
             jumpCtrl.enableHighFallStun = false;
 
             // Gizmos de trayectoria
             playerGo.AddComponent<KimayaJumpTrajectory>();
 
-            // Animador
+            // Animador Jump King Knight (con soporte de reserva para Falin y Mía)
             var anim = playerGo.AddComponent<KimayaJumpKingAnimator>();
+            anim.knightIdle = knightIdleSprite;
+            anim.knightWalkFrames = new Sprite[] { knightWalk1, knightWalkSmear, knightWalk2 };
+            anim.knightCharge = knightCharge;
+            anim.knightJumpUp = knightJumpUp;
+            anim.knightFall = knightFall;
+            anim.knightBounce = knightBounce;
+            anim.knightSplat = knightSplat;
+
             anim.falinIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/idle/east");
             anim.falinWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/walking/east");
             anim.falinChargeProgress = new Sprite[]
@@ -231,8 +288,8 @@ namespace Platformer.EditorTools
             GameObject wallsRoot = new GameObject("BoundaryWalls");
             CreateWall(wallsRoot.transform, -6.667f, 25f, 0.4f, 52f, groundLayer); // Pared izquierda
             CreateWall(wallsRoot.transform, 6.667f, 25f, 0.4f, 52f, groundLayer);  // Pared derecha
-            CreateWall(wallsRoot.transform, 0f, 0.0f, 14f, 0.6f, groundLayer);     // Suelo base debajo de Pantalla 1
-            CreateWall(wallsRoot.transform, 0f, 50.5f, 14f, 1f, groundLayer);     // Techo Pantalla 5
+            CreateWall(wallsRoot.transform, 0f, -0.5f, 15f, 1.0f, groundLayer);    // Suelo base debajo de Pantalla 1
+            CreateWall(wallsRoot.transform, 0f, 50.5f, 15f, 1.0f, groundLayer);    // Techo Pantalla 5
 
             // 5. Fondos Oficiales de Jump King (Pantallas 1 a 5 de Red Crown Woods)
             GameObject bgRoot = new GameObject("Backgrounds");
@@ -242,15 +299,24 @@ namespace Platformer.EditorTools
                 CreateScreenBackground(bgRoot.transform, i, bgSprite, $"BG_JumpKing_Screen_{i + 1}");
             }
 
-            // 6. Colisionadores Sólidos 1:1 de Jump King
+            // 6. Colisionadores Sólidos 1:1 de Jump King con CompositeCollider2D para eliminar juntas
             GameObject platformsRoot = new GameObject("Platforms");
             for (int r = 0; r < ClassicJumpKing5Screens.Length; r++)
             {
                 GameObject roomFolder = new GameObject($"Screen_{r + 1}_Colliders");
                 roomFolder.transform.SetParent(platformsRoot.transform);
+                roomFolder.layer = groundLayer;
+
+                var rbStatic = roomFolder.AddComponent<Rigidbody2D>();
+                rbStatic.bodyType = RigidbodyType2D.Static;
+
+                var compCol = roomFolder.AddComponent<CompositeCollider2D>();
+                compCol.geometryType = CompositeCollider2D.GeometryType.Polygons;
+                compCol.sharedMaterial = new PhysicsMaterial2D("PlatMat") { friction = 0.5f, bounciness = 0f };
+
                 foreach (var p in ClassicJumpKing5Screens[r])
                 {
-                    CreatePlatformCollider(roomFolder.transform, p.centerX, p.centerY, p.width, p.height, groundLayer, p.name, p.surfaceType);
+                    CreatePlatformCollider(roomFolder.transform, p.centerX, p.centerY, p.width, p.height, groundLayer, p.name, p.surfaceType, true);
                 }
             }
 
@@ -295,8 +361,8 @@ namespace Platformer.EditorTools
             manager.screenText = CreateUIText(topHud.transform, "Txt_Piso", "Pantalla 1 / 5: Red Crown Woods (Jump King Clásico 1:1)", 24, TextAnchor.MiddleLeft, new Vector2(-460, 0), new Vector2(480, 50));
             manager.screenText.color = new Color(1f, 0.9f, 0.35f);
 
-            manager.characterNameText = CreateUIText(topHud.transform, "Txt_Char", "🐾 Falin (Fuerza) | [TAB] Mía", 23, TextAnchor.MiddleCenter, new Vector2(0, 0), new Vector2(380, 50));
-            manager.characterNameText.color = new Color(1f, 0.75f, 0.2f);
+            manager.characterNameText = CreateUIText(topHud.transform, "Txt_Char", "👑 Jump King (Oficial) | [TAB] Alternar", 23, TextAnchor.MiddleCenter, new Vector2(0, 0), new Vector2(380, 50));
+            manager.characterNameText.color = new Color(1f, 0.85f, 0.2f);
 
             manager.statsText = CreateUIText(topHud.transform, "Txt_Stats", "⏱️ 00:00  |  🦘 Saltos: 0  |  💥 Caídas: 0", 22, TextAnchor.MiddleRight, new Vector2(460, 0), new Vector2(420, 50));
             manager.statsText.color = Color.white;
@@ -318,7 +384,7 @@ namespace Platformer.EditorTools
             slider.fillRect = fillGo.GetComponent<RectTransform>();
             manager.chargeFillImage = fillImg;
 
-            Text controlsText = CreateUIText(canvasGo.transform, "Txt_Controls", "Mantén [ESPACIO] para cargar salto • [A / D] Dirección • [TAB] Alternar Falin / Mía", 18, TextAnchor.MiddleCenter, new Vector2(0, 22), new Vector2(1100, 28));
+            Text controlsText = CreateUIText(canvasGo.transform, "Txt_Controls", "Mantén [ESPACIO] para cargar salto • [A / D] Dirección • [TAB] Alternar Personaje", 18, TextAnchor.MiddleCenter, new Vector2(0, 22), new Vector2(1100, 28));
             controlsText.rectTransform.anchorMin = new Vector2(0.5f, 0f);
             controlsText.rectTransform.anchorMax = new Vector2(0.5f, 0f);
             controlsText.color = new Color(0.75f, 0.85f, 0.95f, 0.85f);
@@ -365,7 +431,7 @@ namespace Platformer.EditorTools
             RegisterSceneInBuildSettings(SCENE_PATH);
         }
 
-        private static void EnsureTextureIsSprite(string path, float ppu = 36.0f)
+        private static void EnsureTextureIsSprite(string path, float ppu = 36.0f, SpriteAlignment alignment = SpriteAlignment.Center, Vector2? customPivot = null)
         {
             if (!File.Exists(path)) return;
             AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
@@ -378,6 +444,11 @@ namespace Platformer.EditorTools
                     importer.textureType = TextureImporterType.Sprite;
                     changed = true;
                 }
+                if (importer.spriteImportMode != SpriteImportMode.Single)
+                {
+                    importer.spriteImportMode = SpriteImportMode.Single;
+                    changed = true;
+                }
                 if (importer.spritePixelsPerUnit != ppu)
                 {
                     importer.spritePixelsPerUnit = ppu;
@@ -386,6 +457,21 @@ namespace Platformer.EditorTools
                 if (importer.filterMode != FilterMode.Point)
                 {
                     importer.filterMode = FilterMode.Point;
+                    changed = true;
+                }
+                if (importer.alignment != (int)alignment)
+                {
+                    importer.alignment = (int)alignment;
+                    changed = true;
+                }
+                if (customPivot.HasValue && importer.spritePivot != customPivot.Value)
+                {
+                    importer.spritePivot = customPivot.Value;
+                    changed = true;
+                }
+                if (importer.textureCompression != TextureImporterCompression.Uncompressed)
+                {
+                    importer.textureCompression = TextureImporterCompression.Uncompressed;
                     changed = true;
                 }
                 if (changed)
@@ -421,7 +507,7 @@ namespace Platformer.EditorTools
             sr.sortingOrder = -10;
         }
 
-        private static void CreatePlatformCollider(Transform parent, float x, float y, float w, float h, int layer, string name, SurfaceType surfaceType)
+        private static void CreatePlatformCollider(Transform parent, float x, float y, float w, float h, int layer, string name, SurfaceType surfaceType, bool usedByComposite = false)
         {
             GameObject platGo = new GameObject(name);
             platGo.transform.SetParent(parent);
@@ -430,6 +516,7 @@ namespace Platformer.EditorTools
 
             var col = platGo.AddComponent<BoxCollider2D>();
             col.size = new Vector2(w, h);
+            col.usedByComposite = usedByComposite;
 
             float friction = (surfaceType == SurfaceType.Ice) ? 0.05f : 0.5f;
             var pMat = new PhysicsMaterial2D($"PlatMat_{surfaceType}") { friction = friction, bounciness = 0f };
