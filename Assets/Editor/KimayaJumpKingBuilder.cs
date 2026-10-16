@@ -43,7 +43,7 @@ namespace Platformer.EditorTools
     public static class KimayaJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_Vertical.unity";
-        private const string BUILD_KEY = "KimayaJumpKing_Build_v16_SolidPlatforms";
+        private const string BUILD_KEY = "KimayaJumpKing_Build_v17_VictoryButtons";
 
         static KimayaJumpKingBuilder()
         {
@@ -327,15 +327,38 @@ namespace Platformer.EditorTools
             controlsText.color = new Color(0.75f, 0.85f, 0.95f, 0.85f);
 
             // Panel de Victoria
-            GameObject victoryGo = CreateUIPanel(canvasGo.transform, "VictoryPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(750, 420));
+            GameObject victoryGo = CreateUIPanel(canvasGo.transform, "VictoryPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(760, 440));
             var vicBg = victoryGo.AddComponent<Image>();
-            vicBg.color = new Color(0.06f, 0.15f, 0.25f, 0.95f);
+            vicBg.color = new Color(0.05f, 0.12f, 0.22f, 0.98f);
 
-            Text vicTitle = CreateUIText(victoryGo.transform, "Txt_VicTitle", "🏆 ¡RESCATE EN LA CUMBRE AL ATARDECER!", 36, TextAnchor.MiddleCenter, new Vector2(0, 120), new Vector2(700, 70));
+            Text vicTitle = CreateUIText(victoryGo.transform, "Txt_VicTitle", "🏆 ¡RESCATE EN LA CUMBRE!", 34, TextAnchor.MiddleCenter, new Vector2(0, 145), new Vector2(720, 60));
             vicTitle.color = new Color(1f, 0.85f, 0.2f);
 
-            Text vicDesc = CreateUIText(victoryGo.transform, "Txt_VicDesc", "¡Has conquistado los 5 Pisos del Ascenso Sagrado!\nLlegaste al Altar de la Cumbre y rescataste a Kiara.\n\nFalin y Mía han demostrado valor, destreza y compañerismo.", 24, TextAnchor.MiddleCenter, new Vector2(0, 0), new Vector2(650, 130));
+            Text vicStats = CreateUIText(victoryGo.transform, "Txt_VicStats", "⏱️ TIEMPO: 00:00   |   🦘 SALTOS: 0   |   💥 CAÍDAS: 0", 22, TextAnchor.MiddleCenter, new Vector2(0, 80), new Vector2(720, 40));
+            vicStats.color = new Color(0.35f, 0.95f, 0.55f);
+            manager.victoryStatsText = vicStats;
+
+            Text vicDesc = CreateUIText(victoryGo.transform, "Txt_VicDesc", "¡Has conquistado los 5 Pisos del Gran Árbol Sagrado!\nLlegaste al Altar de la Cumbre y rescataste a Kiara.\n\nFalin y Mía han demostrado valor, destreza y compañerismo.", 21, TextAnchor.MiddleCenter, new Vector2(0, 10), new Vector2(680, 95));
             vicDesc.color = Color.white;
+            manager.victoryDescText = vicDesc;
+
+            // Botón Repetir Ascenso (Verde esmeralda)
+            GameObject btnRestartGo = CreateUIPanel(victoryGo.transform, "Btn_Restart", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(-150, -115), new Vector2(250, 56));
+            var rImg = btnRestartGo.AddComponent<Image>();
+            rImg.color = new Color(0.12f, 0.65f, 0.32f);
+            var rBtn = btnRestartGo.AddComponent<Button>();
+            Text rTxt = CreateUIText(btnRestartGo.transform, "Lbl", "🔄 Repetir Ascenso", 20, TextAnchor.MiddleCenter, Vector2.zero, new Vector2(250, 56));
+            rTxt.color = Color.white;
+            manager.restartButton = rBtn;
+
+            // Botón Volver al Hub (Azul rey)
+            GameObject btnHubGo = CreateUIPanel(victoryGo.transform, "Btn_Hub", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(150, -115), new Vector2(250, 56));
+            var hImg = btnHubGo.AddComponent<Image>();
+            hImg.color = new Color(0.20f, 0.45f, 0.80f);
+            var hBtn = btnHubGo.AddComponent<Button>();
+            Text hTxt = CreateUIText(btnHubGo.transform, "Lbl", "🏡 Volver al Hub", 20, TextAnchor.MiddleCenter, Vector2.zero, new Vector2(250, 56));
+            hTxt.color = Color.white;
+            manager.returnToHubButton = hBtn;
 
             manager.victoryPanel = victoryGo;
             victoryGo.SetActive(false);

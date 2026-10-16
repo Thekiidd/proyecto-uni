@@ -36,6 +36,10 @@ namespace Kimaya
         public Text statsText;
         public GameObject stunnedBadge;
         public GameObject victoryPanel;
+        public Text victoryStatsText;
+        public Text victoryDescText;
+        public Button restartButton;
+        public Button returnToHubButton;
 
         [Header("Meta / Rescate")]
         public int finalScreenIndex = 4; // 5 Pisos (0 a 4)
@@ -67,6 +71,17 @@ namespace Kimaya
 
             if (victoryPanel != null) victoryPanel.SetActive(false);
             if (stunnedBadge != null) stunnedBadge.SetActive(false);
+
+            if (restartButton != null)
+            {
+                restartButton.onClick.RemoveAllListeners();
+                restartButton.onClick.AddListener(RestartSession);
+            }
+            if (returnToHubButton != null)
+            {
+                returnToHubButton.onClick.RemoveAllListeners();
+                returnToHubButton.onClick.AddListener(ReturnToHub);
+            }
 
             UpdateCharacterUI();
         }
@@ -130,12 +145,37 @@ namespace Kimaya
 
         private void OnGUI()
         {
-            float btnW = 120f;
-            float btnH = 32f;
-            float btnX = Screen.width - btnW - 16f;
-            float btnY = 16f;
+            if (_hasWon)
+            {
+                // Botones grandes en el centro de la pantalla durante la victoria
+                float btnW = 220f;
+                float btnH = 50f;
+                float spacing = 20f;
+                float totalW = btnW * 2f + spacing;
+                float startX = (Screen.width - totalW) * 0.5f;
+                float startY = (Screen.height * 0.5f) + 130f;
 
-            if (GUI.Button(new Rect(btnX, btnY, btnW, btnH), "🏡 Volver al Hub"))
+                GUI.skin.button.fontSize = 18;
+                GUI.backgroundColor = new Color(0.15f, 0.75f, 0.35f, 1f);
+                if (GUI.Button(new Rect(startX, startY, btnW, btnH), "🔄 Repetir Ascenso"))
+                {
+                    RestartSession();
+                }
+
+                GUI.backgroundColor = new Color(0.20f, 0.50f, 0.85f, 1f);
+                if (GUI.Button(new Rect(startX + btnW + spacing, startY, btnW, btnH), "🏡 Volver al Hub"))
+                {
+                    ReturnToHub();
+                }
+                return;
+            }
+
+            float topBtnW = 120f;
+            float topBtnH = 32f;
+            float topBtnX = Screen.width - topBtnW - 16f;
+            float topBtnY = 16f;
+
+            if (GUI.Button(new Rect(topBtnX, topBtnY, topBtnW, topBtnH), "🏡 Volver al Hub"))
             {
                 ReturnToHub();
             }
@@ -240,9 +280,43 @@ namespace Kimaya
             }
         }
 
+        public void RestartSession()
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        }
+
         public void TriggerVictory()
         {
             _hasWon = true;
+
+            int minutes = Mathf.FloorToInt(_sessionTimer / 60f);
+            int seconds = Mathf.FloorToInt(_sessionTimer % 60f);
+            string timeStr = $"{minutes:00}:{seconds:00}";
+            int jumps = playerController != null ? playerController.TotalJumps : 0;
+            int falls = playerController != null ? playerController.TotalFalls : 0;
+            string hero = (playerController != null && playerController.character == KimayaJumpKingController.CharacterType.Falin) ? "Falin" : "Mía";
+
+            if (victoryStatsText != null)
+            {
+                victoryStatsText.text = $"⏱️ TIEMPO: {timeStr}    |    🦘 SALTOS: {jumps}    |    💥 CAÍDAS: {falls}";
+            }
+
+            if (victoryDescText != null)
+            {
+                victoryDescText.text = $"¡Has conquistado los 5 Pisos del Gran Árbol Sagrado!\nLlegaste al Altar de la Cumbre y rescataste a Kiara con {hero}.\n\n¡Felicidades por completar el ascenso!";
+            }
+
+            // Congelar al jugador en la cumbre para evitar caídas post-victoria
+            if (playerController != null)
+            {
+                var rb = playerController.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.linearVelocity = Vector2.zero;
+                    rb.bodyType = RigidbodyType2D.Kinematic;
+                }
+            }
+
             if (victoryPanel != null)
             {
                 victoryPanel.SetActive(true);
