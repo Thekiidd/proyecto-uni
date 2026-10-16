@@ -1716,7 +1716,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 380614661}
   m_FillRect: {fileID: 129978996}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
@@ -4463,7 +4463,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2.621
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

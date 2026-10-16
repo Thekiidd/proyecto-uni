@@ -96,6 +96,8 @@ namespace Kimaya
         private float _bounceTimer = 0f;
         private float _iceSlideVelocityX = 0f;
         private KimayaSurface _activeSurfaceComp;
+        private bool _mustReleaseSpace = false;
+        private float _jumpGraceTimer = 0f;
 
         private void Awake()
         {
@@ -221,7 +223,17 @@ namespace Kimaya
                 }
             }
 
+            if (_jumpGraceTimer > 0f)
+            {
+                _jumpGraceTimer -= Time.deltaTime;
+            }
+
             bool spaceHeld = ReadSpaceKey();
+            if (!spaceHeld)
+            {
+                _mustReleaseSpace = false;
+            }
+
             float hInput = ReadHorizontalInput();
 
             // Actualizar dirección de mira
@@ -234,23 +246,29 @@ namespace Kimaya
                 }
             }
 
-            if (IsGrounded)
+            if (IsGrounded && !IsJumping && _jumpGraceTimer <= 0f)
             {
-                if (spaceHeld)
+                if (spaceHeld && !_mustReleaseSpace)
                 {
                     // Cargando salto
-                    IsCharging = true;
+                    if (!IsCharging)
+                    {
+                        IsCharging = true;
+                        _chargeTimer = 0f;
+                        _jumpDirection = (Mathf.Abs(hInput) > 0.1f) ? Mathf.Sign(hInput) : 0f;
+                    }
+
                     _chargeTimer += Time.deltaTime;
                     ChargePercent = Mathf.Clamp01(_chargeTimer / maxChargeTime);
 
-                    // Dirección del salto elegida durante la carga
-                    if (Mathf.Abs(hInput) > 0.1f)
+                    // Dirección de salto elegida durante la carga (se mantiene si se presiona A o D)
+                    if (hInput > 0.1f)
                     {
-                        _jumpDirection = Mathf.Sign(hInput);
+                        _jumpDirection = 1f;
                     }
-                    else
+                    else if (hInput < -0.1f)
                     {
-                        _jumpDirection = 0f;
+                        _jumpDirection = -1f;
                     }
 
                     // En el suelo mientras carga se detiene
@@ -310,6 +328,8 @@ namespace Kimaya
             IsCharging = false;
             IsJumping = true;
             IsGrounded = false;
+            _mustReleaseSpace = true;
+            _jumpGraceTimer = 0.15f; // 150ms protección de despegue: no permite re-tocar suelo inmediatamente
             _groundContactCount = 0;
             TotalJumps++;
 
@@ -390,6 +410,9 @@ namespace Kimaya
 
         private void EvaluateContacts(Collision2D collision)
         {
+            // Protección de despegue: no aterrizar en los primeros 150ms ni mientras la velocidad vertical sea ascendente
+            if (_jumpGraceTimer > 0f || _rb.linearVelocity.y > 0.05f) return;
+
             bool foundGround = false;
             foreach (ContactPoint2D contact in collision.contacts)
             {
