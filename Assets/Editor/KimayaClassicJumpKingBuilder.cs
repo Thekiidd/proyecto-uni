@@ -22,7 +22,8 @@ namespace Platformer.EditorTools
     public static class KimayaClassicJumpKingBuilder
     {
         public const string SCENE_PATH = "Assets/Scenes/Ascenso_JumpKing_Classic.unity";
-        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v14_FullDualSkinTacticalApplied";
+        public const string TEST_SCENE_PATH = "Assets/Scenes/Test_Mecanica_Interaccion.unity";
+        private const string BUILD_KEY = "KimayaClassicJumpKing_Build_v15_Evidencia1_MVP_Relics_And_LifeCycle";
 
         static KimayaClassicJumpKingBuilder()
         {
@@ -33,8 +34,9 @@ namespace Platformer.EditorTools
         {
             if (!EditorPrefs.GetBool(BUILD_KEY, false))
             {
-                Debug.Log("[KimayaClassicJumpKingBuilder] 👑 Ejecutando AutoBuild para Jump King Clásico (Opción A 1:1 Oficial con Knight y PixelLab Dogs)...");
+                Debug.Log("[KimayaClassicJumpKingBuilder] 👑 Ejecutando AutoBuild para Jump King Clásico y Escena de Prueba (Evidencia 1)...");
                 BuildClassicJumpKingScene();
+                BuildInteractionTestScene();
                 EditorPrefs.SetBool(BUILD_KEY, true);
             }
         }
@@ -52,6 +54,8 @@ namespace Platformer.EditorTools
         private const string FALIN_SPRITE_PATH = "Assets/Sprites/PixelLab/Falin/JumpKingKnight/east.png";
         private const string MIA_SPRITE_PATH = "Assets/Sprites/PixelLab/Mia/JumpKingKnight/east.png";
         private const string ALTAR_SPRITE_PATH = "Assets/Sprites/Village/Art/Props/Ancient_Stone_Circle.png";
+        private const string GEM_GREEN_PATH = "Assets/Sprites/Tiles/Gem_Green.png";
+        private const string GEM_PURPLE_PATH = "Assets/Sprites/Tiles/Gem_Purple.png";
 
         private static readonly string[] KNIGHT_SPRITE_PATHS = new string[]
         {
@@ -157,6 +161,12 @@ namespace Platformer.EditorTools
             BuildClassicJumpKingScene();
         }
 
+        [MenuItem("Tools/Kimaya/👑 [5b] Construir Ascenso Vertical con Reliquias y Altar")]
+        public static void BuildAscensoVerticalMenu()
+        {
+            BuildClassicJumpKingScene("Assets/Scenes/Ascenso_Vertical.unity");
+        }
+
         public static void BuildClassicJumpKingScene(string targetScenePath = SCENE_PATH)
         {
             Debug.Log($"[KimayaClassicJumpKingBuilder] 👑 Iniciando construcción de Jump King Oficial en {targetScenePath}...");
@@ -171,6 +181,9 @@ namespace Platformer.EditorTools
             {
                 EnsureTextureIsSprite(path, 36.0f, SpriteAlignment.BottomCenter, new Vector2(0.5f, 0.0f));
             }
+
+            EnsureTextureIsSprite(GEM_GREEN_PATH, 32.0f, SpriteAlignment.Center, new Vector2(0.5f, 0.5f));
+            EnsureTextureIsSprite(GEM_PURPLE_PATH, 32.0f, SpriteAlignment.Center, new Vector2(0.5f, 0.5f));
 
             // 1b. Calibrar pivotes de los sprites originales de Falin y Mía de PixelLab a ras de sus patas
             EnsurePixelLabPivots();
@@ -192,6 +205,8 @@ namespace Platformer.EditorTools
             Sprite falinSprite = LoadAnySprite(FALIN_SPRITE_PATH);
             Sprite miaSprite = LoadAnySprite(MIA_SPRITE_PATH);
             Sprite altarSprite = LoadAnySprite(ALTAR_SPRITE_PATH);
+            Sprite gemGreenSprite = LoadAnySprite(GEM_GREEN_PATH);
+            Sprite gemPurpleSprite = LoadAnySprite(GEM_PURPLE_PATH);
 
             int groundLayer = LayerMask.NameToLayer("Ground");
             if (groundLayer < 0) groundLayer = LayerMask.NameToLayer("Default");
@@ -240,83 +255,7 @@ namespace Platformer.EditorTools
 
             // Animador Jump King Knight (con soporte de reserva para Falin y Mía)
             var anim = playerGo.AddComponent<KimayaJumpKingAnimator>();
-            anim.knightIdle = knightIdleSprite;
-            anim.knightWalkFrames = new Sprite[] { knightWalk1, knightWalkSmear, knightWalk2 };
-            anim.knightCharge = knightCharge;
-            anim.knightJumpUp = knightJumpUp;
-            anim.knightFall = knightFall;
-            anim.knightBounce = knightBounce;
-            anim.knightSplat = knightSplat;
-
-            anim.useKnightSkin = true;
-
-            // Falin - Con Skin Caballero
-            anim.falinKnightIdle = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/east.png");
-            anim.falinKnightWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/JumpKingKnight/walk");
-            anim.falinKnightChargeProgress = new Sprite[]
-            {
-                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/charge_0.png"),
-                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/charge_1.png"),
-                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/charge_2.png")
-            };
-            anim.falinKnightJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/jump_stretch.png");
-            anim.falinKnightFall = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/fall.png");
-            anim.falinKnightSplat = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/splat.png");
-
-            // Falin - Sin Skin (Perro Clásico)
-            anim.falinClassicIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/idle/east");
-            anim.falinClassicWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/walking/east");
-            anim.falinClassicChargeProgress = new Sprite[]
-            {
-                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/charge_0.png"),
-                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/charge_1.png"),
-                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/charge_2.png")
-            };
-            anim.falinClassicJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/jump_stretch.png");
-            anim.falinClassicFall = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/fall.png");
-            anim.falinClassicSplat = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/splat.png");
-
-            // Campos retrocompatibles
-            anim.falinIdleFrames = anim.falinClassicIdleFrames;
-            anim.falinWalkFrames = anim.falinKnightWalkFrames;
-            anim.falinChargeProgress = anim.falinKnightChargeProgress;
-            anim.falinJumpStretch = anim.falinKnightJumpStretch;
-            anim.falinFall = anim.falinKnightFall;
-            anim.falinSplat = anim.falinKnightSplat;
-
-            // Mía - Con Skin Caballero
-            anim.miaKnightIdle = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/east.png");
-            anim.miaKnightWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/JumpKingKnight/walk");
-            anim.miaKnightChargeProgress = new Sprite[]
-            {
-                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/charge_0.png"),
-                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/charge_1.png"),
-                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/charge_2.png")
-            };
-            anim.miaKnightJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/jump_stretch.png");
-            anim.miaKnightFall = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/fall.png");
-            anim.miaKnightSplat = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/splat.png");
-
-            // Mía - Sin Skin (Perra Clásica)
-            anim.miaClassicIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/idle/east");
-            anim.miaClassicWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/walking/east");
-            anim.miaClassicChargeProgress = new Sprite[]
-            {
-                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/charge_0.png"),
-                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/charge_1.png"),
-                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/charge_2.png")
-            };
-            anim.miaClassicJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/jump_stretch.png");
-            anim.miaClassicFall = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/fall.png");
-            anim.miaClassicSplat = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/splat.png");
-
-            // Campos retrocompatibles
-            anim.miaIdleFrames = anim.miaClassicIdleFrames;
-            anim.miaWalkFrames = anim.miaKnightWalkFrames;
-            anim.miaChargeProgress = anim.miaKnightChargeProgress;
-            anim.miaJumpStretch = anim.miaKnightJumpStretch;
-            anim.miaFall = anim.miaKnightFall;
-            anim.miaSplat = anim.miaKnightSplat;
+            ConfigureAnimator(anim, knightIdleSprite, knightWalk1, knightWalkSmear, knightWalk2, knightCharge, knightJumpUp, knightFall, knightBounce, knightSplat);
 
             // 3. Cámara Jump King (4:3 aspect ratio de Jump King original: 13.333f ancho x 10f alto)
             GameObject camGo = new GameObject("Main Camera");
@@ -374,12 +313,24 @@ namespace Platformer.EditorTools
             altarSr.sortingOrder = 5;
             altarGo.transform.localScale = new Vector3(0.85f, 0.85f, 1f);
 
+            var altarCol = altarGo.AddComponent<BoxCollider2D>();
+            altarCol.isTrigger = true;
+            altarCol.size = new Vector2(2.5f, 2.0f);
+            altarCol.offset = new Vector2(0f, 0.2f);
+            var altarGoal = altarGo.AddComponent<KimayaAltarGoal>();
+
             GameObject rescuedGo = new GameObject("Rescued_Companion");
             rescuedGo.transform.position = new Vector3(1.0f, 49.4f, 0f);
             rescuedGo.transform.localScale = new Vector3(-0.9f, 0.9f, 1f);
             var rescuedSr = rescuedGo.AddComponent<SpriteRenderer>();
             rescuedSr.sprite = miaSprite != null ? miaSprite : falinSprite;
             rescuedSr.sortingOrder = 6;
+
+            // 7b. Reliquias Sagradas Coleccionables (Disparadores Lógicos 2D - Modificación de Estado y Puntaje)
+            GameObject relicsRoot = new GameObject("Relics_Root");
+            CreateRelic(relicsRoot.transform, new Vector3(-4.778f, 5.3f, 0f), "Reliquia del Bosque Raiz", 100, gemGreenSprite);
+            CreateRelic(relicsRoot.transform, new Vector3(1.444f, 15.0f, 0f), "Reliquia del Gran Tronco", 150, gemPurpleSprite);
+            CreateRelic(relicsRoot.transform, new Vector3(3.444f, 38.6f, 0f), "Reliquia de Canopia Sagrada", 200, gemGreenSprite);
 
             // 8. Canvas y UI
             GameObject canvasGo = new GameObject("JumpKing_Canvas");
@@ -398,6 +349,10 @@ namespace Platformer.EditorTools
             manager.falinSprite = falinSprite;
             manager.miaSprite = miaSprite;
             manager.finalScreenIndex = 4;
+            manager.maxLives = 3;
+            manager.currentLives = 3;
+            manager.enableLivesSystem = true;
+            manager.totalRelicsInLevel = 3;
 
             // HUD
             GameObject topHud = CreateUIPanel(canvasGo.transform, "TopHUD", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0, -45), new Vector2(1400, 65));
@@ -412,7 +367,7 @@ namespace Platformer.EditorTools
             manager.characterNameText = CreateUIText(topHud.transform, "Txt_Char", initialCharText, 23, TextAnchor.MiddleCenter, new Vector2(0, 0), new Vector2(380, 50));
             manager.characterNameText.color = initialCharColor;
 
-            manager.statsText = CreateUIText(topHud.transform, "Txt_Stats", "⏱️ 00:00  |  🦘 Saltos: 0  |  💥 Caídas: 0", 22, TextAnchor.MiddleRight, new Vector2(460, 0), new Vector2(420, 50));
+            manager.statsText = CreateUIText(topHud.transform, "Txt_Stats", "⏱️ 00:00  |  🏆 Score: 0  |  ❤️ Intentos: 3/3  |  ✨ Reliquias: 0/3  |  🦘 Saltos: 0  |  💥 Caídas: 0", 20, TextAnchor.MiddleRight, new Vector2(460, 0), new Vector2(500, 50));
             manager.statsText.color = Color.white;
 
             // Barra de Carga
@@ -432,12 +387,12 @@ namespace Platformer.EditorTools
             slider.fillRect = fillGo.GetComponent<RectTransform>();
             manager.chargeFillImage = fillImg;
 
-            Text controlsText = CreateUIText(canvasGo.transform, "Txt_Controls", "Mantén [ESPACIO] para cargar salto • [A / D] Dirección • [TAB] Alternar Personaje", 18, TextAnchor.MiddleCenter, new Vector2(0, 22), new Vector2(1100, 28));
+            Text controlsText = CreateUIText(canvasGo.transform, "Txt_Controls", "Mantén [ESPACIO] para cargar salto • [A / D] Dirección • [TAB] Personaje • [C] Casco • [R] Reiniciar", 18, TextAnchor.MiddleCenter, new Vector2(0, 22), new Vector2(1100, 28));
             controlsText.rectTransform.anchorMin = new Vector2(0.5f, 0f);
             controlsText.rectTransform.anchorMax = new Vector2(0.5f, 0f);
             controlsText.color = new Color(0.75f, 0.85f, 0.95f, 0.85f);
 
-            // Panel de Victoria
+            // Panel de Victoria (Condición de Éxito)
             GameObject victoryGo = CreateUIPanel(canvasGo.transform, "VictoryPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(760, 440));
             var vicBg = victoryGo.AddComponent<Image>();
             vicBg.color = new Color(0.05f, 0.12f, 0.22f, 0.98f);
@@ -445,11 +400,11 @@ namespace Platformer.EditorTools
             Text vicTitle = CreateUIText(victoryGo.transform, "Txt_VicTitle", "👑 ¡CUMBRE DE RED CROWN WOODS!", 34, TextAnchor.MiddleCenter, new Vector2(0, 145), new Vector2(720, 60));
             vicTitle.color = new Color(1f, 0.85f, 0.2f);
 
-            Text vicStats = CreateUIText(victoryGo.transform, "Txt_VicStats", "⏱️ TIEMPO: 00:00   |   🦘 SALTOS: 0   |   💥 CAÍDAS: 0", 22, TextAnchor.MiddleCenter, new Vector2(0, 80), new Vector2(720, 40));
+            Text vicStats = CreateUIText(victoryGo.transform, "Txt_VicStats", "⏱️ TIEMPO: 00:00   |   🏆 PUNTAJE: 0   |   🦘 SALTOS: 0   |   💥 CAÍDAS: 0", 22, TextAnchor.MiddleCenter, new Vector2(0, 80), new Vector2(720, 40));
             vicStats.color = new Color(0.35f, 0.95f, 0.55f);
             manager.victoryStatsText = vicStats;
 
-            Text vicDesc = CreateUIText(victoryGo.transform, "Txt_VicDesc", "¡Has completado las 5 Pantallas de Red Crown Woods (Jump King Oficial)!\nLa física y colisiones 1:1 fueron verificadas con éxito.", 21, TextAnchor.MiddleCenter, new Vector2(0, 10), new Vector2(680, 95));
+            Text vicDesc = CreateUIText(victoryGo.transform, "Txt_VicDesc", "¡Has completado las 5 Pantallas de Red Crown Woods (Jump King Oficial)!\nLlegaste al Altar Sagrado y rescataste a Kiara con éxito.", 21, TextAnchor.MiddleCenter, new Vector2(0, 10), new Vector2(680, 95));
             vicDesc.color = Color.white;
             manager.victoryDescText = vicDesc;
 
@@ -457,7 +412,7 @@ namespace Platformer.EditorTools
             var rImg = btnRestartGo.AddComponent<Image>();
             rImg.color = new Color(0.12f, 0.65f, 0.32f);
             var rBtn = btnRestartGo.AddComponent<Button>();
-            Text rTxt = CreateUIText(btnRestartGo.transform, "Lbl", "🔄 Repetir Ascenso", 20, TextAnchor.MiddleCenter, Vector2.zero, new Vector2(250, 56));
+            Text rTxt = CreateUIText(btnRestartGo.transform, "Lbl", "🔄 Repetir Ascenso [R]", 20, TextAnchor.MiddleCenter, Vector2.zero, new Vector2(250, 56));
             rTxt.color = Color.white;
             manager.restartButton = rBtn;
 
@@ -471,6 +426,41 @@ namespace Platformer.EditorTools
 
             manager.victoryPanel = victoryGo;
             victoryGo.SetActive(false);
+
+            // Panel de Game Over (Condición de Falla e Intentos Agotados)
+            GameObject gameOverGo = CreateUIPanel(canvasGo.transform, "GameOverPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(760, 440));
+            var goBg = gameOverGo.AddComponent<Image>();
+            goBg.color = new Color(0.20f, 0.05f, 0.05f, 0.98f);
+
+            Text goTitle = CreateUIText(gameOverGo.transform, "Txt_GoTitle", "💥 ¡INTENTOS DE ASCENSO AGOTADOS!", 32, TextAnchor.MiddleCenter, new Vector2(0, 145), new Vector2(720, 60));
+            goTitle.color = new Color(1f, 0.35f, 0.35f);
+
+            Text goStats = CreateUIText(gameOverGo.transform, "Txt_GoStats", "⏱️ TIEMPO: 00:00   |   🏆 SCORE: 0   |   💥 CAÍDAS: 0", 22, TextAnchor.MiddleCenter, new Vector2(0, 80), new Vector2(720, 40));
+            goStats.color = new Color(1f, 0.85f, 0.4f);
+            manager.gameOverStatsText = goStats;
+
+            Text goDesc = CreateUIText(gameOverGo.transform, "Txt_GoDesc", "Has sufrido demasiadas caídas y agotaste tus intentos de ascenso.\nPresiona [R] para reiniciar el ciclo o regresa al Hub para descansar.", 21, TextAnchor.MiddleCenter, new Vector2(0, 10), new Vector2(680, 95));
+            goDesc.color = Color.white;
+            manager.gameOverDescText = goDesc;
+
+            GameObject btnGoRestartGo = CreateUIPanel(gameOverGo.transform, "Btn_GoRestart", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(-150, -115), new Vector2(250, 56));
+            var goRImg = btnGoRestartGo.AddComponent<Image>();
+            goRImg.color = new Color(0.85f, 0.25f, 0.25f);
+            var goRBtn = btnGoRestartGo.AddComponent<Button>();
+            Text goRTxt = CreateUIText(btnGoRestartGo.transform, "Lbl", "🔄 Reiniciar Ciclo [R]", 20, TextAnchor.MiddleCenter, Vector2.zero, new Vector2(250, 56));
+            goRTxt.color = Color.white;
+            manager.gameOverRestartButton = goRBtn;
+
+            GameObject btnGoHubGo = CreateUIPanel(gameOverGo.transform, "Btn_GoHub", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(150, -115), new Vector2(250, 56));
+            var goHImg = btnGoHubGo.AddComponent<Image>();
+            goHImg.color = new Color(0.20f, 0.45f, 0.80f);
+            var goHBtn = btnGoHubGo.AddComponent<Button>();
+            Text goHTxt = CreateUIText(btnGoHubGo.transform, "Lbl", "🏡 Volver al Hub", 20, TextAnchor.MiddleCenter, Vector2.zero, new Vector2(250, 56));
+            goHTxt.color = Color.white;
+            manager.gameOverHubButton = goHBtn;
+
+            manager.gameOverPanel = gameOverGo;
+            gameOverGo.SetActive(false);
 
             // Guardar Escena
             EditorSceneManager.SaveScene(scene, targetScenePath);
@@ -687,6 +677,352 @@ namespace Platformer.EditorTools
         private static Sprite LoadSprite(string path)
         {
             return AssetDatabase.LoadAssetAtPath<Sprite>(path);
+        }
+
+        private static void ConfigureAnimator(KimayaJumpKingAnimator anim, Sprite knightIdleSprite, Sprite knightWalk1, Sprite knightWalkSmear, Sprite knightWalk2, Sprite knightCharge, Sprite knightJumpUp, Sprite knightFall, Sprite knightBounce, Sprite knightSplat)
+        {
+            anim.knightIdle = knightIdleSprite;
+            anim.knightWalkFrames = new Sprite[] { knightWalk1, knightWalkSmear, knightWalk2 };
+            anim.knightCharge = knightCharge;
+            anim.knightJumpUp = knightJumpUp;
+            anim.knightFall = knightFall;
+            anim.knightBounce = knightBounce;
+            anim.knightSplat = knightSplat;
+
+            anim.useKnightSkin = true;
+
+            // Falin - Con Skin Caballero
+            anim.falinKnightIdle = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/east.png");
+            anim.falinKnightWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/JumpKingKnight/walk");
+            anim.falinKnightChargeProgress = new Sprite[]
+            {
+                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/charge_0.png"),
+                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/charge_1.png"),
+                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/charge_2.png")
+            };
+            anim.falinKnightJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/jump_stretch.png");
+            anim.falinKnightFall = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/fall.png");
+            anim.falinKnightSplat = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKingKnight/tactical/splat.png");
+
+            // Falin - Sin Skin (Perro Clásico)
+            anim.falinClassicIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/idle/east");
+            anim.falinClassicWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Falin/Idle/animations/walking/east");
+            anim.falinClassicChargeProgress = new Sprite[]
+            {
+                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/charge_0.png"),
+                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/charge_1.png"),
+                LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/charge_2.png")
+            };
+            anim.falinClassicJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/jump_stretch.png");
+            anim.falinClassicFall = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/fall.png");
+            anim.falinClassicSplat = LoadSprite("Assets/Sprites/PixelLab/Falin/JumpKing/splat.png");
+
+            // Campos retrocompatibles
+            anim.falinIdleFrames = anim.falinClassicIdleFrames;
+            anim.falinWalkFrames = anim.falinKnightWalkFrames;
+            anim.falinChargeProgress = anim.falinKnightChargeProgress;
+            anim.falinJumpStretch = anim.falinKnightJumpStretch;
+            anim.falinFall = anim.falinKnightFall;
+            anim.falinSplat = anim.falinKnightSplat;
+
+            // Mía - Con Skin Caballero
+            anim.miaKnightIdle = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/east.png");
+            anim.miaKnightWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/JumpKingKnight/walk");
+            anim.miaKnightChargeProgress = new Sprite[]
+            {
+                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/charge_0.png"),
+                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/charge_1.png"),
+                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/charge_2.png")
+            };
+            anim.miaKnightJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/jump_stretch.png");
+            anim.miaKnightFall = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/fall.png");
+            anim.miaKnightSplat = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKingKnight/tactical/splat.png");
+
+            // Mía - Sin Skin (Perra Clásica)
+            anim.miaClassicIdleFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/idle/east");
+            anim.miaClassicWalkFrames = LoadFrames("Assets/Sprites/PixelLab/Mia/Idle/animations/walking/east");
+            anim.miaClassicChargeProgress = new Sprite[]
+            {
+                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/charge_0.png"),
+                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/charge_1.png"),
+                LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/charge_2.png")
+            };
+            anim.miaClassicJumpStretch = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/jump_stretch.png");
+            anim.miaClassicFall = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/fall.png");
+            anim.miaClassicSplat = LoadSprite("Assets/Sprites/PixelLab/Mia/JumpKing/splat.png");
+
+            // Campos retrocompatibles
+            anim.miaIdleFrames = anim.miaClassicIdleFrames;
+            anim.miaWalkFrames = anim.miaKnightWalkFrames;
+            anim.miaChargeProgress = anim.miaKnightChargeProgress;
+            anim.miaJumpStretch = anim.miaKnightJumpStretch;
+            anim.miaFall = anim.miaKnightFall;
+            anim.miaSplat = anim.miaKnightSplat;
+        }
+
+        private static GameObject CreateRelic(Transform parent, Vector3 position, string name, int points, Sprite sprite)
+        {
+            GameObject relicGo = new GameObject($"Relic_{name.Replace(" ", "_")}");
+            if (parent != null) relicGo.transform.SetParent(parent);
+            relicGo.transform.position = position;
+
+            var sr = relicGo.AddComponent<SpriteRenderer>();
+            sr.sprite = sprite;
+            sr.sortingOrder = 20;
+
+            var col = relicGo.AddComponent<CircleCollider2D>();
+            col.isTrigger = true;
+            col.radius = 0.40f;
+
+            var relic = relicGo.AddComponent<KimayaRelic>();
+            relic.scoreValue = points;
+            relic.relicName = name;
+            relic.relicSpriteRenderer = sr;
+
+            return relicGo;
+        }
+
+        [MenuItem("Tools/Kimaya/🧪 [Evidencia 1] Construir Escena de Prueba (Test_Mecanica_Interaccion)")]
+        public static void BuildInteractionTestSceneMenu()
+        {
+            BuildInteractionTestScene();
+        }
+
+        public static void BuildInteractionTestScene(string targetScenePath = TEST_SCENE_PATH)
+        {
+            Debug.Log($"[KimayaClassicJumpKingBuilder] 🧪 Construyendo Escena de Prueba de Interacción en {targetScenePath}...");
+
+            EnsureTextureIsSprite(GEM_GREEN_PATH, 32.0f, SpriteAlignment.Center, new Vector2(0.5f, 0.5f));
+            EnsureTextureIsSprite(GEM_PURPLE_PATH, 32.0f, SpriteAlignment.Center, new Vector2(0.5f, 0.5f));
+            EnsurePixelLabPivots();
+
+            Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+
+            Sprite knightIdleSprite = LoadAnySprite(KNIGHT_IDLE_PATH);
+            Sprite falinSprite = LoadAnySprite(FALIN_SPRITE_PATH);
+            Sprite miaSprite = LoadAnySprite(MIA_SPRITE_PATH);
+            Sprite altarSprite = LoadAnySprite(ALTAR_SPRITE_PATH);
+            Sprite gemGreenSprite = LoadAnySprite(GEM_GREEN_PATH);
+
+            int groundLayer = LayerMask.NameToLayer("Ground");
+            if (groundLayer < 0) groundLayer = LayerMask.NameToLayer("Default");
+
+            // 1. Cámara Ortográfica fija centrada en el cuarto de prueba
+            GameObject camGo = new GameObject("Main Camera");
+            var cam = camGo.AddComponent<Camera>();
+            cam.orthographic = true;
+            cam.orthographicSize = 5.2f;
+            cam.backgroundColor = new Color(0.08f, 0.10f, 0.16f);
+            cam.clearFlags = CameraClearFlags.SolidColor;
+            camGo.transform.position = new Vector3(0f, 4.6f, -10f);
+            camGo.tag = "MainCamera";
+
+            var screenCam = camGo.AddComponent<JumpKingScreenCamera>();
+            screenCam.screenHeight = 10.0f;
+            screenCam.screenWidth = 16.0f;
+            screenCam.baseWorldY = 0.0f;
+            screenCam.instantScreenTransition = true;
+
+            // 2. Jugador
+            GameObject playerGo = new GameObject("Player_JumpKing");
+            playerGo.transform.position = new Vector3(0.0f, 1.2f, 0f);
+
+            var sr = playerGo.AddComponent<SpriteRenderer>();
+            sr.sprite = falinSprite != null ? falinSprite : knightIdleSprite;
+            sr.sortingOrder = 25;
+
+            var rb = playerGo.AddComponent<Rigidbody2D>();
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+            rb.freezeRotation = true;
+
+            var col = playerGo.AddComponent<BoxCollider2D>();
+            col.size = new Vector2(0.50f, 0.722f);
+            col.offset = new Vector2(0f, 0.361f);
+            col.edgeRadius = 0.03f;
+            var playerMat = new PhysicsMaterial2D("PlayerMat") { friction = 0.0f, bounciness = 0f };
+            col.sharedMaterial = playerMat;
+
+            var jumpCtrl = playerGo.AddComponent<KimayaJumpKingController>();
+            jumpCtrl.character = KimayaJumpKingController.CharacterType.Falin;
+            jumpCtrl.walkSpeed = 2.60f;
+            jumpCtrl.maxChargeTime = 0.60f;
+            jumpCtrl.minJumpForce = 7.0f;
+            jumpCtrl.maxJumpForce = 24.0f;
+            jumpCtrl.horizontalJumpSpeed = 7.50f;
+            jumpCtrl.wallBounceMultiplier = 0.50f;
+            jumpCtrl.enableHighFallStun = false;
+
+            Sprite knightWalk1 = LoadAnySprite(KNIGHT_WALK1_PATH);
+            Sprite knightWalkSmear = LoadAnySprite(KNIGHT_WALK_SMEAR_PATH);
+            Sprite knightWalk2 = LoadAnySprite(KNIGHT_WALK2_PATH);
+            Sprite knightCharge = LoadAnySprite(KNIGHT_CHARGE_PATH);
+            Sprite knightJumpUp = LoadAnySprite(KNIGHT_JUMP_UP_PATH);
+            Sprite knightFall = LoadAnySprite(KNIGHT_FALL_PATH);
+            Sprite knightBounce = LoadAnySprite(KNIGHT_BOUNCE_PATH);
+            Sprite knightSplat = LoadAnySprite(KNIGHT_SPLAT_PATH);
+
+            var animator = playerGo.AddComponent<KimayaJumpKingAnimator>();
+            ConfigureAnimator(animator, knightIdleSprite, knightWalk1, knightWalkSmear, knightWalk2, knightCharge, knightJumpUp, knightFall, knightBounce, knightSplat);
+            animator.ApplyInitialSprite();
+
+            screenCam.target = playerGo.transform;
+
+            // 3. Plataformas del Escenario de Prueba (Caso Normal y Caso Límite)
+            GameObject platRoot = new GameObject("Test_Platforms");
+            platRoot.layer = groundLayer;
+
+            // Suelo Principal (con foso en X < -4 para probar límite de caída a cero vidas)
+            CreatePlatformCollider(platRoot.transform, 1.5f, 0.444f, 9.0f, 0.889f, groundLayer, "Ground_Main", SurfaceType.Normal, false);
+
+            // Paredes y Techo
+            CreateWall(platRoot.transform, -6.556f, 5.0f, 0.4f, 10.0f, groundLayer);
+            CreateWall(platRoot.transform, 6.556f, 5.0f, 0.4f, 10.0f, groundLayer);
+            CreateWall(platRoot.transform, 0.0f, 9.8f, 14.0f, 0.4f, groundLayer);
+
+            // Plataforma Media (con Reliquia para probar caso normal)
+            CreatePlatformCollider(platRoot.transform, -1.8f, 3.5f, 3.0f, 0.5f, groundLayer, "Plat_Mid_Relic", SurfaceType.Normal, false);
+
+            // Plataforma Alta (con Altar para probar condición de éxito)
+            CreatePlatformCollider(platRoot.transform, 3.0f, 6.5f, 3.2f, 0.5f, groundLayer, "Plat_High_Altar", SurfaceType.Normal, false);
+
+            // Plataforma de Hielo (para probar física de superficie con baja fricción)
+            CreatePlatformCollider(platRoot.transform, -4.5f, 2.0f, 2.2f, 0.4f, groundLayer, "Plat_Ice_Slide", SurfaceType.Ice, false);
+
+            // 4. Reliquia Sagrada Coleccionable (Disparador Lógico - Caso Normal)
+            GameObject relicsRoot = new GameObject("Test_Relics");
+            CreateRelic(relicsRoot.transform, new Vector3(-1.8f, 4.3f, 0f), "Reliquia de Prueba", 100, gemGreenSprite);
+
+            // 5. Altar Sagrado (Disparador Lógico de Meta - Condición de Éxito)
+            GameObject altarGo = new GameObject("Altar_Rescate");
+            altarGo.transform.position = new Vector3(3.0f, 7.3f, 0f);
+            var altarSr = altarGo.AddComponent<SpriteRenderer>();
+            altarSr.sprite = altarSprite;
+            altarSr.sortingOrder = 5;
+            altarGo.transform.localScale = new Vector3(0.85f, 0.85f, 1f);
+
+            var altarCol = altarGo.AddComponent<BoxCollider2D>();
+            altarCol.isTrigger = true;
+            altarCol.size = new Vector2(2.5f, 2.0f);
+            altarCol.offset = new Vector2(0f, 0.2f);
+            var altarGoal = altarGo.AddComponent<KimayaAltarGoal>();
+
+            // 6. Canvas y Manager
+            GameObject canvasGo = new GameObject("Test_Canvas");
+            var canvas = canvasGo.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvasGo.AddComponent<CanvasScaler>();
+            canvasGo.AddComponent<GraphicRaycaster>();
+
+            GameObject eventSystemGo = new GameObject("EventSystem");
+            eventSystemGo.AddComponent<UnityEngine.EventSystems.EventSystem>();
+            eventSystemGo.AddComponent<UnityEngine.EventSystems.StandaloneInputModule>();
+
+            var manager = canvasGo.AddComponent<KimayaJumpKingManager>();
+            manager.playerController = jumpCtrl;
+            manager.screenCamera = screenCam;
+            manager.falinSprite = falinSprite;
+            manager.miaSprite = miaSprite;
+            manager.finalScreenIndex = 0;
+            manager.maxLives = 3;
+            manager.currentLives = 3;
+            manager.enableLivesSystem = true;
+            manager.totalRelicsInLevel = 1;
+
+            // HUD
+            GameObject topHud = CreateUIPanel(canvasGo.transform, "TopHUD", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0, -45), new Vector2(1400, 65));
+            var topBg = topHud.AddComponent<Image>();
+            topBg.color = new Color(0.04f, 0.07f, 0.14f, 0.90f);
+
+            manager.screenText = CreateUIText(topHud.transform, "Txt_Piso", "🧪 Escena de Prueba (Evidencia 1 - Ciclo de Interacción)", 24, TextAnchor.MiddleLeft, new Vector2(-460, 0), new Vector2(500, 50));
+            manager.screenText.color = new Color(0.35f, 0.95f, 0.65f);
+
+            manager.characterNameText = CreateUIText(topHud.transform, "Txt_Char", "🐾 Falin | [TAB] Personaje | [C] Casco", 23, TextAnchor.MiddleCenter, new Vector2(0, 0), new Vector2(380, 50));
+            manager.characterNameText.color = new Color(1f, 0.85f, 0.2f);
+
+            manager.statsText = CreateUIText(topHud.transform, "Txt_Stats", "⏱️ 00:00  |  🏆 Score: 0  |  ❤️ Intentos: 3/3  |  ✨ Reliquias: 0/1  |  🦘 Saltos: 0  |  💥 Caídas: 0", 20, TextAnchor.MiddleRight, new Vector2(460, 0), new Vector2(500, 50));
+            manager.statsText.color = Color.white;
+
+            // Barra de Carga
+            GameObject chargeBarGo = CreateUIPanel(canvasGo.transform, "ChargeBar_Panel", new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0, 58), new Vector2(440, 24));
+            var slider = chargeBarGo.AddComponent<Slider>();
+            slider.minValue = 0f;
+            slider.maxValue = 1f;
+            slider.value = 0f;
+            manager.chargeSlider = slider;
+
+            var barBg = chargeBarGo.AddComponent<Image>();
+            barBg.color = new Color(0.08f, 0.08f, 0.12f, 0.9f);
+
+            GameObject fillGo = CreateUIPanel(chargeBarGo.transform, "Fill", new Vector2(0f, 0f), new Vector2(1f, 1f), Vector2.zero, Vector2.zero);
+            var fillImg = fillGo.AddComponent<Image>();
+            fillImg.color = new Color(0.2f, 0.9f, 0.3f);
+            slider.fillRect = fillGo.GetComponent<RectTransform>();
+            manager.chargeFillImage = fillImg;
+
+            Text controlsText = CreateUIText(canvasGo.transform, "Txt_Controls", "Mantén [ESPACIO] para cargar salto • [A / D] Dirección • [TAB] Personaje • [C] Casco • [R] Reiniciar", 18, TextAnchor.MiddleCenter, new Vector2(0, 22), new Vector2(1100, 28));
+            controlsText.rectTransform.anchorMin = new Vector2(0.5f, 0f);
+            controlsText.rectTransform.anchorMax = new Vector2(0.5f, 0f);
+            controlsText.color = new Color(0.75f, 0.85f, 0.95f, 0.85f);
+
+            // Panel de Victoria
+            GameObject victoryGo = CreateUIPanel(canvasGo.transform, "VictoryPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(760, 440));
+            var vicBg = victoryGo.AddComponent<Image>();
+            vicBg.color = new Color(0.05f, 0.12f, 0.22f, 0.98f);
+
+            Text vicTitle = CreateUIText(victoryGo.transform, "Txt_VicTitle", "🏆 ¡PRUEBA SUPERADA CON ÉXITO!", 34, TextAnchor.MiddleCenter, new Vector2(0, 145), new Vector2(720, 60));
+            vicTitle.color = new Color(1f, 0.85f, 0.2f);
+
+            Text vicStats = CreateUIText(victoryGo.transform, "Txt_VicStats", "⏱️ TIEMPO: 00:00   |   🏆 PUNTAJE: 0", 22, TextAnchor.MiddleCenter, new Vector2(0, 80), new Vector2(720, 40));
+            vicStats.color = new Color(0.35f, 0.95f, 0.55f);
+            manager.victoryStatsText = vicStats;
+
+            Text vicDesc = CreateUIText(victoryGo.transform, "Txt_VicDesc", "Has alcanzado el Altar de Prueba y demostrado el ciclo completo de interacción.\nEventos, colisiones 2D, modificación de estado y condición de éxito validados.", 21, TextAnchor.MiddleCenter, new Vector2(0, 10), new Vector2(680, 95));
+            vicDesc.color = Color.white;
+            manager.victoryDescText = vicDesc;
+
+            GameObject btnRestartGo = CreateUIPanel(victoryGo.transform, "Btn_Restart", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, -115), new Vector2(280, 56));
+            var rImg = btnRestartGo.AddComponent<Image>();
+            rImg.color = new Color(0.12f, 0.65f, 0.32f);
+            var rBtn = btnRestartGo.AddComponent<Button>();
+            Text rTxt = CreateUIText(btnRestartGo.transform, "Lbl", "🔄 Repetir Prueba [R]", 20, TextAnchor.MiddleCenter, Vector2.zero, new Vector2(280, 56));
+            rTxt.color = Color.white;
+            manager.restartButton = rBtn;
+
+            manager.victoryPanel = victoryGo;
+            victoryGo.SetActive(false);
+
+            // Panel de Game Over
+            GameObject gameOverGo = CreateUIPanel(canvasGo.transform, "GameOverPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(760, 440));
+            var goBg = gameOverGo.AddComponent<Image>();
+            goBg.color = new Color(0.20f, 0.05f, 0.05f, 0.98f);
+
+            Text goTitle = CreateUIText(gameOverGo.transform, "Txt_GoTitle", "💥 ¡INTENTOS AGOTADOS (LÍMITE ALCANZADO)!", 30, TextAnchor.MiddleCenter, new Vector2(0, 145), new Vector2(720, 60));
+            goTitle.color = new Color(1f, 0.35f, 0.35f);
+
+            Text goStats = CreateUIText(gameOverGo.transform, "Txt_GoStats", "⏱️ TIEMPO: 00:00   |   💥 CAÍDAS: 3/3", 22, TextAnchor.MiddleCenter, new Vector2(0, 80), new Vector2(720, 40));
+            goStats.color = new Color(1f, 0.85f, 0.4f);
+            manager.gameOverStatsText = goStats;
+
+            Text goDesc = CreateUIText(gameOverGo.transform, "Txt_GoDesc", "Has caído por el foso hasta consumir todas tus vidas (3 intentos).\nDemostración de condición de falla y límite de juego superado con éxito.", 21, TextAnchor.MiddleCenter, new Vector2(0, 10), new Vector2(680, 95));
+            goDesc.color = Color.white;
+            manager.gameOverDescText = goDesc;
+
+            GameObject btnGoRestartGo = CreateUIPanel(gameOverGo.transform, "Btn_GoRestart", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, -115), new Vector2(280, 56));
+            var goRImg = btnGoRestartGo.AddComponent<Image>();
+            goRImg.color = new Color(0.85f, 0.25f, 0.25f);
+            var goRBtn = btnGoRestartGo.AddComponent<Button>();
+            Text goRTxt = CreateUIText(btnGoRestartGo.transform, "Lbl", "🔄 Reiniciar Ciclo [R]", 20, TextAnchor.MiddleCenter, Vector2.zero, new Vector2(280, 56));
+            goRTxt.color = Color.white;
+            manager.gameOverRestartButton = goRBtn;
+
+            manager.gameOverPanel = gameOverGo;
+            gameOverGo.SetActive(false);
+
+            EditorSceneManager.SaveScene(scene, targetScenePath);
+            Debug.Log($"[KimayaClassicJumpKingBuilder] ✅ Escena de Prueba guardada exitosamente en {targetScenePath}");
+
+            RegisterSceneInBuildSettings(targetScenePath);
         }
 
         private static void RegisterSceneInBuildSettings(string scenePath)

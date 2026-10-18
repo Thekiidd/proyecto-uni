@@ -8,11 +8,13 @@ using UnityEngine.InputSystem;
 namespace Kimaya
 {
     /// <summary>
-    /// Administrador de la partida en el modo Jump King de Kimaya.
-    /// - Alterna entre Falin y Mía al presionar TAB o Q (con soporte universal para Input System).
-    /// - Gestiona la UI de carga de salto, pantalla actual, saltos y caídas.
-    /// - Desactiva HUDs residuales de otras escenas.
-    /// - Dispara la victoria al llegar a la cima.
+    /// Administrador de la partida en el modo Jump King de Kimaya (MVP - Evidencia 1).
+    /// Arquitectura orientada a componentes:
+    /// - Gestiona el estado de juego: Puntaje, Coleccionables (Reliquias), Cronómetro, Pantalla actual.
+    /// - Sistema de Vidas / Intentos con condiciones de Éxito (Cumbre/Altar) y Falla (Caídas/Game Over).
+    /// - Control de ciclo: Reinicio inmediato con [R] o botón UI.
+    /// - Alternancia entre Falin, Mía y Caballero Jump King ([TAB] / [Q]).
+    /// - Cambio de Skin táctico con/sin casco ([C] / [H]).
     /// </summary>
     public class KimayaJumpKingManager : MonoBehaviour
     {
@@ -34,12 +36,36 @@ namespace Kimaya
         public Text screenText;
         public Text characterNameText;
         public Text statsText;
+        public Text scoreText;
+        public Text livesText;
         public GameObject stunnedBadge;
+
+        [Header("Panel de Victoria (Condición de Éxito)")]
         public GameObject victoryPanel;
         public Text victoryStatsText;
         public Text victoryDescText;
         public Button restartButton;
         public Button returnToHubButton;
+
+        [Header("Panel de Game Over (Condición de Falla / Intentos)")]
+        public GameObject gameOverPanel;
+        public Text gameOverStatsText;
+        public Text gameOverDescText;
+        public Button gameOverRestartButton;
+        public Button gameOverHubButton;
+
+        [Header("Reglas de Juego: Vidas e Intentos")]
+        [Tooltip("Activar el sistema de intentos limitados de ascenso")]
+        public bool enableLivesSystem = true;
+        [Tooltip("Cantidad máxima de vidas o intentos de caída")]
+        public int maxLives = 3;
+        [Tooltip("Vidas o intentos restantes")]
+        public int currentLives = 3;
+
+        [Header("Reglas de Juego: Puntaje y Reliquias")]
+        public int currentScore = 0;
+        public int relicsCollected = 0;
+        public int totalRelicsInLevel = 3;
 
         [Header("Meta / Rescate")]
         public int finalScreenIndex = 4; // 5 Pisos (0 a 4)
@@ -47,6 +73,7 @@ namespace Kimaya
 
         private float _sessionTimer = 0f;
         private bool _hasWon = false;
+        private bool _isGameOver = false;
 
         private void Awake()
         {
@@ -69,7 +96,12 @@ namespace Kimaya
                 screenCamera = FindFirstObjectByType<JumpKingScreenCamera>();
             }
 
+            currentLives = maxLives;
+            currentScore = 0;
+            relicsCollected = 0;
+
             if (victoryPanel != null) victoryPanel.SetActive(false);
+            if (gameOverPanel != null) gameOverPanel.SetActive(false);
             if (stunnedBadge != null) stunnedBadge.SetActive(false);
 
             if (restartButton != null)
@@ -83,7 +115,19 @@ namespace Kimaya
                 returnToHubButton.onClick.AddListener(ReturnToHub);
             }
 
+            if (gameOverRestartButton != null)
+            {
+                gameOverRestartButton.onClick.RemoveAllListeners();
+                gameOverRestartButton.onClick.AddListener(RestartSession);
+            }
+            if (gameOverHubButton != null)
+            {
+                gameOverHubButton.onClick.RemoveAllListeners();
+                gameOverHubButton.onClick.AddListener(ReturnToHub);
+            }
+
             UpdateCharacterUI();
+            UpdateHUD();
         }
 
         private void HideLegacyHUDs()
@@ -101,11 +145,18 @@ namespace Kimaya
 
         private void Update()
         {
-            if (_hasWon) return;
+            // Permitir reinicio rápido con R en cualquier momento o tras Victoria/Falla
+            if (ReadRestartKey())
+            {
+                RestartSession();
+                return;
+            }
+
+            if (_hasWon || _isGameOver) return;
 
             _sessionTimer += Time.deltaTime;
 
-            // Cambiar de personaje con TAB o Q (Input System universal)
+            // Cambiar de personaje con TAB o Q
             if (ReadTabOrQ())
             {
                 SwitchCharacter();
@@ -123,7 +174,22 @@ namespace Kimaya
             }
 
             UpdateHUD();
-            CheckVictory();
+            CheckVictoryFallback();
+        }
+
+        private bool ReadRestartKey()
+        {
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame)
+                return true;
+#endif
+            try
+            {
+                if (Input.GetKeyDown(KeyCode.R))
+                    return true;
+            }
+            catch { }
+            return false;
         }
 
         private bool ReadEscapeKey()
@@ -149,11 +215,183 @@ namespace Kimaya
                 UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }
 
+        // ================= CAMBIOS DE ESTADO: PUNTAJE Y VIDAS =================
+
+        /// <summary>
+        /// Añade puntaje al recolectar una Reliquia Sagrada (modificación de estado).
+        /// </summary>
+        public void AddScore(int points, string sourceName = "Reliquia")
+        {
+            if (_hasWon || _isGameOver) return;
+
+            currentScore += points;
+            relicsCollected++;
+            Debug.Log($"[KimayaManager] ¡{sourceName} recogida! +{points} pts. Total: {currentScore} (Reliquias: {relicsCollected}/{totalRelicsInLevel})");
+            UpdateHUD();
+        }
+
+        /// <summary>
+        /// Registra una caída del jugador, reduciendo vidas/intentos y evaluando condición de falla.
+        /// </summary>
+        public void RegisterFall()
+        {
+            if (_hasWon || _isGameOver) return;
+
+            if (enableLivesSystem)
+            {
+                currentLives = Mathf.Max(0, currentLives - 1);
+                Debug.Log($"[KimayaManager] 💥 Caída registrada. Vidas restantes: {currentLives}/{maxLives}");
+
+                if (currentLives <= 0)
+                {
+                    TriggerGameOver();
+                    return;
+                }
+            }
+
+            UpdateHUD();
+        }
+
+        /// <summary>
+        /// Dispara la condición de falla (Game Over) cuando se agotan los intentos.
+        /// </summary>
+        public void TriggerGameOver()
+        {
+            if (_isGameOver || _hasWon) return;
+            _isGameOver = true;
+
+            Debug.Log("[KimayaManager] 💀 ¡GAME OVER! Se han agotado todos los intentos de ascenso.");
+
+            if (KimayaAudio.Instance != null)
+            {
+                KimayaAudio.Instance.PlaySFX(KimayaAudio.SFX.Damage);
+            }
+
+            // Congelar físicas del jugador
+            if (playerController != null)
+            {
+                var rb = playerController.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.linearVelocity = Vector2.zero;
+                    rb.bodyType = RigidbodyType2D.Kinematic;
+                }
+            }
+
+            int minutes = Mathf.FloorToInt(_sessionTimer / 60f);
+            int seconds = Mathf.FloorToInt(_sessionTimer % 60f);
+            string timeStr = $"{minutes:00}:{seconds:00}";
+            int jumps = playerController != null ? playerController.TotalJumps : 0;
+            int falls = playerController != null ? playerController.TotalFalls : 0;
+
+            if (gameOverStatsText != null)
+            {
+                gameOverStatsText.text = $"⏱️ TIEMPO: {timeStr}    |    🏆 PUNTAJE: {currentScore} pts\n🦘 SALTOS: {jumps}    |    💥 CAÍDAS: {falls}    |    ✨ RELIQUIAS: {relicsCollected}/{totalRelicsInLevel}";
+            }
+
+            if (gameOverDescText != null)
+            {
+                gameOverDescText.text = "Has agotado todos tus intentos en el ascenso del Árbol Sagrado.\nPresiona [R] para reiniciar el ciclo y volver a intentarlo.";
+            }
+
+            if (gameOverPanel != null)
+            {
+                gameOverPanel.SetActive(true);
+            }
+
+            UpdateHUD();
+        }
+
+        /// <summary>
+        /// Dispara la condición de éxito (Victoria) al interactuar con el Altar de la Cumbre.
+        /// </summary>
+        public void TriggerVictory(string customMessage = null)
+        {
+            if (_hasWon || _isGameOver) return;
+            _hasWon = true;
+
+            int minutes = Mathf.FloorToInt(_sessionTimer / 60f);
+            int seconds = Mathf.FloorToInt(_sessionTimer % 60f);
+            string timeStr = $"{minutes:00}:{seconds:00}";
+            int jumps = playerController != null ? playerController.TotalJumps : 0;
+            int falls = playerController != null ? playerController.TotalFalls : 0;
+            string hero = (playerController != null && playerController.character == KimayaJumpKingController.CharacterType.Falin) ? "Falin" :
+                          (playerController != null && playerController.character == KimayaJumpKingController.CharacterType.Mia) ? "Mía" : "Caballero";
+
+            // Bonificación por reliquias
+            int totalFinalScore = currentScore + (relicsCollected * 200);
+
+            if (victoryStatsText != null)
+            {
+                victoryStatsText.text = $"⏱️ TIEMPO: {timeStr}    |    🏆 PUNTAJE: {totalFinalScore} pts\n🦘 SALTOS: {jumps}    |    💥 CAÍDAS: {falls}    |    ✨ RELIQUIAS: {relicsCollected}/{totalRelicsInLevel}";
+            }
+
+            if (victoryDescText != null)
+            {
+                if (!string.IsNullOrEmpty(customMessage))
+                {
+                    victoryDescText.text = $"{customMessage}\nLlegaste al Altar de la Cumbre con {hero} conservando {currentLives} intentos.";
+                }
+                else
+                {
+                    victoryDescText.text = $"¡Has conquistado los 5 Pisos del Gran Árbol Sagrado!\nLlegaste al Altar de la Cumbre y rescataste a {rescuedCharacterName} con {hero}.\n\n¡Felicidades por completar el ciclo del MVP!";
+                }
+            }
+
+            // Congelar al jugador en la cumbre
+            if (playerController != null)
+            {
+                var rb = playerController.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.linearVelocity = Vector2.zero;
+                    rb.bodyType = RigidbodyType2D.Kinematic;
+                }
+            }
+
+            if (victoryPanel != null)
+            {
+                victoryPanel.SetActive(true);
+            }
+        }
+
+        public void RestartSession()
+        {
+            // Reinicia la escena activa limpiando el estado y restableciendo el ciclo
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        }
+
+        // ================= GESTIÓN DE SKINS Y PERSONAJES =================
+
         private void OnGUI()
         {
+            // Fallback visual en caso de que los paneles de UI no tengan Canvas configurado
+            if (_isGameOver)
+            {
+                float btnW = 240f;
+                float btnH = 50f;
+                float spacing = 20f;
+                float totalW = btnW * 2f + spacing;
+                float startX = (Screen.width - totalW) * 0.5f;
+                float startY = (Screen.height * 0.5f) + 140f;
+
+                GUI.skin.button.fontSize = 18;
+                GUI.backgroundColor = new Color(0.9f, 0.25f, 0.25f, 1f);
+                if (GUI.Button(new Rect(startX, startY, btnW, btnH), "🔄 Reiniciar Intento [R]"))
+                {
+                    RestartSession();
+                }
+
+                GUI.backgroundColor = new Color(0.20f, 0.50f, 0.85f, 1f);
+                if (GUI.Button(new Rect(startX + btnW + spacing, startY, btnW, btnH), "🏡 Volver al Hub"))
+                {
+                    ReturnToHub();
+                }
+                return;
+            }
+
             if (_hasWon)
             {
-                // Botones grandes en el centro de la pantalla durante la victoria
                 float btnW = 220f;
                 float btnH = 50f;
                 float spacing = 20f;
@@ -163,7 +401,7 @@ namespace Kimaya
 
                 GUI.skin.button.fontSize = 18;
                 GUI.backgroundColor = new Color(0.15f, 0.75f, 0.35f, 1f);
-                if (GUI.Button(new Rect(startX, startY, btnW, btnH), "🔄 Repetir Ascenso"))
+                if (GUI.Button(new Rect(startX, startY, btnW, btnH), "🔄 Repetir Ascenso [R]"))
                 {
                     RestartSession();
                 }
@@ -339,59 +577,30 @@ namespace Kimaya
             {
                 int minutes = Mathf.FloorToInt(_sessionTimer / 60f);
                 int seconds = Mathf.FloorToInt(_sessionTimer % 60f);
-                statsText.text = $"⏱️ {minutes:00}:{seconds:00}  |  🦘 Saltos: {playerController.TotalJumps}  |  💥 Caídas: {playerController.TotalFalls}";
+                string livesIndicator = enableLivesSystem ? $"  |  ❤️ Intentos: {currentLives}/{maxLives}" : "";
+                string relicIndicator = $"  |  ✨ Reliquias: {relicsCollected}/{totalRelicsInLevel}";
+                string scoreIndicator = $"  |  🏆 Score: {currentScore}";
+
+                statsText.text = $"⏱️ {minutes:00}:{seconds:00}{scoreIndicator}{livesIndicator}{relicIndicator}  |  🦘 Saltos: {playerController.TotalJumps}  |  💥 Caídas: {playerController.TotalFalls}";
+            }
+
+            if (scoreText != null)
+            {
+                scoreText.text = $"🏆 {currentScore} PTS";
+            }
+
+            if (livesText != null)
+            {
+                livesText.text = $"❤️ {currentLives}/{maxLives}";
             }
         }
 
-        private void CheckVictory()
+        private void CheckVictoryFallback()
         {
-            // Victoria cuando el jugador llega al gran altar sagrado en la cumbre del templo (Piso 5, Y >= 45.0f)
-            if (playerController != null && playerController.transform.position.y >= 45.0f && !_hasWon)
+            // Victoria de respaldo por coordenada si no tocó el trigger directo (Piso 5, Y >= 49.3f)
+            if (playerController != null && playerController.transform.position.y >= 49.3f && !_hasWon)
             {
-                TriggerVictory();
-            }
-        }
-
-        public void RestartSession()
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        }
-
-        public void TriggerVictory()
-        {
-            _hasWon = true;
-
-            int minutes = Mathf.FloorToInt(_sessionTimer / 60f);
-            int seconds = Mathf.FloorToInt(_sessionTimer % 60f);
-            string timeStr = $"{minutes:00}:{seconds:00}";
-            int jumps = playerController != null ? playerController.TotalJumps : 0;
-            int falls = playerController != null ? playerController.TotalFalls : 0;
-            string hero = (playerController != null && playerController.character == KimayaJumpKingController.CharacterType.Falin) ? "Falin" : "Mía";
-
-            if (victoryStatsText != null)
-            {
-                victoryStatsText.text = $"⏱️ TIEMPO: {timeStr}    |    🦘 SALTOS: {jumps}    |    💥 CAÍDAS: {falls}";
-            }
-
-            if (victoryDescText != null)
-            {
-                victoryDescText.text = $"¡Has conquistado los 5 Pisos del Gran Árbol Sagrado!\nLlegaste al Altar de la Cumbre y rescataste a Kiara con {hero}.\n\n¡Felicidades por completar el ascenso!";
-            }
-
-            // Congelar al jugador en la cumbre para evitar caídas post-victoria
-            if (playerController != null)
-            {
-                var rb = playerController.GetComponent<Rigidbody2D>();
-                if (rb != null)
-                {
-                    rb.linearVelocity = Vector2.zero;
-                    rb.bodyType = RigidbodyType2D.Kinematic;
-                }
-            }
-
-            if (victoryPanel != null)
-            {
-                victoryPanel.SetActive(true);
+                TriggerVictory("¡Has alcanzado la cumbre sagrada!");
             }
         }
     }

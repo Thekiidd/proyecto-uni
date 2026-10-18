@@ -451,6 +451,10 @@ namespace Kimaya
                     if (transform.position.y < _lastGroundedY - 3.0f)
                     {
                         TotalFalls++;
+                        if (KimayaJumpKingManager.Instance != null)
+                        {
+                            KimayaJumpKingManager.Instance.RegisterFall();
+                        }
                     }
 
                     if (enableHighFallStun && fallDistance >= highFallThreshold)
@@ -464,6 +468,18 @@ namespace Kimaya
                     _highestAirY = transform.position.y;
                 }
                 IsGrounded = true;
+            }
+
+            // Caso de Error / Límite probado: Si el jugador cae fuera del área jugable (abismo Y < -2.0)
+            if (transform.position.y < -2.0f)
+            {
+                transform.position = new Vector3(-0.25f, 0.89f, 0f);
+                _rb.linearVelocity = Vector2.zero;
+                TotalFalls++;
+                if (KimayaJumpKingManager.Instance != null)
+                {
+                    KimayaJumpKingManager.Instance.RegisterFall();
+                }
             }
         }
 
