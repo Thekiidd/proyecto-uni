@@ -44,8 +44,10 @@ namespace Platformer.EditorTools
 
             string[] scenes = new string[]
             {
+                "Assets/Scenes/Hub.unity",
                 "Assets/Scenes/MainMenu.unity",
-                "Assets/Scenes/Level_01_Bosque.unity",
+                "Assets/Scenes/Ascenso_JumpKing_Classic.unity",
+                "Assets/Scenes/Ascenso_Vertical.unity",
                 "Assets/Scenes/Prologue_Story.unity",
                 "Assets/Scenes/Ending.unity"
             };

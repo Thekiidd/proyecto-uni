@@ -54,10 +54,10 @@ namespace Kimaya
         public Button gameOverRestartButton;
         public Button gameOverHubButton;
 
-        [Header("Reglas de Juego: Vidas e Intentos")]
-        [Tooltip("Activar el sistema de intentos limitados de ascenso")]
-        public bool enableLivesSystem = true;
-        [Tooltip("Cantidad máxima de vidas o intentos de caída")]
+        [Header("Reglas de Juego: Sistema Jump King Equivalente")]
+        [Tooltip("Si es false, opera en modo Jump King Puro (la caída y pérdida de altura es la penalización). Si es true, activa límite de vidas")]
+        public bool enableLivesSystem = false;
+        [Tooltip("Cantidad máxima de vidas o intentos si se activa el modo desafío")]
         public int maxLives = 3;
         [Tooltip("Vidas o intentos restantes")]
         public int currentLives = 3;
@@ -572,26 +572,26 @@ namespace Kimaya
                 screenText.text = $"Piso {curIdx + 1} / {finalScreenIndex + 1}: {fName}";
             }
 
-            // Estadísticas (Saltos y Caídas)
+            // Estadísticas Jump King Oficial: Tiempo, Saltos y Caídas (Progreso de Ascenso)
             if (statsText != null)
             {
                 int minutes = Mathf.FloorToInt(_sessionTimer / 60f);
                 int seconds = Mathf.FloorToInt(_sessionTimer % 60f);
                 string livesIndicator = enableLivesSystem ? $"  |  ❤️ Intentos: {currentLives}/{maxLives}" : "";
-                string relicIndicator = $"  |  ✨ Reliquias: {relicsCollected}/{totalRelicsInLevel}";
-                string scoreIndicator = $"  |  🏆 Score: {currentScore}";
+                string relicIndicator = (relicsCollected > 0) ? $"  |  ✨ Reliquias: {relicsCollected}/{totalRelicsInLevel}" : "";
+                string scoreIndicator = (currentScore > 0) ? $"  |  🏆 {currentScore} PTS" : "";
 
-                statsText.text = $"⏱️ {minutes:00}:{seconds:00}{scoreIndicator}{livesIndicator}{relicIndicator}  |  🦘 Saltos: {playerController.TotalJumps}  |  💥 Caídas: {playerController.TotalFalls}";
+                statsText.text = $"⏱️ {minutes:00}:{seconds:00}  |  🦘 Saltos: {playerController.TotalJumps}  |  💥 Caídas: {playerController.TotalFalls}{relicIndicator}{scoreIndicator}{livesIndicator}";
             }
 
             if (scoreText != null)
             {
-                scoreText.text = $"🏆 {currentScore} PTS";
+                scoreText.text = (currentScore > 0) ? $"🏆 {currentScore} PTS" : "";
             }
 
             if (livesText != null)
             {
-                livesText.text = $"❤️ {currentLives}/{maxLives}";
+                livesText.text = enableLivesSystem ? $"❤️ {currentLives}/{maxLives}" : "";
             }
         }
 
