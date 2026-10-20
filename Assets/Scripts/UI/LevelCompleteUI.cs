@@ -42,6 +42,9 @@ namespace Platformer.UI
             if (levelText != null)  levelText.text  = isLast ? "🏆 ¡Juego Completado!" : $"Nivel {level} Completado!";
             if (scoreText != null)  scoreText.text  = $"Puntuación: {score}";
             if (btnNext != null)    btnNext.gameObject.SetActive(!isLast);
+
+            // Guardar partida en Supabase
+            Kimaya.Networking.DatabaseManager.Instance?.SaveCurrentSession("nivel_completado");
         }
 
         private void NextLevel()

@@ -40,6 +40,9 @@ namespace Platformer.UI
 
             if (scoreText != null)       scoreText.text       = $"Puntuación Final: {score}";
             if (levelReachedText != null) levelReachedText.text = $"Llegaste al Nivel {level}";
+
+            // Guardar sesión de Game Over en Supabase
+            Kimaya.Networking.DatabaseManager.Instance?.SaveCurrentSession("game_over");
         }
 
         private void Retry()

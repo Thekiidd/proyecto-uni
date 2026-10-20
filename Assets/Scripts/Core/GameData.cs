@@ -21,6 +21,9 @@ namespace Platformer.Core
         public ObfuscatedInt lives = 3;
         public ObfuscatedInt coins = 0;
 
+        [Header("Red y Supabase")]
+        public string currentUserId = "1";
+
         public event System.Action<int> OnCoinsChanged;
         public event System.Action<int> OnLivesChanged;
 

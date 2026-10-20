@@ -299,6 +299,17 @@ namespace Kimaya
                 gameOverPanel.SetActive(true);
             }
 
+            // Subir sesión de Game Over a la base de datos Supabase
+            string heroName = (playerController != null && playerController.character == KimayaJumpKingController.CharacterType.Falin) ? "falin" : "mia";
+            Kimaya.Networking.DatabaseManager.Instance?.SaveJumpKingSession(
+                "game_over",
+                currentScore,
+                Mathf.RoundToInt(_sessionTimer),
+                jumps,
+                falls,
+                heroName
+            );
+
             UpdateHUD();
         }
 
@@ -353,6 +364,17 @@ namespace Kimaya
             {
                 victoryPanel.SetActive(true);
             }
+
+            // Subir sesión de Victoria a la base de datos Supabase
+            string victoryHero = (playerController != null && playerController.character == KimayaJumpKingController.CharacterType.Falin) ? "falin" : "mia";
+            Kimaya.Networking.DatabaseManager.Instance?.SaveJumpKingSession(
+                "nivel_completado",
+                totalFinalScore,
+                Mathf.RoundToInt(_sessionTimer),
+                jumps,
+                falls,
+                victoryHero
+            );
         }
 
         public void RestartSession()
