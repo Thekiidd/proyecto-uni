@@ -80,18 +80,11 @@ namespace Kimaya
                 var sr = kiaraObject.AddComponent<SpriteRenderer>();
                 sr.sortingOrder = 510;
 
-                // Cargar sprite de Kiara
+                // Cargar sprite de Kiara desde Resources
                 if (kiaraSprite == null)
                 {
-                    var allSprites = Resources.FindObjectsOfTypeAll<Sprite>();
-                    foreach (var s in allSprites)
-                    {
-                        if (s.name.Contains("Kiara") || s.name.Contains("kiara"))
-                        {
-                            kiaraSprite = s;
-                            break;
-                        }
-                    }
+                    kiaraSprite = Resources.Load<Sprite>("NPCs/Kiara/Kiara_south");
+                    if (kiaraSprite == null) kiaraSprite = Resources.Load<Sprite>("NPCs/Kiara/Kiara_east");
                 }
                 if (kiaraSprite != null) sr.sprite = kiaraSprite;
             }
