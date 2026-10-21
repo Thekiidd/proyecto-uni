@@ -71,6 +71,10 @@ namespace Kimaya
         public float highFallThreshold = 7.5f; // Unidades de caída para activar stun
         public float splatStunDuration = 0.50f;
 
+        [Header("Punto de Control y Reaparición (KIM-12)")]
+        public Vector3 respawnPoint = new Vector3(-0.25f, 0.89f, 0f);
+        public bool hasReachedCheckpoint = false;
+
         // Estados
         public bool IsGrounded { get; private set; }
         public bool IsCharging { get; private set; }
@@ -117,6 +121,13 @@ namespace Kimaya
             ApplyCharacterAttributes();
         }
 
+        public void SetCheckpoint(Vector3 newPoint)
+        {
+            hasReachedCheckpoint = true;
+            respawnPoint = newPoint;
+            Debug.Log($"[KimayaJumpKingController] 🚩 ¡Punto de control intermedio alcanzado en {newPoint}! (KIM-12)");
+        }
+
         private void ApplyCharacterAttributes()
         {
             if (_rb == null) _rb = GetComponent<Rigidbody2D>();
@@ -146,15 +157,15 @@ namespace Kimaya
             }
             else if (character == CharacterType.Falin)
             {
-                // Falin: San Bernardo de PixelLab (salto vertical potente, pelaje amortiguador de impacto)
-                _rb.mass = 1.2f;
-                _rb.gravityScale = 2.45f;
-                walkSpeed = 2.50f;
-                minJumpForce = 7.5f;
-                maxJumpForce = 25.5f; // Súper potencia vertical para escalar y volar a la plataforma verde
-                horizontalJumpSpeed = 7.20f; // Gran holgura de aterrizaje
-                wallBounceMultiplier = 0.40f; // Amortiguación de rebote: rebota suavemente
-                maxChargeTime = 0.60f;
+                // Falin (KIM-06): Salto pesado, firme y con mayor inercia. Descenso más rápido, carga lenta.
+                _rb.mass = 1.35f;
+                _rb.gravityScale = 3.10f; // Descenso rápido y contundente
+                walkSpeed = 2.40f;
+                minJumpForce = 8.5f;
+                maxJumpForce = 29.5f; // Salto vertical potente y firme
+                horizontalJumpSpeed = 7.00f; // Gran inercia
+                wallBounceMultiplier = 0.35f; // Aterrizaje firme, rebote reducido
+                maxChargeTime = 0.70f; // Requiere mayor anticipación
                 splatStunDuration = 0.50f;
 
                 if (_col != null)
@@ -168,15 +179,15 @@ namespace Kimaya
             }
             else
             {
-                // Mía: Schnauzer de PixelLab (ágil, carga rápida y rebote elástico)
-                _rb.mass = 0.9f;
-                _rb.gravityScale = 2.45f;
-                walkSpeed = 3.00f;
-                minJumpForce = 7.0f;
-                maxJumpForce = 24.8f;
-                horizontalJumpSpeed = 7.80f; // Excelente alcance horizontal para cruzar hacia el verde
-                wallBounceMultiplier = 0.60f; // Rebote ágil y elástico en paredes
-                maxChargeTime = 0.50f; // Reflejos rápidos: carga más velozmente
+                // Mía (KIM-07): Salto ligero, rápido y sensible a la carga. Mayor tiempo en el aire (floaty).
+                _rb.mass = 0.85f;
+                _rb.gravityScale = 2.05f; // Mayor tiempo en el aire, flotación elegante
+                walkSpeed = 3.10f;
+                minJumpForce = 6.5f;
+                maxJumpForce = 22.0f; // Gran altura con menor fuerza gracias a la baja gravedad
+                horizontalJumpSpeed = 8.20f; // Ágil y veloz en cruce horizontal
+                wallBounceMultiplier = 0.65f; // Rebote ágil y elástico
+                maxChargeTime = 0.45f; // Muy sensible a pequeñas variaciones de carga
                 splatStunDuration = 0.50f;
 
                 if (_col != null)
@@ -470,10 +481,10 @@ namespace Kimaya
                 IsGrounded = true;
             }
 
-            // Caso de Error / Límite probado: Si el jugador cae fuera del área jugable (abismo Y < -2.0)
+            // KIM-12: Si cae fuera del escenario (abismo Y < -2.0), reaparece en el inicio o en el punto de control
             if (transform.position.y < -2.0f)
             {
-                transform.position = new Vector3(-0.25f, 0.89f, 0f);
+                transform.position = respawnPoint;
                 _rb.linearVelocity = Vector2.zero;
                 TotalFalls++;
                 if (KimayaJumpKingManager.Instance != null)

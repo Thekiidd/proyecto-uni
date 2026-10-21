@@ -1,0 +1,84 @@
+{
+  "group_id": "e2378583-4576-40d6-a1b3-321b368bbcbb",
+  "states": [
+    {
+      "character": {
+        "id": "76b9021a-e6b2-42d2-97bc-29cd536b1c60",
+        "name": "Idle",
+        "prompt": "A cute miniature Schnauzer dog with silver-gray fur, distinctive schnauzer beard and eyebrows, small and agile looking, wearing a tiny magical purple ribbon bow on head. Fantasy RPG style. Light and nimble-looking. Pixel art for a platformer game.",
+        "size": {
+          "width": 56,
+          "height": 56
+        },
+        "template_id": "dog",
+        "directions": 4,
+        "view": "side",
+        "created_at": "2026-10-21T20:10:44.112219+00:00"
+      },
+      "folder": "Idle",
+      "frames": {
+        "rotations": {
+          "south": "Idle/rotations/south.png",
+          "west": "Idle/rotations/west.png",
+          "east": "Idle/rotations/east.png",
+          "north": "Idle/rotations/north.png"
+        },
+        "animations": {
+          "Mia_Charge": {
+            "east": [
+              "Idle/animations/Mia_Charge/east/frame_000.png",
+              "Idle/animations/Mia_Charge/east/frame_001.png",
+              "Idle/animations/Mia_Charge/east/frame_002.png",
+              "Idle/animations/Mia_Charge/east/frame_003.png",
+              "Idle/animations/Mia_Charge/east/frame_004.png",
+              "Idle/animations/Mia_Charge/east/frame_005.png",
+              "Idle/animations/Mia_Charge/east/frame_006.png"
+            ]
+          },
+          "Mia_Jump": {
+            "east": [
+              "Idle/animations/Mia_Jump/east/frame_000.png",
+              "Idle/animations/Mia_Jump/east/frame_001.png",
+              "Idle/animations/Mia_Jump/east/frame_002.png",
+              "Idle/animations/Mia_Jump/east/frame_003.png",
+              "Idle/animations/Mia_Jump/east/frame_004.png"
+            ]
+          },
+          "Mia_Fall": {
+            "east": [
+              "Idle/animations/Mia_Fall/east/frame_000.png",
+              "Idle/animations/Mia_Fall/east/frame_001.png",
+              "Idle/animations/Mia_Fall/east/frame_002.png",
+              "Idle/animations/Mia_Fall/east/frame_003.png",
+              "Idle/animations/Mia_Fall/east/frame_004.png"
+            ]
+          },
+          "Mia_Idle": {
+            "west": [
+              "Idle/animations/Mia_Idle/west/frame_000.png",
+              "Idle/animations/Mia_Idle/west/frame_001.png",
+              "Idle/animations/Mia_Idle/west/frame_002.png",
+              "Idle/animations/Mia_Idle/west/frame_003.png",
+              "Idle/animations/Mia_Idle/west/frame_004.png",
+              "Idle/animations/Mia_Idle/west/frame_005.png",
+              "Idle/animations/Mia_Idle/west/frame_006.png",
+              "Idle/animations/Mia_Idle/west/frame_007.png"
+            ],
+            "east": [
+              "Idle/animations/Mia_Idle/east/frame_000.png",
+              "Idle/animations/Mia_Idle/east/frame_001.png",
+              "Idle/animations/Mia_Idle/east/frame_002.png",
+              "Idle/animations/Mia_Idle/east/frame_003.png",
+              "Idle/animations/Mia_Idle/east/frame_004.png",
+              "Idle/animations/Mia_Idle/east/frame_005.png",
+              "Idle/animations/Mia_Idle/east/frame_006.png",
+              "Idle/animations/Mia_Idle/east/frame_007.png"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "export_version": "3.1",
+  "export_date": "2026-10-21T20:27:43.859605"
+}

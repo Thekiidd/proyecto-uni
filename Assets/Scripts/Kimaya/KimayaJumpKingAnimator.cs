@@ -94,6 +94,66 @@ namespace Kimaya
             _rb = GetComponent<Rigidbody2D>();
             _lastChar = _ctrl != null ? _ctrl.character : KimayaJumpKingController.CharacterType.JumpKing;
             _lastSkinState = useKnightSkin;
+            AutoLoadPixelLabSprites();
+        }
+
+        private void AutoLoadPixelLabSprites()
+        {
+            Sprite[] all = Resources.FindObjectsOfTypeAll<Sprite>();
+            if (all == null || all.Length == 0) return;
+
+            // Falin
+            var falinIdle = new List<Sprite>();
+            var falinCharge = new List<Sprite>();
+            var falinJump = new List<Sprite>();
+            var falinFall = new List<Sprite>();
+
+            // Mia
+            var miaIdle = new List<Sprite>();
+            var miaCharge = new List<Sprite>();
+            var miaJump = new List<Sprite>();
+            var miaFall = new List<Sprite>();
+
+            foreach (var s in all)
+            {
+                string n = s.name;
+                if (n.StartsWith("Falin_Idle_east_")) falinIdle.Add(s);
+                else if (n.StartsWith("Falin_Charge_east_")) falinCharge.Add(s);
+                else if (n.StartsWith("Falin_Jump_east_")) falinJump.Add(s);
+                else if (n.StartsWith("Falin_Fall_east_")) falinFall.Add(s);
+                else if (n.StartsWith("Mia_Idle_east_")) miaIdle.Add(s);
+                else if (n.StartsWith("Mia_Charge_east_")) miaCharge.Add(s);
+                else if (n.StartsWith("Mia_Jump_east_")) miaJump.Add(s);
+                else if (n.StartsWith("Mia_Fall_east_")) miaFall.Add(s);
+            }
+
+            falinIdle.Sort((a, b) => string.Compare(a.name, b.name, System.StringComparison.Ordinal));
+            falinCharge.Sort((a, b) => string.Compare(a.name, b.name, System.StringComparison.Ordinal));
+            falinJump.Sort((a, b) => string.Compare(a.name, b.name, System.StringComparison.Ordinal));
+            falinFall.Sort((a, b) => string.Compare(a.name, b.name, System.StringComparison.Ordinal));
+
+            miaIdle.Sort((a, b) => string.Compare(a.name, b.name, System.StringComparison.Ordinal));
+            miaCharge.Sort((a, b) => string.Compare(a.name, b.name, System.StringComparison.Ordinal));
+            miaJump.Sort((a, b) => string.Compare(a.name, b.name, System.StringComparison.Ordinal));
+            miaFall.Sort((a, b) => string.Compare(a.name, b.name, System.StringComparison.Ordinal));
+
+            if (falinIdle.Count > 0 && (falinClassicIdleFrames == null || falinClassicIdleFrames.Length == 0))
+                falinClassicIdleFrames = falinIdle.ToArray();
+            if (falinCharge.Count > 0 && (falinClassicChargeProgress == null || falinClassicChargeProgress.Length == 0))
+                falinClassicChargeProgress = falinCharge.ToArray();
+            if (falinJump.Count > 0 && falinClassicJumpStretch == null)
+                falinClassicJumpStretch = falinJump[Mathf.Min(2, falinJump.Count - 1)];
+            if (falinFall.Count > 0 && falinClassicFall == null)
+                falinClassicFall = falinFall[0];
+
+            if (miaIdle.Count > 0 && (miaClassicIdleFrames == null || miaClassicIdleFrames.Length == 0))
+                miaClassicIdleFrames = miaIdle.ToArray();
+            if (miaCharge.Count > 0 && (miaClassicChargeProgress == null || miaClassicChargeProgress.Length == 0))
+                miaClassicChargeProgress = miaCharge.ToArray();
+            if (miaJump.Count > 0 && miaClassicJumpStretch == null)
+                miaClassicJumpStretch = miaJump[Mathf.Min(2, miaJump.Count - 1)];
+            if (miaFall.Count > 0 && miaClassicFall == null)
+                miaClassicFall = miaFall[0];
         }
 
         private void Start()

@@ -29,6 +29,55 @@ namespace Kimaya
             _triggerCollider.isTrigger = true;
         }
 
+        private void Start()
+        {
+            EnsureKiaraAndZarzalVisuals();
+        }
+
+        private void EnsureKiaraAndZarzalVisuals()
+        {
+            Transform kiaraTr = transform.Find("Kiara_Summit");
+            if (kiaraTr == null)
+            {
+                var kiaraGo = new GameObject("Kiara_Summit");
+                kiaraGo.transform.SetParent(transform);
+                kiaraGo.transform.localPosition = new Vector3(0.35f, 0.35f, 0f);
+                var sr = kiaraGo.AddComponent<SpriteRenderer>();
+                sr.sortingOrder = 500;
+
+                var allSprites = Resources.FindObjectsOfTypeAll<Sprite>();
+                foreach (var s in allSprites)
+                {
+                    if (s.name.ToLower().Contains("kiara"))
+                    {
+                        sr.sprite = s;
+                        break;
+                    }
+                }
+            }
+
+            Transform zarzalTr = transform.Find("Zarzal_Trap");
+            if (zarzalTr == null)
+            {
+                var zarzalGo = new GameObject("Zarzal_Trap");
+                zarzalGo.transform.SetParent(transform);
+                zarzalGo.transform.localPosition = new Vector3(0.35f, 0.40f, 0f);
+                var sr = zarzalGo.AddComponent<SpriteRenderer>();
+                sr.sortingOrder = 510;
+                sr.color = new Color(0.9f, 0.4f, 1f, 0.85f);
+
+                var allSprites = Resources.FindObjectsOfTypeAll<Sprite>();
+                foreach (var s in allSprites)
+                {
+                    if (s.name.ToLower().Contains("zarzal"))
+                    {
+                        sr.sprite = s;
+                        break;
+                    }
+                }
+            }
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             // Evitar activaciones redundantes
@@ -46,6 +95,13 @@ namespace Kimaya
             if (victoryAura != null)
             {
                 victoryAura.Play();
+            }
+
+            // Disipar las espinas del Zarzal Sombrío al rescatar a Kiara
+            Transform zarzalTr = transform.Find("Zarzal_Trap");
+            if (zarzalTr != null)
+            {
+                zarzalTr.gameObject.SetActive(false);
             }
 
             // Reproducir sonido de victoria sagrada

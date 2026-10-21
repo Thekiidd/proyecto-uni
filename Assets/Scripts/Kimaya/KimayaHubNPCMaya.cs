@@ -19,13 +19,12 @@ namespace Kimaya
         [TextArea(2, 4)]
         public string[] dialogueLines = new string[]
         {
-            "¡Saludos, nobles guardianes Falin y Mia! El bosque ha estado esperando su llegada.",
-            "Nuestra amiga Kiara ha quedado atrapada en lo profundo del Templo del Bosque, más allá del portal místico al oeste.",
-            "Para rescatarla, deberán cooperar como un verdadero equipo: las fuerzas de ambos son complementarias.",
-            "Falin es fuerte y robusto: su peso puede inclinar los grandes balancines de piedra y empujar las cajas rúnicas.",
-            "Mia es pequeña y ágil: su velocidad le permite cruzar túneles estrechos y alcanzar interruptores elevados.",
-            "En la plaza encontrarán también el Tablón de Récords conectado a la red global de Firebase.",
-            "¡Crucen el Portal Antiguo al oeste cuando estén listos! Toda la aldea confía en ustedes."
+            "¡Saludos, Falin y Mia! Bienvenidos al Bosque del Eco.\nPara moverte por el hub usa [W, A, S, D] o las flechas de dirección.",
+            "Para interactuar con personajes, objetos o entradas a los niveles, acércate y presiona la tecla [E].",
+            "¡Nuestra hermana Kiara ha quedado atrapada por el Zarzal Sombrío en la cima del Sendero de las Raíces y debemos rescatarla cuanto antes!",
+            "El portal luminoso al frente conduce al Sendero de las Raíces. Es la única entrada disponible en este momento.",
+            "Las otras tres entradas del bosque están bloqueadas por barreras mágicas oscuras y solo se abrirán cuando restauremos las cuatro runas del círculo central.",
+            "¡Acérquense a la entrada disponible y elijan con sabiduría a su campeona para el ascenso! Fairytopia confía en ustedes."
         };
 
         private bool isPlayerNear = false;

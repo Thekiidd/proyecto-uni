@@ -47,10 +47,10 @@ namespace Kimaya
 
         private static void EnsureEventSystem()
         {
-            var canvas = UnityEngine.Object.FindFirstObjectByType<Canvas>();
+            var canvas = UnityEngine.Object.FindAnyObjectByType<Canvas>();
             if (canvas == null) return;
 
-            var es = UnityEngine.Object.FindFirstObjectByType<EventSystem>();
+            var es = UnityEngine.Object.FindAnyObjectByType<EventSystem>();
             if (es == null)
             {
                 var esGo = new GameObject("EventSystem");

@@ -151,6 +151,10 @@ namespace Kimaya
         {
             Instance = this;
             EnsureReferences();
+            if (FindAnyObjectByType<KimayaHubRunicCircle>() == null)
+            {
+                gameObject.AddComponent<KimayaHubRunicCircle>();
+            }
         }
 
         private void Start()

@@ -72,6 +72,8 @@ namespace Kimaya
         public string rescuedCharacterName = "Kiara";
 
         private float _sessionTimer = 0f;
+        private float _noticeTimer = 0f;
+        private string _noticeMessage = "";
         private bool _hasWon = false;
         private bool _isGameOver = false;
 
@@ -88,17 +90,28 @@ namespace Kimaya
 
             if (playerController == null)
             {
-                playerController = FindFirstObjectByType<KimayaJumpKingController>();
+                playerController = FindAnyObjectByType<KimayaJumpKingController>();
             }
 
             if (screenCamera == null)
             {
-                screenCamera = FindFirstObjectByType<JumpKingScreenCamera>();
+                screenCamera = FindAnyObjectByType<JumpKingScreenCamera>();
             }
 
             currentLives = maxLives;
             currentScore = 0;
             relicsCollected = 0;
+
+            // KIM-04 & KIM-10: Cargar y fijar el personaje seleccionado antes de iniciar el Sendero
+            string selectedChar = PlayerPrefs.GetString("SelectedCharacter", "Falin");
+            if (playerController != null)
+            {
+                playerController.SetCharacter(selectedChar == "Mia" 
+                    ? KimayaJumpKingController.CharacterType.Mia 
+                    : KimayaJumpKingController.CharacterType.Falin);
+                var anim = playerController.GetComponent<KimayaJumpKingAnimator>();
+                if (anim != null) anim.ApplyInitialSprite();
+            }
 
             if (victoryPanel != null) victoryPanel.SetActive(false);
             if (gameOverPanel != null) gameOverPanel.SetActive(false);
@@ -126,6 +139,7 @@ namespace Kimaya
                 gameOverHubButton.onClick.AddListener(ReturnToHub);
             }
 
+            EnsureMidLevelCheckpoint();
             UpdateCharacterUI();
             UpdateHUD();
         }
@@ -156,10 +170,14 @@ namespace Kimaya
 
             _sessionTimer += Time.deltaTime;
 
-            // Cambiar de personaje con TAB o Q
+            if (_noticeTimer > 0f) _noticeTimer -= Time.deltaTime;
+
+            // KIM-10: Bloqueo estricto del personaje durante el nivel
             if (ReadTabOrQ())
             {
-                SwitchCharacter();
+                _noticeTimer = 3.5f;
+                _noticeMessage = "⚠️ Personaje bloqueado durante el nivel (KIM-10). Regresa al Hub para cambiarlo.";
+                Debug.Log("[KimayaJumpKingManager] ⚠️ El personaje seleccionado está bloqueado durante el nivel (KIM-10).");
             }
 
             // Alternar skin con C o H
@@ -337,16 +355,18 @@ namespace Kimaya
                 victoryStatsText.text = $"⏱️ TIEMPO: {timeStr}    |    🏆 PUNTAJE: {totalFinalScore} pts\n🦘 SALTOS: {jumps}    |    💥 CAÍDAS: {falls}    |    ✨ RELIQUIAS: {relicsCollected}/{totalRelicsInLevel}";
             }
 
+            // KIM-14, KIM-15, KIM-16: Guardar estado permanente de rescate de Kiara y activación de la primera runa
+            PlayerPrefs.SetInt("KiaraRescued", 1);
+            PlayerPrefs.SetInt("FirstRuneActive", 1);
+            PlayerPrefs.Save();
+
+            string rescueDialogue = (hero == "Falin")
+                ? "— Falin: ¡Kiara! ¡Resiste, he subido todo el Sendero por ti!\n— Kiara: ¡Falin, hermana! Tu fuerza inquebrantable nos salvó. ¡Regresemos al Bosque del Eco a iluminar la primera runa!"
+                : "— Mía: ¡Kiara! ¡Te encontré en la cumbre, ya no hay peligro!\n— Kiara: ¡Mía, pequeña valiente! Tu agilidad burló al Zarzal Sombrío. ¡El círculo del Bosque del Eco nos espera!";
+
             if (victoryDescText != null)
             {
-                if (!string.IsNullOrEmpty(customMessage))
-                {
-                    victoryDescText.text = $"{customMessage}\nLlegaste al Altar de la Cumbre con {hero} conservando {currentLives} intentos.";
-                }
-                else
-                {
-                    victoryDescText.text = $"¡Has conquistado los 5 Pisos del Gran Árbol Sagrado!\nLlegaste al Altar de la Cumbre y rescataste a {rescuedCharacterName} con {hero}.\n\n¡Felicidades por completar el ciclo del MVP!";
-                }
+                victoryDescText.text = $"🎉 ¡RESCATE DE KIARA COMPLETADO! (KIM-14)\n\n{rescueDialogue}\n\nHas conquistado los 5 Pisos del Sendero de las Raíces con {hero}.\nAl volver al Bosque del Eco se activará la 1.ª Runa Sagrada.";
             }
 
             // Congelar al jugador en la cumbre
@@ -387,6 +407,16 @@ namespace Kimaya
 
         private void OnGUI()
         {
+            // Banner de aviso de regla KIM-10
+            if (_noticeTimer > 0f)
+            {
+                float noticeW = 600f;
+                float noticeH = 40f;
+                float noticeX = (Screen.width - noticeW) * 0.5f;
+                float noticeY = 60f;
+                GUI.backgroundColor = new Color(0.9f, 0.3f, 0.1f, 0.95f);
+                GUI.Box(new Rect(noticeX, noticeY, noticeW, noticeH), $"<b>{_noticeMessage}</b>");
+            }
             // Fallback visual en caso de que los paneles de UI no tengan Canvas configurado
             if (_isGameOver)
             {
@@ -552,7 +582,7 @@ namespace Kimaya
                     bool isFalin = playerController.character == KimayaJumpKingController.CharacterType.Falin;
                     string skinLabel = hasSkin ? " [🛡️ Con Casco]" : " [🐾 Sin Casco]";
                     string charName = isFalin ? "🐾 Falin" : "🌸 Mía";
-                    characterNameText.text = $"{charName}{skinLabel} | [TAB] Personaje | [C] Casco";
+                    characterNameText.text = $"{charName}{skinLabel} | [🔒 Personaje Fijo KIM-10] | [C] Casco";
                     characterNameText.color = isFalin ? new Color(1f, 0.75f, 0.2f) : new Color(0.9f, 0.5f, 1f);
                 }
             }
@@ -603,7 +633,8 @@ namespace Kimaya
                 string relicIndicator = (relicsCollected > 0) ? $"  |  ✨ Reliquias: {relicsCollected}/{totalRelicsInLevel}" : "";
                 string scoreIndicator = (currentScore > 0) ? $"  |  🏆 {currentScore} PTS" : "";
 
-                statsText.text = $"⏱️ {minutes:00}:{seconds:00}  |  🦘 Saltos: {playerController.TotalJumps}  |  💥 Caídas: {playerController.TotalFalls}{relicIndicator}{scoreIndicator}{livesIndicator}";
+                string cpIndicator = playerController.hasReachedCheckpoint ? "  |  🚩 Checkpoint: Activo" : "";
+                statsText.text = $"⏱️ {minutes:00}:{seconds:00}  |  🦘 Saltos: {playerController.TotalJumps}  |  💥 Caídas: {playerController.TotalFalls}{cpIndicator}{relicIndicator}{scoreIndicator}{livesIndicator}";
             }
 
             if (scoreText != null)
@@ -614,6 +645,21 @@ namespace Kimaya
             if (livesText != null)
             {
                 livesText.text = enableLivesSystem ? $"❤️ {currentLives}/{maxLives}" : "";
+            }
+        }
+
+        private void EnsureMidLevelCheckpoint()
+        {
+            var existingCp = FindAnyObjectByType<KimayaCheckpointTrigger>();
+            if (existingCp == null)
+            {
+                var cpGo = new GameObject("Checkpoint_Canopia_Media");
+                cpGo.transform.position = new Vector3(0f, 24.2f, 0f);
+                var col = cpGo.AddComponent<BoxCollider2D>();
+                col.size = new Vector2(4.0f, 2.2f);
+                col.isTrigger = true;
+                cpGo.AddComponent<KimayaCheckpointTrigger>();
+                Debug.Log("[KimayaJumpKingManager] 🚩 Checkpoint intermedio de Canopia Media (Y=24.2) inicializado (KIM-12).");
             }
         }
 
