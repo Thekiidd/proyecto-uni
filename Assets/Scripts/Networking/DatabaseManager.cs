@@ -82,7 +82,29 @@ namespace Kimaya.Networking
         /// </summary>
         public void SaveJumpKingSession(string result, int score, int timeSeconds, int jumps, int falls, string hero = "falin")
         {
+            StartCoroutine(SaveJumpKingRoutine(result, score, timeSeconds, jumps, falls, hero));
+        }
+
+        /// <summary>
+        /// Si hay un nombre llegado del control, la partida queda a nombre de esa persona.
+        /// Sin control se sigue usando el jugador por defecto.
+        /// </summary>
+        private IEnumerator SaveJumpKingRoutine(string result, int score, int timeSeconds, int jumps, int falls, string hero)
+        {
             string playerId = GetCurrentPlayerId();
+            string phoneName = PhonePadServer.PlayerName;
+            string scoreName = hero;
+            if (!string.IsNullOrEmpty(phoneName))
+            {
+                string found = null;
+                yield return StartCoroutine(ResolvePhonePlayer(phoneName, id => found = id));
+                if (!string.IsNullOrEmpty(found))
+                {
+                    playerId = found;
+                    scoreName = phoneName;
+                }
+            }
+
             string charId = hero.ToLower().Contains("mia") ? "mia" : "falin";
             string levelId = KimayaIds.Level(SceneManager.GetActiveScene().name);
 
@@ -101,19 +123,44 @@ namespace Kimaya.Networking
 
             if (logRequests)
             {
-                Debug.Log($"[DatabaseManager] Subiendo partida Jump King: Score={score}, Tiempo={timeSeconds}s, Saltos={jumps}, Caídas={falls}, Result={result}");
+                Debug.Log($"[DatabaseManager] Subiendo partida Jump King: Jugador={scoreName}, Score={score}, Tiempo={timeSeconds}s, Saltos={jumps}, Caídas={falls}, Result={result}");
             }
 
-            StartCoroutine(PostCoroutine("sessions", json));
+            yield return StartCoroutine(PostCoroutine("sessions", json));
 
-            // También guardar en player_scores para ranking general
             string scoreJson = "{" +
-                $"\"player_name\":\"{Escape(hero)}\"," +
+                $"\"player_name\":\"{Escape(scoreName)}\"," +
                 $"\"score\":{score}," +
                 $"\"time_played\":{timeSeconds}," +
                 $"\"level_name\":\"{Escape(levelId)}\"" +
                 "}";
-            StartCoroutine(PostCoroutine("player_scores", scoreJson));
+            yield return StartCoroutine(PostCoroutine("player_scores", scoreJson));
+        }
+
+        private IEnumerator ResolvePhonePlayer(string name, Action<string> done)
+        {
+            string url = $"{supabaseUrl}/rest/v1/players?name=eq.{UnityWebRequest.EscapeURL(name)}&select=id";
+            using (UnityWebRequest lookup = UnityWebRequest.Get(url))
+            {
+                lookup.SetRequestHeader("apikey", apiKey);
+                lookup.SetRequestHeader("Authorization", "Bearer " + apiKey);
+                yield return lookup.SendWebRequest();
+                if (lookup.result == UnityWebRequest.Result.Success)
+                {
+                    string existing = FirstJsonId(lookup.downloadHandler.text);
+                    if (!string.IsNullOrEmpty(existing))
+                    {
+                        done(existing);
+                        yield break;
+                    }
+                }
+            }
+
+            string newId = "p" + Guid.NewGuid().ToString("N").Substring(0, 12);
+            string json = "{\"id\":\"" + Escape(newId) + "\",\"name\":\"" + Escape(name) + "\"}";
+            string created = null;
+            yield return StartCoroutine(PostCoroutine("players", json, body => created = body));
+            if (!string.IsNullOrEmpty(FirstJsonId(created))) done(newId);
         }
 
         /// <summary>
@@ -165,7 +212,7 @@ namespace Kimaya.Networking
             StartCoroutine(PostCoroutine("lore_unlocks", json));
         }
 
-        private IEnumerator PostCoroutine(string table, string json)
+        private IEnumerator PostCoroutine(string table, string json, Action<string> onBody = null)
         {
             string url = $"{supabaseUrl}/rest/v1/{table}";
             byte[] bodyRaw = Encoding.UTF8.GetBytes(json);
@@ -183,6 +230,7 @@ namespace Kimaya.Networking
 
                 if (request.result == UnityWebRequest.Result.Success)
                 {
+                    onBody?.Invoke(request.downloadHandler.text);
                     if (logRequests)
                     {
                         Debug.Log($"[DatabaseManager] ✅ Datos guardados exitosamente en tabla [{table}]:\n{request.downloadHandler.text}");
@@ -193,6 +241,18 @@ namespace Kimaya.Networking
                     Debug.LogError($"[DatabaseManager] ❌ Error al guardar en [{table}]: {request.responseCode} - {request.error} | {request.downloadHandler.text}");
                 }
             }
+        }
+
+        private static string FirstJsonId(string json)
+        {
+            if (string.IsNullOrEmpty(json)) return "";
+            int found = json.IndexOf("\"id\"", StringComparison.Ordinal);
+            if (found < 0) return "";
+            int colon = json.IndexOf(':', found);
+            int quote = json.IndexOf('"', colon + 1);
+            int end = quote < 0 ? -1 : json.IndexOf('"', quote + 1);
+            if (quote < 0 || end < 0) return "";
+            return json.Substring(quote + 1, end - quote - 1);
         }
 
         private string GetCurrentPlayerId()

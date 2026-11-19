@@ -24,6 +24,7 @@ namespace Kimaya.Networking
         static readonly List<NetworkStream> Clients = new List<NetworkStream>();
 
         static PhonePadServer instance;
+        public static string PlayerName { get; private set; } = "";
         TcpListener listener;
         Thread acceptThread;
         volatile bool running;
@@ -223,6 +224,7 @@ namespace Kimaya.Networking
                 if (Interlocked.Decrement(ref clientCount) <= 0)
                 {
                     lock (Gate) HeldButtons.Clear();
+                    PlayerName = "";
                 }
                 try { client.Close(); } catch { }
             }
@@ -230,6 +232,12 @@ namespace Kimaya.Networking
 
         static void ApplyMessage(string json)
         {
+            if (json.IndexOf("\"name\"", StringComparison.Ordinal) >= 0)
+            {
+                SetPlayerName(ReadJsonString(json, "name"));
+                return;
+            }
+
             string button = ReadJsonString(json, "b");
             if (string.IsNullOrEmpty(button)) return;
             int state = ReadJsonInt(json, "s");
@@ -277,6 +285,33 @@ namespace Kimaya.Networking
             int end = request.IndexOf("\r\n", start, StringComparison.Ordinal);
             if (end < 0) return "";
             return request.Substring(start, end - start).Trim();
+        }
+
+        public static void SetPlayerName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                PlayerName = "";
+                return;
+            }
+
+            var clean = new StringBuilder();
+            bool previousSpace = false;
+            foreach (char c in name.Trim())
+            {
+                if (c == ' ' || c == '-')
+                {
+                    if (clean.Length == 0 || previousSpace) continue;
+                    clean.Append(c);
+                    previousSpace = true;
+                    continue;
+                }
+                if (!char.IsLetterOrDigit(c)) continue;
+                clean.Append(c);
+                previousSpace = false;
+                if (clean.Length >= 24) break;
+            }
+            PlayerName = clean.ToString().Trim();
         }
 
         static string ReadJsonString(string json, string key)
