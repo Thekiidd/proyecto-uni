@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon-64.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="description" content="Kimaya: El Bosque del Eco. Plataformas 2D para PC con tu celular como control." />
+    <meta name="theme-color" content="#111827" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Kimaya Companion</title>
+    <script>
+      // En Android, prompt() tiene que llamarse en el mismo toque, sin esperar a React.
+      window.__kimayaPrompt = null
+      window.__kimayaInstalled = false
+      window.addEventListener('beforeinstallprompt', function (event) {
+        event.preventDefault()
+        window.__kimayaPrompt = event
+        window.dispatchEvent(new Event('kimaya-install'))
+      })
+      window.addEventListener('appinstalled', function () {
+        window.__kimayaPrompt = null
+        window.__kimayaInstalled = true
+        window.dispatchEvent(new Event('kimaya-install'))
+      })
+      // Se llama desde el boton, en el mismo toque. No cambia la pagina.
+      window.installKimaya = function () {
+        var promptEvent = window.__kimayaPrompt
+        if (!promptEvent) return false
+        window.__kimayaPrompt = null
+        promptEvent.prompt()
+        promptEvent.userChoice.then(function (choice) {
+          if (choice.outcome === 'accepted') window.__kimayaInstalled = true
+          window.dispatchEvent(new Event('kimaya-install'))
+        })
+        return true
+      }
+      if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js')
+    </script>
+    <script type="module" crossorigin src="/assets/index-ALaWkef9.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CFPGFFyX.css">
+  <link rel="manifest" href="/manifest.json"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

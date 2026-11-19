@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
@@ -27,8 +28,11 @@ namespace Kimaya.Networking
         public static string PlayerName { get; private set; } = "";
         TcpListener listener;
         Thread acceptThread;
+        PadWebHost webHost;
         volatile bool running;
         string localIp = "127.0.0.1";
+        string controlUrl = "";
+        Texture2D qrTexture;
         int clientCount;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -50,7 +54,10 @@ namespace Kimaya.Networking
             instance = this;
             DontDestroyOnLoad(gameObject);
             localIp = FindLocalIp();
+            controlUrl = "http://" + localIp + ":" + PadWebHost.Port + "/?ip=" + localIp + "&port=" + Port;
             StartServer();
+            StartWeb();
+            BuildQrTexture();
         }
 
         void LateUpdate()
@@ -118,10 +125,56 @@ namespace Kimaya.Networking
             Debug.Log("Mando listo en ws://" + localIp + ":" + Port + "/mando");
         }
 
+        void StartWeb()
+        {
+            string root = Path.Combine(Application.streamingAssetsPath, "KimayaPwa");
+            webHost = new PadWebHost(root);
+            if (webHost.Start())
+                Debug.Log("Control listo en " + controlUrl);
+            else
+                Debug.LogWarning("No se pudo servir el control desde " + root);
+        }
+
+        void BuildQrTexture()
+        {
+            try
+            {
+                KimayaQr qr = KimayaQr.Encode(controlUrl);
+                const int scale = 8;
+                const int quiet = 4;
+                int modules = qr.Size + quiet * 2;
+                int dim = modules * scale;
+                var tex = new Texture2D(dim, dim, TextureFormat.RGB24, false);
+                tex.filterMode = FilterMode.Point;
+                tex.wrapMode = TextureWrapMode.Clamp;
+                var pixels = new Color32[dim * dim];
+                var black = new Color32(0, 0, 0, 255);
+                var white = new Color32(255, 255, 255, 255);
+                for (int py = 0; py < dim; py++)
+                {
+                    int qrY = py / scale - quiet;
+                    int flipped = dim - 1 - py;
+                    for (int px = 0; px < dim; px++)
+                    {
+                        int qrX = px / scale - quiet;
+                        pixels[flipped * dim + px] = qr.Dark(qrX, qrY) ? black : white;
+                    }
+                }
+                tex.SetPixels32(pixels);
+                tex.Apply(false, true);
+                qrTexture = tex;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("No se pudo armar el QR: " + ex.Message);
+            }
+        }
+
         void StopServer()
         {
             running = false;
             try { listener?.Stop(); } catch { }
+            if (webHost != null) webHost.Stop();
             lock (Gate)
             {
                 HeldButtons.Clear();
@@ -401,18 +454,39 @@ namespace Kimaya.Networking
 
         void OnGUI()
         {
-            var style = new GUIStyle(GUI.skin.box)
-            {
-                fontSize = Mathf.Max(14, Screen.height / 42),
-                alignment = TextAnchor.MiddleCenter,
-                wordWrap = false
-            };
-            string text = clientCount > 0
-                ? "Control conectado"
-                : "En el celular: " + localIp;
-            float width = Mathf.Min(520f, Screen.width - 16f);
             GUI.depth = -20;
-            GUI.Box(new Rect((Screen.width - width) * 0.5f, 8f, width, 34f), text, style);
+            if (clientCount > 0 || qrTexture == null)
+            {
+                var style = new GUIStyle(GUI.skin.box)
+                {
+                    fontSize = Mathf.Max(14, Screen.height / 42),
+                    alignment = TextAnchor.MiddleCenter,
+                    wordWrap = false
+                };
+                string text = clientCount > 0 ? "Control conectado" : "En el celular: " + localIp;
+                float width = Mathf.Min(520f, Screen.width - 16f);
+                GUI.Box(new Rect((Screen.width - width) * 0.5f, 8f, width, 34f), text, style);
+                return;
+            }
+
+            float size = Mathf.Clamp(Screen.height * 0.42f, 180f, 340f);
+            var panel = new Rect(16f, 16f, size + 24f, size + 86f);
+            GUI.Box(panel, GUIContent.none);
+            var title = new GUIStyle(GUI.skin.label)
+            {
+                fontSize = 16,
+                fontStyle = FontStyle.Bold,
+                alignment = TextAnchor.MiddleCenter
+            };
+            GUI.Label(new Rect(panel.x, panel.y + 6f, panel.width, 24f), "Escanea para jugar", title);
+            GUI.DrawTexture(new Rect(panel.x + 12f, panel.y + 32f, size, size), qrTexture, ScaleMode.ScaleToFit, false);
+            var url = new GUIStyle(GUI.skin.label)
+            {
+                fontSize = 11,
+                alignment = TextAnchor.MiddleCenter,
+                wordWrap = true
+            };
+            GUI.Label(new Rect(panel.x + 8f, panel.y + size + 36f, panel.width - 16f, 40f), controlUrl, url);
         }
     }
 }
