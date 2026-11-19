@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95aceafd2d60dbe4c91faa9bd62c5661, type: 3}
   m_Name: Tank
   m_EditorClassIdentifier: Assembly-CSharp::Platformer.Core.CharacterData
-  characterName: San Bernardo
-  description: Grande, resistente y noble. Comienza la aventura con 6 vidas.
-  portrait: {fileID: 21300000, guid: 264686ca0935e03bb3fdd587022d5fb4, type: 3}
+  characterName: Falin (Border Collie)
+  description: "\xC1gil, firme y leal Border Collie. Impulso potente y gran estabilidad."
+  portrait: {fileID: 21300000, guid: 223a1abc81835b67aa1df484313d7a04, type: 3}
   animatorController: {fileID: 9100000, guid: d3bfd6e628c19d8458665950ede20d23, type: 2}
   moveSpeed: 5
   jumpStrength: 12
@@ -24,8 +24,9 @@ MonoBehaviour:
   dashSpeed: 0
   startingLives: 6
   characterColor: {r: 0.85, g: 0.5, b: 0.3, a: 1}
-  idleSprite: {fileID: 6200272790032943909, guid: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c03, type: 3}
-  runSprite: {fileID: -8062587463048811919, guid: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c03, type: 3}
+  idleSprite: {fileID: 21300000, guid: 2935ae5505d35b60ac315462f69125c6, type: 3}
+  runSprite: {fileID: -8062587463048811919, guid: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c03,
+    type: 3}
   idleFrames:
   - {fileID: 6200272790032943909, guid: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c03, type: 3}
   runFrames:

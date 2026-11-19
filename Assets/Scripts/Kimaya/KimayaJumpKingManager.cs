@@ -8,17 +8,19 @@ using UnityEngine.InputSystem;
 namespace Kimaya
 {
     /// <summary>
-    /// Administrador de la partida en el modo Jump King de Kimaya (MVP - Evidencia 1).
-    /// Arquitectura orientada a componentes:
-    /// - Gestiona el estado de juego: Puntaje, Coleccionables (Reliquias), Cronómetro, Pantalla actual.
-    /// - Sistema de Vidas / Intentos con condiciones de Éxito (Cumbre/Altar) y Falla (Caídas/Game Over).
-    /// - Control de ciclo: Reinicio inmediato con [R] o botón UI.
-    /// - Alternancia entre Falin, Mía y Caballero Jump King ([TAB] / [Q]).
-    /// - Cambio de Skin táctico con/sin casco ([C] / [H]).
+    /// Administrador de la partida en el modo Jump King de Kimaya.
+    /// - En Ascenso_Kimaya (useCustomKimayaTower = true): aplica el mapa original de Kimaya (Bosque Mágico -> Zarzal Sombrío + Jaula Espinosa).
+    /// - En Ascenso_JumpKing_Classic (useCustomKimayaTower = false): respeta las 5 pantallas clásicas de Jump King.
+    /// - Al rescatar a Kiara en la cumbre: bloquea al personaje limpiamente junto a Kiara (sin trabarse en el aire ni salir de pantalla)
+    ///   y muestra el cartel interactivo Pixel-Art de Victoria.
     /// </summary>
     public class KimayaJumpKingManager : MonoBehaviour
     {
         public static KimayaJumpKingManager Instance { get; private set; }
+
+        [Header("Modo de Nivel")]
+        [Tooltip("True para el nivel original de Kimaya (Bosque Mágico / Zarzal). False para conservar el nivel clásico Jump King.")]
+        public bool useCustomKimayaTower = false;
 
         [Header("Referencias de Personaje")]
         public KimayaJumpKingController playerController;
@@ -40,29 +42,30 @@ namespace Kimaya
         public Text livesText;
         public GameObject stunnedBadge;
 
-        [Header("Panel de Victoria (Condición de Éxito)")]
+        [Header("Panel de Victoria (Legacy - reemplazado por modal Pixel-Art interactivo)")]
         public GameObject victoryPanel;
         public Text victoryStatsText;
         public Text victoryDescText;
         public Button restartButton;
         public Button returnToHubButton;
 
-        [Header("Panel de Game Over (Condición de Falla / Intentos)")]
+        [Header("Panel de Game Over")]
         public GameObject gameOverPanel;
         public Text gameOverStatsText;
         public Text gameOverDescText;
         public Button gameOverRestartButton;
         public Button gameOverHubButton;
 
-        [Header("Reglas de Juego: Sistema Jump King Equivalente")]
-        [Tooltip("Si es false, opera en modo Jump King Puro (la caída y pérdida de altura es la penalización). Si es true, activa límite de vidas")]
+        [Header("Reglas de Juego")]
+        public bool isPaused = false;
+        private bool _showHubConfirmModal = false;
+        private bool _showSettingsModal = false;
+
         public bool enableLivesSystem = false;
-        [Tooltip("Cantidad máxima de vidas o intentos si se activa el modo desafío")]
         public int maxLives = 3;
-        [Tooltip("Vidas o intentos restantes")]
         public int currentLives = 3;
 
-        [Header("Reglas de Juego: Puntaje y Reliquias")]
+        [Header("Puntaje y Scooby Galletas")]
         public int currentScore = 0;
         public int relicsCollected = 0;
         public int totalRelicsInLevel = 3;
@@ -76,16 +79,32 @@ namespace Kimaya
         private string _noticeMessage = "";
         private bool _hasWon = false;
         private bool _isGameOver = false;
+        private string _victorySummaryStats = "";
+        private string _victoryDialogueBody = "";
+        private KimayaPixelHUD _pixelHud;
 
         private void Awake()
         {
             if (Instance == null) Instance = this;
             else Destroy(gameObject);
+            enableLivesSystem = false;
         }
 
         private void Start()
         {
-            // Ocultar cualquier HUD heredado de niveles anteriores
+            string activeScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+            bool isCustom = useCustomKimayaTower || KimayaCustomTowerMap.IsCustomKimayaScene(activeScene);
+            if (activeScene.Contains("JumpKing_Classic") || activeScene.Contains("Test_Mecanica"))
+            {
+                isCustom = false;
+                useCustomKimayaTower = false;
+            }
+            else if (isCustom)
+            {
+                useCustomKimayaTower = true;
+                KimayaCustomTowerMap.ApplyCustomTowerToCurrentScene(forceApply: true);
+            }
+
             HideLegacyHUDs();
 
             if (playerController == null)
@@ -97,56 +116,56 @@ namespace Kimaya
             {
                 screenCamera = FindAnyObjectByType<JumpKingScreenCamera>();
             }
+            if (screenCamera != null)
+            {
+                screenCamera.maxScreenIndex = finalScreenIndex;
+            }
 
             currentLives = maxLives;
             currentScore = 0;
             relicsCollected = 0;
+            isPaused = false;
+            Time.timeScale = 1f;
+            enableLivesSystem = false;
+            _showHubConfirmModal = false;
 
-            // KIM-04 & KIM-10: Cargar y fijar el personaje seleccionado antes de iniciar el Sendero
             string selectedChar = PlayerPrefs.GetString("SelectedCharacter", "Falin");
             if (playerController != null)
             {
-                playerController.SetCharacter(selectedChar == "Mia" 
-                    ? KimayaJumpKingController.CharacterType.Mia 
+                playerController.enabled = true;
+                playerController.SetCharacter(selectedChar == "Mia"
+                    ? KimayaJumpKingController.CharacterType.Mia
                     : KimayaJumpKingController.CharacterType.Falin);
                 var anim = playerController.GetComponent<KimayaJumpKingAnimator>();
-                if (anim != null) anim.ApplyInitialSprite();
+                if (anim != null)
+                {
+                    anim.useKnightSkin = false;
+                    anim.ApplyInitialSprite();
+                }
             }
 
+            // Ocultar paneles legacy que dependían de StandaloneInputModule para evitar bloqueos de clic
             if (victoryPanel != null) victoryPanel.SetActive(false);
             if (gameOverPanel != null) gameOverPanel.SetActive(false);
             if (stunnedBadge != null) stunnedBadge.SetActive(false);
 
-            if (restartButton != null)
+            var hudCanvas = GetComponent<Canvas>();
+            if (hudCanvas == null) hudCanvas = FindAnyObjectByType<Canvas>();
+            if (hudCanvas != null)
             {
-                restartButton.onClick.RemoveAllListeners();
-                restartButton.onClick.AddListener(RestartSession);
-            }
-            if (returnToHubButton != null)
-            {
-                returnToHubButton.onClick.RemoveAllListeners();
-                returnToHubButton.onClick.AddListener(ReturnToHub);
+                _pixelHud = gameObject.GetComponent<KimayaPixelHUD>();
+                if (_pixelHud == null) _pixelHud = gameObject.AddComponent<KimayaPixelHUD>();
+                _pixelHud.Initialize(hudCanvas);
             }
 
-            if (gameOverRestartButton != null)
-            {
-                gameOverRestartButton.onClick.RemoveAllListeners();
-                gameOverRestartButton.onClick.AddListener(RestartSession);
-            }
-            if (gameOverHubButton != null)
-            {
-                gameOverHubButton.onClick.RemoveAllListeners();
-                gameOverHubButton.onClick.AddListener(ReturnToHub);
-            }
-
-            EnsureMidLevelCheckpoint();
-            UpdateCharacterUI();
+            EnsureMidLevelCheckpoint(isCustom);
+            KimayaUITheme.ApplyThemeToActiveScene();
             UpdateHUD();
         }
 
         private void HideLegacyHUDs()
         {
-            string[] legacyNames = new string[] { "HUD", "GameHUD", "Canvas_HUD", "MetaGameController", "TokenHUD" };
+            string[] legacyNames = new string[] { "HUD", "GameHUD", "Canvas_HUD", "MetaGameController", "TokenHUD", "TopHUD", "Txt_Controls" };
             foreach (var n in legacyNames)
             {
                 var go = GameObject.Find(n);
@@ -155,11 +174,14 @@ namespace Kimaya
                     go.SetActive(false);
                 }
             }
+            var childTopHud = transform.Find("TopHUD");
+            if (childTopHud != null) childTopHud.gameObject.SetActive(false);
+            var childCtrls = transform.Find("Txt_Controls");
+            if (childCtrls != null) childCtrls.gameObject.SetActive(false);
         }
 
         private void Update()
         {
-            // Permitir reinicio rápido con R en cualquier momento o tras Victoria/Falla
             if (ReadRestartKey())
             {
                 RestartSession();
@@ -169,18 +191,14 @@ namespace Kimaya
             if (_hasWon || _isGameOver) return;
 
             _sessionTimer += Time.deltaTime;
-
             if (_noticeTimer > 0f) _noticeTimer -= Time.deltaTime;
 
-            // KIM-10: Bloqueo estricto del personaje durante el nivel
             if (ReadTabOrQ())
             {
                 _noticeTimer = 3.5f;
-                _noticeMessage = "⚠️ Personaje bloqueado durante el nivel (KIM-10). Regresa al Hub para cambiarlo.";
-                Debug.Log("[KimayaJumpKingManager] ⚠️ El personaje seleccionado está bloqueado durante el nivel (KIM-10).");
+                _noticeMessage = "! Personaje bloqueado durante el nivel. Regresa al Hub para cambiarlo.";
             }
 
-            // Alternar skin con C o H
             if (ReadSkinToggleKey())
             {
                 ToggleSkin();
@@ -188,11 +206,14 @@ namespace Kimaya
 
             if (ReadEscapeKey())
             {
-                ReturnToHub();
+                if (_showSettingsModal) _showSettingsModal = false;
+                else if (_showHubConfirmModal) _showHubConfirmModal = false;
+                else TogglePause();
             }
 
+            if (isPaused) return;
+
             UpdateHUD();
-            CheckVictoryFallback();
         }
 
         private bool ReadRestartKey()
@@ -201,12 +222,7 @@ namespace Kimaya
             if (Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame)
                 return true;
 #endif
-            try
-            {
-                if (Input.GetKeyDown(KeyCode.R))
-                    return true;
-            }
-            catch { }
+            try { if (Input.GetKeyDown(KeyCode.R)) return true; } catch { }
             return false;
         }
 
@@ -216,128 +232,117 @@ namespace Kimaya
             if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
                 return true;
 #endif
-            try
-            {
-                if (Input.GetKeyDown(KeyCode.Escape))
-                    return true;
-            }
-            catch { }
+            try { if (Input.GetKeyDown(KeyCode.Escape)) return true; } catch { }
             return false;
+        }
+
+        public void TogglePause()
+        {
+            if (_hasWon || _isGameOver) return;
+            isPaused = !isPaused;
+            Time.timeScale = isPaused ? 0f : 1f;
+            _showHubConfirmModal = false;
         }
 
         public void ReturnToHub()
         {
+            Time.timeScale = 1f;
+            isPaused = false;
+            _showHubConfirmModal = false;
             if (Application.CanStreamedLevelBeLoaded("Hub"))
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
+                KimayaSceneTransition.LoadScene("Hub");
             else
-                UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+                KimayaSceneTransition.LoadScene("MainMenu");
         }
 
-        // ================= CAMBIOS DE ESTADO: PUNTAJE Y VIDAS =================
+        public void GoToEndingScene()
+        {
+            Time.timeScale = 1f;
+            isPaused = false;
+            if (Application.CanStreamedLevelBeLoaded("Ending"))
+                KimayaSceneTransition.LoadScene("Ending");
+            else
+                ReturnToHub();
+        }
 
-        /// <summary>
-        /// Añade puntaje al recolectar una Reliquia Sagrada (modificación de estado).
-        /// </summary>
-        public void AddScore(int points, string sourceName = "Reliquia")
+        public void AddScore(int points, string sourceName = "Scooby Galleta")
         {
             if (_hasWon || _isGameOver) return;
-
             currentScore += points;
             relicsCollected++;
-            Debug.Log($"[KimayaManager] ¡{sourceName} recogida! +{points} pts. Total: {currentScore} (Reliquias: {relicsCollected}/{totalRelicsInLevel})");
+            if (playerController != null)
+            {
+                KimayaPixelVFX.SpawnCookieSparkles(playerController.transform.position + new Vector3(0f, 0.35f, 0f));
+            }
+            if (KimayaAudio.Instance != null)
+            {
+                KimayaAudio.Instance.PlaySFX(KimayaAudio.SFX.Checkpoint);
+            }
             UpdateHUD();
         }
 
-        /// <summary>
-        /// Registra una caída del jugador, reduciendo vidas/intentos y evaluando condición de falla.
-        /// </summary>
         public void RegisterFall()
         {
             if (_hasWon || _isGameOver) return;
-
-            if (enableLivesSystem)
-            {
-                currentLives = Mathf.Max(0, currentLives - 1);
-                Debug.Log($"[KimayaManager] 💥 Caída registrada. Vidas restantes: {currentLives}/{maxLives}");
-
-                if (currentLives <= 0)
-                {
-                    TriggerGameOver();
-                    return;
-                }
-            }
-
             UpdateHUD();
         }
 
-        /// <summary>
-        /// Dispara la condición de falla (Game Over) cuando se agotan los intentos.
-        /// </summary>
         public void TriggerGameOver()
         {
             if (_isGameOver || _hasWon) return;
             _isGameOver = true;
-
-            Debug.Log("[KimayaManager] 💀 ¡GAME OVER! Se han agotado todos los intentos de ascenso.");
 
             if (KimayaAudio.Instance != null)
             {
                 KimayaAudio.Instance.PlaySFX(KimayaAudio.SFX.Damage);
             }
 
-            // Congelar físicas del jugador
             if (playerController != null)
             {
-                var rb = playerController.GetComponent<Rigidbody2D>();
-                if (rb != null)
-                {
-                    rb.linearVelocity = Vector2.zero;
-                    rb.bodyType = RigidbodyType2D.Kinematic;
-                }
+                playerController.LockAtSummit(playerController.transform.position, playerController.FacingDirection);
             }
 
-            int minutes = Mathf.FloorToInt(_sessionTimer / 60f);
-            int seconds = Mathf.FloorToInt(_sessionTimer % 60f);
-            string timeStr = $"{minutes:00}:{seconds:00}";
-            int jumps = playerController != null ? playerController.TotalJumps : 0;
-            int falls = playerController != null ? playerController.TotalFalls : 0;
-
-            if (gameOverStatsText != null)
-            {
-                gameOverStatsText.text = $"⏱️ TIEMPO: {timeStr}    |    🏆 PUNTAJE: {currentScore} pts\n🦘 SALTOS: {jumps}    |    💥 CAÍDAS: {falls}    |    ✨ RELIQUIAS: {relicsCollected}/{totalRelicsInLevel}";
-            }
-
-            if (gameOverDescText != null)
-            {
-                gameOverDescText.text = "Has agotado todos tus intentos en el ascenso del Árbol Sagrado.\nPresiona [R] para reiniciar el ciclo y volver a intentarlo.";
-            }
-
-            if (gameOverPanel != null)
-            {
-                gameOverPanel.SetActive(true);
-            }
-
-            // Subir sesión de Game Over a la base de datos Supabase
             string heroName = (playerController != null && playerController.character == KimayaJumpKingController.CharacterType.Falin) ? "falin" : "mia";
             Kimaya.Networking.DatabaseManager.Instance?.SaveJumpKingSession(
                 "game_over",
                 currentScore,
                 Mathf.RoundToInt(_sessionTimer),
-                jumps,
-                falls,
+                playerController != null ? playerController.TotalJumps : 0,
+                playerController != null ? playerController.TotalFalls : 0,
                 heroName
             );
-
             UpdateHUD();
         }
 
-        /// <summary>
-        /// Dispara la condición de éxito (Victoria) al interactuar con el Altar de la Cumbre.
-        /// </summary>
-        public void TriggerVictory(string customMessage = null)
+        public void TriggerVictory(string customMessage = null, Vector3? heroStandPos = null)
         {
             if (_hasWon || _isGameOver) return;
             _hasWon = true;
+
+            // Asegurar que la jaula espinosa (si está presente) se rompa visualmente
+            var altar = FindAnyObjectByType<KimayaAltarGoal>();
+            if (altar != null)
+            {
+                altar.ForceRescue();
+            }
+
+            // Posicionar y bloquear limpiamente al perrito en el pedestal junto a Kiara (sin trabarse ni salir de pantalla)
+            if (playerController != null)
+            {
+                Vector3 standPos = heroStandPos ?? (altar != null ? altar.GetHeroStandPosition() : playerController.transform.position);
+                playerController.LockAtSummit(standPos, 1f);
+                var anim = playerController.GetComponent<KimayaJumpKingAnimator>();
+                if (anim != null) anim.ApplyInitialSprite();
+            }
+
+            if (screenCamera != null)
+            {
+                screenCamera.maxScreenIndex = finalScreenIndex;
+                screenCamera.RecalculateScreenIndex(instant: true);
+            }
+
+            // Mantener oculto cualquier panel legacy que bloquee botones por StandaloneInputModule
+            if (victoryPanel != null) victoryPanel.SetActive(false);
 
             int minutes = Mathf.FloorToInt(_sessionTimer / 60f);
             int seconds = Mathf.FloorToInt(_sessionTimer % 60f);
@@ -347,46 +352,43 @@ namespace Kimaya
             string hero = (playerController != null && playerController.character == KimayaJumpKingController.CharacterType.Falin) ? "Falin" :
                           (playerController != null && playerController.character == KimayaJumpKingController.CharacterType.Mia) ? "Mía" : "Caballero";
 
-            // Bonificación por reliquias
             int totalFinalScore = currentScore + (relicsCollected * 200);
 
-            if (victoryStatsText != null)
+            float prevBest = PlayerPrefs.GetFloat("Kimaya_BestTimeSeconds", 999999f);
+            bool isNewRecord = (_sessionTimer > 0.5f && _sessionTimer < prevBest);
+            if (isNewRecord)
             {
-                victoryStatsText.text = $"⏱️ TIEMPO: {timeStr}    |    🏆 PUNTAJE: {totalFinalScore} pts\n🦘 SALTOS: {jumps}    |    💥 CAÍDAS: {falls}    |    ✨ RELIQUIAS: {relicsCollected}/{totalRelicsInLevel}";
+                PlayerPrefs.SetFloat("Kimaya_BestTimeSeconds", _sessionTimer);
             }
 
-            // KIM-14, KIM-15, KIM-16: Guardar estado permanente de rescate de Kiara y activación de la primera runa
             PlayerPrefs.SetInt("KiaraRescued", 1);
             PlayerPrefs.SetInt("FirstRuneActive", 1);
             PlayerPrefs.Save();
 
-            string rescueDialogue = (hero == "Falin")
-                ? "— Falin: ¡Kiara! ¡Resiste, he subido todo el Sendero por ti!\n— Kiara: ¡Falin, hermana! Tu fuerza inquebrantable nos salvó. ¡Regresemos al Bosque del Eco a iluminar la primera runa!"
-                : "— Mía: ¡Kiara! ¡Te encontré en la cumbre, ya no hay peligro!\n— Kiara: ¡Mía, pequeña valiente! Tu agilidad burló al Zarzal Sombrío. ¡El círculo del Bosque del Eco nos espera!";
+            float bestNow = Mathf.Min(prevBest, _sessionTimer > 0.5f ? _sessionTimer : prevBest);
+            int bMin = Mathf.FloorToInt(bestNow / 60f);
+            int bSec = Mathf.FloorToInt(bestNow % 60f);
+            string bestTag = (bestNow < 900000f) ? $"  |  Mejor: <b>{bMin:00}:{bSec:00}</b>{(isNewRecord ? " <color=#5AFF8C>(¡RÉCORD!)</color>" : "")}" : "";
 
-            if (victoryDescText != null)
-            {
-                victoryDescText.text = $"🎉 ¡RESCATE DE KIARA COMPLETADO! (KIM-14)\n\n{rescueDialogue}\n\nHas conquistado los 5 Pisos del Sendero de las Raíces con {hero}.\nAl volver al Bosque del Eco se activará la 1.ª Runa Sagrada.";
-            }
+            string medalTag = _sessionTimer < 105f
+                ? "<color=#FFD84A>[★ MEDALLA DE ORO ★]</color>"
+                : (_sessionTimer < 180f ? "<color=#E0E8F6>[★ MEDALLA DE PLATA ★]</color>" : "<color=#ECA062>[★ MEDALLA DE BRONCE ★]</color>");
 
-            // Congelar al jugador en la cumbre
             if (playerController != null)
             {
-                var rb = playerController.GetComponent<Rigidbody2D>();
-                if (rb != null)
-                {
-                    rb.linearVelocity = Vector2.zero;
-                    rb.bodyType = RigidbodyType2D.Kinematic;
-                }
+                KimayaPixelVFX.SpawnCookieSparkles(playerController.transform.position + new Vector3(0f, 0.45f, 0f));
             }
-
-            if (victoryPanel != null)
+            if (KimayaAudio.Instance != null)
             {
-                victoryPanel.SetActive(true);
+                KimayaAudio.Instance.PlaySFX(KimayaAudio.SFX.Victory);
             }
 
-            // Subir sesión de Victoria a la base de datos Supabase
-            string victoryHero = (playerController != null && playerController.character == KimayaJumpKingController.CharacterType.Falin) ? "falin" : "mia";
+            _victorySummaryStats = $"{medalTag}  Tiempo: <b>{timeStr}</b>{bestTag}  |  Galletas: <b>{relicsCollected}/{totalRelicsInLevel}</b>  |  Saltos: <b>{jumps}</b>";
+            _victoryDialogueBody = (hero == "Falin")
+                ? "— <b>Falin:</b> ¡Kiara! ¡Rompimos la trampa, ya estás libre!\n— <b>Kiara:</b> ¡Gracias hermana! ¡Volvamos juntas al Bosque del Eco!"
+                : "— <b>Mía:</b> ¡Kiara! ¡La jaula cayó, ya estás a salvo!\n— <b>Kiara:</b> ¡Mía, valiente hermana! ¡El Bosque del Eco nos espera!";
+
+            string victoryHero = (hero == "Falin") ? "falin" : "mia";
             Kimaya.Networking.DatabaseManager.Instance?.SaveJumpKingSession(
                 "nivel_completado",
                 totalFinalScore,
@@ -399,97 +401,208 @@ namespace Kimaya
 
         public void RestartSession()
         {
-            // Reinicia la escena activa limpiando el estado y restableciendo el ciclo
+            Time.timeScale = 1f;
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         }
 
-        // ================= GESTIÓN DE SKINS Y PERSONAJES =================
-
         private void OnGUI()
         {
-            // Banner de aviso de regla KIM-10
-            if (_noticeTimer > 0f)
+            if (isPaused)
             {
-                float noticeW = 600f;
-                float noticeH = 40f;
-                float noticeX = (Screen.width - noticeW) * 0.5f;
-                float noticeY = 60f;
-                GUI.backgroundColor = new Color(0.9f, 0.3f, 0.1f, 0.95f);
-                GUI.Box(new Rect(noticeX, noticeY, noticeW, noticeH), $"<b>{_noticeMessage}</b>");
-            }
-            // Fallback visual en caso de que los paneles de UI no tengan Canvas configurado
-            if (_isGameOver)
-            {
-                float btnW = 240f;
-                float btnH = 50f;
-                float spacing = 20f;
-                float totalW = btnW * 2f + spacing;
-                float startX = (Screen.width - totalW) * 0.5f;
-                float startY = (Screen.height * 0.5f) + 140f;
+                Color prevColor = GUI.color;
+                GUI.color = new Color(0f, 0f, 0f, 0.78f);
+                GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Texture2D.whiteTexture);
+                GUI.color = prevColor;
 
-                GUI.skin.button.fontSize = 18;
-                GUI.backgroundColor = new Color(0.9f, 0.25f, 0.25f, 1f);
-                if (GUI.Button(new Rect(startX, startY, btnW, btnH), "🔄 Reiniciar Intento [R]"))
+                int minutes = Mathf.FloorToInt(_sessionTimer / 60f);
+                int seconds = Mathf.FloorToInt(_sessionTimer % 60f);
+                int curFloor = screenCamera != null ? screenCamera.CurrentScreenIndex + 1 : 1;
+
+                if (_showSettingsModal)
                 {
-                    RestartSession();
+                    float setW = Mathf.Min(650f, Screen.width - 40f);
+                    float setH = 440f;
+                    float setX = (Screen.width - setW) * 0.5f;
+                    float setY = (Screen.height - setH) * 0.5f;
+
+                    if (KimayaSettingsController.Instance != null)
+                    {
+                        KimayaSettingsController.Instance.DrawSettingsUI(new Rect(setX, setY, setW, setH), () => {
+                            _showSettingsModal = false;
+                        });
+                    }
+                    else
+                    {
+                        _showSettingsModal = false;
+                    }
+                    return;
                 }
 
-                GUI.backgroundColor = new Color(0.20f, 0.50f, 0.85f, 1f);
-                if (GUI.Button(new Rect(startX + btnW + spacing, startY, btnW, btnH), "🏡 Volver al Hub"))
+                if (!_showHubConfirmModal)
                 {
-                    ReturnToHub();
+                    float modalW = Mathf.Min(580f, Screen.width - 40f);
+                    float modalH = 380f;
+                    float modalX = (Screen.width - modalW) * 0.5f;
+                    float modalY = (Screen.height - modalH) * 0.5f;
+
+                    GUI.backgroundColor = new Color(0.10f, 0.07f, 0.16f, 0.96f);
+                    GUI.Box(new Rect(modalX, modalY, modalW, modalH), GUIContent.none);
+
+                    GUIStyle titleStyle = KimayaUITheme.GetOnGUILabelStyle(24, TextAnchor.MiddleCenter, false);
+                    GUI.Label(new Rect(modalX, modalY + 18f, modalW, 36f), "<color=#FFD95A>PAUSA</color>", titleStyle);
+
+                    GUIStyle statStyle = KimayaUITheme.GetOnGUILabelStyle(19, TextAnchor.MiddleCenter, true);
+                    GUI.Label(new Rect(modalX, modalY + 58f, modalW, 30f),
+                        $"<color=#E2E8F0>Tiempo: <b>{minutes:00}:{seconds:00}</b>  |  Piso: <b>{curFloor}/5</b>  |  Scooby Galletas: <b>{relicsCollected}/{totalRelicsInLevel}</b></color>", statStyle);
+
+                    float btnW = modalW - 80f;
+                    float btnX = modalX + 40f;
+
+                    GUIStyle btnStyle = KimayaUITheme.GetOnGUIButtonStyle(15);
+                    GUI.backgroundColor = Color.white;
+
+                    if (GUI.Button(new Rect(btnX, modalY + 104f, btnW, 50f), "> CONTINUAR ASCENSO [ESC]", btnStyle))
+                    {
+                        TogglePause();
+                    }
+
+                    if (GUI.Button(new Rect(btnX, modalY + 164f, btnW, 50f), "AJUSTES (AUDIO Y PANTALLA)", btnStyle))
+                    {
+                        _showSettingsModal = true;
+                    }
+
+                    if (GUI.Button(new Rect(btnX, modalY + 224f, btnW, 50f), "REINICIAR DESDE LA BASE [R]", btnStyle))
+                    {
+                        Time.timeScale = 1f;
+                        isPaused = false;
+                        RestartSession();
+                    }
+
+                    if (GUI.Button(new Rect(btnX, modalY + 284f, btnW, 50f), "REGRESAR AL CAMPAMENTO", btnStyle))
+                    {
+                        _showHubConfirmModal = true;
+                    }
+                }
+                else
+                {
+                    float modalW = Mathf.Min(620f, Screen.width - 40f);
+                    float modalH = 350f;
+                    float modalX = (Screen.width - modalW) * 0.5f;
+                    float modalY = (Screen.height - modalH) * 0.5f;
+
+                    GUI.backgroundColor = new Color(0.14f, 0.07f, 0.12f, 0.98f);
+                    GUI.Box(new Rect(modalX, modalY, modalW, modalH), GUIContent.none);
+
+                    GUIStyle warnTitleStyle = KimayaUITheme.GetOnGUILabelStyle(20, TextAnchor.MiddleCenter, false);
+                    GUI.Label(new Rect(modalX, modalY + 20f, modalW, 35f), "<color=#FF6B6B>¿ABANDONAR EL ASCENSO?</color>", warnTitleStyle);
+
+                    GUIStyle warnBodyStyle = KimayaUITheme.GetOnGUILabelStyle(20, TextAnchor.MiddleCenter, true);
+                    string warningMsg =
+                        "<color=#FFFFFF>Si regresas al Campamento ahora, perderás tu progreso actual:</color>\n\n" +
+                        "<color=#FFBBBB>• Se perderá la altura y el piso alcanzado.\n" +
+                        "• Se reiniciará el tiempo del cronómetro.\n" +
+                        "• Tendrás que volver a escalar desde la base.</color>\n\n" +
+                        "<color=#FFDD88>¿Deseas regresar al Campamento?</color>";
+
+                    GUI.Label(new Rect(modalX + 30f, modalY + 62f, modalW - 60f, 175f), warningMsg, warnBodyStyle);
+
+                    float btnW = (modalW - 90f) * 0.5f;
+                    float btnH = 52f;
+                    float btnY = modalY + 268f;
+
+                    GUIStyle btnStyle = KimayaUITheme.GetOnGUIButtonStyle(13);
+                    GUI.backgroundColor = Color.white;
+
+                    if (GUI.Button(new Rect(modalX + 30f, btnY, btnW, btnH), "SÍ, SALIR AL HUB", btnStyle))
+                    {
+                        ReturnToHub();
+                    }
+
+                    if (GUI.Button(new Rect(modalX + 60f + btnW, btnY, btnW, btnH), "< SEGUIR JUGANDO", btnStyle))
+                    {
+                        _showHubConfirmModal = false;
+                    }
                 }
                 return;
+            }
+
+            if (_noticeTimer > 0f)
+            {
+                float noticeW = 640f;
+                float noticeH = 44f;
+                float noticeX = (Screen.width - noticeW) * 0.5f;
+                float noticeY = 108f;
+                GUI.backgroundColor = new Color(0.14f, 0.08f, 0.18f, 0.95f);
+                GUI.Box(new Rect(noticeX, noticeY, noticeW, noticeH), GUIContent.none);
+                GUIStyle nStyle = KimayaUITheme.GetOnGUILabelStyle(18, TextAnchor.MiddleCenter, true);
+                GUI.Label(new Rect(noticeX, noticeY, noticeW, noticeH), $"<color=#FFD95A>{_noticeMessage}</color>", nStyle);
             }
 
             if (_hasWon)
             {
-                float btnW = 220f;
-                float btnH = 50f;
-                float spacing = 20f;
-                float totalW = btnW * 2f + spacing;
-                float startX = (Screen.width - totalW) * 0.5f;
-                float startY = (Screen.height * 0.5f) + 130f;
+                float modalW = Mathf.Min(680f, Screen.width - 40f);
+                float modalH = 310f;
+                float modalX = (Screen.width - modalW) * 0.5f;
+                // Colocado en la mitad inferior para dejar visible arriba a Kiara liberada junto a Falin/Mía
+                float modalY = Mathf.Clamp(Screen.height * 0.54f, 220f, Screen.height - modalH - 24f);
 
-                GUI.skin.button.fontSize = 18;
-                GUI.backgroundColor = new Color(0.15f, 0.75f, 0.35f, 1f);
-                if (GUI.Button(new Rect(startX, startY, btnW, btnH), "🔄 Repetir Ascenso [R]"))
+                GUI.backgroundColor = new Color(0.08f, 0.06f, 0.15f, 0.95f);
+                GUI.Box(new Rect(modalX, modalY, modalW, modalH), GUIContent.none);
+
+                GUIStyle titleStyle = KimayaUITheme.GetOnGUILabelStyle(22, TextAnchor.MiddleCenter, false);
+                GUI.Label(new Rect(modalX, modalY + 16f, modalW, 34f), "<color=#FFD95A>¡KIARA RESCATADA!</color>", titleStyle);
+
+                GUIStyle statStyle = KimayaUITheme.GetOnGUILabelStyle(18, TextAnchor.MiddleCenter, true);
+                GUI.Label(new Rect(modalX + 20f, modalY + 54f, modalW - 40f, 30f), $"<color=#A7F3D0>{_victorySummaryStats}</color>", statStyle);
+
+                GUIStyle bodyStyle = KimayaUITheme.GetOnGUILabelStyle(19, TextAnchor.MiddleCenter, true);
+                GUI.Label(new Rect(modalX + 28f, modalY + 92f, modalW - 56f, 110f), $"<color=#F8FAFC>{_victoryDialogueBody}</color>", bodyStyle);
+
+                float btnSpacing = 14f;
+                float btnW = (modalW - 56f - btnSpacing * 2f) / 3f;
+                float btnH = 52f;
+                float btnY = modalY + modalH - 72f;
+                float startX = modalX + 28f;
+
+                GUIStyle btnStyle = KimayaUITheme.GetOnGUIButtonStyle(13);
+                GUI.backgroundColor = Color.white;
+
+                if (GUI.Button(new Rect(startX, btnY, btnW, btnH), "VER FINAL", btnStyle))
                 {
-                    RestartSession();
+                    GoToEndingScene();
                 }
 
-                GUI.backgroundColor = new Color(0.20f, 0.50f, 0.85f, 1f);
-                if (GUI.Button(new Rect(startX + btnW + spacing, startY, btnW, btnH), "🏡 Volver al Hub"))
+                if (GUI.Button(new Rect(startX + btnW + btnSpacing, btnY, btnW, btnH), "IR AL HUB", btnStyle))
                 {
                     ReturnToHub();
+                }
+
+                if (GUI.Button(new Rect(startX + (btnW + btnSpacing) * 2f, btnY, btnW, btnH), "REPETIR [R]", btnStyle))
+                {
+                    RestartSession();
                 }
                 return;
             }
 
-            float topBtnW = 120f;
-            float topBtnH = 32f;
-            float topBtnX = Screen.width - topBtnW - 16f;
-            float topBtnY = 16f;
-
-            if (GUI.Button(new Rect(topBtnX, topBtnY, topBtnW, topBtnH), "🏡 Volver al Hub"))
+            if (_isGameOver)
             {
-                ReturnToHub();
-            }
+                float btnW = 240f;
+                float btnH = 52f;
+                float spacing = 20f;
+                float totalW = btnW * 2f + spacing;
+                float startX = (Screen.width - totalW) * 0.5f;
+                float startY = (Screen.height * 0.5f) + 120f;
 
-            // Botón interactivo para alternar skin con o sin casco
-            if (playerController != null && playerController.character != KimayaJumpKingController.CharacterType.JumpKing)
-            {
-                var anim = playerController.GetComponent<KimayaJumpKingAnimator>();
-                bool hasSkin = anim != null && anim.useKnightSkin;
-                string btnText = hasSkin ? "🛡️ Skin: Con Casco [C]" : "🐾 Skin: Sin Casco [C]";
-                float skinBtnW = 165f;
-                float skinBtnH = 32f;
-                float skinBtnX = topBtnX - skinBtnW - 12f;
-
-                GUI.backgroundColor = hasSkin ? new Color(0.95f, 0.75f, 0.2f, 1f) : new Color(0.6f, 0.6f, 0.6f, 1f);
-                if (GUI.Button(new Rect(skinBtnX, topBtnY, skinBtnW, skinBtnH), btnText))
+                GUIStyle btnStyle = KimayaUITheme.GetOnGUIButtonStyle(14);
+                GUI.backgroundColor = Color.white;
+                if (GUI.Button(new Rect(startX, startY, btnW, btnH), "REINICIAR [R]", btnStyle))
                 {
-                    ToggleSkin();
+                    RestartSession();
+                }
+
+                if (GUI.Button(new Rect(startX + btnW + spacing, startY, btnW, btnH), "VOLVER AL HUB", btnStyle))
+                {
+                    ReturnToHub();
                 }
             }
         }
@@ -503,12 +616,7 @@ namespace Kimaya
                     return true;
             }
 #endif
-            try
-            {
-                if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.H))
-                    return true;
-            }
-            catch { }
+            try { if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.H)) return true; } catch { }
             return false;
         }
 
@@ -516,11 +624,7 @@ namespace Kimaya
         {
             if (playerController == null) return;
             var anim = playerController.GetComponent<KimayaJumpKingAnimator>();
-            if (anim != null)
-            {
-                anim.ToggleKnightSkin();
-                UpdateCharacterUI();
-            }
+            if (anim != null) anim.ToggleKnightSkin();
         }
 
         private bool ReadTabOrQ()
@@ -532,12 +636,7 @@ namespace Kimaya
                     return true;
             }
 #endif
-            try
-            {
-                if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Q))
-                    return true;
-            }
-            catch { }
+            try { if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Q)) return true; } catch { }
             return false;
         }
 
@@ -547,128 +646,67 @@ namespace Kimaya
                 return;
 
             if (playerController.character == KimayaJumpKingController.CharacterType.JumpKing)
-            {
                 playerController.SetCharacter(KimayaJumpKingController.CharacterType.Falin);
-            }
             else if (playerController.character == KimayaJumpKingController.CharacterType.Falin)
-            {
                 playerController.SetCharacter(KimayaJumpKingController.CharacterType.Mia);
-            }
             else
-            {
                 playerController.SetCharacter(KimayaJumpKingController.CharacterType.JumpKing);
-            }
 
             var anim = playerController.GetComponent<KimayaJumpKingAnimator>();
             if (anim != null) anim.ApplyInitialSprite();
-
-            UpdateCharacterUI();
-        }
-
-        private void UpdateCharacterUI()
-        {
-            if (characterNameText != null && playerController != null)
-            {
-                var anim = playerController.GetComponent<KimayaJumpKingAnimator>();
-                bool hasSkin = (anim != null && anim.useKnightSkin);
-
-                if (playerController.character == KimayaJumpKingController.CharacterType.JumpKing)
-                {
-                    characterNameText.text = "👑 Jump King (Oficial) | [TAB] Personaje";
-                    characterNameText.color = new Color(1f, 0.85f, 0.2f);
-                }
-                else
-                {
-                    bool isFalin = playerController.character == KimayaJumpKingController.CharacterType.Falin;
-                    string skinLabel = hasSkin ? " [🛡️ Con Casco]" : " [🐾 Sin Casco]";
-                    string charName = isFalin ? "🐾 Falin" : "🌸 Mía";
-                    characterNameText.text = $"{charName}{skinLabel} | [🔒 Personaje Fijo KIM-10] | [C] Casco";
-                    characterNameText.color = isFalin ? new Color(1f, 0.75f, 0.2f) : new Color(0.9f, 0.5f, 1f);
-                }
-            }
         }
 
         private void UpdateHUD()
         {
             if (playerController == null) return;
 
-            // Barra de carga
-            if (chargeSlider != null)
-            {
-                chargeSlider.gameObject.SetActive(playerController.IsCharging);
-                chargeSlider.value = playerController.ChargePercent;
-
-                if (chargeFillImage != null)
-                {
-                    chargeFillImage.color = Color.Lerp(new Color(0.2f, 0.9f, 0.3f), new Color(1f, 0.2f, 0.2f), playerController.ChargePercent);
-                }
-            }
-
             if (stunnedBadge != null)
             {
                 stunnedBadge.SetActive(playerController.IsStunned);
             }
 
-            // Piso / Pantalla actual con nombre de zona
-            if (screenText != null && screenCamera != null)
+            int curFloor = (screenCamera != null ? screenCamera.CurrentScreenIndex + 1 : 1);
+
+            if (_pixelHud != null)
             {
-                int curIdx = Mathf.Clamp(screenCamera.CurrentScreenIndex, 0, finalScreenIndex);
-                string[] floorNames = new string[] {
-                    "El Suelo del Bosque y Campamento Base",
-                    "El Gran Tronco y Catch Ledges",
-                    "Canopia Media y Ramas Deliberadas",
-                    "Raíces Colosales y Hojas Rojas",
-                    "La Copa del Árbol y Altar de Kiara"
-                };
-                string fName = (curIdx < floorNames.Length) ? floorNames[curIdx] : "Ascenso Sagrado";
-                screenText.text = $"Piso {curIdx + 1} / {finalScreenIndex + 1}: {fName}";
+                _pixelHud.Refresh(
+                    relicsCollected,
+                    totalRelicsInLevel,
+                    _sessionTimer,
+                    curFloor,
+                    finalScreenIndex + 1,
+                    playerController.IsCharging,
+                    playerController.ChargePercent
+                );
             }
 
-            // Estadísticas Jump King Oficial: Tiempo, Saltos y Caídas (Progreso de Ascenso)
-            if (statsText != null)
-            {
-                int minutes = Mathf.FloorToInt(_sessionTimer / 60f);
-                int seconds = Mathf.FloorToInt(_sessionTimer % 60f);
-                string livesIndicator = enableLivesSystem ? $"  |  ❤️ Intentos: {currentLives}/{maxLives}" : "";
-                string relicIndicator = (relicsCollected > 0) ? $"  |  ✨ Reliquias: {relicsCollected}/{totalRelicsInLevel}" : "";
-                string scoreIndicator = (currentScore > 0) ? $"  |  🏆 {currentScore} PTS" : "";
-
-                string cpIndicator = playerController.hasReachedCheckpoint ? "  |  🚩 Checkpoint: Activo" : "";
-                statsText.text = $"⏱️ {minutes:00}:{seconds:00}  |  🦘 Saltos: {playerController.TotalJumps}  |  💥 Caídas: {playerController.TotalFalls}{cpIndicator}{relicIndicator}{scoreIndicator}{livesIndicator}";
-            }
-
-            if (scoreText != null)
-            {
-                scoreText.text = (currentScore > 0) ? $"🏆 {currentScore} PTS" : "";
-            }
-
-            if (livesText != null)
-            {
-                livesText.text = enableLivesSystem ? $"❤️ {currentLives}/{maxLives}" : "";
-            }
+            if (chargeSlider != null) chargeSlider.gameObject.SetActive(false);
+            if (screenText != null) { screenText.text = ""; screenText.gameObject.SetActive(false); }
+            if (characterNameText != null) { characterNameText.text = ""; characterNameText.gameObject.SetActive(false); }
+            if (statsText != null) { statsText.text = ""; statsText.gameObject.SetActive(false); }
+            if (scoreText != null) scoreText.text = "";
+            if (livesText != null) livesText.text = "";
         }
 
-        private void EnsureMidLevelCheckpoint()
+        private void EnsureMidLevelCheckpoint(bool isCustomTower)
         {
+            Vector3 cpPos = isCustomTower
+                ? KimayaCustomTowerMap.MidCheckpointPosition
+                : new Vector3(0.0f, 24.0f, 0f);
+
             var existingCp = FindAnyObjectByType<KimayaCheckpointTrigger>();
             if (existingCp == null)
             {
                 var cpGo = new GameObject("Checkpoint_Canopia_Media");
-                cpGo.transform.position = new Vector3(0f, 24.2f, 0f);
+                cpGo.transform.position = cpPos;
                 var col = cpGo.AddComponent<BoxCollider2D>();
-                col.size = new Vector2(4.0f, 2.2f);
+                col.size = new Vector2(3.4f, 2.0f);
                 col.isTrigger = true;
                 cpGo.AddComponent<KimayaCheckpointTrigger>();
-                Debug.Log("[KimayaJumpKingManager] 🚩 Checkpoint intermedio de Canopia Media (Y=24.2) inicializado (KIM-12).");
             }
-        }
-
-        private void CheckVictoryFallback()
-        {
-            // Victoria de respaldo por coordenada si no tocó el trigger directo (Piso 5, Y >= 49.3f)
-            if (playerController != null && playerController.transform.position.y >= 49.3f && !_hasWon)
+            else
             {
-                TriggerVictory("¡Has alcanzado la cumbre sagrada!");
+                existingCp.transform.position = cpPos;
             }
         }
     }

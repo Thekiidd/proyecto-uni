@@ -44,9 +44,9 @@ public static class PrologueSceneBuilder
         var bgSprite        = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/MainMenu_Background.png");
         var dialoguePanelSpr= AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Dialogue_Box_Panel.png");
         var portraitFrameSpr= AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Panel_Wood_Frame.png");
-        var btnNormSprite   = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Normal.png");
-        var btnHovSprite    = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Hover.png");
-        var btnPressSprite  = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Pressed.png");
+        var btnNormSprite   = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/PixelButtons/Btn_Pixel_Normal.png") ?? AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Normal.png");
+        var btnHovSprite    = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/PixelButtons/Btn_Pixel_Hover.png") ?? AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Hover.png");
+        var btnPressSprite  = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/PixelButtons/Btn_Pixel_Pressed.png") ?? AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Pressed.png");
         var dialogueData    = AssetDatabase.LoadAssetAtPath<StoryDialogueData>("Assets/Story/Prologue_Dialogue.asset");
         var titleFont       = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/Mod Assets/Mod Resources/Fonts/BioRhymeExpanded-Regular SDF.asset");
         var bodyFont        = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/Mod Assets/Mod Resources/Fonts/Merriweather-Regular SDF.asset");
@@ -160,7 +160,7 @@ public static class PrologueSceneBuilder
 
         var skipTxtGO = MakeChild("Text", skipGO);
         Stretch(skipTxtGO);
-        MakeTMP(skipTxtGO, "Saltar >>", 20, Color.white, TextAlignmentOptions.Center, FontStyles.Bold, titleFont);
+        MakeTMP(skipTxtGO, "Saltar >>", 20, new Color32(30, 20, 14, 255), TextAlignmentOptions.Center, FontStyles.Bold, titleFont);
 
         // Componente DialogueUI
         var diagComp = diagBoxGO.AddComponent<DialogueUI>();

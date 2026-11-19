@@ -20,8 +20,10 @@ namespace Kimaya
         public float screenWidth = 16f;
         public float transitionSpeed = 15f;
 
-        [Header("Piso Base")]
+        [Header("Piso Base y Techo")]
         public float baseWorldY = 0f;
+        [Tooltip("Índice máximo de pantalla permitido (0 a 4 para 5 pisos). Evita que la cámara salga al vacío al saltar en la cumbre.")]
+        public int maxScreenIndex = 4;
 
         public int CurrentScreenIndex { get; private set; } = 0;
         public int MaxScreenReached { get; private set; } = 0;
@@ -54,7 +56,7 @@ namespace Kimaya
             // Calcular en qué pantalla está el jugador según su coordenada Y
             float playerY = target.position.y;
             int newScreenIndex = Mathf.FloorToInt((playerY - baseWorldY) / screenHeight);
-            if (newScreenIndex < 0) newScreenIndex = 0;
+            newScreenIndex = Mathf.Clamp(newScreenIndex, 0, maxScreenIndex);
 
             bool screenChanged = (newScreenIndex != CurrentScreenIndex);
 
@@ -86,8 +88,7 @@ namespace Kimaya
         {
             if (target == null) return;
             float playerY = target.position.y;
-            CurrentScreenIndex = Mathf.FloorToInt((playerY - baseWorldY) / screenHeight);
-            if (CurrentScreenIndex < 0) CurrentScreenIndex = 0;
+            CurrentScreenIndex = Mathf.Clamp(Mathf.FloorToInt((playerY - baseWorldY) / screenHeight), 0, maxScreenIndex);
 
             float desiredY = baseWorldY + (CurrentScreenIndex * screenHeight) + (screenHeight * 0.5f);
             _targetCameraPos = new Vector3(transform.position.x, desiredY, transform.position.z);

@@ -16,8 +16,8 @@ namespace Platformer.EditorTools
     public static class KimayaMainMenuBuilder
     {
         private const string SCENE_PATH  = "Assets/Scenes/MainMenu.unity";
-        private const string FALIN_SPR   = "Assets/Sprites/Dogs/Great-Dane/Great-Dane-idle.png";
-        private const string MIA_SPR     = "Assets/Sprites/Dogs/Schnauzer/Schnauzer-Idle.png";
+        private const string FALIN_SPR   = "Assets/Sprites/PixelLab/Falin/Idle/rotations/east.png";
+        private const string MIA_SPR     = "Assets/Sprites/PixelLab/Mia/Idle/rotations/west.png";
 
         [MenuItem("Tools/Kimaya/Build Main Menu")]
         public static void Build()

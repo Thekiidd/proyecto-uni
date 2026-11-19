@@ -30,6 +30,8 @@ namespace Kimaya
         private SpriteRenderer _spriteRenderer;
         private bool _isPlayerNearby = false;
         private bool _showCharacterSelectModal = false;
+        private bool _showImproveTimeModal = false;
+        private string _pendingCharacter = "Falin";
         private Camera _mainCam;
 
         private static GUIStyle _activeBannerStyle;
@@ -89,22 +91,64 @@ namespace Kimaya
                 }
             }
 
-            if (_isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !_showCharacterSelectModal)
+            bool interactPressed = false;
+            bool cancelPressed = false;
+            bool confirmPressed = false;
+#if ENABLE_INPUT_SYSTEM
+            if (UnityEngine.InputSystem.Keyboard.current != null)
+            {
+                if (UnityEngine.InputSystem.Keyboard.current.eKey.wasPressedThisFrame) interactPressed = true;
+                if (UnityEngine.InputSystem.Keyboard.current.escapeKey.wasPressedThisFrame) cancelPressed = true;
+                if (UnityEngine.InputSystem.Keyboard.current.enterKey.wasPressedThisFrame || UnityEngine.InputSystem.Keyboard.current.spaceKey.wasPressedThisFrame) confirmPressed = true;
+            }
+#endif
+            try
+            {
+                if (Input.GetKeyDown(KeyCode.E)) interactPressed = true;
+                if (Input.GetKeyDown(KeyCode.Escape)) cancelPressed = true;
+                if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) confirmPressed = true;
+            }
+            catch { }
+
+            if (_showImproveTimeModal)
+            {
+                if (cancelPressed || !_isPlayerNearby)
+                {
+                    _showImproveTimeModal = false;
+                    if (KimayaHubDuoController.Instance != null)
+                        KimayaHubDuoController.Instance.controlsEnabled = true;
+                }
+                else if (confirmPressed)
+                {
+                    SelectAndEnter(_pendingCharacter);
+                }
+                return;
+            }
+
+            if (_isPlayerNearby && interactPressed)
             {
                 if (!isLocked)
                 {
-                    // Abrir modal de selección de personaje (KIM-03)
-                    _showCharacterSelectModal = true;
+                    string activeChar = "Falin";
                     if (KimayaHubDuoController.Instance != null)
-                        KimayaHubDuoController.Instance.controlsEnabled = false;
-                }
-            }
+                    {
+                        activeChar = KimayaHubDuoController.Instance.isFalinActive ? "Falin" : "Mia";
+                    }
 
-            if (_showCharacterSelectModal && Input.GetKeyDown(KeyCode.Escape))
-            {
-                _showCharacterSelectModal = false;
-                if (KimayaHubDuoController.Instance != null)
-                    KimayaHubDuoController.Instance.controlsEnabled = true;
+                    bool alreadyRescued = PlayerPrefs.GetInt("KiaraRescued", 0) == 1;
+                    if (alreadyRescued)
+                    {
+                        _pendingCharacter = activeChar;
+                        _showImproveTimeModal = true;
+                        if (KimayaHubDuoController.Instance != null)
+                            KimayaHubDuoController.Instance.controlsEnabled = false;
+                    }
+                    else
+                    {
+                        // Entrar directamente con el perrito que tiene el diamante activo
+                        SelectAndEnter(activeChar);
+                    }
+                }
             }
         }
 
@@ -112,22 +156,44 @@ namespace Kimaya
         {
             PlayerPrefs.SetString("SelectedCharacter", characterName);
             PlayerPrefs.Save();
-            Debug.Log($"[KimayaHubPortal] Personaje confirmado: {characterName}. Iniciando {targetSceneName}...");
-            _showCharacterSelectModal = false;
 
-            if (Application.CanStreamedLevelBeLoaded(targetSceneName))
+            string destination = "Ascenso_Kimaya";
+            if (!Application.CanStreamedLevelBeLoaded(destination))
             {
-                SceneManager.LoadScene(targetSceneName);
+                destination = string.IsNullOrEmpty(targetSceneName) || targetSceneName == "Ascenso_Vertical"
+                    ? "Ascenso_JumpKing_Classic"
+                    : targetSceneName;
+            }
+
+            Debug.Log($"[KimayaHubPortal] Personaje confirmado: {characterName}. Iniciando {destination}...");
+            _showCharacterSelectModal = false;
+            _showImproveTimeModal = false;
+            if (KimayaHubDuoController.Instance != null)
+                KimayaHubDuoController.Instance.controlsEnabled = true;
+
+            if (Application.CanStreamedLevelBeLoaded(destination))
+            {
+                KimayaSceneTransition.LoadScene(destination);
+            }
+            else if (Application.CanStreamedLevelBeLoaded("Ascenso_Kimaya"))
+            {
+                KimayaSceneTransition.LoadScene("Ascenso_Kimaya");
             }
             else
             {
-                SceneManager.LoadScene("Ascenso_JumpKing_Classic");
+                KimayaSceneTransition.LoadScene("Ascenso_JumpKing_Classic");
             }
         }
 
         private void OnGUI()
         {
             InitStyles();
+
+            if (_showImproveTimeModal)
+            {
+                DrawImproveTimeModal();
+                return;
+            }
 
             if (_showCharacterSelectModal)
             {
@@ -142,8 +208,8 @@ namespace Kimaya
             Vector3 screenPos = _mainCam.WorldToScreenPoint(transform.position + Vector3.up * 1.5f);
             if (screenPos.z < 0) return;
 
-            float w = 420f;
-            float h = 64f;
+            float w = 510f;
+            float h = 72f;
             float x = screenPos.x - (w * 0.5f);
             float y = Screen.height - screenPos.y - h;
 
@@ -157,8 +223,76 @@ namespace Kimaya
             }
             else
             {
-                string text = $"<b>🌀 [E] Entrar al {destinationTitle}</b>\n<size=12><color=#A8FFB2>{questLore}</color></size>";
-                GUI.Box(new Rect(x, y, w, h), text, _activeBannerStyle);
+                string activeCharName = (KimayaHubDuoController.Instance != null && !KimayaHubDuoController.Instance.isFalinActive) ? "Mía 🐩" : "Falin 🐕";
+                bool alreadyRescued = PlayerPrefs.GetInt("KiaraRescued", 0) == 1;
+                if (alreadyRescued)
+                {
+                    string text = $"<b>🌀 [E] ¡Ya salvaste a Kimaya! — ¿Mejorar tu tiempo con {activeCharName}?</b>\n<size=12><color=#FFE57F>Kiara (Schnauzer) ya está en el Hub. Pulsa [E] para modo contrarreloj.</color></size>";
+                    GUI.Box(new Rect(x, y, w, h), text, _activeBannerStyle);
+                }
+                else
+                {
+                    string text = $"<b>🌀 [E] Entrar al {destinationTitle} con {activeCharName}</b>\n<size=11><color=#A8FFB2>Entrarás con el perrito del diamante activo. Pulsa [TAB] para alternar.</color></size>";
+                    GUI.Box(new Rect(x, y, w, h), text, _activeBannerStyle);
+                }
+            }
+        }
+
+        private void DrawImproveTimeModal()
+        {
+            Color prevCol = GUI.color;
+            GUI.color = new Color(0f, 0f, 0f, 0.78f);
+            GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Texture2D.whiteTexture);
+            GUI.color = prevCol;
+
+            float modalW = Mathf.Min(640f, Screen.width - 40f);
+            float modalH = 330f;
+            float modalX = (Screen.width - modalW) * 0.5f;
+            float modalY = (Screen.height - modalH) * 0.5f;
+
+            GUI.backgroundColor = new Color(0.09f, 0.06f, 0.15f, 0.98f);
+            GUI.Box(new Rect(modalX, modalY, modalW, modalH), GUIContent.none, _modalBoxStyle);
+
+            GUIStyle titleStyle = KimayaUITheme.GetOnGUILabelStyle(22, TextAnchor.MiddleCenter, false);
+            GUI.Label(new Rect(modalX, modalY + 20f, modalW, 34f), "<color=#FFD95A>¡YA SALVASTE A KIMAYA!</color>", titleStyle);
+
+            float bestSec = PlayerPrefs.GetFloat("Kimaya_BestTimeSeconds", 999999f);
+            string bestTimeLine = "";
+            if (bestSec < 900000f)
+            {
+                int bm = Mathf.FloorToInt(bestSec / 60f);
+                int bs = Mathf.FloorToInt(bestSec % 60f);
+                string medalBadge = bestSec < 105f
+                    ? "<color=#FFD84A>[★ MEDALLA DE ORO ★]</color>"
+                    : (bestSec < 180f ? "<color=#E0E8F6>[★ MEDALLA DE PLATA ★]</color>" : "<color=#ECA062>[★ MEDALLA DE BRONCE ★]</color>");
+                bestTimeLine = $"\n<color=#5AFF8C>Mejor tiempo: <b>{bm:00}:{bs:00}</b></color>  {medalBadge}";
+            }
+
+            string heroDisplay = (_pendingCharacter == "Mia") ? "Mía (Schnauzer)" : "Falin (Border Collie)";
+            GUIStyle bodyStyle = KimayaUITheme.GetOnGUILabelStyle(19, TextAnchor.MiddleCenter, true);
+            string msg =
+                "<color=#FFE8B0>— <b>Kiara (Schnauzer):</b> «¡Ya me salvaste de la jaula en la cumbre y estoy aquí contigo en el santuario!»</color>\n\n" +
+                $"<color=#FFFFFF>¿Quieres volver a entrar al nivel con <b>{heroDisplay}</b>\nsolo para <b>mejorar tu tiempo</b>?</color>{bestTimeLine}";
+
+            GUI.Label(new Rect(modalX + 28f, modalY + 64f, modalW - 56f, 165f), msg, bodyStyle);
+
+            float btnW = (modalW - 80f) * 0.5f;
+            float btnH = 52f;
+            float btnY = modalY + modalH - 72f;
+
+            GUIStyle btnStyle = KimayaUITheme.GetOnGUIButtonStyle(13);
+            GUI.backgroundColor = Color.white;
+
+            if (GUI.Button(new Rect(modalX + 28f, btnY, btnW, btnH), "> SÍ, MEJORAR TIEMPO", btnStyle))
+            {
+                SelectAndEnter(_pendingCharacter);
+            }
+
+            if (GUI.Button(new Rect(modalX + 52f + btnW, btnY, btnW, btnH), "NO, QUEDARME EN HUB", btnStyle))
+            {
+                _showImproveTimeModal = false;
+                if (KimayaHubDuoController.Instance != null)
+                    KimayaHubDuoController.Instance.controlsEnabled = true;
             }
         }
 
@@ -181,7 +315,7 @@ namespace Kimaya
             // Tarjeta Falin
             float falinX = modalX + 20f;
             GUI.Box(new Rect(falinX, cardY, cardW, cardH), GUIContent.none, _cardStyle);
-            GUI.Label(new Rect(falinX + 15f, cardY + 15f, cardW - 30f, 26f), "🐕 FALIN (San Bernardo)", _cardTitleStyle);
+            GUI.Label(new Rect(falinX + 15f, cardY + 15f, cardW - 30f, 26f), "🐕 FALIN (Border Collie)", _cardTitleStyle);
             string falinDesc = "• <b>Salto:</b> Pesado, firme y potente.\n" +
                               "• <b>Inercia:</b> Mayor masa y velocidad de descenso.\n" +
                               "• <b>Carga:</b> Requiere más tiempo para carga máxima.\n" +

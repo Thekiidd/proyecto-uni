@@ -15,25 +15,7 @@ namespace Kimaya
         Snow
     }
 
-    /// <summary>
-    /// Componente de superficie para plataformas estilo Jump King.
-    /// Define cómo reacciona el jugador al pisar o deslizarse sobre el bloque.
-    /// </summary>
-    public class KimayaSurface : MonoBehaviour
-    {
-        [Header("Tipo de Superficie Jump King")]
-        public SurfaceType surfaceType = SurfaceType.Normal;
 
-        [Header("Ajustes Físicos Personalizados (Opcional)")]
-        [Tooltip("Fricción en hielo (Jump King original = 0.1)")]
-        public float iceFriction = 0.1f;
-
-        [Tooltip("Multiplicador de velocidad al caminar en arena (Jump King original = 0.25)")]
-        public float sandMoveMultiplier = 0.25f;
-
-        [Tooltip("Multiplicador de fuerza de salto en arena (Jump King original = 0.5)")]
-        public float sandJumpMultiplier = 0.5f;
-    }
 
     /// <summary>
     /// Controlador Jump King con físicas y constantes exactas extraídas por ingeniería inversa:
@@ -54,14 +36,14 @@ namespace Kimaya
         [HideInInspector] public Animator animator;
 
         [Header("Movimiento en Suelo")]
-        public float walkSpeed = 2.60f;
+        public float walkSpeed = 2.55f;
 
-        [Header("Física de Salto Táctico Jump King (Calibración Exacta)")]
-        [Tooltip("Tiempo de carga máximo exacto de Jump King (0.6s / 36 frames)")]
-        public float maxChargeTime = 0.60f;
-        public float minJumpForce = 7.0f;
-        public float maxJumpForce = 24.0f;
-        public float horizontalJumpSpeed = 7.50f;
+        [Header("Física de Salto Táctico Jump King (Calibración Exacta con Gravity -9.81)")]
+        [Tooltip("Tiempo de carga máximo exacto de Jump King (0.58s)")]
+        public float maxChargeTime = 0.58f;
+        public float minJumpForce = 6.40f;
+        public float maxJumpForce = 17.80f;
+        public float horizontalJumpSpeed = 6.25f;
         [Tooltip("Factor de rebote en pared (Jump King original = 0.5)")]
         public float wallBounceMultiplier = 0.50f;
 
@@ -72,7 +54,7 @@ namespace Kimaya
         public float splatStunDuration = 0.50f;
 
         [Header("Punto de Control y Reaparición (KIM-12)")]
-        public Vector3 respawnPoint = new Vector3(-0.25f, 0.89f, 0f);
+        public Vector3 respawnPoint = new Vector3(0.00f, 0.85f, 0f);
         public bool hasReachedCheckpoint = false;
 
         // Estados
@@ -87,7 +69,7 @@ namespace Kimaya
 
         // Estadísticas
         public int TotalJumps { get; private set; }
-        public int TotalFalls { get; private set; }
+        public int TotalFalls { get; set; }
 
         private Rigidbody2D _rb;
         private BoxCollider2D _col;
@@ -98,10 +80,14 @@ namespace Kimaya
         private float _highestAirY = 0f;
         private float _stunTimer = 0f;
         private float _bounceTimer = 0f;
+        private float _hurtFlashTimer = 0f;
         private float _iceSlideVelocityX = 0f;
         private KimayaSurface _activeSurfaceComp;
         private bool _mustReleaseSpace = false;
         private float _jumpGraceTimer = 0f;
+        private float _chargeSfxTimer = 0f;
+        private float _walkStepTimer = 0f;
+        private bool _playedFallWhistle = false;
 
         private void Awake()
         {
@@ -112,6 +98,12 @@ namespace Kimaya
 
             if (spriteRenderer == null) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
+            ApplyCharacterAttributes();
+        }
+
+        private void Start()
+        {
+            // Garantizar que los valores calibrados prevalezcan sobre cualquier valor serializado antiguo en la escena
             ApplyCharacterAttributes();
         }
 
@@ -135,21 +127,19 @@ namespace Kimaya
 
             if (character == CharacterType.JumpKing)
             {
-                // Jump King Caballero Oficial (Fuerza ampliada para superar riscos con holgura)
+                transform.localScale = Vector3.one;
                 _rb.mass = 1.0f;
-                _rb.gravityScale = 2.45f;
-                walkSpeed = 2.60f;
-                minJumpForce = 7.0f;
-                maxJumpForce = 24.0f;
-                horizontalJumpSpeed = 7.50f;
-                wallBounceMultiplier = 0.50f; // BOUNCE = 50%
-                maxChargeTime = 0.60f; // JUMP_TIME = 0.60s
-                splatStunDuration = 0.50f; // SPLAT_TIME = 0.50s
+                _rb.gravityScale = 3.15f;
+                walkSpeed = 2.55f;
+                minJumpForce = 6.20f;
+                maxJumpForce = 17.00f;
+                horizontalJumpSpeed = 6.10f;
+                wallBounceMultiplier = 0.50f;
+                maxChargeTime = 0.58f;
+                splatStunDuration = 0.50f;
 
                 if (_col != null)
                 {
-                    // Hitbox 18x26 px a 36 PPU = 0.50f x 0.722f
-                    // Base inferior exacta: 0.361 - (0.662 / 2 + 0.03) = 0.00f (pies a ras de suelo)
                     _col.size = new Vector2(0.44f, 0.662f);
                     _col.offset = new Vector2(0f, 0.361f);
                     _col.edgeRadius = 0.03f;
@@ -157,52 +147,139 @@ namespace Kimaya
             }
             else if (character == CharacterType.Falin)
             {
-                // Falin (KIM-06): Salto pesado, firme y con mayor inercia. Descenso más rápido, carga lenta.
-                _rb.mass = 1.35f;
-                _rb.gravityScale = 3.10f; // Descenso rápido y contundente
-                walkSpeed = 2.40f;
-                minJumpForce = 8.5f;
-                maxJumpForce = 29.5f; // Salto vertical potente y firme
-                horizontalJumpSpeed = 7.00f; // Gran inercia
-                wallBounceMultiplier = 0.35f; // Aterrizaje firme, rebote reducido
-                maxChargeTime = 0.70f; // Requiere mayor anticipación
+                // Falin (Border Collie): Escala pequeña estilo Jump King (0.35 -> ~22x18 px) y salto potente y fluido (~5.12u alto, ~7.20u largo)
+                transform.localScale = new Vector3(0.35f, 0.35f, 1.0f);
+                _rb.mass = 1.15f;
+                _rb.gravityScale = 3.15f;
+                walkSpeed = 2.60f;
+                minJumpForce = 6.40f;
+                maxJumpForce = 17.80f;
+                horizontalJumpSpeed = 6.25f;
+                wallBounceMultiplier = 0.50f;
+                maxChargeTime = 0.58f;
                 splatStunDuration = 0.50f;
 
                 if (_col != null)
                 {
-                    // Con pivote de Falin a 26/92 (pata inferior en Y=0.0 local)
-                    // Base inferior exacta: 0.65 - (1.30 / 2) = 0.00f (patas exactamente en la tierra)
-                    _col.size = new Vector2(1.20f, 1.30f);
-                    _col.offset = new Vector2(0f, 0.65f);
-                    _col.edgeRadius = 0.0f;
+                    _col.size = new Vector2(0.680f, 1.240f);
+                    _col.offset = new Vector2(0f, 0.770f);
+                    _col.edgeRadius = 0.015f;
                 }
             }
             else
             {
-                // Mía (KIM-07): Salto ligero, rápido y sensible a la carga. Mayor tiempo en el aire (floaty).
+                // Mía (Schnauzer): Escala pequeña estilo Jump King (0.40 -> ~15x15 px) y salto ágil y fluido (~5.14u alto, ~7.62u largo)
+                transform.localScale = new Vector3(0.40f, 0.40f, 1.0f);
                 _rb.mass = 0.85f;
-                _rb.gravityScale = 2.05f; // Mayor tiempo en el aire, flotación elegante
-                walkSpeed = 3.10f;
-                minJumpForce = 6.5f;
-                maxJumpForce = 22.0f; // Gran altura con menor fuerza gracias a la baja gravedad
-                horizontalJumpSpeed = 8.20f; // Ágil y veloz en cruce horizontal
-                wallBounceMultiplier = 0.65f; // Rebote ágil y elástico
-                maxChargeTime = 0.45f; // Muy sensible a pequeñas variaciones de carga
+                _rb.gravityScale = 2.90f;
+                walkSpeed = 2.80f;
+                minJumpForce = 6.20f;
+                maxJumpForce = 17.10f;
+                horizontalJumpSpeed = 6.35f;
+                wallBounceMultiplier = 0.52f;
+                maxChargeTime = 0.54f;
                 splatStunDuration = 0.50f;
 
                 if (_col != null)
                 {
-                    // Con pivote de Mía a 19/68 (pata inferior en Y=0.0 local)
-                    // Base inferior exacta: 0.53 - (1.06 / 2) = 0.00f (patas exactamente en la tierra)
-                    _col.size = new Vector2(0.85f, 1.06f);
-                    _col.offset = new Vector2(0f, 0.53f);
-                    _col.edgeRadius = 0.0f;
+                    _col.size = new Vector2(0.540f, 0.920f);
+                    _col.offset = new Vector2(0f, 0.590f);
+                    _col.edgeRadius = 0.015f;
                 }
+            }
+        }
+
+        public void LockAtSummit(Vector3 standPosition, float facingDir = 1f)
+        {
+            IsCharging = false;
+            IsJumping = false;
+            IsBouncing = false;
+            IsStunned = false;
+            IsGrounded = true;
+            ChargePercent = 0f;
+            FacingDirection = facingDir >= 0f ? 1f : -1f;
+            _chargeTimer = 0f;
+            _iceSlideVelocityX = 0f;
+
+            if (_rb == null) _rb = GetComponent<Rigidbody2D>();
+            if (_rb != null)
+            {
+                _rb.linearVelocity = Vector2.zero;
+                _rb.angularVelocity = 0f;
+                _rb.bodyType = RigidbodyType2D.Kinematic;
+            }
+
+            transform.position = standPosition;
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = Color.white;
+                spriteRenderer.flipX = (FacingDirection < 0f);
+            }
+
+            enabled = false;
+        }
+
+        /// <summary>
+        /// Aplica un empujón lateral/vertical al tocar una trampa de picos espinosos (KimayaSpikeHazard),
+        /// empujando al personaje hacia el vacío para que caiga de la plataforma.
+        /// </summary>
+        public void ApplySpikeKnockback(Vector2 launchVelocity, float lockDuration = 0.38f)
+        {
+            if (_rb == null) _rb = GetComponent<Rigidbody2D>();
+            if (_rb == null || _rb.bodyType == RigidbodyType2D.Kinematic) return;
+
+            IsCharging = false;
+            IsGrounded = false;
+            IsJumping = true;
+            IsBouncing = true;
+            ChargePercent = 0f;
+            _chargeTimer = 0f;
+            _groundContactCount = 0;
+            _jumpGraceTimer = Mathf.Max(0.28f, lockDuration);
+            _bounceTimer = Mathf.Max(0.35f, lockDuration);
+            _hurtFlashTimer = 0.42f;
+            _mustReleaseSpace = true;
+
+            _rb.linearVelocity = launchVelocity;
+            _iceSlideVelocityX = launchVelocity.x;
+
+            if (Mathf.Abs(launchVelocity.x) > 0.1f)
+            {
+                FacingDirection = Mathf.Sign(launchVelocity.x);
+                if (spriteRenderer != null)
+                {
+                    spriteRenderer.flipX = (FacingDirection < 0f);
+                }
+            }
+
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = new Color(1f, 0.42f, 0.42f, 1f);
+            }
+
+            if (KimayaAudio.Instance != null)
+            {
+                KimayaAudio.Instance.PlaySFX(KimayaAudio.SFX.Damage);
+            }
+
+            TotalFalls++;
+            if (KimayaJumpKingManager.Instance != null)
+            {
+                KimayaJumpKingManager.Instance.RegisterFall();
             }
         }
 
         private void Update()
         {
+            if (_hurtFlashTimer > 0f)
+            {
+                _hurtFlashTimer -= Time.deltaTime;
+                if (_hurtFlashTimer <= 0f && spriteRenderer != null)
+                {
+                    spriteRenderer.color = Color.white;
+                }
+            }
+
             if (_bounceTimer > 0f)
             {
                 _bounceTimer -= Time.deltaTime;
@@ -225,12 +302,20 @@ namespace Kimaya
                 }
             }
 
-            // Seguimiento del punto más alto del salto
+            // Seguimiento del punto más alto del salto y silbido de caída libre
             if (!IsGrounded)
             {
                 if (transform.position.y > _highestAirY)
                 {
                     _highestAirY = transform.position.y;
+                }
+                else if (!_playedFallWhistle && _rb != null && _rb.linearVelocity.y < -10.5f && transform.position.y < _lastGroundedY - 2.3f)
+                {
+                    _playedFallWhistle = true;
+                    if (KimayaAudio.Instance != null)
+                    {
+                        KimayaAudio.Instance.PlaySFX(KimayaAudio.SFX.FallWhistle);
+                    }
                 }
             }
 
@@ -257,29 +342,40 @@ namespace Kimaya
                 }
             }
 
-            if (IsGrounded && !IsJumping && _jumpGraceTimer <= 0f)
+            if ((IsGrounded || IsCharging) && !IsJumping && _jumpGraceTimer <= 0f)
             {
                 if (spaceHeld && !_mustReleaseSpace)
                 {
-                    // Cargando salto
+                    // Cargando salto: si no se presiona A ni D durante la carga, _jumpDirection queda en 0 (salto recto hacia arriba)
                     if (!IsCharging)
                     {
                         IsCharging = true;
                         _chargeTimer = 0f;
+                        _chargeSfxTimer = 0.08f;
                         _jumpDirection = (Mathf.Abs(hInput) > 0.1f) ? Mathf.Sign(hInput) : 0f;
+                        if (KimayaAudio.Instance != null) KimayaAudio.Instance.PlayChargeTick(0.05f);
                     }
 
                     _chargeTimer += Time.deltaTime;
                     ChargePercent = Mathf.Clamp01(_chargeTimer / maxChargeTime);
 
-                    // Dirección de salto elegida durante la carga (se mantiene si se presiona A o D)
+                    _chargeSfxTimer -= Time.deltaTime;
+                    if (_chargeSfxTimer <= 0f)
+                    {
+                        _chargeSfxTimer = 0.14f;
+                        if (KimayaAudio.Instance != null) KimayaAudio.Instance.PlayChargeTick(ChargePercent);
+                    }
+
+                    // Dirección de salto elegida durante la carga (solo avanza si presionas A o D)
                     if (hInput > 0.1f)
                     {
                         _jumpDirection = 1f;
+                        FacingDirection = 1f;
                     }
                     else if (hInput < -0.1f)
                     {
                         _jumpDirection = -1f;
+                        FacingDirection = -1f;
                     }
 
                     // En el suelo mientras carga se detiene
@@ -294,6 +390,13 @@ namespace Kimaya
                 }
                 else if (IsCharging)
                 {
+                    // Si presionó A/D justo al soltar ESPACIO, tomar esa dirección; si no presionó A/D en ningún momento, salta vertical (_jumpDirection = 0)
+                    if (Mathf.Abs(hInput) > 0.1f)
+                    {
+                        _jumpDirection = Mathf.Sign(hInput);
+                        FacingDirection = _jumpDirection;
+                    }
+
                     // Soltó el espacio -> ¡Salto inmediato!
                     ExecuteJump();
                 }
@@ -301,8 +404,58 @@ namespace Kimaya
                 {
                     // Manejo del movimiento según la superficie actual (Jump King Blocks)
                     ApplyGroundMovement(hInput);
+                    ApplyLedgeOverhangSlip(hInput);
                     ChargePercent = 0f;
+
+                    if (Mathf.Abs(hInput) > 0.1f)
+                    {
+                        _walkStepTimer -= Time.deltaTime;
+                        if (_walkStepTimer <= 0f)
+                        {
+                            _walkStepTimer = 0.25f;
+                            if (KimayaAudio.Instance != null) KimayaAudio.Instance.PlaySFX(KimayaAudio.SFX.Step, 0.7f);
+                        }
+                    }
+                    else
+                    {
+                        _walkStepTimer = 0.05f;
+                    }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Evita que el perrito quede flotando en el borde con medio cuerpo en el aire:
+        /// si su centro de masa ya salió de la plataforma y no está caminando hacia adentro, resbala suavemente.
+        /// </summary>
+        private void ApplyLedgeOverhangSlip(float hInput)
+        {
+            if (_col == null || !IsGrounded || IsCharging || IsJumping) return;
+
+            int myLayer = gameObject.layer;
+            int mask = Physics2D.GetLayerCollisionMask(myLayer);
+
+            Vector2 centerOrigin = new Vector2(transform.position.x, transform.position.y + 0.14f);
+            RaycastHit2D centerHit = Physics2D.Raycast(centerOrigin, Vector2.down, 0.30f, mask);
+            if (centerHit.collider != null && !centerHit.collider.isTrigger && centerHit.collider != _col)
+            {
+                return;
+            }
+
+            float halfFoot = (_col.size.x * Mathf.Abs(transform.localScale.x)) * 0.48f;
+            RaycastHit2D leftHit = Physics2D.Raycast(centerOrigin + new Vector2(-halfFoot, 0f), Vector2.down, 0.30f, mask);
+            RaycastHit2D rightHit = Physics2D.Raycast(centerOrigin + new Vector2(halfFoot, 0f), Vector2.down, 0.30f, mask);
+
+            bool hasLeft = leftHit.collider != null && !leftHit.collider.isTrigger && leftHit.collider != _col;
+            bool hasRight = rightHit.collider != null && !rightHit.collider.isTrigger && rightHit.collider != _col;
+
+            if (hasLeft && !hasRight && hInput >= -0.05f)
+            {
+                _rb.linearVelocity = new Vector2(2.2f, -0.6f);
+            }
+            else if (hasRight && !hasLeft && hInput <= 0.05f)
+            {
+                _rb.linearVelocity = new Vector2(-2.2f, -0.6f);
             }
         }
 
@@ -366,6 +519,12 @@ namespace Kimaya
 
             _rb.linearVelocity = new Vector2(hForce, jumpForce);
             _iceSlideVelocityX = hForce;
+            _playedFallWhistle = false;
+            KimayaPixelVFX.SpawnJumpDust(transform.position);
+            if (KimayaAudio.Instance != null)
+            {
+                KimayaAudio.Instance.PlaySFX(ChargePercent >= 0.65f ? KimayaAudio.SFX.PowerJump : KimayaAudio.SFX.Jump);
+            }
 
             _chargeTimer = 0f;
             ChargePercent = 0f;
@@ -391,6 +550,11 @@ namespace Kimaya
 
                         IsBouncing = true;
                         _bounceTimer = 0.30f;
+                        KimayaPixelVFX.SpawnWallSparks(contact.point, contact.normal.x);
+                        if (KimayaAudio.Instance != null)
+                        {
+                            KimayaAudio.Instance.PlaySFX(KimayaAudio.SFX.WallBounce);
+                        }
 
                         FacingDirection = Mathf.Sign(bounceX);
                         if (spriteRenderer != null)
@@ -456,10 +620,27 @@ namespace Kimaya
                 if (!IsGrounded)
                 {
                     IsJumping = false;
+                    _playedFallWhistle = false;
+                    KimayaPixelVFX.SpawnLandDust(transform.position);
+
+                    // En Jump King clásico, al aterrizar en superficie normal se detiene en seco (sin resbalar de bloques estrechos)
+                    if (CurrentSurface != SurfaceType.Ice)
+                    {
+                        _rb.linearVelocity = new Vector2(0f, 0f);
+                        _iceSlideVelocityX = 0f;
+                    }
 
                     // Si caímos de gran altura: registrar caída y evaluar Aturdimiento (Splat)
                     float fallDistance = _highestAirY - transform.position.y;
-                    if (transform.position.y < _lastGroundedY - 3.0f)
+                    bool droppedFloor = transform.position.y < _lastGroundedY - 3.0f;
+                    bool isHeavySplat = enableHighFallStun && fallDistance >= highFallThreshold;
+
+                    if (KimayaAudio.Instance != null)
+                    {
+                        KimayaAudio.Instance.PlaySFX((droppedFloor || isHeavySplat) ? KimayaAudio.SFX.HeavyFall : KimayaAudio.SFX.Land);
+                    }
+
+                    if (droppedFloor)
                     {
                         TotalFalls++;
                         if (KimayaJumpKingManager.Instance != null)
@@ -468,7 +649,7 @@ namespace Kimaya
                         }
                     }
 
-                    if (enableHighFallStun && fallDistance >= highFallThreshold)
+                    if (isHeavySplat)
                     {
                         IsStunned = true;
                         _stunTimer = splatStunDuration;
@@ -523,6 +704,22 @@ namespace Kimaya
             }
             catch { }
             return val;
+        }
+
+        private bool ReadVerticalOnlyKey()
+        {
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null)
+            {
+                if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed ||
+                    Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed)
+                {
+                    return true;
+                }
+            }
+#endif
+            return Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) ||
+                   Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
         }
     }
 }

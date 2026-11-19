@@ -1,118 +1,217 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 namespace Kimaya
 {
     /// <summary>
-    /// HUD elegante para el Hub de Kimaya.
-    /// Muestra el perro actualmente seleccionado, la misión activa y los controles de juego.
+    /// HUD Pixel-Art para el Santuario / Hub de Kimaya usando placas talladas de PixelLab
+    /// y tipografía pixel PressStart2P (reemplaza los recuadros grises planos de OnGUI).
     /// </summary>
     public class KimayaHubHUD : MonoBehaviour
     {
-        private static GUIStyle cardStyle;
-        private static GUIStyle titleStyle;
-        private static GUIStyle subStyle;
-        private static GUIStyle badgeStyle;
-        private static GUIStyle buttonStyle;
+        private Canvas _hudCanvas;
+        private TextMeshProUGUI _activeDogTmp;
+        private TextMeshProUGUI _roleTmp;
+        private Image _portraitImg;
+        private Sprite _falinPortrait;
+        private Sprite _miaPortrait;
+        private bool _lastFalinState = true;
+        private bool _initialized = false;
 
-        private void OnGUI()
+        private void Start()
         {
-            InitStyles();
+            BuildPixelHubHUD();
+        }
+
+        private void Update()
+        {
+            if (!_initialized) return;
 
             bool isFalin = KimayaHubDuoController.Instance == null || KimayaHubDuoController.Instance.isFalinActive;
-            string activeName = isFalin ? "FALIN (San Bernardo)" : "MIA (Schnauzer)";
-            string companionName = isFalin ? "Mia te acompaña fielmente" : "Falin te acompaña fielmente";
-            string powerDesc = isFalin ? "Fuerza Bruta & Peso" : "Agilidad & Olfato";
+            if (isFalin != _lastFalinState)
+            {
+                _lastFalinState = isFalin;
+                RefreshDogDisplay(isFalin);
+            }
+        }
 
-            // 1. Tarjeta Superior Izquierda: Perro Activo
-            float cardX = 20f;
-            float cardY = 20f;
-            float cardW = 320f;
-            float cardH = 88f;
+        private void BuildPixelHubHUD()
+        {
+            if (_initialized) return;
+            _initialized = true;
 
-            GUI.Box(new Rect(cardX, cardY, cardW, cardH), GUIContent.none, cardStyle);
+            var canvasGo = new GameObject("Hub_PixelLab_Canvas");
+            canvasGo.transform.SetParent(transform, false);
+            _hudCanvas = canvasGo.AddComponent<Canvas>();
+            _hudCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            _hudCanvas.sortingOrder = 50;
 
-            GUI.Label(new Rect(cardX + 16, cardY + 10, 220, 24), $"🐾 <b>{activeName}</b>", titleStyle);
-            GUI.Label(new Rect(cardX + 16, cardY + 34, 280, 20), $"Rol: <color=#FFE680>{powerDesc}</color>", subStyle);
-            GUI.Label(new Rect(cardX + 16, cardY + 56, 280, 20), $"🤝 {companionName}", subStyle);
+            var scaler = canvasGo.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920f, 1080f);
+            scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
+            scaler.matchWidthOrHeight = 0.5f;
+            canvasGo.AddComponent<GraphicRaycaster>();
 
-            // Botón rápido de cambio de perro
-            if (GUI.Button(new Rect(cardX + cardW - 75, cardY + 12, 60, 28), "TAB ⇄", buttonStyle))
+            if (UnityEngine.EventSystems.EventSystem.current == null)
+            {
+                var esGo = new GameObject("EventSystem");
+                esGo.AddComponent<UnityEngine.EventSystems.EventSystem>();
+                esGo.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+            }
+
+            Sprite sprTimerPlaque  = KimayaPixelHUD.LoadPixelSprite("UI/PixelHUD/HUD_TimerPlaque");
+            Sprite sprCookiePlaque = KimayaPixelHUD.LoadPixelSprite("UI/PixelHUD/HUD_CookiePlaque");
+            Sprite sprCrown        = KimayaPixelHUD.LoadPixelSprite("UI/PixelHUD/Icon_PixelCrown");
+            TMP_FontAsset pxFont   = KimayaUITheme.DisplayTMP ?? Resources.Load<TMP_FontAsset>("Fonts/PressStart2P_Pixel");
+
+            if (KimayaHubDuoController.Instance != null)
+            {
+                if (KimayaHubDuoController.Instance.falinSprites != null)
+                    _falinPortrait = KimayaHubDuoController.Instance.falinSprites.defaultPortrait;
+                if (KimayaHubDuoController.Instance.miaSprites != null)
+                    _miaPortrait = KimayaHubDuoController.Instance.miaSprites.defaultPortrait;
+            }
+
+            // 1. Placa Superior Izquierda: Perrita Activa + Botón [TAB]
+            var dogPlaque = CreateRect("HUD_ActiveDogPlaque", canvasGo.transform,
+                new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(0f, 1f),
+                new Vector2(20f, -16f), new Vector2(420f, 92f));
+            var dpImg = dogPlaque.AddComponent<Image>();
+            dpImg.sprite = sprTimerPlaque;
+
+            var dogBtn = dogPlaque.AddComponent<Button>();
+            dogBtn.transition = Selectable.Transition.ColorTint;
+            dogBtn.onClick.AddListener(() =>
             {
                 if (KimayaHubDuoController.Instance != null)
                 {
                     KimayaHubDuoController.Instance.isFalinActive = !KimayaHubDuoController.Instance.isFalinActive;
                 }
-            }
+            });
 
-            // 2. Banner Superior Central: Misión Activa
-            float questW = 380f;
-            float questH = 40f;
-            float questX = (Screen.width - questW) * 0.5f;
-            float questY = 16f;
+            var portGo = CreateRect("DogPortrait", dogPlaque.transform,
+                new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(0.5f, 0.5f),
+                new Vector2(78f, 4f), new Vector2(54f, 54f));
+            _portraitImg = portGo.AddComponent<Image>();
+            _portraitImg.preserveAspect = true;
+            _portraitImg.raycastTarget = false;
 
-            GUI.Box(new Rect(questX, questY, questW, questH), GUIContent.none, cardStyle);
-            string questText = "🗺️ <b>Misión:</b> Entra al Portal Verde (Nivel 1: Ascenso Vertical)";
-            GUI.Label(new Rect(questX, questY + 10, questW, 22), questText, badgeStyle);
+            _activeDogTmp = CreatePxTMP("Txt_ActiveDog", dogPlaque.transform, pxFont,
+                new Vector2(0f, 0.5f), new Vector2(0f, 0.5f),
+                new Vector2(112f, 11f), new Vector2(260f, 28f),
+                "FALIN - BORDER", 13f, new Color(1f, 0.88f, 0.40f), TextAlignmentOptions.Left);
 
-            // 3. Botón Superior Derecho: Menú Principal
-            float menuW = 110f;
-            float menuH = 36f;
-            float menuX = Screen.width - menuW - 20f;
-            float menuY = 20f;
+            _roleTmp = CreatePxTMP("Txt_DogRole", dogPlaque.transform, pxFont,
+                new Vector2(0f, 0.5f), new Vector2(0f, 0.5f),
+                new Vector2(112f, -13f), new Vector2(260f, 24f),
+                "[TAB] CAMBIAR", 10f, new Color(0.72f, 1f, 0.80f), TextAlignmentOptions.Left);
 
-            if (GUI.Button(new Rect(menuX, menuY, menuW, menuH), "🏠 Menú", buttonStyle))
+            // 2. Placa Superior Central: Misión Activa
+            var questPlaque = CreateRect("HUD_QuestPlaque", canvasGo.transform,
+                new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0.5f, 1f),
+                new Vector2(0f, -16f), new Vector2(460f, 82f));
+            var qpImg = questPlaque.AddComponent<Image>();
+            qpImg.sprite = sprTimerPlaque;
+            qpImg.raycastTarget = false;
+
+            var qIconGo = CreateRect("QuestCrown", questPlaque.transform,
+                new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(0.5f, 0.5f),
+                new Vector2(72f, 0f), new Vector2(32f, 28f));
+            var qIconImg = qIconGo.AddComponent<Image>();
+            qIconImg.sprite = sprCrown;
+            qIconImg.preserveAspect = true;
+            qIconImg.raycastTarget = false;
+
+            CreatePxTMP("Txt_Quest", questPlaque.transform, pxFont,
+                new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
+                new Vector2(18f, -1f), new Vector2(310f, 36f),
+                "PORTAL VERDE: NIVEL 1", 12f, new Color(1f, 0.96f, 0.85f), TextAlignmentOptions.Center);
+
+            // 3. Botón Superior Derecho: Menú Principal en Placa PixelLab
+            var menuPlaque = CreateRect("Btn_MenuPlaque", canvasGo.transform,
+                new Vector2(1f, 1f), new Vector2(1f, 1f), new Vector2(1f, 1f),
+                new Vector2(-20f, -16f), new Vector2(210f, 76f));
+            var mpImg = menuPlaque.AddComponent<Image>();
+            mpImg.sprite = sprCookiePlaque != null ? sprCookiePlaque : sprTimerPlaque;
+
+            var menuBtn = menuPlaque.AddComponent<Button>();
+            menuBtn.onClick.AddListener(() =>
             {
                 if (Application.CanStreamedLevelBeLoaded("MainMenu"))
                     SceneManager.LoadScene("MainMenu");
-            }
+            });
 
-            // 4. Barra Inferior: Guía Rápida de Controles
-            float barW = Mathf.Min(680f, Screen.width - 40f);
-            float barH = 34f;
-            float barX = (Screen.width - barW) * 0.5f;
-            float barY = Screen.height - barH - 12f;
+            CreatePxTMP("Txt_Menu", menuPlaque.transform, pxFont,
+                new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
+                new Vector2(0f, -1f), new Vector2(140f, 32f),
+                "MENU", 14f, new Color(1f, 0.90f, 0.50f), TextAlignmentOptions.Center);
 
-            GUI.Box(new Rect(barX, barY, barW, barH), GUIContent.none, cardStyle);
-            string controls = "🎮 <b>[WASD]</b> Moverse   |   <b>[TAB]</b> Alternar Perro   |   <b>[SHIFT]</b> Correr   |   <b>[ESPACIO/Q]</b> Poder   |   <b>[E]</b> Interactuar";
-            GUI.Label(new Rect(barX, barY + 7, barW, 20), controls, badgeStyle);
+            bool initFalin = KimayaHubDuoController.Instance == null || KimayaHubDuoController.Instance.isFalinActive;
+            _lastFalinState = initFalin;
+            RefreshDogDisplay(initFalin);
         }
 
-        private void InitStyles()
+        private void RefreshDogDisplay(bool isFalin)
         {
-            if (cardStyle != null) return;
+            if (_activeDogTmp != null)
+            {
+                _activeDogTmp.text = isFalin ? "FALIN (BORDER)" : "MIA (SCHNAUZER)";
+                _activeDogTmp.color = isFalin ? new Color(1f, 0.88f, 0.40f) : new Color(0.55f, 0.92f, 1f);
+            }
+            if (_roleTmp != null)
+            {
+                _roleTmp.text = isFalin ? "FUERZA | [TAB]" : "AGILIDAD | [TAB]";
+            }
+            if (_portraitImg != null)
+            {
+                Sprite target = isFalin ? _falinPortrait : _miaPortrait;
+                _portraitImg.sprite = target;
+                _portraitImg.enabled = (target != null);
+            }
+        }
 
-            Texture2D bg = new Texture2D(1, 1);
-            bg.SetPixel(0, 0, new Color(0.08f, 0.14f, 0.10f, 0.90f));
-            bg.Apply();
+        private static GameObject CreateRect(string name, Transform parent, Vector2 anchorMin, Vector2 anchorMax, Vector2 pivot, Vector2 pos, Vector2 size)
+        {
+            var go = new GameObject(name);
+            go.transform.SetParent(parent, false);
+            var rt = go.AddComponent<RectTransform>();
+            rt.anchorMin = anchorMin;
+            rt.anchorMax = anchorMax;
+            rt.pivot = pivot;
+            rt.anchoredPosition = pos;
+            rt.sizeDelta = size;
+            return go;
+        }
 
-            Texture2D btnBg = new Texture2D(1, 1);
-            btnBg.SetPixel(0, 0, new Color(0.20f, 0.45f, 0.28f, 0.95f));
-            btnBg.Apply();
+        private static TextMeshProUGUI CreatePxTMP(string name, Transform parent, TMP_FontAsset font, Vector2 anchor, Vector2 pivot, Vector2 pos, Vector2 size, string text, float fontSize, Color col, TextAlignmentOptions align)
+        {
+            var shGo = CreateRect(name + "_Sh", parent, anchor, anchor, pivot, pos + new Vector2(2f, -2f), size);
+            var sh = shGo.AddComponent<TextMeshProUGUI>();
+            if (font != null) sh.font = font;
+            sh.text = text;
+            sh.fontSize = fontSize;
+            sh.color = new Color(0.06f, 0.04f, 0.03f, 0.95f);
+            sh.alignment = align;
+            sh.textWrappingMode = TextWrappingModes.NoWrap;
+            sh.overflowMode = TextOverflowModes.Overflow;
+            sh.raycastTarget = false;
 
-            cardStyle = new GUIStyle();
-            cardStyle.normal.background = bg;
+            var go = CreateRect(name, parent, anchor, anchor, pivot, pos, size);
+            var tmp = go.AddComponent<TextMeshProUGUI>();
+            if (font != null) tmp.font = font;
+            tmp.text = text;
+            tmp.fontSize = fontSize;
+            tmp.color = col;
+            tmp.alignment = align;
+            tmp.textWrappingMode = TextWrappingModes.NoWrap;
+            tmp.overflowMode = TextOverflowModes.Overflow;
+            tmp.raycastTarget = false;
 
-            titleStyle = new GUIStyle();
-            titleStyle.normal.textColor = new Color(0.4f, 1f, 0.7f);
-            titleStyle.fontSize = 15;
-            titleStyle.fontStyle = FontStyle.Bold;
-
-            subStyle = new GUIStyle();
-            subStyle.normal.textColor = Color.white;
-            subStyle.fontSize = 12;
-
-            badgeStyle = new GUIStyle();
-            badgeStyle.normal.textColor = Color.white;
-            badgeStyle.fontSize = 13;
-            badgeStyle.alignment = TextAnchor.MiddleCenter;
-
-            buttonStyle = new GUIStyle();
-            buttonStyle.normal.background = btnBg;
-            buttonStyle.normal.textColor = Color.white;
-            buttonStyle.fontSize = 13;
-            buttonStyle.fontStyle = FontStyle.Bold;
-            buttonStyle.alignment = TextAnchor.MiddleCenter;
+            go.AddComponent<PixelShadowSync>().shadowTarget = sh;
+            return tmp;
         }
     }
 }

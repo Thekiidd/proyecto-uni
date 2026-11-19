@@ -135,14 +135,14 @@ namespace Platformer.EditorTools
                 new KimayaPlatformDef("S4_Ledge_LeftCenter", -1.889f, 33.778f, 2.000f, 0.444f, SurfaceType.Normal),
                 new KimayaPlatformDef("S4_Platform_Bottom", -1.889f, 30.556f, 2.000f, 1.111f, SurfaceType.Normal),
             },
-            // Pantalla 5 Oficial de Jump King (Y: 40.0 a 50.0)
+            // Pantalla 5 Oficial de Jump King (Y: 40.0 a 50.0) con holgura limpia en la cima para no atorarse
             new KimayaPlatformDef[]
             {
-                new KimayaPlatformDef("S5_Wall_Left", -6.556f, 45.000f, 0.222f, 10.000f, SurfaceType.Normal),
-                new KimayaPlatformDef("S5_Top_Exit_Rim", 0.000f, 49.778f, 4.889f, 0.444f, SurfaceType.Normal),
-                new KimayaPlatformDef("S5_Wall_Right", 6.556f, 45.000f, 0.222f, 10.000f, SurfaceType.Normal),
-                new KimayaPlatformDef("S5_Step_A", -1.778f, 48.222f, 0.889f, 0.444f, SurfaceType.Normal),
-                new KimayaPlatformDef("S5_Step_B", 0.000f, 47.778f, 0.889f, 0.444f, SurfaceType.Normal),
+                new KimayaPlatformDef("S5_Wall_Left", -6.556f, 45.500f, 0.222f, 11.000f, SurfaceType.Normal),
+                new KimayaPlatformDef("S5_Top_Exit_Rim", 0.000f, 48.450f, 3.200f, 0.444f, SurfaceType.Normal),
+                new KimayaPlatformDef("S5_Wall_Right", 6.556f, 45.500f, 0.222f, 11.000f, SurfaceType.Normal),
+                new KimayaPlatformDef("S5_Step_A", -1.778f, 47.750f, 0.950f, 0.444f, SurfaceType.Normal),
+                new KimayaPlatformDef("S5_Step_B", 0.000f, 47.150f, 0.950f, 0.444f, SurfaceType.Normal),
                 new KimayaPlatformDef("S5_Ledge_LeftHigh", -5.111f, 47.333f, 0.889f, 0.444f, SurfaceType.Normal),
                 new KimayaPlatformDef("S5_Step_C", 1.778f, 47.333f, 0.889f, 0.444f, SurfaceType.Normal),
                 new KimayaPlatformDef("S5_Ledge_RightHigh", 6.000f, 45.333f, 0.889f, 0.444f, SurfaceType.Normal),
@@ -272,6 +272,7 @@ namespace Platformer.EditorTools
             screenCam.screenHeight = 10f;
             screenCam.screenWidth = 13.333f;
             screenCam.baseWorldY = 0f;
+            screenCam.maxScreenIndex = 4;
             screenCam.transitionSpeed = 15f;
 
             camGo.AddComponent<AudioListener>();
@@ -305,25 +306,27 @@ namespace Platformer.EditorTools
                 }
             }
 
-            // 7. Altar y compañera rescatada en la cima de Pantalla 5
+            // 7. Altar y compañera rescatada sobre S5_Top_Exit_Rim con espacio libre debajo del techo (Y=50)
             GameObject altarGo = new GameObject("Altar_Rescate");
-            altarGo.transform.position = new Vector3(0.0f, 49.5f, 0f);
+            altarGo.transform.position = new Vector3(0.0f, 48.68f, 0f);
             var altarSr = altarGo.AddComponent<SpriteRenderer>();
             altarSr.sprite = altarSprite;
             altarSr.sortingOrder = 5;
-            altarGo.transform.localScale = new Vector3(0.85f, 0.85f, 1f);
+            altarGo.transform.localScale = Vector3.one;
 
             var altarCol = altarGo.AddComponent<BoxCollider2D>();
             altarCol.isTrigger = true;
-            altarCol.size = new Vector2(2.5f, 2.0f);
-            altarCol.offset = new Vector2(0f, 0.2f);
+            altarCol.size = new Vector2(1.80f, 1.40f);
+            altarCol.offset = new Vector2(0f, 0.65f);
             var altarGoal = altarGo.AddComponent<KimayaAltarGoal>();
+            altarGoal.useThornyCage = false;
 
             GameObject rescuedGo = new GameObject("Rescued_Companion");
             rescuedGo.transform.position = new Vector3(1.0f, 49.4f, 0f);
             rescuedGo.transform.localScale = new Vector3(-0.9f, 0.9f, 1f);
             var rescuedSr = rescuedGo.AddComponent<SpriteRenderer>();
-            rescuedSr.sprite = miaSprite != null ? miaSprite : falinSprite;
+            Sprite kiaraSpr = LoadAnySprite("Assets/Resources/NPCs/Kiara/Kiara_south.png");
+            rescuedSr.sprite = kiaraSpr != null ? kiaraSpr : (miaSprite != null ? miaSprite : falinSprite);
             rescuedSr.sortingOrder = 6;
 
             // 7b. Reliquias Sagradas Coleccionables (Disparadores Lógicos 2D - Modificación de Estado y Puntaje)
@@ -516,7 +519,7 @@ namespace Platformer.EditorTools
                 if (!Directory.Exists(dir)) continue;
                 foreach (var file in Directory.GetFiles(dir, "*.png"))
                 {
-                    EnsureTextureIsSprite(file.Replace("\\", "/"), 32.0f, SpriteAlignment.Custom, new Vector2(0.5f, miaPivotY));
+                    EnsureTextureIsSprite(file.Replace("\\", "/"), 36.0f, SpriteAlignment.Custom, new Vector2(0.5f, miaPivotY));
                 }
             }
         }

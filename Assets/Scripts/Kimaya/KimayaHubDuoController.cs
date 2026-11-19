@@ -144,6 +144,7 @@ namespace Kimaya
 
         private bool _falinPerformingPower = false;
         private bool _miaPerformingPower = false;
+        private float _hubStepTimer = 0f;
 
         public event Action<bool> OnDogSwitched;
 
@@ -161,23 +162,109 @@ namespace Kimaya
         {
             EnsureReferences();
             IgnoreDogToDogCollisions();
+            EnsureHubWalkableBoundaries();
+            PlayerPrefs.SetString("SelectedCharacter", isFalinActive ? "Falin" : "Mia");
+            PlayerPrefs.Save();
             UpdateActiveDogMarker();
             OnDogSwitched?.Invoke(isFalinActive);
         }
 
+        /// <summary>
+        /// Crea colisionadores invisibles alrededor de los riscos, pinos, árbol grande y bordes
+        /// del Hub para que Falin y Mía solo caminen por el claro de pasto y los senderos de piedra.
+        /// </summary>
+        private void EnsureHubWalkableBoundaries()
+        {
+            if (GameObject.Find("Hub_Walkable_Collisions") != null) return;
+
+            var root = new GameObject("Hub_Walkable_Collisions");
+
+            // 1. Perímetro exterior del claro (izquierda, derecha, arriba, abajo)
+            AddBoxWall(root.transform, "Wall_Left",   -7.0f,  0.0f, 1.5f, 12.0f);
+            AddBoxWall(root.transform, "Wall_Right",   7.0f,  0.0f, 1.5f, 12.0f);
+            AddBoxWall(root.transform, "Wall_Top",     0.0f,  3.3f, 18.0f, 1.5f);
+            AddBoxWall(root.transform, "Wall_Bottom",  0.0f, -4.75f, 18.0f, 1.5f);
+
+            // 2. Risco y pinos de la esquina inferior izquierda
+            AddPolyWall(root.transform, "Cliff_BottomLeft", new Vector2[]
+            {
+                new Vector2(-9.0f, -5.0f),
+                new Vector2(-3.2f, -5.0f),
+                new Vector2(-5.5f, -2.0f),
+                new Vector2(-6.3f, -0.6f),
+                new Vector2(-9.0f, -0.6f)
+            });
+
+            // 3. Árbol grande, risco y pinos de la esquina inferior derecha
+            AddPolyWall(root.transform, "Cliff_Oak_BottomRight", new Vector2[]
+            {
+                new Vector2(3.6f, -5.0f),
+                new Vector2(9.0f, -5.0f),
+                new Vector2(9.0f, -0.4f),
+                new Vector2(5.4f, -0.4f),
+                new Vector2(4.9f, -2.4f)
+            });
+
+            // 4. Pinos superiores izquierda (detrás del portal verde)
+            AddBoxWall(root.transform, "Trees_TopLeft", -5.8f, 3.2f, 4.4f, 2.4f);
+
+            // 5. Pinos y rocas superiores derecha (detrás del tronco caído y portal morado)
+            AddBoxWall(root.transform, "Trees_Rocks_TopRight", 5.2f, 3.0f, 5.4f, 2.4f);
+
+            // Asegurar que ambos perritos tengan Collider2D sólido para chocar con estas barreras
+            EnsureDogCollider(falinObject);
+            EnsureDogCollider(miaObject);
+        }
+
+        private static void AddBoxWall(Transform parent, string name, float cx, float cy, float w, float h)
+        {
+            var go = new GameObject(name);
+            go.transform.SetParent(parent, false);
+            go.transform.position = new Vector3(cx, cy, 0f);
+            var bc = go.AddComponent<BoxCollider2D>();
+            bc.size = new Vector2(w, h);
+        }
+
+        private static void AddPolyWall(Transform parent, string name, Vector2[] pts)
+        {
+            var go = new GameObject(name);
+            go.transform.SetParent(parent, false);
+            var pc = go.AddComponent<PolygonCollider2D>();
+            pc.points = pts;
+        }
+
+        private static void EnsureDogCollider(GameObject dog)
+        {
+            if (dog == null) return;
+            var col = dog.GetComponent<BoxCollider2D>();
+            if (col == null)
+            {
+                col = dog.AddComponent<BoxCollider2D>();
+                col.size = new Vector2(0.8f, 0.5f);
+                col.offset = new Vector2(0f, 0.25f);
+            }
+            col.isTrigger = false;
+        }
+
         private void EnsureReferences()
         {
-            if (falinObject == null) falinObject = GameObject.Find("Falin_SanBernardo");
+            if (falinObject == null)
+            {
+                falinObject = GameObject.Find("Falin_BorderCollie");
+                if (falinObject == null) falinObject = GameObject.Find("Falin_SanBernardo");
+            }
             if (miaObject == null) miaObject = GameObject.Find("Mia_Schnauzer");
 
             if (falinObject != null)
             {
+                falinObject.transform.localScale = new Vector3(0.38f, 0.38f, 1.0f);
                 if (_falinRb == null) _falinRb = falinObject.GetComponent<Rigidbody2D>();
                 if (_falinSr == null) _falinSr = falinObject.GetComponent<SpriteRenderer>();
             }
 
             if (miaObject != null)
             {
+                miaObject.transform.localScale = new Vector3(0.44f, 0.44f, 1.0f);
                 if (_miaRb == null) _miaRb = miaObject.GetComponent<Rigidbody2D>();
                 if (_miaSr == null) _miaSr = miaObject.GetComponent<SpriteRenderer>();
             }
@@ -227,7 +314,10 @@ namespace Kimaya
         public void SwitchActiveDog()
         {
             isFalinActive = !isFalinActive;
+            PlayerPrefs.SetString("SelectedCharacter", isFalinActive ? "Falin" : "Mia");
+            PlayerPrefs.Save();
             UpdateActiveDogMarker();
+            if (KimayaAudio.Instance != null) KimayaAudio.Instance.PlaySFX(KimayaAudio.SFX.Switch);
             OnDogSwitched?.Invoke(isFalinActive);
             Debug.Log($"[KimayaHubDuoController] Líder cambiado a: {(isFalinActive ? "Falin" : "Mía")}");
         }
@@ -351,11 +441,18 @@ namespace Kimaya
                 activeRb.linearVelocity = input * currentSpeed;
                 SetDogState(isFalinActive, isRunning ? DogAnimState.Running : DogAnimState.Walking);
                 activeDir = CalculateDirectionWithHysteresis(input, activeDir);
+                _hubStepTimer -= Time.fixedDeltaTime;
+                if (_hubStepTimer <= 0f)
+                {
+                    _hubStepTimer = isRunning ? 0.18f : 0.27f;
+                    if (KimayaAudio.Instance != null) KimayaAudio.Instance.PlaySFX(KimayaAudio.SFX.Step, 0.55f);
+                }
             }
             else
             {
                 activeRb.linearVelocity = Vector2.zero;
                 SetDogState(isFalinActive, DogAnimState.Idle);
+                _hubStepTimer = 0.04f;
             }
         }
 
@@ -434,6 +531,7 @@ namespace Kimaya
             {
                 _falinPerformingPower = true;
                 SetDogState(true, DogAnimState.Power);
+                if (KimayaAudio.Instance != null) KimayaAudio.Instance.PlaySFX(KimayaAudio.SFX.Bark);
                 yield return new WaitForSeconds(0.55f);
                 _falinPerformingPower = false;
             }
@@ -441,6 +539,7 @@ namespace Kimaya
             {
                 _miaPerformingPower = true;
                 SetDogState(false, DogAnimState.Power);
+                if (KimayaAudio.Instance != null) KimayaAudio.Instance.PlaySFX(KimayaAudio.SFX.Smell);
                 yield return new WaitForSeconds(0.55f);
                 _miaPerformingPower = false;
             }

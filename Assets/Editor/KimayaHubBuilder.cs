@@ -175,11 +175,11 @@ namespace Platformer.EditorTools
             duoController.runSpeed = 7.6f;
             duoController.companionFollowDistance = 1.35f;
 
-            // --- FALIN (San Bernardo - Escala 0.66x) ---
-            var falinGO = new GameObject("Falin_SanBernardo");
+            // --- FALIN (Border Collie - Escala 0.56x a 36 PPU) ---
+            var falinGO = new GameObject("Falin_BorderCollie");
             falinGO.tag = "Player";
             falinGO.transform.position = new Vector3(-0.75f, -1.10f, 0f);
-            falinGO.transform.localScale = new Vector3(0.66f, 0.66f, 1.0f);
+            falinGO.transform.localScale = new Vector3(0.56f, 0.56f, 1.0f);
 
             var falinSR = falinGO.AddComponent<SpriteRenderer>();
             falinSR.sprite = LoadSprite($"{PIXELLAB_PATH}/Falin/Idle/rotations/south.png");
@@ -200,11 +200,11 @@ namespace Platformer.EditorTools
             duoController.falinObject = falinGO;
             duoController.falinSprites = BuildDogSpriteSet("Falin", $"{PIXELLAB_PATH}/Falin");
 
-            // --- MIA (Schnauzer - Escala 0.56x) ---
+            // --- MIA (Schnauzer - Escala 0.62x a 36 PPU) ---
             var miaGO = new GameObject("Mia_Schnauzer");
             miaGO.tag = "Player";
             miaGO.transform.position = new Vector3(0.75f, -1.10f, 0f);
-            miaGO.transform.localScale = new Vector3(0.56f, 0.56f, 1.0f);
+            miaGO.transform.localScale = new Vector3(0.62f, 0.62f, 1.0f);
 
             var miaSR = miaGO.AddComponent<SpriteRenderer>();
             miaSR.sprite = LoadSprite($"{PIXELLAB_PATH}/Mia/Idle/rotations/south.png");

@@ -160,7 +160,7 @@ namespace Platformer.EditorTools
                 });
 
             // Mascota amiga: San Bernardo durmiendo plácidamente sobre el pasto junto a la cerca de la granja
-            var sleepingDogSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/Dogs/Saint-Bernard/Saint-Bernard-lying-down.png");
+            var sleepingDogSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/PixelLab/Falin/Idle/rotations/east.png");
             if (sleepingDogSprite != null)
             {
                 var dogFriend = new GameObject("Perro_Amigo_Dormilon");
@@ -178,10 +178,10 @@ namespace Platformer.EditorTools
                 var npcComp = dogFriend.AddComponent<NPCInteractable>();
                 npcComp.dialogue = new DialogueData
                 {
-                    npcName = "San Bernardo Amigo",
+                    npcName = "Border Collie Guardián",
                     lines = new string[]
                     {
-                        "*Zzz... El gran San Bernardo duerme plácidamente bajo el sol en el pasto*",
+                        "*Zzz... El ágil Border Collie descansa plácidamente bajo el sol en el pasto*",
                         "*Abre un ojo perezosamente, mueve la cola amistosamente dos veces y vuelve a roncar felizmente*"
                     }
                 };

@@ -1,34 +1,19 @@
 using UnityEditor;
 using UnityEngine;
-using System.IO;
 
-[InitializeOnLoad]
+/// <summary>
+/// Desactivado en arranque automático ([InitializeOnLoad] removido) para evitar
+/// sobrescribir escenas sincronizadas o lanzar errores por Level_01.unity inexistente.
+/// Disponible manualmente desde el menú Tools si se requiere.
+/// </summary>
 public static class AutoMenuAndPrologueBuilder
 {
-    static AutoMenuAndPrologueBuilder()
-    {
-        EditorApplication.delayCall += RunBuild;
-    }
-
-    private static void RunBuild()
+    [MenuItem("Tools/Kimaya/Rebuild Menu & Prologue Scenes")]
+    public static void RunBuildManual()
     {
         if (EditorApplication.isPlaying) return;
-
-        string flagFile = Application.dataPath + "/../Library/menu_built_v5.txt";
-        if (File.Exists(flagFile)) return;
-
-        Debug.Log("[AutoMenuAndPrologueBuilder] Iniciando construcción automática con puzzles de Nivel 1...");
-        try
-        {
-            MainMenuSceneBuilder.BuildScene();
-            PrologueSceneBuilder.BuildScene();
-            Level01CoopPuzzleSetup.SetupPuzzle();
-            File.WriteAllText(flagFile, "done");
-            Debug.Log("[AutoMenuAndPrologueBuilder] ✅ MainMenu, Prologue_Story y Level_01 (Puzzles) configuradas automáticamente!");
-        }
-        catch (System.Exception ex)
-        {
-            Debug.LogError("[AutoMenuAndPrologueBuilder] Error al construir escenas: " + ex);
-        }
+        MainMenuSceneBuilder.BuildScene();
+        PrologueSceneBuilder.BuildScene();
+        Debug.Log("[AutoMenuAndPrologueBuilder] ✅ MainMenu y Prologue_Story reconstruidas manualmente.");
     }
 }

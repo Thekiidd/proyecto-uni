@@ -5,43 +5,41 @@ using UnityEngine.UI;
 namespace Platformer.UI
 {
     /// <summary>
-    /// Controla la pantalla de inicio del juego.
-    /// Asignar en el Inspector: los paneles, botones y el CharacterSelectUI.
+    /// Controla la pantalla de inicio del juego con botones Pixel-Art (Crema / Oro / Negro) y tipografía Pixel.
     /// </summary>
     public class MainMenuController : MonoBehaviour
     {
         [Header("Paneles")]
-        [SerializeField] private GameObject panelMain;           // Panel con botones principales
-        [SerializeField] private GameObject panelCharacterSelect; // Panel de selección de personaje
-        [SerializeField] private GameObject panelSettings;       // Panel de ajustes
-        [SerializeField] private GameObject panelHelp;           // Panel de ayuda/controles
+        [SerializeField] private GameObject panelMain;
+        [SerializeField] private GameObject panelCharacterSelect;
+        [SerializeField] private GameObject panelSettings;
+        [SerializeField] private GameObject panelHelp;
 
         [Header("Botones Menú Principal")]
-        [SerializeField] private Button btnStory;    // Jugar Modo Historia (Prólogo)
-        [SerializeField] private Button btnPlay;     // Selección de Perro Libre
-        [SerializeField] private Button btnSettings; // Abrir Ajustes
-        [SerializeField] private Button btnHelp;     // Abrir Ayuda
-        [SerializeField] private Button btnQuit;     // Salir
+        [SerializeField] private Button btnStory;
+        [SerializeField] private Button btnPlay;
+        [SerializeField] private Button btnSettings;
+        [SerializeField] private Button btnHelp;
+        [SerializeField] private Button btnQuit;
 
         [Header("Botones Modales")]
         [SerializeField] private Button btnSettingsBack;
         [SerializeField] private Button btnHelpBack;
 
         [Header("Botones Selección de Personaje")]
-        [SerializeField] private Button btnStart;   // Confirmar personaje y jugar
-        [SerializeField] private Button btnBack;    // Volver al menú principal
+        [SerializeField] private Button btnStart;
+        [SerializeField] private Button btnBack;
 
         [Header("Referencias")]
         [SerializeField] private CharacterSelectUI characterSelectUI;
 
         [Header("Animación de Fondo")]
         [SerializeField] private RectTransform backgroundTransform;
-        // [SerializeField] private float bgScrollSpeed = 0f;
 
         private void Start()
         {
-            // Asegurar que GameData y SceneLoader existan
             EnsureSingletons();
+            Kimaya.KimayaUITheme.ApplyThemeToActiveScene();
 
             ShowMainPanel();
 
@@ -83,7 +81,26 @@ namespace Platformer.UI
             if (panelMain != null) panelMain.SetActive(false);
             if (panelCharacterSelect != null) panelCharacterSelect.SetActive(false);
             if (panelHelp != null) panelHelp.SetActive(false);
-            if (panelSettings != null) panelSettings.SetActive(true);
+            if (panelSettings != null)
+            {
+                panelSettings.SetActive(true);
+
+                var content = panelSettings.transform.Find("Content");
+                if (content != null) content.gameObject.SetActive(false);
+                var header = panelSettings.transform.Find("Header");
+                if (header != null) header.gameObject.SetActive(false);
+                var backBtn = panelSettings.transform.Find("BtnSettingsBack");
+                if (backBtn != null) backBtn.gameObject.SetActive(false);
+
+                // Ocultar el marco marrón para que luzca limpio el panel interactivo de ajustes
+                var pImg = panelSettings.GetComponent<Image>();
+                if (pImg != null) pImg.enabled = false;
+
+                if (panelSettings.GetComponent<Kimaya.KimayaSettingsController>() == null)
+                {
+                    panelSettings.AddComponent<Kimaya.KimayaSettingsController>();
+                }
+            }
         }
 
         private void ShowHelp()
@@ -91,37 +108,44 @@ namespace Platformer.UI
             if (panelMain != null) panelMain.SetActive(false);
             if (panelCharacterSelect != null) panelCharacterSelect.SetActive(false);
             if (panelSettings != null) panelSettings.SetActive(false);
-            if (panelHelp != null) panelHelp.SetActive(true);
+            if (panelHelp != null)
+            {
+                panelHelp.SetActive(true);
+                Kimaya.KimayaUITheme.ApplyThemeToActiveScene();
+            }
         }
 
         private void StartPlayGame()
         {
             Debug.Log("[MainMenu] Iniciando Partida: Hub de Kimaya");
-            if (Application.CanStreamedLevelBeLoaded("Hub"))
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
+            if (Application.CanStreamedLevelBeLoaded("Prologue_Story") && PlayerPrefs.GetInt("Kimaya_SeenPrologue", 0) == 0)
+            {
+                PlayerPrefs.SetInt("Kimaya_SeenPrologue", 1);
+                Kimaya.KimayaSceneTransition.LoadScene("Prologue_Story");
+            }
+            else if (Application.CanStreamedLevelBeLoaded("Hub"))
+                Kimaya.KimayaSceneTransition.LoadScene("Hub");
             else if (Application.CanStreamedLevelBeLoaded("Village_Scene"))
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Village_Scene");
+                Kimaya.KimayaSceneTransition.LoadScene("Village_Scene");
             else if (Application.CanStreamedLevelBeLoaded("Level_01_Bosque"))
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Level_01_Bosque");
-            else if (Application.CanStreamedLevelBeLoaded("Prologue_Story"))
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Prologue_Story");
+                Kimaya.KimayaSceneTransition.LoadScene("Level_01_Bosque");
             else if (SceneLoader.Instance != null)
                 SceneLoader.Instance.LoadVillage();
             else
-                UnityEngine.SceneManagement.SceneManager.LoadScene(GameData.VillageScene);
+                Kimaya.KimayaSceneTransition.LoadScene(GameData.VillageScene);
         }
 
         private void StartStoryMode()
         {
             Debug.Log("[MainMenu] Iniciando Modo Historia: Hub de Kimaya");
             if (Application.CanStreamedLevelBeLoaded("Hub"))
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
+                Kimaya.KimayaSceneTransition.LoadScene("Hub");
             else if (Application.CanStreamedLevelBeLoaded("Prologue_Story"))
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Prologue_Story");
+                Kimaya.KimayaSceneTransition.LoadScene("Prologue_Story");
             else if (SceneLoader.Instance != null)
                 SceneLoader.Instance.LoadVillage();
             else
-                UnityEngine.SceneManagement.SceneManager.LoadScene(GameData.VillageScene);
+                Kimaya.KimayaSceneTransition.LoadScene(GameData.VillageScene);
         }
 
         private void StartGame()
@@ -133,16 +157,15 @@ namespace Platformer.UI
                 return;
             }
 
-            // Inicializar GameData con el personaje y cargar el Hub
             if (GameData.Instance != null)
                 GameData.Instance.StartNewGame(selected);
 
             if (Application.CanStreamedLevelBeLoaded("Hub"))
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
+                Kimaya.KimayaSceneTransition.LoadScene("Hub");
             else if (SceneLoader.Instance != null)
                 SceneLoader.Instance.LoadVillage();
             else
-                UnityEngine.SceneManagement.SceneManager.LoadScene(GameData.VillageScene);
+                Kimaya.KimayaSceneTransition.LoadScene(GameData.VillageScene);
         }
 
         private void QuitGame()

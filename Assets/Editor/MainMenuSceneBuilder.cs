@@ -54,18 +54,22 @@ public static class MainMenuSceneBuilder
         esGO.AddComponent<UnityEngine.EventSystems.EventSystem>();
         esGO.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
 
-        // 4. Assets Visuales
+        // 4. Assets Visuales (Nuevos Botones Pixel-Art Crema / Dorado / Negro)
         var bgSprite       = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/MainMenu_Background.png");
-        var btnNormSprite  = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Normal.png");
-        var btnHovSprite   = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Hover.png");
-        var btnPressSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Pressed.png");
+        var btnNormSprite  = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/PixelButtons/Btn_Pixel_Normal.png")
+                          ?? AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Normal.png");
+        var btnHovSprite   = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/PixelButtons/Btn_Pixel_Hover.png")
+                          ?? AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Hover.png");
+        var btnPressSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/PixelButtons/Btn_Pixel_Pressed.png")
+                          ?? AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Button_Wood_Pressed.png");
         var panelSprite    = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Panel_Wood_Frame.png");
         var bannerSprite   = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Title_Banner.png");
         var pawSprite      = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Icon_Paw.png");
 
-        // Tipografías
-        var titleFont = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(FONT_TITLE);
-        var bodyFont  = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(FONT_BODY) ?? titleFont;
+        // Tipografías Pixel-Art
+        var pixelFontAsset = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(FONT_PIXEL);
+        var titleFont = pixelFontAsset ?? AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(FONT_TITLE);
+        var bodyFont  = pixelFontAsset ?? AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(FONT_BODY) ?? titleFont;
 
         // Helpers de construcción UI
         RectTransform RT(GameObject go) => go.GetComponent<RectTransform>();
@@ -127,18 +131,19 @@ public static class MainMenuSceneBuilder
             btn.colors = new ColorBlock
             {
                 normalColor = Color.white,
-                highlightedColor = new Color(1.15f, 1.15f, 1.15f),
-                pressedColor = new Color(0.85f, 0.85f, 0.85f),
+                highlightedColor = Color.white,
+                pressedColor = Color.white,
                 selectedColor = Color.white,
                 colorMultiplier = 1f,
-                fadeDuration = 0.1f
+                fadeDuration = 0.05f
             };
             btn.spriteState = ss;
+            go.AddComponent<Kimaya.KimayaPixelButtonFeedback>();
 
             var txtGO = MakeChild("Text", go);
             Stretch(txtGO);
-            var tmp = MakeTMP(txtGO, label, fontSize, new Color(1f, 0.95f, 0.84f), TextAlignmentOptions.Center, FontStyles.Bold, titleFont);
-            tmp.characterSpacing = 3f;
+            var tmp = MakeTMP(txtGO, label, Mathf.Min(fontSize, 24), new Color(0.12f, 0.08f, 0.05f), TextAlignmentOptions.Center, FontStyles.Bold, titleFont);
+            tmp.characterSpacing = 2f;
             return btn;
         }
 
@@ -184,9 +189,9 @@ public static class MainMenuSceneBuilder
         var subTMP = MakeTMP(subTxtGO, "El Bosque del Eco", 22, new Color(0.98f, 0.98f, 0.92f), TextAlignmentOptions.Center, FontStyles.Italic, bodyFont);
         subTMP.characterSpacing = 3f;
 
-        // 7. PanelMain (Botonera Centrada y Elevada)
+        // 7. PanelMain (Botonera Centrada y Elevada para lucir a las 3 perritas en el prado)
         var panelMain = MakeChild("PanelMain", canvasGO);
-        SetAnchored(panelMain, new Vector2(0.5f, 0.47f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(440, 330));
+        SetAnchored(panelMain, new Vector2(0.5f, 0.54f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(440, 320));
 
         // 4 Botones Claros y Grandes (JUGAR, AJUSTES, CÓMO JUGAR, SALIR)
         float startY = 110f;
@@ -194,19 +199,19 @@ public static class MainMenuSceneBuilder
 
         var btnPlayGO = MakeChild("BtnPlay", panelMain);
         SetAnchored(btnPlayGO, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, startY), new Vector2(400, 65));
-        var btnPlay = MakeWoodButton(btnPlayGO, "▶ JUGAR", 30);
+        var btnPlay = MakeWoodButton(btnPlayGO, "> JUGAR", 24);
 
         var btnSettingsGO = MakeChild("BtnSettings", panelMain);
         SetAnchored(btnSettingsGO, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, startY - spacing), new Vector2(400, 65));
-        var btnSettings = MakeWoodButton(btnSettingsGO, "AJUSTES", 28);
+        var btnSettings = MakeWoodButton(btnSettingsGO, "AJUSTES", 24);
 
         var btnHelpGO = MakeChild("BtnHelp", panelMain);
         SetAnchored(btnHelpGO, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, startY - spacing * 2), new Vector2(400, 65));
-        var btnHelp = MakeWoodButton(btnHelpGO, "CÓMO JUGAR", 26);
+        var btnHelp = MakeWoodButton(btnHelpGO, "CÓMO JUGAR", 22);
 
         var btnQuitGO = MakeChild("BtnQuit", panelMain);
         SetAnchored(btnQuitGO, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, startY - spacing * 3), new Vector2(400, 65));
-        var btnQuit = MakeWoodButton(btnQuitGO, "✕ SALIR", 26);
+        var btnQuit = MakeWoodButton(btnQuitGO, "X SALIR", 22);
 
         // 8. PanelSettings (Modal de Ajustes)
         var panelSettings = MakeChild("PanelSettings", canvasGO);
@@ -231,30 +236,35 @@ public static class MainMenuSceneBuilder
         SetAnchored(btnSetBackGO, new Vector2(0.5f, 0.14f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(250, 56));
         var btnSetBack = MakeWoodButton(btnSetBackGO, "< VOLVER", 24);
 
-        // 9. PanelHelp (Modal Cómo Jugar)
+        // 9. PanelHelp (Modal Cómo Jugar — bien encuadrado dentro del pergamino central)
         var panelHelp = MakeChild("PanelHelp", canvasGO);
-        SetAnchored(panelHelp, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(780, 560));
+        SetAnchored(panelHelp, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(860, 580));
         MakeImage(panelHelp, panelSprite, Image.Type.Sliced);
         panelHelp.SetActive(false);
 
         var helpHeaderGO = MakeChild("Header", panelHelp);
-        SetAnchored(helpHeaderGO, new Vector2(0.5f, 0.90f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(620, 50));
-        MakeTMP(helpHeaderGO, "CÓMO JUGAR: KIMAYA", 30, new Color(0.25f, 0.15f, 0.08f), TextAlignmentOptions.Center, FontStyles.Bold, titleFont);
+        SetAnchored(helpHeaderGO, new Vector2(0.5f, 0.80f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(540, 42));
+        var helpHeaderTMP = MakeTMP(helpHeaderGO, "CÓMO JUGAR: KIMAYA", 22, new Color(0.22f, 0.13f, 0.06f), TextAlignmentOptions.Center, FontStyles.Bold, titleFont);
+        helpHeaderTMP.enableAutoSizing = true;
+        helpHeaderTMP.fontSizeMin = 16;
+        helpHeaderTMP.fontSizeMax = 22;
 
         var helpContentGO = MakeChild("Content", panelHelp);
-        SetAnchored(helpContentGO, new Vector2(0.5f, 0.53f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(680, 310));
-        MakeTMP(helpContentGO,
-            "¡KIMAYA: EL BOSQUE DEL ECO!\n\n" +
-            "• MOVIMIENTO: Teclas A / D o Flechas Izquierda / Derecha\n" +
-            "• SALTAR: Barra Espaciadora o Tecla W / Arriba\n" +
-            "• BALANCINES: Se inclinan con tu peso y el de los objetos\n" +
-            "• CAJAS: Empújalas sobre las placas rúnicas para activar puertas\n" +
-            "• SPEEDRUN: ¡Llega a la meta en el menor tiempo y sube tu récord a la web!",
-            18, new Color(0.26f, 0.17f, 0.1f), TextAlignmentOptions.TopLeft, FontStyles.Normal, bodyFont);
+        SetAnchored(helpContentGO, new Vector2(0.5f, 0.50f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(540, 250));
+        var helpBodyTMP = MakeTMP(helpContentGO,
+            "• HUB (SANTUARIO): Camina con WASD o Flechas y pulsa [TAB] para cambiar entre Falin y Mía.\n\n" +
+            "• PORTALES Y HADA: Acércate al portal o al Hada de la Historia y pulsa [E] para interactuar.\n\n" +
+            "• ASCENSO: Muévete con A / D, mantén [ESPACIO] para cargar potencia y suelta para saltar.\n\n" +
+            "• META: Recoge las 3 Scooby Galletas, evita los picos y rompe la jaula en la cumbre.",
+            17, new Color(0.22f, 0.14f, 0.08f), TextAlignmentOptions.TopLeft, FontStyles.Normal, bodyFont);
+        helpBodyTMP.enableAutoSizing = true;
+        helpBodyTMP.fontSizeMin = 13;
+        helpBodyTMP.fontSizeMax = 18;
+        helpBodyTMP.overflowMode = TextOverflowModes.Truncate;
 
         var btnHelpBackGO = MakeChild("BtnHelpBack", panelHelp);
-        SetAnchored(btnHelpBackGO, new Vector2(0.5f, 0.12f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(250, 56));
-        var btnHelpBack = MakeWoodButton(btnHelpBackGO, "ENTENDIDO", 24);
+        SetAnchored(btnHelpBackGO, new Vector2(0.5f, 0.19f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(240, 50));
+        var btnHelpBack = MakeWoodButton(btnHelpBackGO, "ENTENDIDO", 20);
 
         // 10. MainMenuController
         var mmcGO = new GameObject("MainMenuController");

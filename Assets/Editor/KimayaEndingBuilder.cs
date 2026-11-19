@@ -16,9 +16,9 @@ namespace Platformer.EditorTools
     public static class KimayaEndingBuilder
     {
         private const string SCENE_PATH = "Assets/Scenes/Ending.unity";
-        private const string FALIN_SPR  = "Assets/Sprites/Dogs/Great-Dane/Great-Dane-idle.png";
-        private const string MIA_SPR    = "Assets/Sprites/Dogs/Schnauzer/Schnauzer-Idle.png";
-        private const string KIARA_SPR  = "Assets/Sprites/Dogs/Schnauzer/Schnauzer-sitting.png";
+        private const string FALIN_SPR  = "Assets/Sprites/PixelLab/Falin/Idle/rotations/south.png";
+        private const string MIA_SPR    = "Assets/Sprites/PixelLab/Mia/Idle/rotations/south.png";
+        private const string KIARA_SPR  = "Assets/Resources/NPCs/Kiara/Kiara_south.png";
 
         [MenuItem("Tools/Kimaya/Build Ending Scene")]
         public static void Build()
@@ -75,11 +75,11 @@ namespace Platformer.EditorTools
             Sprite kiaraSpr = LoadSprite(KIARA_SPR);
 
             CreateSpriteImage(canvasGo.transform, "Kiara_Center", kiaraSpr,
-                new Color(0.75f, 0.65f, 0.95f), new Vector2(0, -80), new Vector2(220, 220));
+                Color.white, new Vector2(0, -90), new Vector2(190, 190));
             CreateSpriteImage(canvasGo.transform, "Falin_Left", falinSpr,
-                new Color(0.9f, 0.75f, 0.3f), new Vector2(-280, -120), new Vector2(190, 190));
+                Color.white, new Vector2(-260, -105), new Vector2(230, 230));
             CreateSpriteImage(canvasGo.transform, "Mia_Right", miaSpr,
-                new Color(0.5f, 0.85f, 1f), new Vector2(280, -120), new Vector2(160, 160));
+                Color.white, new Vector2(260, -115), new Vector2(185, 185));
 
             // Título
             CreateText(canvasGo.transform, "Titulo", "¡Reunidas!",

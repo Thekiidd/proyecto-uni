@@ -12,7 +12,7 @@ namespace Platformer.Security
         public long saveTimestampUtc;
 
         // Progreso de Historia y Niveles
-        public string selectedDogName = "Golden Retriever";
+        public string selectedDogName = "Border Collie";
         public int currentLevel = 1;
         public int unlockedLevels = 1;
         public int totalCoins = 0;

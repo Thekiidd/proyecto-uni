@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo Web — Perros Jugadores de Kimaya</title>
+  <style>
+    body {
+      background: #12101b;
+      color: #f7f1e1;
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 32px;
+    }
+    h1 { color: #ffd95e; margin-bottom: 6px; }
+    h2 { color: #9ef090; border-bottom: 1px solid #2e2942; padding-bottom: 8px; margin-top: 32px; }
+    .sub { color: #b9b1ce; margin-bottom: 24px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #1d192b;
+      border: 1px solid #352d4d;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .card img {
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      max-height: 140px;
+      width: auto;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    .card span {
+      font-size: 13px;
+      color: #d6cee8;
+      display: block;
+    }
+    pre {
+      background: #191526;
+      border: 1px solid #3c3259;
+      padding: 14px;
+      border-radius: 8px;
+      color: #ffdf80;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐾 Assets Oficiales para Web — Perros de Kimaya</h1>
+  <p class="sub">Incluye PNGs originales (1x), PNGs escalados (4x), Spritesheets horizontales y GIFs transparentes listos para usar en HTML/CSS/JS.</p>
+
+  <h2>Tip CSS para que el Pixel-Art se vea 100% nítido en cualquier navegador</h2>
+  <pre>.pixel-dog {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}</pre>
+
+  <h2>1. Falin (Border Collie — Jugador 1)</h2>
+  <div class="grid">
+    <div class="card"><img src="../1_Falin_BorderCollie/GIFs_Animados_Web/Falin_Idle_south_4x.gif"><span>Idle Frente (GIF)</span></div>
+    <div class="card"><img src="../1_Falin_BorderCollie/GIFs_Animados_Web/Falin_Idle_east_4x.gif"><span>Idle Perfil (GIF)</span></div>
+    <div class="card"><img src="../1_Falin_BorderCollie/GIFs_Animados_Web/Falin_Caminando_east_4x.gif"><span>Caminando (GIF)</span></div>
+    <div class="card"><img src="../1_Falin_BorderCollie/GIFs_Animados_Web/Falin_Secuencia_Salto_4x.gif"><span>Secuencia Salto (GIF)</span></div>
+    <div class="card"><img src="../1_Falin_BorderCollie/GIFs_Animados_Web/Falin_Caballero_Caminando_east_4x.gif"><span>Skin Caballero (GIF)</span></div>
+    <div class="card"><img src="../1_Falin_BorderCollie/Web_Escalados_4x_Nitidos/Falin_Pose_south_4x.png"><span>Pose Sur (PNG 4x)</span></div>
+  </div>
+
+  <h2>2. Mía (Schnauzer — Jugador 2)</h2>
+  <div class="grid">
+    <div class="card"><img src="../2_Mia_Schnauzer/GIFs_Animados_Web/Mia_Idle_south_4x.gif"><span>Idle Frente (GIF)</span></div>
+    <div class="card"><img src="../2_Mia_Schnauzer/GIFs_Animados_Web/Mia_Idle_east_4x.gif"><span>Idle Perfil (GIF)</span></div>
+    <div class="card"><img src="../2_Mia_Schnauzer/GIFs_Animados_Web/Mia_Caminando_east_4x.gif"><span>Caminando (GIF)</span></div>
+    <div class="card"><img src="../2_Mia_Schnauzer/GIFs_Animados_Web/Mia_Secuencia_Salto_4x.gif"><span>Secuencia Salto (GIF)</span></div>
+    <div class="card"><img src="../2_Mia_Schnauzer/GIFs_Animados_Web/Mia_Caballero_Caminando_east_4x.gif"><span>Skin Caballero (GIF)</span></div>
+    <div class="card"><img src="../2_Mia_Schnauzer/Web_Escalados_4x_Nitidos/Mia_Pose_south_4x.png"><span>Pose Sur (PNG 4x)</span></div>
+  </div>
+
+  <h2>3. Kiara (Schnauzer Canela — Hermana Rescatada / Bonus)</h2>
+  <div class="grid">
+    <div class="card"><img src="../3_Kiara_Schnauzer_Bonus/GIFs_Animados_Web/Kiara_Idle_south_4x.gif"><span>Idle Frente (GIF)</span></div>
+    <div class="card"><img src="../3_Kiara_Schnauzer_Bonus/GIFs_Animados_Web/Kiara_Ladrando_south_4x.gif"><span>Ladrando (GIF)</span></div>
+    <div class="card"><img src="../3_Kiara_Schnauzer_Bonus/Web_Escalados_4x_Nitidos/Kiara_Pose_south_4x.png"><span>Pose Sur (PNG 4x)</span></div>
+  </div>
+</body>
+</html>

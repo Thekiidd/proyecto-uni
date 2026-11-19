@@ -78,7 +78,7 @@ namespace Platformer.Core
         {
             var data = new GameSaveData
             {
-                selectedDogName = selectedCharacter != null ? selectedCharacter.characterName : "Golden Retriever",
+                selectedDogName = selectedCharacter != null ? selectedCharacter.characterName : "Border Collie",
                 currentLevel = currentLevel,
                 totalCoins = coins.Value,
                 highScore = score.Value

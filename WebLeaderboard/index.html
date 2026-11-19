@@ -613,8 +613,8 @@
             <div class="stat-label">Partidas Jugadas</div>
           </div>
           <div class="stat-box">
-            <div class="stat-val" id="profGems">4/4</div>
-            <div class="stat-label">Gemas Halladas</div>
+            <div class="stat-val" id="profGems">3/3</div>
+            <div class="stat-label">Scooby Galletas</div>
           </div>
         </div>
 
@@ -622,13 +622,13 @@
           <h4>Medallas Desbloqueadas</h4>
           <div class="badge-list" id="profBadges">
             <div class="achievement-item unlocked">
-              <span>🌟</span> <span>Iniciación al Templo</span>
+              <span>💜</span> <span>Rescate de Kiara (Piso 5)</span>
             </div>
             <div class="achievement-item unlocked">
-              <span>⚖️</span> <span>Maestro del Balancín</span>
+              <span>🦴</span> <span>3/3 Scooby Galletas</span>
             </div>
             <div class="achievement-item" id="badgeSpeed">
-              <span>⚡</span> <span>Speedrun Sub-30s</span>
+              <span>🥇</span> <span>Medalla de Oro (&lt; 01:45)</span>
             </div>
           </div>
         </div>
@@ -661,13 +661,13 @@
     const DEFAULT_DB_URL = "https://kimaya-default-rtdb.firebaseio.com";
     let databaseUrl = localStorage.getItem("kimaya_firebase_url") || DEFAULT_DB_URL;
 
-    // Datos Demo en caso de que la DB aún no contenga registros
+    // Datos Demo sincronizados con la Torre de 5 Pisos (Ascenso_Kimaya)
     let currentData = [
-      { playerName: "Falin_Speedrun", bestTime: 18.42, bestTimeFormatted: "00:18.42", attempts: 12, lastPlayed: "2026-10-09 10:15" },
-      { playerName: "Mia_Eco",        bestTime: 24.15, bestTimeFormatted: "00:24.15", attempts: 8,  lastPlayed: "2026-10-09 09:40" },
-      { playerName: "Thekiidd",       bestTime: 29.80, bestTimeFormatted: "00:29.80", attempts: 15, lastPlayed: "2026-10-09 10:02" },
-      { playerName: "GranDanes_Pro",  bestTime: 34.60, bestTimeFormatted: "00:34.60", attempts: 4,  lastPlayed: "2026-10-08 21:10" },
-      { playerName: "Aventurero_Bosque", bestTime: 42.10, bestTimeFormatted: "00:42.10", attempts: 2, lastPlayed: "2026-10-08 19:30" }
+      { playerName: "Falin_BorderCollie", bestTime: 88.42,  bestTimeFormatted: "01:28.42", attempts: 6,  lastPlayed: "2026-11-19 10:15" },
+      { playerName: "Mia_Schnauzer",      bestTime: 96.15,  bestTimeFormatted: "01:36.15", attempts: 5,  lastPlayed: "2026-11-19 09:40" },
+      { playerName: "Thekiidd",           bestTime: 102.80, bestTimeFormatted: "01:42.80", attempts: 9,  lastPlayed: "2026-11-19 10:02" },
+      { playerName: "Kiara_Guardiana",    bestTime: 128.60, bestTimeFormatted: "02:08.60", attempts: 4,  lastPlayed: "2026-11-18 21:10" },
+      { playerName: "Maya_CirculoHadas",  bestTime: 154.10, bestTimeFormatted: "02:34.10", attempts: 2,  lastPlayed: "2026-11-18 19:30" }
     ];
 
     let selectedPlayer = null;

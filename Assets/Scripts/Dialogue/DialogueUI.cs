@@ -29,6 +29,8 @@ namespace Platformer.Dialogue
 
         private void Start()
         {
+            Kimaya.KimayaUITheme.ApplyThemeToActiveScene();
+
             if (nextButton != null)
                 nextButton.onClick.AddListener(OnNextClicked);
             if (skipButton != null)
@@ -48,7 +50,6 @@ namespace Platformer.Dialogue
 
             bool advancePressed = false;
 
-            // 1. Keyboard / Gamepad New Input System
             if (UnityEngine.InputSystem.Keyboard.current != null)
             {
                 var kb = UnityEngine.InputSystem.Keyboard.current;
@@ -62,17 +63,14 @@ namespace Platformer.Dialogue
                     advancePressed = true;
             }
 
-            // 2. Mouse click anywhere via New Input System
             if (UnityEngine.InputSystem.Mouse.current != null && UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame)
             {
-                // Verify we're not clicking on the skip button (EventSystem handles button events)
                 if (EventSystem.current == null || !IsPointerOverSkipButton())
                 {
                     advancePressed = true;
                 }
             }
 
-            // 3. Legacy Input fallback
             try
             {
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
@@ -96,7 +94,6 @@ namespace Platformer.Dialogue
             return curSelected == skipButton.gameObject;
         }
 
-        // Mouse click on the dialogue panel or attached graphic
         public void OnPointerClick(PointerEventData eventData)
         {
             if (eventData.button == PointerEventData.InputButton.Left)
@@ -170,7 +167,6 @@ namespace Platformer.Dialogue
         {
             if (_isTyping)
             {
-                // Finish typing immediately
                 if (_typingCoroutine != null)
                     StopCoroutine(_typingCoroutine);
                 dialogueContentText.text = _fullTargetText;
@@ -180,7 +176,6 @@ namespace Platformer.Dialogue
             }
             else
             {
-                // Advance to next line
                 _currentIndex++;
                 ShowLine(_currentIndex);
             }
@@ -199,26 +194,27 @@ namespace Platformer.Dialogue
             if (dialoguePanel != null)
                 dialoguePanel.SetActive(false);
 
-            string targetScene = "Village_Scene";
+            string targetScene = "Hub";
             if (currentDialogue != null && !string.IsNullOrEmpty(currentDialogue.nextSceneOnComplete))
             {
                 targetScene = currentDialogue.nextSceneOnComplete.Trim();
                 if (targetScene == "VillageMap" || string.IsNullOrEmpty(targetScene))
-                    targetScene = "Village_Scene";
+                    targetScene = "Hub";
             }
 
             Debug.Log("[DialogueUI] Diálogo finalizado. Cargando escena: " + targetScene);
 
-            if (Platformer.Core.SceneLoader.Instance != null)
+            if (Application.CanStreamedLevelBeLoaded(targetScene))
             {
-                if (targetScene == "Village_Scene" || targetScene == Platformer.Core.GameData.VillageScene)
-                    Platformer.Core.SceneLoader.Instance.LoadVillage();
-                else
-                    SceneManager.LoadScene(targetScene);
+                Kimaya.KimayaSceneTransition.LoadScene(targetScene);
+            }
+            else if (Platformer.Core.SceneLoader.Instance != null)
+            {
+                Platformer.Core.SceneLoader.Instance.LoadVillage();
             }
             else
             {
-                SceneManager.LoadScene(targetScene);
+                Kimaya.KimayaSceneTransition.LoadScene(targetScene);
             }
         }
     }

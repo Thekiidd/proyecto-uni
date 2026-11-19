@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Kimaya
 {
     /// <summary>
-    /// Habilidades especiales de Falin (Border Collie / Great Dane):
+    /// Habilidades especiales de Falin (Border Collie):
     ///   - Empujar objetos pesados (PushableObject)
     ///   - Salto impulsado: mantén SHIFT+Salto para un salto más alto
     /// </summary>

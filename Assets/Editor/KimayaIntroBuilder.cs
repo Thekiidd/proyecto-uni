@@ -22,9 +22,9 @@ namespace Platformer.EditorTools
     public static class KimayaIntroBuilder
     {
         private const string SCENE_PATH = "Assets/Scenes/Intro.unity";
-        private const string FALIN_SPR  = "Assets/Sprites/Dogs/Great-Dane/Great-Dane-run.png";
-        private const string MIA_SPR    = "Assets/Sprites/Dogs/Schnauzer/Schnauzer-run.png";
-        private const string KIARA_SPR  = "Assets/Sprites/Dogs/Schnauzer/Schnauzer-Idle.png";
+        private const string FALIN_SPR  = "Assets/Sprites/PixelLab/Falin/Idle/rotations/east.png";
+        private const string MIA_SPR    = "Assets/Sprites/PixelLab/Mia/Idle/rotations/east.png";
+        private const string KIARA_SPR  = "Assets/Resources/NPCs/Kiara/Kiara_west.png";
 
         [MenuItem("Tools/Kimaya/Build Intro Cutscene")]
         public static void Build()
@@ -65,11 +65,11 @@ namespace Platformer.EditorTools
             Sprite kiaraSpr = LoadSprite(KIARA_SPR);
 
             CreateSpriteImage(canvasGo.transform, "Falin_Panel", falinSpr,
-                new Color(0.9f, 0.7f, 0.3f), new Vector2(-650, -150), new Vector2(200, 200));
+                Color.white, new Vector2(-650, -150), new Vector2(210, 210));
             CreateSpriteImage(canvasGo.transform, "Mia_Panel", miaSpr,
-                new Color(0.6f, 0.85f, 1f), new Vector2(-480, -160), new Vector2(150, 150));
+                Color.white, new Vector2(-480, -160), new Vector2(165, 165));
             CreateSpriteImage(canvasGo.transform, "Kiara_Panel", kiaraSpr,
-                new Color(0.7f, 0.6f, 0.9f), new Vector2(-310, -155), new Vector2(170, 170));
+                Color.white, new Vector2(-310, -155), new Vector2(170, 170));
 
             // Panel de diálogo (derecha)
             CreateImage(canvasGo.transform, "DialoguePanel", new Color(0.04f, 0.08f, 0.04f, 0.95f),

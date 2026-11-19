@@ -1,13 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
+#endif
 
 namespace Kimaya
 {
     /// <summary>
     /// Controlador de la escena Ending.
-    /// Conecta los botones de Menú / Rejugar.
-    /// Anima las luciérnagas con pulso.
+    /// Conecta los botones de Menú / Rejugar (compatibles con New Input System y Legacy),
+    /// aplica la transición Pixel-Art y anima las luciérnagas con pulso.
     /// </summary>
     public class KimayaEndingController : MonoBehaviour
     {
@@ -17,22 +21,60 @@ namespace Kimaya
 
         private void Start()
         {
+            Time.timeScale = 1f;
+            EnsureModernEventSystem();
+            KimayaUITheme.ApplyThemeToActiveScene();
+
             var menuGo = GameObject.Find("Btn_Menu");
             if (menuGo != null)
             {
                 _menuBtn = menuGo.GetComponent<Button>();
-                _menuBtn?.onClick.AddListener(() => SceneManager.LoadScene("MainMenu"));
+                if (_menuBtn != null)
+                {
+                    _menuBtn.onClick.RemoveAllListeners();
+                    _menuBtn.onClick.AddListener(GoToMainMenu);
+                }
             }
 
             var replayGo = GameObject.Find("Btn_Rejugar");
             if (replayGo != null)
             {
                 _replayBtn = replayGo.GetComponent<Button>();
-                _replayBtn?.onClick.AddListener(() => SceneManager.LoadScene("Level_01_Bosque"));
+                if (_replayBtn != null)
+                {
+                    _replayBtn.onClick.RemoveAllListeners();
+                    _replayBtn.onClick.AddListener(PlayAgain);
+                }
             }
+        }
 
-            // Asegurarse de que el tiempo fluya
-            Time.timeScale = 1f;
+        private static void EnsureModernEventSystem()
+        {
+            var es = Object.FindAnyObjectByType<EventSystem>();
+            if (es == null)
+            {
+                var esGo = new GameObject("EventSystem");
+                es = esGo.AddComponent<EventSystem>();
+            }
+#if ENABLE_INPUT_SYSTEM
+            var legacy = es.GetComponent<StandaloneInputModule>();
+            if (legacy != null) Destroy(legacy);
+            if (es.GetComponent<InputSystemUIInputModule>() == null)
+            {
+                es.gameObject.AddComponent<InputSystemUIInputModule>();
+            }
+#endif
+        }
+
+        public void GoToMainMenu()
+        {
+            KimayaSceneTransition.LoadScene("MainMenu");
+        }
+
+        public void PlayAgain()
+        {
+            string target = Application.CanStreamedLevelBeLoaded("Ascenso_Kimaya") ? "Ascenso_Kimaya" : "Hub";
+            KimayaSceneTransition.LoadScene(target);
         }
 
         private void Update()
@@ -51,9 +93,24 @@ namespace Kimaya
                 img.color = new Color(img.color.r, img.color.g, img.color.b, alpha);
             }
 
-            // Espacio / Enter para volver al menú
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
-                SceneManager.LoadScene("MainMenu");
+            bool menuKey = false;
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null && (Keyboard.current.spaceKey.wasPressedThisFrame ||
+                Keyboard.current.enterKey.wasPressedThisFrame ||
+                Keyboard.current.escapeKey.wasPressedThisFrame))
+            {
+                menuKey = true;
+            }
+#endif
+            try
+            {
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Escape))
+                    menuKey = true;
+            }
+            catch { }
+
+            if (menuKey)
+                GoToMainMenu();
         }
     }
 }

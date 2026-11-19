@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95aceafd2d60dbe4c91faa9bd62c5661, type: 3}
   m_Name: Schnauzer
   m_EditorClassIdentifier: Assembly-CSharp::Platformer.Core.CharacterData
-  characterName: Schnauzer
-  description: Valiente y determinado. Salto acrobatico doble con 4 vidas.
-  portrait: {fileID: 21300000, guid: 22c80f3232534d288d9d7ef7bb0d0073, type: 3}
+  characterName: "M\xEDa (Schnauzer)"
+  description: "Valiente y \xE1gil Schnauzer. Salto ligero y olfato agudo."
+  portrait: {fileID: 21300000, guid: 306dcb95fb465a89abe027912a8720e0, type: 3}
   animatorController: {fileID: 9100000, guid: bc319685ed996e3429b4b4e851862f5d, type: 2}
   moveSpeed: 8
   jumpStrength: 18
@@ -24,8 +24,9 @@ MonoBehaviour:
   dashSpeed: 0
   startingLives: 4
   characterColor: {r: 0.7, g: 0.7, b: 0.75, a: 1}
-  idleSprite: {fileID: -5562039045524349720, guid: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c05, type: 3}
-  runSprite: {fileID: -1147726834071731496, guid: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c05, type: 3}
+  idleSprite: {fileID: 21300000, guid: f92a7f44f1085438937f146ed642e9f7, type: 3}
+  runSprite: {fileID: -1147726834071731496, guid: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c05,
+    type: 3}
   idleFrames:
   - {fileID: -5562039045524349720, guid: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c05, type: 3}
   runFrames:
