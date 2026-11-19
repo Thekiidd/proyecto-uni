@@ -3,7 +3,7 @@
 Videojuego 2D Pixel-Art desarrollado en **Unity 6 (`6000.4.11f1`)** con arte generado mediante **PixelLab AI**, música original estilo retro 16-bit y físicas de precisión vertical inspiradas en *Jump King*.
 
 > 🌐 **¿Buscas los recursos para la página web?**  
-> Todos los **GIFs animados transparentes, sprites 4x, spritesheets CSS, ilustraciones de historia, guion PDF y música MP3** están listos en la carpeta 👉 **[`/WebAssets_Perros`](WebAssets_Perros/README.md)** (incluye el catálogo visual interactivo [`CATALOGO_WEB_INTERACTIVO.html`](WebAssets_Perros/CATALOGO_WEB_INTERACTIVO.html) y el dashboard [`WebLeaderboard/index.html`](WebLeaderboard/index.html)).
+> Todos los **GIFs animados transparentes, sprites 4x, spritesheets CSS, ilustraciones de historia, guion PDF y música MP3** están listos en la carpeta 👉 **[`/WebAssets_Perros`](WebAssets_Perros/README.md)** (incluye el catálogo visual interactivo [`WebAssets_Perros/4_Spritesheets_y_Vista_Previa_Web/CATALOGO_WEB_INTERACTIVO.html`](WebAssets_Perros/4_Spritesheets_y_Vista_Previa_Web/CATALOGO_WEB_INTERACTIVO.html) y el dashboard [`WebLeaderboard/index.html`](WebLeaderboard/index.html)).
 
 ---
 

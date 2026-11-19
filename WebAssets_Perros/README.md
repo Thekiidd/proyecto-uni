@@ -2,7 +2,7 @@
 
 Esta carpeta contiene **todos los recursos gráficos, animaciones, ilustraciones de historia, música oficial y fichas de personajes actualizadas** listos para integrarse directamente en la página web oficial del proyecto.
 
-> 💡 **Vista previa interactiva:** Abre [`CATALOGO_WEB_INTERACTIVO.html`](CATALOGO_WEB_INTERACTIVO.html) en cualquier navegador para previsualizar todos los GIFs animados, sprites 4x y tiras CSS sobre fondo oscuro.
+> 💡 **Vista previa interactiva:** Abre [`4_Spritesheets_y_Vista_Previa_Web/CATALOGO_WEB_INTERACTIVO.html`](4_Spritesheets_y_Vista_Previa_Web/CATALOGO_WEB_INTERACTIVO.html) en cualquier navegador para previsualizar todos los GIFs animados, sprites 4x y tiras CSS sobre fondo oscuro.
 
 ---
 
@@ -17,10 +17,10 @@ Esta carpeta contiene **todos los recursos gráficos, animaciones, ilustraciones
     - Gravedad: `3.15` | Fuerza de salto máx.: `17.80` | Velocidad horizontal en salto: `6.25`
     - Altura máxima de salto: `5.12 u` | Alcance horizontal: `7.20 u`
 - **Rutas de Assets para Web:**
-  - **GIFs Animados Transparentes (23 animaciones):** [`1_GIFs_Animados_Web/Falin_BorderCollie/`](1_GIFs_Animados_Web/Falin_BorderCollie/)
-  - **Sprites Escalados 4x Nearest-Neighbor:** [`2_Sprites_Escalados_4x_Web/Falin_BorderCollie/`](2_Sprites_Escalados_4x_Web/Falin_BorderCollie/)
-  - **Spritesheets Horizontales para CSS:** [`3_Spritesheets_Tiras_Horizontal/Falin_BorderCollie/`](3_Spritesheets_Tiras_Horizontal/Falin_BorderCollie/)
-  - **Sprites Originales 1x (Pixel-Art nativo):** [`4_Sprites_Originales_PixelArt_1x/Falin_BorderCollie/`](4_Sprites_Originales_PixelArt_1x/Falin_BorderCollie/)
+  - **GIFs Animados Transparentes (23 animaciones):** [`1_Falin_BorderCollie/GIFs_Animados_Web/`](1_Falin_BorderCollie/GIFs_Animados_Web/)
+  - **Sprites Escalados 4x Nearest-Neighbor:** [`1_Falin_BorderCollie/Escalados_4x_Web/`](1_Falin_BorderCollie/Escalados_4x_Web/)
+  - **Sprites Originales 1x (Pixel-Art nativo):** [`1_Falin_BorderCollie/Originales_PixelArt_1x/`](1_Falin_BorderCollie/Originales_PixelArt_1x/)
+  - **Spritesheets Horizontales para CSS:** [`4_Spritesheets_y_Vista_Previa_Web/`](4_Spritesheets_y_Vista_Previa_Web/)
 
 ---
 
@@ -33,10 +33,10 @@ Esta carpeta contiene **todos los recursos gráficos, animaciones, ilustraciones
     - Gravedad: `2.90` | Fuerza de salto máx.: `17.10` | Velocidad horizontal en salto: `6.35`
     - Altura máxima de salto: `5.13 u` | Alcance horizontal: `7.74 u`
 - **Rutas de Assets para Web:**
-  - **GIFs Animados Transparentes (22 animaciones):** [`1_GIFs_Animados_Web/Mia_Schnauzer/`](1_GIFs_Animados_Web/Mia_Schnauzer/)
-  - **Sprites Escalados 4x Nearest-Neighbor:** [`2_Sprites_Escalados_4x_Web/Mia_Schnauzer/`](2_Sprites_Escalados_4x_Web/Mia_Schnauzer/)
-  - **Spritesheets Horizontales para CSS:** [`3_Spritesheets_Tiras_Horizontal/Mia_Schnauzer/`](3_Spritesheets_Tiras_Horizontal/Mia_Schnauzer/)
-  - **Sprites Originales 1x (Pixel-Art nativo):** [`4_Sprites_Originales_PixelArt_1x/Mia_Schnauzer/`](4_Sprites_Originales_PixelArt_1x/Mia_Schnauzer/)
+  - **GIFs Animados Transparentes (22 animaciones):** [`2_Mia_Schnauzer/GIFs_Animados_Web/`](2_Mia_Schnauzer/GIFs_Animados_Web/)
+  - **Sprites Escalados 4x Nearest-Neighbor:** [`2_Mia_Schnauzer/Escalados_4x_Web/`](2_Mia_Schnauzer/Escalados_4x_Web/)
+  - **Sprites Originales 1x (Pixel-Art nativo):** [`2_Mia_Schnauzer/Originales_PixelArt_1x/`](2_Mia_Schnauzer/Originales_PixelArt_1x/)
+  - **Spritesheets Horizontales para CSS:** [`4_Spritesheets_y_Vista_Previa_Web/`](4_Spritesheets_y_Vista_Previa_Web/)
 
 ---
 
@@ -47,9 +47,9 @@ Esta carpeta contiene **todos los recursos gráficos, animaciones, ilustraciones
   - Cautiva en el **Altar de la Cumbre (Piso 5)** de `Ascenso_Kimaya`.
   - Una vez rescatada, aparece reunida junto a Falin y Mía en el centro del **Círculo de Hadas** del `Hub`.
 - **Rutas de Assets para Web:**
-  - **GIFs Animados Transparentes:** [`1_GIFs_Animados_Web/Kiara_Hermana/`](1_GIFs_Animados_Web/Kiara_Hermana/)
-  - **Sprites Escalados 4x Nearest-Neighbor:** [`2_Sprites_Escalados_4x_Web/Kiara_Hermana/`](2_Sprites_Escalados_4x_Web/Kiara_Hermana/)
-  - **Spritesheets Horizontales para CSS:** [`3_Spritesheets_Tiras_Horizontal/Kiara_Hermana/`](3_Spritesheets_Tiras_Horizontal/Kiara_Hermana/)
+  - **GIFs Animados Transparentes:** [`3_Kiara_Schnauzer_Bonus/GIFs_Animados_Web/`](3_Kiara_Schnauzer_Bonus/GIFs_Animados_Web/)
+  - **Sprites Escalados 4x Nearest-Neighbor:** [`3_Kiara_Schnauzer_Bonus/Escalados_4x_Web/`](3_Kiara_Schnauzer_Bonus/Escalados_4x_Web/)
+  - **Sprites Originales 1x (Pixel-Art nativo):** [`3_Kiara_Schnauzer_Bonus/Originales_PixelArt_1x/`](3_Kiara_Schnauzer_Bonus/Originales_PixelArt_1x/)
 
 ---
 
