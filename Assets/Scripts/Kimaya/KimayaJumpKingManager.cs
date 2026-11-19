@@ -161,6 +161,17 @@ namespace Kimaya
             EnsureMidLevelCheckpoint(isCustom);
             KimayaUITheme.ApplyThemeToActiveScene();
             UpdateHUD();
+            NotifyPhone();
+        }
+
+        void NotifyPhone()
+        {
+            string hero = playerController != null && playerController.character == KimayaJumpKingController.CharacterType.Mia
+                ? "mia"
+                : "falin";
+            string state = (isPaused || _hasWon || _isGameOver) ? "paused" : "playing";
+            Kimaya.Networking.PhonePadServer.Send("{\"event\":\"character_switch\",\"character\":\"" + hero + "\"}");
+            Kimaya.Networking.PhonePadServer.Send("{\"event\":\"game_state\",\"state\":\"" + state + "\"}");
         }
 
         private void HideLegacyHUDs()
@@ -228,6 +239,8 @@ namespace Kimaya
 
         private bool ReadEscapeKey()
         {
+            if (Kimaya.Networking.PhonePadServer.Pressed("START"))
+                return true;
 #if ENABLE_INPUT_SYSTEM
             if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
                 return true;
@@ -242,6 +255,7 @@ namespace Kimaya
             isPaused = !isPaused;
             Time.timeScale = isPaused ? 0f : 1f;
             _showHubConfirmModal = false;
+            NotifyPhone();
         }
 
         public void ReturnToHub()
@@ -311,6 +325,7 @@ namespace Kimaya
                 playerController != null ? playerController.TotalFalls : 0,
                 heroName
             );
+            NotifyPhone();
             UpdateHUD();
         }
 
@@ -397,6 +412,7 @@ namespace Kimaya
                 falls,
                 victoryHero
             );
+            NotifyPhone();
         }
 
         public void RestartSession()

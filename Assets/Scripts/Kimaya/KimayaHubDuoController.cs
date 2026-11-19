@@ -343,6 +343,11 @@ namespace Kimaya
         private Vector2 ReadMovementInput()
         {
             Vector2 input = Vector2.zero;
+            if (Kimaya.Networking.PhonePadServer.Held("RIGHT")) input.x += 1f;
+            if (Kimaya.Networking.PhonePadServer.Held("LEFT")) input.x -= 1f;
+            if (Kimaya.Networking.PhonePadServer.Held("UP")) input.y += 1f;
+            if (Kimaya.Networking.PhonePadServer.Held("DOWN")) input.y -= 1f;
+            if (input.sqrMagnitude > 0.01f) return input.normalized;
 
 #if ENABLE_INPUT_SYSTEM
             if (Keyboard.current != null)
