@@ -79,6 +79,7 @@ Guiadas por **Maya**, el Hada Guardiana del Círculo de Hadas, **Falin** y **Mí
 | **Habilidad (Ladrido / Olfato)** | `ESPACIO` o `F` | Santuario (`Hub`) |
 | **Hablar con Maya / Entrar al Portal** | `E` | Santuario (`Hub`) |
 | **Menú de Pausa y Ajustes** | `ESC` | Santuario (`Hub`) y Torre |
+| **Mando del celular** | QR al dar Play. Izquierda, Derecha, mantener `A`, `START` | Cualquier escena. Ver [`PRUEBA_MANUAL.md`](PRUEBA_MANUAL.md) |
 
 ---
 
