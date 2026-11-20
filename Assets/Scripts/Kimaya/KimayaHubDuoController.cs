@@ -257,14 +257,14 @@ namespace Kimaya
 
             if (falinObject != null)
             {
-                falinObject.transform.localScale = new Vector3(0.38f, 0.38f, 1.0f);
+                falinObject.transform.localScale = new Vector3(0.54f, 0.54f, 1.0f);
                 if (_falinRb == null) _falinRb = falinObject.GetComponent<Rigidbody2D>();
                 if (_falinSr == null) _falinSr = falinObject.GetComponent<SpriteRenderer>();
             }
 
             if (miaObject != null)
             {
-                miaObject.transform.localScale = new Vector3(0.44f, 0.44f, 1.0f);
+                miaObject.transform.localScale = new Vector3(0.60f, 0.60f, 1.0f);
                 if (_miaRb == null) _miaRb = miaObject.GetComponent<Rigidbody2D>();
                 if (_miaSr == null) _miaSr = miaObject.GetComponent<SpriteRenderer>();
             }

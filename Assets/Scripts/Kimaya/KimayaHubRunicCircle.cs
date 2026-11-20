@@ -21,8 +21,8 @@ namespace Kimaya
         public Sprite fairySprite;
 
         [Header("Posición del Hada de la Historia en el Hub")]
-        public Vector3 fairyHubPosition = new Vector3(-1.48f, 0.08f, 0f);
-        public Vector3 fairyHubScale = new Vector3(0.24f, 0.24f, 1.0f);
+        public Vector3 fairyHubPosition = new Vector3(-1.48f, 0.12f, 0f);
+        public Vector3 fairyHubScale = new Vector3(0.145f, 0.145f, 1.0f);
 
         [Header("Estado de Runas")]
         public bool rune1Active = false;
@@ -130,6 +130,13 @@ namespace Kimaya
             {
                 _fairyIdleFrames = new Sprite[] { f0, f1 };
             }
+
+            // Forzar escala delicada del Hada Maya (más pequeña que los perros) y adjuntar el diálogo interactivo
+            fairyObject.transform.localScale = new Vector3(0.145f, 0.145f, 1.0f);
+            if (fairyObject.GetComponent<KimayaHubFairyDialogue>() == null)
+            {
+                fairyObject.AddComponent<KimayaHubFairyDialogue>();
+            }
         }
 
         private void SetupReunitedSisters()
@@ -145,7 +152,7 @@ namespace Kimaya
                 // Crear a Kiara (Schnauzer color canela/crema) dinámicamente si no existe en la escena
                 kiaraObject = new GameObject("Kiara_Schnauzer");
                 kiaraObject.transform.position = new Vector3(0f, -0.65f, 0f);
-                kiaraObject.transform.localScale = new Vector3(0.42f, 0.42f, 1f);
+                kiaraObject.transform.localScale = new Vector3(0.58f, 0.58f, 1f);
                 _kiaraSr = kiaraObject.AddComponent<SpriteRenderer>();
                 _kiaraSr.sortingOrder = 510;
 
@@ -161,6 +168,7 @@ namespace Kimaya
             {
                 kiaraObject.name = "Kiara_Schnauzer";
                 kiaraObject.SetActive(true);
+                kiaraObject.transform.localScale = new Vector3(0.58f, 0.58f, 1f);
                 _kiaraSr = kiaraObject.GetComponent<SpriteRenderer>();
             }
 
@@ -215,6 +223,9 @@ namespace Kimaya
                 if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) confirmPressed = true;
             }
             catch { }
+
+            if (KimayaHubFairyDialogue.IsDialogueOpen)
+                return;
 
             if (_showCompletionModal && (escPressed || confirmPressed))
             {

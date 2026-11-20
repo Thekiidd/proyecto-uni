@@ -31,6 +31,7 @@ namespace Kimaya
         private bool _isPlayerNearby = false;
         private bool _showCharacterSelectModal = false;
         private bool _showImproveTimeModal = false;
+        private float _mayaBlockToastTimer = 0f;
         private string _pendingCharacter = "Falin";
         private Camera _mainCam;
 
@@ -125,10 +126,24 @@ namespace Kimaya
                 return;
             }
 
+            if (_mayaBlockToastTimer > 0f)
+                _mayaBlockToastTimer -= Time.deltaTime;
+
+            if (KimayaHubFairyDialogue.IsDialogueOpen)
+                return;
+
             if (_isPlayerNearby && interactPressed)
             {
                 if (!isLocked)
                 {
+                    if (!KimayaHubFairyDialogue.HasTalkedToMaya)
+                    {
+                        _mayaBlockToastTimer = 3.5f;
+                        if (KimayaAudio.Instance != null)
+                            KimayaAudio.Instance.PlaySFX(KimayaAudio.SFX.WallBounce, 0.8f);
+                        return;
+                    }
+
                     string activeChar = "Falin";
                     if (KimayaHubDuoController.Instance != null)
                     {
@@ -201,6 +216,23 @@ namespace Kimaya
                 return;
             }
 
+            if (_mayaBlockToastTimer > 0f && !KimayaHubFairyDialogue.IsDialogueOpen)
+            {
+                float tw = Mathf.Min(680f, Screen.width - 36f);
+                float tx = (Screen.width - tw) * 0.5f;
+                float ty = Screen.height - 92f;
+                Color prevC = GUI.color;
+                GUI.color = new Color(0.95f, 0.72f, 0.20f, 0.98f);
+                GUI.DrawTexture(new Rect(tx - 3f, ty - 3f, tw + 6f, 54f), Texture2D.whiteTexture);
+                GUI.color = new Color(0.14f, 0.08f, 0.16f, 0.96f);
+                GUI.DrawTexture(new Rect(tx, ty, tw, 48f), Texture2D.whiteTexture);
+                GUI.color = prevC;
+                GUIStyle tSt = KimayaUITheme.GetOnGUILabelStyle(14, TextAnchor.MiddleCenter, false);
+                GUI.Label(new Rect(tx + 10f, ty + 2f, tw - 20f, 44f),
+                    "<color=#FFD166>PORTAL SELLADO: Habla primero con el Hada Maya [E / A] en el Círculo</color>", tSt);
+            }
+
+            if (KimayaHubFairyDialogue.IsDialogueOpen) return;
             if (!_isPlayerNearby) return;
             if (_mainCam == null) _mainCam = Camera.main;
             if (_mainCam == null) return;
@@ -208,8 +240,8 @@ namespace Kimaya
             Vector3 screenPos = _mainCam.WorldToScreenPoint(transform.position + Vector3.up * 1.5f);
             if (screenPos.z < 0) return;
 
-            float w = 510f;
-            float h = 72f;
+            float w = 520f;
+            float h = 76f;
             float x = screenPos.x - (w * 0.5f);
             float y = Screen.height - screenPos.y - h;
 
@@ -219,6 +251,11 @@ namespace Kimaya
             if (isLocked)
             {
                 string text = $"<b>{lockedTitle}</b>\n<size=12><color=#FFB499>{lockedReason}</color></size>";
+                GUI.Box(new Rect(x, y, w, h), text, _lockedBannerStyle);
+            }
+            else if (!KimayaHubFairyDialogue.HasTalkedToMaya)
+            {
+                string text = "<b>PORTAL SELLADO — HABLA PRIMERO CON EL HADA MAYA</b>\n<size=12><color=#FFE57F>Acércate a Maya junto al Círculo de Hadas y presiona [E / A] para abrir el camino.</color></size>";
                 GUI.Box(new Rect(x, y, w, h), text, _lockedBannerStyle);
             }
             else
