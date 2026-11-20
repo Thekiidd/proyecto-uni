@@ -324,6 +324,8 @@ namespace Kimaya
 
         private bool ReadSwitchInput()
         {
+            if (Kimaya.Networking.PhonePadServer.Pressed("X") || Kimaya.Networking.PhonePadServer.Pressed("SELECT"))
+                return true;
 #if ENABLE_INPUT_SYSTEM
             if (Keyboard.current != null)
             {
@@ -342,6 +344,10 @@ namespace Kimaya
 
         private Vector2 ReadMovementInput()
         {
+            Vector2 joy = Kimaya.Networking.PhonePadServer.GetJoystick();
+            if (joy.sqrMagnitude > 0.03f)
+                return joy.sqrMagnitude > 1f ? joy.normalized : joy;
+
             Vector2 input = Vector2.zero;
             if (Kimaya.Networking.PhonePadServer.Held("RIGHT")) input.x += 1f;
             if (Kimaya.Networking.PhonePadServer.Held("LEFT")) input.x -= 1f;
@@ -502,7 +508,7 @@ namespace Kimaya
 
         private void HandlePowerInput()
         {
-            bool powerPressed = false;
+            bool powerPressed = Kimaya.Networking.PhonePadServer.Pressed("B");
 #if ENABLE_INPUT_SYSTEM
             if (Keyboard.current != null && (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.fKey.wasPressedThisFrame))
                 powerPressed = true;

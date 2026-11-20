@@ -260,6 +260,23 @@ namespace Kimaya
                     }
                 }
             }
+
+            // 4. En MainMenu, acomodar PanelMain (botones) del lado izquierdo para dejar el panel del Mando QR del lado derecho
+            if (SceneManager.GetActiveScene().name == "MainMenu")
+            {
+                var panelMainGo = GameObject.Find("PanelMain");
+                if (panelMainGo != null)
+                {
+                    var pmRt = panelMainGo.GetComponent<RectTransform>();
+                    if (pmRt != null)
+                    {
+                        pmRt.anchorMin = new Vector2(0.28f, 0.47f);
+                        pmRt.anchorMax = new Vector2(0.28f, 0.47f);
+                        pmRt.pivot = new Vector2(0.5f, 0.5f);
+                        pmRt.anchoredPosition = Vector2.zero;
+                    }
+                }
+            }
         }
 
         public static void StyleButton(Button btn)

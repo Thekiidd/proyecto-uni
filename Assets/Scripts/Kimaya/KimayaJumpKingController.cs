@@ -678,7 +678,7 @@ namespace Kimaya
         // ================= INPUT SYSTEM UNIVERSAL =================
         private bool ReadSpaceKey()
         {
-            if (Kimaya.Networking.PhonePadServer.Held("A"))
+            if (Kimaya.Networking.PhonePadServer.Held("A") || Kimaya.Networking.PhonePadServer.Held("B"))
                 return true;
 #if ENABLE_INPUT_SYSTEM
             if (Keyboard.current != null && Keyboard.current.spaceKey.isPressed)
@@ -689,6 +689,10 @@ namespace Kimaya
 
         private float ReadHorizontalInput()
         {
+            Vector2 joy = Kimaya.Networking.PhonePadServer.GetJoystick();
+            if (Mathf.Abs(joy.x) > 0.22f)
+                return Mathf.Sign(joy.x);
+
             float val = 0f;
             if (Kimaya.Networking.PhonePadServer.Held("RIGHT")) val += 1f;
             if (Kimaya.Networking.PhonePadServer.Held("LEFT")) val -= 1f;

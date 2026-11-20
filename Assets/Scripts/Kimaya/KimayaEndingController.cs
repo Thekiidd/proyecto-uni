@@ -93,7 +93,12 @@ namespace Kimaya
                 img.color = new Color(img.color.r, img.color.g, img.color.b, alpha);
             }
 
-            bool menuKey = false;
+            bool menuKey = Kimaya.Networking.PhonePadServer.Pressed("A") || Kimaya.Networking.PhonePadServer.Pressed("START");
+            if (Kimaya.Networking.PhonePadServer.Pressed("B"))
+            {
+                PlayAgain();
+                return;
+            }
 #if ENABLE_INPUT_SYSTEM
             if (Keyboard.current != null && (Keyboard.current.spaceKey.wasPressedThisFrame ||
                 Keyboard.current.enterKey.wasPressedThisFrame ||

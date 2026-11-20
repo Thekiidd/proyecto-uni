@@ -7,13 +7,15 @@ using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
+using System.Globalization;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Kimaya.Networking
 {
     /// <summary>
     /// Recibe el mando de la PWA en ws://ip:8080/mando.
-    /// La app manda {"b":"A","s":1} al presionar y {"b":"A","s":0} al soltar.
+    /// Soporta Joystick Analógico 360° ({"jx":0.5,"jy":-0.8}) y botones ({"b":"A","s":1} / {"b":"A","s":0}).
     /// </summary>
     public class PhonePadServer : MonoBehaviour
     {
@@ -21,11 +23,14 @@ namespace Kimaya.Networking
 
         static readonly object Gate = new object();
         static readonly HashSet<string> HeldButtons = new HashSet<string>();
-        static readonly HashSet<string> PreviousButtons = new HashSet<string>();
+        static readonly HashSet<string> PendingPresses = new HashSet<string>();
+        static readonly HashSet<string> FramePresses = new HashSet<string>();
         static readonly List<NetworkStream> Clients = new List<NetworkStream>();
+        static Vector2 analogJoystick = Vector2.zero;
 
         static PhonePadServer instance;
         public static string PlayerName { get; private set; } = "";
+        public static bool IsConnected => instance != null && instance.clientCount > 0;
         TcpListener listener;
         Thread acceptThread;
         PadWebHost webHost;
@@ -60,13 +65,14 @@ namespace Kimaya.Networking
             BuildQrTexture();
         }
 
-        void LateUpdate()
+        void Update()
         {
             lock (Gate)
             {
-                PreviousButtons.Clear();
-                foreach (var button in HeldButtons)
-                    PreviousButtons.Add(button);
+                FramePresses.Clear();
+                foreach (var b in PendingPresses)
+                    FramePresses.Add(b);
+                PendingPresses.Clear();
             }
         }
 
@@ -83,7 +89,12 @@ namespace Kimaya.Networking
 
         public static bool Pressed(string button)
         {
-            lock (Gate) return HeldButtons.Contains(button) && !PreviousButtons.Contains(button);
+            lock (Gate) return FramePresses.Contains(button);
+        }
+
+        public static Vector2 GetJoystick()
+        {
+            lock (Gate) return analogJoystick;
         }
 
         public static void Send(string json)
@@ -276,7 +287,13 @@ namespace Kimaya.Networking
                 lock (Gate) Clients.Remove(stream);
                 if (Interlocked.Decrement(ref clientCount) <= 0)
                 {
-                    lock (Gate) HeldButtons.Clear();
+                    lock (Gate)
+                    {
+                        HeldButtons.Clear();
+                        PendingPresses.Clear();
+                        FramePresses.Clear();
+                        analogJoystick = Vector2.zero;
+                    }
                     PlayerName = "";
                 }
                 try { client.Close(); } catch { }
@@ -291,14 +308,52 @@ namespace Kimaya.Networking
                 return;
             }
 
+            if (json.IndexOf("\"jx\"", StringComparison.Ordinal) >= 0)
+            {
+                float jx = ReadJsonFloat(json, "jx");
+                float jy = ReadJsonFloat(json, "jy");
+                lock (Gate)
+                {
+                    analogJoystick = Vector2.ClampMagnitude(new Vector2(jx, jy), 1f);
+                    if (jx > 0.22f) HeldButtons.Add("RIGHT"); else HeldButtons.Remove("RIGHT");
+                    if (jx < -0.22f) HeldButtons.Add("LEFT"); else HeldButtons.Remove("LEFT");
+                    if (jy > 0.22f) HeldButtons.Add("UP"); else HeldButtons.Remove("UP");
+                    if (jy < -0.22f) HeldButtons.Add("DOWN"); else HeldButtons.Remove("DOWN");
+                }
+                return;
+            }
+
             string button = ReadJsonString(json, "b");
             if (string.IsNullOrEmpty(button)) return;
             int state = ReadJsonInt(json, "s");
             lock (Gate)
             {
-                if (state != 0) HeldButtons.Add(button);
-                else HeldButtons.Remove(button);
+                if (state != 0)
+                {
+                    HeldButtons.Add(button);
+                    PendingPresses.Add(button);
+                }
+                else
+                {
+                    HeldButtons.Remove(button);
+                }
             }
+        }
+
+        static float ReadJsonFloat(string json, string key)
+        {
+            int found = json.IndexOf("\"" + key + "\"", StringComparison.Ordinal);
+            if (found < 0) return 0f;
+            int colon = json.IndexOf(':', found);
+            if (colon < 0) return 0f;
+            int start = colon + 1;
+            while (start < json.Length && (json[start] == ' ' || json[start] == '"')) start++;
+            int end = start;
+            while (end < json.Length && ((json[end] >= '0' && json[end] <= '9') || json[end] == '-' || json[end] == '.' || json[end] == '+')) end++;
+            if (end <= start) return 0f;
+            if (float.TryParse(json.Substring(start, end - start), NumberStyles.Float, CultureInfo.InvariantCulture, out float val))
+                return val;
+            return 0f;
         }
 
         static bool Handshake(NetworkStream stream)
@@ -454,39 +509,65 @@ namespace Kimaya.Networking
 
         void OnGUI()
         {
-            GUI.depth = -20;
-            if (clientCount > 0 || qrTexture == null)
-            {
-                var style = new GUIStyle(GUI.skin.box)
-                {
-                    fontSize = Mathf.Max(14, Screen.height / 42),
-                    alignment = TextAnchor.MiddleCenter,
-                    wordWrap = false
-                };
-                string text = clientCount > 0 ? "Control conectado" : "En el celular: " + localIp;
-                float width = Mathf.Min(520f, Screen.width - 16f);
-                GUI.Box(new Rect((Screen.width - width) * 0.5f, 8f, width, 34f), text, style);
+            // SOLO mostrar el panel del QR en la escena MainMenu (al pasar al Hub o al nivel ya no sale)
+            if (SceneManager.GetActiveScene().name != "MainMenu")
                 return;
-            }
 
-            float size = Mathf.Clamp(Screen.height * 0.42f, 180f, 340f);
-            var panel = new Rect(16f, 16f, size + 24f, size + 86f);
-            GUI.Box(panel, GUIContent.none);
-            var title = new GUIStyle(GUI.skin.label)
+            // Si está abierto Ajustes, Cómo Jugar o Selección de Personaje en el MainMenu, ocultar la tarjeta del QR
+            var panelMain = GameObject.Find("PanelMain");
+            if (panelMain != null && !panelMain.activeInHierarchy)
+                return;
+
+            GUI.depth = -20;
+
+            float cardW = Mathf.Clamp(Screen.width * 0.34f, 320f, 440f);
+            float cardH = Mathf.Clamp(Screen.height * 0.56f, 340f, 460f);
+            float cardX = Screen.width * 0.71f - cardW * 0.5f;
+            float cardY = Screen.height * 0.54f - cardH * 0.5f;
+
+            Color prevCol = GUI.color;
+
+            // Marco exterior dorado e interior obsidiana pixel-art
+            GUI.color = new Color(0.88f, 0.68f, 0.22f, 0.96f);
+            GUI.DrawTexture(new Rect(cardX - 3f, cardY - 3f, cardW + 6f, cardH + 6f), Texture2D.whiteTexture);
+            GUI.color = new Color(0.09f, 0.08f, 0.14f, 0.95f);
+            GUI.DrawTexture(new Rect(cardX, cardY, cardW, cardH), Texture2D.whiteTexture);
+            GUI.color = new Color(0.88f, 0.68f, 0.22f, 0.35f);
+            GUI.DrawTexture(new Rect(cardX + 16f, cardY + 46f, cardW - 32f, 2f), Texture2D.whiteTexture);
+            GUI.color = prevCol;
+
+            GUIStyle hdrStyle = Kimaya.KimayaUITheme.GetOnGUILabelStyle(16, TextAnchor.MiddleCenter, false);
+            GUIStyle bodyStyle = Kimaya.KimayaUITheme.GetOnGUILabelStyle(13, TextAnchor.MiddleCenter, true);
+            GUIStyle smallUrlStyle = Kimaya.KimayaUITheme.GetOnGUILabelStyle(11, TextAnchor.MiddleCenter, true);
+
+            GUI.Label(new Rect(cardX + 10f, cardY + 10f, cardW - 20f, 30f), "<color=#F8D458>MANDO MÓVIL (WI-FI)</color>", hdrStyle);
+
+            bool connected = clientCount > 0;
+            string statusBadge = connected
+                ? ("<color=#48F088>● CELULAR CONECTADO" + (!string.IsNullOrEmpty(PlayerName) ? $" ({PlayerName})" : "") + "</color>")
+                : "<color=#FFD166>● ESCANEA EL QR CON TU CELULAR</color>";
+            GUI.Label(new Rect(cardX + 12f, cardY + 52f, cardW - 24f, 24f), statusBadge, bodyStyle);
+
+            if (qrTexture != null)
             {
-                fontSize = 16,
-                fontStyle = FontStyle.Bold,
-                alignment = TextAnchor.MiddleCenter
-            };
-            GUI.Label(new Rect(panel.x, panel.y + 6f, panel.width, 24f), "Escanea para jugar", title);
-            GUI.DrawTexture(new Rect(panel.x + 12f, panel.y + 32f, size, size), qrTexture, ScaleMode.ScaleToFit, false);
-            var url = new GUIStyle(GUI.skin.label)
-            {
-                fontSize = 11,
-                alignment = TextAnchor.MiddleCenter,
-                wordWrap = true
-            };
-            GUI.Label(new Rect(panel.x + 8f, panel.y + size + 36f, panel.width - 16f, 40f), controlUrl, url);
+                float qrSize = Mathf.Clamp(cardH - 200f, 130f, 200f);
+                float qrX = cardX + (cardW - qrSize) * 0.5f;
+                float qrY = cardY + 82f;
+
+                GUI.color = new Color(0.88f, 0.68f, 0.22f, 0.9f);
+                GUI.DrawTexture(new Rect(qrX - 4f, qrY - 4f, qrSize + 8f, qrSize + 8f), Texture2D.whiteTexture);
+                GUI.color = Color.white;
+                GUI.DrawTexture(new Rect(qrX, qrY, qrSize, qrSize), qrTexture, ScaleMode.ScaleToFit, false);
+                GUI.color = prevCol;
+
+                float infoY = qrY + qrSize + 10f;
+                string steps = connected
+                    ? "<color=#E2E8F0>Joystick 360°: Mover perrito\nBotón A: Saltar / Confirmar · Botón B: Acción / Ladrar\nBotón X: Cambiar Falin/Mía · START: Pausa</color>"
+                    : "<color=#E2E8F0>1. Conecta tu celular al mismo Wi-Fi\n2. Escanea el QR para abrir el Joystick\n3. Usa Joystick + Botón A para saltar</color>";
+                GUI.Label(new Rect(cardX + 14f, infoY, cardW - 28f, 58f), steps, bodyStyle);
+
+                GUI.Label(new Rect(cardX + 10f, cardY + cardH - 34f, cardW - 20f, 28f), $"<color=#94A3B8>{controlUrl}</color>", smallUrlStyle);
+            }
         }
     }
 }

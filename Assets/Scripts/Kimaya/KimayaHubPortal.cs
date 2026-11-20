@@ -91,9 +91,9 @@ namespace Kimaya
                 }
             }
 
-            bool interactPressed = Kimaya.Networking.PhonePadServer.Pressed("A");
+            bool interactPressed = Kimaya.Networking.PhonePadServer.Pressed("A") || Kimaya.Networking.PhonePadServer.Pressed("B");
             bool cancelPressed = Kimaya.Networking.PhonePadServer.Pressed("START");
-            bool confirmPressed = Kimaya.Networking.PhonePadServer.Pressed("A");
+            bool confirmPressed = Kimaya.Networking.PhonePadServer.Pressed("A") || Kimaya.Networking.PhonePadServer.Pressed("B");
 #if ENABLE_INPUT_SYSTEM
             if (UnityEngine.InputSystem.Keyboard.current != null)
             {

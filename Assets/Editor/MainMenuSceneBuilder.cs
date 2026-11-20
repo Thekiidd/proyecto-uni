@@ -189,9 +189,9 @@ public static class MainMenuSceneBuilder
         var subTMP = MakeTMP(subTxtGO, "El Bosque del Eco", 22, new Color(0.98f, 0.98f, 0.92f), TextAlignmentOptions.Center, FontStyles.Italic, bodyFont);
         subTMP.characterSpacing = 3f;
 
-        // 7. PanelMain (Botonera Centrada y Elevada para lucir a las 3 perritas en el prado)
+        // 7. PanelMain (Botonera acomodada del lado izquierdo para acompañar el panel del Mando QR a la derecha)
         var panelMain = MakeChild("PanelMain", canvasGO);
-        SetAnchored(panelMain, new Vector2(0.5f, 0.54f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(440, 320));
+        SetAnchored(panelMain, new Vector2(0.28f, 0.47f), new Vector2(0.5f, 0.5f), Vector2.zero, new Vector2(440, 320));
 
         // 4 Botones Claros y Grandes (JUGAR, AJUSTES, CÓMO JUGAR, SALIR)
         float startY = 110f;

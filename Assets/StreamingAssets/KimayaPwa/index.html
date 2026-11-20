@@ -1,47 +1,708 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon-64.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta name="description" content="Kimaya: El Bosque del Eco. Plataformas 2D para PC con tu celular como control." />
-    <meta name="theme-color" content="#111827" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <title>Kimaya Companion</title>
-    <script>
-      // En Android, prompt() tiene que llamarse en el mismo toque, sin esperar a React.
-      window.__kimayaPrompt = null
-      window.__kimayaInstalled = false
-      window.addEventListener('beforeinstallprompt', function (event) {
-        event.preventDefault()
-        window.__kimayaPrompt = event
-        window.dispatchEvent(new Event('kimaya-install'))
-      })
-      window.addEventListener('appinstalled', function () {
-        window.__kimayaPrompt = null
-        window.__kimayaInstalled = true
-        window.dispatchEvent(new Event('kimaya-install'))
-      })
-      // Se llama desde el boton, en el mismo toque. No cambia la pagina.
-      window.installKimaya = function () {
-        var promptEvent = window.__kimayaPrompt
-        if (!promptEvent) return false
-        window.__kimayaPrompt = null
-        promptEvent.prompt()
-        promptEvent.userChoice.then(function (choice) {
-          if (choice.outcome === 'accepted') window.__kimayaInstalled = true
-          window.dispatchEvent(new Event('kimaya-install'))
-        })
-        return true
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f0d1a" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Kimaya — Mando Joystick 360°</title>
+  <style>
+    :root {
+      --bg-dark: #0e0c18;
+      --panel-bg: #181428;
+      --gold: #f5c84c;
+      --gold-dim: rgba(245, 200, 76, 0.35);
+      --emerald: #38e07b;
+      --danger: #f43f5e;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+      touch-action: none;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 20%, #221b38 0%, var(--bg-dark) 85%);
+      color: var(--text);
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .app-shell {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      padding: 10px 16px 14px;
+    }
+
+    /* TOP BAR */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: rgba(24, 20, 40, 0.92);
+      border: 2px solid var(--gold-dim);
+      border-radius: 14px;
+      padding: 7px 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      white-space: nowrap;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #f59e0b;
+      box-shadow: 0 0 8px #f59e0b;
+    }
+    .dot.ok {
+      background: var(--emerald);
+      box-shadow: 0 0 10px var(--emerald);
+    }
+    .dot.err {
+      background: var(--danger);
+      box-shadow: 0 0 10px var(--danger);
+    }
+
+    .name-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .name-bar input {
+      background: #0b0914;
+      border: 1px solid var(--gold-dim);
+      color: #fff;
+      padding: 5px 9px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      width: 135px;
+      user-select: text;
+      -webkit-user-select: text;
+      touch-action: auto;
+    }
+
+    .btn-save {
+      background: var(--gold);
+      color: #171105;
+      border: none;
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-weight: 800;
+      font-size: 0.76rem;
+      cursor: pointer;
+    }
+
+    /* MAIN CONTROLLER AREA */
+    .pad-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 12px;
+      padding: 6px 4px;
+    }
+
+    /* LEFT: 360 ANALOG JOYSTICK */
+    .joy-zone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .joy-base {
+      position: relative;
+      width: min(44vh, 36vw, 195px);
+      height: min(44vh, 36vw, 195px);
+      border-radius: 50%;
+      background: radial-gradient(circle, #25203b 0%, #131020 75%);
+      border: 3px solid var(--gold);
+      box-shadow: inset 0 0 22px rgba(0, 0, 0, 0.8), 0 8px 25px rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Directional guides on joystick base */
+    .joy-guide {
+      position: absolute;
+      font-size: 0.75rem;
+      font-weight: 900;
+      color: rgba(245, 200, 76, 0.45);
+      pointer-events: none;
+    }
+    .joy-guide.n { top: 8px; left: 50%; transform: translateX(-50%); }
+    .joy-guide.s { bottom: 8px; left: 50%; transform: translateX(-50%); }
+    .joy-guide.w { left: 10px; top: 50%; transform: translateY(-50%); }
+    .joy-guide.e { right: 10px; top: 50%; transform: translateY(-50%); }
+
+    .joy-stick {
+      position: absolute;
+      width: 42%;
+      height: 42%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #ffe680 0%, #d99b1e 75%, #8c5d08 100%);
+      border: 2px solid #fff5cc;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.75);
+      transform: translate(0px, 0px);
+      pointer-events: none;
+      transition: transform 0.04s linear;
+    }
+    .joy-stick.active {
+      box-shadow: 0 0 22px rgba(245, 200, 76, 0.85);
+    }
+
+    .zone-caption {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    /* CENTER: CHARGE BAR & META BUTTONS */
+    .center-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-width: 125px;
+    }
+
+    .hero-badge {
+      background: rgba(56, 224, 123, 0.14);
+      border: 1px solid rgba(56, 224, 123, 0.45);
+      color: var(--emerald);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .charge-box {
+      width: 100%;
+      background: #0b0914;
+      border: 2px solid var(--gold-dim);
+      border-radius: 10px;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .charge-label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .charge-track {
+      width: 100%;
+      height: 12px;
+      background: #1b172c;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .charge-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #38e07b 0%, #f5c84c 60%, #f43f5e 100%);
+      transition: width 0.03s linear;
+    }
+
+    .pill-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-pill {
+      background: #27223d;
+      border: 2px solid var(--gold-dim);
+      color: var(--text);
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    .btn-pill.down {
+      background: var(--gold);
+      color: #161004;
+      transform: translateY(2px);
+    }
+
+    /* RIGHT: ACTION BUTTONS (A = JUMP/CHARGE, B = ACTION/BARK, X = SWITCH DOG) */
+    .actions-zone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .buttons-cluster {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .sub-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn-action {
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      border: 3px solid #fff3c4;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.65);
+      cursor: pointer;
+    }
+
+    .btn-a {
+      width: min(38vh, 28vw, 145px);
+      height: min(38vh, 28vw, 145px);
+      background: radial-gradient(circle at 35% 30%, #4df08f 0%, #1ea856 75%, #116b35 100%);
+      color: #062111;
+      font-size: 1.9rem;
+    }
+    .btn-a span.sub {
+      font-size: 0.72rem;
+      font-weight: 800;
+      margin-top: 2px;
+      letter-spacing: 0.5px;
+    }
+    .btn-a.down {
+      transform: scale(0.93);
+      background: radial-gradient(circle, #ffe680 0%, #f59e0b 100%);
+      box-shadow: 0 0 28px rgba(245, 200, 76, 0.9);
+    }
+
+    .btn-b {
+      width: min(23vh, 17vw, 84px);
+      height: min(23vh, 17vw, 84px);
+      background: radial-gradient(circle at 35% 30%, #fbbf24 0%, #d97706 80%);
+      color: #1f1103;
+      font-size: 1.25rem;
+    }
+    .btn-b span.sub, .btn-x span.sub {
+      font-size: 0.58rem;
+      font-weight: 800;
+    }
+    .btn-b.down, .btn-x.down {
+      transform: scale(0.92);
+      filter: brightness(1.25);
+    }
+
+    .btn-x {
+      width: min(21vh, 16vw, 76px);
+      height: min(21vh, 16vw, 76px);
+      background: radial-gradient(circle at 35% 30%, #60a5fa 0%, #2563eb 80%);
+      color: #fff;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="brand">🐾 KIMAYA PAD</div>
+
+      <div class="status-pill">
+        <span class="dot" id="wsDot"></span>
+        <span id="wsText">Conectando...</span>
+      </div>
+
+      <div class="name-bar">
+        <input type="text" id="playerNameInput" maxlength="24" placeholder="Tu nombre (Honor)" />
+        <button type="button" class="btn-save" id="saveNameBtn">Listo</button>
+      </div>
+    </header>
+
+    <!-- CONTROLLER -->
+    <main class="pad-grid">
+      <!-- LEFT: 360° JOYSTICK -->
+      <div class="joy-zone">
+        <div class="joy-base" id="joyBase">
+          <span class="joy-guide n">▲</span>
+          <span class="joy-guide s">▼</span>
+          <span class="joy-guide w">◀</span>
+          <span class="joy-guide e">▶</span>
+          <div class="joy-stick" id="joyStick"></div>
+        </div>
+        <div class="zone-caption" id="joyReadout">Joystick 360° (Mover)</div>
+      </div>
+
+      <!-- CENTER: JUMP CHARGE & START/SELECT -->
+      <div class="center-col">
+        <div class="hero-badge" id="heroBadge">Líder: Falin</div>
+
+        <div class="charge-box">
+          <div class="charge-label" id="chargeLabel">CARGA DE SALTO: 0%</div>
+          <div class="charge-track">
+            <div class="charge-fill" id="chargeFill"></div>
+          </div>
+        </div>
+
+        <div class="pill-row">
+          <button type="button" class="btn-pill" id="btnSelect">CAMBIAR</button>
+          <button type="button" class="btn-pill" id="btnStart">PAUSA</button>
+        </div>
+      </div>
+
+      <!-- RIGHT: ACTION BUTTONS -->
+      <div class="actions-zone">
+        <div class="buttons-cluster">
+          <div class="sub-buttons">
+            <button type="button" class="btn-action btn-x" id="btnX">
+              X
+              <span class="sub">PERRO</span>
+            </button>
+            <button type="button" class="btn-action btn-b" id="btnB">
+              B
+              <span class="sub">ACCIÓN</span>
+            </button>
+          </div>
+
+          <button type="button" class="btn-action btn-a" id="btnA">
+            A
+            <span class="sub">SALTAR</span>
+          </button>
+        </div>
+        <div class="zone-caption">Mantén A o B para cargar salto</div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // 1. Limpiar cualquier Service Worker viejo para que el celular siempre cargue el control actualizado
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(regs) {
+        for (let r of regs) r.unregister();
+      });
+    }
+
+    // 2. Detectar si se abrió como Mando (desde el QR en puerto 8090, con ?ip= o con ?app=1)
+    //    o si se abrió como la página pública del Cuadro de Honor en Cloudflare (https://kimaya-companion.pages.dev)
+    const params = new URLSearchParams(window.location.search);
+    const isPadMode = params.has('ip') || params.has('app') || window.location.port === '8090';
+
+    if (!isPadMode) {
+      // Modo Web Pública (Landing + Cuadro de Honor en Cloudflare)
+      document.body.innerHTML = '<div id="root"></div>';
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
+      const cssLink = document.createElement('link');
+      cssLink.rel = 'stylesheet';
+      cssLink.href = '/assets/index-CFPGFFyX.css';
+      document.head.appendChild(cssLink);
+      const appScript = document.createElement('script');
+      appScript.type = 'module';
+      appScript.src = '/assets/index-ALaWkef9.js';
+      document.head.appendChild(appScript);
+      throw new Error('KimayaPublicLandingMode');
+    }
+
+    const hostIp = params.get('ip') || window.location.hostname || '127.0.0.1';
+    const wsPort = params.get('port') || '8080';
+    const wsUrl  = 'ws://' + hostIp + ':' + wsPort + '/mando';
+
+    const wsDot = document.getElementById('wsDot');
+    const wsText = document.getElementById('wsText');
+    const heroBadge = document.getElementById('heroBadge');
+    const playerNameInput = document.getElementById('playerNameInput');
+    const saveNameBtn = document.getElementById('saveNameBtn');
+
+    let ws = null;
+    let reconnectTimer = null;
+    let savedName = localStorage.getItem('kimaya_pad_name') || '';
+    if (savedName) playerNameInput.value = savedName;
+
+    function sendPacket(obj) {
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify(obj));
       }
-      if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js')
-    </script>
-    <script type="module" crossorigin src="/assets/index-ALaWkef9.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CFPGFFyX.css">
-  <link rel="manifest" href="/manifest.json"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
-  <body>
-    <div id="root"></div>
-  </body>
+    }
+
+    function connectWs() {
+      clearTimeout(reconnectTimer);
+      try {
+        ws = new WebSocket(wsUrl);
+      } catch (err) {
+        scheduleReconnect();
+        return;
+      }
+
+      ws.onopen = function() {
+        wsDot.className = 'dot ok';
+        wsText.textContent = 'Conectado';
+        if (savedName) {
+          sendPacket({ name: savedName });
+        }
+      };
+
+      ws.onmessage = function(ev) {
+        try {
+          const msg = JSON.parse(ev.data);
+          if (msg.event === 'character_switch' && msg.character) {
+            heroBadge.textContent = 'Líder: ' + (msg.character === 'mia' ? 'Mía' : 'Falin');
+          } else if (msg.event === 'damage_received') {
+            if (navigator.vibrate) navigator.vibrate([45, 30, 65]);
+          }
+        } catch (e) {}
+      };
+
+      ws.onerror = function() {
+        wsDot.className = 'dot err';
+      };
+
+      ws.onclose = function() {
+        wsDot.className = 'dot err';
+        wsText.textContent = 'Reconectando...';
+        scheduleReconnect();
+      };
+    }
+
+    function scheduleReconnect() {
+      clearTimeout(reconnectTimer);
+      reconnectTimer = setTimeout(connectWs, 1500);
+    }
+
+    connectWs();
+
+    saveNameBtn.addEventListener('click', function() {
+      savedName = (playerNameInput.value || '').trim();
+      localStorage.setItem('kimaya_pad_name', savedName);
+      sendPacket({ name: savedName });
+      saveNameBtn.textContent = '✓ Guardado';
+      setTimeout(function() { saveNameBtn.textContent = 'Listo'; }, 1200);
+    });
+
+    // 3. JOYSTICK ANALÓGICO 360° MULTI-TOUCH (independiente de los botones derechos)
+    const joyBase = document.getElementById('joyBase');
+    const joyStick = document.getElementById('joyStick');
+    const joyReadout = document.getElementById('joyReadout');
+
+    let joyTouchId = null;
+    let lastJx = 0;
+    let lastJy = 0;
+
+    function updateJoystickFromPoint(clientX, clientY) {
+      const rect = joyBase.getBoundingClientRect();
+      const cx = rect.left + rect.width * 0.5;
+      const cy = rect.top + rect.height * 0.5;
+      const maxR = rect.width * 0.36;
+
+      let dx = clientX - cx;
+      let dy = clientY - cy;
+      const dist = Math.hypot(dx, dy);
+
+      if (dist > maxR && dist > 0) {
+        dx = (dx / dist) * maxR;
+        dy = (dy / dist) * maxR;
+      }
+
+      joyStick.style.transform = 'translate(' + dx.toFixed(1) + 'px, ' + dy.toFixed(1) + 'px)';
+      joyStick.classList.add('active');
+
+      // Normalizado -1..+1 (jy invertido porque en pantalla Y crece hacia abajo y en Unity Y crece hacia arriba)
+      const jx = Math.round((dx / maxR) * 100) / 100;
+      const jy = Math.round((-dy / maxR) * 100) / 100;
+
+      if (Math.abs(jx - lastJx) > 0.04 || Math.abs(jy - lastJy) > 0.04) {
+        lastJx = jx;
+        lastJy = jy;
+        sendPacket({ jx: jx, jy: jy });
+
+        let dirTxt = 'Centro';
+        if (Math.hypot(jx, jy) > 0.22) {
+          const dirs = [];
+          if (jy > 0.25) dirs.push('Arriba');
+          if (jy < -0.25) dirs.push('Abajo');
+          if (jx < -0.25) dirs.push('Izquierda');
+          if (jx > 0.25) dirs.push('Derecha');
+          dirTxt = dirs.join(' + ') || 'Moviendo';
+        }
+        joyReadout.textContent = dirTxt;
+      }
+    }
+
+    function resetJoystick() {
+      joyTouchId = null;
+      lastJx = 0;
+      lastJy = 0;
+      joyStick.style.transform = 'translate(0px, 0px)';
+      joyStick.classList.remove('active');
+      joyReadout.textContent = 'Joystick 360° (Mover)';
+      sendPacket({ jx: 0, jy: 0 });
+    }
+
+    joyBase.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      if (joyTouchId === null && e.changedTouches.length > 0) {
+        const t = e.changedTouches[0];
+        joyTouchId = t.identifier;
+        updateJoystickFromPoint(t.clientX, t.clientY);
+      }
+    }, { passive: false });
+
+    joyBase.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+      for (let i = 0; i < e.changedTouches.length; i++) {
+        const t = e.changedTouches[i];
+        if (t.identifier === joyTouchId) {
+          updateJoystickFromPoint(t.clientX, t.clientY);
+          break;
+        }
+      }
+    }, { passive: false });
+
+    joyBase.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      for (let i = 0; i < e.changedTouches.length; i++) {
+        if (e.changedTouches[i].identifier === joyTouchId) {
+          resetJoystick();
+          break;
+        }
+      }
+    }, { passive: false });
+
+    joyBase.addEventListener('touchcancel', function(e) {
+      e.preventDefault();
+      resetJoystick();
+    }, { passive: false });
+
+    // Soporte de Mouse para probar también desde navegador de PC si se desea
+    let mouseJoyDown = false;
+    joyBase.addEventListener('mousedown', function(e) {
+      mouseJoyDown = true;
+      updateJoystickFromPoint(e.clientX, e.clientY);
+    });
+    window.addEventListener('mousemove', function(e) {
+      if (mouseJoyDown) updateJoystickFromPoint(e.clientX, e.clientY);
+    });
+    window.addEventListener('mouseup', function() {
+      if (mouseJoyDown) {
+        mouseJoyDown = false;
+        resetJoystick();
+      }
+    });
+
+    // 4. BOTONES MULTI-TOUCH CON BARRA DE CARGA EN VIVO PARA SALTO (A, B, X, START, SELECT)
+    const chargeFill = document.getElementById('chargeFill');
+    const chargeLabel = document.getElementById('chargeLabel');
+    let chargeInterval = null;
+    let chargeStartMs = 0;
+
+    function startChargeVisual() {
+      clearInterval(chargeInterval);
+      chargeStartMs = performance.now();
+      chargeInterval = setInterval(function() {
+        const elapsed = (performance.now() - chargeStartMs) / 1000.0;
+        const pct = Math.min(100, Math.round((elapsed / 0.58) * 100));
+        chargeFill.style.width = pct + '%';
+        chargeLabel.textContent = 'CARGA DE SALTO: ' + pct + '%';
+      }, 25);
+    }
+
+    function stopChargeVisual() {
+      clearInterval(chargeInterval);
+      chargeFill.style.width = '0%';
+      chargeLabel.textContent = '¡SALTO!';
+      setTimeout(function() {
+        if (chargeFill.style.width === '0%') {
+          chargeLabel.textContent = 'CARGA DE SALTO: 0%';
+        }
+      }, 350);
+    }
+
+    function bindGameButton(el, buttonCode, isJumpBtn) {
+      let isHeld = false;
+
+      function pressDown(e) {
+        if (e && e.cancelable) e.preventDefault();
+        if (isHeld) return;
+        isHeld = true;
+        el.classList.add('down');
+        sendPacket({ b: buttonCode, s: 1 });
+        if (navigator.vibrate) navigator.vibrate(18);
+        if (isJumpBtn) startChargeVisual();
+      }
+
+      function releaseUp(e) {
+        if (e && e.cancelable) e.preventDefault();
+        if (!isHeld) return;
+        isHeld = false;
+        el.classList.remove('down');
+        sendPacket({ b: buttonCode, s: 0 });
+        if (isJumpBtn) stopChargeVisual();
+      }
+
+      el.addEventListener('touchstart', pressDown, { passive: false });
+      el.addEventListener('touchend', releaseUp, { passive: false });
+      el.addEventListener('touchcancel', releaseUp, { passive: false });
+      el.addEventListener('mousedown', pressDown);
+      el.addEventListener('mouseup', releaseUp);
+      el.addEventListener('mouseleave', releaseUp);
+    }
+
+    bindGameButton(document.getElementById('btnA'), 'A', true);
+    bindGameButton(document.getElementById('btnB'), 'B', true);
+    bindGameButton(document.getElementById('btnX'), 'X', false);
+    bindGameButton(document.getElementById('btnSelect'), 'SELECT', false);
+    bindGameButton(document.getElementById('btnStart'), 'START', false);
+  </script>
+</body>
 </html>

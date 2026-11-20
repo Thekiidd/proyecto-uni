@@ -55,6 +55,26 @@ namespace Platformer.UI
             if (btnHelpBack != null) btnHelpBack.onClick.AddListener(ShowMainPanel);
         }
 
+        private void Update()
+        {
+            if (Kimaya.Networking.PhonePadServer.Pressed("A") || Kimaya.Networking.PhonePadServer.Pressed("START"))
+            {
+                if (panelMain != null && panelMain.activeInHierarchy)
+                {
+                    StartPlayGame();
+                }
+            }
+            else if (Kimaya.Networking.PhonePadServer.Pressed("B"))
+            {
+                if ((panelSettings != null && panelSettings.activeInHierarchy) ||
+                    (panelHelp != null && panelHelp.activeInHierarchy) ||
+                    (panelCharacterSelect != null && panelCharacterSelect.activeInHierarchy))
+                {
+                    ShowMainPanel();
+                }
+            }
+        }
+
         private void ShowMainPanel()
         {
             if (panelMain != null) panelMain.SetActive(true);

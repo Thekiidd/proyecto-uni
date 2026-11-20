@@ -48,7 +48,13 @@ namespace Platformer.Dialogue
         {
             if (dialoguePanel == null || !dialoguePanel.activeSelf) return;
 
-            bool advancePressed = false;
+            if (Kimaya.Networking.PhonePadServer.Pressed("START"))
+            {
+                OnSkipClicked();
+                return;
+            }
+
+            bool advancePressed = Kimaya.Networking.PhonePadServer.Pressed("A") || Kimaya.Networking.PhonePadServer.Pressed("B");
 
             if (UnityEngine.InputSystem.Keyboard.current != null)
             {
