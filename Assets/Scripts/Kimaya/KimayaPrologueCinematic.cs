@@ -223,38 +223,18 @@ namespace Kimaya
             GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Texture2D.whiteTexture);
             GUI.color = Color.white;
 
-            // Ilustración centrada con efecto Ken Burns (zoom suave progresivo)
-            float topBarH = 44f;
-            float dlgH = Mathf.Clamp(Screen.height * 0.25f, 155f, 215f);
-            float imgAreaH = Screen.height - topBarH - dlgH - 18f;
-            float imgAreaW = Screen.width - 48f;
+            // Ilustración fija en pantalla completa (sin zoom ni movimiento)
+            float dlgH = Mathf.Clamp(Screen.height * 0.24f, 150f, 205f);
 
             if (tex != null)
             {
-                float aspect = (float)tex.width / Mathf.Max(1, tex.height);
-                float drawH = imgAreaH;
-                float drawW = drawH * aspect;
-                if (drawW > imgAreaW)
-                {
-                    drawW = imgAreaW;
-                    drawH = drawW / aspect;
-                }
-
-                float zoom = 1.0f + Mathf.Clamp01(_beatTimer / cur.autoDuration) * 0.045f;
-                float zW = drawW * zoom;
-                float zH = drawH * zoom;
-                float drawX = (Screen.width - drawW) * 0.5f;
-                float drawY = topBarH + (imgAreaH - drawH) * 0.5f;
-
-                // Marco dorado alrededor de la ilustración
-                GUI.color = new Color(0.88f, 0.68f, 0.22f, 0.92f);
-                GUI.DrawTexture(new Rect(drawX - 4f, drawY - 4f, drawW + 8f, drawH + 8f), Texture2D.whiteTexture);
-                GUI.color = Color.white;
-
-                GUI.BeginGroup(new Rect(drawX, drawY, drawW, drawH));
-                GUI.DrawTexture(new Rect((drawW - zW) * 0.5f, (drawH - zH) * 0.5f, zW, zH), tex, ScaleMode.StretchToFill);
-                GUI.EndGroup();
+                GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), tex, ScaleMode.ScaleAndCrop);
             }
+
+            // Franja superior oscura semitransparente para que el título se lea perfecto
+            GUI.color = new Color(0.04f, 0.03f, 0.08f, 0.62f);
+            GUI.DrawTexture(new Rect(0f, 0f, Screen.width, 46f), Texture2D.whiteTexture);
+            GUI.color = Color.white;
 
             // Encabezado superior (Capítulo + Progreso)
             GUIStyle topSt = KimayaUITheme.GetOnGUILabelStyle(14, TextAnchor.MiddleLeft, false);
