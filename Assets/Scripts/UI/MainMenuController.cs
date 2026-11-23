@@ -137,13 +137,14 @@ namespace Platformer.UI
 
         private void StartPlayGame()
         {
-            Debug.Log("[MainMenu] Iniciando Partida: Cinemática de Prólogo -> Hub de Kimaya");
-            // Si aún no rescatan a Kiara, asegurar que tengan que hablar primero con el Hada Maya en el Hub
-            if (PlayerPrefs.GetInt("KiaraRescued", 0) == 0)
-            {
-                PlayerPrefs.SetInt("Kimaya_TalkedToMaya", 0);
-                PlayerPrefs.Save();
-            }
+            Debug.Log("[MainMenu] Iniciando Nueva Partida limpia: Cinemática de Prólogo -> Hub de Kimaya");
+            // Al darle JUGAR desde el Menú Principal, iniciar siempre una Nueva Partida limpia
+            PlayerPrefs.SetInt("KiaraRescued", 0);
+            PlayerPrefs.SetInt("FirstRuneActive", 0);
+            PlayerPrefs.SetInt("HasSeenMVPEnding", 0);
+            PlayerPrefs.SetInt("Kimaya_TalkedToMaya", 0);
+            PlayerPrefs.SetInt("Kimaya_SeenPrologue", 0);
+            PlayerPrefs.Save();
 
             if (Application.CanStreamedLevelBeLoaded("Prologue_Story"))
             {
