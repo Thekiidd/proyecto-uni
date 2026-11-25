@@ -487,25 +487,82 @@ namespace Kimaya.Networking
             return frame;
         }
 
+        // Elige la IP que el celular sí puede alcanzar. Antes se tomaba la primera dirección privada,
+        // y con WSL, Hyper-V, Docker o una VPN eso daba una IP interna de la PC y el celular no conectaba.
+        // Se descartan los adaptadores virtuales y se prefiere el que tiene puerta de enlace (la red real),
+        // y entre esos el Wi-Fi.
         static string FindLocalIp()
         {
+            string ip = PickLocalIp(false);
+            if (ip == null) ip = PickLocalIp(true);
+            return ip ?? "127.0.0.1";
+        }
+
+        static string PickLocalIp(bool allowVirtual)
+        {
+            string best = null;
+            int bestScore = -1;
+            var found = new List<string>();
             try
             {
                 foreach (var adapter in NetworkInterface.GetAllNetworkInterfaces())
                 {
                     if (adapter.OperationalStatus != OperationalStatus.Up) continue;
-                    if (adapter.NetworkInterfaceType == NetworkInterfaceType.Loopback) continue;
-                    foreach (var address in adapter.GetIPProperties().UnicastAddresses)
+                    if (adapter.NetworkInterfaceType == NetworkInterfaceType.Loopback ||
+                        adapter.NetworkInterfaceType == NetworkInterfaceType.Tunnel) continue;
+                    if (!allowVirtual && IsVirtualAdapter(adapter)) continue;
+
+                    var props = adapter.GetIPProperties();
+                    bool hasGateway = false;
+                    foreach (var gateway in props.GatewayAddresses)
+                    {
+                        if (gateway.Address.AddressFamily == AddressFamily.InterNetwork &&
+                            !gateway.Address.Equals(IPAddress.Any))
+                            hasGateway = true;
+                    }
+
+                    foreach (var address in props.UnicastAddresses)
                     {
                         if (address.Address.AddressFamily != AddressFamily.InterNetwork) continue;
-                        string ip = address.Address.ToString();
-                        if (ip.StartsWith("192.168.") || ip.StartsWith("10.") || ip.StartsWith("172."))
-                            return ip;
+                        string candidate = address.Address.ToString();
+                        if (!IsPrivateIp(candidate)) continue;
+
+                        found.Add(adapter.Name + "=" + candidate);
+                        int score = (hasGateway ? 100 : 0)
+                            + (adapter.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 ? 10 : 0);
+                        if (score > bestScore)
+                        {
+                            bestScore = score;
+                            best = candidate;
+                        }
                     }
                 }
             }
             catch { }
-            return "127.0.0.1";
+
+            if (found.Count > 0)
+                Debug.Log("Redes encontradas para el mando: " + string.Join(" | ", found) + " -> se usa " + best);
+            return best;
+        }
+
+        static bool IsPrivateIp(string ip)
+        {
+            if (ip.StartsWith("192.168.") || ip.StartsWith("10.")) return true;
+            if (!ip.StartsWith("172.")) return false;
+            string[] parts = ip.Split('.');
+            int second;
+            return parts.Length > 1 && int.TryParse(parts[1], out second) && second >= 16 && second <= 31;
+        }
+
+        static bool IsVirtualAdapter(NetworkInterface adapter)
+        {
+            string text = (adapter.Name + " " + adapter.Description).ToLowerInvariant();
+            string[] marks = { "vethernet", "wsl", "hyper-v", "virtualbox", "vmware", "docker", "virtual", "vpn", "tap-", "tailscale", "zerotier", "bluetooth" };
+            foreach (string mark in marks)
+            {
+                if (text.Contains(mark)) return true;
+            }
+            return false;
         }
 
         void OnGUI()

@@ -44,8 +44,21 @@ El mismo QR aparece en cualquier escena, porque el mando arranca al dar Play. El
 | Aviso de que no se pudo abrir el puerto `8080` | Cerrar Spring u otro programa que use ese puerto y volver a dar Play. |
 | Aviso de que no se pudo servir el control | Falta `Assets/StreamingAssets/KimayaPwa`. Volver a hacer `git pull`. |
 | El QR muestra `127.0.0.1` | La computadora no está en una wifi. El celular no puede usar esa dirección. |
-| El celular no abre la página | Otra wifi, o el firewall bloqueó a Unity. Permitir Unity en redes privadas. |
+| El celular dice que no pudo conectar con el servidor | Casi siempre es la IP o el firewall. Revisar los dos puntos de abajo. |
+| El celular no abre la página | Otra wifi, o el firewall bloqueó a Unity. Permitir Unity en redes privadas y públicas. |
 | La página abre y se queda conectando | Se entró a la página de Cloudflare, o el puerto `8080` está bloqueado. Hay que usar la dirección del QR. |
 | El nombre no aparece en el cuadro de honor | La partida no terminó, se cerró el celular antes del game over, o se eligió **Sin nombre**. El nombre se olvida cuando el celular se desconecta. |
 
 El mismo nombre, escrito otra vez, reutiliza la misma cuenta. No crea un jugador nuevo.
+
+### Si el celular dice «no se pudo conectar con el servidor»
+
+1. **La IP del QR debe ser la de la wifi.** Debajo del QR se lee la dirección, por ejemplo `http://10.1.13.54:8090`. Si empieza con `172.27.` o `192.168.56.`, es un adaptador virtual (WSL, Hyper-V, VirtualBox) y el celular no puede llegar a ella. El juego ya descarta esos adaptadores; en la consola de Unity aparece la línea `Redes encontradas para el mando` con la que eligió. Si la PC tiene cable y wifi a la vez, el celular debe estar en la misma red que la IP elegida.
+2. **El firewall de Windows.** Si la wifi está marcada como red **Pública**, Windows bloquea las conexiones entrantes. Abrir PowerShell como administrador y ejecutar una vez:
+
+```powershell
+New-NetFirewallRule -DisplayName "Kimaya mando" -Direction Inbound -Protocol TCP -LocalPort 8080,8090 -Action Allow -Profile Any
+```
+
+3. Probar antes de usar el mando: abrir `http://IP-DEL-QR:8090` en el navegador del celular. Si carga la pantalla del control, la red está bien.
+4. En iPhone, si Safari pregunta por la **red local**, aceptar. Si ya se negó, ir a Ajustes → Privacidad y seguridad → Red local y activarla para Safari.
