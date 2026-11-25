@@ -358,7 +358,8 @@ namespace Kimaya.Networking
 
         static bool Handshake(NetworkStream stream)
         {
-            var buffer = new byte[1024];
+            // Safari manda cabeceras largas (idioma, origen, extensiones). 1 KB se quedaba justo.
+            var buffer = new byte[8192];
             int got = 0;
             while (got < buffer.Length)
             {
