@@ -55,24 +55,99 @@ namespace Platformer.UI
             if (btnHelpBack != null) btnHelpBack.onClick.AddListener(ShowMainPanel);
         }
 
+        // Navegación con el control del celular:
+        // palanca arriba/izquierda = anterior, abajo/derecha = siguiente,
+        // A = presiona el botón marcado, START = JUGAR en el menú principal, B = regresar.
+        private const int PanelMain = 0, PanelCharacter = 1, PanelHelp = 2, PanelSettings = 3;
+        private int currentPanel = -1;
+        private int focusIndex;
+        private readonly System.Collections.Generic.List<Button> focusList = new System.Collections.Generic.List<Button>();
+        private readonly bool[] prevDirs = new bool[4];
+
         private void Update()
         {
-            if (Kimaya.Networking.PhonePadServer.Pressed("A") || Kimaya.Networking.PhonePadServer.Pressed("START"))
+            bool up = Kimaya.Networking.PhonePadServer.Held("UP") || Kimaya.Networking.PhonePadServer.Held("LEFT");
+            bool down = Kimaya.Networking.PhonePadServer.Held("DOWN") || Kimaya.Networking.PhonePadServer.Held("RIGHT");
+            bool prevUp = prevDirs[0], prevDown = prevDirs[1];
+            // Solo cuenta el momento en que la palanca cruza el umbral, para no saltar varios botones por frame.
+            bool moveUp = up && !prevUp;
+            bool moveDown = down && !prevDown;
+            prevDirs[0] = up;
+            prevDirs[1] = down;
+
+            int panel = ActivePanel();
+            if (panel != currentPanel)
             {
-                if (panelMain != null && panelMain.activeInHierarchy)
+                currentPanel = panel;
+                BuildFocusList(panel);
+                focusIndex = panel == PanelMain ? Mathf.Max(0, focusList.IndexOf(btnPlay)) : 0;
+                Highlight();
+            }
+
+            if (focusList.Count > 0)
+            {
+                if (moveUp) MoveFocus(-1);
+                if (moveDown) MoveFocus(1);
+
+                if (Kimaya.Networking.PhonePadServer.Pressed("A"))
                 {
-                    StartPlayGame();
+                    focusList[focusIndex].onClick.Invoke();
+                    return;
                 }
             }
-            else if (Kimaya.Networking.PhonePadServer.Pressed("B"))
+
+            if (Kimaya.Networking.PhonePadServer.Pressed("START") && panel == PanelMain && btnPlay != null)
             {
-                if ((panelSettings != null && panelSettings.activeInHierarchy) ||
-                    (panelHelp != null && panelHelp.activeInHierarchy) ||
-                    (panelCharacterSelect != null && panelCharacterSelect.activeInHierarchy))
-                {
-                    ShowMainPanel();
-                }
+                btnPlay.onClick.Invoke();
+                return;
             }
+
+            if (Kimaya.Networking.PhonePadServer.Pressed("B") && panel != PanelMain)
+            {
+                ShowMainPanel();
+            }
+        }
+
+        private int ActivePanel()
+        {
+            if (panelCharacterSelect != null && panelCharacterSelect.activeInHierarchy) return PanelCharacter;
+            if (panelHelp != null && panelHelp.activeInHierarchy) return PanelHelp;
+            if (panelSettings != null && panelSettings.activeInHierarchy) return PanelSettings;
+            return PanelMain;
+        }
+
+        private void BuildFocusList(int panel)
+        {
+            focusList.Clear();
+            if (panel == PanelMain)
+                AddVisible(btnStory, btnPlay, btnSettings, btnHelp, btnQuit);
+            else if (panel == PanelCharacter)
+                AddVisible(btnStart, btnBack);
+            else if (panel == PanelHelp)
+                AddVisible(btnHelpBack);
+            // Ajustes tiene sus propios controles; ahí el control solo regresa con B.
+        }
+
+        private void AddVisible(params Button[] buttons)
+        {
+            foreach (var b in buttons)
+            {
+                if (b != null && b.gameObject.activeInHierarchy && !focusList.Contains(b))
+                    focusList.Add(b);
+            }
+        }
+
+        private void MoveFocus(int step)
+        {
+            int n = focusList.Count;
+            focusIndex = ((focusIndex + step) % n + n) % n;
+            Highlight();
+        }
+
+        private void Highlight()
+        {
+            if (focusList.Count == 0 || UnityEngine.EventSystems.EventSystem.current == null) return;
+            UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(focusList[focusIndex].gameObject);
         }
 
         private void ShowMainPanel()
